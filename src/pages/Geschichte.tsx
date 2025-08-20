@@ -596,6 +596,436 @@ const Geschichte = () => {
           </div>
         </section>
 
+        {/* Historical Context: Zug im Rückblick */}
+        <section className="section-padding bg-muted/30">
+          <div className="container-max">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-foreground mb-4">Zug im historischen Rückblick</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Die historischen Grundlagen für die heutige Erfolgsgeschichte der Stadt
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12">
+              <Card className="card-hover">
+                <CardHeader>
+                  <CardTitle className="text-xl">Die Grundlagen des Erfolgs</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground">
+                    Die Stadt Zug hatte im historischen Rückblick immer auch Glück. Gepaart mit Geschick, 
+                    entstand daraus eine Erfolgsgeschichte. Vorab das Glück, schon 1352 als Stand in der 
+                    Eidgenossenschaft dabei gewesen zu sein, gleichberechtigt neben dem mächtigen Zürich.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center p-4 bg-primary/5 rounded-lg">
+                      <div className="text-2xl font-bold text-primary mb-1">1352</div>
+                      <div className="text-sm text-muted-foreground">Beitritt zur Eidgenossenschaft</div>
+                    </div>
+                    <div className="text-center p-4 bg-primary/5 rounded-lg">
+                      <div className="text-2xl font-bold text-primary mb-1">1864</div>
+                      <div className="text-sm text-muted-foreground">Anschluss ans Bahnnetz</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="card-hover">
+                <CardHeader>
+                  <CardTitle className="text-xl">Industrielle Entwicklung</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground">
+                    Erst ab Mitte des 19. Jahrhunderts begann die Stadt richtig zu wachsen. Die Industrialisierung 
+                    erfolgte ab 1880 mit der Gründung der Metallwarenfabrik Zug, 1896 folgte Landis & Gyr, 
+                    1913 die heutige V-Zug AG.
+                  </p>
+                  <div className="space-y-2">
+                    <div className="flex justify-between">
+                      <span className="text-sm text-muted-foreground">1880: Metallwarenfabrik Zug</span>
+                      <CheckCircle className="w-4 h-4 text-green-600" />
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-sm text-muted-foreground">1896: Landis & Gyr</span>
+                      <CheckCircle className="w-4 h-4 text-green-600" />
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-sm text-muted-foreground">1913: V-Zug AG</span>
+                      <CheckCircle className="w-4 h-4 text-green-600" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Speed Interviews with Key Figures */}
+        <section className="section-padding">
+          <div className="container-max">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-foreground mb-4">Vier Speed-Interviews</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Unsere führenden Politiker im Schnellinterview
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* André Wicki */}
+              <Card className="card-hover">
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Building className="w-8 h-8 text-primary" />
+                    </div>
+                    <div>
+                      <CardTitle>André Wicki</CardTitle>
+                      <p className="text-sm text-muted-foreground">Stadtrat seit 2011</p>
+                      <Badge variant="outline">«Der Stadtpräsident»</Badge>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <Accordion type="single" collapsible>
+                    <AccordionItem value="wicki-interview">
+                      <AccordionTrigger>Seine Vision für Zug</AccordionTrigger>
+                      <AccordionContent className="space-y-4">
+                        <div>
+                          <h4 className="font-semibold text-sm mb-2">Der Stadt Zug Sorge tragen:</h4>
+                          <p className="text-sm text-muted-foreground">
+                            Arbeiten wir weiter an Moderne und Tradition. Stärken wir unser Schulsystem und 
+                            beenden das Manko an Fachkräuten. Zug hat super Schulen auf allen Stufen.
+                          </p>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-sm mb-2">Wirtschaft & Soziales:</h4>
+                          <p className="text-sm text-muted-foreground">
+                            Geht es der Wirtschaft gut, geht es allen gut. Ein Unternehmen ist die grösste 
+                            selbsttragende, soziale Institution. Aber ich will hier kein «Monaco».
+                          </p>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-sm mb-2">Persönliches Ziel:</h4>
+                          <p className="text-sm text-muted-foreground italic">
+                            "Das will ich erleben: AC/DC in Zug vor 25'000 Zuschauern mit Angus Young der schreit: 'Zug Rocks'!"
+                          </p>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                </CardContent>
+              </Card>
+
+              {/* Heinz Tännler */}
+              <Card className="card-hover">
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Star className="w-8 h-8 text-primary" />
+                    </div>
+                    <div>
+                      <CardTitle>Heinz Tännler</CardTitle>
+                      <p className="text-sm text-muted-foreground">Regierungsrat seit 2007</p>
+                      <Badge variant="outline">«Der General»</Badge>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <Accordion type="single" collapsible>
+                    <AccordionItem value="taennler-interview">
+                      <AccordionTrigger>Führungsphilosophie</AccordionTrigger>
+                      <AccordionContent className="space-y-4">
+                        <div>
+                          <h4 className="font-semibold text-sm mb-2">Führung:</h4>
+                          <p className="text-sm text-muted-foreground">
+                            Zu Führung gehört auch, sich mit den richtigen Mitarbeitern zu umgeben. 
+                            Dann kann man sehr viel Vertrauen schenken.
+                          </p>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-sm mb-2">Innovation:</h4>
+                          <p className="text-sm text-muted-foreground">
+                            Ich bin fasziniert von den Möglichkeiten der Blockchain-Technologie und 
+                            verfolge deren Entwicklung mit grossem Interesse.
+                          </p>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-sm mb-2">Zukunftsorientierung:</h4>
+                          <p className="text-sm text-muted-foreground">
+                            Da ich mich vorwärts orientiere, liegt mir Raumschiff Enterprise näher als Bonanza.
+                          </p>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                </CardContent>
+              </Card>
+
+              {/* Adrian Risi */}
+              <Card className="card-hover">
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Users className="w-8 h-8 text-primary" />
+                    </div>
+                    <div>
+                      <CardTitle>Adrian Risi</CardTitle>
+                      <p className="text-sm text-muted-foreground">Kantonsrat seit 2019</p>
+                      <Badge variant="outline">«Der Brückenbauer»</Badge>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <Accordion type="single" collapsible>
+                    <AccordionItem value="risi-interview">
+                      <AccordionTrigger>Politik & Kompromisse</AccordionTrigger>
+                      <AccordionContent className="space-y-4">
+                        <div>
+                          <h4 className="font-semibold text-sm mb-2">Kompromisse:</h4>
+                          <p className="text-sm text-muted-foreground">
+                            Ich brauchte lange um zu verstehen, dass es nur mit Kompromissen funktioniert. 
+                            In der Politik gilt das Prinzip des kleinsten gemeinsamen Nenners.
+                          </p>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-sm mb-2">Infrastruktur:</h4>
+                          <p className="text-sm text-muted-foreground">
+                            Es braucht eine Symbiose. Unser Velowegsystem hat bereits 256 km und ist hervorragend.
+                          </p>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                </CardContent>
+              </Card>
+
+              {/* GGR Representative */}
+              <Card className="card-hover">
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Trophy className="w-8 h-8 text-primary" />
+                    </div>
+                    <div>
+                      <CardTitle>GGR-Fraktion</CardTitle>
+                      <p className="text-sm text-muted-foreground">Grosser Gemeinderat</p>
+                      <Badge variant="outline">«Die Kämpfer»</Badge>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <Accordion type="single" collapsible>
+                    <AccordionItem value="ggr-interview">
+                      <AccordionTrigger>Politische Haltung</AccordionTrigger>
+                      <AccordionContent className="space-y-4">
+                        <div>
+                          <h4 className="font-semibold text-sm mb-2">Taktik:</h4>
+                          <p className="text-sm text-muted-foreground">
+                            Es braucht beides! Du musst hart in der Sache sein, um den freiheitlichen 
+                            Standpunkt gegen alle Widerstände zu verteidigen. Tag für Tag: das ist unser Job!
+                          </p>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-sm mb-2">Traditionen:</h4>
+                          <p className="text-sm text-muted-foreground">
+                            Wir sind lokal verwurzelt, aber auch sehr weltoffen. Wir schätzen Bewährtes, 
+                            sind aber auch bereit für Neues!
+                          </p>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* 2022 Candidates Showcase */}
+        <section className="section-padding bg-muted/30">
+          <div className="container-max">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-foreground mb-4">Die Kandidaten von 2022</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Diese Kandidaten stellten sich am 2. Oktober 2022 zur Wahl
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {[
+                { name: "Melanie Balasopulos", status: "NEU", role: "GGR-Kandidatin" },
+                { name: "Oliver Birchmeier", status: "NEU", role: "Kantonsrat" },
+                { name: "Gregor R. Bruhin", status: "BISHERIG", role: "Kantonsrat" },
+                { name: "Philip C. Brunner", status: "BISHERIG", role: "Kantonsrat" },
+                { name: "Marcus Bühler", status: "NEU", role: "GGR-Kandidat" },
+                { name: "Thomas Dubach", status: "BISHERIG", role: "GGR & Kantonsrat" },
+                { name: "Daniel Gramm", status: "NEU", role: "GGR-Kandidat" },
+                { name: "Alexandra Gretener", status: "NEU", role: "Kantonsrätin" },
+                { name: "René Gretener", status: "NEU", role: "GGR-Kandidat" },
+                { name: "Roman Küng", status: "BISHERIG", role: "GGR & Kantonsrat" },
+                { name: "Dominique Messmer", status: "NEU", role: "Kantonsrat" },
+                { name: "Norbert Schlumpf", status: "NEU", role: "GGR-Kandidat" },
+                { name: "Alex Odermatt", status: "BISHERIG", role: "GGR-Mitglied" },
+                { name: "Meinrad Odermatt", status: "NEU", role: "Kantonsrat" },
+                { name: "Manfred Pircher", status: "BISHERIG", role: "GGR-Mitglied" },
+                { name: "Raphael Tschan", status: "NEU", role: "Kantonsrat" },
+                { name: "Niko Trlin", status: "NEU", role: "GGR-Kandidat" },
+                { name: "Bruno Zimmermann", status: "BISHERIG", role: "GGR-Mitglied" }
+              ].map((candidate, index) => (
+                <Card key={index} className="card-hover">
+                  <CardContent className="p-4 text-center">
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <Users className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="font-semibold text-foreground mb-1">{candidate.name}</h3>
+                    <p className="text-xs text-muted-foreground mb-2">{candidate.role}</p>
+                    <Badge 
+                      variant={candidate.status === "NEU" ? "default" : "secondary"} 
+                      className="text-xs"
+                    >
+                      {candidate.status}
+                    </Badge>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* City Wishes - "Simsalabim" */}
+        <section className="section-padding">
+          <div className="container-max">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-foreground mb-4">«Simsalabim» – Wünsche für die Stadt Zug</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Was sich unsere Mitglieder und Sympathisanten für Zug wünschen
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  author: "Thomas Dubach",
+                  role: "GGR & Kantonsrat",
+                  wish: "Ich wünsche mir ein atmosphärisch ansprechendes Lokal an der Seepromenade, bei welchem ein durchdachtes Konzept dahintersteckt. The new place to be!"
+                },
+                {
+                  author: "Dr. Beat Bühlmann",
+                  role: "VR & CEO",
+                  wish: "Ganz allgemein wieder mehr Rücksicht und Respekt in allen Belangen – Abfall, Lärm, Verkehr, Schweizer Kultur. Kurzum: Zuerst «geben», dann «nehmen»!"
+                },
+                {
+                  author: "Kathi Büttel",
+                  role: "Präsidentin Junge SVP Zug",
+                  wish: "Es wäre toll, wenn das Feuerwerk am Seenachtsfest Zug bleibt."
+                },
+                {
+                  author: "Regula Ernst",
+                  role: "Geschäftsführerin",
+                  wish: "Die hässlichen schwarzen Abfallkübel, welche die Seepromenade verschandeln, sollten durch eine hübschere Variante ersetzt werden. Die Stadt Zug kann das besser!"
+                },
+                {
+                  author: "Regula Kaiser",
+                  role: "Stadtentwicklung Zug",
+                  wish: "Ich wünsche mir eine entspannte Atmosphäre in der Einkaufsmeile: Bäume, Bänkli, Blumen, Pavillons, Wasserspiele, Lichtkunst, Musik!"
+                },
+                {
+                  author: "Reto Kaufmann",
+                  role: "Pfarrer",
+                  wish: "Traditionsbewusst und weltoffen, solidarisch und tolerant, sozial und gerecht – ein Stück Himmel auf Erden."
+                },
+                {
+                  author: "Luca Schenk",
+                  role: "Unternehmer",
+                  wish: "Die Breite der Autos hat zugenommen, die der Parkplätze nicht. Ich wünsche mir: Breitere Parkplätze oder Cabriopflicht!"
+                },
+                {
+                  author: "Lukas Fürrer",
+                  role: "Generalsekretär",
+                  wish: "Ich wünsche mir mehr Sekschüler."
+                },
+                {
+                  author: "Claudia Wirz",
+                  role: "Journalistin",
+                  wish: "Ich bin wunschlos glücklich hier. In Zug habe ich Unternehmergeist, Offenheit und Bürgernähe gefunden. Ich hoffe, dass Zug so bleibt!"
+                }
+              ].map((item, index) => (
+                <Card key={index} className="card-hover">
+                  <CardContent className="p-6">
+                    <Quote className="w-6 h-6 text-primary/40 mb-3" />
+                    <blockquote className="text-sm text-muted-foreground italic mb-4 leading-relaxed">
+                      "{item.wish}"
+                    </blockquote>
+                    <div className="border-t border-border pt-3">
+                      <div className="font-semibold text-foreground text-sm">{item.author}</div>
+                      <div className="text-xs text-muted-foreground">{item.role}</div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Political Structure Overview */}
+        <section className="section-padding bg-muted/30">
+          <div className="container-max">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-foreground mb-4">Politische Struktur heute</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Übersicht der politischen Gremien mit SVP-Beteiligung
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <Card className="card-hover">
+                <CardHeader>
+                  <div className="text-center">
+                    <Building className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <CardTitle>Grosser Gemeinderat</CardTitle>
+                    <p className="text-sm text-muted-foreground">Legislative der Stadt Zug</p>
+                  </div>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">8</div>
+                  <div className="text-sm text-muted-foreground mb-4">SVP-Sitze</div>
+                  <Badge variant="secondary">Zweitgrösste Fraktion</Badge>
+                </CardContent>
+              </Card>
+
+              <Card className="card-hover">
+                <CardHeader>
+                  <div className="text-center">
+                    <Star className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <CardTitle>Stadtrat</CardTitle>
+                    <p className="text-sm text-muted-foreground">Exekutive der Stadt Zug</p>
+                  </div>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">1</div>
+                  <div className="text-sm text-muted-foreground mb-4">SVP-Sitz</div>
+                  <Badge variant="secondary">André Wicki</Badge>
+                </CardContent>
+              </Card>
+
+              <Card className="card-hover">
+                <CardHeader>
+                  <div className="text-center">
+                    <Award className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <CardTitle>Kantonsrat</CardTitle>
+                    <p className="text-sm text-muted-foreground">Kantonale Legislative</p>
+                  </div>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">4</div>
+                  <div className="text-sm text-muted-foreground mb-4">SVP-Sitze</div>
+                  <Badge variant="secondary">Starke Vertretung</Badge>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* Future Vision with Call to Action */}
         <section className="section-padding bg-gradient-to-r from-primary/10 to-secondary/10">
           <div className="container-max">
