@@ -23,35 +23,35 @@ const MitmachenDropdown = ({ onNavigate }: MitmachenDropdownProps) => {
       <DropdownMenuTrigger asChild>
         <Button className="btn-hero">Jetzt mitmachen</Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56" align="end">
+      <DropdownMenuContent className="w-64 bg-background/98 backdrop-blur-md border border-border shadow-xl z-50" align="end">
         <DropdownMenuItem 
           onClick={() => handleClick('#contact')}
-          className="flex items-center gap-2 cursor-pointer"
+          className="flex items-center gap-3 cursor-pointer p-4 rounded-lg hover:bg-accent/50 transition-all duration-200"
         >
-          <MessageSquare className="h-4 w-4" />
+          <MessageSquare className="h-5 w-5 text-primary" />
           <div>
-            <div className="font-medium">Kontakt</div>
-            <div className="text-xs text-muted-foreground">Nehmen Sie Kontakt mit uns auf</div>
+            <div className="font-semibold text-base">Kontakt</div>
+            <div className="text-xs text-muted-foreground leading-relaxed">Nehmen Sie Kontakt mit uns auf</div>
           </div>
         </DropdownMenuItem>
         <DropdownMenuItem 
           onClick={() => handleClick('#membership')}
-          className="flex items-center gap-2 cursor-pointer"
+          className="flex items-center gap-3 cursor-pointer p-4 rounded-lg hover:bg-accent/50 transition-all duration-200"
         >
-          <Heart className="h-4 w-4" />
+          <Heart className="h-5 w-5 text-primary" />
           <div>
-            <div className="font-medium">Mitglied werden</div>
-            <div className="text-xs text-muted-foreground">Werden Sie Teil unserer Partei</div>
+            <div className="font-semibold text-base">Mitglied werden</div>
+            <div className="text-xs text-muted-foreground leading-relaxed">Werden Sie Teil unserer Partei</div>
           </div>
         </DropdownMenuItem>
         <DropdownMenuItem 
           onClick={() => handleClick('#donations')}
-          className="flex items-center gap-2 cursor-pointer"
+          className="flex items-center gap-3 cursor-pointer p-4 rounded-lg hover:bg-accent/50 transition-all duration-200"
         >
-          <HandHeart className="h-4 w-4" />
+          <HandHeart className="h-5 w-5 text-primary" />
           <div>
-            <div className="font-medium">Spenden</div>
-            <div className="text-xs text-muted-foreground">Unterstützen Sie unsere Arbeit</div>
+            <div className="font-semibold text-base">Spenden</div>
+            <div className="text-xs text-muted-foreground leading-relaxed">Unterstützen Sie unsere Arbeit</div>
           </div>
         </DropdownMenuItem>
       </DropdownMenuContent>

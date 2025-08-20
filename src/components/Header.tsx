@@ -55,30 +55,30 @@ const Header = () => {
   };
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 border-b ${
+    <header className={`sticky top-0 z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'bg-background/95 backdrop-blur-sm border-border' 
-        : 'bg-transparent border-transparent'
+        ? 'bg-background/98 backdrop-blur-md border-b border-border shadow-lg' 
+        : 'bg-background/40 backdrop-blur-sm border-b border-transparent'
     }`}>
       <div className="container-max">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-18 md:h-24 px-2">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-4">
             <img 
               src="/lovable-uploads/1cca20d4-8141-4133-9164-d369442d3687.png" 
               alt="SVP Stadt Zug Logo" 
-              className="h-12 w-auto"
+              className="h-16 w-auto md:h-18 transition-all duration-300"
             />
             <div className="flex flex-col">
-              <span className="font-bold text-lg text-foreground">SVP Stadt Zug</span>
-              <span className="text-sm text-muted-foreground font-medium">Mir liefered</span>
+              <span className="font-bold text-xl md:text-2xl text-foreground tracking-tight">SVP Stadt Zug</span>
+              <span className="text-sm md:text-base text-muted-foreground font-semibold">Mir liefered</span>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6">
+          <nav className="hidden lg:flex items-center space-x-8">
             <MegaMenu onNavigate={scrollToSection} />
-            <div className="ml-4">
+            <div className="ml-6">
               <MitmachenDropdown onNavigate={scrollToSection} />
             </div>
           </nav>
@@ -86,30 +86,30 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-foreground hover:text-primary"
+            className="lg:hidden p-3 text-foreground hover:text-primary transition-all duration-200 hover:bg-accent/20 rounded-lg"
             aria-label="Menü öffnen"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-sm">
-            <div className="py-4">
-              <Accordion type="single" collapsible className="w-full px-4">
+          <div className="lg:hidden border-t border-border bg-background/98 backdrop-blur-md shadow-lg">
+            <div className="py-6">
+              <Accordion type="single" collapsible className="w-full px-6">
                 {mobileMenuSections.map((section, sectionIndex) => (
                   <AccordionItem key={section.title} value={`section-${sectionIndex}`} className="border-border/50">
-                    <AccordionTrigger className="text-foreground hover:text-primary font-medium py-3">
+                    <AccordionTrigger className="text-foreground hover:text-primary font-semibold py-4 text-base">
                       {section.title}
                     </AccordionTrigger>
-                    <AccordionContent className="pb-3">
-                      <div className="space-y-1">
+                    <AccordionContent className="pb-4">
+                      <div className="space-y-2">
                         {section.items.map((item) => (
                           <button
                             key={item.label}
                             onClick={() => scrollToSection(item.href)}
-                            className="block w-full text-left px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-accent/50 rounded-md transition-colors"
+                            className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-accent/50 rounded-lg transition-colors"
                           >
                             {item.label}
                           </button>
@@ -119,23 +119,23 @@ const Header = () => {
                   </AccordionItem>
                 ))}
               </Accordion>
-              <div className="px-4 pt-4 space-y-2">
-                <div className="font-medium text-foreground mb-2">Mitmachen</div>
+              <div className="px-6 pt-6 space-y-3">
+                <div className="font-semibold text-foreground mb-3 text-base">Mitmachen</div>
                 <button
                   onClick={() => scrollToSection('#contact')}
-                  className="block w-full text-left px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-accent/50 rounded-md transition-colors"
+                  className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-accent/50 rounded-lg transition-colors"
                 >
                   Kontakt
                 </button>
                 <button
                   onClick={() => scrollToSection('#membership')}
-                  className="block w-full text-left px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-accent/50 rounded-md transition-colors"
+                  className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-accent/50 rounded-lg transition-colors"
                 >
                   Mitglied werden
                 </button>
                 <button
                   onClick={() => scrollToSection('#donations')}
-                  className="block w-full text-left px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-accent/50 rounded-md transition-colors"
+                  className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-accent/50 rounded-lg transition-colors"
                 >
                   Spenden
                 </button>
