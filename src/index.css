@@ -9,9 +9,9 @@
 @layer base {
   :root {
     /* Core Brand Colors */
-    --svp-orange: 22 100% 50%;
-    --svp-orange-light: 22 100% 60%;
-    --svp-orange-dark: 22 100% 40%;
+    --svp-orange: 54 100% 50%;
+    --svp-orange-light: 54 100% 60%;
+    --svp-orange-dark: 54 100% 40%;
     
     /* SVP Greens from logo */
     --svp-green: 120 60% 45%;
@@ -53,7 +53,7 @@
     
     --border: 210 20% 90%;
     --input: 210 20% 90%;
-    --ring: 22 100% 50%;
+    --ring: 54 100% 50%;
     
     --radius: 0.75rem;
     
