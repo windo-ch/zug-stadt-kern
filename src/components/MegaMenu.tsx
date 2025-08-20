@@ -176,50 +176,6 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
           </NavigationMenuContent>
         </NavigationMenuItem>
 
-        {/* Mitmachen */}
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className="text-foreground hover:text-primary font-medium">
-            Mitmachen
-          </NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <div className="grid gap-3 p-6 w-[400px] lg:w-[500px]">
-              <div className="row-span-1">
-                <NavigationMenuLink asChild>
-                  <button
-                    onClick={() => handleClick('#contact')}
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-br from-svp-green to-svp-green-light p-6 no-underline outline-none focus:shadow-md text-left"
-                  >
-                    <MessageSquare className="h-6 w-6 text-white mb-2" />
-                    <div className="mb-2 mt-4 text-lg font-medium text-white">
-                      Kontakt
-                    </div>
-                    <p className="text-sm leading-tight text-white/90">
-                      Nehmen Sie Kontakt mit uns auf
-                    </p>
-                  </button>
-                </NavigationMenuLink>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                <ListItem
-                  title="Mitglied werden"
-                  href="#membership"
-                  onClick={() => handleClick('#membership')}
-                  icon={<Heart className="h-4 w-4" />}
-                >
-                  Werden Sie Teil unserer Partei
-                </ListItem>
-                <ListItem
-                  title="Spenden"
-                  href="#donations"
-                  onClick={() => handleClick('#donations')}
-                  icon={<Heart className="h-4 w-4" />}
-                >
-                  Unterstützen Sie unsere Arbeit
-                </ListItem>
-              </div>
-            </div>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   );
@@ -235,24 +191,22 @@ interface ListItemProps {
 
 const ListItem = ({ title, href, onClick, children, icon }: ListItemProps) => {
   return (
-    <li>
-      <NavigationMenuLink asChild>
-        <button
-          onClick={onClick}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-left w-full"
-          )}
-        >
-          <div className="flex items-center gap-2">
-            {icon}
-            <div className="text-sm font-medium leading-none">{title}</div>
-          </div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
-            {children}
-          </p>
-        </button>
-      </NavigationMenuLink>
-    </li>
+    <NavigationMenuLink asChild>
+      <button
+        onClick={onClick}
+        className={cn(
+          "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-left w-full"
+        )}
+      >
+        <div className="flex items-center gap-2">
+          {icon}
+          <div className="text-sm font-medium leading-none">{title}</div>
+        </div>
+        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
+          {children}
+        </p>
+      </button>
+    </NavigationMenuLink>
   );
 };
 

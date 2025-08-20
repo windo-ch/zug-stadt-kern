@@ -1,11 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import MegaMenu from './MegaMenu';
+import MitmachenDropdown from './MitmachenDropdown';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const mobileMenuSections = [
     {
@@ -35,14 +46,6 @@ const Header = () => {
         { label: 'Geschichte', href: '#history' }
       ]
     },
-    {
-      title: 'Mitmachen',
-      items: [
-        { label: 'Kontakt', href: '#contact' },
-        { label: 'Mitglied werden', href: '#membership' },
-        { label: 'Spenden', href: '#donations' }
-      ]
-    }
   ];
 
   const scrollToSection = (href: string) => {
@@ -52,7 +55,11 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <header className={`sticky top-0 z-50 transition-all duration-300 border-b ${
+      isScrolled 
+        ? 'bg-background/95 backdrop-blur-sm border-border' 
+        : 'bg-transparent border-transparent'
+    }`}>
       <div className="container-max">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
@@ -71,7 +78,9 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
             <MegaMenu onNavigate={scrollToSection} />
-            <Button className="btn-hero ml-4">Jetzt mitmachen</Button>
+            <div className="ml-4">
+              <MitmachenDropdown onNavigate={scrollToSection} />
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -110,8 +119,26 @@ const Header = () => {
                   </AccordionItem>
                 ))}
               </Accordion>
-              <div className="px-4 pt-4">
-                <Button className="btn-hero w-full">Jetzt mitmachen</Button>
+              <div className="px-4 pt-4 space-y-2">
+                <div className="font-medium text-foreground mb-2">Mitmachen</div>
+                <button
+                  onClick={() => scrollToSection('#contact')}
+                  className="block w-full text-left px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-accent/50 rounded-md transition-colors"
+                >
+                  Kontakt
+                </button>
+                <button
+                  onClick={() => scrollToSection('#membership')}
+                  className="block w-full text-left px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-accent/50 rounded-md transition-colors"
+                >
+                  Mitglied werden
+                </button>
+                <button
+                  onClick={() => scrollToSection('#donations')}
+                  className="block w-full text-left px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-accent/50 rounded-md transition-colors"
+                >
+                  Spenden
+                </button>
               </div>
             </div>
           </div>
