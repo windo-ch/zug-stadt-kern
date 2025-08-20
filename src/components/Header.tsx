@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import MegaMenu from './MegaMenu';
@@ -63,7 +64,7 @@ const Header = () => {
       <div className="container-max">
         <div className="flex items-center justify-between h-18 md:h-24 px-2">
           {/* Logo */}
-          <div className="flex items-center space-x-4">
+          <Link to="/" className="flex items-center space-x-4 hover:opacity-80 transition-opacity">
             <img 
               src="/lovable-uploads/d75181da-4d07-475b-827c-99ae71cae110.png" 
               alt="SVP Stadt Zug Logo" 
@@ -73,7 +74,7 @@ const Header = () => {
               <span className="font-bold text-xl md:text-2xl text-foreground tracking-tight">SVP Stadt Zug</span>
               <span className="text-sm md:text-base text-muted-foreground font-semibold">Mir liefered</span>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
