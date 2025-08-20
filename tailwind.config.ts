@@ -63,6 +63,9 @@ export default {
 					orange: 'hsl(var(--svp-orange))',
 					'orange-light': 'hsl(var(--svp-orange-light))',
 					'orange-dark': 'hsl(var(--svp-orange-dark))',
+					green: 'hsl(var(--svp-green))',
+					'green-light': 'hsl(var(--svp-green-light))',
+					'green-dark': 'hsl(var(--svp-green-dark))',
 				},
 				swiss: {
 					blue: 'hsl(var(--swiss-blue))',

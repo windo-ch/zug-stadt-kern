@@ -26,9 +26,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-svp-orange to-svp-orange-light rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">SVP</span>
-            </div>
+            <img 
+              src="/lovable-uploads/1cca20d4-8141-4133-9164-d369442d3687.png" 
+              alt="SVP Stadt Zug Logo" 
+              className="h-12 w-auto"
+            />
             <div className="flex flex-col">
               <span className="font-bold text-lg text-foreground">SVP Stadt Zug</span>
               <span className="text-sm text-muted-foreground font-medium">Mir liefered</span>

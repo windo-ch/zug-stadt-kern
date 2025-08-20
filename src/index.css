@@ -13,6 +13,11 @@
     --svp-orange-light: 22 100% 60%;
     --svp-orange-dark: 22 100% 40%;
     
+    /* SVP Greens from logo */
+    --svp-green: 120 60% 45%;
+    --svp-green-light: 120 50% 55%;
+    --svp-green-dark: 120 70% 35%;
+    
     --swiss-blue: 213 84% 25%;
     --swiss-blue-light: 213 54% 35%;
     --swiss-blue-dark: 213 94% 15%;
@@ -28,7 +33,7 @@
     --popover-foreground: 210 20% 15%;
     
     /* Semantic Colors */
-    --primary: 22 100% 50%;
+    --primary: 120 60% 45%;
     --primary-foreground: 0 0% 100%;
     
     --secondary: 213 84% 25%;
