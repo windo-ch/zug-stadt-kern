@@ -228,4 +228,8 @@
   .card-success {
     @apply bg-green-50 p-4 rounded-lg border border-green-200 hover:shadow-md transition-all duration-300;
   }
+  
+  .card-overview {
+    @apply bg-card p-6 rounded-xl border border-border hover:shadow-xl hover:border-primary/20 transition-all duration-300;
+  }
 }

@@ -3,10 +3,7 @@ import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import NewsSection from '@/components/NewsSection';
 import ValuesSection from '@/components/ValuesSection';
-import TopicsSection from '@/components/TopicsSection';
-import PeopleSection from '@/components/PeopleSection';
-import VotesSection from '@/components/VotesSection';
-import InitiativesSection from '@/components/InitiativesSection';
+import OverviewSection from '@/components/OverviewSection';
 import ContactSection from '@/components/ContactSection';
 
 const Index = () => {
@@ -61,10 +58,7 @@ const Index = () => {
         <HeroSection />
         <NewsSection />
         <ValuesSection />
-        <TopicsSection />
-        <PeopleSection />
-        <VotesSection />
-        <InitiativesSection />
+        <OverviewSection />
         <ContactSection />
       </main>
       
@@ -92,18 +86,18 @@ const Index = () => {
             <div>
               <h3 className="font-semibold mb-4">Navigation</h3>
               <ul className="space-y-2 text-sm">
-                <li><a href="#news" className="hover:text-svp-orange transition-colors">Was ansteht</a></li>
-                <li><a href="#values" className="hover:text-svp-orange transition-colors">Wofür wir stehen</a></li>
-                <li><a href="#topics" className="hover:text-svp-orange transition-colors">Unsere Themen</a></li>
-                <li><a href="#contact" className="hover:text-svp-orange transition-colors">Kontakt</a></li>
+                <li><a href="/#news" className="hover:text-svp-orange transition-colors">Was ansteht</a></li>
+                <li><a href="/#values" className="hover:text-svp-orange transition-colors">Wofür wir stehen</a></li>
+                <li><a href="/themen" className="hover:text-svp-orange transition-colors">Unsere Themen</a></li>
+                <li><a href="/#contact" className="hover:text-svp-orange transition-colors">Kontakt</a></li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4">Rechtliches</h3>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-svp-orange transition-colors">Impressum</a></li>
-                <li><a href="#" className="hover:text-svp-orange transition-colors">Datenschutz</a></li>
+                <li><a href="/impressum" className="hover:text-svp-orange transition-colors">Impressum</a></li>
+                <li><a href="/datenschutz" className="hover:text-svp-orange transition-colors">Datenschutz</a></li>
                 <li><a href="#" className="hover:text-svp-orange transition-colors">Cookie-Richtlinie</a></li>
               </ul>
             </div>

@@ -8,18 +8,13 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { Calendar, Users, FileText, Heart, MessageSquare, Info } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface MegaMenuProps {
   onNavigate?: (href: string) => void;
 }
 
 const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
-  const handleClick = (href: string) => {
-    if (onNavigate) {
-      onNavigate(href);
-    }
-  };
-
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -32,8 +27,8 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
             <div className="grid gap-4 p-8 w-[550px] lg:w-[650px] lg:grid-cols-2">
               <div className="row-span-3">
                 <NavigationMenuLink asChild>
-                  <button
-                    onClick={() => handleClick('#values')}
+                  <Link
+                    to="/#values"
                     className="flex h-full w-full select-none flex-col justify-end rounded-xl bg-gradient-to-br from-svp-green to-svp-green-light p-8 no-underline outline-none focus:shadow-lg hover:shadow-lg text-left transition-all duration-200 hover:scale-[1.02]"
                   >
                     <Heart className="h-8 w-8 text-white mb-3" />
@@ -43,29 +38,26 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
                     <p className="text-sm leading-relaxed text-white/90">
                       Unsere Grundwerte und politischen Überzeugungen für Zug
                     </p>
-                  </button>
+                  </Link>
                 </NavigationMenuLink>
               </div>
               <ListItem
                 title="Unsere Themen"
-                href="#topics"
-                onClick={() => handleClick('#topics')}
+                href="/themen"
                 icon={<FileText className="h-5 w-5" />}
               >
                 Aktuelle politische Schwerpunkte und Positionen
               </ListItem>
               <ListItem
                 title="Abstimmungen"
-                href="#votes"
-                onClick={() => handleClick('#votes')}
+                href="/abstimmungen"
                 icon={<Calendar className="h-5 w-5" />}
               >
                 Unsere Empfehlungen zu kommenden Abstimmungen
               </ListItem>
               <ListItem
                 title="Vorstösse"
-                href="#initiatives"
-                onClick={() => handleClick('#initiatives')}
+                href="/vorstoesse"
                 icon={<FileText className="h-5 w-5" />}
               >
                 Politische Initiativen und Vorstösse im Stadtrat
@@ -83,8 +75,8 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
             <div className="grid gap-4 p-8 w-[550px] lg:w-[650px] lg:grid-cols-2">
               <div className="row-span-3">
                 <NavigationMenuLink asChild>
-                  <button
-                    onClick={() => handleClick('#news')}
+                  <Link
+                    to="/#news"
                     className="flex h-full w-full select-none flex-col justify-end rounded-xl bg-gradient-to-br from-svp-green to-svp-green-light p-8 no-underline outline-none focus:shadow-lg hover:shadow-lg text-left transition-all duration-200 hover:scale-[1.02]"
                   >
                     <Calendar className="h-8 w-8 text-white mb-3" />
@@ -94,29 +86,26 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
                     <p className="text-sm leading-relaxed text-white/90">
                       Aktuelle Neuigkeiten und kommende Termine
                     </p>
-                  </button>
+                  </Link>
                 </NavigationMenuLink>
               </div>
               <ListItem
                 title="Veranstaltungen"
-                href="#events"
-                onClick={() => handleClick('#events')}
+                href="/#news"
                 icon={<Calendar className="h-5 w-5" />}
               >
                 Öffentliche Anlässe und Parteiveranstaltungen
               </ListItem>
               <ListItem
                 title="Medienmitteilungen"
-                href="#media"
-                onClick={() => handleClick('#media')}
+                href="/#news"
                 icon={<FileText className="h-5 w-5" />}
               >
                 Aktuelle Pressemitteilungen und Stellungnahmen
               </ListItem>
               <ListItem
                 title="Newsletter"
-                href="#newsletter"
-                onClick={() => handleClick('#newsletter')}
+                href="/#contact"
                 icon={<MessageSquare className="h-5 w-5" />}
               >
                 Abonnieren Sie unseren regelmässigen Newsletter
@@ -134,8 +123,8 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
             <div className="grid gap-4 p-8 w-[550px] lg:w-[650px] lg:grid-cols-2">
               <div className="row-span-3">
                 <NavigationMenuLink asChild>
-                  <button
-                    onClick={() => handleClick('#people')}
+                  <Link
+                    to="/wer-wir-sind"
                     className="flex h-full w-full select-none flex-col justify-end rounded-xl bg-gradient-to-br from-svp-green to-svp-green-light p-8 no-underline outline-none focus:shadow-lg hover:shadow-lg text-left transition-all duration-200 hover:scale-[1.02]"
                   >
                     <Users className="h-8 w-8 text-white mb-3" />
@@ -145,29 +134,26 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
                     <p className="text-sm leading-relaxed text-white/90">
                       Unsere Kandidaten und Parteimitglieder
                     </p>
-                  </button>
+                  </Link>
                 </NavigationMenuLink>
               </div>
               <ListItem
                 title="Stadtrat"
-                href="#council"
-                onClick={() => handleClick('#council')}
+                href="/wer-wir-sind#council"
                 icon={<Users className="h-5 w-5" />}
               >
                 Unsere Vertreter im Zuger Stadtrat
               </ListItem>
               <ListItem
                 title="Vorstand"
-                href="#board"
-                onClick={() => handleClick('#board')}
+                href="/wer-wir-sind#board"
                 icon={<Users className="h-5 w-5" />}
               >
                 Der Vorstand der SVP Stadt Zug
               </ListItem>
               <ListItem
                 title="Geschichte"
-                href="#history"
-                onClick={() => handleClick('#history')}
+                href="/wer-wir-sind#history"
                 icon={<Info className="h-5 w-5" />}
               >
                 33 Jahre für Zug im Einsatz
@@ -184,16 +170,15 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
 interface ListItemProps {
   title: string;
   href: string;
-  onClick: () => void;
   children: React.ReactNode;
   icon?: React.ReactNode;
 }
 
-const ListItem = ({ title, href, onClick, children, icon }: ListItemProps) => {
+const ListItem = ({ title, href, children, icon }: ListItemProps) => {
   return (
     <NavigationMenuLink asChild>
-      <button
-        onClick={onClick}
+      <Link
+        to={href}
         className={cn(
           "block select-none space-y-2 rounded-xl p-4 leading-none no-underline outline-none transition-all duration-200 hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-left w-full hover:shadow-md border border-transparent hover:border-border/20"
         )}
@@ -205,7 +190,7 @@ const ListItem = ({ title, href, onClick, children, icon }: ListItemProps) => {
         <p className="line-clamp-2 text-sm leading-relaxed text-muted-foreground mt-2">
           {children}
         </p>
-      </button>
+      </Link>
     </NavigationMenuLink>
   );
 };
