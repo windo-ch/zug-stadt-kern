@@ -86,19 +86,19 @@ const Index = () => {
             <div>
               <h3 className="font-semibold mb-4">Navigation</h3>
               <ul className="space-y-2 text-sm">
-                <li><a href="/#news" className="hover:text-svp-orange transition-colors">Was ansteht</a></li>
-                <li><a href="/#values" className="hover:text-svp-orange transition-colors">Wofür wir stehen</a></li>
-                <li><a href="/themen" className="hover:text-svp-orange transition-colors">Unsere Themen</a></li>
-                <li><a href="/#contact" className="hover:text-svp-orange transition-colors">Kontakt</a></li>
+                <li><a href="/#news" className="hover:text-white transition-colors">Was ansteht</a></li>
+                <li><a href="/#values" className="hover:text-white transition-colors">Wofür wir stehen</a></li>
+                <li><a href="/themen" className="hover:text-white transition-colors">Unsere Themen</a></li>
+                <li><a href="/#contact" className="hover:text-white transition-colors">Kontakt</a></li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4">Rechtliches</h3>
               <ul className="space-y-2 text-sm">
-                <li><a href="/impressum" className="hover:text-svp-orange transition-colors">Impressum</a></li>
-                <li><a href="/datenschutz" className="hover:text-svp-orange transition-colors">Datenschutz</a></li>
-                <li><a href="#" className="hover:text-svp-orange transition-colors">Cookie-Richtlinie</a></li>
+                <li><a href="/impressum" className="hover:text-white transition-colors">Impressum</a></li>
+                <li><a href="/datenschutz" className="hover:text-white transition-colors">Datenschutz</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Cookie-Richtlinie</a></li>
               </ul>
             </div>
           </div>
@@ -108,13 +108,13 @@ const Index = () => {
               © 2025 SVP Stadt Zug. Alle Rechte vorbehalten.
             </p>
             <div className="flex space-x-4 mt-4 md:mt-0">
-              <a href="#" className="text-white/60 hover:text-svp-orange transition-colors">
+              <a href="#" className="text-white/60 hover:text-white transition-colors">
                 Facebook
               </a>
-              <a href="#" className="text-white/60 hover:text-svp-orange transition-colors">
+              <a href="#" className="text-white/60 hover:text-white transition-colors">
                 Twitter
               </a>
-              <a href="#" className="text-white/60 hover:text-svp-orange transition-colors">
+              <a href="#" className="text-white/60 hover:text-white transition-colors">
                 LinkedIn
               </a>
             </div>

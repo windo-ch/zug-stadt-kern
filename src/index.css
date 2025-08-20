@@ -149,7 +149,7 @@
     @apply bg-gradient-to-r from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] 
            text-white font-semibold px-8 py-4 rounded-lg 
            shadow-[var(--shadow-strong)] 
-           hover:scale-105 hover:shadow-[var(--shadow-strong)] hover:from-[hsl(var(--svp-orange))] hover:to-[hsl(var(--svp-orange-light))]
+           hover:scale-105 hover:shadow-[var(--shadow-strong)] hover:from-[hsl(var(--svp-green-light))] hover:to-[hsl(var(--svp-green))]
            transition-[var(--transition-bounce)] 
            focus:ring-4 focus:ring-[hsl(var(--svp-green)_/_0.3)];
   }

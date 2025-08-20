@@ -74,7 +74,7 @@ const NewsSection = () => {
                 {item.excerpt}
               </p>
               
-              <div className="flex items-center text-primary font-semibold group-hover:text-svp-orange transition-colors">
+              <div className="flex items-center text-primary font-semibold group-hover:text-svp-green-light transition-colors">
                 <span className="mr-2">Mehr lesen</span>
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </div>
