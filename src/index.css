@@ -207,4 +207,25 @@
   .gradient-footer {
     background: var(--gradient-footer);
   }
+  
+  /* Additional Card Components */
+  .card-people {
+    @apply bg-card p-6 rounded-xl border border-border hover:shadow-lg transition-all duration-300;
+  }
+  
+  .card-vote {
+    @apply bg-card p-6 rounded-xl border border-border hover:border-primary/20 transition-all duration-300;
+  }
+  
+  .card-vote-compact {
+    @apply bg-card p-4 rounded-lg border border-border hover:shadow-md transition-all duration-300;
+  }
+  
+  .card-initiative {
+    @apply bg-card p-6 rounded-xl border border-border hover:border-primary/20 hover:shadow-lg transition-all duration-300;
+  }
+  
+  .card-success {
+    @apply bg-green-50 p-4 rounded-lg border border-green-200 hover:shadow-md transition-all duration-300;
+  }
 }

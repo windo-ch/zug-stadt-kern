@@ -4,6 +4,9 @@ import HeroSection from '@/components/HeroSection';
 import NewsSection from '@/components/NewsSection';
 import ValuesSection from '@/components/ValuesSection';
 import TopicsSection from '@/components/TopicsSection';
+import PeopleSection from '@/components/PeopleSection';
+import VotesSection from '@/components/VotesSection';
+import InitiativesSection from '@/components/InitiativesSection';
 import ContactSection from '@/components/ContactSection';
 
 const Index = () => {
@@ -59,6 +62,9 @@ const Index = () => {
         <NewsSection />
         <ValuesSection />
         <TopicsSection />
+        <PeopleSection />
+        <VotesSection />
+        <InitiativesSection />
         <ContactSection />
       </main>
       
