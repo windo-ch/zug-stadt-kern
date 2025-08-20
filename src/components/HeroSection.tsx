@@ -1,5 +1,6 @@
 import { ArrowRight, Users, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import heroImage from '@/assets/zug-hero.jpg';
 
 const HeroSection = () => {
@@ -73,21 +74,21 @@ const HeroSection = () => {
 
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="text-center p-4">
-                <div className="text-3xl font-bold text-primary mb-2">33</div>
-                <div className="text-sm text-muted-foreground">Jahre Bestand</div>
-              </div>
+              <Link to="/geschichte" className="text-center p-4 hover:bg-muted/50 rounded-lg transition-colors group">
+                <div className="text-3xl font-bold text-primary mb-2 group-hover:scale-105 transition-transform">33</div>
+                <div className="text-sm font-semibold text-muted-foreground group-hover:text-foreground transition-colors">Jahre Bestand</div>
+              </Link>
               <div className="text-center p-4">
                 <div className="text-3xl font-bold text-primary mb-2">500+</div>
-                <div className="text-sm text-muted-foreground">Aktive Mitglieder</div>
+                <div className="text-sm font-semibold text-muted-foreground">Aktive Mitglieder</div>
               </div>
               <div className="text-center p-4">
                 <div className="text-3xl font-bold text-primary mb-2">8</div>
-                <div className="text-sm text-muted-foreground">Sitze im Parlament</div>
+                <div className="text-sm font-semibold text-muted-foreground">Sitze im Parlament</div>
               </div>
               <div className="text-center p-4">
                 <div className="text-3xl font-bold text-primary mb-2">25%</div>
-                <div className="text-sm text-muted-foreground">Wähleranteil 2022</div>
+                <div className="text-sm font-semibold text-muted-foreground">Wähleranteil 2022</div>
               </div>
             </div>
           </div>
