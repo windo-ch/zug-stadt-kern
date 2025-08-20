@@ -68,7 +68,7 @@ const Index = () => {
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-3 mb-4">
                 <img 
-                  src="/lovable-uploads/1cca20d4-8141-4133-9164-d369442d3687.png" 
+                  src="/lovable-uploads/d75181da-4d07-475b-827c-99ae71cae110.png" 
                   alt="SVP Stadt Zug Logo" 
                   className="h-10 w-auto"
                 />

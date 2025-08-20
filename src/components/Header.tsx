@@ -57,15 +57,15 @@ const Header = () => {
   return (
     <header className={`sticky top-0 z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'bg-background/98 backdrop-blur-md border-b border-border shadow-lg' 
-        : 'bg-background/40 backdrop-blur-sm border-b border-transparent'
+        ? 'bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-lg' 
+        : 'bg-transparent border-b border-transparent'
     }`}>
       <div className="container-max">
         <div className="flex items-center justify-between h-18 md:h-24 px-2">
           {/* Logo */}
           <div className="flex items-center space-x-4">
             <img 
-              src="/lovable-uploads/1cca20d4-8141-4133-9164-d369442d3687.png" 
+              src="/lovable-uploads/d75181da-4d07-475b-827c-99ae71cae110.png" 
               alt="SVP Stadt Zug Logo" 
               className="h-16 w-auto md:h-18 transition-all duration-300"
             />
