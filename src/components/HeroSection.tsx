@@ -41,7 +41,7 @@ const HeroSection = () => {
               <span className="bg-gradient-to-r from-svp-orange to-svp-green bg-clip-text text-transparent">
                 Mir liefered
               </span>{' '}
-              <span className="text-white">–</span>{' '}
+              –{' '}
               <span className="bg-gradient-to-r from-svp-green to-svp-green-light bg-clip-text text-transparent">
                 für eusi Stadt Zug
               </span>
