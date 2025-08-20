@@ -21,6 +21,7 @@ import Mitglied from "./pages/Mitglied";
 import Spenden from "./pages/Spenden";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
+import CookiePolicy from "./pages/Cookie";
 import Wahlen from "./pages/Wahlen";
 import NotFound from "./pages/NotFound";
 
@@ -52,6 +53,7 @@ const App = () => (
           <Route path="/wahlen" element={<Wahlen />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
+          <Route path="/cookie" element={<CookiePolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
