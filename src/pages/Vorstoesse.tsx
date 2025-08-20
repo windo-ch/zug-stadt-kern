@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import Header from '@/components/Header';
 import InitiativesSection from '@/components/InitiativesSection';
+import Footer from '@/components/Footer';
 
 const Vorstoesse = () => {
   useEffect(() => {
@@ -35,26 +36,7 @@ const Vorstoesse = () => {
         <InitiativesSection />
       </main>
 
-      <footer className="gradient-footer text-white section-padding">
-        <div className="container-max">
-          <div className="text-center">
-            <div className="flex items-center justify-center space-x-3 mb-4">
-              <img 
-                src="/lovable-uploads/d75181da-4d07-475b-827c-99ae71cae110.png" 
-                alt="SVP Stadt Zug Logo" 
-                className="h-10 w-auto"
-              />
-              <div>
-                <div className="font-bold text-lg">SVP Stadt Zug</div>
-                <div className="text-sm opacity-80">Mir liefered</div>
-              </div>
-            </div>
-            <p className="text-white/80">
-              © 2025 SVP Stadt Zug. Alle Rechte vorbehalten.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

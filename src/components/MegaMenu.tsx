@@ -91,21 +91,21 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
               </div>
               <ListItem
                 title="Veranstaltungen"
-                href="/#news"
+                href="/veranstaltungen"
                 icon={<Calendar className="h-5 w-5" />}
               >
                 Öffentliche Anlässe und Parteiveranstaltungen
               </ListItem>
               <ListItem
                 title="Medienmitteilungen"
-                href="/#news"
+                href="/medienmitteilungen"
                 icon={<FileText className="h-5 w-5" />}
               >
                 Aktuelle Pressemitteilungen und Stellungnahmen
               </ListItem>
               <ListItem
                 title="Newsletter"
-                href="/#contact"
+                href="/newsletter"
                 icon={<MessageSquare className="h-5 w-5" />}
               >
                 Abonnieren Sie unseren regelmässigen Newsletter

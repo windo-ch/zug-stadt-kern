@@ -8,6 +8,11 @@ import Themen from "./pages/Themen";
 import Abstimmungen from "./pages/Abstimmungen";
 import Vorstoesse from "./pages/Vorstoesse";
 import WerWirSind from "./pages/WerWirSind";
+import Veranstaltungen from "./pages/Veranstaltungen";
+import Medienmitteilungen from "./pages/Medienmitteilungen";
+import Newsletter from "./pages/Newsletter";
+import Mitglied from "./pages/Mitglied";
+import Spenden from "./pages/Spenden";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import NotFound from "./pages/NotFound";
@@ -26,9 +31,13 @@ const App = () => (
           <Route path="/abstimmungen" element={<Abstimmungen />} />
           <Route path="/vorstoesse" element={<Vorstoesse />} />
           <Route path="/wer-wir-sind" element={<WerWirSind />} />
+          <Route path="/veranstaltungen" element={<Veranstaltungen />} />
+          <Route path="/medienmitteilungen" element={<Medienmitteilungen />} />
+          <Route path="/newsletter" element={<Newsletter />} />
+          <Route path="/mitglied-werden" element={<Mitglied />} />
+          <Route path="/spenden" element={<Spenden />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

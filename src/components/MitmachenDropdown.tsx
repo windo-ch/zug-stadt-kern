@@ -33,7 +33,7 @@ const MitmachenDropdown = ({ onNavigate }: MitmachenDropdownProps) => {
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
           <Link 
-            to="/#contact"
+            to="/mitglied-werden"
             className="flex items-center gap-3 cursor-pointer p-4 rounded-lg hover:bg-accent/50 transition-all duration-200"
           >
             <Heart className="h-5 w-5 text-primary" />
@@ -45,7 +45,7 @@ const MitmachenDropdown = ({ onNavigate }: MitmachenDropdownProps) => {
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
           <Link 
-            to="/#contact"
+            to="/spenden"
             className="flex items-center gap-3 cursor-pointer p-4 rounded-lg hover:bg-accent/50 transition-all duration-200"
           >
             <HandHeart className="h-5 w-5 text-primary" />
