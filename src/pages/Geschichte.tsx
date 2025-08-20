@@ -293,7 +293,7 @@ const Geschichte = () => {
                 <span className="bg-gradient-to-r from-svp-orange to-svp-green bg-clip-text text-transparent animate-scale-in">
                   30 Jahre
                 </span>{' '}
-                <span className="story-link">«MIR LIEFERET»</span>
+                <span className="bg-gradient-to-r from-svp-green to-svp-green-light bg-clip-text text-transparent">«MIR LIEFERET»</span>
               </h1>
               
               <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-8 animate-fade-in">
