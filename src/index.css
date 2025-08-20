@@ -1,42 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* SVP Stadt Zug Design System - Swiss Political Party Website */
 
 @layer base {
   :root {
+    /* Core Brand Colors */
+    --svp-orange: 22 100% 50%;
+    --svp-orange-light: 22 100% 60%;
+    --svp-orange-dark: 22 100% 40%;
+    
+    --swiss-blue: 213 84% 25%;
+    --swiss-blue-light: 213 54% 35%;
+    --swiss-blue-dark: 213 94% 15%;
+    
+    /* Neutral Palette */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 210 20% 15%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 210 20% 15%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --popover-foreground: 210 20% 15%;
+    
+    /* Semantic Colors */
+    --primary: 22 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 213 84% 25%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 210 40% 96%;
+    --muted-foreground: 210 20% 40%;
+    
+    --accent: 210 40% 96%;
+    --accent-foreground: 210 20% 15%;
+    
+    --destructive: 0 65% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --success: 160 60% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 22 100% 50%;
+    
+    --radius: 0.75rem;
+    
+    /* Design System Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--svp-orange)), hsl(var(--svp-orange-light)));
+    --gradient-section: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--accent)));
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 10px hsl(var(--foreground) / 0.1);
+    --shadow-medium: 0 4px 20px hsl(var(--foreground) / 0.15);
+    --shadow-strong: 0 10px 40px hsl(var(--svp-orange) / 0.2);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +128,72 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-['Inter'] antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  /* Political Button Variants */
+  .btn-hero {
+    @apply bg-gradient-to-r from-[hsl(var(--svp-orange))] to-[hsl(var(--svp-orange-light))] 
+           text-white font-semibold px-8 py-4 rounded-lg 
+           shadow-[var(--shadow-strong)] 
+           hover:scale-105 hover:shadow-[var(--shadow-strong)] 
+           transition-[var(--transition-bounce)] 
+           focus:ring-4 focus:ring-[hsl(var(--svp-orange)_/_0.3)];
+  }
+  
+  .btn-secondary {
+    @apply bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] 
+           font-semibold px-6 py-3 rounded-lg border border-[hsl(var(--secondary))]
+           hover:bg-[hsl(var(--swiss-blue-light))] 
+           transition-[var(--transition-smooth)] 
+           focus:ring-4 focus:ring-[hsl(var(--secondary)_/_0.3)];
+  }
+  
+  .btn-outline {
+    @apply border-2 border-[hsl(var(--primary))] text-[hsl(var(--primary))] 
+           font-semibold px-6 py-3 rounded-lg bg-transparent
+           hover:bg-[hsl(var(--primary))] hover:text-[hsl(var(--primary-foreground))]
+           transition-[var(--transition-smooth)] 
+           focus:ring-4 focus:ring-[hsl(var(--primary)_/_0.3)];
+  }
+  
+  /* Card Components */
+  .card-elevated {
+    @apply bg-[hsl(var(--card))] rounded-xl shadow-[var(--shadow-medium)] 
+           hover:shadow-[var(--shadow-strong)] 
+           transition-[var(--transition-smooth)] p-6;
+  }
+  
+  .card-news {
+    @apply card-elevated hover:scale-[1.02] cursor-pointer;
+  }
+  
+  .card-value {
+    @apply card-elevated text-center hover:bg-gradient-to-br 
+           hover:from-[hsl(var(--card))] hover:to-[hsl(var(--accent))];
+  }
+  
+  /* Section Styling */
+  .section-padding {
+    @apply py-16 px-4 md:px-6 lg:px-8;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  /* Gradients */
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-section {
+    background: var(--gradient-section);
   }
 }
