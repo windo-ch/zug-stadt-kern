@@ -21,6 +21,7 @@ import Mitglied from "./pages/Mitglied";
 import Spenden from "./pages/Spenden";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
+import Wahlen from "./pages/Wahlen";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -48,6 +49,7 @@ const App = () => (
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/mitglied-werden" element={<Mitglied />} />
           <Route path="/spenden" element={<Spenden />} />
+          <Route path="/wahlen" element={<Wahlen />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="*" element={<NotFound />} />

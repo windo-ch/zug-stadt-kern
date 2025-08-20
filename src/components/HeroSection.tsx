@@ -32,16 +32,16 @@ const HeroSection = () => {
               <div className="px-4 py-2 bg-primary/10 rounded-full border border-primary/20">
                 <span className="text-primary font-semibold text-sm">SVP Stadt Zug</span>
               </div>
-              <div className="px-4 py-2 bg-secondary/10 rounded-full border border-secondary/20">
+              <Link to="/wahlen" className="px-4 py-2 bg-secondary/10 rounded-full border border-secondary/20 hover:bg-secondary/20 transition-colors">
                 <span className="text-secondary font-semibold text-sm">Kommunalwahlen 2026</span>
-              </div>
+              </Link>
             </div>
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
               <span className="bg-gradient-to-r from-svp-orange to-svp-green bg-clip-text text-transparent">
                 Mir liefered
               </span>{' '}
-              –{' '}
+              <span className="text-white">–</span>{' '}
               <span className="bg-gradient-to-r from-svp-green to-svp-green-light bg-clip-text text-transparent">
                 für eusi Stadt Zug
               </span>
