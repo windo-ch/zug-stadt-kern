@@ -37,8 +37,11 @@ const HeroSection = () => {
             </div>
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-              Mir liefered –{' '}
-              <span className="bg-gradient-to-r from-primary via-svp-orange-light to-primary bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-svp-orange to-svp-green bg-clip-text text-transparent">
+                Mir liefered
+              </span>{' '}
+              –{' '}
+              <span className="bg-gradient-to-r from-svp-green to-svp-green-light bg-clip-text text-transparent">
                 für eusi Stadt Zug
               </span>
             </h1>
@@ -71,8 +74,8 @@ const HeroSection = () => {
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center p-4">
-                <div className="text-3xl font-bold text-primary mb-2">12</div>
-                <div className="text-sm text-muted-foreground">Jahre Erfahrung</div>
+                <div className="text-3xl font-bold text-primary mb-2">33</div>
+                <div className="text-sm text-muted-foreground">Jahre Bestand</div>
               </div>
               <div className="text-center p-4">
                 <div className="text-3xl font-bold text-primary mb-2">500+</div>
