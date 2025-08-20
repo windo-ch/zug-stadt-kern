@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Calendar, Users, Building, Trophy, Star, ArrowRight, CheckCircle, Quote, Clock, Award, ChevronDown, Play, Pause, FastForward } from 'lucide-react';
+import { Calendar, Users, Building, Trophy, Star, ArrowRight, CheckCircle, Quote, Clock, Award, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -14,8 +14,6 @@ import politicalSuccess from '@/assets/political-success.jpg';
 
 const Geschichte = () => {
   const [activeDecade, setActiveDecade] = useState<string>('1990s');
-  const [isTimelinePlaying, setIsTimelinePlaying] = useState(false);
-  const [currentMilestone, setCurrentMilestone] = useState(0);
 
   useEffect(() => {
     document.title = "30 Jahre Geschichte - SVP Stadt Zug";
@@ -249,23 +247,6 @@ const Geschichte = () => {
     }
   ];
 
-  // Auto-play timeline functionality
-  useEffect(() => {
-    let interval: NodeJS.Timeout;
-    if (isTimelinePlaying) {
-      interval = setInterval(() => {
-        setCurrentMilestone((prev) => {
-          const totalMilestones = Object.values(decades).reduce((sum, decade) => sum + decade.events.length, 0);
-          return (prev + 1) % totalMilestones;
-        });
-      }, 3000);
-    }
-    return () => clearInterval(interval);
-  }, [isTimelinePlaying]);
-
-  const toggleTimelinePlay = () => {
-    setIsTimelinePlaying(!isTimelinePlaying);
-  };
 
   return (
     <div className="min-h-screen">
@@ -376,44 +357,28 @@ const Geschichte = () => {
           <div className="container-max">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Interaktive Zeitreise</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
-                Entdecken Sie drei Jahrzehnte Politik nach Dekaden
+              <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+                Entdecken Sie drei Jahrzehnte Politik - klicken Sie auf eine Dekade um die Geschichte zu erkunden
               </p>
-              
-              <div className="flex justify-center gap-2 mb-6">
-                <Button
-                  onClick={toggleTimelinePlay}
-                  variant={isTimelinePlaying ? "default" : "outline"}
-                  size="sm"
-                >
-                  {isTimelinePlaying ? <Pause className="w-4 h-4 mr-2" /> : <Play className="w-4 h-4 mr-2" />}
-                  {isTimelinePlaying ? 'Pausieren' : 'Abspielen'}
-                </Button>
-                <Button
-                  onClick={() => setCurrentMilestone(0)}
-                  variant="outline"
-                  size="sm"
-                >
-                  <FastForward className="w-4 h-4 mr-2" />
-                  Zurücksetzen
-                </Button>
-              </div>
             </div>
 
-            {/* Decade Selector */}
-            <div className="flex justify-center mb-8">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 p-1 bg-muted rounded-lg">
+            {/* Enhanced Decade Selector */}
+            <div className="flex justify-center mb-12">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 p-2 bg-gradient-to-r from-muted/50 to-muted rounded-xl shadow-soft">
                 {Object.entries(decades).map(([key, decade]) => (
                   <button
                     key={key}
                     onClick={() => setActiveDecade(key)}
-                    className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    className={`px-6 py-4 rounded-lg text-sm font-semibold transition-all duration-300 hover-scale ${
                       activeDecade === key 
-                        ? 'bg-primary text-primary-foreground' 
-                        : 'text-muted-foreground hover:text-foreground'
+                        ? 'bg-gradient-to-r from-primary to-primary/80 text-primary-foreground shadow-medium transform scale-105' 
+                        : 'bg-white/70 text-muted-foreground hover:text-foreground hover:bg-white hover:shadow-soft'
                     }`}
                   >
-                    {decade.title.split('(')[1].replace(')', '')}
+                    <div className="text-center">
+                      <div className="font-bold text-lg">{decade.title.split('(')[1].replace(')', '')}</div>
+                      <div className="text-xs opacity-75 mt-1">{decade.events.length} Ereignisse</div>
+                    </div>
                   </button>
                 ))}
               </div>
