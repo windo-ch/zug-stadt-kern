@@ -8,6 +8,12 @@ import Themen from "./pages/Themen";
 import Abstimmungen from "./pages/Abstimmungen";
 import Vorstoesse from "./pages/Vorstoesse";
 import WerWirSind from "./pages/WerWirSind";
+import WofuerWirStehen from "./pages/WofuerWirStehen";
+import WasAnsteht from "./pages/WasAnsteht";
+import Stadtrat from "./pages/Stadtrat";
+import Vorstand from "./pages/Vorstand";
+import Geschichte from "./pages/Geschichte";
+import Kontakt from "./pages/Kontakt";
 import Veranstaltungen from "./pages/Veranstaltungen";
 import Medienmitteilungen from "./pages/Medienmitteilungen";
 import Newsletter from "./pages/Newsletter";
@@ -31,6 +37,12 @@ const App = () => (
           <Route path="/abstimmungen" element={<Abstimmungen />} />
           <Route path="/vorstoesse" element={<Vorstoesse />} />
           <Route path="/wer-wir-sind" element={<WerWirSind />} />
+          <Route path="/wofuer-wir-stehen" element={<WofuerWirStehen />} />
+          <Route path="/was-ansteht" element={<WasAnsteht />} />
+          <Route path="/stadtrat" element={<Stadtrat />} />
+          <Route path="/vorstand" element={<Vorstand />} />
+          <Route path="/geschichte" element={<Geschichte />} />
+          <Route path="/kontakt" element={<Kontakt />} />
           <Route path="/veranstaltungen" element={<Veranstaltungen />} />
           <Route path="/medienmitteilungen" element={<Medienmitteilungen />} />
           <Route path="/newsletter" element={<Newsletter />} />

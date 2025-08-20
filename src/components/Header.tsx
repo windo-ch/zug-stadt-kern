@@ -23,35 +23,39 @@ const Header = () => {
     {
       title: 'Politik & Standpunkte',
       items: [
-        { label: 'Wofür wir stehen', href: '#values' },
-        { label: 'Unsere Themen', href: '#topics' },
-        { label: 'Abstimmungen', href: '#votes' },
-        { label: 'Vorstösse', href: '#initiatives' }
+        { label: 'Wofür wir stehen', href: '/wofuer-wir-stehen' },
+        { label: 'Unsere Themen', href: '/themen' },
+        { label: 'Abstimmungen', href: '/abstimmungen' },
+        { label: 'Vorstösse', href: '/vorstoesse' }
       ]
     },
     {
       title: 'Aktuelles & Termine',
       items: [
-        { label: 'Was ansteht', href: '#news' },
-        { label: 'Veranstaltungen', href: '#events' },
-        { label: 'Medienmitteilungen', href: '#media' },
-        { label: 'Newsletter', href: '#newsletter' }
+        { label: 'Was ansteht', href: '/was-ansteht' },
+        { label: 'Veranstaltungen', href: '/veranstaltungen' },
+        { label: 'Medienmitteilungen', href: '/medienmitteilungen' },
+        { label: 'Newsletter', href: '/newsletter' }
       ]
     },
     {
       title: 'Partei & Personen',
       items: [
-        { label: 'Wer wir sind', href: '#people' },
-        { label: 'Stadtrat', href: '#council' },
-        { label: 'Vorstand', href: '#board' },
-        { label: 'Geschichte', href: '#history' }
+        { label: 'Wer wir sind', href: '/wer-wir-sind' },
+        { label: 'Stadtrat', href: '/stadtrat' },
+        { label: 'Vorstand', href: '/vorstand' },
+        { label: 'Geschichte', href: '/geschichte' }
       ]
     },
   ];
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: 'smooth' });
+  const navigateToPage = (href: string) => {
+    if (href.startsWith('#')) {
+      const element = document.querySelector(href);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = href;
+    }
     setIsMenuOpen(false);
   };
 
@@ -78,9 +82,9 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <MegaMenu onNavigate={scrollToSection} />
+            <MegaMenu onNavigate={navigateToPage} />
             <div className="ml-6">
-              <MitmachenDropdown onNavigate={scrollToSection} />
+              <MitmachenDropdown onNavigate={navigateToPage} />
             </div>
           </nav>
 
@@ -109,7 +113,7 @@ const Header = () => {
                         {section.items.map((item) => (
                           <button
                             key={item.label}
-                            onClick={() => scrollToSection(item.href)}
+                            onClick={() => navigateToPage(item.href)}
                             className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-accent/50 rounded-lg transition-colors"
                           >
                             {item.label}
@@ -123,19 +127,19 @@ const Header = () => {
               <div className="px-6 pt-6 space-y-3">
                 <div className="font-semibold text-foreground mb-3 text-base">Mitmachen</div>
                 <button
-                  onClick={() => scrollToSection('#contact')}
+                  onClick={() => navigateToPage('/kontakt')}
                   className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-accent/50 rounded-lg transition-colors"
                 >
                   Kontakt
                 </button>
                 <button
-                  onClick={() => scrollToSection('#membership')}
+                  onClick={() => navigateToPage('/mitglied-werden')}
                   className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-accent/50 rounded-lg transition-colors"
                 >
                   Mitglied werden
                 </button>
                 <button
-                  onClick={() => scrollToSection('#donations')}
+                  onClick={() => navigateToPage('/spenden')}
                   className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-accent/50 rounded-lg transition-colors"
                 >
                   Spenden
