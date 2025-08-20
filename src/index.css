@@ -58,14 +58,15 @@
     --radius: 0.75rem;
     
     /* Design System Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--svp-orange)), hsl(var(--svp-orange-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--svp-green)), hsl(var(--svp-green-light)));
     --gradient-section: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
     --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--accent)));
+    --gradient-footer: linear-gradient(135deg, hsl(var(--svp-green-dark)), hsl(var(--svp-green)));
     
     /* Shadows */
     --shadow-soft: 0 2px 10px hsl(var(--foreground) / 0.1);
     --shadow-medium: 0 4px 20px hsl(var(--foreground) / 0.15);
-    --shadow-strong: 0 10px 40px hsl(var(--svp-orange) / 0.2);
+    --shadow-strong: 0 10px 40px hsl(var(--svp-green) / 0.2);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -144,12 +145,12 @@
 @layer components {
   /* Political Button Variants */
   .btn-hero {
-    @apply bg-gradient-to-r from-[hsl(var(--svp-orange))] to-[hsl(var(--svp-orange-light))] 
+    @apply bg-gradient-to-r from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] 
            text-white font-semibold px-8 py-4 rounded-lg 
            shadow-[var(--shadow-strong)] 
-           hover:scale-105 hover:shadow-[var(--shadow-strong)] 
+           hover:scale-105 hover:shadow-[var(--shadow-strong)] hover:from-[hsl(var(--svp-orange))] hover:to-[hsl(var(--svp-orange-light))]
            transition-[var(--transition-bounce)] 
-           focus:ring-4 focus:ring-[hsl(var(--svp-orange)_/_0.3)];
+           focus:ring-4 focus:ring-[hsl(var(--svp-green)_/_0.3)];
   }
   
   .btn-secondary {
@@ -200,5 +201,9 @@
   
   .gradient-section {
     background: var(--gradient-section);
+  }
+  
+  .gradient-footer {
+    background: var(--gradient-footer);
   }
 }

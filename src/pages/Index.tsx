@@ -62,20 +62,22 @@ const Index = () => {
         <ContactSection />
       </main>
       
-      <footer className="bg-secondary text-secondary-foreground section-padding">
+      <footer className="gradient-footer text-white section-padding">
         <div className="container-max">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-svp-orange to-svp-orange-light rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold">SVP</span>
-                </div>
+                <img 
+                  src="/lovable-uploads/1cca20d4-8141-4133-9164-d369442d3687.png" 
+                  alt="SVP Stadt Zug Logo" 
+                  className="h-10 w-auto"
+                />
                 <div>
                   <div className="font-bold text-lg">SVP Stadt Zug</div>
                   <div className="text-sm opacity-80">Mir liefered</div>
                 </div>
               </div>
-              <p className="text-secondary-foreground/80 mb-4 max-w-md">
+              <p className="text-white/80 mb-4 max-w-md">
                 Für eine sichere, freie und lebenswerte Stadt Zug. 
                 Direkt, bürgernah und lösungsorientiert.
               </p>
@@ -101,18 +103,18 @@ const Index = () => {
             </div>
           </div>
           
-          <div className="border-t border-secondary-foreground/20 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-secondary-foreground/60">
+          <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-sm text-white/60">
               © 2025 SVP Stadt Zug. Alle Rechte vorbehalten.
             </p>
             <div className="flex space-x-4 mt-4 md:mt-0">
-              <a href="#" className="text-secondary-foreground/60 hover:text-svp-orange transition-colors">
+              <a href="#" className="text-white/60 hover:text-svp-orange transition-colors">
                 Facebook
               </a>
-              <a href="#" className="text-secondary-foreground/60 hover:text-svp-orange transition-colors">
+              <a href="#" className="text-white/60 hover:text-svp-orange transition-colors">
                 Twitter
               </a>
-              <a href="#" className="text-secondary-foreground/60 hover:text-svp-orange transition-colors">
+              <a href="#" className="text-white/60 hover:text-svp-orange transition-colors">
                 LinkedIn
               </a>
             </div>
