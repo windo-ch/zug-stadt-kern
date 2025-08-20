@@ -28,7 +28,7 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
               <div className="row-span-3">
                 <NavigationMenuLink asChild>
                   <Link
-                    to="/#values"
+                    to="/wofuer-wir-stehen"
                     className="flex h-full w-full select-none flex-col justify-end rounded-xl bg-gradient-to-br from-svp-green to-svp-green-light p-8 no-underline outline-none focus:shadow-lg hover:shadow-lg text-left transition-all duration-200 hover:scale-[1.02]"
                   >
                     <Heart className="h-8 w-8 text-white mb-3" />
@@ -76,7 +76,7 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
               <div className="row-span-3">
                 <NavigationMenuLink asChild>
                   <Link
-                    to="/#news"
+                    to="/was-ansteht"
                     className="flex h-full w-full select-none flex-col justify-end rounded-xl bg-gradient-to-br from-svp-green to-svp-green-light p-8 no-underline outline-none focus:shadow-lg hover:shadow-lg text-left transition-all duration-200 hover:scale-[1.02]"
                   >
                     <Calendar className="h-8 w-8 text-white mb-3" />
@@ -139,24 +139,24 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
               </div>
               <ListItem
                 title="Stadtrat"
-                href="/wer-wir-sind#council"
+                href="/stadtrat"
                 icon={<Users className="h-5 w-5" />}
               >
                 Unsere Vertreter im Zuger Stadtrat
               </ListItem>
               <ListItem
                 title="Vorstand"
-                href="/wer-wir-sind#board"
+                href="/vorstand"
                 icon={<Users className="h-5 w-5" />}
               >
                 Der Vorstand der SVP Stadt Zug
               </ListItem>
               <ListItem
                 title="Geschichte"
-                href="/wer-wir-sind#history"
+                href="/geschichte"
                 icon={<Info className="h-5 w-5" />}
               >
-                33 Jahre für Zug im Einsatz
+                50+ Jahre für Zug im Einsatz
               </ListItem>
             </div>
           </NavigationMenuContent>

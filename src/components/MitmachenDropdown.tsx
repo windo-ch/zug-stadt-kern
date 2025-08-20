@@ -21,7 +21,7 @@ const MitmachenDropdown = ({ onNavigate }: MitmachenDropdownProps) => {
       <DropdownMenuContent className="w-64 bg-background/98 backdrop-blur-md border border-border shadow-xl z-50" align="end">
         <DropdownMenuItem asChild>
           <Link 
-            to="/#contact"
+            to="/kontakt"
             className="flex items-center gap-3 cursor-pointer p-4 rounded-lg hover:bg-accent/50 transition-all duration-200"
           >
             <MessageSquare className="h-5 w-5 text-primary" />
