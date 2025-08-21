@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Heart, Euro, Users, Target, Shield, CheckCircle, CreditCard, Smartphone, Building2 } from 'lucide-react';
+import { Heart, Banknote, Users, Target, Shield, CheckCircle, CreditCard, Smartphone, Building2 } from 'lucide-react';
 
 const Spenden = () => {
   const [selectedAmount, setSelectedAmount] = useState<string>('');
@@ -339,7 +339,7 @@ const Spenden = () => {
               </div>
               
               <div className="card-overview">
-                <Euro className="h-12 w-12 text-primary mb-4" />
+                <Banknote className="h-12 w-12 text-primary mb-4" />
                 <h3 className="text-xl font-bold text-foreground mb-4">
                   Einzahlungsschein
                 </h3>
