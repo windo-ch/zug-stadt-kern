@@ -1,5 +1,6 @@
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const NewsSection = () => {
   const newsItems = [
@@ -83,10 +84,12 @@ const NewsSection = () => {
         </div>
 
         <div className="text-center">
-          <Button className="btn-outline">
-            Alle Meldungen anzeigen
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+          <Link to="/was-ansteht">
+            <Button className="btn-outline">
+              Alle Meldungen anzeigen
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
