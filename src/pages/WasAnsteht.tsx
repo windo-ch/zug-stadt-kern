@@ -78,19 +78,19 @@ const WasAnsteht = () => {
 
   const recentPoliticalWork = [
     {
-      title: "Grenzschutz-Initiative",
-      status: "Sammlung",
-      description: "Volksinitiative «Asylmissbrauch stoppen!» - Unterschriften sammeln bis 29. August"
+      title: "Motion: Jahres-Parkkarte 50% günstiger",
+      status: "zur Überw.",
+      description: "SVP-Motion für günstigere Parkkarten eingereicht"
     },
     {
-      title: "Kompass Europa Initiative",
-      status: "Aktiv", 
-      description: "Initiative für eine souveräne Schweiz in Europa"
+      title: "Interpellation: Kulturhauptstadt 2030",
+      status: "2948 SR", 
+      description: "Gemeinsame Anfrage zur Bewerbung als Kulturhauptstadt"
     },
     {
-      title: "Kantonsratssitzungen",
-      status: "Laufend",
-      description: "Regelmäßige Teilnahme an Kantonsratssitzungen und Fraktionsarbeit"
+      title: "Postulat: Stadt Zuger Honig",
+      status: "Überw.",
+      description: "Initiative für nachhaltige Honigproduktion gestartet"
     }
   ];
 
