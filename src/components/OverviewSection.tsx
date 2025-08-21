@@ -1,4 +1,4 @@
-import { ArrowRight, Users, FileText, Calendar, Target, Clock } from 'lucide-react';
+import { ArrowRight, Users, FileText, Calendar, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const OverviewSection = () => {
@@ -9,13 +9,6 @@ const OverviewSection = () => {
       description: "Konkrete Lösungen für Sicherheit, Wirtschaft, Familie und Bildung",
       link: "/themen",
       color: "from-blue-500 to-blue-600"
-    },
-    {
-      icon: <Clock className="h-8 w-8" />,
-      title: "Was ansteht",
-      description: "Aktuelle Termine, Veranstaltungen und politische Arbeit",
-      link: "/was-ansteht",
-      color: "from-red-500 to-red-600"
     },
     {
       icon: <Calendar className="h-8 w-8" />,
@@ -53,7 +46,7 @@ const OverviewSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {sections.map((section, index) => (
             <Link 
               key={index} 
