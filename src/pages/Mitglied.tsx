@@ -114,26 +114,45 @@ const Mitglied = () => {
       
       <main>
         {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-br from-svp-green to-svp-green-light text-white">
-          <div className="container-max">
-            <div className="max-w-4xl mx-auto text-center">
-              <Users className="h-16 w-16 mx-auto mb-6 opacity-90" />
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
+        <section className="relative section-padding overflow-hidden">
+          {/* Background with animated gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-svp-green via-svp-green-light to-blue-500">
+            <div className="absolute inset-0 bg-gradient-to-r from-background/10 via-transparent to-background/20"></div>
+            {/* Animated background elements */}
+            <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-1/3 left-1/3 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1.5s'}}></div>
+          </div>
+          
+          <div className="relative z-10 container-max">
+            <div className="max-w-4xl mx-auto text-center text-white">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full mb-8 hover:bg-white/30 transition-all duration-300 hover:scale-110">
+                <Users className="h-10 w-10" />
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
                 Mitglied werden
               </h1>
-              <p className="text-xl md:text-2xl opacity-90 leading-relaxed">
+              <p className="text-xl md:text-2xl leading-relaxed mb-8 max-w-3xl mx-auto">
                 Gestalten Sie die Zukunft von Zug aktiv mit. Werden Sie Teil unserer 
                 politischen Gemeinschaft und setzen Sie sich für unsere gemeinsamen Werte ein.
               </p>
+              <div className="flex items-center justify-center gap-2 text-white/80">
+                <div className="w-12 h-px bg-white/40"></div>
+                <span className="text-sm uppercase tracking-wider">Gemeinsam stark</span>
+                <div className="w-12 h-px bg-white/40"></div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Why Join */}
-        <section className="section-padding bg-background">
+        <section className="section-padding bg-gradient-to-b from-background via-muted/20 to-background">
           <div className="container-max">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-foreground mb-6">
+              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                <CheckCircle className="h-4 w-4" />
+                Ihre Vorteile
+              </div>
+              <h2 className="text-4xl font-bold text-foreground mb-6">
                 Warum SVP Stadt Zug?
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -143,16 +162,19 @@ const Mitglied = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               {reasons.map((reason, index) => (
-                <div key={index} className="card-overview text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-svp-green to-svp-green-light rounded-2xl flex items-center justify-center text-white mx-auto mb-6">
-                    {reason.icon}
+                <div key={index} className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative card-overview text-center hover:shadow-xl hover:scale-105 transition-all duration-300">
+                    <div className="w-16 h-16 bg-gradient-to-br from-svp-green to-svp-green-light rounded-2xl flex items-center justify-center text-white mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                      {reason.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
+                      {reason.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
+                      {reason.description}
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-4">
-                    {reason.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {reason.description}
-                  </p>
                 </div>
               ))}
             </div>
@@ -160,10 +182,18 @@ const Mitglied = () => {
         </section>
 
         {/* Membership Types */}
-        <section className="section-padding bg-muted/20">
-          <div className="container-max">
+        <section className="section-padding relative overflow-hidden">
+          {/* Background decoration */}
+          <div className="absolute inset-0 bg-gradient-to-br from-muted/40 via-background to-muted/20"></div>
+          <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-primary/5 to-transparent"></div>
+          
+          <div className="relative container-max">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-foreground mb-6">
+              <div className="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                <Users className="h-4 w-4" />
+                Mitgliedschaftsoptionen
+              </div>
+              <h2 className="text-4xl font-bold text-foreground mb-6">
                 Wählen Sie Ihre Mitgliedschaft
               </h2>
               <p className="text-lg text-muted-foreground">
@@ -175,48 +205,78 @@ const Mitglied = () => {
               {membershipTypes.map((type, index) => (
                 <div 
                   key={index} 
-                  className={`card-initiative cursor-pointer transition-all duration-300 ${
-                    selectedMembership === type.id ? 'ring-2 ring-primary shadow-xl' : ''
-                  } ${type.recommended ? 'border-primary border-2' : ''}`}
+                  className={`group relative cursor-pointer transition-all duration-500 hover:scale-105 ${
+                    selectedMembership === type.id ? 'scale-105' : ''
+                  }`}
                   onClick={() => setSelectedMembership(type.id)}
                 >
-                  {type.recommended && (
-                    <div className="bg-primary text-white text-sm font-semibold px-4 py-2 rounded-t-xl -m-6 mb-4">
-                      Empfohlen
-                    </div>
+                  {/* Glow effect for selected */}
+                  {selectedMembership === type.id && (
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl blur-xl -z-10"></div>
                   )}
                   
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-foreground mb-2">
-                      {type.title}
-                    </h3>
-                    <div className="flex items-baseline justify-center gap-2 mb-3">
-                      <span className="text-3xl font-bold text-primary">CHF {type.price}</span>
-                      <span className="text-muted-foreground text-sm">{type.period}</span>
-                    </div>
-                    <p className="text-muted-foreground">
-                      {type.description}
-                    </p>
-                  </div>
-                  
-                  <div className="space-y-3 mb-6">
-                    {type.benefits.map((benefit, benefitIndex) => (
-                      <div key={benefitIndex} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-muted-foreground text-sm">
-                          {benefit}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <button className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 ${
+                  <div className={`relative backdrop-blur-sm bg-white/80 dark:bg-card/80 rounded-2xl border-2 p-8 transition-all duration-500 hover:shadow-2xl ${
                     selectedMembership === type.id 
-                      ? 'bg-primary text-white' 
-                      : 'border-2 border-primary text-primary hover:bg-primary hover:text-white'
+                      ? 'border-primary shadow-2xl bg-gradient-to-br from-primary/5 to-secondary/5' 
+                      : type.recommended 
+                        ? 'border-primary/50 shadow-lg hover:border-primary' 
+                        : 'border-border hover:border-primary/50'
                   }`}>
-                    {selectedMembership === type.id ? 'Ausgewählt' : 'Auswählen'}
-                  </button>
+                    
+                    {type.recommended && (
+                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <div className="bg-gradient-to-r from-primary to-secondary text-white text-sm font-semibold px-6 py-2 rounded-full shadow-lg">
+                          ⭐ Empfohlen
+                        </div>
+                      </div>
+                    )}
+                    
+                    <div className="text-center mb-8">
+                      <h3 className="text-2xl font-bold text-foreground mb-4">
+                        {type.title}
+                      </h3>
+                      <div className="flex items-baseline justify-center gap-2 mb-4">
+                        <span className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                          CHF {type.price}
+                        </span>
+                        <span className="text-muted-foreground text-sm">{type.period}</span>
+                      </div>
+                      <p className="text-muted-foreground">
+                        {type.description}
+                      </p>
+                    </div>
+                    
+                    <div className="space-y-4 mb-8">
+                      {type.benefits.map((benefit, benefitIndex) => (
+                        <div key={benefitIndex} className="flex items-start gap-3 group-hover:translate-x-1 transition-transform duration-200" style={{transitionDelay: `${benefitIndex * 50}ms`}}>
+                          <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mt-0.5">
+                            <CheckCircle className="h-4 w-4 text-white" />
+                          </div>
+                          <span className="text-muted-foreground text-sm leading-relaxed group-hover:text-foreground transition-colors">
+                            {benefit}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <button className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 ${
+                      selectedMembership === type.id 
+                        ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-lg' 
+                        : 'border-2 border-primary text-primary hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:text-white hover:border-transparent'
+                    }`}>
+                      {selectedMembership === type.id ? (
+                        <span className="flex items-center justify-center gap-2">
+                          <CheckCircle className="h-5 w-5" />
+                          Ausgewählt
+                        </span>
+                      ) : (
+                        <span className="flex items-center justify-center gap-2">
+                          <ArrowRight className="h-5 w-5" />
+                          Auswählen
+                        </span>
+                      )}
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>

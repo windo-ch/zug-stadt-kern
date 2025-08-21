@@ -89,26 +89,45 @@ const Spenden = () => {
       
       <main>
         {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-br from-svp-green to-svp-green-light text-white">
-          <div className="container-max">
-            <div className="max-w-4xl mx-auto text-center">
-              <Heart className="h-16 w-16 mx-auto mb-6 opacity-90" />
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
+        <section className="relative section-padding overflow-hidden">
+          {/* Background with animated gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-svp-green via-svp-green-light to-emerald-400">
+            <div className="absolute inset-0 bg-gradient-to-r from-background/10 via-transparent to-background/20"></div>
+            {/* Animated background elements */}
+            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+          </div>
+          
+          <div className="relative z-10 container-max">
+            <div className="max-w-4xl mx-auto text-center text-white">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full mb-8 hover:bg-white/30 transition-all duration-300 hover:scale-110">
+                <Heart className="h-10 w-10" />
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
                 Spenden
               </h1>
-              <p className="text-xl md:text-2xl opacity-90 leading-relaxed">
+              <p className="text-xl md:text-2xl leading-relaxed mb-8 max-w-3xl mx-auto">
                 Unterstützen Sie unsere politische Arbeit für eine bessere Stadt Zug. 
                 Jeder Franken hilft uns, unsere Werte zu vertreten und Projekte umzusetzen.
               </p>
+              <div className="flex items-center justify-center gap-2 text-white/80">
+                <div className="w-12 h-px bg-white/40"></div>
+                <span className="text-sm uppercase tracking-wider">Gemeinsam für Zug</span>
+                <div className="w-12 h-px bg-white/40"></div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Impact Areas */}
-        <section className="section-padding bg-background">
+        <section className="section-padding bg-gradient-to-b from-background via-muted/20 to-background">
           <div className="container-max">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-foreground mb-6">
+              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                <Target className="h-4 w-4" />
+                Transparente Verwendung
+              </div>
+              <h2 className="text-4xl font-bold text-foreground mb-6">
                 Wofür wir Ihre Spende einsetzen
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -118,23 +137,26 @@ const Spenden = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               {impactAreas.map((area, index) => (
-                <div key={index} className="card-overview">
-                  <div className="w-16 h-16 bg-gradient-to-br from-svp-green to-svp-green-light rounded-2xl flex items-center justify-center text-white mb-6">
-                    {area.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-4">
-                    {area.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    {area.description}
-                  </p>
-                  <div className="space-y-2">
-                    {area.examples.map((example, exampleIndex) => (
-                      <div key={exampleIndex} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0" />
-                        {example}
-                      </div>
-                    ))}
+                <div key={index} className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative card-overview hover:shadow-xl hover:scale-105 transition-all duration-300">
+                    <div className="w-16 h-16 bg-gradient-to-br from-svp-green to-svp-green-light rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
+                      {area.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
+                      {area.title}
+                    </h3>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                      {area.description}
+                    </p>
+                    <div className="space-y-3">
+                      {area.examples.map((example, exampleIndex) => (
+                        <div key={exampleIndex} className="flex items-center gap-3 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                          <div className="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full flex-shrink-0"></div>
+                          {example}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -143,47 +165,73 @@ const Spenden = () => {
         </section>
 
         {/* Donation Form */}
-        <section className="section-padding bg-muted/20">
-          <div className="container-max">
-            <div className="max-w-3xl mx-auto">
-              <div className="card-initiative">
-                <div className="text-center mb-8">
-                  <h2 className="text-3xl font-bold text-foreground mb-4">
+        <section className="section-padding relative overflow-hidden">
+          {/* Background decoration */}
+          <div className="absolute inset-0 bg-gradient-to-br from-muted/40 via-background to-muted/20"></div>
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent"></div>
+          
+          <div className="relative container-max">
+            <div className="max-w-4xl mx-auto">
+              <div className="backdrop-blur-sm bg-white/80 dark:bg-card/80 rounded-2xl shadow-2xl border border-white/20 p-8 lg:p-12">
+                <div className="text-center mb-12">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full mb-6">
+                    <Heart className="h-8 w-8 text-white" />
+                  </div>
+                  <h2 className="text-4xl font-bold text-foreground mb-4">
                     Jetzt spenden
                   </h2>
-                  <p className="text-muted-foreground">
-                    Wählen Sie Ihren Spendenbetrag und unterstützen Sie unsere Arbeit
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Wählen Sie Ihren Spendenbetrag und unterstützen Sie unsere Arbeit für eine bessere Stadt Zug
                   </p>
                 </div>
 
                 {/* Donation Type */}
-                <div className="mb-8">
-                  <h3 className="text-lg font-semibold text-foreground mb-4">Spendenart</h3>
+                <div className="mb-10">
+                  <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
+                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                      <span className="text-primary font-bold text-sm">1</span>
+                    </div>
+                    Spendenart wählen
+                  </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <button
                       onClick={() => setDonationType('single')}
-                      className={`p-4 rounded-lg border-2 text-left transition-all duration-300 ${
+                      className={`group p-6 rounded-xl border-2 text-left transition-all duration-500 hover:shadow-lg hover:scale-[1.02] ${
                         donationType === 'single'
-                          ? 'border-primary bg-primary/5 text-primary'
-                          : 'border-border hover:border-primary/50'
+                          ? 'border-primary bg-gradient-to-br from-primary/10 to-primary/5 text-primary shadow-lg scale-[1.02]'
+                          : 'border-border hover:border-primary/50 hover:bg-muted/50'
                       }`}
                     >
-                      <div className="font-semibold mb-1">Einmalige Spende</div>
-                      <div className="text-sm text-muted-foreground">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className={`w-4 h-4 rounded-full border-2 transition-colors ${
+                          donationType === 'single' ? 'border-primary bg-primary' : 'border-muted-foreground'
+                        }`}>
+                          {donationType === 'single' && <div className="w-full h-full rounded-full bg-white scale-50"></div>}
+                        </div>
+                        <div className="font-semibold">Einmalige Spende</div>
+                      </div>
+                      <div className="text-sm text-muted-foreground ml-7">
                         Unterstützen Sie uns mit einer einmaligen Spende
                       </div>
                     </button>
                     
                     <button
                       onClick={() => setDonationType('monthly')}
-                      className={`p-4 rounded-lg border-2 text-left transition-all duration-300 ${
+                      className={`group p-6 rounded-xl border-2 text-left transition-all duration-500 hover:shadow-lg hover:scale-[1.02] ${
                         donationType === 'monthly'
-                          ? 'border-primary bg-primary/5 text-primary'
-                          : 'border-border hover:border-primary/50'
+                          ? 'border-primary bg-gradient-to-br from-primary/10 to-primary/5 text-primary shadow-lg scale-[1.02]'
+                          : 'border-border hover:border-primary/50 hover:bg-muted/50'
                       }`}
                     >
-                      <div className="font-semibold mb-1">Monatliche Spende</div>
-                      <div className="text-sm text-muted-foreground">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className={`w-4 h-4 rounded-full border-2 transition-colors ${
+                          donationType === 'monthly' ? 'border-primary bg-primary' : 'border-muted-foreground'
+                        }`}>
+                          {donationType === 'monthly' && <div className="w-full h-full rounded-full bg-white scale-50"></div>}
+                        </div>
+                        <div className="font-semibold">Monatliche Spende</div>
+                      </div>
+                      <div className="text-sm text-muted-foreground ml-7">
                         Unterstützen Sie uns regelmässig jeden Monat
                       </div>
                     </button>
@@ -191,40 +239,46 @@ const Spenden = () => {
                 </div>
 
                 {/* Amount Selection */}
-                <div className="mb-8">
-                  <h3 className="text-lg font-semibold text-foreground mb-4">
+                <div className="mb-10">
+                  <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
+                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                      <span className="text-primary font-bold text-sm">2</span>
+                    </div>
                     Spendenbetrag {donationType === 'monthly' && '(monatlich)'}
                   </h3>
                   
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
                     {predefinedAmounts.map((amount) => (
                       <button
                         key={amount}
                         onClick={() => handleAmountSelect(amount)}
-                        className={`p-4 rounded-lg border-2 font-semibold transition-all duration-300 ${
+                        className={`group p-4 rounded-xl border-2 font-semibold transition-all duration-300 hover:shadow-md hover:scale-105 ${
                           selectedAmount === amount
-                            ? 'border-primary bg-primary text-white'
+                            ? 'border-primary bg-gradient-to-br from-primary to-primary/80 text-white shadow-lg scale-105'
                             : 'border-border hover:border-primary hover:bg-primary/5'
                         }`}
                       >
-                        CHF {amount}
+                        <div className="text-lg">CHF {amount}</div>
+                        {selectedAmount === amount && (
+                          <div className="text-xs opacity-90 mt-1">Ausgewählt</div>
+                        )}
                       </button>
                     ))}
                   </div>
                   
-                  <div className="flex items-center gap-4">
-                    <label className="text-sm font-semibold text-foreground">
+                  <div className="flex items-center gap-4 p-4 bg-muted/50 rounded-xl">
+                    <label className="text-sm font-semibold text-foreground whitespace-nowrap">
                       Anderer Betrag:
                     </label>
-                    <div className="flex items-center gap-2">
-                      <span className="text-muted-foreground">CHF</span>
+                    <div className="flex items-center gap-2 flex-1">
+                      <span className="text-muted-foreground font-semibold">CHF</span>
                       <input
                         type="number"
                         min="1"
                         value={customAmount}
                         onChange={(e) => handleCustomAmountChange(e.target.value)}
                         placeholder="0"
-                        className="w-32 px-3 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                        className="flex-1 px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 font-semibold"
                       />
                     </div>
                   </div>
