@@ -162,22 +162,34 @@ const Themen = () => {
 
   const upcomingInitiatives = [
     {
-      title: "Digitalisierung der Stadtverwaltung",
-      description: "Vollständige Online-Verfügbarkeit aller Verwaltungsdienstleistungen bis 2025",
-      timeline: "2024-2025",
-      status: "In Planung"
+      title: "Initiative gegen unnötige Verkehrshindernisse",
+      description: "Überprüfung und Abbau verkehrshemmender Massnahmen in der Innenstadt für besseren Wirtschaftsverkehr",
+      timeline: "2025",
+      status: "Vorbereitung"
     },
     {
-      title: "Verkehrskonzept Innenstadt",
-      description: "Ausgewogene Lösung für Verkehrsfluss, Parkplätze und Fussgängerzonen",
-      timeline: "2024",
-      status: "Vernehmlassung"
+      title: "Sicherheitspaket Zug",
+      description: "Verstärkung der Polizeipräsenz und Installation zusätzlicher Videoüberwachung in Problemzonen",
+      timeline: "2025-2026",
+      status: "Budgetierung"
     },
     {
-      title: "Schulraum-Strategie 2030",
-      description: "Bedarfsgerechter Ausbau und Modernisierung der Bildungsinfrastruktur",
-      timeline: "2024-2030",
+      title: "Bürokratie-Abbau in der Verwaltung",
+      description: "Vereinfachung von Bewilligungsverfahren für Gewerbe und Bau zur Stärkung des Wirtschaftsstandorts",
+      timeline: "2025",
+      status: "Parlamentsvorlage"
+    },
+    {
+      title: "Schutz vor Überfremdung der Quartiere",
+      description: "Massnahmen zur ausgewogenen Entwicklung der Wohnquartiere und Erhalt des Zuger Charakters",
+      timeline: "2025-2026",
       status: "Konzeptphase"
+    },
+    {
+      title: "Kostentransparenz bei öffentlichen Projekten",
+      description: "Einführung verbindlicher Kostendächer und bessere Kontrolle bei Grossinvestitionen der Stadt",
+      timeline: "2025",
+      status: "Prüfung"
     }
   ];
 
