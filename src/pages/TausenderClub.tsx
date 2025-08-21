@@ -68,21 +68,33 @@ const TausenderClub = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
-            <Card className="card-elevated border-2 border-primary/20">
-              <CardContent className="p-8 text-center">
-                
-                <h3 className="text-2xl font-bold mb-4">Senatoren</h3>
-                <p className="text-3xl font-bold text-primary mb-4">ab CHF 5'000.-</p>
-                <p className="text-muted-foreground">pro Jahr</p>
+            <Card className="card-elevated border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 group hover:shadow-xl hover:shadow-primary/10">
+              <CardContent className="p-8 text-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <Crown className="h-16 w-16 text-primary mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-2xl font-bold mb-4 relative z-10">Senatoren</h3>
+                <p className="text-3xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent mb-4 relative z-10">ab CHF 5'000.-</p>
+                <p className="text-muted-foreground relative z-10">pro Jahr</p>
+                <div className="flex justify-center mt-4 relative z-10">
+                  {[...Array(5)].map((_, i) => (
+                    <Sparkles key={i} className="h-4 w-4 text-yellow-400 mx-0.5" />
+                  ))}
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="card-elevated">
-              <CardContent className="p-8 text-center">
-                <Award className="h-16 w-16 text-primary mx-auto mb-6" />
-                <h3 className="text-2xl font-bold mb-4">Donatoren</h3>
-                <p className="text-3xl font-bold text-primary mb-4">ab CHF 1'000.-</p>
-                <p className="text-muted-foreground">pro Jahr</p>
+            <Card className="card-elevated hover:border-primary/30 transition-all duration-300 group hover:shadow-xl hover:shadow-primary/10">
+              <CardContent className="p-8 text-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <Award className="h-16 w-16 text-primary mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-2xl font-bold mb-4 relative z-10">Donatoren</h3>
+                <p className="text-3xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent mb-4 relative z-10">ab CHF 1'000.-</p>
+                <p className="text-muted-foreground relative z-10">pro Jahr</p>
+                <div className="flex justify-center mt-4 relative z-10">
+                  {[...Array(3)].map((_, i) => (
+                    <Sparkles key={i} className="h-4 w-4 text-yellow-400 mx-0.5" />
+                  ))}
+                </div>
               </CardContent>
             </Card>
           </div>
