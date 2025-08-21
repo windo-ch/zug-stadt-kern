@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, MessageCircle, Calendar } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Kontakt = () => {
@@ -62,34 +62,26 @@ const Kontakt = () => {
     }
   ];
 
-  const keyContacts = [
+  const keyFeatures = [
     {
-      name: "Peter Kaufmann",
-      role: "Präsident",
-      phone: "+41 79 123 45 67",
-      email: "peter.kaufmann@svp-zug.ch",
-      specialty: "Strategische Fragen, Medienanfragen"
+      title: "Schnelle Antwort",
+      description: "Wir antworten innerhalb von 24 Stunden auf Ihre Anfragen",
+      icon: "⚡"
     },
     {
-      name: "Dr. Andrea Müller",
-      role: "Stadträtin - Soziales & Sicherheit",
-      phone: "+41 41 728 21 11",
-      email: "andrea.mueller@stadtzug.ch",
-      specialty: "Sicherheit, Sozialpolitik"
+      title: "Direkte Kontakte",
+      description: "Sprechen Sie direkt mit unseren Vorstandsmitgliedern und Parlamentariern",
+      icon: "👥"
     },
     {
-      name: "Thomas Bachmann",
-      role: "Stadtrat - Planung & Infrastruktur",
-      phone: "+41 41 728 21 12",
-      email: "thomas.bachmann@stadtzug.ch",
-      specialty: "Stadtentwicklung, Verkehr"
+      title: "Bürgersprechstunden",
+      description: "Regelmässige persönliche Gesprächsmöglichkeiten vor Ort",
+      icon: "🗣️"
     },
     {
-      name: "Maria Zimmermann",
-      role: "Sekretärin",
-      phone: "+41 79 456 78 90",
-      email: "maria.zimmermann@svp-zug.ch",
-      specialty: "Allgemeine Anfragen, Termine"
+      title: "Online & Offline",
+      description: "Kontakt über verschiedene Kanäle - wie es für Sie am besten passt",
+      icon: "💬"
     }
   ];
 
@@ -172,37 +164,37 @@ const Kontakt = () => {
               </div>
             </section>
 
-            {/* Key Contacts */}
+            {/* Key Features */}
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-6">Direkte Ansprechpartner</h2>
-              <div className="space-y-4">
-                {keyContacts.map((contact, index) => (
-                  <Card key={index}>
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-lg">{contact.name}</CardTitle>
-                      <CardDescription>{contact.role}</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="space-y-2 text-sm">
-                        <div className="flex items-center">
-                          <Phone className="w-4 h-4 mr-2" />
-                          <a href={`tel:${contact.phone}`} className="hover:text-primary transition-colors">
-                            {contact.phone}
-                          </a>
+              <h2 className="text-2xl font-bold text-foreground mb-6">Warum uns kontaktieren?</h2>
+              <div className="grid gap-4">
+                {keyFeatures.map((feature, index) => (
+                  <Card key={index} className="hover:shadow-md transition-shadow">
+                    <CardContent className="p-4">
+                      <div className="flex items-start space-x-3">
+                        <div className="text-2xl flex-shrink-0">
+                          {feature.icon}
                         </div>
-                        <div className="flex items-center">
-                          <Mail className="w-4 h-4 mr-2" />
-                          <a href={`mailto:${contact.email}`} className="hover:text-primary transition-colors">
-                            {contact.email}
-                          </a>
+                        <div>
+                          <h3 className="font-semibold text-foreground mb-1">{feature.title}</h3>
+                          <p className="text-sm text-muted-foreground">{feature.description}</p>
                         </div>
-                        <p className="text-muted-foreground mt-2">
-                          <strong>Schwerpunkt:</strong> {contact.specialty}
-                        </p>
                       </div>
                     </CardContent>
                   </Card>
                 ))}
+              </div>
+              
+              <div className="mt-6 p-4 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg">
+                <h3 className="font-semibold text-foreground mb-2">Unsere Ansprechpartner finden Sie hier:</h3>
+                <div className="flex flex-col sm:flex-row gap-2 text-sm">
+                  <a href="/vorstand" className="text-primary hover:text-primary/80 transition-colors font-medium">
+                    → Vorstand & Führung
+                  </a>
+                  <a href="/stadtrat" className="text-primary hover:text-primary/80 transition-colors font-medium">
+                    → Parlamentarier & Stadträte
+                  </a>
+                </div>
               </div>
             </section>
           </div>
@@ -313,28 +305,56 @@ const Kontakt = () => {
 
         {/* Additional Information */}
         <section className="mt-16">
-          <div className="bg-primary/5 rounded-lg p-8">
-            <h2 className="text-2xl font-bold text-foreground mb-4 text-center">
+          <div className="bg-gradient-to-r from-primary/5 via-background to-secondary/5 rounded-2xl p-8 border border-border/50">
+            <h2 className="text-2xl font-bold text-foreground mb-6 text-center">
               Weitere Möglichkeiten der Kontaktaufnahme
             </h2>
-            <div className="grid md:grid-cols-3 gap-6 text-center">
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">Bürgersprechstunden</h3>
-                <p className="text-sm text-muted-foreground">
-                  Jeden ersten Samstag im Monat von 10:00-12:00 Uhr im Parteisekretariat
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">Mitgliederversammlungen</h3>
-                <p className="text-sm text-muted-foreground">
-                  Monatliche Versammlungen - offen für alle interessierten Bürger
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">Social Media</h3>
-                <p className="text-sm text-muted-foreground">
-                  Folgen Sie uns für aktuelle Informationen und direkten Austausch
-                </p>
+            <div className="grid md:grid-cols-3 gap-8">
+              <Card className="text-center border-none shadow-none bg-transparent">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Calendar className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">Bürgersprechstunden</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Jeden ersten Samstag im Monat von 10:00-12:00 Uhr im Parteisekretariat
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="text-center border-none shadow-none bg-transparent">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <MessageCircle className="w-6 h-6 text-secondary" />
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">Mitgliederversammlungen</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Monatliche Versammlungen - offen für alle interessierten Bürger
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="text-center border-none shadow-none bg-transparent">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Send className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">Direkter Austausch</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Folgen Sie uns für aktuelle Informationen und direkten Austausch
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+            
+            <div className="mt-8 text-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button variant="outline" asChild>
+                  <a href="/veranstaltungen">Aktuelle Termine</a>
+                </Button>
+                <Button variant="outline" asChild>
+                  <a href="/newsletter">Newsletter abonnieren</a>
+                </Button>
               </div>
             </div>
           </div>
