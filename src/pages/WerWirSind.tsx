@@ -109,7 +109,7 @@ const WerWirSind = () => {
     },
     {
       icon: Award,
-      number: "50+",
+      number: "30+",
       label: "Jahre Erfahrung",
       description: "Bewährte Politik für Zug"
     },
@@ -158,7 +158,7 @@ const WerWirSind = () => {
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Die SVP Stadt Zug ist eine Volkspartei mit langer Tradition und klaren Werten. 
-            Wir setzen uns seit über 50 Jahren für eine bürgernahe Politik ein, die den Menschen 
+            Wir setzen uns seit über 30 Jahren für eine bürgernahe Politik ein, die den Menschen 
             in Zug dient und unsere Stadt lebenswert erhält.
           </p>
         </div>
