@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Phone, Mail, Calendar, Users, Target, Heart, MapPin, ExternalLink } from 'lucide-react';
-import { createObfuscatedMailto } from '@/lib/emailUtils';
+import ProtectedEmail from '@/components/ProtectedEmail';
 
 const Vorstand = () => {
   useEffect(() => {
@@ -192,12 +192,11 @@ const Vorstand = () => {
                   <div className="border-t pt-4">
                     <h4 className="font-semibold text-foreground mb-2">Kontakt</h4>
                     <div className="space-y-2 text-sm">
-                      <div className="flex items-center">
-                        <Mail className="w-4 h-4 mr-2" />
-                        <a href={createObfuscatedMailto(member.contact.email).href} className="hover:text-primary transition-colors">
-                          {createObfuscatedMailto(member.contact.email).display}
-                        </a>
-                      </div>
+                      <ProtectedEmail 
+                        user={member.contact.email.split('@')[0]} 
+                        domain={member.contact.email.split('@')[1]} 
+                        className="text-sm"
+                      />
                     </div>
                     
                     <div className="mt-4">

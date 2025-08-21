@@ -1,17 +1,24 @@
 /**
- * Obfuscates email addresses to prevent bot harvesting
- * Replaces @ with [at] and dots with [dot]
+ * Encodes email for bot protection while keeping it user-friendly
  */
-export const obfuscateEmail = (email: string): string => {
-  return email.replace('@', ' [at] ').replace(/\./g, ' [dot] ');
+export const encodeEmail = (email: string): string => {
+  return btoa(email); // Base64 encode
 };
 
 /**
- * Creates a mailto link with the original email while displaying obfuscated version
+ * Decodes email from base64
  */
-export const createObfuscatedMailto = (email: string): { href: string; display: string } => {
+export const decodeEmail = (encodedEmail: string): string => {
+  return atob(encodedEmail);
+};
+
+/**
+ * Creates an obfuscated email component that reveals on interaction
+ */
+export const createProtectedEmail = (email: string) => {
+  const encoded = encodeEmail(email);
   return {
-    href: `mailto:${email}`,
-    display: obfuscateEmail(email)
+    encoded,
+    original: email
   };
 };

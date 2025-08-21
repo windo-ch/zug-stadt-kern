@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Phone, Mail, MapPin, Calendar, Award } from 'lucide-react';
-import { createObfuscatedMailto } from '@/lib/emailUtils';
+import ProtectedEmail from '@/components/ProtectedEmail';
 
 const Stadtrat = () => {
   useEffect(() => {
@@ -164,12 +164,10 @@ const Stadtrat = () => {
                         {person.phone}
                       </a>
                     </div>
-                    <div className="flex items-center">
-                      <Mail className="w-4 h-4 mr-2 text-muted-foreground" />
-                      <a href={createObfuscatedMailto(person.email).href} className="text-primary hover:text-primary/80 transition-colors">
-                        {createObfuscatedMailto(person.email).display}
-                      </a>
-                    </div>
+                    <ProtectedEmail 
+                      user={person.email.split('@')[0]} 
+                      domain={person.email.split('@')[1]} 
+                    />
                   </div>
                 </CardContent>
               </Card>
@@ -215,12 +213,11 @@ const Stadtrat = () => {
                         {member.phone}
                       </a>
                     </div>
-                    <div className="flex items-center">
-                      <Mail className="w-4 h-4 mr-2 text-muted-foreground" />
-                      <a href={createObfuscatedMailto(member.email).href} className="text-primary hover:text-primary/80 transition-colors break-all">
-                        {createObfuscatedMailto(member.email).display}
-                      </a>
-                    </div>
+                    <ProtectedEmail 
+                      user={member.email.split('@')[0]} 
+                      domain={member.email.split('@')[1]} 
+                      className="break-all"
+                    />
                   </div>
                 </CardContent>
               </Card>
@@ -262,12 +259,11 @@ const Stadtrat = () => {
                           </a>
                         </div>
                       )}
-                      <div className="flex items-center">
-                        <Mail className="w-4 h-4 mr-2 text-muted-foreground flex-shrink-0" />
-                        <a href={createObfuscatedMailto(member.email).href} className="text-primary hover:text-primary/80 transition-colors text-sm break-all">
-                          {createObfuscatedMailto(member.email).display}
-                        </a>
-                      </div>
+                      <ProtectedEmail 
+                        user={member.email.split('@')[0]} 
+                        domain={member.email.split('@')[1]} 
+                        className="text-sm break-all"
+                      />
                     </div>
                   </CardContent>
                 </Card>
