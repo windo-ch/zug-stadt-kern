@@ -156,7 +156,7 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
                 href="/geschichte"
                 icon={<Info className="h-5 w-5" />}
               >
-                50+ Jahre für Zug im Einsatz
+                30+ Jahre für Zug im Einsatz
               </ListItem>
             </div>
           </NavigationMenuContent>
