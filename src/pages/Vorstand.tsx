@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Phone, Mail, Calendar, Users, Target, Heart } from 'lucide-react';
+import { Phone, Mail, Calendar, Users, Target, Heart, MapPin, ExternalLink } from 'lucide-react';
 
 const Vorstand = () => {
   useEffect(() => {
@@ -18,82 +19,76 @@ const Vorstand = () => {
 
   const boardMembers = [
     {
-      name: "Peter Kaufmann",
+      name: "Adrian Risi",
       position: "Präsident",
+      roles: ["Kantonsrat"],
+      address: "Eichwaldstrasse 22, 6300 Zug",
       image: "/lovable-uploads/placeholder-person.jpg",
-      description: "Langjähriger Unternehmer und politischer Aktivist mit Leidenschaft für eine bürgernahe Politik.",
-      background: "Geschäftsführer, 25 Jahre Erfahrung im Gewerbe",
-      since: "Vorstand seit 2020",
-      responsibilities: ["Strategische Führung", "Öffentlichkeitsarbeit", "Koalitionsverhandlungen"],
+      description: "Erfahrener Kantonsrat und Präsident der SVP Stadt Zug mit starkem Engagement für bürgernahe Politik.",
       contact: {
-        phone: "+41 79 123 45 67",
-        email: "peter.kaufmann@svp-zug.ch"
-      }
+        email: "adrian.risi@risiimmobilienag.ch"
+      },
+      profileLink: "/profil/adrian-risi"
     },
     {
-      name: "Claudia Weber",
-      position: "Vizepräsidentin",
+      name: "Raphael Tschan",
+      position: "Vizepräsident",
+      roles: ["Mitglied RPK Stadt Zug"],
+      address: "Gimenenstrasse 1, 6300 Zug",
       image: "/lovable-uploads/placeholder-person.jpg",
-      description: "Expertin für Bildungspolitik und Mutter von drei Kindern mit starkem Engagement für Familien.",
-      background: "Lehrerin, Bildungsberaterin",
-      since: "Vorstand seit 2019",
-      responsibilities: ["Bildungspolitik", "Familienpolitik", "Jugendarbeit"],
+      description: "Vizepräsident der SVP Stadt Zug und Mitglied der Rechnungsprüfungskommission.",
       contact: {
-        phone: "+41 79 234 56 78",
-        email: "claudia.weber@svp-zug.ch"
-      }
+        email: "rt@raphael-tschan.ch"
+      },
+      profileLink: "/profil/raphael-tschan"
     },
     {
-      name: "Hans-Rudolf Steiner",
-      position: "Kassier",
+      name: "Roman Küng",
+      position: "Vizepräsident & GGR Fraktionspräsident",
+      roles: ["Gemeinderat"],
+      address: "Bernoldweg 9, 6300 Zug",
       image: "/lovable-uploads/placeholder-person.jpg",
-      description: "Ehemaliger Bankdirektor mit fundierter Expertise in Finanzfragen und Wirtschaftspolitik.",
-      background: "Pensionierter Bankdirektor",
-      since: "Vorstand seit 2018",
-      responsibilities: ["Finanzen", "Wirtschaftspolitik", "Revision"],
+      description: "Gemeinderat und Fraktionspräsident im Grossen Gemeinderat mit langjähriger politischer Erfahrung.",
       contact: {
-        phone: "+41 79 345 67 89",
-        email: "hans-rudolf.steiner@svp-zug.ch"
-      }
+        email: "roman.kueng@bluewin.ch"
+      },
+      profileLink: "/profil/roman-kueng"
     },
     {
-      name: "Maria Zimmermann",
-      position: "Sekretärin",
+      name: "Philip C. Brunner",
+      position: "Vorstandsmitglied",
+      roles: ["Kantonsrat", "Fraktionspräsident", "Gemeinderat"],
+      address: "Im Rank 109, 6300 Zug",
       image: "/lovable-uploads/placeholder-person.jpg",
-      description: "Kommunikationsexpertin mit Fokus auf digitale Medien und Bürgerkommunikation.",
-      background: "Kommunikationsberaterin",
-      since: "Vorstand seit 2021",
-      responsibilities: ["Protokollführung", "Kommunikation", "Digitale Medien"],
+      description: "Kantonsrat, Fraktionspräsident und Gemeinderat mit umfassender politischer Erfahrung auf allen Ebenen.",
       contact: {
-        phone: "+41 79 456 78 90",
-        email: "maria.zimmermann@svp-zug.ch"
-      }
+        email: "phcb@philip-brunner.ch"
+      },
+      profileLink: "/profil/philip-brunner"
     },
     {
-      name: "Robert Meier",
-      position: "Beisitzer",
+      name: "André Wicki",
+      position: "Vorstandsmitglied",
+      roles: ["Stadtpräsident"],
+      address: "Stadthaus / Postfach, 6301 Zug",
       image: "/lovable-uploads/placeholder-person.jpg",
-      description: "Rechtsanwalt mit Spezialisierung auf Verwaltungsrecht und kommunale Angelegenheiten.",
-      background: "Rechtsanwalt, Partner in Kanzlei",
-      since: "Vorstand seit 2022",
-      responsibilities: ["Rechtsfragen", "Vernehmlassungen", "Beschwerden"],
+      description: "Stadtpräsident von Zug und engagiertes Vorstandsmitglied der SVP Stadt Zug.",
       contact: {
-        phone: "+41 79 567 89 01",
-        email: "robert.meier@svp-zug.ch"
-      }
+        email: "andre.wicki@stadtzug.ch"
+      },
+      profileLink: "/profil/andre-wicki"
     },
     {
-      name: "Sandra Bürgi",
-      position: "Beisitzerin",
+      name: "Marcus H. Bühler",
+      position: "Vorstandsmitglied",
+      roles: [],
+      address: "Bahnhofstrasse 27, 6300 Zug",
       image: "/lovable-uploads/placeholder-person.jpg",
-      description: "Unternehmerin im Gesundheitswesen mit starkem Fokus auf Gesundheits- und Sozialpolitik.",
-      background: "Geschäftsführerin Gesundheitszentrum",
-      since: "Vorstand seit 2023",
-      responsibilities: ["Gesundheitspolitik", "Sozialpolitik", "Seniorenthemen"],
+      description: "Erfahrenes Vorstandsmitglied der SVP Stadt Zug mit breitem politischen Engagement.",
       contact: {
-        phone: "+41 79 678 90 12",
-        email: "sandra.buergi@svp-zug.ch"
-      }
+        email: "bumbleb@bluewin.ch"
+      },
+      profileLink: "/profil/marcus-buehler"
     }
   ];
 
@@ -170,9 +165,15 @@ const Vorstand = () => {
                     <div className="flex-grow">
                       <CardTitle className="text-xl mb-1">{member.name}</CardTitle>
                       <Badge variant="secondary" className="mb-2">{member.position}</Badge>
-                      <CardDescription className="text-sm">
-                        {member.since}
-                      </CardDescription>
+                      {member.roles.length > 0 && (
+                        <div className="flex flex-wrap gap-1 mb-2">
+                          {member.roles.map((role, roleIndex) => (
+                            <Badge key={roleIndex} variant="outline" className="text-xs">
+                              {role}
+                            </Badge>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </CardHeader>
@@ -180,37 +181,32 @@ const Vorstand = () => {
                   <p className="text-muted-foreground mb-4">{member.description}</p>
                   
                   <div className="mb-4">
-                    <h4 className="font-semibold text-foreground mb-2">Hintergrund</h4>
-                    <p className="text-sm text-muted-foreground">{member.background}</p>
-                  </div>
-
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-foreground mb-2">Schwerpunkte</h4>
-                    <ul className="space-y-1">
-                      {member.responsibilities.map((responsibility, respIndex) => (
-                        <li key={respIndex} className="flex items-start">
-                          <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                          <span className="text-sm text-muted-foreground">{responsibility}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <h4 className="font-semibold text-foreground mb-2">Adresse</h4>
+                    <div className="flex items-start">
+                      <MapPin className="w-4 h-4 mr-2 mt-0.5 text-muted-foreground" />
+                      <p className="text-sm text-muted-foreground">{member.address}</p>
+                    </div>
                   </div>
 
                   <div className="border-t pt-4">
                     <h4 className="font-semibold text-foreground mb-2">Kontakt</h4>
                     <div className="space-y-2 text-sm">
                       <div className="flex items-center">
-                        <Phone className="w-4 h-4 mr-2" />
-                        <a href={`tel:${member.contact.phone}`} className="hover:text-primary transition-colors">
-                          {member.contact.phone}
-                        </a>
-                      </div>
-                      <div className="flex items-center">
                         <Mail className="w-4 h-4 mr-2" />
                         <a href={`mailto:${member.contact.email}`} className="hover:text-primary transition-colors">
                           {member.contact.email}
                         </a>
                       </div>
+                    </div>
+                    
+                    <div className="mt-4">
+                      <Link 
+                        to={member.profileLink}
+                        className="inline-flex items-center text-primary hover:text-primary/80 transition-colors text-sm font-medium"
+                      >
+                        Zum Profil
+                        <ExternalLink className="w-3 h-3 ml-1" />
+                      </Link>
                     </div>
                   </div>
                 </CardContent>
