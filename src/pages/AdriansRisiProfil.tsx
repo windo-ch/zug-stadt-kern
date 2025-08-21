@@ -333,22 +333,28 @@ const AdriansRisiProfil = () => {
               </CardContent>
             </Card>
 
-            {/* Clubs */}
-            <Card className="shadow-md hover:shadow-lg transition-shadow">
+            {/* Professional Focus */}
+            <Card className="shadow-md hover:shadow-lg transition-shadow bg-gradient-to-br from-primary/5 to-background">
               <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Users className="w-5 h-5 mr-2 text-primary" />
-                  Vereine & Engagement
+                <CardTitle className="flex items-center text-primary">
+                  <Target className="w-5 h-5 mr-2" />
+                  Fachkompetenz
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-2">
-                  {clubs.map((club, index) => (
-                    <div key={index} className="flex items-start p-2 bg-muted/20 rounded-lg">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <span className="text-muted-foreground text-sm">{club}</span>
-                    </div>
-                  ))}
+                <div className="space-y-3">
+                  <div className="p-3 bg-white/50 rounded-lg">
+                    <h4 className="font-semibold text-foreground mb-1">Unternehmensführung</h4>
+                    <p className="text-sm text-muted-foreground">Langjährige Erfahrung in der Leitung von Unternehmen</p>
+                  </div>
+                  <div className="p-3 bg-white/50 rounded-lg">
+                    <h4 className="font-semibold text-foreground mb-1">Immobilienwirtschaft</h4>
+                    <p className="text-sm text-muted-foreground">Expertise in Immobilienentwicklung und -verwaltung</p>
+                  </div>
+                  <div className="p-3 bg-white/50 rounded-lg">
+                    <h4 className="font-semibold text-foreground mb-1">Politische Führung</h4>
+                    <p className="text-sm text-muted-foreground">Brückenbauer für bürgerliche Politik</p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -356,14 +362,22 @@ const AdriansRisiProfil = () => {
             {/* Hobbies */}
             <Card className="shadow-md hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle>Persönliche Interessen</CardTitle>
+                <CardTitle className="text-xl">Persönliche Interessen</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-wrap gap-2">
+                <div className="grid grid-cols-2 gap-3">
                   {hobbies.map((hobby, index) => (
-                    <Badge key={index} variant="secondary" className="text-sm px-3 py-1 bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
-                      {hobby}
-                    </Badge>
+                    <div key={index} className="flex items-center p-3 bg-muted/20 rounded-lg hover:bg-primary/10 transition-colors">
+                      {hobby === "Sport" && <span className="w-5 h-5 mr-2 text-primary text-lg">⚽</span>}
+                      {hobby === "Fitness" && <span className="w-5 h-5 mr-2 text-primary text-lg">💪</span>}
+                      {hobby === "Skifahren" && <span className="w-5 h-5 mr-2 text-primary text-lg">⛷️</span>}
+                      {hobby === "Lesen" && <span className="w-5 h-5 mr-2 text-primary text-lg">📚</span>}
+                      {hobby === "Kino" && <span className="w-5 h-5 mr-2 text-primary text-lg">🎬</span>}
+                      {hobby === "EVZ" && <span className="w-5 h-5 mr-2 text-primary text-lg">🏒</span>}
+                      <Badge variant="secondary" className="bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+                        {hobby}
+                      </Badge>
+                    </div>
                   ))}
                 </div>
               </CardContent>
