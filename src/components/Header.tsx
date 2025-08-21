@@ -62,8 +62,8 @@ const Header = () => {
   return (
     <header className={`sticky top-0 z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-lg' 
-        : 'bg-transparent border-b border-transparent'
+        ? 'bg-background border-b border-border shadow-lg' 
+        : 'bg-background border-b border-transparent'
     }`}>
       <div className="container-max">
         <div className="flex items-center justify-between h-18 md:h-24 px-2">
@@ -100,7 +100,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-border bg-background/98 backdrop-blur-md shadow-lg">
+          <div className="lg:hidden border-t border-border bg-background shadow-lg">
             <div className="py-6">
               <Accordion type="single" collapsible className="w-full px-6">
                 {mobileMenuSections.map((section, sectionIndex) => (
