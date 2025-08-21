@@ -59,9 +59,7 @@ const TausenderClub = () => {
       <section className="section-padding bg-muted/30">
         <div className="container-max mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Spendenkategorien
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Mitgliederkategorien</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
               Dem Credo der SVP Stadt Zug – mir liefert – folgend, können sich Mitglieder in folgenden Kategorien engagieren:
             </p>
@@ -76,9 +74,7 @@ const TausenderClub = () => {
                 <p className="text-3xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent mb-4 relative z-10">ab CHF 5'000.-</p>
                 <p className="text-muted-foreground relative z-10">pro Jahr</p>
                 <div className="flex justify-center mt-4 relative z-10">
-                  {[...Array(5)].map((_, i) => (
-                    <Sparkles key={i} className="h-4 w-4 text-yellow-400 mx-0.5" />
-                  ))}
+                  {[...Array(5)].map((_, i) => <Sparkles key={i} className="h-4 w-4 text-yellow-400 mx-0.5" />)}
                 </div>
               </CardContent>
             </Card>
@@ -91,9 +87,7 @@ const TausenderClub = () => {
                 <p className="text-3xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent mb-4 relative z-10">ab CHF 1'000.-</p>
                 <p className="text-muted-foreground relative z-10">pro Jahr</p>
                 <div className="flex justify-center mt-4 relative z-10">
-                  {[...Array(3)].map((_, i) => (
-                    <Sparkles key={i} className="h-4 w-4 text-yellow-400 mx-0.5" />
-                  ))}
+                  {[...Array(3)].map((_, i) => <Sparkles key={i} className="h-4 w-4 text-yellow-400 mx-0.5" />)}
                 </div>
               </CardContent>
             </Card>
