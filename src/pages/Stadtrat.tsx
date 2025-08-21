@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Phone, Mail, MapPin, Calendar, Award } from 'lucide-react';
+import { createObfuscatedMailto } from '@/lib/emailUtils';
 
 const Stadtrat = () => {
   useEffect(() => {
@@ -165,8 +166,8 @@ const Stadtrat = () => {
                     </div>
                     <div className="flex items-center">
                       <Mail className="w-4 h-4 mr-2 text-muted-foreground" />
-                      <a href={`mailto:${person.email}`} className="text-primary hover:text-primary/80 transition-colors">
-                        {person.email}
+                      <a href={createObfuscatedMailto(person.email).href} className="text-primary hover:text-primary/80 transition-colors">
+                        {createObfuscatedMailto(person.email).display}
                       </a>
                     </div>
                   </div>
@@ -216,8 +217,8 @@ const Stadtrat = () => {
                     </div>
                     <div className="flex items-center">
                       <Mail className="w-4 h-4 mr-2 text-muted-foreground" />
-                      <a href={`mailto:${member.email}`} className="text-primary hover:text-primary/80 transition-colors break-all">
-                        {member.email}
+                      <a href={createObfuscatedMailto(member.email).href} className="text-primary hover:text-primary/80 transition-colors break-all">
+                        {createObfuscatedMailto(member.email).display}
                       </a>
                     </div>
                   </div>
@@ -263,8 +264,8 @@ const Stadtrat = () => {
                       )}
                       <div className="flex items-center">
                         <Mail className="w-4 h-4 mr-2 text-muted-foreground flex-shrink-0" />
-                        <a href={`mailto:${member.email}`} className="text-primary hover:text-primary/80 transition-colors text-sm break-all">
-                          {member.email}
+                        <a href={createObfuscatedMailto(member.email).href} className="text-primary hover:text-primary/80 transition-colors text-sm break-all">
+                          {createObfuscatedMailto(member.email).display}
                         </a>
                       </div>
                     </div>
