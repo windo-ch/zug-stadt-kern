@@ -8,67 +8,87 @@ import { Phone, Mail, MapPin, Calendar, Award } from 'lucide-react';
 
 const Stadtrat = () => {
   useEffect(() => {
-    document.title = "Stadtrat - SVP Stadt Zug";
+    document.title = "SVP-Fraktion - Grosser Gemeinderat Zug";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Lernen Sie die SVP-Vertreter im Stadtrat Zug kennen. Unsere Stadträte setzen sich für Ihre Anliegen ein.');
+      metaDescription.setAttribute('content', 'Lernen Sie die SVP-Fraktion im Grossen Gemeinderat Zug kennen. Unsere Parlamentarier setzen sich für Ihre Anliegen ein.');
     }
   }, []);
 
-  const cityCouncilors = [
+  const parlamentarians = [
     {
-      name: "Dr. Andrea Müller",
-      position: "Stadträtin",
-      department: "Direktion Soziales und Sicherheit",
-      image: "/lovable-uploads/placeholder-person.jpg",
-      description: "Dr. Andrea Müller setzt sich seit 2018 für mehr Sicherheit und soziale Gerechtigkeit in Zug ein.",
-      achievements: [
-        "Einführung der Stadtpolizei-Patrouille",
-        "Modernisierung der Sozialdienste",
-        "Verbesserung der Jugendbetreuung"
-      ],
-      contact: {
-        phone: "+41 41 728 21 11",
-        email: "andrea.mueller@stadtzug.ch"
-      },
-      experience: "6 Jahre im Stadtrat",
-      background: "Rechtsanwältin, Mutter von zwei Kindern"
+      name: "Roman Küng",
+      position: "Fraktionschef",
+      address: "Bernoldweg 9, 6300 Zug",
+      email: "roman.kueng@bluewin.ch",
+      description: "Als Fraktionschef leitet Roman Küng die SVP-Fraktion im Grossen Gemeinderat und koordiniert die politische Arbeit der Partei.",
+      isLeader: true
     },
     {
-      name: "Thomas Bachmann",
-      position: "Stadtrat",
-      department: "Direktion Planung und Infrastruktur",
-      image: "/lovable-uploads/placeholder-person.jpg",
-      description: "Thomas Bachmann kämpft für eine nachhaltige Stadtentwicklung ohne Bürokratie-Wildwuchs.",
-      achievements: [
-        "Optimierung der Verkehrsführung",
-        "Digitalisierung der Baugesuche",
-        "Förderung des öffentlichen Verkehrs"
-      ],
-      contact: {
-        phone: "+41 41 728 21 12",
-        email: "thomas.bachmann@stadtzug.ch"
-      },
-      experience: "4 Jahre im Stadtrat",
-      background: "Bauingenieur, langjähriger Unternehmer"
+      name: "Philip C. Brunner",
+      position: "Mitglied",
+      address: "Im Rank 109, 6300 Zug", 
+      email: "phcb@philip-brunner.ch",
+      description: "Philip C. Brunner setzt sich als engagiertes Mitglied für die Interessen der SVP im Stadtparlament ein.",
+      isLeader: false
+    },
+    {
+      name: "Marcus Bühler",
+      position: "Mitglied",
+      address: "Bahnhofstrasse 27, 6300 Zug",
+      email: "bumbleb@bluewin.ch",
+      description: "Marcus Bühler vertritt die SVP-Werte mit Engagement und Sachverstand im Grossen Gemeinderat.",
+      isLeader: false
+    },
+    {
+      name: "René Gretener",
+      position: "Mitglied",
+      address: "Lüssirainstrasse 1, 6300 Zug",
+      email: "rghkswiss@gmail.com", 
+      description: "René Gretener bringt seine Erfahrung und sein Engagement für die SVP-Politik in die parlamentarische Arbeit ein.",
+      isLeader: false
+    },
+    {
+      name: "Alex Odermatt",
+      position: "Mitglied",
+      address: "St. Johannesstrasse 4, 6300 Zug",
+      email: "alexodermatt@bluewin.ch",
+      description: "Alex Odermatt arbeitet aktiv an der Umsetzung der SVP-Ziele im Stadtparlament mit.",
+      isLeader: false
+    },
+    {
+      name: "Manfred Pircher",
+      position: "Mitglied", 
+      address: "Lothenbach 7, 6318 Walchwil",
+      email: "manfred.pircher@bluewin.ch",
+      description: "Manfred Pircher vertritt auch die Interessen der Gemeinde Walchwil in der regionalen Politik.",
+      isLeader: false
+    },
+    {
+      name: "Norbert Schlumpf",
+      position: "Mitglied",
+      address: "Chamerstrasse 36, 6300 Zug", 
+      email: "n.schlumpf@hsk-telematik.ch",
+      description: "Norbert Schlumpf bringt seine Fachexpertise in die politische Arbeit der SVP-Fraktion ein.",
+      isLeader: false
     }
   ];
 
   const committeeMemberships = [
     {
       committee: "Finanzkommission",
-      members: ["Dr. Andrea Müller", "Thomas Bachmann"],
+      members: ["SVP-Vertreter aktiv"],
       description: "Überwachung der städtischen Finanzen und Budgetplanung"
     },
     {
-      committee: "Kommission für Stadtentwicklung",
-      members: ["Thomas Bachmann"],
+      committee: "Kommission für Stadtentwicklung", 
+      members: ["SVP-Vertreter aktiv"],
       description: "Planung und Entwicklung der Stadt Zug"
     },
     {
       committee: "Sicherheitskommission",
-      members: ["Dr. Andrea Müller"],
+      members: ["SVP-Vertreter aktiv"],
       description: "Sicherheitsmassnahmen und Kriminalitätsprävention"
     }
   ];
@@ -101,84 +121,97 @@ const Stadtrat = () => {
       <main className="container mx-auto px-4 py-16">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4">Stadtrat</Badge>
+          <Badge variant="outline" className="mb-4">Grosser Gemeinderat</Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Unsere Vertreter im Stadtrat
+            SVP-Fraktion im Grossen Gemeinderat
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Die SVP-Stadträte setzen sich täglich für die Anliegen der Zuger Bürgerinnen und Bürger ein. 
-            Lernen Sie unsere engagierten Vertreter kennen und erfahren Sie mehr über ihre Arbeit.
+            Unsere SVP-Parlamentarier im Grossen Gemeinderat Zug setzen sich täglich für bürgerliche Werte und 
+            die Anliegen der Zuger Bevölkerung ein. Lernen Sie unsere Fraktion kennen.
           </p>
         </div>
 
-        {/* City Councilors */}
+        {/* SVP Parlamentarians */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">SVP-Stadträte</h2>
-          <div className="grid lg:grid-cols-2 gap-8">
-            {cityCouncilors.map((councilor, index) => (
-              <Card key={index} className="h-full hover:shadow-lg transition-shadow">
+          <h2 className="text-3xl font-bold text-foreground mb-8">Unsere Parlamentarier</h2>
+          
+          {/* Fraktionschef */}
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold text-foreground mb-4">Fraktionsleitung</h3>
+            {parlamentarians.filter(p => p.isLeader).map((member, index) => (
+              <Card key={index} className="border-l-4 border-l-primary hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-start space-x-4">
-                    <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center">
-                      <span className="text-2xl font-bold text-gray-600">
-                        {councilor.name.split(' ').map(n => n[0]).join('')}
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                      <span className="text-lg font-bold text-primary">
+                        {member.name.split(' ').map(n => n[0]).join('')}
                       </span>
                     </div>
                     <div className="flex-grow">
-                      <CardTitle className="text-xl mb-1">{councilor.name}</CardTitle>
-                      <Badge variant="secondary" className="mb-2">{councilor.position}</Badge>
-                      <CardDescription className="text-sm font-medium">
-                        {councilor.department}
+                      <CardTitle className="text-xl mb-1">{member.name}</CardTitle>
+                      <Badge className="bg-primary text-primary-foreground mb-2">{member.position}</Badge>
+                      <CardDescription className="text-sm">
+                        {member.description}
                       </CardDescription>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground mb-4">{councilor.description}</p>
-                  
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-foreground mb-2">Wichtige Erfolge</h4>
-                    <ul className="space-y-1">
-                      {councilor.achievements.map((achievement, achievementIndex) => (
-                        <li key={achievementIndex} className="flex items-start">
-                          <Award className="w-4 h-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                          <span className="text-sm text-muted-foreground">{achievement}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="grid grid-cols-1 gap-3 text-sm text-muted-foreground mb-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                     <div className="flex items-center">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      {councilor.experience}
+                      <MapPin className="w-4 h-4 mr-2 text-muted-foreground" />
+                      <span className="text-muted-foreground">{member.address}</span>
                     </div>
                     <div className="flex items-center">
-                      <MapPin className="w-4 h-4 mr-2" />
-                      {councilor.background}
-                    </div>
-                  </div>
-
-                  <div className="border-t pt-4">
-                    <h4 className="font-semibold text-foreground mb-2">Kontakt</h4>
-                    <div className="space-y-2 text-sm">
-                      <div className="flex items-center">
-                        <Phone className="w-4 h-4 mr-2" />
-                        <a href={`tel:${councilor.contact.phone}`} className="hover:text-primary transition-colors">
-                          {councilor.contact.phone}
-                        </a>
-                      </div>
-                      <div className="flex items-center">
-                        <Mail className="w-4 h-4 mr-2" />
-                        <a href={`mailto:${councilor.contact.email}`} className="hover:text-primary transition-colors">
-                          {councilor.contact.email}
-                        </a>
-                      </div>
+                      <Mail className="w-4 h-4 mr-2 text-muted-foreground" />
+                      <a href={`mailto:${member.email}`} className="text-primary hover:text-primary/80 transition-colors">
+                        {member.email}
+                      </a>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          {/* Fraktionsmitglieder */}
+          <div>
+            <h3 className="text-xl font-semibold text-foreground mb-4">Fraktionsmitglieder</h3>
+            <div className="grid lg:grid-cols-2 gap-6">
+              {parlamentarians.filter(p => !p.isLeader).map((member, index) => (
+                <Card key={index} className="hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <div className="flex items-start space-x-4">
+                      <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center">
+                        <span className="text-sm font-bold text-primary">
+                          {member.name.split(' ').map(n => n[0]).join('')}
+                        </span>
+                      </div>
+                      <div className="flex-grow">
+                        <CardTitle className="text-lg mb-1">{member.name}</CardTitle>
+                        <Badge variant="secondary" className="mb-2">{member.position}</Badge>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground mb-4 text-sm">{member.description}</p>
+                    
+                    <div className="space-y-2 text-sm">
+                      <div className="flex items-start">
+                        <MapPin className="w-4 h-4 mr-2 text-muted-foreground mt-0.5 flex-shrink-0" />
+                        <span className="text-muted-foreground">{member.address}</span>
+                      </div>
+                      <div className="flex items-center">
+                        <Mail className="w-4 h-4 mr-2 text-muted-foreground flex-shrink-0" />
+                        <a href={`mailto:${member.email}`} className="text-primary hover:text-primary/80 transition-colors text-sm break-all">
+                          {member.email}
+                        </a>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -240,7 +273,7 @@ const Stadtrat = () => {
             Haben Sie Anliegen?
           </h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Unsere Stadträte sind für Sie da. Nehmen Sie Kontakt auf, wenn Sie Fragen oder Anregungen haben. 
+            Unsere Parlamentarier sind für Sie da. Nehmen Sie Kontakt auf, wenn Sie Fragen oder Anregungen haben. 
             Ihre Meinung ist wichtig für die Gestaltung unserer Stadt.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
