@@ -77,9 +77,9 @@ const WofuerWirStehen = () => {
       description: "Verantwortungsvoller Umgang mit der Natur für kommende Generationen.",
       points: [
         "Schutz des Zugersees",
-        "Förderung erneuerbarer Energien",
-        "Lokale Kreislaufwirtschaft",
-        "Umweltschonende Mobilität"
+        "Kostengünstiger Umweltschutz ohne Verbote",
+        "Eigenverantwortung statt Bevormundung",
+        "Wirtschaftsverträgliche Umweltmassnahmen"
       ]
     }
   ];
