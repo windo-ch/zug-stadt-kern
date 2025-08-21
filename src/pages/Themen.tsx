@@ -162,34 +162,22 @@ const Themen = () => {
 
   const upcomingInitiatives = [
     {
-      title: "Initiative gegen unnötige Verkehrshindernisse",
-      description: "Überprüfung und Abbau verkehrshemmender Massnahmen in der Innenstadt für besseren Wirtschaftsverkehr",
+      title: "NEIN zum Steuer-Schwindel",
+      description: "Ablehnung des indirekten Gegenvorschlags zur Individualbesteuerungsinitiative der FDP - Schutz der Familien vor mehr Bürokratie und Kosten",
       timeline: "2025",
-      status: "Vorbereitung"
+      status: "Kampagne"
     },
     {
-      title: "Sicherheitspaket Zug",
-      description: "Verstärkung der Polizeipräsenz und Installation zusätzlicher Videoüberwachung in Problemzonen",
-      timeline: "2025-2026",
-      status: "Budgetierung"
+      title: "Grenzschutz-Initiative",
+      description: "Volksinitiative «Asylmissbrauch stoppen!» für mehr Sicherheit in unserem Land - Einreichung erfolgt",
+      timeline: "Eingereicht",
+      status: "Unterschriftensammlung"
     },
     {
-      title: "Bürokratie-Abbau in der Verwaltung",
-      description: "Vereinfachung von Bewilligungsverfahren für Gewerbe und Bau zur Stärkung des Wirtschaftsstandorts",
+      title: "NEIN zum Windpark Zugerberg",
+      description: "Entschiedene Ablehnung der Pläne für einen Windpark auf dem Zugerberg zum Schutz von Wildtieren und Landschaftsbild",
       timeline: "2025",
-      status: "Parlamentsvorlage"
-    },
-    {
-      title: "Schutz vor Überfremdung der Quartiere",
-      description: "Massnahmen zur ausgewogenen Entwicklung der Wohnquartiere und Erhalt des Zuger Charakters",
-      timeline: "2025-2026",
-      status: "Konzeptphase"
-    },
-    {
-      title: "Kostentransparenz bei öffentlichen Projekten",
-      description: "Einführung verbindlicher Kostendächer und bessere Kontrolle bei Grossinvestitionen der Stadt",
-      timeline: "2025",
-      status: "Prüfung"
+      status: "Opposition"
     }
   ];
 
