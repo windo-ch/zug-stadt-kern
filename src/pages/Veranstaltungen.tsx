@@ -26,46 +26,46 @@ const Veranstaltungen = () => {
   const upcomingEvents = [
     {
       id: 1,
-      title: "Bürgersprechstunde mit dem Präsidenten",
-      date: "2025-02-15",
-      time: "18:00 - 20:00",
-      location: "Restaurant Löwen, Kolinplatz 11, Zug",
-      type: "Bürgerkontakt",
+      title: "Aktuelle Geopolitische Herausforderungen der Schweiz",
+      date: "2025-08-21",
+      time: "19:00 - 21:00",
+      location: "Rest. Luegisland, Finstersee/Menzingen",
+      type: "Diskussion",
       target: "Öffentlich",
-      description: "Offene Sprechstunde für alle Bürgerinnen und Bürger. Bringen Sie Ihre Anliegen, Fragen und Ideen direkt vor. Eine direkte Gelegenheit zum persönlichen Gespräch mit unserer Parteiführung.",
-      speaker: "Peter Kaufmann, Präsident SVP Stadt Zug",
-      capacity: "Unbegrenzt",
-      registration: false,
-      cost: "Kostenlos",
+      description: "Diskussion über die aktuellen geopolitischen Herausforderungen, mit denen die Schweiz konfrontiert ist. Ein wichtiger Anlass zur Meinungsbildung über die Rolle der Schweiz in der internationalen Politik.",
+      speaker: "Politische Experten",
+      capacity: "80 Personen",
+      registration: true,
+      cost: "CHF 20, Mitglieder CHF 10",
       agenda: [
-        "Begrüssung und aktuelle politische Lage",
-        "Offene Fragerunde",
-        "Einzelgespräche nach Bedarf",
-        "Informeller Austausch bei Getränken"
+        "Aktuelle geopolitische Lage",
+        "Herausforderungen für die Schweiz",
+        "Diskussion und Fragerunde",
+        "Apéro"
       ],
       contact: {
         phone: "+41 79 123 45 67",
-        email: "info@svp-stadt-zug.ch"
+        email: "info@svp-zug.ch"
       }
     },
     {
       id: 2,
-      title: "Abstimmungsversammlung März 2025",
-      date: "2025-02-28",
-      time: "19:30 - 21:30",
-      location: "Burgbachsaal, Burgbachstrasse 17, Zug",
-      type: "Abstimmung",
+      title: "Sommeranlass SVP Stadt Zug",
+      date: "2025-08-22",
+      time: "18:00 - 22:00",
+      location: "Rest. Barakka, Allmendstr. 26, Zug",
+      type: "Anlass",
       target: "Mitglieder",
-      description: "Ausführliche Diskussion und Empfehlungsbildung zu den kommenden Abstimmungsvorlagen vom 15. März 2025. Fundierte Analyse aller Vorlagen mit Expertenbeiträgen.",
-      speaker: "Dr. Andrea Müller & Thomas Bachmann",
-      capacity: "120 Personen",
+      description: "Geselliger Sommeranlass der SVP Stadt Zug. Gemütliches Beisammensein mit politischen Gesprächen und kulinarischen Genüssen in entspannter Atmosphäre.",
+      speaker: "Vorstand SVP Stadt Zug",
+      capacity: "100 Personen",
       registration: true,
-      cost: "Kostenlos für Mitglieder, CHF 10 für Gäste",
+      cost: "CHF 35 pro Person",
       agenda: [
-        "Analyse der kantonalen Vorlagen",
-        "Diskussion kommunaler Abstimmungen",
-        "Empfehlungsbildung",
-        "Abstimmungsstrategie besprechen"
+        "Begrüssung und Apéro",
+        "Gemeinsames Abendessen",
+        "Kurze politische Updates",
+        "Geselliger Ausklang"
       ],
       contact: {
         phone: "+41 79 456 78 90",
@@ -74,121 +74,128 @@ const Veranstaltungen = () => {
     },
     {
       id: 3,
-      title: "Podiumsdiskussion: Zukunft der Mobilität in Zug",
-      date: "2025-03-12",
+      title: "Höck SVP Baar - Informative Führung durch die Kirchgemeinde Baar",
+      date: "2025-09-03",
       time: "19:00 - 21:00",
-      location: "Aula Kantonsschule, Lüssiweg 24, Zug",
-      type: "Diskussion",
+      location: "Pfarreiheim, Baar",
+      type: "Höck",
       target: "Öffentlich",
-      description: "Hochkarätig besetztes Podium zur Verkehrspolitik: Wie gestalten wir die Mobilität in Zug zukunftsfähig, ohne die Wirtschaft zu belasten? Mit Experten aus Politik, Wirtschaft und Verwaltung.",
-      speaker: "Diverse Experten und Politikerinnen",
-      capacity: "200 Personen",
-      registration: true,
-      cost: "CHF 15, Studenten CHF 5",
+      description: "Informativer Höck mit einer Führung durch die Kirchgemeinde Baar. Einblicke in die Geschichte und Aktivitäten der Kirchgemeinde sowie politische Diskussionen.",
+      speaker: "Vertreter der Kirchgemeinde Baar",
+      capacity: "60 Personen",
+      registration: false,
+      cost: "Kostenlos",
       agenda: [
-        "Impulsreferate der Podiumsteilnehmer",
-        "Moderierte Diskussion",
-        "Publikumsfragen",
-        "Apéro und Networking"
+        "Begrüssung",
+        "Führung durch die Kirchgemeinde",
+        "Informationen und Diskussion",
+        "Gemütlicher Ausklang"
       ],
       contact: {
         phone: "+41 79 234 56 78",
-        email: "events@svp-stadt-zug.ch"
+        email: "baar@svp-zug.ch"
       }
     },
     {
       id: 4,
-      title: "SVP Stammtisch - Frühlingsauftakt",
-      date: "2025-03-20",
-      time: "18:30 - 22:00",
-      location: "Restaurant Ratskeller, Unter der Egg 2, Zug",
-      type: "Stammtisch",
-      target: "Mitglieder",
-      description: "Gemütlicher Austausch unter Gleichgesinnten bei Speis und Trank. Ungezwungene Diskussionen über aktuelle politische Themen und geselliges Beisammensein.",
-      speaker: "Verschiedene Vorstandsmitglieder",
-      capacity: "40 Personen",
-      registration: false,
-      cost: "Konsumation nach Aufwand",
+      title: "Trump, XI und Putin: das Ende der regelbasierten Weltordnung",
+      date: "2025-09-08",
+      time: "19:30 - 21:30",
+      location: "Mythenforum, Reichsstrasse 12, Schwyz",
+      type: "Vortrag",
+      target: "Öffentlich",
+      description: "Hochbrisante Analyse der aktuellen Weltpolitik: Wie Trump, Xi Jinping und Putin die internationale Ordnung herausfordern und was dies für die Schweiz bedeutet.",
+      speaker: "Internationale Politikexperten",
+      capacity: "150 Personen",
+      registration: true,
+      cost: "CHF 25, Studenten CHF 15",
       agenda: [
-        "Informeller Empfang",
-        "Kurze politische Updates",
-        "Offene Diskussionsrunden",
-        "Geselliges Beisammensein"
+        "Die neue Weltordnung unter Trump",
+        "Chinas Rolle unter Xi Jinping",
+        "Putins Strategie und Auswirkungen",
+        "Diskussion und Fragerunde"
       ],
       contact: {
         phone: "+41 79 345 67 89",
-        email: "stammtisch@svp-stadt-zug.ch"
+        email: "events@svp-zug.ch"
       }
     },
     {
       id: 5,
-      title: "Jahreshauptversammlung 2025",
-      date: "2025-04-25",
-      time: "19:00 - 22:00",
-      location: "Casino Zug, Dorfstrasse 1, Zug",
+      title: "Die SVP Kanton Zug am Stieremärt 2025",
+      date: "2025-09-10",
+      time: "10:00 - 18:00",
+      location: "Festzelt Stieremärt",
+      type: "Standaktion",
+      target: "Öffentlich",
+      description: "Besuchen Sie uns am traditionellen Stieremärt! Wir informieren über unsere politische Arbeit und stehen für Gespräche zur Verfügung. Ein wichtiger Termin für den direkten Bürgerkontakt.",
+      speaker: "Kantonale und kommunale Politiker",
+      capacity: "Unbegrenzt",
+      registration: false,
+      cost: "Kostenlos",
+      agenda: [
+        "Informationsstand ganztags",
+        "Gespräche mit Politikern",
+        "Infomaterial und Give-aways",
+        "Bürgernähe am traditionellen Markt"
+      ],
+      contact: {
+        phone: "+41 79 567 89 01",
+        email: "stieremaert@svp-zug.ch"
+      }
+    },
+    {
+      id: 6,
+      title: "Mitgliederversammlung SVP Kanton Zug",
+      date: "2025-09-18",
+      time: "19:30 - 21:30",
+      location: "Rest. Schnitz & Gwunder, Steinhausen",
       type: "Versammlung",
       target: "Mitglieder",
-      description: "Die wichtigste Veranstaltung des Jahres: Jahresrückblick, Wahlen, Strategieplanung und Ausblick auf die kommenden Herausforderungen. Mit anschliessendem Apéro.",
-      speaker: "Gesamter Vorstand",
-      capacity: "150 Personen",
+      description: "Ordentliche Mitgliederversammlung der SVP Kanton Zug. Wichtige Entscheide, Wahlen und Informationen zur politischen Arbeit stehen auf der Tagesordnung.",
+      speaker: "Kantonaler Vorstand",
+      capacity: "120 Personen",
       registration: true,
       cost: "Kostenlos für Mitglieder",
       agenda: [
-        "Jahresbericht des Präsidenten",
-        "Kassenbericht und Revisorenbericht",
-        "Wahlen und Ehrungen",
-        "Strategieplanung 2025/26",
-        "Festlicher Apéro"
+        "Jahresbericht und Finanzen",
+        "Wahlen und Nominationen",
+        "Politische Strategie",
+        "Verschiedenes und Apéro"
       ],
       contact: {
-        phone: "+41 79 123 45 67",
-        email: "hauptversammlung@svp-stadt-zug.ch"
+        phone: "+41 79 678 90 12",
+        email: "mitglieder@svp-zug.ch"
+      }
+    },
+    {
+      id: 7,
+      title: "Abstimmungssonntag",
+      date: "2025-09-28",
+      time: "Ganztags",
+      location: "Alle Gemeinden des Kantons Zug",
+      type: "Abstimmung",
+      target: "Alle Stimmberechtigten",
+      description: "Wichtiger Abstimmungssonntag mit kantonalen und kommunalen Vorlagen. Informieren Sie sich über unsere Empfehlungen und gehen Sie stimmen!",
+      speaker: "Stimmbürgerinnen und Stimmbürger",
+      capacity: "Alle Stimmberechtigten",
+      registration: false,
+      cost: "Kostenlos",
+      agenda: [
+        "Stimmabgabe in den Gemeinden",
+        "Auszählung der Stimmen",
+        "Bekanntgabe der Resultate",
+        "Politische Analyse"
+      ],
+      contact: {
+        phone: "+41 79 789 01 23",
+        email: "abstimmung@svp-zug.ch"
       }
     }
   ];
 
-  const pastEvents = [
-    {
-      id: 6,
-      title: "Neujahrsapéro 2025",
-      date: "2025-01-12",
-      type: "Networking",
-      attendees: 120,
-      description: "Erfolgreicher Start ins neue Politjahr mit über 120 Teilnehmerinnen und Teilnehmern. Lebendige Diskussionen und neue Kontakte.",
-      highlights: ["Rekord-Teilnehmerzahl", "Neue Mitglieder gewonnen", "Positive Medienberichterstattung"],
-      media: ["Zuger Zeitung Artikel", "Radio Pilatus Interview"]
-    },
-    {
-      id: 7,
-      title: "Jahresversammlung 2024",
-      date: "2024-11-15",
-      type: "Versammlung",
-      attendees: 89,
-      description: "Rückblick aufs erfolgreiche Jahr und Vorstellung der Ziele für 2025. Einstimmige Entlastung des Vorstands.",
-      highlights: ["Budgetgenehmigung", "Neue Statuten verabschiedet", "Ehrung langjähriger Mitglieder"],
-      media: ["Livestream auf Website"]
-    },
-    {
-      id: 8,
-      title: "Abstimmungskampagne Stadtbudget",
-      date: "2024-10-20",
-      type: "Kampagne",
-      attendees: 45,
-      description: "Intensiver Wahlkampf mit Flyerverteilung und Bürgergesprächen. Erfolgreiche Mobilisierung der Basis.",
-      highlights: ["5000 Flyer verteilt", "20 Standaktionen", "Positive Abstimmungsresultate"],
-      media: ["TeleZüri Bericht", "Social Media Kampagne"]
-    },
-    {
-      id: 9,
-      title: "Sommerfest 2024",
-      date: "2024-08-17",
-      type: "Fest",
-      attendees: 95,
-      description: "Geselliger Anlass für Mitglieder und Familien mit Grillplausch und Aktivitäten für Kinder.",
-      highlights: ["Familiärer Anlass", "Neue Gesichter kennengelernt", "Stärkung des Zusammenhalts"],
-      media: ["Fotoalbum online"]
-    }
-  ];
+  // Past events will be populated with real historical data from the SVP website
+  const pastEvents: any[] = [];
 
   const eventStatistics = [
     {
@@ -213,28 +220,46 @@ const Veranstaltungen = () => {
 
   const eventTypes = [
     {
-      type: "Bürgerkontakt",
-      description: "Offene Sprechstunden und Bürgergespräche",
-      frequency: "Monatlich",
+      type: "Diskussion",
+      description: "Politische Diskussionen und Vorträge",
+      frequency: "Quartalsweise",
       color: "bg-blue-100 text-blue-800 border-blue-200"
     },
     {
-      type: "Abstimmung",
-      description: "Versammlungen zu Abstimmungsvorlagen",
-      frequency: "Bei Bedarf",
+      type: "Anlass",
+      description: "Gesellige Anlässe und Networking",
+      frequency: "Mehrmals jährlich",
       color: "bg-green-100 text-green-800 border-green-200"
     },
     {
-      type: "Diskussion",
-      description: "Podiumsdiskussionen zu aktuellen Themen",
-      frequency: "Quartalsweise",
+      type: "Höck",
+      description: "Lokale Treffen und Führungen",
+      frequency: "Monatlich",
       color: "bg-purple-100 text-purple-800 border-purple-200"
     },
     {
-      type: "Stammtisch",
-      description: "Informeller Austausch unter Mitgliedern",
-      frequency: "Monatlich",
+      type: "Vortrag",
+      description: "Expertenbeiträge zu aktuellen Themen",
+      frequency: "Bei Bedarf",
       color: "bg-orange-100 text-orange-800 border-orange-200"
+    },
+    {
+      type: "Standaktion",
+      description: "Bürgerkontakt an öffentlichen Veranstaltungen",
+      frequency: "Saisonal",
+      color: "bg-red-100 text-red-800 border-red-200"
+    },
+    {
+      type: "Versammlung",
+      description: "Mitgliederversammlungen und offizielle Anlässe",
+      frequency: "Jährlich",
+      color: "bg-indigo-100 text-indigo-800 border-indigo-200"
+    },
+    {
+      type: "Abstimmung",
+      description: "Abstimmungssonntage und politische Entscheide",
+      frequency: "Bei Bedarf",
+      color: "bg-teal-100 text-teal-800 border-teal-200"
     }
   ];
 
@@ -354,11 +379,13 @@ const Veranstaltungen = () => {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">Alle Typen</SelectItem>
-                <SelectItem value="bürgerkontakt">Bürgerkontakt</SelectItem>
-                <SelectItem value="abstimmung">Abstimmung</SelectItem>
                 <SelectItem value="diskussion">Diskussion</SelectItem>
-                <SelectItem value="stammtisch">Stammtisch</SelectItem>
+                <SelectItem value="anlass">Anlass</SelectItem>
+                <SelectItem value="höck">Höck</SelectItem>
+                <SelectItem value="vortrag">Vortrag</SelectItem>
+                <SelectItem value="standaktion">Standaktion</SelectItem>
                 <SelectItem value="versammlung">Versammlung</SelectItem>
+                <SelectItem value="abstimmung">Abstimmung</SelectItem>
               </SelectContent>
             </Select>
             <Select value={filterTarget} onValueChange={setFilterTarget}>
