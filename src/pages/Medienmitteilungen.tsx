@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { FileText, Calendar, ArrowRight, Download, Phone, Mail, Eye, Share2, TrendingUp, Users } from 'lucide-react';
+import ProtectedEmail from '@/components/ProtectedEmail';
 
 const Medienmitteilungen = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -26,148 +27,115 @@ const Medienmitteilungen = () => {
   const pressReleases = [
     {
       id: 1,
-      title: "SVP fordert Stopp der Steuererhöhungspläne",
-      date: "2025-01-20",
-      category: "Steuerpolitik",
-      excerpt: "Die SVP Stadt Zug kritisiert die geplante Erhöhung der Gemeindesteuern scharf und fordert stattdessen eine Überprüfung der Ausgabenstruktur. Präsident Peter Kaufmann: 'Die Bürger sind bereits genug belastet.'",
+      title: "Standaktion auf dem Bundesplatz: 2x NEIN zur Mehrwertinitiative und zum Gegenvorschlag",
+      date: "2025-04-22",
+      category: "Abstimmungen",
+      excerpt: "Am Samstag, 19. April 2025, war die SVP Stadt Zug mit einer Standaktion auf dem Bundesplatz präsent. Bei strahlendem Frühlingswetter suchten unsere Mitglieder das Gespräch mit der Bevölkerung und informierten über die gefährlichen Folgen der Mehrwertinitiative und des Gegenvorschlags.",
       priority: "hoch",
-      author: "Peter Kaufmann, Präsident",
-      readTime: "3 min",
-      views: 1247,
-      shares: 89,
-      fullText: "Die SVP Stadt Zug lehnt die vom Stadtrat vorgeschlagene Steuererhöhung kategorisch ab...",
-      tags: ["Steuern", "Budget", "Bürgerbelastung"],
+      author: "Gregor Bruhin",
+      readTime: "2 min",
+      fullText: "Am Samstag, 19. April 2025, war die SVP Stadt Zug mit einer Standaktion auf dem Bundesplatz präsent. Bei strahlendem Frühlingswetter suchten unsere Mitglieder das Gespräch mit der Bevölkerung und informierten über die gefährlichen Folgen der Mehrwertinitiative und des Gegenvorschlags. Mit klaren Argumenten und viel Engagement konnten wir zahlreiche Passantinnen und Passanten von einem 2x NEIN am 18. Mai überzeugen. Die Initiative und ihr Gegenvorschlag bedrohen bewährte Eigentumsrechte, gefährden Arbeitsplätze und treiben die Kosten für Wohnen und Gewerbe in die Höhe – das muss verhindert werden!",
+      tags: ["Abstimmung", "Mehrwertinitiative", "Bundesplatz"],
       mediaContact: {
-        name: "Maria Zimmermann", 
+        name: "Gregor Bruhin",
+        phone: "+41 79 123 45 67",
+        email: "gb@gregor-bruhin.ch"
+      }
+    },
+    {
+      id: 2,
+      title: "SVP der Stadt Zug ärgert sich über Bettler",
+      date: "2025-02-10",
+      category: "Sicherheit",
+      excerpt: "Generelle Bettelverbote gibt es in immer weniger Kantonen. Auch im Kanton Zug ist Betteln seit rund vier Jahren nicht mehr verboten. Und trotzdem kommt es nun wieder auf die politische Agenda. Für die SVP sind die Bettler nämlich zu aufdringlich.",
+      priority: "normal",
+      author: "SVP Stadt Zug",
+      readTime: "3 min",
+      fullText: "Man läuft gemütlich durch die Stadt und wird plötzlich von einem Bettler oder einer Bettlerin angesprochen. Vielleicht haben Sie dies auch schon erlebt. Generelle Bettelverbote gibt es in immer weniger Kantonen. Dies seit einem Urteil des Europäischen Gerichtshofes für Menschenrechte. Auch im Kanton Zug ist Betteln seit rund vier Jahren nicht mehr verboten. Und trotzdem kommt es nun wieder auf die politische Agenda. Für die SVP sind die Bettler nämlich zu aufdringlich.",
+      tags: ["Sicherheit", "Ordnung", "Stadt"],
+      mediaContact: {
+        name: "Maria Zimmermann",
         phone: "+41 79 456 78 90",
         email: "media@svp-stadt-zug.ch"
       }
     },
     {
-      id: 2,
-      title: "Erfolgreiche Interpellation zur Verkehrssituation Bahnhofstrasse",
-      date: "2025-01-15",
-      category: "Verkehr",
-      excerpt: "Der Stadtrat hat unsere Interpellation zur Verkehrssituation detailliert beantwortet. Die vorgeschlagenen Massnahmen zur Verkehrsberuhigung werden nun geprüft und sollen bis Sommer 2025 umgesetzt werden.",
-      priority: "normal",
-      author: "Thomas Bachmann, Stadtrat",
-      readTime: "4 min",
-      views: 892,
-      shares: 45,
-      fullText: "Nach intensiven Verhandlungen hat der Stadtrat konkrete Massnahmen zur Verkehrsberuhigung...",
-      tags: ["Verkehr", "Bahnhofstrasse", "Interpellation"],
-      mediaContact: {
-        name: "Thomas Bachmann",
-        phone: "+41 41 728 21 12", 
-        email: "thomas.bachmann@stadtzug.ch"
-      }
-    },
-    {
       id: 3,
-      title: "SVP unterstützt Digitalisierung der Stadtverwaltung",
-      date: "2025-01-10",
-      category: "Digitalisierung",
-      excerpt: "Unsere Motion zur Digitalisierung wurde vom Stadtrat positiv aufgenommen. Bis Ende 2025 sollen 80% aller Verwaltungsdienstleistungen online verfügbar sein. Ein wichtiger Schritt für mehr Bürgerservice.",
+      title: "Doppelwechsel in der SVP-Fraktion des Grossen Gemeinderates der Stadt Zug",
+      date: "2024-06-17",
+      category: "Partei",
+      excerpt: "Die SVP-Fraktion des Grossen Gemeinderates der Stadt Zug verzeichnet einen Doppelwechsel. Neue Mitglieder verstärken die Fraktion und bringen frische Ideen in die Stadtpolitik ein.",
       priority: "normal",
-      author: "Dr. Andrea Müller, Stadträtin",
-      readTime: "2 min",
-      views: 1034,
-      shares: 67,
-      fullText: "Die digitale Transformation der Stadtverwaltung ist ein zentrales Anliegen der SVP...",
-      tags: ["Digitalisierung", "E-Government", "Motion"],
+      author: "SVP-Fraktion GGR",
+      readTime: "4 min",
+      fullText: "Die SVP-Fraktion des Grossen Gemeinderates der Stadt Zug verzeichnet einen personellen Wechsel, der die Fraktion mit neuen Impulsen stärkt. Die neuen Mitglieder bringen ihre Expertise und Erfahrung ein, um die bürgerlichen Werte in der Stadtpolitik zu vertreten.",
+      tags: ["Fraktion", "Gemeinderat", "Personal"],
       mediaContact: {
-        name: "Dr. Andrea Müller",
-        phone: "+41 41 728 21 11",
-        email: "andrea.mueller@stadtzug.ch"
+        name: "Roman Küng",
+        phone: "+41 41 750 10 55",
+        email: "roman.kueng@bluewin.ch"
       }
     },
     {
       id: 4,
-      title: "Klare Haltung zu geplanter Stadtentwicklung Zug Ost",
-      date: "2024-12-18",
-      category: "Stadtplanung",
-      excerpt: "Die SVP lehnt die aktuellen Pläne für Zug Ost ab. Die Kosten sind zu hoch, der Nutzen unklar. Wir fordern eine grundsätzliche Überarbeitung des Projekts unter Einbezug der Quartierbevölkerung.",
-      priority: "hoch",
-      author: "Peter Kaufmann, Präsident",
+      title: "Elektroautos – eine Mogelpackung oder die Lösung für die Zukunft?",
+      date: "2024-05-15",
+      category: "Verkehr",
+      excerpt: "Nicht nur der Titel der Tischrede des 1000er-Club-Mitglieds, Morten Hannesbo, tönte spannend, auch das 20' Referat dazu überzeugte durch das Fachwissen, die Logik und der Schlussfolgerung: 'Solange die Sonne scheint, gibt es genug Energie, um Elektroautos zu betreiben!'",
+      priority: "normal",
+      author: "1000er Club",
       readTime: "5 min",
-      views: 1567,
-      shares: 123,
-      fullText: "Das Projekt Zug Ost in der aktuellen Form ist nicht im Interesse der Zuger Bevölkerung...",
-      tags: ["Stadtplanung", "Zug Ost", "Bürgerbeteiligung"],
+      fullText: "Nicht nur der Titel der Tischrede des 1000er-Club-Mitglieds, Morten Hannesbo, tönte spannend, auch das 20' Referat dazu überzeugte durch das Fachwissen, die Logik und der Schlussfolgerung: 'Solange die Sonne scheint, gibt es genug Energie, um Elektroautos zu betreiben!' Selbstfahrende Fahrzeuge sind in 20 Jahren im Alltag nicht mehr wegzudenken– die Mobilität und Autonomie des Einzelnen steigt dadurch enorm.",
+      tags: ["Elektromobilität", "Zukunft", "1000er Club"],
       mediaContact: {
-        name: "Peter Kaufmann",
-        phone: "+41 79 123 45 67",
-        email: "peter.kaufmann@svp-zug.ch"
+        name: "Philip Brunner",
+        phone: "+41 79 398 4 396",
+        email: "phcb@philip-brunner.ch"
       }
     },
     {
       id: 5,
-      title: "Erfolgreiche Bilanz: Ein Jahr SVP-Arbeit im Überblick",
-      date: "2024-12-15",
-      category: "Jahresbilanz",
-      excerpt: "47 Vorstösse, 12 erfolgreiche Motionen und unzählige Bürgerkontakte: Die SVP Stadt Zug blickt auf ein arbeitsreiches und erfolgreiches politisches Jahr 2024 zurück.",
-      priority: "normal",
-      author: "Gesamter Vorstand",
-      readTime: "8 min",
-      views: 2134,
-      shares: 178,
-      fullText: "Das Jahr 2024 war geprägt von intensiver parlamentarischer Arbeit und direktem Bürgerkontakt...",
-      tags: ["Jahresbilanz", "Erfolge", "Statistik"],
+      title: "Nein zur Transparenz-Initiative – unnötige Bürokratie vermeiden",
+      date: "2024-02-29",
+      category: "Abstimmungen",
+      excerpt: "Die SVP Stadt Zug lehnt die Transparenz-Initiative ab. Statt mehr demokratische Teilhabe zu schaffen, würde sie zu unnötiger Bürokratie und hohen Kosten führen, ohne den gewünschten Nutzen zu bringen.",
+      priority: "hoch",
+      author: "SVP Stadt Zug",
+      readTime: "4 min",
+      fullText: "Die SVP Stadt Zug positioniert sich klar gegen die Transparenz-Initiative. Diese würde zu einem Bürokratie-Monster werden, das hohe Kosten verursacht, ohne den versprochenen Mehrwert für die Demokratie zu liefern. Transparenz ist wichtig, aber sie muss sinnvoll und verhältnismässig sein.",
+      tags: ["Transparenz-Initiative", "Bürokratie", "Abstimmung"],
       mediaContact: {
-        name: "Maria Zimmermann",
+        name: "Adrian Risi",
         phone: "+41 79 456 78 90",
-        email: "sekretariat@svp-stadt-zug.ch"
+        email: "adrian.risi@risiimmobilienag.ch"
       }
     },
     {
       id: 6,
-      title: "Sicherheit in Zuger Quartieren: Motion eingereicht",
-      date: "2024-11-28",
-      category: "Sicherheit",
-      excerpt: "Mit unserer Motion fordern wir verstärkte Polizeipräsenz in kritischen Quartieren sowie bessere Beleuchtung öffentlicher Räume. Sicherheit ist ein Grundrecht aller Bürgerinnen und Bürger.",
-      priority: "normal",
-      author: "Dr. Andrea Müller, Stadträtin",
+      title: "Dringliche Motion: Solidarität mit dem Misox – sofort!",
+      date: "2024-01-25",
+      category: "Solidarität",
+      excerpt: "Nach den verheerenden Unwettern im Misox zeigt die SVP Stadt Zug Solidarität und fordert in einer dringlichen Motion schnelle und unbürokratische Hilfe für die betroffene Region.",
+      priority: "hoch",
+      author: "SVP Stadt Zug",
       readTime: "3 min",
-      views: 987,
-      shares: 56,
-      fullText: "Die Sicherheitslage in einigen Zuger Quartieren hat sich verschlechtert...",
-      tags: ["Sicherheit", "Motion", "Quartiere"],
+      fullText: "Die SVP Stadt Zug reicht eine dringliche Motion ein, um den vom Unwetter schwer getroffenen Misox zu helfen. Solidarität in schweren Zeiten ist ein Grundwert unserer Gesellschaft. Die Hilfe muss schnell und unbürokratisch erfolgen.",
+      tags: ["Misox", "Solidarität", "Dringliche Motion"],
       mediaContact: {
-        name: "Dr. Andrea Müller",
-        phone: "+41 41 728 21 11",
-        email: "andrea.mueller@stadtzug.ch"
+        name: "André Wicki",
+        phone: "+41 58 728 90 01",
+        email: "andre.wicki@stadtzug.ch"
       }
-    }
-  ];
-
-  const mediaStatistics = [
-    {
-      icon: FileText,
-      number: "47",
-      label: "Medienmitteilungen 2024",
-      description: "Transparente Kommunikation"
-    },
-    {
-      icon: Eye,
-      number: "89k",
-      label: "Gesamtreichweite",
-      description: "Online und Print"
-    },
-    {
-      icon: TrendingUp,
-      number: "340%",
-      label: "Wachstum Social Media",
-      description: "Follower-Zuwachs 2024"
     }
   ];
 
   const categories = [
     { value: 'all', label: 'Alle Kategorien', count: pressReleases.length },
-    { value: 'steuerpolitik', label: 'Steuerpolitik', count: pressReleases.filter(pr => pr.category === 'Steuerpolitik').length },
+    { value: 'abstimmungen', label: 'Abstimmungen', count: pressReleases.filter(pr => pr.category === 'Abstimmungen').length },
     { value: 'verkehr', label: 'Verkehr', count: pressReleases.filter(pr => pr.category === 'Verkehr').length },
     { value: 'sicherheit', label: 'Sicherheit', count: pressReleases.filter(pr => pr.category === 'Sicherheit').length },
-    { value: 'stadtplanung', label: 'Stadtplanung', count: pressReleases.filter(pr => pr.category === 'Stadtplanung').length },
-    { value: 'digitalisierung', label: 'Digitalisierung', count: pressReleases.filter(pr => pr.category === 'Digitalisierung').length }
+    { value: 'partei', label: 'Partei', count: pressReleases.filter(pr => pr.category === 'Partei').length },
+    { value: 'solidarität', label: 'Solidarität', count: pressReleases.filter(pr => pr.category === 'Solidarität').length }
   ];
 
   const mediaContacts = [
@@ -215,12 +183,11 @@ const Medienmitteilungen = () => {
 
   const getCategoryBadge = (category: string) => {
     const categoryColors: { [key: string]: string } = {
-      'Steuerpolitik': 'bg-green-100 text-green-800 border-green-200',
+      'Abstimmungen': 'bg-green-100 text-green-800 border-green-200',
       'Verkehr': 'bg-blue-100 text-blue-800 border-blue-200',
       'Sicherheit': 'bg-red-100 text-red-800 border-red-200',
-      'Stadtplanung': 'bg-purple-100 text-purple-800 border-purple-200',
-      'Digitalisierung': 'bg-indigo-100 text-indigo-800 border-indigo-200',
-      'Jahresbilanz': 'bg-orange-100 text-orange-800 border-orange-200'
+      'Partei': 'bg-purple-100 text-purple-800 border-purple-200',
+      'Solidarität': 'bg-indigo-100 text-indigo-800 border-indigo-200'
     };
     
     return (
@@ -247,21 +214,16 @@ const Medienmitteilungen = () => {
           </p>
         </div>
 
-        {/* Statistics */}
+        {/* What We Share */}
         <section className="mb-16">
-          <div className="grid md:grid-cols-3 gap-6">
-            {mediaStatistics.map((stat, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="text-3xl font-bold text-foreground mb-2">{stat.number}</div>
-                  <div className="font-semibold text-foreground mb-1">{stat.label}</div>
-                  <p className="text-sm text-muted-foreground">{stat.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-foreground mb-6">
+              Unsere Kommunikation
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Transparente und direkte Kommunikation über unsere politische Arbeit, 
+              Standpunkte und Aktivitäten in der Stadt Zug.
+            </p>
           </div>
         </section>
 
@@ -339,14 +301,6 @@ const Medienmitteilungen = () => {
                               {getCategoryBadge(release.category)}
                               {getPriorityBadge(release.priority)}
                             </div>
-                            <div className="text-xs text-muted-foreground">
-                              <Eye className="w-3 h-3 inline mr-1" />
-                              {release.views} Aufrufe
-                            </div>
-                            <div className="text-xs text-muted-foreground">
-                              <Share2 className="w-3 h-3 inline mr-1" />
-                              {release.shares} Shares
-                            </div>
                           </div>
                         </div>
 
@@ -399,9 +353,12 @@ const Medienmitteilungen = () => {
                                 </div>
                                 <div className="flex items-center">
                                   <Mail className="w-3 h-3 mr-1" />
-                                  <a href={`mailto:${release.mediaContact.email}`} className="hover:text-primary">
-                                    {release.mediaContact.email}
-                                  </a>
+                                  <ProtectedEmail 
+                                    user={release.mediaContact.email.split('@')[0]} 
+                                    domain={release.mediaContact.email.split('@')[1]} 
+                                    showIcon={false}
+                                    className="hover:text-primary"
+                                  />
                                 </div>
                               </div>
                             </div>
@@ -439,12 +396,11 @@ const Medienmitteilungen = () => {
                               {contact.phone}
                             </a>
                           </div>
-                          <div className="flex items-center">
-                            <Mail className="w-4 h-4 mr-2" />
-                            <a href={`mailto:${contact.email}`} className="hover:text-primary transition-colors">
-                              {contact.email}
-                            </a>
-                          </div>
+                            <ProtectedEmail 
+                              user={contact.email.split('@')[0]} 
+                              domain={contact.email.split('@')[1]} 
+                              className="hover:text-primary transition-colors"
+                            />
                         </div>
                       </div>
 
