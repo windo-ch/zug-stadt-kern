@@ -19,69 +19,78 @@ const WasAnsteht = () => {
   const upcomingEvents = [
     {
       id: 1,
-      title: "Bürgersprechstunde",
-      date: "2025-02-15",
-      time: "18:00 - 20:00", 
-      location: "Restaurant Löwen, Zug",
-      type: "Bürgerkontakt",
-      description: "Offene Sprechstunde für alle Bürgerinnen und Bürger"
+      title: "Aktuelle Geopolitische Herausforderungen der Schweiz",
+      date: "2025-08-21",
+      time: "19:00", 
+      location: "Rest. Luegisland, Finstersee/Menzingen",
+      type: "Vortrag",
+      description: "Ein Abend zu den aktuellen politischen Entwicklungen auf internationaler Ebene"
     },
     {
       id: 2,
-      title: "Abstimmungsversammlung März",
-      date: "2025-02-28",
-      time: "19:30 - 21:30",
-      location: "Burgbachsaal, Zug",
-      type: "Abstimmung",
-      description: "Diskussion und Empfehlungen zu den Abstimmungsvorlagen vom 15. März"
+      title: "Sommeranlass SVP Stadt Zug",
+      date: "2025-08-22",
+      time: "18:30",
+      location: "Rest. Barakka, Allmendstr. 26, Zug",
+      type: "Anlass",
+      description: "Gemütlicher Sommeranlass der SVP Stadt Zug für Mitglieder und Interessierte"
     },
     {
       id: 3,
-      title: "Podiumsdiskussion Mobilität",
-      date: "2025-03-12",
-      time: "19:00 - 21:00",
-      location: "Aula Kantonsschule, Zug",
-      type: "Diskussion",
-      description: "Zukunft der Mobilität in Zug - Podiumsdiskussion mit Experten"
+      title: "Die SVP am Stieremärt 2025",
+      date: "2025-09-10",
+      time: "ganztags",
+      location: "Festzelt Stieremärt",
+      type: "Stand",
+      description: "Besuchen Sie uns am traditionellen Zuger Stieremärt"
+    },
+    {
+      id: 4,
+      title: "Mitgliederversammlung SVP Kanton Zug",
+      date: "2025-09-18",
+      time: "19:30",
+      location: "Rest. Schnitz & Gwunder, Steinhausen",
+      type: "Versammlung",
+      description: "Ordentliche Mitgliederversammlung mit wichtigen Traktanden"
     }
   ];
 
   const importantDates = [
     {
-      date: "15. März 2025",
-      title: "Eidgenössische Abstimmung",
-      description: "Abstimmung über mehrere nationale Vorlagen",
+      date: "Ende August 2025",
+      title: "Grenzschutz-Initiative Einreichung",
+      description: "Einreichung der Volksinitiative «Asylmissbrauch stoppen! (Grenzschutz-Initiative)» im September - Unterschriften bis 29. August",
+      type: "Initiative"
+    },
+    {
+      date: "28. September 2025",
+      title: "Abstimmungssonntag",
+      description: "Eidgenössische und kantonale Abstimmungen",
       type: "Abstimmung"
     },
     {
-      date: "25. April 2025",
-      title: "Jahreshauptversammlung",
-      description: "SVP Stadt Zug Jahresversammlung im Casino Zug",
-      type: "Versammlung"
-    },
-    {
-      date: "Juni 2025",
-      title: "Kantonsratswahlen",
-      description: "Wahlen zum Zuger Kantonsrat",
-      type: "Wahlen"
+      date: "Laufend",
+      title: "Kompass Europa Initiative",
+      description: "Unterschriftensammlung für die Kompass Europa Initiative läuft",
+      type: "Initiative"
     }
   ];
 
   const recentPoliticalWork = [
     {
-      title: "Motion: Jahres-Parkkarte 50% günstiger",
-      status: "zur Überw.",
-      description: "SVP-Motion für günstigere Parkkarten eingereicht"
+      title: "Grenzschutz-Initiative",
+      status: "Sammlung",
+      description: "Volksinitiative «Asylmissbrauch stoppen!» - Unterschriften sammeln bis 29. August"
     },
     {
-      title: "Interpellation: Kulturhauptstadt 2030",
-      status: "2948 SR", 
-      description: "Gemeinsame Anfrage zur Bewerbung als Kulturhauptstadt"
+      title: "Kompass Europa Initiative",
+      status: "Aktiv", 
+      description: "Initiative für eine souveräne Schweiz in Europa"
     },
     {
-      title: "Postulat: Stadt Zuger Honig",
-      status: "Überw.",
-      description: "Initiative für nachhaltige Honigproduktion gestartet"
+      title: "Kantonsratssitzungen",
+      status: "Laufend",
+      description: "Regelmäßige Teilnahme an Kantonsratssitzungen und Fraktionsarbeit"
     }
   ];
 
