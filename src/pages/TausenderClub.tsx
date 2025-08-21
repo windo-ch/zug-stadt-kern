@@ -32,8 +32,10 @@ const TausenderClub = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
-            <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
-              Mehr erfahren
+            <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/20 bg-white/10" asChild>
+              <a href="/1000er-club-veranstaltungen">
+                Veranstaltungen
+              </a>
             </Button>
           </div>
         </div>

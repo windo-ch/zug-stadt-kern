@@ -20,6 +20,7 @@ import Newsletter from "./pages/Newsletter";
 import Mitglied from "./pages/Mitglied";
 import Spenden from "./pages/Spenden";
 import TausenderClub from "./pages/TausenderClub";
+import TausenderClubVeranstaltungen from "./pages/TausenderClubVeranstaltungen";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import CookiePolicy from "./pages/Cookie";
@@ -52,6 +53,7 @@ const App = () => (
           <Route path="/mitglied-werden" element={<Mitglied />} />
           <Route path="/spenden" element={<Spenden />} />
           <Route path="/1000er-club" element={<TausenderClub />} />
+          <Route path="/1000er-club-veranstaltungen" element={<TausenderClubVeranstaltungen />} />
           <Route path="/wahlen" element={<Wahlen />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
