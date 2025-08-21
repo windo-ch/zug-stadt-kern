@@ -53,7 +53,7 @@ const ValuesSection = () => {
             return (
               <div key={index} className="card-value group">
                 <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-svp-green to-svp-green-light rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-100/30 via-svp-green via-30% to-svp-green-light rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <IconComponent className="h-8 w-8 text-white" />
                   </div>
                   
