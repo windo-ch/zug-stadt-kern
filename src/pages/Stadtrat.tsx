@@ -96,27 +96,6 @@ const Stadtrat = () => {
     }
   ];
 
-  const recentDecisions = [
-    {
-      date: "15. Februar 2024",
-      title: "Erhöhung der Polizeipräsenz",
-      description: "Beschluss zur Verstärkung der nächtlichen Patrouillen in der Innenstadt",
-      status: "Angenommen"
-    },
-    {
-      date: "8. Februar 2024",
-      title: "Digitalisierung der Verwaltung",
-      description: "Modernisierung der IT-Infrastruktur für besseren Bürgerservice",
-      status: "Angenommen"
-    },
-    {
-      date: "1. Februar 2024",
-      title: "Verkehrsberuhigung Altstadt",
-      description: "Massnahmen zur Reduzierung des Durchgangsverkehrs",
-      status: "In Bearbeitung"
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -299,29 +278,39 @@ const Stadtrat = () => {
           </div>
         </section>
 
-        {/* Recent Decisions */}
+        {/* Parliamentary Work Info */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Aktuelle Entscheide</h2>
-          <div className="space-y-4">
-            {recentDecisions.map((decision, index) => (
-              <Card key={index}>
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between">
-                    <div className="flex-grow">
-                      <div className="flex items-center space-x-3 mb-2">
-                        <h3 className="font-semibold text-foreground">{decision.title}</h3>
-                        <Badge variant={decision.status === "Angenommen" ? "default" : "secondary"}>
-                          {decision.status}
-                        </Badge>
-                      </div>
-                      <p className="text-muted-foreground text-sm mb-2">{decision.description}</p>
-                      <span className="text-xs text-muted-foreground">{decision.date}</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <h2 className="text-3xl font-bold text-foreground mb-8">Parlamentarische Arbeit</h2>
+          <Card>
+            <CardContent className="p-8">
+              <div className="text-center">
+                <Calendar className="h-12 w-12 mx-auto mb-4 text-primary" />
+                <h3 className="text-xl font-semibold text-foreground mb-4">
+                  Aktuelle Entscheide und Sitzungen
+                </h3>
+                <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                  Die aktuellen Beschlüsse, Traktanden und Sitzungsprotokolle des Grossen Gemeinderats 
+                  finden Sie auf der offiziellen Website der Stadt Zug.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a 
+                    href="https://www.stadtzug.ch/politik/grosser-gemeinderat" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+                  >
+                    Zu den aktuellen Sitzungen
+                  </a>
+                  <a 
+                    href="/vorstoesse" 
+                    className="inline-flex items-center justify-center rounded-md border border-input bg-background px-6 py-3 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                  >
+                    Unsere Vorstösse
+                  </a>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </section>
 
         {/* Contact Section */}
