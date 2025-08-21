@@ -80,7 +80,7 @@ const CookieNotice = () => {
             <div className="flex items-center gap-3">
               <div className="text-2xl">🍪</div>
               <CardTitle className="text-xl">
-                Cookies & Datenschutz
+                Guezli! Cookies & Datenschutz
               </CardTitle>
             </div>
             <Button
@@ -97,7 +97,7 @@ const CookieNotice = () => {
 
         <CardContent className="space-y-4">
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. 
+            Wir verwenden Guezli (Cookies), um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. 
             Sie können Ihre Präferenzen jederzeit anpassen.
           </p>
 
@@ -108,7 +108,7 @@ const CookieNotice = () => {
                   onClick={acceptAll}
                   className="btn-hero flex-1"
                 >
-                  🍪 Alle akzeptieren
+                  🍪 Alle Guezli akzeptieren
                 </Button>
                 
                 <Button 
