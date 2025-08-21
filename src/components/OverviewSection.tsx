@@ -74,33 +74,23 @@ const OverviewSection = () => {
         </div>
 
         {/* Stats Section */}
-        <div 
-          className="mt-20 rounded-2xl p-8 text-white relative overflow-hidden"
-          style={{
-            backgroundImage: `url('/lovable-uploads/d75181da-4d07-475b-827c-99ae71cae110.png')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-svp-green/90 to-svp-green-light/90"></div>
-          <div className="relative z-10">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-4xl font-bold mb-2">33</div>
-                <div className="text-sm opacity-90">Jahre für Zug im Einsatz</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold mb-2">500+</div>
-                <div className="text-sm opacity-90">Mitglieder</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold mb-2">47</div>
-                <div className="text-sm opacity-90">Vorstösse seit 2020</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold mb-2">78%</div>
-                <div className="text-sm opacity-90">Erfolgsquote</div>
-              </div>
+        <div className="mt-20 bg-gradient-to-r from-svp-green to-svp-green-light rounded-2xl p-8 text-white">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold mb-2">33</div>
+              <div className="text-sm opacity-90">Jahre für Zug im Einsatz</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">500+</div>
+              <div className="text-sm opacity-90">Mitglieder</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">47</div>
+              <div className="text-sm opacity-90">Vorstösse seit 2020</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">78%</div>
+              <div className="text-sm opacity-90">Erfolgsquote</div>
             </div>
           </div>
         </div>
