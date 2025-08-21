@@ -4,10 +4,9 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { FileText, Calendar, ArrowRight, Download, Phone, Mail, Eye, Share2, TrendingUp, Users } from 'lucide-react';
+import { FileText, Calendar, ArrowRight, Download, Phone, Mail, Eye, Share2, TrendingUp } from 'lucide-react';
 import ProtectedEmail from '@/components/ProtectedEmail';
 
 const Medienmitteilungen = () => {
@@ -290,168 +289,101 @@ const Medienmitteilungen = () => {
           </div>
         </section>
 
-        {/* Main Content Tabs */}
-        <Tabs defaultValue="releases" className="w-full">
-          <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="releases" className="flex items-center">
-              <FileText className="w-4 h-4 mr-2" />
-              Medienmitteilungen
-            </TabsTrigger>
-            <TabsTrigger value="contacts" className="flex items-center">
-              <Users className="w-4 h-4 mr-2" />
-              Medienkontakte
-            </TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="releases" className="mt-8">
-            <div className="space-y-6">
-              {filteredReleases.length === 0 ? (
-                <Card>
-                  <CardContent className="p-8 text-center">
-                    <p className="text-muted-foreground">Keine Medienmitteilungen gefunden.</p>
-                  </CardContent>
-                </Card>
-              ) : (
-                filteredReleases.map((release) => (
-                  <Card key={release.id} className="hover:shadow-lg transition-shadow">
-                    <CardContent className="p-8">
-                      <div className="grid lg:grid-cols-4 gap-6">
-                        {/* Date and Meta Info */}
-                        <div className="lg:col-span-1">
-                          <div className="space-y-3">
-                            <div className="text-sm text-muted-foreground">
-                              <Calendar className="w-4 h-4 inline mr-2" />
-                              {formatDate(release.date)}
-                            </div>
-                            <div className="space-y-2">
-                              {getCategoryBadge(release.category)}
-                              {getPriorityBadge(release.priority)}
-                            </div>
+        {/* Media Releases */}
+        <section className="mt-8">
+          <div className="space-y-6">
+            {filteredReleases.length === 0 ? (
+              <Card>
+                <CardContent className="p-8 text-center">
+                  <p className="text-muted-foreground">Keine Medienmitteilungen gefunden.</p>
+                </CardContent>
+              </Card>
+            ) : (
+              filteredReleases.map((release) => (
+                <Card key={release.id} className="hover:shadow-lg transition-shadow">
+                  <CardContent className="p-8">
+                    <div className="grid lg:grid-cols-4 gap-6">
+                      {/* Date and Meta Info */}
+                      <div className="lg:col-span-1">
+                        <div className="space-y-3">
+                          <div className="text-sm text-muted-foreground">
+                            <Calendar className="w-4 h-4 inline mr-2" />
+                            {formatDate(release.date)}
+                          </div>
+                          <div className="space-y-2">
+                            {getCategoryBadge(release.category)}
+                            {getPriorityBadge(release.priority)}
                           </div>
                         </div>
+                      </div>
 
-                        {/* Content */}
-                        <div className="lg:col-span-2">
-                          <h3 className="text-xl font-bold text-foreground mb-4">
-                            {release.title}
-                          </h3>
-                          <p className="text-muted-foreground mb-4 leading-relaxed">
-                            {release.excerpt}
-                          </p>
-                          <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-4">
-                            <span><strong>Autor:</strong> {release.author}</span>
-                            <span><strong>Lesezeit:</strong> {release.readTime}</span>
-                          </div>
-                          <div className="flex flex-wrap gap-2">
-                            {release.tags.map((tag, index) => (
-                              <Badge key={index} variant="outline" className="text-xs">
-                                {tag}
-                              </Badge>
-                            ))}
-                          </div>
+                      {/* Content */}
+                      <div className="lg:col-span-2">
+                        <h3 className="text-xl font-bold text-foreground mb-4">
+                          {release.title}
+                        </h3>
+                        <p className="text-muted-foreground mb-4 leading-relaxed">
+                          {release.excerpt}
+                        </p>
+                        <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-4">
+                          <span><strong>Autor:</strong> {release.author}</span>
+                          <span><strong>Lesezeit:</strong> {release.readTime}</span>
                         </div>
+                        <div className="flex flex-wrap gap-2">
+                          {release.tags.map((tag, index) => (
+                            <Badge key={index} variant="outline" className="text-xs">
+                              {tag}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
 
-                        {/* Actions and Contact */}
-                        <div className="lg:col-span-1">
-                          <div className="space-y-4">
-                            <Button className="w-full">
-                              <ArrowRight className="w-4 h-4 mr-2" />
-                              Vollständig lesen
-                            </Button>
-                            <Button variant="outline" size="sm" className="w-full">
-                              <Download className="w-4 h-4 mr-2" />
-                              PDF Download
-                            </Button>
-                            <Button variant="outline" size="sm" className="w-full">
-                              <Share2 className="w-4 h-4 mr-2" />
-                              Teilen
-                            </Button>
-                            
-                            <div className="pt-4 border-t">
-                              <h4 className="font-medium text-sm mb-2">Medienkontakt</h4>
-                              <div className="text-xs text-muted-foreground space-y-1">
-                                <p className="font-medium">{release.mediaContact.name}</p>
-                                <div className="flex items-center">
-                                  <Phone className="w-3 h-3 mr-1" />
-                                  <a href={`tel:${release.mediaContact.phone}`} className="hover:text-primary">
-                                    {release.mediaContact.phone}
-                                  </a>
-                                </div>
-                                <div className="flex items-center">
-                                  <Mail className="w-3 h-3 mr-1" />
-                                  <ProtectedEmail 
-                                    user={release.mediaContact.email.split('@')[0]} 
-                                    domain={release.mediaContact.email.split('@')[1]} 
-                                    showIcon={false}
-                                    className="hover:text-primary"
-                                  />
-                                </div>
+                      {/* Actions and Contact */}
+                      <div className="lg:col-span-1">
+                        <div className="space-y-4">
+                          <Button className="w-full">
+                            <ArrowRight className="w-4 h-4 mr-2" />
+                            Vollständig lesen
+                          </Button>
+                          <Button variant="outline" size="sm" className="w-full">
+                            <Download className="w-4 h-4 mr-2" />
+                            PDF Download
+                          </Button>
+                          <Button variant="outline" size="sm" className="w-full">
+                            <Share2 className="w-4 h-4 mr-2" />
+                            Teilen
+                          </Button>
+                          
+                          <div className="pt-4 border-t">
+                            <h4 className="font-medium text-sm mb-2">Medienkontakt</h4>
+                            <div className="text-xs text-muted-foreground space-y-1">
+                              <p className="font-medium">{release.mediaContact.name}</p>
+                              <div className="flex items-center">
+                                <Phone className="w-3 h-3 mr-1" />
+                                <a href={`tel:${release.mediaContact.phone}`} className="hover:text-primary">
+                                  {release.mediaContact.phone}
+                                </a>
+                              </div>
+                              <div className="flex items-center">
+                                <Mail className="w-3 h-3 mr-1" />
+                                <ProtectedEmail 
+                                  user={release.mediaContact.email.split('@')[0]} 
+                                  domain={release.mediaContact.email.split('@')[1]} 
+                                  showIcon={false}
+                                  className="hover:text-primary"
+                                />
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </CardContent>
-                  </Card>
-                ))
-              )}
-            </div>
-          </TabsContent>
-
-          <TabsContent value="contacts" className="mt-8">
-            <div className="grid md:grid-cols-2 gap-8">
-              {mediaContacts.map((contact, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <CardTitle className="text-xl">{contact.name}</CardTitle>
-                        <CardDescription className="text-base">{contact.role}</CardDescription>
-                      </div>
-                      <Badge variant="outline">Pressekontakt</Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-medium mb-2">Kontaktdaten</h4>
-                        <div className="space-y-2 text-sm">
-                          <div className="flex items-center">
-                            <Phone className="w-4 h-4 mr-2" />
-                            <a href={`tel:${contact.phone}`} className="hover:text-primary transition-colors">
-                              {contact.phone}
-                            </a>
-                          </div>
-                            <ProtectedEmail 
-                              user={contact.email.split('@')[0]} 
-                              domain={contact.email.split('@')[1]} 
-                              className="hover:text-primary transition-colors"
-                            />
-                        </div>
-                      </div>
-
-                      <div>
-                        <h4 className="font-medium mb-2">Verfügbarkeit</h4>
-                        <p className="text-sm text-muted-foreground">{contact.availability}</p>
-                      </div>
-
-                      <div>
-                        <h4 className="font-medium mb-2">Fachbereiche</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {contact.specialties.map((specialty, specialtyIndex) => (
-                            <Badge key={specialtyIndex} variant="secondary" className="text-xs">
-                              {specialty}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
                     </div>
                   </CardContent>
                 </Card>
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
+              ))
+            )}
+          </div>
+        </section>
 
         {/* Newsletter CTA */}
         <div className="bg-primary/5 rounded-lg p-8 text-center mt-16">
