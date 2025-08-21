@@ -157,12 +157,10 @@ const Vorstand = () => {
               <Card key={index} className="h-full hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-start space-x-4">
-                    <div className="w-16 h-16 rounded-full overflow-hidden bg-gray-200 flex-shrink-0">
-                      <img 
-                        src={member.image} 
-                        alt={`${member.name} - ${member.position}`}
-                        className="w-full h-full object-cover"
-                      />
+                    <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
+                      <span className="text-lg font-bold text-gray-600">
+                        {member.name.split(' ').map(n => n[0]).join('')}
+                      </span>
                     </div>
                     <div className="flex-grow">
                       <CardTitle className="text-xl mb-1">{member.name}</CardTitle>
