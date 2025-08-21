@@ -208,46 +208,6 @@ const Themen = () => {
           </p>
         </div>
 
-        {/* Current Burning Topics - Moved to top */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
-            <Badge variant="destructive" className="mb-4">Aktuell</Badge>
-            <h2 className="text-3xl font-bold text-foreground mb-4">Aktuelle Brennpunkte</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Diese wichtigen Initiativen stehen aktuell im Fokus und benötigen Ihre Unterstützung
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {upcomingInitiatives.map((initiative, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20">
-                <CardHeader className="pb-4">
-                  <div className="flex items-start justify-between mb-3">
-                    <CardTitle className="text-xl font-bold leading-tight pr-2">{initiative.title}</CardTitle>
-                    <Badge variant={
-                      initiative.status === "Kampagne" ? "destructive" : 
-                      initiative.status === "Unterschriftensammlung" ? "default" :
-                      initiative.status === "Unterschriftensammlung erfolgreich" ? "secondary" : "outline"
-                    } className="whitespace-nowrap text-xs">
-                      {initiative.status}
-                    </Badge>
-                  </div>
-                  <CardDescription className="text-base leading-relaxed">{initiative.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4 pt-0">
-                  <div className="text-sm text-muted-foreground bg-muted/30 rounded-lg p-3">
-                    <strong>Zeitrahmen:</strong> {initiative.timeline}
-                  </div>
-                  <Button asChild className="w-full h-11 font-semibold">
-                    <a href={initiative.link} target="_blank" rel="noopener noreferrer">
-                      Mehr erfahren & unterstützen
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
         {/* Key Statistics */}
         <section className="mb-16">
           <div className="grid md:grid-cols-3 gap-6">
@@ -320,6 +280,46 @@ const Themen = () => {
           </div>
         </section>
 
+
+        {/* Current Burning Topics - Before CTA */}
+        <section className="mb-20">
+          <div className="text-center mb-12">
+            <Badge variant="destructive" className="mb-4">Aktuell</Badge>
+            <h2 className="text-3xl font-bold text-foreground mb-4">Aktuelle Brennpunkte</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Diese wichtigen Initiativen stehen aktuell im Fokus und benötigen Ihre Unterstützung
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {upcomingInitiatives.map((initiative, index) => (
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20">
+                <CardHeader className="pb-4">
+                  <div className="flex items-start justify-between mb-3">
+                    <CardTitle className="text-xl font-bold leading-tight pr-2">{initiative.title}</CardTitle>
+                    <Badge variant={
+                      initiative.status === "Kampagne" ? "destructive" : 
+                      initiative.status === "Unterschriftensammlung" ? "default" :
+                      initiative.status === "Unterschriftensammlung erfolgreich" ? "secondary" : "outline"
+                    } className="whitespace-nowrap text-xs">
+                      {initiative.status}
+                    </Badge>
+                  </div>
+                  <CardDescription className="text-base leading-relaxed">{initiative.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4 pt-0">
+                  <div className="text-sm text-muted-foreground bg-muted/30 rounded-lg p-3">
+                    <strong>Zeitrahmen:</strong> {initiative.timeline}
+                  </div>
+                  <Button asChild className="w-full h-11 font-semibold">
+                    <a href={initiative.link} target="_blank" rel="noopener noreferrer">
+                      Mehr erfahren & unterstützen
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
 
         {/* Call to Action */}
         <div className="bg-primary/5 rounded-lg p-8 text-center">
