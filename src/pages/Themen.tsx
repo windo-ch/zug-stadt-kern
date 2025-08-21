@@ -177,8 +177,8 @@ const Themen = () => {
     },
     {
       title: "Grenzschutz-Initiative",
-      description: "Volksinitiative «Asylmissbrauch stoppen!» für mehr Sicherheit in unserem Land - Einreichung erfolgt",
-      timeline: "Eingereicht", 
+      description: "Volksinitiative «Asylmissbrauch stoppen!» für mehr Sicherheit in unserem Land - Unterschriftensammlung läuft",
+      timeline: "Sammlung läuft",
       status: "Unterschriftensammlung",
       link: "https://grenzschutzinitiative.ch/"
     },
