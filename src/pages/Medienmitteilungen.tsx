@@ -34,7 +34,7 @@ const Medienmitteilungen = () => {
       priority: "hoch",
       author: "Gregor Bruhin",
       readTime: "2 min",
-      fullText: "Am Samstag, 19. April 2025, war die SVP Stadt Zug mit einer Standaktion auf dem Bundesplatz präsent. Bei strahlendem Frühlingswetter suchten unsere Mitglieder das Gespräch mit der Bevölkerung und informierten über die gefährlichen Folgen der Mehrwertinitiative und des Gegenvorschlags. Mit klaren Argumenten und viel Engagement konnten wir zahlreiche Passantinnen und Passanten von einem 2x NEIN am 18. Mai überzeugen. Die Initiative und ihr Gegenvorschlag bedrohen bewährte Eigentumsrechte, gefährden Arbeitsplätze und treiben die Kosten für Wohnen und Gewerbe in die Höhe – das muss verhindert werden!",
+      fullText: "Am Samstag, 19. April 2025, war die SVP Stadt Zug mit einer Standaktion auf dem Bundesplatz präsent. Bei strahlendem Frühlingswetter suchten unsere Mitglieder das Gespräch mit der Bevölkerung und informierten über die gefährlichen Folgen der Mehrwertinitiative und des Gegenvorschlags.\n\nMit klaren Argumenten und viel Engagement konnten wir zahlreiche Passantinnen und Passanten von einem 2x NEIN am 18. Mai überzeugen. Die Initiative und ihr Gegenvorschlag bedrohen bewährte Eigentumsrechte, gefährden Arbeitsplätze und treiben die Kosten für Wohnen und Gewerbe in die Höhe – das muss verhindert werden!\n\nEin herzlicher Dank geht an alle, die mitgeholfen, informiert und mitdiskutiert haben. Gemeinsam setzen wir ein starkes Zeichen für Freiheit, Eigentum und Eigenverantwortung.",
       tags: ["Abstimmung", "Mehrwertinitiative", "Bundesplatz"],
       mediaContact: {
         name: "Gregor Bruhin",
@@ -51,25 +51,8 @@ const Medienmitteilungen = () => {
       priority: "normal",
       author: "SVP Stadt Zug",
       readTime: "3 min",
-      fullText: "Man läuft gemütlich durch die Stadt und wird plötzlich von einem Bettler oder einer Bettlerin angesprochen. Vielleicht haben Sie dies auch schon erlebt. Generelle Bettelverbote gibt es in immer weniger Kantonen. Dies seit einem Urteil des Europäischen Gerichtshofes für Menschenrechte. Auch im Kanton Zug ist Betteln seit rund vier Jahren nicht mehr verboten. Und trotzdem kommt es nun wieder auf die politische Agenda. Für die SVP sind die Bettler nämlich zu aufdringlich.",
+      fullText: "Man läuft gemütlich durch die Stadt und wird plötzlich von einem Bettler oder einer Bettlerin angesprochen. Vielleicht haben Sie dies auch schon erlebt. Generelle Bettelverbote gibt es in immer weniger Kantonen. Dies seit einem Urteil des Europäischen Gerichtshofes für Menschenrechte.\n\nAuch im Kanton Zug ist Betteln seit rund vier Jahren nicht mehr verboten. Und trotzdem kommt es nun wieder auf die politische Agenda. Für die SVP sind die Bettler nämlich zu aufdringlich.\n\nDie SVP fordert Massnahmen gegen aggressives Betteln und setzt sich für die Sicherheit und das Wohlbefinden aller Bürgerinnen und Bürger in der Stadt Zug ein.",
       tags: ["Sicherheit", "Ordnung", "Stadt"],
-      mediaContact: {
-        name: "Maria Zimmermann",
-        phone: "+41 79 456 78 90",
-        email: "media@svp-stadt-zug.ch"
-      }
-    },
-    {
-      id: 3,
-      title: "Doppelwechsel in der SVP-Fraktion des Grossen Gemeinderates der Stadt Zug",
-      date: "2024-06-17",
-      category: "Partei",
-      excerpt: "Die SVP-Fraktion des Grossen Gemeinderates der Stadt Zug verzeichnet einen Doppelwechsel. Neue Mitglieder verstärken die Fraktion und bringen frische Ideen in die Stadtpolitik ein.",
-      priority: "normal",
-      author: "SVP-Fraktion GGR",
-      readTime: "4 min",
-      fullText: "Die SVP-Fraktion des Grossen Gemeinderates der Stadt Zug verzeichnet einen personellen Wechsel, der die Fraktion mit neuen Impulsen stärkt. Die neuen Mitglieder bringen ihre Expertise und Erfahrung ein, um die bürgerlichen Werte in der Stadtpolitik zu vertreten.",
-      tags: ["Fraktion", "Gemeinderat", "Personal"],
       mediaContact: {
         name: "Roman Küng",
         phone: "+41 41 750 10 55",
@@ -77,16 +60,67 @@ const Medienmitteilungen = () => {
       }
     },
     {
+      id: 3,
+      title: "Ich lehne die Transparenz-Initiative ab",
+      date: "2024-09-09",
+      category: "Abstimmungen",
+      excerpt: "Am 22. September 2024 wird im Kanton Zug über die Transparenz-Initiative abgestimmt. Diese Initiative fordert die Offenlegung von Wahl- und Abstimmungsbudgets politischer Parteien und Organisationen. Doch nach genauerem Hinsehen bin ich überzeugt, dass die Initiative mehr Probleme schafft als sie löst.",
+      priority: "hoch",
+      author: "Kantonsrat Gregor Bruhin",
+      readTime: "5 min",
+      fullText: "Am 22. September 2024 wird im Kanton Zug über die Transparenz-Initiative abgestimmt. Diese Initiative fordert die Offenlegung von Wahl- und Abstimmungsbudgets politischer Parteien und Organisationen. Auf den ersten Blick klingt das nach einem sinnvollen Schritt in Richtung Transparenz. Doch nach genauerem Hinsehen bin ich überzeugt, dass die Initiative und der Gegenvorschlag mehr Probleme schaffen als sie lösen.\n\nFür mich sind drei Punkte besonders kritisch: unnötige Bürokratie, Schein-Transparenz und der Eingriff in die Privatsphäre.\n\nDie Einführung eines Transparenzregisters für politische Ausgaben würde erhebliche bürokratische Kosten verursachen. Die Verwaltung und Überprüfung der offengelegten Daten erfordert zusätzliche Ressourcen, Personal und Zeit auf Kosten der Steuerzahler. Ein weiteres Gesetz bedeutet zusätzlichen administrativen Aufwand, der in keinem Verhältnis zum Nutzen steht.\n\nDie Erfahrungen der letzten nationalen Wahlen haben gezeigt, dass die offengelegten Zahlen den Bürgerinnen und Bürgern keine neuen Erkenntnisse liefern. Die Summen waren oft unspektakulär und hatten keine grossen Auswirkungen auf das Wahlverhalten.\n\nFür mich ist der Schutz der Privatsphäre ein zentrales Thema. Viele Menschen wollen nicht, dass ihre politischen Spenden öffentlich gemacht werden, da sie befürchten, Ziel von Rufmord oder «Cancel Culture» zu werden. Die Freiheit, politisch zu spenden, ohne öffentlich an den Pranger gestellt zu werden, ist ein wichtiges Gut.\n\nMein Fazit: Ein Gesetz, das mehr schadet als nützt. Initiative und Gegenvorschlag schiessen weit über das Ziel hinaus. Aus diesen Gründen werde ich die Initiative und den Gegenvorschlag am 22. September 2024 ablehnen.",
+      tags: ["Transparenz-Initiative", "Bürokratie", "Abstimmung"],
+      mediaContact: {
+        name: "Gregor Bruhin",
+        phone: "+41 79 123 45 67",
+        email: "gb@gregor-bruhin.ch"
+      }
+    },
+    {
       id: 4,
+      title: "KI – Revolution oder Teufelszeug?",
+      date: "2024-06-17",
+      category: "Bildung",
+      excerpt: "Regelmässig bietet die SVP Stadt Zug ihren Mitgliedern Weiterbildungsmöglichkeiten. Das Thema 'Künstliche Intelligenz' stiess auf besonders grosses Interesse. Nicht zuletzt, weil sich die Zuger Stadtschulen als Pionier verstehen und bereits in der Unterstufe 'KI-Applikationen' einsetzen möchten.",
+      priority: "normal",
+      author: "Marcus H. Bühler, Vizepräsident",
+      readTime: "6 min",
+      fullText: "Regelmässig bietet die SVP Stadt Zug ihren Mitgliedern Weiterbildungsmöglichkeiten. Das Thema 'Künstliche Intelligenz' stiess auf besonders grosses Interesse. Nicht zuletzt darum, weil sich die Zuger Stadtschulen als Pionier verstehen und bereits in der Unterstufe 'KI-Applikationen' einsetzen möchten.\n\nDer ehemalige SVP-Gemeinderat, Dr. Beat Bühlmann, der sich seit Jahrzehnten mit dem Thema Digitalisierung befasst und sich am MIT, Boston zu KI ausbilden liess, hielt das Impulsreferat: 'KI – Wie, wo, was?'\n\nBemerkenswert waren die Zuordnung von KI-Begriffen sowie der geschichtliche Hintergrund der KI, mit Anfängen bereits 1940; plus die Auflösung der Frage: Warum erst jetzt der Hype, wenn KI schon so alt ist?\n\nDas Aufzeigen der Unterschiede zwischen KI und ChatGPT, animiert mit Abfragen und Demonstrationen, zeigten die schier unermesslichen Möglichkeiten der Technologie im Live-Einsatz. Spannend waren die Pro- und Kontraargumente zur künstlichen Intelligenz sowie die bedeutsamen, juristischen Aspekte mit der EU-Klassifizierung (EU-AI-Act 2023).\n\nRichtig eingesetzt und clever genutzt, wird KI nicht nur klassische Abläufe vereinfachen und verbessern, sondern vor allem das Generieren von Inhalten revolutionieren. Die Spannweite der Anwendungen erstreckt sich über Medizin, Juristik, Marketing, Bildung, Klimaschutz und natürlich auch auf die Politik.\n\nFazit: Ein ausgesprochen lehrreicher Abend mit sehr wertvollen Erkenntnissen, auch für die anwesenden Parlamentarier.",
+      tags: ["KI", "Künstliche Intelligenz", "Bildung", "Weiterbildung"],
+      mediaContact: {
+        name: "Marcus H. Bühler",
+        phone: "+41 41 123 45 67",
+        email: "bumbleb@bluewin.ch"
+      }
+    },
+    {
+      id: 5,
+      title: "Doppelwechsel in der SVP-Fraktion des Grossen Gemeinderates der Stadt Zug",
+      date: "2024-06-17",
+      category: "Partei",
+      excerpt: "Die SVP-Fraktion des Grossen Gemeinderates der Stadt Zug verzeichnet einen personellen Wechsel. Neue Mitglieder verstärken die Fraktion und bringen frische Ideen und langjährige Erfahrung in die Stadtpolitik ein.",
+      priority: "normal",
+      author: "SVP-Fraktion GGR",
+      readTime: "4 min",
+      fullText: "Die SVP-Fraktion des Grossen Gemeinderates der Stadt Zug verzeichnet einen personellen Doppelwechsel, der die Fraktion mit neuen Impulsen stärkt.\n\nDie neuen Fraktionsmitglieder bringen ihre langjährige Expertise und praktische Erfahrung aus verschiedenen Bereichen mit. Dieser Wechsel ermöglicht es der SVP-Fraktion, ihre Arbeit im Gemeinderat noch effektiver zu gestalten und die bürgerlichen Werte in der Stadtpolitik zu vertreten.\n\nMit diesem personellen Wechsel setzt die SVP Stadt Zug auf Kontinuität und Innovation zugleich. Die bewährten politischen Grundsätze der Partei bleiben bestehen, während gleichzeitig neue Perspektiven und Ansätze in die Fraktionsarbeit einfliessen.\n\nDie SVP-Fraktion freut sich auf die Zusammenarbeit mit den neuen Mitgliedern und ist überzeugt, dass dieser Wechsel die politische Arbeit für die Stadt Zug weiter voranbringen wird.",
+      tags: ["Fraktion", "Gemeinderat", "Personal", "Wechsel"],
+      mediaContact: {
+        name: "Roman Küng",
+        phone: "+41 41 750 10 55",
+        email: "roman.kueng@bluewin.ch"
+      }
+    },
+    {
+      id: 6,
       title: "Elektroautos – eine Mogelpackung oder die Lösung für die Zukunft?",
       date: "2024-05-15",
       category: "Verkehr",
-      excerpt: "Nicht nur der Titel der Tischrede des 1000er-Club-Mitglieds, Morten Hannesbo, tönte spannend, auch das 20' Referat dazu überzeugte durch das Fachwissen, die Logik und der Schlussfolgerung: 'Solange die Sonne scheint, gibt es genug Energie, um Elektroautos zu betreiben!'",
+      excerpt: "Nicht nur der Titel der Tischrede des 1000er-Club-Mitglieds, Morten Hannesbo, tönte spannend, auch das 20-minütige Referat dazu überzeugte durch Fachwissen und Logik. Die Schlussfolgerung: 'Solange die Sonne scheint, gibt es genug Energie, um Elektroautos zu betreiben!'",
       priority: "normal",
-      author: "1000er Club",
-      readTime: "5 min",
-      fullText: "Nicht nur der Titel der Tischrede des 1000er-Club-Mitglieds, Morten Hannesbo, tönte spannend, auch das 20' Referat dazu überzeugte durch das Fachwissen, die Logik und der Schlussfolgerung: 'Solange die Sonne scheint, gibt es genug Energie, um Elektroautos zu betreiben!' Selbstfahrende Fahrzeuge sind in 20 Jahren im Alltag nicht mehr wegzudenken– die Mobilität und Autonomie des Einzelnen steigt dadurch enorm.",
-      tags: ["Elektromobilität", "Zukunft", "1000er Club"],
+      author: "1000er Club / Philip Brunner",
+      readTime: "7 min",
+      fullText: "Nicht nur der Titel der Tischrede des 1000er-Club-Mitglieds, Morten Hannesbo, tönte spannend, auch das 20-minütige Referat dazu überzeugte durch das Fachwissen, die Logik und die Schlussfolgerung: 'Solange die Sonne scheint, gibt es genug Energie, um Elektroautos zu betreiben!'\n\nEin klares JA also für eine e-Lösung in der Zukunft, gespickt mit der Ansage, dass wir alle früher oder später auf ein eMobil umsteigen werden, aber nicht müssen.\n\nSelbstfahrende Fahrzeuge sind in 20 Jahren im Alltag nicht mehr wegzudenken – die Mobilität und Autonomie des Einzelnen steigt dadurch enorm. Auch wenn am Anfang die Streckenführung von 'menschgelenkten' und 'ferngelenkten' Autos und LKWs noch separiert sein wird, die Einführung und das Neu-Denken im Verkehr sind unabdingbar.\n\nBei den anwesenden Mitgliedern und Gästen – u.a. Markus Somm, Chefredaktor des Nebelspalters, der in Zug die Sendung 'Bern einfach' mit Regierungsrat Heinz Tännler am Vorabend aufnahm – fanden solche klaren Worte nur bedingt Zustimmung.\n\nDie Wortmeldungen mit Erfahrungen von Oldtimer-Fahrzeugen (1913!) bis zur nicht gelösten e-Batterieentsorgung zeigten deutlich, wie interessant, aber auch kontrovers das Thema Elektroautos sein kann.",
+      tags: ["Elektromobilität", "Zukunft", "1000er Club", "Verkehr"],
       mediaContact: {
         name: "Philip Brunner",
         phone: "+41 79 398 4 396",
@@ -94,33 +128,33 @@ const Medienmitteilungen = () => {
       }
     },
     {
-      id: 5,
-      title: "Nein zur Transparenz-Initiative – unnötige Bürokratie vermeiden",
-      date: "2024-02-29",
-      category: "Abstimmungen",
-      excerpt: "Die SVP Stadt Zug lehnt die Transparenz-Initiative ab. Statt mehr demokratische Teilhabe zu schaffen, würde sie zu unnötiger Bürokratie und hohen Kosten führen, ohne den gewünschten Nutzen zu bringen.",
-      priority: "hoch",
-      author: "SVP Stadt Zug",
+      id: 7,
+      title: "Rauchzeichen aus dem GGR",
+      date: "2024-09-18",
+      category: "Parlament",
+      excerpt: "Einblicke in die aktuelle Sitzung des Grossen Gemeinderates der Stadt Zug. Unsere SVP-Fraktion berichtet über wichtige Geschäfte, Diskussionen und Entscheide aus dem Stadtparlament.",
+      priority: "normal",
+      author: "SVP-Fraktion GGR",
       readTime: "4 min",
-      fullText: "Die SVP Stadt Zug positioniert sich klar gegen die Transparenz-Initiative. Diese würde zu einem Bürokratie-Monster werden, das hohe Kosten verursacht, ohne den versprochenen Mehrwert für die Demokratie zu liefern. Transparenz ist wichtig, aber sie muss sinnvoll und verhältnismässig sein.",
-      tags: ["Transparenz-Initiative", "Bürokratie", "Abstimmung"],
+      fullText: "Die SVP-Fraktion berichtet regelmässig über die wichtigsten Geschäfte und Diskussionen aus den Sitzungen des Grossen Gemeinderates der Stadt Zug.\n\nIn der aktuellen Ausgabe der 'Rauchzeichen' informieren wir über die behandelten Traktanden, wichtige Abstimmungen und die Positionen der SVP-Fraktion zu den verschiedenen Vorlagen.\n\nUnsere Parlamentarier setzen sich konsequent für bürgerliche Werte und eine effiziente Stadtpolitik ein. Dabei stehen Bürgernähe, Kostenwahrheit und nachhaltige Lösungen im Zentrum unserer politischen Arbeit.\n\nDie detaillierten Berichte aus dem Parlament finden Sie in unserem regelmässigen Format 'Rauchzeichen aus dem GGR'.",
+      tags: ["Parlament", "GGR", "Rauchzeichen", "Sitzung"],
       mediaContact: {
-        name: "Adrian Risi",
-        phone: "+41 79 456 78 90",
-        email: "adrian.risi@risiimmobilienag.ch"
+        name: "Roman Küng",
+        phone: "+41 41 750 10 55",
+        email: "roman.kueng@bluewin.ch"
       }
     },
     {
-      id: 6,
+      id: 8,
       title: "Dringliche Motion: Solidarität mit dem Misox – sofort!",
       date: "2024-01-25",
       category: "Solidarität",
-      excerpt: "Nach den verheerenden Unwettern im Misox zeigt die SVP Stadt Zug Solidarität und fordert in einer dringlichen Motion schnelle und unbürokratische Hilfe für die betroffene Region.",
+      excerpt: "Nach den verheerenden Unwettern im Misox zeigt die SVP Stadt Zug Solidarität und fordert in einer dringlichen Motion schnelle und unbürokratische Hilfe für die betroffene Region im Tessin.",
       priority: "hoch",
       author: "SVP Stadt Zug",
       readTime: "3 min",
-      fullText: "Die SVP Stadt Zug reicht eine dringliche Motion ein, um den vom Unwetter schwer getroffenen Misox zu helfen. Solidarität in schweren Zeiten ist ein Grundwert unserer Gesellschaft. Die Hilfe muss schnell und unbürokratisch erfolgen.",
-      tags: ["Misox", "Solidarität", "Dringliche Motion"],
+      fullText: "Die SVP Stadt Zug reicht eine dringliche Motion ein, um dem vom Unwetter schwer getroffenen Misox zu helfen. Solidarität in schweren Zeiten ist ein Grundwert unserer Gesellschaft und der Schweizer Eidgenossenschaft.\n\nDie verheerenden Unwetter haben im Misox erhebliche Schäden angerichtet. Strassen wurden weggerissen, Häuser beschädigt und die Infrastruktur schwer in Mitleidenschaft gezogen. Die betroffenen Menschen benötigen jetzt schnelle und unbürokratische Hilfe.\n\nUnsere Motion fordert, dass die Stadt Zug unverzüglich finanzielle Unterstützung für die Betroffenen bereitstellt und sich auf kantonaler und nationaler Ebene für eine koordinierte Hilfe einsetzt.\n\nDie Hilfe muss schnell und unbürokratisch erfolgen. In solchen Situationen zählt jede Stunde, und die Betroffenen dürfen nicht durch langwierige Verfahren zusätzlich belastet werden.",
+      tags: ["Misox", "Solidarität", "Dringliche Motion", "Unwetter"],
       mediaContact: {
         name: "André Wicki",
         phone: "+41 58 728 90 01",
@@ -135,6 +169,8 @@ const Medienmitteilungen = () => {
     { value: 'verkehr', label: 'Verkehr', count: pressReleases.filter(pr => pr.category === 'Verkehr').length },
     { value: 'sicherheit', label: 'Sicherheit', count: pressReleases.filter(pr => pr.category === 'Sicherheit').length },
     { value: 'partei', label: 'Partei', count: pressReleases.filter(pr => pr.category === 'Partei').length },
+    { value: 'bildung', label: 'Bildung', count: pressReleases.filter(pr => pr.category === 'Bildung').length },
+    { value: 'parlament', label: 'Parlament', count: pressReleases.filter(pr => pr.category === 'Parlament').length },
     { value: 'solidarität', label: 'Solidarität', count: pressReleases.filter(pr => pr.category === 'Solidarität').length }
   ];
 
@@ -187,7 +223,9 @@ const Medienmitteilungen = () => {
       'Verkehr': 'bg-blue-100 text-blue-800 border-blue-200',
       'Sicherheit': 'bg-red-100 text-red-800 border-red-200',
       'Partei': 'bg-purple-100 text-purple-800 border-purple-200',
-      'Solidarität': 'bg-indigo-100 text-indigo-800 border-indigo-200'
+      'Bildung': 'bg-yellow-100 text-yellow-800 border-yellow-200',
+      'Parlament': 'bg-indigo-100 text-indigo-800 border-indigo-200',
+      'Solidarität': 'bg-pink-100 text-pink-800 border-pink-200'
     };
     
     return (
@@ -214,18 +252,6 @@ const Medienmitteilungen = () => {
           </p>
         </div>
 
-        {/* What We Share */}
-        <section className="mb-16">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-6">
-              Unsere Kommunikation
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Transparente und direkte Kommunikation über unsere politische Arbeit, 
-              Standpunkte und Aktivitäten in der Stadt Zug.
-            </p>
-          </div>
-        </section>
 
         {/* Filters */}
         <section className="mb-8">
