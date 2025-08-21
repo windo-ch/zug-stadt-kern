@@ -32,6 +32,7 @@ import RaphaelTschanProfil from "./pages/RaphaelTschanProfil";
 import RomanKuengProfil from "./pages/RomanKuengProfil";
 import PhilipBrunnerProfil from "./pages/PhilipBrunnerProfil";
 import AndreWickiProfil from "./pages/AndreWickiProfil";
+import MarcusBuehlerProfil from "./pages/MarcusBuehlerProfil";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -70,6 +71,7 @@ const App = () => (
           <Route path="/profil/roman-kueng" element={<RomanKuengProfil />} />
           <Route path="/profil/philip-brunner" element={<PhilipBrunnerProfil />} />
           <Route path="/profil/andre-wicki" element={<AndreWickiProfil />} />
+          <Route path="/profil/marcus-buehler" element={<MarcusBuehlerProfil />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <ScrollToTop />
