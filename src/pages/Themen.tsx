@@ -162,22 +162,32 @@ const Themen = () => {
 
   const upcomingInitiatives = [
     {
-      title: "NEIN zum Steuer-Schwindel",
+      title: "NEIN zur E-ID",
+      description: "Volksinitiative gegen das elektronische Identitätssystem - Schutz der Privatsphäre und digitalen Souveränität",
+      timeline: "Abstimmung 2025",
+      status: "Kampagne",
+      link: "https://e-id-gesetz-nein.ch/"
+    },
+    {
+      title: "NEIN zum Steuer-Schwindel", 
       description: "Ablehnung des indirekten Gegenvorschlags zur Individualbesteuerungsinitiative der FDP - Schutz der Familien vor mehr Bürokratie und Kosten",
       timeline: "2025",
-      status: "Kampagne"
+      status: "Kampagne",
+      link: "https://steuer-schwindel-nein.ch/"
     },
     {
       title: "Grenzschutz-Initiative",
       description: "Volksinitiative «Asylmissbrauch stoppen!» für mehr Sicherheit in unserem Land - Einreichung erfolgt",
-      timeline: "Eingereicht",
-      status: "Unterschriftensammlung"
+      timeline: "Eingereicht", 
+      status: "Unterschriftensammlung",
+      link: "https://grenzschutzinitiative.ch/"
     },
     {
-      title: "NEIN zum Windpark Zugerberg",
-      description: "Entschiedene Ablehnung der Pläne für einen Windpark auf dem Zugerberg zum Schutz von Wildtieren und Landschaftsbild",
-      timeline: "2025",
-      status: "Opposition"
+      title: "Kompass-Initiative",
+      description: "Initiative für eine souveräne und neutrale Schweiz - Besinnung auf bewährte Werte und Selbstbestimmung",
+      timeline: "In Vorbereitung",
+      status: "Kampagne",
+      link: "https://kompasseuropa.ch/kompass-initiative"
     }
   ];
 
@@ -272,25 +282,30 @@ const Themen = () => {
 
         {/* Upcoming Initiatives */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Kommende Initiativen</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <h2 className="text-3xl font-bold text-foreground mb-8">Aktuelle Brennpunkte</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {upcomingInitiatives.map((initiative, index) => (
-              <Card key={index}>
+              <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <CardTitle className="text-lg">{initiative.title}</CardTitle>
-                    <Badge variant={initiative.status === "In Planung" ? "secondary" : 
-                                  initiative.status === "Vernehmlassung" ? "default" : "outline"} 
+                    <Badge variant={initiative.status === "Kampagne" ? "destructive" : 
+                                  initiative.status === "Unterschriftensammlung" ? "default" : "outline"} 
                            className="whitespace-nowrap">
                       {initiative.status}
                     </Badge>
                   </div>
                   <CardDescription>{initiative.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="space-y-4">
                   <div className="text-sm text-muted-foreground">
                     <strong>Zeitrahmen:</strong> {initiative.timeline}
                   </div>
+                  <Button asChild className="w-full">
+                    <a href={initiative.link} target="_blank" rel="noopener noreferrer">
+                      Mehr erfahren
+                    </a>
+                  </Button>
                 </CardContent>
               </Card>
             ))}
