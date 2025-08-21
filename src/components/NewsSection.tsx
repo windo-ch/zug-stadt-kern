@@ -6,35 +6,35 @@ const NewsSection = () => {
   const newsItems = [
     {
       id: 1,
-      title: "Abstimmungsempfehlungen für die nächste Gemeindeabstimmung",
-      excerpt: "Unsere Argumente zu den Vorlagen, kompakt zusammengefasst. So stimmen wir ein und warum wir diese Positionen vertreten.",
-      date: "15. September 2025",
+      title: "Abstimmungssonntag am 28. September 2025",
+      excerpt: "Eidgenössische und kantonale Abstimmungen stehen an. Wir informieren Sie über unsere Abstimmungsempfehlungen und die wichtigsten Vorlagen.",
+      date: "28. September 2025",
       category: "Abstimmungen",
       readTime: "3 Min."
     },
     {
       id: 2,
-      title: "Sicherheit im Quartier – Massnahmenpaket vorgestellt",
-      excerpt: "Für sichtbare Präsenz und rasche Intervention: Wir schlagen konkrete Schritte vor, um die Sicherheit in unseren Quartieren zu verbessern.",
-      date: "01. September 2025",
-      category: "Sicherheit",
-      readTime: "5 Min."
-    },
-    {
-      id: 3,
-      title: "Digitalisierung der Stadtverwaltung: Unsere Vorschläge",
-      excerpt: "Effiziente Prozesse für Bürger und Verwaltung. Wie wir die Digitalisierung bürgernah und sicher vorantreiben wollen.",
-      date: "28. August 2025",
-      category: "Digitalisierung",
+      title: "Grenzschutz-Initiative vor Einreichung",
+      excerpt: "Die Volksinitiative «Asylmissbrauch stoppen! (Grenzschutz-Initiative)» wird im September eingereicht. Unterschriftensammlung läuft bis 29. August.",
+      date: "Ende August 2025",
+      category: "Initiative",
       readTime: "4 Min."
     },
     {
+      id: 3,
+      title: "Motion: Jahres-Parkkarte 50% günstiger",
+      excerpt: "SVP-Motion für günstigere Parkkarten eingereicht. Ziel ist es, die Parkgebühren für Anwohner zu reduzieren und die Attraktivität der Innenstadt zu steigern.",
+      date: "Aktuell",
+      category: "Politik",
+      readTime: "5 Min."
+    },
+    {
       id: 4,
-      title: "Verkehr und Parkplätze: Lösungen für die Innenstadt",
-      excerpt: "Unsere Ideen für eine ausgewogene Verkehrspolitik, die Wirtschaft und Anwohner gleichermassen berücksichtigt.",
+      title: "Sommeranlass SVP Stadt Zug",
+      excerpt: "Gemütlicher Sommeranlass der SVP Stadt Zug für Mitglieder und Interessierte im Restaurant Barakka. Eine Gelegenheit für persönliche Gespräche.",
       date: "22. August 2025",
-      category: "Mobilität",
-      readTime: "6 Min."
+      category: "Veranstaltung",
+      readTime: "2 Min."
     }
   ];
 
