@@ -29,6 +29,7 @@ import CookiePolicy from "./pages/Cookie";
 import Wahlen from "./pages/Wahlen";
 import AdriansRisiProfil from "./pages/AdriansRisiProfil";
 import RaphaelTschanProfil from "./pages/RaphaelTschanProfil";
+import RomanKuengProfil from "./pages/RomanKuengProfil";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -64,6 +65,7 @@ const App = () => (
           <Route path="/cookie" element={<CookiePolicy />} />
           <Route path="/profil/adrian-risi" element={<AdriansRisiProfil />} />
           <Route path="/profil/raphael-tschan" element={<RaphaelTschanProfil />} />
+          <Route path="/profil/roman-kueng" element={<RomanKuengProfil />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <ScrollToTop />
