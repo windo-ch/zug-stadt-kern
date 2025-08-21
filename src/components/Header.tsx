@@ -26,8 +26,7 @@ const Header = () => {
         { label: 'Wofür wir stehen', href: '/wofuer-wir-stehen' },
         { label: 'Unsere Themen', href: '/themen' },
         { label: 'Abstimmungen', href: '/abstimmungen' },
-        { label: 'Vorstösse', href: '/vorstoesse' },
-        { label: 'Parlamentarische Geschäfte', href: '/parlamentarische-geschaefte' }
+        { label: 'Vorstösse', href: '/vorstoesse' }
       ]
     },
     {

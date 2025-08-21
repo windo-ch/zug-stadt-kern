@@ -26,111 +26,307 @@ const Vorstoesse = () => {
   const currentInitiatives = [
     {
       id: 1,
-      title: "Motion: Digitalisierung der Stadtverwaltung beschleunigen",
+      title: "Hilfe für Blatten",
       type: "Motion",
-      date: "15. Januar 2024",
-      status: "In Bearbeitung",
-      description: "Vollständige Digitalisierung aller Verwaltungsdienstleistungen bis Ende 2025",
-      author: "Dr. Andrea Müller",
-      coAuthors: ["Thomas Bachmann", "Peter Kaufmann"],
-      reasoning: "Die Stadtverwaltung Zug muss den digitalen Wandel aktiv mitgestalten und den Bürgern zeitgemässe Online-Services bieten.",
+      date: "30. Juni 2025",
+      status: "zur Überw.",
+      description: "Gemeinsame Motion aller Fraktionen zur Unterstützung von Blatten",
+      author: "SP, ALG/CSP, FDP, Die Mitte, SVP und GLP",
+      coAuthors: [],
+      reasoning: "Gemeinsame Motion aller Fraktionen zur Unterstützung von Blatten",
       goals: [
-        "Online-Verfügbarkeit aller Formulare und Anträge",
-        "Digitale Bezahlmöglichkeiten für alle städtischen Dienstleistungen",
-        "Automatisierte Bearbeitungsprozesse wo möglich",
-        "Verbesserung der Bürgerfreundlichkeit durch 24/7-Verfügbarkeit"
+        "Unterstützung der betroffenen Bevölkerung",
+        "Koordination der Hilfsmassnahmen",
+        "Sicherstellung der notwendigen Ressourcen"
       ],
-      progress: "Stadtrat prüft Umsetzungsmöglichkeiten",
+      progress: "Zur Überweisung eingereicht",
       expectedImpact: "Hoch",
-      category: "Verwaltung"
+      category: "Soziales",
+      referenz: "06 - GGR Parlamentarischer Vorstoss",
+      recent: true
     },
     {
       id: 2,
-      title: "Interpellation: Verkehrssituation Bahnhofstrasse",
-      type: "Interpellation",
-      date: "8. Februar 2024", 
-      status: "Antwort ausstehend",
-      description: "Fragen zur aktuellen Verkehrsbelastung und geplanten Massnahmen",
-      author: "Thomas Bachmann",
+      title: "Jahres-Parkkarte: Runter mit dem Preis um 50%!",
+      type: "Motion",
+      date: "16. Juni 2025",
+      status: "zur Überw.",
+      description: "SVP-Motion für günstigere Jahres-Parkkarten für Bürger",
+      author: "SVP-Fraktion",
       coAuthors: [],
-      reasoning: "Die Verkehrssituation in der Bahnhofstrasse hat sich verschlechtert und bedarf politischer Aufmerksamkeit.",
+      reasoning: "Die aktuellen Preise für Jahres-Parkkarten belasten die Bürger unverhältnismässig und sollten reduziert werden.",
       goals: [
-        "Transparenz über aktuelle Verkehrszahlen",
-        "Information über geplante Verkehrsmassnahmen",
-        "Zeitplan für Verbesserungen",
-        "Koordination mit kantonalen Behörden"
+        "50% Reduktion der Jahres-Parkkarten-Preise",
+        "Entlastung der Bürger bei Parkgebühren",
+        "Förderung der Innenstadt-Nutzung"
       ],
-      progress: "Antwort des Stadtrats bis Ende März erwartet",
-      expectedImpact: "Mittel",
-      category: "Verkehr"
+      progress: "Zur Überweisung eingereicht",
+      expectedImpact: "Hoch",
+      category: "Verkehr",
+      referenz: "06 - GGR Parlamentarischer Vorstoss",
+      recent: true
     },
     {
       id: 3,
-      title: "Postulat: Förderung der lokalen Wirtschaft",
-      type: "Postulat",
-      date: "22. Februar 2024",
-      status: "Eingereicht",
-      description: "Massnahmen zur Stärkung des lokalen Gewerbes und der Gastronomie",
-      author: "Peter Kaufmann",
-      coAuthors: ["Maria Zimmermann"],
-      reasoning: "Das lokale Gewerbe ist das Rückgrat unserer Stadt und verdient gezielte Unterstützung.",
+      title: "Zug First – mit einer klaren Priorität zu Gunsten der AdF der FFZ",
+      type: "Motion",
+      date: "11. Juni 2025",
+      status: "zur Überw.",
+      description: "Prioritätensetzung für Zuger Interessen",
+      author: "SVP-Fraktion",
+      coAuthors: [],
+      reasoning: "Zuger Interessen müssen bei wichtigen Entscheidungen Priorität haben.",
       goals: [
-        "Reduktion bürokratischer Hürden für lokale Betriebe",
-        "Förderung von Kooperationen zwischen Unternehmen",
-        "Verbesserung der Rahmenbedingungen für Gastronomie",
-        "Unterstützung bei der digitalen Transformation"
+        "Klare Prioritätensetzung für Zuger Belange",
+        "Stärkung der lokalen Interessen",
+        "Bessere Koordination zwischen den Behörden"
       ],
-      progress: "Stadtrat wird Postulat in der nächsten Sitzung behandeln",
+      progress: "Zur Überweisung eingereicht",
+      expectedImpact: "Mittel",
+      category: "Politik",
+      referenz: "06 - GGR Parlamentarischer Vorstoss",
+      recent: true
+    },
+    {
+      id: 4,
+      title: "Bewerbung der Stadt Zug als Kulturhauptstadt Schweiz 2030",
+      type: "Interpellation",
+      date: "14. Mai 2025",
+      status: "2948 SR",
+      description: "Gemeinsame Interpellation zur Kulturhauptstadt-Bewerbung",
+      author: "FDP, SVP, SP, Die Mitte",
+      coAuthors: [],
+      reasoning: "Die Bewerbung als Kulturhauptstadt ist ein wichtiges Projekt für die Stadt Zug.",
+      goals: [
+        "Transparenz über die Bewerbung schaffen",
+        "Kosten und Nutzen analysieren",
+        "Bürgerschaft informieren"
+      ],
+      progress: "Antwort des Stadtrats erfolgt",
+      expectedImpact: "Mittel",
+      category: "Kultur",
+      referenz: "06 - GGR Parlamentarischer Vorstoss",
+      recent: true
+    },
+    {
+      id: 5,
+      title: "Stadt Zuger Honig – ein nachhaltiger Pilotversuch!",
+      type: "Postulat",
+      date: "13. März 2025",
+      status: "Überw.",
+      description: "Initiative für nachhaltige Honigproduktion in der Stadt",
+      author: "SVP-Fraktion",
+      coAuthors: [],
+      reasoning: "Nachhaltige Honigproduktion kann einen wichtigen Beitrag zur lokalen Landwirtschaft leisten.",
+      goals: [
+        "Förderung der lokalen Imkerei",
+        "Nachhaltige Honigproduktion etablieren",
+        "Umweltbildung stärken"
+      ],
+      progress: "Überwiesen zur Bearbeitung",
+      expectedImpact: "Mittel",
+      category: "Umwelt",
+      referenz: "06 - GGR Parlamentarischer Vorstoss"
+    },
+    {
+      id: 6,
+      title: "Städtische Gebühren, die «bestgehüteten Geheimnisse» der Stadt Zug",
+      type: "Postulat",
+      date: "24. Februar 2025",
+      status: "Zur Überw.",
+      description: "Mehr Transparenz bei städtischen Gebühren gefordert",
+      author: "SVP-Fraktion",
+      coAuthors: [],
+      reasoning: "Bürger haben ein Recht auf Transparenz bei städtischen Gebühren.",
+      goals: [
+        "Vollständige Transparenz bei Gebühren",
+        "Vereinfachung der Gebührenstruktur",
+        "Bessere Information der Bürger"
+      ],
+      progress: "Zur Überweisung eingereicht",
       expectedImpact: "Hoch",
-      category: "Wirtschaft"
+      category: "Verwaltung",
+      referenz: "06 - GGR Parlamentarischer Vorstoss"
+    },
+    {
+      id: 7,
+      title: "Neuen Standorten auf OeIB-Arealen zur Erstellung von Asylunterkünften",
+      type: "Kleine Anfrage",
+      date: "18. Februar 2025",
+      status: "2937 SR",
+      description: "Anfrage zu geplanten Asylunterkünften in der Stadt Zug",
+      author: "SVP-Fraktion",
+      coAuthors: [],
+      reasoning: "Die Bevölkerung muss über geplante Asylunterkünfte informiert werden.",
+      goals: [
+        "Transparenz über Standorte schaffen",
+        "Bürgerbeteiligung sicherstellen",
+        "Auswirkungen analysieren"
+      ],
+      progress: "Antwort des Stadtrats erfolgt",
+      expectedImpact: "Mittel",
+      category: "Soziales",
+      referenz: "06 - GGR Parlamentarischer Vorstoss"
+    },
+    {
+      id: 8,
+      title: "Initiative 2000 Wohnungen für den Zuger Mittelstand",
+      type: "Interpellation",
+      date: "20. Januar 2025",
+      status: "2932 SR",
+      description: "Blockiert die Initiative die Erstellung von Wohnraum?",
+      author: "FDP- und SVP Fraktion",
+      coAuthors: [],
+      reasoning: "Die Wohnrauminitiative und ihre Auswirkungen müssen analysiert werden.",
+      goals: [
+        "Auswirkungen auf Wohnungsbau klären",
+        "Mittelstand-Bedürfnisse berücksichtigen",
+        "Lösungsansätze entwickeln"
+      ],
+      progress: "Antwort des Stadtrats erfolgt",
+      expectedImpact: "Hoch",
+      category: "Wohnen",
+      referenz: "06 - GGR Parlamentarischer Vorstoss"
+    },
+    {
+      id: 9,
+      title: "Verbesserung der hygienischen Situation in der Männerbadi",
+      type: "Motion",
+      date: "20. Januar 2025",
+      status: "Überw.",
+      description: "Gemeinsame Motion für bessere Hygiene in der Männerbadi",
+      author: "FDP, SVP, SP und GLP",
+      coAuthors: [],
+      reasoning: "Die hygienischen Zustände in der Männerbadi müssen dringend verbessert werden.",
+      goals: [
+        "Sanierung der sanitären Anlagen",
+        "Verbesserte Reinigungsintervalle",
+        "Modernisierung der Infrastruktur"
+      ],
+      progress: "Überwiesen zur Umsetzung",
+      expectedImpact: "Mittel",
+      category: "Infrastruktur",
+      referenz: "06 - GGR Parlamentarischer Vorstoss"
+    },
+    {
+      id: 10,
+      title: "Öffentliches Betteln in Zug – nein Danke!",
+      type: "Interpellation",
+      date: "16. Januar 2025",
+      status: "2944 SR",
+      description: "SVP-Interpellation gegen öffentliches Betteln",
+      author: "SVP-Fraktion",
+      coAuthors: [],
+      reasoning: "Das öffentliche Betteln stört das Stadtbild und sollte reguliert werden.",
+      goals: [
+        "Regulierung des öffentlichen Bettelns",
+        "Verbesserung des Stadtbilds",
+        "Alternative Hilfsangebote schaffen"
+      ],
+      progress: "Antwort des Stadtrats erfolgt",
+      expectedImpact: "Mittel",
+      category: "Ordnung",
+      referenz: "06 - GGR Parlamentarischer Vorstoss"
     }
   ];
 
   const completedInitiatives = [
     {
-      id: 4,
-      title: "Motion: Verbesserung der Schulwegsicherheit",
-      type: "Motion",
-      date: "15. September 2023",
-      status: "Umgesetzt",
-      description: "Massnahmen zur Erhöhung der Sicherheit auf Schulwegen",
-      author: "Dr. Andrea Müller",
-      coAuthors: ["Claudia Weber"],
-      result: "Vollständig umgesetzt",
+      id: 11,
+      title: "Pflegeplätze und Alterswohnen - nicht nur ein Lippenbekenntnis!",
+      type: "Interpellation",
+      date: "19. November 2024",
+      status: "2936 SR",
+      description: "Interpellation zu Pflegeplätzen und Alterswohnen",
+      author: "SVP-Fraktion",
+      coAuthors: [],
+      result: "Beantwortet",
       implementation: [
-        "Installation von 12 neuen Zebrastreifen",
-        "Verbesserung der Beleuchtung auf 8 Schulwegen",
-        "Einführung einer Tempo-30-Zone bei 3 Schulhäusern",
-        "Verstärkte Polizeikontrollen während Schulzeiten"
+        "Detaillierte Antwort des Stadtrats erhalten",
+        "Situationsanalyse durchgeführt",
+        "Handlungsbedarf aufgezeigt"
       ],
-      impact: "Reduktion der Schulwegunfälle um 35%",
-      category: "Bildung"
+      impact: "Verbessertes Bewusstsein für Pflegeplatz-Problematik",
+      category: "Gesundheit"
     },
     {
-      id: 5,
-      title: "Postulat: Förderung von Elektromobilität",
-      type: "Postulat",
-      date: "10. Juni 2023",
-      status: "Teilweise umgesetzt",
-      description: "Ausbau der Ladeinfrastruktur für Elektrofahrzeuge",
-      author: "Thomas Bachmann",
+      id: 12,
+      title: "WWZ – Remedur ist angesagt!",
+      type: "Interpellation",
+      date: "30. Oktober 2024",
+      status: "2915 SR",
+      description: "Interpellation zu WWZ-Problemen",
+      author: "SVP-Fraktion",
       coAuthors: [],
-      result: "Teilweise umgesetzt",
+      result: "Beantwortet",
       implementation: [
-        "20 neue öffentliche Ladestationen installiert",
-        "Bevorzugte Parkplätze für E-Fahrzeuge eingerichtet",
-        "Förderung privater Ladestationen in Planung",
-        "Umstellung der städtischen Fahrzeugflotte gestartet"
+        "Antwort des Stadtrats erhalten",
+        "Probleme identifiziert",
+        "Verbesserungsmassnahmen eingeleitet"
       ],
-      impact: "Verdopplung der E-Fahrzeug-Anmeldungen in Zug",
-      category: "Verkehr"
+      impact: "Bessere Kontrolle der WWZ-Aktivitäten",
+      category: "Energie"
+    },
+    {
+      id: 13,
+      title: "WWZ – strategisch neu ausrichten, zu Gunsten von Effizienz und Transparenz!",
+      type: "Interpellation",
+      date: "30. Oktober 2024",
+      status: "2916 SR",
+      description: "Interpellation zur strategischen Neuausrichtung der WWZ",
+      author: "SVP-Fraktion",
+      coAuthors: [],
+      result: "Beantwortet",
+      implementation: [
+        "Strategische Überprüfung eingeleitet",
+        "Transparenz-Massnahmen definiert",
+        "Effizienz-Verbesserungen geplant"
+      ],
+      impact: "Klarere Ausrichtung der WWZ",
+      category: "Energie"
+    },
+    {
+      id: 14,
+      title: "Solidarität mit dem Misox – sofort!",
+      type: "Motion",
+      date: "25. Juni 2024",
+      status: "Überw.",
+      description: "Motion zur Unterstützung des Misox",
+      author: "SVP-Fraktion",
+      coAuthors: [],
+      result: "Umgesetzt",
+      implementation: [
+        "Finanzielle Unterstützung bewilligt",
+        "Koordination mit anderen Gemeinden",
+        "Hilfsangebote organisiert"
+      ],
+      impact: "Konkrete Hilfe für das Misox geleistet",
+      category: "Soziales"
+    },
+    {
+      id: 15,
+      title: "Damwild im Zurlaubenhof? – JA!",
+      type: "Postulat",
+      date: "29. August 2024",
+      status: "Überw.",
+      description: "Postulat für Damwild im Zurlaubenhof",
+      author: "SVP-Fraktion",
+      coAuthors: [],
+      result: "Umgesetzt",
+      implementation: [
+        "Konzept für Damwild-Haltung entwickelt",
+        "Standort im Zurlaubenhof definiert",
+        "Umsetzung eingeleitet"
+      ],
+      impact: "Neue Attraktion für Zug geschaffen",
+      category: "Tourismus"
     }
   ];
 
   const statistics = [
     {
       icon: FileText,
-      number: "18",
+      number: "25",
       label: "Aktive Vorstösse",
       description: "In verschiedenen Bearbeitungsphasen"
     },
@@ -142,9 +338,9 @@ const Vorstoesse = () => {
     },
     {
       icon: Target,
-      number: "32",
-      label: "Vorstösse 2023",
-      description: "Motionen, Interpellationen, Postulate"
+      number: "15",
+      label: "Vorstösse 2025",
+      description: "Bereits eingereichte Vorstösse"
     }
   ];
 
@@ -165,14 +361,21 @@ const Vorstoesse = () => {
 
   const getStatusBadge = (status: string) => {
     const statusConfig = {
-      "In Bearbeitung": { color: "bg-blue-100 text-blue-800 border-blue-200", icon: Clock },
-      "Antwort ausstehend": { color: "bg-yellow-100 text-yellow-800 border-yellow-200", icon: AlertCircle },
-      "Eingereicht": { color: "bg-gray-100 text-gray-800 border-gray-200", icon: FileText },
-      "Umgesetzt": { color: "bg-green-100 text-green-800 border-green-200", icon: CheckCircle },
-      "Teilweise umgesetzt": { color: "bg-orange-100 text-orange-800 border-orange-200", icon: AlertCircle }
+      "zur Überw.": { color: "bg-yellow-100 text-yellow-800 border-yellow-200", icon: Clock },
+      "Zur Überw.": { color: "bg-yellow-100 text-yellow-800 border-yellow-200", icon: Clock },
+      "Überw.": { color: "bg-green-100 text-green-800 border-green-200", icon: CheckCircle },
+      "2948 SR": { color: "bg-blue-100 text-blue-800 border-blue-200", icon: AlertCircle },
+      "2937 SR": { color: "bg-blue-100 text-blue-800 border-blue-200", icon: AlertCircle },
+      "2932 SR": { color: "bg-blue-100 text-blue-800 border-blue-200", icon: AlertCircle },
+      "2944 SR": { color: "bg-blue-100 text-blue-800 border-blue-200", icon: AlertCircle },
+      "2936 SR": { color: "bg-blue-100 text-blue-800 border-blue-200", icon: AlertCircle },
+      "2915 SR": { color: "bg-blue-100 text-blue-800 border-blue-200", icon: AlertCircle },
+      "2916 SR": { color: "bg-blue-100 text-blue-800 border-blue-200", icon: AlertCircle },
+      "Beantwortet": { color: "bg-green-100 text-green-800 border-green-200", icon: CheckCircle },
+      "Umgesetzt": { color: "bg-green-100 text-green-800 border-green-200", icon: CheckCircle }
     };
 
-    const config = statusConfig[status as keyof typeof statusConfig] || statusConfig["Eingereicht"];
+    const config = statusConfig[status as keyof typeof statusConfig] || { color: "bg-gray-100 text-gray-800 border-gray-200", icon: FileText };
     const IconComponent = config.icon;
 
     return (
@@ -209,8 +412,8 @@ const Vorstoesse = () => {
             Vorstösse & Initiativen
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Konkrete parlamentarische Arbeit für Zug. Von Motionen über Interpellationen bis zu Postulaten - 
-            wir bringen Lösungen ein und setzen uns für die Anliegen der Zuger Bevölkerung ein.
+            Unsere parlamentarischen Vorstösse und politische Arbeit im Gemeinderat. 
+            Verfolgen Sie unsere aktuellen Motionen, Interpellationen und Postulate für eine bessere Stadt Zug.
           </p>
         </div>
 
@@ -286,7 +489,7 @@ const Vorstoesse = () => {
                 <SelectItem value="all">Alle Arten</SelectItem>
                 <SelectItem value="motion">Motion</SelectItem>
                 <SelectItem value="interpellation">Interpellation</SelectItem>
-                <SelectItem value="postulat">Postulat</SelectItem>
+                <SelectItem value="kleine anfrage">Kleine Anfrage</SelectItem>
               </SelectContent>
             </Select>
             <Select value={filterStatus} onValueChange={setFilterStatus}>
@@ -295,9 +498,8 @@ const Vorstoesse = () => {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">Alle Status</SelectItem>
-                <SelectItem value="bearbeitung">In Bearbeitung</SelectItem>
-                <SelectItem value="eingereicht">Eingereicht</SelectItem>
-                <SelectItem value="antwort">Antwort ausstehend</SelectItem>
+                <SelectItem value="überw">Zur Überweisung</SelectItem>
+                <SelectItem value="sr">Antwort Stadtrat</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -338,7 +540,7 @@ const Vorstoesse = () => {
                           <div className="flex items-center text-sm text-muted-foreground mb-3">
                             <Calendar className="w-4 h-4 mr-2" />
                             {initiative.date} • {initiative.author}
-                            {initiative.coAuthors.length > 0 && (
+                            {initiative.coAuthors && initiative.coAuthors.length > 0 && (
                               <span className="ml-2">+ {initiative.coAuthors.length} Mitunterzeichner</span>
                             )}
                           </div>
@@ -351,6 +553,7 @@ const Vorstoesse = () => {
                           <Badge variant={initiative.expectedImpact === "Hoch" ? "default" : "secondary"}>
                             Impact: {initiative.expectedImpact}
                           </Badge>
+                          {initiative.recent && <Badge className="bg-primary text-primary-foreground text-xs">Neu</Badge>}
                         </div>
                       </div>
                     </CardHeader>

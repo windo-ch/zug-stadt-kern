@@ -12,7 +12,6 @@ import Vorstoesse from "./pages/Vorstoesse";
 import WerWirSind from "./pages/WerWirSind";
 import WofuerWirStehen from "./pages/WofuerWirStehen";
 import WasAnsteht from "./pages/WasAnsteht";
-import ParlamentarischeGeschafte from "./pages/ParlamentarischeGeschafte";
 import Stadtrat from "./pages/Stadtrat";
 import Vorstand from "./pages/Vorstand";
 import Geschichte from "./pages/Geschichte";
@@ -46,7 +45,6 @@ const App = () => (
           <Route path="/wer-wir-sind" element={<WerWirSind />} />
           <Route path="/wofuer-wir-stehen" element={<WofuerWirStehen />} />
           <Route path="/was-ansteht" element={<WasAnsteht />} />
-          <Route path="/parlamentarische-geschaefte" element={<ParlamentarischeGeschafte />} />
           <Route path="/stadtrat" element={<Stadtrat />} />
           <Route path="/vorstand" element={<Vorstand />} />
           <Route path="/geschichte" element={<Geschichte />} />

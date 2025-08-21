@@ -181,7 +181,7 @@ const WasAnsteht = () => {
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl font-bold text-foreground">Aktuelle Politische Arbeit</h2>
             <Button variant="outline" asChild>
-              <a href="/parlamentarische-geschaefte">Alle Geschäfte</a>
+              <a href="/vorstoesse">Alle Geschäfte</a>
             </Button>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -25,7 +25,7 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
           </NavigationMenuTrigger>
           <NavigationMenuContent className="bg-background/98 backdrop-blur-md border border-border shadow-xl">
             <div className="grid gap-4 p-8 w-[550px] lg:w-[650px] lg:grid-cols-2">
-              <div className="row-span-4">
+              <div className="row-span-3">
                 <NavigationMenuLink asChild>
                   <Link
                     to="/wofuer-wir-stehen"
@@ -60,14 +60,7 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
                 href="/vorstoesse"
                 icon={<FileText className="h-5 w-5" />}
               >
-                Politische Initiativen und Vorstösse im Stadtrat
-              </ListItem>
-              <ListItem
-                title="Parlamentarische Geschäfte"
-                href="/parlamentarische-geschaefte"
-                icon={<FileText className="h-5 w-5" />}
-              >
-                Aktuelle Motionen, Interpellationen und Postulate
+                Parlamentarische Vorstösse und politische Initiativen
               </ListItem>
             </div>
           </NavigationMenuContent>
