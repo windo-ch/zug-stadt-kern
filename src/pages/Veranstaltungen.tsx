@@ -12,7 +12,6 @@ import { Calendar, MapPin, Clock, Users, ArrowRight, Download, Phone, Mail, Exte
 const Veranstaltungen = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterType, setFilterType] = useState('all');
-  const [filterTarget, setFilterTarget] = useState('all');
 
   useEffect(() => {
     document.title = "Veranstaltungen – SVP Stadt Zug";
@@ -267,8 +266,7 @@ const Veranstaltungen = () => {
     const matchesSearch = event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          event.description.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesType = filterType === 'all' || event.type.toLowerCase() === filterType;
-    const matchesTarget = filterTarget === 'all' || event.target.toLowerCase().includes(filterTarget.toLowerCase());
-    return matchesSearch && matchesType && matchesTarget;
+    return matchesSearch && matchesType;
   });
 
   const filteredPast = pastEvents.filter(event => {
@@ -340,66 +338,45 @@ const Veranstaltungen = () => {
           </div>
         </section>
 
-        {/* Event Types Overview */}
-        <section className="mb-12">
+        {/* Event Types Filter */}
+        <section className="mb-8">
           <Card className="bg-primary/5 border-primary/20">
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Unsere Veranstaltungstypen</h3>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+              <h3 className="text-lg font-semibold text-foreground mb-6">Filter nach Veranstaltungstyp</h3>
+              <div className="flex flex-wrap gap-3">
+                <Button 
+                  variant={filterType === 'all' ? 'default' : 'outline'}
+                  onClick={() => setFilterType('all')}
+                  className="hover-scale"
+                >
+                  Alle anzeigen
+                </Button>
                 {eventTypes.map((type, index) => (
-                  <div key={index}>
-                    <div className="flex items-center justify-between mb-2">
-                      <Badge className={type.color}>
-                        {type.type}
-                      </Badge>
-                      <span className="text-xs text-muted-foreground">{type.frequency}</span>
-                    </div>
-                    <p className="text-muted-foreground">{type.description}</p>
-                  </div>
+                  <Button
+                    key={index}
+                    variant={filterType === type.type.toLowerCase() ? 'default' : 'outline'}
+                    onClick={() => setFilterType(filterType === type.type.toLowerCase() ? 'all' : type.type.toLowerCase())}
+                    className="hover-scale"
+                  >
+                    <Badge className={`mr-2 ${type.color}`}>
+                      {type.type}
+                    </Badge>
+                    {type.description}
+                  </Button>
                 ))}
+              </div>
+              <div className="mt-4 pt-4 border-t border-primary/20">
+                <Input
+                  placeholder="Veranstaltung suchen..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="max-w-md"
+                />
               </div>
             </CardContent>
           </Card>
         </section>
 
-        {/* Filters */}
-        <section className="mb-8">
-          <div className="flex flex-col md:flex-row gap-4">
-            <div className="flex-1">
-              <Input
-                placeholder="Veranstaltung suchen..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full"
-              />
-            </div>
-            <Select value={filterType} onValueChange={setFilterType}>
-              <SelectTrigger className="w-full md:w-48">
-                <SelectValue placeholder="Veranstaltungstyp" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Alle Typen</SelectItem>
-                <SelectItem value="diskussion">Diskussion</SelectItem>
-                <SelectItem value="anlass">Anlass</SelectItem>
-                <SelectItem value="höck">Höck</SelectItem>
-                <SelectItem value="vortrag">Vortrag</SelectItem>
-                <SelectItem value="standaktion">Standaktion</SelectItem>
-                <SelectItem value="versammlung">Versammlung</SelectItem>
-                <SelectItem value="abstimmung">Abstimmung</SelectItem>
-              </SelectContent>
-            </Select>
-            <Select value={filterTarget} onValueChange={setFilterTarget}>
-              <SelectTrigger className="w-full md:w-48">
-                <SelectValue placeholder="Zielgruppe" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Alle Zielgruppen</SelectItem>
-                <SelectItem value="öffentlich">Öffentlich</SelectItem>
-                <SelectItem value="mitglieder">Nur Mitglieder</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-        </section>
 
         {/* Main Content Tabs */}
         <Tabs defaultValue="upcoming" className="w-full">
