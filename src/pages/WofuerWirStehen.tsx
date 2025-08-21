@@ -88,9 +88,19 @@ const WofuerWirStehen = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="container mx-auto px-4 py-16">
+      <main 
+        className="container mx-auto px-4 py-16 relative"
+        style={{
+          backgroundImage: `url('/lovable-uploads/d75181da-4d07-475b-827c-99ae71cae110.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="absolute inset-0 bg-white/85 backdrop-blur-[1px] rounded-lg"></div>
+        
         {/* Hero Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 relative z-10">
           <Badge variant="outline" className="mb-4">Unsere Grundsätze</Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Wofür wir stehen
@@ -102,7 +112,7 @@ const WofuerWirStehen = () => {
         </div>
 
         {/* Core Values Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 relative z-10">
           {coreValues.map((value, index) => (
             <Card key={index} className="h-full hover:shadow-lg transition-shadow">
               <CardHeader>
@@ -129,7 +139,7 @@ const WofuerWirStehen = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="bg-primary/5 rounded-lg p-8 text-center">
+        <div className="bg-primary/5 rounded-lg p-8 text-center relative z-10">
           <h2 className="text-2xl font-bold text-foreground mb-4">
             Gemeinsam für eine starke Stadt Zug
           </h2>

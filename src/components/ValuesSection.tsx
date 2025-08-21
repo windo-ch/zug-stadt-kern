@@ -35,8 +35,18 @@ const ValuesSection = () => {
   ];
 
   return (
-    <section id="values" className="section-padding">
-      <div className="container-max">
+    <section 
+      id="values" 
+      className="section-padding relative"
+      style={{
+        backgroundImage: `url('/lovable-uploads/1cca20d4-8141-4133-9164-d369442d3687.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      <div className="absolute inset-0 bg-white/85 backdrop-blur-[1px]"></div>
+      <div className="container-max relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Wofür wir stehen
