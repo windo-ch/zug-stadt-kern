@@ -144,6 +144,12 @@ const Header = () => {
                 >
                   Spenden
                 </button>
+                <button
+                  onClick={() => navigateToPage('/1000er-club')}
+                  className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-accent/50 rounded-lg transition-colors"
+                >
+                  1000er Club
+                </button>
               </div>
             </div>
           </div>
