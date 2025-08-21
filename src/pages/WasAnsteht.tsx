@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Calendar, FileText, AlertCircle, Clock, ExternalLink } from 'lucide-react';
+import { Calendar, Clock, ExternalLink, AlertTriangle, Users, MapPin, FileText } from 'lucide-react';
 
 const WasAnsteht = () => {
   useEffect(() => {
@@ -12,165 +12,86 @@ const WasAnsteht = () => {
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Aktuelle Termine, Abstimmungen und wichtige Ereignisse der SVP Stadt Zug. Bleiben Sie informiert über anstehende politische Aktivitäten.');
+      metaDescription.setAttribute('content', 'Aktuelle Termine, Veranstaltungen und wichtige politische Ereignisse der SVP Stadt Zug. Überblick über anstehende Aktivitäten.');
     }
   }, []);
 
-  const parlamentarischeGeschafte = [
+  const upcomingEvents = [
     {
-      type: "Motion",
-      title: "Hilfe für Blatten",
-      fraktionen: "SP, ALG/CSP, FDP, Die Mitte, SVP und GLP",
-      datum: "30. Juni 2025",
-      status: "zur Überw.",
-      referenz: "06 - GGR Parlamentarischer Vorstoss",
-      beschreibung: "Gemeinsame Motion aller Fraktionen zur Unterstützung von Blatten",
-      recent: true
+      id: 1,
+      title: "Bürgersprechstunde",
+      date: "2025-02-15",
+      time: "18:00 - 20:00", 
+      location: "Restaurant Löwen, Zug",
+      type: "Bürgerkontakt",
+      description: "Offene Sprechstunde für alle Bürgerinnen und Bürger"
     },
     {
-      type: "Motion",
-      title: "Jahres-Parkkarte: Runter mit dem Preis um 50%!",
-      fraktionen: "SVP-Fraktion",
-      datum: "16. Juni 2025",
-      status: "zur Überw.",
-      referenz: "06 - GGR Parlamentarischer Vorstoss",
-      beschreibung: "SVP-Motion für günstigere Jahres-Parkkarten für Bürger",
-      recent: true
+      id: 2,
+      title: "Abstimmungsversammlung März",
+      date: "2025-02-28",
+      time: "19:30 - 21:30",
+      location: "Burgbachsaal, Zug",
+      type: "Abstimmung",
+      description: "Diskussion und Empfehlungen zu den Abstimmungsvorlagen vom 15. März"
     },
     {
-      type: "Motion",
-      title: "Zug First – mit einer klaren Priorität zu Gunsten der AdF der FFZ",
-      fraktionen: "SVP-Fraktion",
-      datum: "11. Juni 2025",
-      status: "zur Überw.",
-      referenz: "06 - GGR Parlamentarischer Vorstoss",
-      beschreibung: "Prioritätensetzung für Zuger Interessen",
-      recent: true
-    },
-    {
-      type: "Interpellation",
-      title: "Bewerbung der Stadt Zug als Kulturhauptstadt Schweiz 2030",
-      fraktionen: "FDP, SVP, SP, Die Mitte",
-      datum: "14. Mai 2025",
-      status: "2948 SR",
-      referenz: "06 - GGR Parlamentarischer Vorstoss",
-      beschreibung: "Gemeinsame Interpellation zur Kulturhauptstadt-Bewerbung",
-      recent: true
-    },
-    {
-      type: "Postulat",
-      title: "Stadt Zuger Honig – ein nachhaltiger Pilotversuch!",
-      fraktionen: "SVP-Fraktion",
-      datum: "13. März 2025",
-      status: "Überw.",
-      referenz: "06 - GGR Parlamentarischer Vorstoss",
-      beschreibung: "Initiative für nachhaltige Honigproduktion in der Stadt"
-    },
-    {
-      type: "Postulat",
-      title: "Städtische Gebühren, die «bestgehüteten Geheimnisse» der Stadt Zug",
-      fraktionen: "SVP-Fraktion",
-      datum: "24. Februar 2025",
-      status: "Zur Überw.",
-      referenz: "06 - GGR Parlamentarischer Vorstoss",
-      beschreibung: "Mehr Transparenz bei städtischen Gebühren gefordert"
-    },
-    {
-      type: "Kleine Anfrage",
-      title: "Neuen Standorten auf OeIB-Arealen zur Erstellung von Asylunterkünften",
-      fraktionen: "SVP-Fraktion",
-      datum: "18. Februar 2025",
-      status: "2937 SR",
-      referenz: "06 - GGR Parlamentarischer Vorstoss",
-      beschreibung: "Anfrage zu geplanten Asylunterkünften in der Stadt Zug"
-    },
-    {
-      type: "Interpellation",
-      title: "Initiative 2000 Wohnungen für den Zuger Mittelstand",
-      fraktionen: "FDP- und SVP Fraktion",
-      datum: "20. Januar 2025",
-      status: "2932 SR",
-      referenz: "06 - GGR Parlamentarischer Vorstoss",
-      beschreibung: "Blockiert die Initiative die Erstellung von Wohnraum?"
-    },
-    {
-      type: "Motion",
-      title: "Verbesserung der hygienischen Situation in der Männerbadi",
-      fraktionen: "FDP, SVP, SP und GLP",
-      datum: "20. Januar 2025",
-      status: "Überw.",
-      referenz: "06 - GGR Parlamentarischer Vorstoss",
-      beschreibung: "Gemeinsame Motion für bessere Hygiene in der Männerbadi"
-    },
-    {
-      type: "Interpellation",
-      title: "Öffentliches Betteln in Zug – nein Danke!",
-      fraktionen: "SVP-Fraktion",
-      datum: "16. Januar 2025",
-      status: "2944 SR",
-      referenz: "06 - GGR Parlamentarischer Vorstoss",
-      beschreibung: "SVP-Interpellation gegen öffentliches Betteln"
+      id: 3,
+      title: "Podiumsdiskussion Mobilität",
+      date: "2025-03-12",
+      time: "19:00 - 21:00",
+      location: "Aula Kantonsschule, Zug",
+      type: "Diskussion",
+      description: "Zukunft der Mobilität in Zug - Podiumsdiskussion mit Experten"
     }
   ];
 
-  const weitereGeschafte2024 = [
+  const importantDates = [
     {
-      type: "Interpellation",
-      title: "Pflegeplätze und Alterswohnen - nicht nur ein Lippenbekenntnis!",
-      datum: "19. November 2024",
-      status: "2936 SR"
+      date: "15. März 2025",
+      title: "Eidgenössische Abstimmung",
+      description: "Abstimmung über mehrere nationale Vorlagen",
+      type: "Abstimmung"
     },
     {
-      type: "Interpellation", 
-      title: "WWZ – Remedur ist angesagt!",
-      datum: "30. Oktober 2024",
-      status: "2915 SR"
+      date: "25. April 2025",
+      title: "Jahreshauptversammlung",
+      description: "SVP Stadt Zug Jahresversammlung im Casino Zug",
+      type: "Versammlung"
     },
     {
-      type: "Interpellation",
-      title: "WWZ – strategisch neu ausrichten, zu Gunsten von Effizienz und Transparenz!",
-      datum: "30. Oktober 2024", 
-      status: "2916 SR"
-    },
-    {
-      type: "Motion",
-      title: "Solidarität mit dem Misox – sofort!",
-      datum: "25. Juni 2024",
-      status: "Überw."
-    },
-    {
-      type: "Postulat",
-      title: "Damwild im Zurlaubenhof? – JA!",
-      datum: "29. August 2024",
-      status: "Überw."
+      date: "Juni 2025",
+      title: "Kantonsratswahlen",
+      description: "Wahlen zum Zuger Kantonsrat",
+      type: "Wahlen"
     }
   ];
 
-  const getStatusColor = (status: string) => {
-    if (status.includes("zur Überw.") || status.includes("Zur Überw.")) {
-      return "bg-yellow-100 text-yellow-800 border-yellow-200 dark:bg-yellow-900 dark:text-yellow-300";
+  const recentPoliticalWork = [
+    {
+      title: "Motion: Jahres-Parkkarte 50% günstiger",
+      status: "zur Überw.",
+      description: "SVP-Motion für günstigere Parkkarten eingereicht"
+    },
+    {
+      title: "Interpellation: Kulturhauptstadt 2030",
+      status: "2948 SR", 
+      description: "Gemeinsame Anfrage zur Bewerbung als Kulturhauptstadt"
+    },
+    {
+      title: "Postulat: Stadt Zuger Honig",
+      status: "Überw.",
+      description: "Initiative für nachhaltige Honigproduktion gestartet"
     }
-    if (status.includes("Überw.")) {
-      return "bg-green-100 text-green-800 border-green-200 dark:bg-green-900 dark:text-green-300";
-    }
-    if (status.includes("SR")) {
-      return "bg-blue-100 text-blue-800 border-blue-200 dark:bg-blue-900 dark:text-blue-300";
-    }
-    if (status.includes("Nicht überw.")) {
-      return "bg-red-100 text-red-800 border-red-200 dark:bg-red-900 dark:text-red-300";
-    }
-    return "bg-gray-100 text-gray-800 border-gray-200 dark:bg-gray-800 dark:text-gray-300";
-  };
+  ];
 
-  const getTypeIcon = (type: string) => {
-    switch (type) {
-      case "Motion": return FileText;
-      case "Interpellation": return AlertCircle;
-      case "Postulat": return FileText;
-      case "Kleine Anfrage": return AlertCircle;
-      case "Antrag": return FileText;
-      default: return FileText;
-    }
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString('de-CH', {
+      weekday: 'long',
+      year: 'numeric', 
+      month: 'long',
+      day: 'numeric'
+    });
   };
 
   return (
@@ -185,122 +106,123 @@ const WasAnsteht = () => {
             Was ansteht
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Aktuelle parlamentarische Geschäfte und politische Vorstösse der SVP Stadt Zug. 
-            Verfolgen Sie unsere laufenden Motionen, Interpellationen und Postulate im Gemeinderat.
+            Bleiben Sie auf dem Laufenden über unsere kommenden Veranstaltungen, wichtige Termine 
+            und aktuelle politische Aktivitäten der SVP Stadt Zug.
           </p>
         </div>
 
-        {/* Aktuelle Parlamentarische Geschäfte */}
+        {/* Kommende Veranstaltungen */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Aktuelle Parlamentarische Geschäfte 2025</h2>
-          <div className="space-y-6">
-            {parlamentarischeGeschafte.map((geschaeft, index) => {
-              const IconComponent = getTypeIcon(geschaeft.type);
-              return (
-                <Card key={index} className={`hover:shadow-lg transition-shadow ${geschaeft.recent ? 'border-l-4 border-l-primary' : ''}`}>
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                          <IconComponent className="w-6 h-6 text-primary" />
-                        </div>
-                        <div>
-                          <div className="flex items-center gap-2 mb-2">
-                            <Badge variant="outline" className="text-xs">{geschaeft.type}</Badge>
-                            {geschaeft.recent && <Badge className="bg-primary text-primary-foreground text-xs">Neu</Badge>}
-                          </div>
-                          <CardTitle className="text-lg leading-tight">{geschaeft.title}</CardTitle>
-                          <div className="text-sm text-muted-foreground mt-1">
-                            {geschaeft.fraktionen}
-                          </div>
-                        </div>
-                      </div>
-                      <Badge className={getStatusColor(geschaeft.status)} variant="outline">
-                        {geschaeft.status}
-                      </Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-base mb-4">
-                      {geschaeft.beschreibung}
-                    </CardDescription>
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                      <div className="flex items-center">
-                        <Calendar className="w-4 h-4 mr-2" />
-                        {geschaeft.datum}
-                      </div>
-                      <div className="flex items-center">
-                        <FileText className="w-4 h-4 mr-2" />
-                        {geschaeft.referenz}
-                      </div>
-                    </div>
-                    <Button size="sm" variant="outline" className="btn-outline" asChild>
-                      <a href="https://ratsinfo.stadtzug.ch/gremien/5" target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Details auf ratsinfo.stadtzug.ch
-                      </a>
-                    </Button>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* Weitere Geschäfte 2024 */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Weitere Geschäfte 2024</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {weitereGeschafte2024.map((geschaeft, index) => {
-              const IconComponent = getTypeIcon(geschaeft.type);
-              return (
-                <Card key={index} className="hover:shadow-md transition-shadow">
-                  <CardContent className="p-4">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                        <IconComponent className="w-4 h-4 text-primary" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 mb-1">
-                          <Badge variant="outline" className="text-xs">{geschaeft.type}</Badge>
-                          <Badge className={`${getStatusColor(geschaeft.status)} text-xs`} variant="outline">
-                            {geschaeft.status}
-                          </Badge>
-                        </div>
-                        <h3 className="font-semibold text-sm leading-tight mb-2">{geschaeft.title}</h3>
-                        <div className="flex items-center text-xs text-muted-foreground">
-                          <Calendar className="w-3 h-3 mr-1" />
-                          {geschaeft.datum}
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* Information Box */}
-        <div className="bg-primary/5 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold text-foreground mb-4">
-            Parlamentarische Arbeit verfolgen
-          </h2>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Verfolgen Sie alle parlamentarischen Geschäfte der Stadt Zug live auf der offiziellen 
-            Ratsinfo-Plattform. Dort finden Sie detaillierte Informationen zu allen Vorstössen und deren Bearbeitung.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="btn-hero" asChild>
-              <a href="https://ratsinfo.stadtzug.ch/gremien/5" target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="mr-2 h-4 w-4" />
-                Ratsinfo Stadt Zug
-              </a>
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-bold text-foreground">Kommende Veranstaltungen</h2>
+            <Button variant="outline" asChild>
+              <a href="/veranstaltungen">Alle Veranstaltungen</a>
             </Button>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {upcomingEvents.map((event) => (
+              <Card key={event.id} className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4 mb-4">
+                    <div className="bg-primary text-primary-foreground p-3 rounded-lg text-center min-w-[60px]">
+                      <div className="text-lg font-bold">{new Date(event.date).getDate()}</div>
+                      <div className="text-xs">{new Date(event.date).toLocaleDateString('de-CH', { month: 'short' })}</div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-foreground mb-2">{event.title}</h3>
+                      <div className="text-sm text-muted-foreground space-y-1">
+                        <div className="flex items-center">
+                          <Clock className="w-4 h-4 mr-2" />
+                          {event.time}
+                        </div>
+                        <div className="flex items-center">
+                          <MapPin className="w-4 h-4 mr-2" />
+                          {event.location}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-3">{event.description}</p>
+                  <Badge variant="outline">{event.type}</Badge>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Wichtige Termine */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-foreground mb-8">Wichtige Termine</h2>
+          <div className="space-y-4">
+            {importantDates.map((item, index) => (
+              <Card key={index} className="hover:shadow-md transition-shadow">
+                <CardContent className="p-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <Calendar className="w-6 h-6 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-1">
+                        <h3 className="font-semibold text-foreground">{item.title}</h3>
+                        <Badge variant="outline">{item.type}</Badge>
+                      </div>
+                      <p className="text-sm text-muted-foreground mb-1">{item.description}</p>
+                      <div className="text-sm text-primary font-medium">{item.date}</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Aktuelle Politische Arbeit */}
+        <section className="mb-16">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-bold text-foreground">Aktuelle Politische Arbeit</h2>
+            <Button variant="outline" asChild>
+              <a href="/parlamentarische-geschaefte">Alle Geschäfte</a>
+            </Button>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {recentPoliticalWork.map((item, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-3 mb-3">
+                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <FileText className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-foreground mb-2 text-sm leading-tight">{item.title}</h3>
+                      <Badge variant="outline" className="text-xs">{item.status}</Badge>
+                    </div>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Call-to-Action Boxes */}
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-primary/5 rounded-lg p-8 text-center">
+            <h3 className="text-xl font-bold text-foreground mb-4">Bleiben Sie informiert</h3>
+            <p className="text-muted-foreground mb-6">
+              Abonnieren Sie unseren Newsletter für aktuelle Informationen zu Terminen und politischen Entwicklungen.
+            </p>
+            <Button className="btn-hero" asChild>
+              <a href="/newsletter">Newsletter abonnieren</a>
+            </Button>
+          </div>
+          
+          <div className="bg-accent/5 rounded-lg p-8 text-center">
+            <h3 className="text-xl font-bold text-foreground mb-4">Mitmachen</h3>
+            <p className="text-muted-foreground mb-6">
+              Werden Sie Teil unserer politischen Arbeit und engagieren Sie sich für Zug.
+            </p>
             <Button variant="outline" className="btn-outline" asChild>
-              <a href="/vorstoesse">
-                Unsere Vorstösse
-              </a>
+              <a href="/mitglied-werden">Mitglied werden</a>
             </Button>
           </div>
         </div>
