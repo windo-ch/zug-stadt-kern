@@ -280,7 +280,8 @@ const Themen = () => {
                   <div className="flex items-center justify-between mb-2">
                     <CardTitle className="text-lg">{initiative.title}</CardTitle>
                     <Badge variant={initiative.status === "In Planung" ? "secondary" : 
-                                  initiative.status === "Vernehmlassung" ? "default" : "outline"}>
+                                  initiative.status === "Vernehmlassung" ? "default" : "outline"} 
+                           className="whitespace-nowrap">
                       {initiative.status}
                     </Badge>
                   </div>
