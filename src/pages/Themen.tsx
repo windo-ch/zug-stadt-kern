@@ -298,8 +298,8 @@ const Themen = () => {
                     <CardTitle className="text-xl font-bold leading-tight pr-2">{initiative.title}</CardTitle>
                     <Badge variant={
                       initiative.status === "Kampagne" ? "destructive" : 
-                      initiative.status === "Unterschriftensammlung" ? "default" :
-                      initiative.status === "Unterschriftensammlung erfolgreich" ? "secondary" : "outline"
+                      initiative.status === "Unterschriftensammlung" ? "warning" :
+                      initiative.status === "Unterschriftensammlung erfolgreich" ? "success" : "outline"
                     } className="whitespace-nowrap text-xs">
                       {initiative.status}
                     </Badge>
