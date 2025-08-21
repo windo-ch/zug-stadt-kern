@@ -72,22 +72,56 @@ const HeroSection = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <Link to="/geschichte" className="text-center p-4 hover:bg-muted/50 rounded-lg transition-colors group">
-                <div className="text-3xl font-bold text-primary mb-2 group-hover:scale-105 transition-transform">33</div>
-                <div className="text-sm font-semibold text-muted-foreground group-hover:text-foreground transition-colors">Jahre Bestand</div>
+            <div className="flex flex-wrap justify-center gap-4 md:grid md:grid-cols-4 md:gap-6">
+              <Link 
+                to="/geschichte" 
+                className="relative group min-w-[140px] p-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative text-center">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
+                    33
+                  </div>
+                  <div className="text-sm font-semibold text-foreground/80 group-hover:text-foreground transition-colors">
+                    Jahre Bestand
+                  </div>
+                </div>
               </Link>
-              <div className="text-center p-4">
-                <div className="text-3xl font-bold text-primary mb-2">500+</div>
-                <div className="text-sm font-semibold text-muted-foreground">Aktive Mitglieder</div>
+              
+              <div className="relative group min-w-[140px] p-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-secondary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative text-center">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-secondary to-secondary-glow bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
+                    500+
+                  </div>
+                  <div className="text-sm font-semibold text-foreground/80 group-hover:text-foreground transition-colors">
+                    Aktive Mitglieder
+                  </div>
+                </div>
               </div>
-              <div className="text-center p-4">
-                <div className="text-3xl font-bold text-primary mb-2">8</div>
-                <div className="text-sm font-semibold text-muted-foreground">Sitze im Parlament</div>
+              
+              <div className="relative group min-w-[140px] p-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-svp-green/20 to-svp-green/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative text-center">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-svp-green to-svp-green-light bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
+                    8
+                  </div>
+                  <div className="text-sm font-semibold text-foreground/80 group-hover:text-foreground transition-colors">
+                    Sitze im Parlament
+                  </div>
+                </div>
               </div>
-              <div className="text-center p-4">
-                <div className="text-3xl font-bold text-primary mb-2">25%</div>
-                <div className="text-sm font-semibold text-muted-foreground">Wähleranteil 2022</div>
+              
+              <div className="relative group min-w-[140px] p-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-svp-orange/20 to-svp-orange/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative text-center">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-svp-orange to-svp-orange-light bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
+                    25%
+                  </div>
+                  <div className="text-sm font-semibold text-foreground/80 group-hover:text-foreground transition-colors">
+                    Wähleranteil 2022
+                  </div>
+                </div>
               </div>
             </div>
           </div>
