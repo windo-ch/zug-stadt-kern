@@ -37,73 +37,104 @@ const WerWirSind = () => {
     }
   ];
 
-  const keyFigures = [
+  // Cantonal Level
+  const kantonsrat = [
     {
-      name: "Peter Kaufmann",
-      position: "Präsident SVP Stadt Zug",
-      description: "Langjähriger Unternehmer mit einer Leidenschaft für bürgernahe Politik",
-      experience: "15 Jahre politische Erfahrung",
-      focus: "Wirtschaftspolitik, Standortförderung",
-      contact: {
-        phone: "+41 79 123 45 67",
-        email: "peter.kaufmann@svp-zug.ch"
-      }
-    },
-    {
-      name: "Dr. Andrea Müller",
-      position: "Stadträtin - Direktion Soziales und Sicherheit",
-      description: "Rechtsanwältin und Mutter, die sich für Sicherheit und soziale Gerechtigkeit einsetzt",
-      experience: "6 Jahre im Stadtrat",
-      focus: "Sicherheitspolitik, Sozialpolitik",
-      contact: {
-        phone: "+41 41 728 21 11",
-        email: "andrea.mueller@stadtzug.ch"
-      }
-    },
-    {
-      name: "Thomas Bachmann",
-      position: "Stadtrat - Direktion Planung und Infrastruktur",
-      description: "Bauingenieur mit Fokus auf nachhaltige Stadtentwicklung",
-      experience: "4 Jahre im Stadtrat",
-      focus: "Stadtplanung, Verkehr, Infrastruktur",
-      contact: {
-        phone: "+41 41 728 21 12",
-        email: "thomas.bachmann@stadtzug.ch"
-      }
+      name: "Gregor R. Bruhin",
+      position: "Kantonsrat",
+      phone: "079 929 23 72",
+      email: "gb@gregor-bruhin.ch",
+      description: "Gregor R. Bruhin vertritt die SVP-Werte auf kantonaler Ebene und setzt sich für die Anliegen der Region Zug ein."
     }
   ];
 
-  const achievements = [
+  // Commissions and Special Functions
+  const kommissionen = [
     {
-      year: "2023",
-      title: "Verstärkung der Stadtpolizei",
-      description: "Erfolgreiche Durchsetzung zusätzlicher Polizeipatrouillen",
-      impact: "30% weniger Vandalismusschäden"
+      name: "Daniel Gramm Schneider",
+      position: "Kulturkommission",
+      phone: "",
+      email: "",
+      description: "Daniel Gramm Schneider engagiert sich in der Kulturkommission für ein vielfältiges kulturelles Angebot in Zug."
     },
     {
-      year: "2023",
-      title: "Schulraum-Erweiterung",
-      description: "Realisierung neuer Schulinfrastruktur im Osten der Stadt",
-      impact: "120 zusätzliche Schulplätze"
-    },
-    {
-      year: "2022",
-      title: "Digitalisierung Verwaltung",
-      description: "Modernisierung der städtischen IT-Services",
-      impact: "50% schnellere Bearbeitung von Anträgen"
-    },
-    {
-      year: "2022",
-      title: "Verkehrsoptimierung",
-      description: "Verbesserung der Verkehrsflüsse in der Innenstadt",
-      impact: "25% weniger Staus zu Stosszeiten"
+      name: "Raphael Tschan",
+      position: "Mitglied der RPK",
+      phone: "",
+      email: "rt@raphael-tschan.ch",
+      description: "Raphael Tschan bringt seine Expertise in die Rechnungsprüfungskommission ein."
     }
   ];
+
+  // General Members and Supporters
+  const parteimitglieder = [
+    {
+      name: "Alex Odermatt",
+      phone: "041 766 67 93",
+      email: "alexodermatt@bluewin.ch",
+      description: "Alex Odermatt unterstützt die SVP-Politik mit seinem Engagement für die Partei."
+    },
+    {
+      name: "Norbert Schlumpf",
+      phone: "",
+      email: "n.schlumpf@hsk-telematik.ch",
+      description: "Norbert Schlumpf bringt seine Fachkompetenz in die Parteiarbeit ein."
+    },
+    {
+      name: "Thomas Dubach",
+      phone: "041 558 63 43",
+      email: "thomasdubach@mac.com",
+      description: "Thomas Dubach ist ein aktives Mitglied der SVP Stadt Zug."
+    },
+    {
+      name: "Alessandro Ehrbar",
+      phone: "079 796 97 13",
+      email: "ale_ehrbar@hotmail.com",
+      description: "Alessandro Ehrbar unterstützt die Partei mit seinem Engagement."
+    },
+    {
+      name: "Alexandra Gretener",
+      phone: "",
+      email: "alexandra.gretener@gmail.com",
+      description: "Alexandra Gretener ist eine engagierte Unterstützerin der SVP."
+    },
+    {
+      name: "Morten Hannesbo",
+      phone: "",
+      email: "morten.hannesbo@mac.com",
+      description: "Morten Hannesbo bringt sich aktiv in die Parteiarbeit ein."
+    },
+    {
+      name: "Doris Hefti",
+      phone: "041 768 72 61",
+      email: "",
+      description: "Doris Hefti ist eine treue Unterstützerin der SVP Stadt Zug."
+    },
+    {
+      name: "Dominique Messmer",
+      phone: "076 518 11 66",
+      email: "domessmer@bluewin.ch",
+      description: "Dominique Messmer engagiert sich für die SVP-Werte."
+    },
+    {
+      name: "Jürg Messmer",
+      phone: "076 587 11 33",
+      email: "jumessmer@gmail.com",
+      description: "Jürg Messmer unterstützt die Partei mit seinem Einsatz."
+    },
+    {
+      name: "Bruno Zimmermann",
+      phone: "041 552 00 22",
+      email: "bruno.zimmermann@mail.ch",
+      description: "Bruno Zimmermann ist ein loyales Mitglied der SVP Stadt Zug."
+    }
+  ];
+
 
   const organizationStats = [
     {
       icon: Users,
-      number: "400+",
+      number: "500+",
       label: "Aktive Mitglieder", 
       description: "Engagierte Bürgerinnen und Bürger"
     },
@@ -115,35 +146,12 @@ const WerWirSind = () => {
     },
     {
       icon: Target,
-      number: "2",
-      label: "Stadträte",
-      description: "Starke Vertretung in der Exekutive"
+      number: "1",
+      label: "Stadtpräsident",
+      description: "André Wicki führt die Stadtregierung"
     }
   ];
 
-  const upcomingEvents = [
-    {
-      title: "Mitgliederversammlung",
-      date: "15. März 2024",
-      time: "19:30 - 21:30",
-      location: "Restaurant Löwen, Kolinplatz 11",
-      description: "Monatliche Versammlung mit aktuellen politischen Themen"
-    },
-    {
-      title: "Bürgerforum Sicherheit",
-      date: "22. März 2024", 
-      time: "19:00 - 21:00",
-      location: "Casino Zug, Dorfstrasse 1",
-      description: "Öffentliche Diskussion über Sicherheitsmassnahmen"
-    },
-    {
-      title: "Tag der offenen Tür",
-      date: "5. April 2024",
-      time: "14:00 - 18:00",
-      location: "Parteisekretariat",
-      description: "Lernen Sie uns persönlich kennen"
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -200,106 +208,41 @@ const WerWirSind = () => {
           </div>
         </section>
 
-        {/* Key Figures */}
+        {/* Cantonal Level */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Unsere Führung</h2>
-          <div className="space-y-8">
-            {keyFigures.map((person, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-8">
-                  <div className="grid lg:grid-cols-3 gap-8">
-                    <div className="lg:col-span-2">
-                      <div className="flex items-start space-x-4 mb-4">
-                        <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
-                          <span className="text-lg font-bold text-gray-600">
-                            {person.name.split(' ').map(n => n[0]).join('')}
-                          </span>
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-foreground">{person.name}</h3>
-                          <p className="text-primary font-semibold">{person.position}</p>
-                          <p className="text-sm text-muted-foreground mt-1">{person.experience}</p>
-                        </div>
-                      </div>
-                      <p className="text-muted-foreground mb-4">{person.description}</p>
-                      <div className="flex items-center space-x-4 text-sm">
-                        <Badge variant="outline">
-                          <Target className="w-3 h-3 mr-1" />
-                          {person.focus}
-                        </Badge>
-                      </div>
-                    </div>
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-semibold text-foreground mb-3">Kontakt</h4>
-                        <div className="space-y-2 text-sm">
-                          <div className="flex items-center">
-                            <Phone className="w-4 h-4 mr-2 text-muted-foreground" />
-                            <a href={`tel:${person.contact.phone}`} className="hover:text-primary transition-colors">
-                              {person.contact.phone}
-                            </a>
-                          </div>
-                          <div className="flex items-center">
-                            <Mail className="w-4 h-4 mr-2 text-muted-foreground" />
-                            <a href={`mailto:${person.contact.email}`} className="hover:text-primary transition-colors">
-                              {person.contact.email}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* Recent Achievements */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Unsere Erfolge</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-8">Kantonsebene</h2>
           <div className="space-y-6">
-            {achievements.map((achievement, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between">
+            {kantonsrat.map((person, index) => (
+              <Card key={index} className="border-l-4 border-l-secondary hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center">
+                      <span className="text-lg font-bold text-secondary">
+                        {person.name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    </div>
                     <div className="flex-grow">
-                      <div className="flex items-center space-x-3 mb-2">
-                        <Badge variant="secondary">{achievement.year}</Badge>
-                        <h3 className="text-lg font-semibold text-foreground">{achievement.title}</h3>
-                      </div>
-                      <p className="text-muted-foreground mb-2">{achievement.description}</p>
-                      <div className="flex items-center">
-                        <Award className="w-4 h-4 text-green-600 mr-2" />
-                        <span className="text-sm font-medium text-green-700">{achievement.impact}</span>
-                      </div>
+                      <CardTitle className="text-xl mb-1">{person.name}</CardTitle>
+                      <Badge className="bg-secondary text-secondary-foreground mb-2">{person.position}</Badge>
+                      <CardDescription className="text-sm">
+                        {person.description}
+                      </CardDescription>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* Upcoming Events */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Kommende Veranstaltungen</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {upcomingEvents.map((event, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="text-lg">{event.title}</CardTitle>
-                  <CardDescription>{event.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-2 text-sm text-muted-foreground">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                     <div className="flex items-center">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      {event.date}, {event.time}
+                      <Phone className="w-4 h-4 mr-2 text-muted-foreground" />
+                      <a href={`tel:${person.phone.replace(/\s/g, '')}`} className="text-primary hover:text-primary/80 transition-colors">
+                        {person.phone}
+                      </a>
                     </div>
                     <div className="flex items-center">
-                      <MapPin className="w-4 h-4 mr-2" />
-                      {event.location}
+                      <Mail className="w-4 h-4 mr-2 text-muted-foreground" />
+                      <a href={`mailto:${person.email}`} className="text-primary hover:text-primary/80 transition-colors">
+                        {person.email}
+                      </a>
                     </div>
                   </div>
                 </CardContent>
@@ -307,6 +250,96 @@ const WerWirSind = () => {
             ))}
           </div>
         </section>
+
+        {/* Commissions */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-foreground mb-8">Kommissionen</h2>
+          <div className="grid lg:grid-cols-2 gap-6">
+            {kommissionen.map((person, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center">
+                      <span className="text-sm font-bold text-primary">
+                        {person.name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    </div>
+                    <div className="flex-grow">
+                      <CardTitle className="text-lg mb-1">{person.name}</CardTitle>
+                      <Badge variant="secondary" className="mb-2">{person.position}</Badge>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4 text-sm">{person.description}</p>
+                  
+                  <div className="space-y-2 text-sm">
+                    {person.phone && (
+                      <div className="flex items-center">
+                        <Phone className="w-4 h-4 mr-2 text-muted-foreground flex-shrink-0" />
+                        <a href={`tel:${person.phone.replace(/\s/g, '')}`} className="text-primary hover:text-primary/80 transition-colors">
+                          {person.phone}
+                        </a>
+                      </div>
+                    )}
+                    {person.email && (
+                      <div className="flex items-center">
+                        <Mail className="w-4 h-4 mr-2 text-muted-foreground flex-shrink-0" />
+                        <a href={`mailto:${person.email}`} className="text-primary hover:text-primary/80 transition-colors text-sm break-all">
+                          {person.email}
+                        </a>
+                      </div>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Party Members */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-foreground mb-8">Weitere Parteimitglieder</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {parteimitglieder.map((person, index) => (
+              <Card key={index} className="hover:shadow-md transition-shadow">
+                <CardContent className="p-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-xs font-bold text-primary">
+                        {person.name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-semibold text-sm leading-tight mb-2">{person.name}</h3>
+                      <p className="text-xs text-muted-foreground mb-3">{person.description}</p>
+                      
+                      <div className="space-y-1 text-xs">
+                        {person.phone && (
+                          <div className="flex items-center">
+                            <Phone className="w-3 h-3 mr-1 text-muted-foreground" />
+                            <a href={`tel:${person.phone.replace(/\s/g, '')}`} className="text-primary hover:text-primary/80 transition-colors">
+                              {person.phone}
+                            </a>
+                          </div>
+                        )}
+                        {person.email && (
+                          <div className="flex items-center">
+                            <Mail className="w-3 h-3 mr-1 text-muted-foreground" />
+                            <a href={`mailto:${person.email}`} className="text-primary hover:text-primary/80 transition-colors text-xs break-all">
+                              {person.email}
+                            </a>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
 
         {/* Call to Action */}
         <div className="bg-primary/5 rounded-lg p-8 text-center">

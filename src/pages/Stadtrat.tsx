@@ -16,62 +16,64 @@ const Stadtrat = () => {
     }
   }, []);
 
-  const parlamentarians = [
+  // City Executive (Stadtrat/Executive Council)
+  const stadtrat = [
+    {
+      name: "André Wicki",
+      position: "Stadtrat / Stadtpräsident",
+      phone: "058 728 90 01",
+      email: "andre.wicki@stadtzug.ch",
+      description: "Als Stadtpräsident führt André Wicki die Exekutive der Stadt Zug und vertritt die bürgerlichen Werte in der Stadtregierung.",
+      isPresident: true
+    }
+  ];
+
+  // City Parliament (Grosser Gemeinderat/Legislative)
+  const gemeinderat = [
     {
       name: "Roman Küng",
-      position: "Fraktionschef",
+      position: "Gemeinderat",
       address: "Bernoldweg 9, 6300 Zug",
+      phone: "041 750 10 55",
       email: "roman.kueng@bluewin.ch",
-      description: "Als Fraktionschef leitet Roman Küng die SVP-Fraktion im Grossen Gemeinderat und koordiniert die politische Arbeit der Partei.",
-      isLeader: true
+      description: "Roman Küng ist als erfahrener Gemeinderat und Fraktionschef ein wichtiger Pfeiler der SVP-Politik in Zug.",
+      isFraktionschef: true
     },
     {
       name: "Philip C. Brunner",
-      position: "Mitglied",
+      position: "Gemeinderat, Präsident GPK Stadt Zug",
       address: "Im Rank 109, 6300 Zug", 
+      phone: "079 398 4 396",
       email: "phcb@philip-brunner.ch",
-      description: "Philip C. Brunner setzt sich als engagiertes Mitglied für die Interessen der SVP im Stadtparlament ein.",
-      isLeader: false
+      description: "Philip C. Brunner präsidiert die Geschäftsprüfungskommission und bringt seine Expertise in die Gemeindepolitik ein.",
+      isFraktionschef: false
     },
     {
       name: "Marcus Bühler",
-      position: "Mitglied",
+      position: "Gemeinderat",
       address: "Bahnhofstrasse 27, 6300 Zug",
+      phone: "",
       email: "bumbleb@bluewin.ch",
-      description: "Marcus Bühler vertritt die SVP-Werte mit Engagement und Sachverstand im Grossen Gemeinderat.",
-      isLeader: false
+      description: "Marcus Bühler setzt sich als Gemeinderat für pragmatische Lösungen und bürgernahe Politik ein.",
+      isFraktionschef: false
     },
     {
       name: "René Gretener",
-      position: "Mitglied",
+      position: "Gemeinderat",
       address: "Lüssirainstrasse 1, 6300 Zug",
+      phone: "",
       email: "rghkswiss@gmail.com", 
-      description: "René Gretener bringt seine Erfahrung und sein Engagement für die SVP-Politik in die parlamentarische Arbeit ein.",
-      isLeader: false
-    },
-    {
-      name: "Alex Odermatt",
-      position: "Mitglied",
-      address: "St. Johannesstrasse 4, 6300 Zug",
-      email: "alexodermatt@bluewin.ch",
-      description: "Alex Odermatt arbeitet aktiv an der Umsetzung der SVP-Ziele im Stadtparlament mit.",
-      isLeader: false
+      description: "René Gretener vertritt die SVP-Werte im Gemeinderat mit Engagement und Sachverstand.",
+      isFraktionschef: false
     },
     {
       name: "Manfred Pircher",
-      position: "Mitglied", 
+      position: "Gemeinderat", 
       address: "Lothenbach 7, 6318 Walchwil",
+      phone: "041 758 17 30",
       email: "manfred.pircher@bluewin.ch",
-      description: "Manfred Pircher vertritt auch die Interessen der Gemeinde Walchwil in der regionalen Politik.",
-      isLeader: false
-    },
-    {
-      name: "Norbert Schlumpf",
-      position: "Mitglied",
-      address: "Chamerstrasse 36, 6300 Zug", 
-      email: "n.schlumpf@hsk-telematik.ch",
-      description: "Norbert Schlumpf bringt seine Fachexpertise in die politische Arbeit der SVP-Fraktion ein.",
-      isLeader: false
+      description: "Manfred Pircher bringt auch die Perspektive der Gemeinde Walchwil in die regionale Politik ein.",
+      isFraktionschef: false
     }
   ];
 
@@ -131,25 +133,69 @@ const Stadtrat = () => {
           </p>
         </div>
 
-        {/* SVP Parlamentarians */}
+        {/* Stadtrat - Executive */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Unsere Parlamentarier</h2>
-          
-          {/* Fraktionschef */}
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold text-foreground mb-4">Fraktionsleitung</h3>
-            {parlamentarians.filter(p => p.isLeader).map((member, index) => (
+          <h2 className="text-3xl font-bold text-foreground mb-8">Stadtrat (Exekutive)</h2>
+          <div className="space-y-6">
+            {stadtrat.map((person, index) => (
               <Card key={index} className="border-l-4 border-l-primary hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-start space-x-4">
                     <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
                       <span className="text-lg font-bold text-primary">
+                        {person.name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    </div>
+                    <div className="flex-grow">
+                      <CardTitle className="text-xl mb-1">{person.name}</CardTitle>
+                      <Badge className="bg-primary text-primary-foreground mb-2">{person.position}</Badge>
+                      <CardDescription className="text-sm">
+                        {person.description}
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div className="flex items-center">
+                      <Phone className="w-4 h-4 mr-2 text-muted-foreground" />
+                      <a href={`tel:${person.phone.replace(/\s/g, '')}`} className="text-primary hover:text-primary/80 transition-colors">
+                        {person.phone}
+                      </a>
+                    </div>
+                    <div className="flex items-center">
+                      <Mail className="w-4 h-4 mr-2 text-muted-foreground" />
+                      <a href={`mailto:${person.email}`} className="text-primary hover:text-primary/80 transition-colors">
+                        {person.email}
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Gemeinderat - Legislative */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-foreground mb-8">Grosser Gemeinderat (Legislative)</h2>
+          
+          {/* Fraktionschef */}
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold text-foreground mb-4">Fraktionsleitung</h3>
+            {gemeinderat.filter(p => p.isFraktionschef).map((member, index) => (
+              <Card key={index} className="border-l-4 border-l-secondary hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center">
+                      <span className="text-lg font-bold text-secondary">
                         {member.name.split(' ').map(n => n[0]).join('')}
                       </span>
                     </div>
                     <div className="flex-grow">
                       <CardTitle className="text-xl mb-1">{member.name}</CardTitle>
-                      <Badge className="bg-primary text-primary-foreground mb-2">{member.position}</Badge>
+                      <Badge className="bg-secondary text-secondary-foreground mb-2">Fraktionschef</Badge>
+                      <Badge variant="outline" className="mb-2 ml-2">{member.position}</Badge>
                       <CardDescription className="text-sm">
                         {member.description}
                       </CardDescription>
@@ -158,13 +204,19 @@ const Stadtrat = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                    <div className="flex items-center">
-                      <MapPin className="w-4 h-4 mr-2 text-muted-foreground" />
+                    <div className="flex items-start">
+                      <MapPin className="w-4 h-4 mr-2 text-muted-foreground mt-0.5 flex-shrink-0" />
                       <span className="text-muted-foreground">{member.address}</span>
                     </div>
                     <div className="flex items-center">
+                      <Phone className="w-4 h-4 mr-2 text-muted-foreground" />
+                      <a href={`tel:${member.phone.replace(/\s/g, '')}`} className="text-primary hover:text-primary/80 transition-colors">
+                        {member.phone}
+                      </a>
+                    </div>
+                    <div className="flex items-center">
                       <Mail className="w-4 h-4 mr-2 text-muted-foreground" />
-                      <a href={`mailto:${member.email}`} className="text-primary hover:text-primary/80 transition-colors">
+                      <a href={`mailto:${member.email}`} className="text-primary hover:text-primary/80 transition-colors break-all">
                         {member.email}
                       </a>
                     </div>
@@ -174,11 +226,11 @@ const Stadtrat = () => {
             ))}
           </div>
 
-          {/* Fraktionsmitglieder */}
+          {/* Gemeinderat Mitglieder */}
           <div>
-            <h3 className="text-xl font-semibold text-foreground mb-4">Fraktionsmitglieder</h3>
+            <h3 className="text-xl font-semibold text-foreground mb-4">Gemeinderatsmitglieder</h3>
             <div className="grid lg:grid-cols-2 gap-6">
-              {parlamentarians.filter(p => !p.isLeader).map((member, index) => (
+              {gemeinderat.filter(p => !p.isFraktionschef).map((member, index) => (
                 <Card key={index} className="hover:shadow-lg transition-shadow">
                   <CardHeader>
                     <div className="flex items-start space-x-4">
@@ -201,6 +253,14 @@ const Stadtrat = () => {
                         <MapPin className="w-4 h-4 mr-2 text-muted-foreground mt-0.5 flex-shrink-0" />
                         <span className="text-muted-foreground">{member.address}</span>
                       </div>
+                      {member.phone && (
+                        <div className="flex items-center">
+                          <Phone className="w-4 h-4 mr-2 text-muted-foreground flex-shrink-0" />
+                          <a href={`tel:${member.phone.replace(/\s/g, '')}`} className="text-primary hover:text-primary/80 transition-colors">
+                            {member.phone}
+                          </a>
+                        </div>
+                      )}
                       <div className="flex items-center">
                         <Mail className="w-4 h-4 mr-2 text-muted-foreground flex-shrink-0" />
                         <a href={`mailto:${member.email}`} className="text-primary hover:text-primary/80 transition-colors text-sm break-all">
