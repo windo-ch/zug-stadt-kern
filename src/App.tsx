@@ -27,6 +27,7 @@ import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import CookiePolicy from "./pages/Cookie";
 import Wahlen from "./pages/Wahlen";
+import AdriansRisiProfil from "./pages/AdriansRisiProfil";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -60,6 +61,7 @@ const App = () => (
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="/cookie" element={<CookiePolicy />} />
+          <Route path="/profil/adrian-risi" element={<AdriansRisiProfil />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <ScrollToTop />
