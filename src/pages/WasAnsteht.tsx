@@ -125,7 +125,7 @@ const WasAnsteht = () => {
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl font-bold text-foreground">Kommende Veranstaltungen</h2>
             <Button variant="outline" asChild>
-              <a href="/veranstaltungen">Alle Veranstaltungen</a>
+              <a href="https://www.svp-zug.ch/termine/" target="_blank" rel="noopener noreferrer">Alle Veranstaltungen</a>
             </Button>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -213,15 +213,41 @@ const WasAnsteht = () => {
           </div>
         </section>
 
+        {/* External Links Notice */}
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
+          <h3 className="text-lg font-semibold text-blue-900 mb-3">Weitere Informationen</h3>
+          <p className="text-blue-800 mb-4">
+            Für umfassende Veranstaltungen und aktuelle Medienmitteilungen besuchen Sie die Hauptseite der SVP Kanton Zug:
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Button variant="outline" className="border-blue-300 text-blue-700 hover:bg-blue-100" asChild>
+              <a href="https://www.svp-zug.ch/termine/" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                Alle Veranstaltungen
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </Button>
+            <Button variant="outline" className="border-blue-300 text-blue-700 hover:bg-blue-100" asChild>
+              <a href="https://www.svp-zug.ch/home-2/publikationen/medienmitteilungen/" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                Medienmitteilungen
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </Button>
+          </div>
+        </div>
+
         {/* Call-to-Action Boxes */}
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-primary/5 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-bold text-foreground mb-4">Bleiben Sie informiert</h3>
+            <h3 className="text-xl font-bold text-foreground mb-4">Kontakt aufnehmen</h3>
             <p className="text-muted-foreground mb-6">
-              Abonnieren Sie unseren Newsletter für aktuelle Informationen zu Terminen und politischen Entwicklungen.
+              Haben Sie Fragen zu unseren Terminen oder möchten Sie mehr erfahren?
             </p>
             <Button className="btn-hero" asChild>
-              <a href="/newsletter">Newsletter abonnieren</a>
+              <a href="/kontakt">Kontakt</a>
             </Button>
           </div>
           

@@ -25,7 +25,8 @@ const Stadtrat = () => {
       phone: "058 728 90 01",
       email: "andre.wicki@stadtzug.ch",
       description: "Als Stadtpräsident führt André Wicki die Exekutive der Stadt Zug und vertritt die bürgerlichen Werte in der Stadtregierung.",
-      isPresident: true
+      isPresident: true,
+      image: "./assets/vorstand/Andre-Wicki_SVP.jpg"
     }
   ];
 
@@ -38,7 +39,8 @@ const Stadtrat = () => {
       phone: "041 750 10 55",
       email: "roman.kueng@bluewin.ch",
       description: "Roman Küng ist als erfahrener Gemeinderat und Fraktionschef ein wichtiger Pfeiler der SVP-Politik in Zug.",
-      isFraktionschef: true
+      isFraktionschef: true,
+      image: "./assets/vorstand/Roman-Kueng_SVP.jpg"
     },
     {
       name: "Philip C. Brunner",
@@ -47,7 +49,8 @@ const Stadtrat = () => {
       phone: "079 398 4 396",
       email: "phcb@philip-brunner.ch",
       description: "Philip C. Brunner präsidiert die Geschäftsprüfungskommission und bringt seine Expertise in die Gemeindepolitik ein.",
-      isFraktionschef: false
+      isFraktionschef: false,
+      image: "./assets/vorstand/Philip-Brunner_SVP.png"
     },
     {
       name: "Marcus Bühler",
@@ -56,7 +59,8 @@ const Stadtrat = () => {
       phone: "",
       email: "bumbleb@bluewin.ch",
       description: "Marcus Bühler setzt sich als Gemeinderat für pragmatische Lösungen und bürgernahe Politik ein.",
-      isFraktionschef: false
+      isFraktionschef: false,
+      image: "./assets/vorstand/Marcus-Buehler_SVP.jpg"
     },
     {
       name: "René Gretener",
@@ -65,16 +69,18 @@ const Stadtrat = () => {
       phone: "",
       email: "rghkswiss@gmail.com", 
       description: "René Gretener vertritt die SVP-Werte im Gemeinderat mit Engagement und Sachverstand.",
-      isFraktionschef: false
+      isFraktionschef: false,
+      image: "./assets/svp-people/Rene-Gretener-SVP.jpg"
     },
     {
-      name: "Manfred Pircher",
+      name: "Manfred Pirchler",
       position: "Gemeinderat", 
       address: "Lothenbach 7, 6318 Walchwil",
       phone: "041 758 17 30",
       email: "manfred.pircher@bluewin.ch",
-      description: "Manfred Pircher bringt auch die Perspektive der Gemeinde Walchwil in die regionale Politik ein.",
-      isFraktionschef: false
+      description: "Manfred Pirchler bringt auch die Perspektive der Gemeinde Walchwil in die regionale Politik ein.",
+      isFraktionschef: false,
+      image: "./assets/svp-people/Manfred-Pirchler-SVP.jpg"
     }
   ];
 
@@ -121,10 +127,12 @@ const Stadtrat = () => {
               <Card key={index} className="border-l-4 border-l-primary hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-start space-x-4">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                      <span className="text-lg font-bold text-primary">
-                        {person.name.split(' ').map(n => n[0]).join('')}
-                      </span>
+                    <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
+                      <img
+                        src={person.image}
+                        alt={`Foto von ${person.name}`}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div className="flex-grow">
                       <CardTitle className="text-xl mb-1">{person.name}</CardTitle>
@@ -165,10 +173,12 @@ const Stadtrat = () => {
               <Card key={index} className="border-l-4 border-l-secondary hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-start space-x-4">
-                    <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center">
-                      <span className="text-lg font-bold text-secondary">
-                        {member.name.split(' ').map(n => n[0]).join('')}
-                      </span>
+                    <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
+                      <img
+                        src={member.image}
+                        alt={`Foto von ${member.name}`}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div className="flex-grow">
                       <CardTitle className="text-xl mb-1">{member.name}</CardTitle>
@@ -210,12 +220,14 @@ const Stadtrat = () => {
               {gemeinderat.filter(p => !p.isFraktionschef).map((member, index) => (
                 <Card key={index} className="hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <div className="flex items-start space-x-4">
-                      <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center">
-                        <span className="text-sm font-bold text-primary">
-                          {member.name.split(' ').map(n => n[0]).join('')}
-                        </span>
-                      </div>
+                                      <div className="flex items-start space-x-4">
+                    <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+                      <img
+                        src={member.image}
+                        alt={`Foto von ${member.name}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                       <div className="flex-grow">
                         <CardTitle className="text-lg mb-1">{member.name}</CardTitle>
                         <Badge variant="secondary" className="mb-2">{member.position}</Badge>

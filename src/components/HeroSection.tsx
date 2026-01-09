@@ -1,9 +1,14 @@
-import { ArrowRight, Users, Target } from 'lucide-react';
+import { ArrowRight, Users, Target, Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import heroImage from '@/assets/zug-hero.jpg';
+import { useState, useRef } from 'react';
+import { useCountUp } from '@/hooks/useCountUp';
 
 const HeroSection = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   const scrollToContact = () => {
     const element = document.querySelector('#contact');
     element?.scrollIntoView({ behavior: 'smooth' });
@@ -14,14 +19,107 @@ const HeroSection = () => {
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  // Stat Card Component with Count-up Animation
+  const StatCard = ({ 
+    value, 
+    suffix, 
+    label, 
+    sublabel, 
+    link 
+  }: { 
+    value: number; 
+    suffix: string; 
+    label: string; 
+    sublabel: string; 
+    link: string | null;
+  }) => {
+    const { count, elementRef } = useCountUp(value, { duration: 2000, startOnView: true });
+    
+    const content = (
+      <div 
+        ref={elementRef}
+        className="relative group min-w-[140px] p-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-xl"
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-svp-green/20 to-svp-green/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="relative text-center">
+          <div className="text-4xl font-bold bg-gradient-to-r from-svp-green to-svp-green-light bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
+            {count}{suffix}
+          </div>
+          <div className="text-sm font-semibold text-foreground/80 group-hover:text-foreground transition-colors">
+            {label}
+          </div>
+          {sublabel && (
+            <div className="text-xs text-foreground/60 mt-1">
+              {sublabel}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+
+    if (link) {
+      return <Link to={link}>{content}</Link>;
+    }
+    return content;
+  };
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
+      {/* Background Video */}
+      <video
+        ref={videoRef}
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        loop
+        muted={isMuted}
+        playsInline
+        preload="metadata"
+        poster="./assets/zug-images/zug-overview-svp_1.jpg"
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/50"></div>
+        <source 
+          src="https://www.svp-zug.ch/wp-content/uploads/sites/11/SVP_waehlen_-_weniger_zuwanderung_mehr_heimat_NEU_comp.mp4?_=1" 
+          type="video/mp4" 
+        />
+      </video>
+      
+      {/* Video Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/50 z-5"></div>
+      
+      {/* Video Controls */}
+      <div className="absolute top-4 right-4 z-30 flex space-x-2">
+        <Button
+          onClick={togglePlay}
+          size="sm"
+          variant="outline"
+          className="bg-white/20 backdrop-blur-sm border-white/30 hover:bg-white/30 text-white"
+        >
+          {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+        </Button>
+        <Button
+          onClick={toggleMute}
+          size="sm"
+          variant="outline"
+          className="bg-white/20 backdrop-blur-sm border-white/30 hover:bg-white/30 text-white"
+        >
+          {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+        </Button>
       </div>
 
       {/* Content */}
@@ -29,17 +127,17 @@ const HeroSection = () => {
         <div className="container-max">
           <div className="max-w-4xl">
             <div className="mb-6 flex items-center space-x-3">
-              <div className="px-4 py-2 bg-primary/10 rounded-full border border-primary/20">
+              <div className="px-4 py-2 bg-primary/30 rounded-full border border-primary/40">
                 <span className="text-primary font-semibold text-sm">SVP Stadt Zug</span>
               </div>
-              <Link to="/wahlen" className="px-4 py-2 bg-secondary/10 rounded-full border border-secondary/20 hover:bg-secondary/20 transition-colors">
-                <span className="text-secondary font-semibold text-sm">Kommunalwahlen 2026</span>
-              </Link>
+                                        <Link to="/wahlen" className="px-4 py-2 bg-red-600/30 rounded-full border border-red-600/40 hover:bg-red-600/50 transition-colors">
+                            <span className="text-red-700 font-semibold text-sm">Wahlen 2026</span>
+                          </Link>
             </div>
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-svp-orange to-svp-green bg-clip-text text-transparent">
-                Mir liefered
+              <span className="bg-gradient-to-r from-svp-green-light to-svp-green bg-clip-text text-transparent">
+                Mir lieferet
               </span>{' '}
               <span className="bg-gradient-to-r from-svp-green via-svp-green to-svp-green-light bg-clip-text text-transparent">
                 – für eusi Stadt Zug
@@ -73,56 +171,34 @@ const HeroSection = () => {
 
             {/* Stats */}
             <div className="flex flex-wrap justify-center gap-4 md:grid md:grid-cols-4 md:gap-6">
-              <Link 
-                to="/geschichte" 
-                className="relative group min-w-[140px] p-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-xl"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-svp-green/20 to-svp-green/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative text-center">
-                  <div className="text-4xl font-bold bg-gradient-to-r from-svp-green to-svp-green-light bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
-                    33
-                  </div>
-                  <div className="text-sm font-semibold text-foreground/80 group-hover:text-foreground transition-colors">
-                    Jahre Bestand
-                  </div>
-                </div>
-              </Link>
-              
-              <div className="relative group min-w-[140px] p-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-svp-green/20 to-svp-green/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative text-center">
-                  <div className="text-4xl font-bold bg-gradient-to-r from-svp-green to-svp-green-light bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
-                    500+
-                  </div>
-                  <div className="text-sm font-semibold text-foreground/80 group-hover:text-foreground transition-colors">
-                    Aktive Mitglieder
-                  </div>
-                </div>
-              </div>
-              
-              <div className="relative group min-w-[140px] p-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-svp-green/20 to-svp-green/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative text-center">
-                  <div className="text-4xl font-bold bg-gradient-to-r from-svp-green to-svp-green-light bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
-                    8
-                  </div>
-                  <div className="text-sm font-semibold text-foreground/80 group-hover:text-foreground transition-colors">
-                    Sitze im Parlament
-                  </div>
-                </div>
-              </div>
-              
-              <div className="relative group min-w-[140px] p-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-svp-green/20 to-svp-green/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative text-center">
-                  <div className="text-4xl font-bold bg-gradient-to-r from-svp-green to-svp-green-light bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
-                    25%
-                  </div>
-                  <div className="text-sm font-semibold text-foreground/80 group-hover:text-foreground transition-colors">
-                    Wähleranteil 2022
-                  </div>
-                </div>
-              </div>
+              <StatCard
+                value={33}
+                suffix=""
+                label="Jahre"
+                sublabel="für Stadt Zug"
+                link="/geschichte"
+              />
+              <StatCard
+                value={200}
+                suffix="+"
+                label="Mitglieder"
+                sublabel=""
+                link={null}
+              />
+              <StatCard
+                value={8}
+                suffix=""
+                label="Sitze"
+                sublabel="im GGR"
+                link={null}
+              />
+              <StatCard
+                value={25}
+                suffix="%"
+                label="Wähleranteil"
+                sublabel="2022"
+                link={null}
+              />
             </div>
           </div>
         </div>

@@ -8,9 +8,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import timelineGraphic from '@/assets/timeline-graphic.jpg';
-import foundingMoment from '@/assets/founding-moment.jpg';
-import politicalSuccess from '@/assets/political-success.jpg';
 
 const Geschichte = () => {
   const [activeDecade, setActiveDecade] = useState<string>('1990s');
@@ -69,7 +66,7 @@ const Geschichte = () => {
           year: "2002",
           title: "Ausbau auf sieben GGR-Sitze",
           description: "Steigerung auf beeindruckende sieben Vertreter im Grossen Gemeinderat",
-          details: "Der kontinuierliche Ausbau der politischen Präsenz bestätigte den Vertrauensvorschuss der Zuger Bevölkerung. Die SVP etablierte sich als feste Größe.",
+          details: "Der kontinuierliche Ausbau der politischen Präsenz bestätigte den Vertrauensvorschuss der Zuger Bevölkerung. Die SVP etablierte sich als feste Groesse.",
           impact: "Starke Oppositionsfraktion"
         },
         {
@@ -97,7 +94,7 @@ const Geschichte = () => {
           title: "Initiative gegen 'goldene Fallschirme'",
           description: "Die Volksinitiative 'Schluss mit goldenen Fallschirmen für Stadträte' wird mit 57,5% JA angenommen",
           details: "Ein historischer Abstimmungssieg der SVP Stadt Zug mit nationaler Ausstrahlung. Das Zuger Volk nahm die Initiative gegen die Empfehlung des GGR an.",
-          impact: "Erster großer Volkserfolg"
+          impact: "Erster grosser Volkserfolg"
         },
         {
           year: "2012",
@@ -138,7 +135,7 @@ const Geschichte = () => {
           title: "30 Jahre erfolgreiche Politik",
           description: "Drei Jahrzehnte erfolgreiche Bürgerpolitik für die Stadt Zug",
           details: "Von der Gründung als politischer Exot zur zweitstärksten politischen Kraft in Zug - eine beispiellose Erfolgsgeschichte der Schweizer Kommunalpolitik.",
-          impact: "Etablierte politische Größe"
+          impact: "Etablierte politische Groesse"
         }
       ]
     }
@@ -257,8 +254,8 @@ const Geschichte = () => {
         <section className="section-padding bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <img 
-              src={timelineGraphic} 
-              alt="Timeline Background" 
+              src="./assets/zug-images/zug-overview-svp_2.jpg" 
+              alt="Zug Stadt Überblick - Historischer Hintergrund" 
               className="w-full h-full object-cover"
             />
           </div>
@@ -271,7 +268,7 @@ const Geschichte = () => {
               </div>
               
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                <span className="bg-gradient-to-r from-svp-orange to-svp-green bg-clip-text text-transparent animate-scale-in">
+                <span className="bg-gradient-to-r from-svp-green-light to-svp-green bg-clip-text text-transparent animate-scale-in">
                   30 Jahre
                 </span>{' '}
                 <span className="bg-gradient-to-r from-svp-green to-svp-green-light bg-clip-text text-transparent">«MIR LIEFERET»</span>
@@ -296,7 +293,7 @@ const Geschichte = () => {
                   <div className="text-sm font-medium text-muted-foreground">Kantonsrat</div>
                 </div>
                 <div className="text-center hover-scale">
-                  <div className="text-3xl font-bold text-primary mb-2">500+</div>
+                  <div className="text-3xl font-bold text-primary mb-2">200+</div>
                   <div className="text-sm font-medium text-muted-foreground">Mitglieder</div>
                 </div>
               </div>
@@ -317,8 +314,8 @@ const Geschichte = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in">
                 <img 
-                  src={foundingMoment} 
-                  alt="Gründungsmoment 1992" 
+                  src="./assets/zug-images/zug-altstadt-svp_1.jpg" 
+                  alt="Zug Altstadt - Wo die SVP Stadt Zug gegründet wurde" 
                   className="w-full rounded-lg shadow-lg hover-scale"
                 />
               </div>
@@ -496,8 +493,8 @@ const Geschichte = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
               <div>
                 <img 
-                  src={politicalSuccess} 
-                  alt="Politische Erfolge" 
+                  src="./assets/zug-images/zug-overview-svp_3.jpg" 
+                  alt="Zug Stadt Überblick - Zeugnis politischer Erfolge" 
                   className="w-full rounded-lg shadow-lg hover-scale"
                 />
               </div>

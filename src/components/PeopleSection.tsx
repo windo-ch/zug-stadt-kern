@@ -1,121 +1,148 @@
-import { Users, Award, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 
 const PeopleSection = () => {
-  const teamMembers = [
+  // Combine all people into one array with category
+  const allPeople = [
+    // Vorstand
     {
-      name: "Dr. Markus Weber",
-      role: "Präsident SVP Stadt Zug",
-      description: "Seit 8 Jahren im Stadtrat, Experte für Finanz- und Wirtschaftspolitik",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+      name: "Adrian Risi",
+      role: "Präsident",
+      position: "Kantonsrat",
+      image: "./assets/vorstand/Risi_Adrian_SVP.jpg",
+      profileLink: "/profil/adrian-risi",
+      category: "Vorstand"
     },
     {
-      name: "Sarah Müller",
-      role: "Vizepräsidentin",
-      description: "Unternehmerin und Mutter, setzt sich für Familienfreundlichkeit ein",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+      name: "Raphael Tschan",
+      role: "Vizepräsident",
+      position: "Mitglied RPK",
+      image: "./assets/vorstand/Raphael-Tschan_SVP.jpg",
+      profileLink: "/profil/raphael-tschan",
+      category: "Vorstand"
     },
     {
-      name: "Thomas Schneider",
-      role: "Stadtrat",
-      description: "Jurist, kämpft für Rechtssicherheit und bürgernahe Verwaltung",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+      name: "Roman Küng",
+      role: "Vizepräsident",
+      position: "GGR Fraktionspräsident",
+      image: "./assets/vorstand/Roman-Kueng_SVP.jpg",
+      profileLink: "/profil/roman-kueng",
+      category: "Vorstand"
+    },
+    // Stadtrat
+    {
+      name: "André Wicki",
+      role: "Stadtpräsident",
+      position: "Stadtrat",
+      image: "./assets/vorstand/Andre-Wicki_SVP.jpg",
+      profileLink: "/profil/andre-wicki",
+      category: "Stadtrat"
+    },
+    // GGR-Fraktion
+    {
+      name: "Philip C. Brunner",
+      role: "Gemeinderat",
+      position: "Präsident GPK",
+      image: "./assets/vorstand/Philip-Brunner_SVP.png",
+      profileLink: "/profil/philip-brunner",
+      category: "GGR-Fraktion"
     },
     {
-      name: "Andrea Kaufmann",
-      role: "Grossstadträtin",
-      description: "Lehrerin und Bildungsexpertin, engagiert für beste Schulen",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
-    }
-  ];
-
-  const achievements = [
-    {
-      icon: <Award className="h-8 w-8" />,
-      title: "33 Jahre Erfahrung",
-      description: "Kontinuierliche Arbeit für Zug seit 1991"
-    },
-    {
-      icon: <Users className="h-8 w-8" />,
-      title: "Über 800 Mitglieder",
-      description: "Starke Verankerung in der Bevölkerung"
-    },
-    {
-      icon: <Heart className="h-8 w-8" />,
-      title: "Bürgernah",
-      description: "Direkte Kommunikation und Lösungsorientierung"
+      name: "Marcus Bühler",
+      role: "Gemeinderat",
+      position: "GGR",
+      image: "./assets/vorstand/Marcus-Buehler_SVP.jpg",
+      profileLink: "/profil/marcus-buehler",
+      category: "GGR-Fraktion"
     }
   ];
 
   return (
     <section id="people" className="section-padding bg-gradient-to-b from-background to-muted/20">
       <div className="container-max">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Wer wir sind
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            Wer mir sind
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Unsere erfahrenen Politikerinnen und Politiker setzen sich täglich für eine 
-            lebenswerte Stadt Zug ein. Mit Kompetenz, Engagement und Bürgernähe.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Dini Nachbare. Dini Stimm.
           </p>
         </div>
 
-        {/* Achievements */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-          {achievements.map((achievement, index) => (
-            <div key={index} className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-svp-green to-svp-green-light rounded-full flex items-center justify-center text-white mx-auto mb-6 shadow-lg">
-                {achievement.icon}
-              </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">
-                {achievement.title}
-              </h3>
-              <p className="text-muted-foreground">
-                {achievement.description}
-              </p>
-            </div>
-          ))}
+        {/* Carousel with circular avatars */}
+        <div className="relative px-8 md:px-16 mb-8">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {allPeople.map((person, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
+                  <Link
+                    to={person.profileLink}
+                    className="group flex flex-col items-center text-center p-4 hover:scale-105 transition-transform duration-300"
+                  >
+                    {/* Circular avatar with green border and shiny effects */}
+                    <div className="relative mb-4">
+                      <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-[hsl(var(--svp-green))] shadow-lg group-hover:shadow-xl group-hover:border-[hsl(var(--svp-green-light))] transition-all duration-300">
+                        <img
+                          src={person.image}
+                          alt={person.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        {/* Shiny effect on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+                        {/* Subtle overlay on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      </div>
+                      {/* Category badge */}
+                      <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-[hsl(var(--svp-green))] text-white text-xs font-semibold rounded-full whitespace-nowrap shadow-md group-hover:bg-[hsl(var(--svp-green-light))] transition-colors duration-300">
+                        {person.category}
+                      </div>
+                    </div>
+                    
+                    {/* Name */}
+                    <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
+                      {person.name}
+                    </h3>
+                    
+                    {/* Role */}
+                    <p className="text-sm font-semibold text-primary mb-1">
+                      {person.role}
+                    </p>
+                    
+                    {/* Position */}
+                    <p className="text-xs text-muted-foreground">
+                      {person.position}
+                    </p>
+                  </Link>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-0 md:-left-12 bg-background/80 backdrop-blur-sm border-2 border-[hsl(var(--svp-green))] hover:bg-[hsl(var(--svp-green))] hover:text-white" />
+            <CarouselNext className="right-0 md:-right-12 bg-background/80 backdrop-blur-sm border-2 border-[hsl(var(--svp-green))] hover:bg-[hsl(var(--svp-green))] hover:text-white" />
+          </Carousel>
         </div>
 
-        {/* Team Members */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teamMembers.map((member, index) => (
-            <div key={index} className="card-people group">
-              <div className="relative overflow-hidden rounded-xl mb-6">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-svp-green/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              <div className="text-center">
-                <h3 className="text-xl font-bold text-foreground mb-2">
-                  {member.name}
-                </h3>
-                <p className="text-primary font-semibold mb-3">
-                  {member.role}
-                </p>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {member.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-svp-green to-svp-green-light rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">
-              Werden Sie Teil unseres Teams
-            </h3>
-            <p className="text-lg mb-6 opacity-90">
-              Gemeinsam gestalten wir die Zukunft von Zug. Engagieren Sie sich politisch!
-            </p>
-            <button className="btn-hero bg-white text-svp-green hover:bg-gray-100">
-              Jetzt mitmachen
-            </button>
-          </div>
+        {/* Simple CTA */}
+        <div className="text-center mt-8">
+          <Link to="/wer-wir-sind">
+            <Button className="btn-outline group">
+              Alli Aktive ahluege
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

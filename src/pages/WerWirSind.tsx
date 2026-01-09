@@ -134,7 +134,7 @@ const WerWirSind = () => {
   const organizationStats = [
     {
       icon: Users,
-      number: "500+",
+      number: "200+",
       label: "Aktive Mitglieder", 
       description: "Engagierte Bürgerinnen und Bürger"
     },
@@ -364,7 +364,7 @@ const WerWirSind = () => {
               Kontakt aufnehmen
             </a>
             <a 
-              href="/veranstaltungen" 
+              href="https://www.svp-zug.ch/termine/" target="_blank" rel="noopener noreferrer" 
               className="inline-flex items-center justify-center rounded-md border border-input bg-background px-8 py-3 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
             >
               <ExternalLink className="w-4 h-4 mr-2" />

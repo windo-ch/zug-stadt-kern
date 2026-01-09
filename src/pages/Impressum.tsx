@@ -68,7 +68,7 @@ const Impressum = () => {
                           <div className="font-semibold text-foreground mb-1">Postadresse</div>
                           <div className="text-muted-foreground leading-relaxed">
                             SVP Stadt Zug<br />
-                            Postfach 1234<br />
+                            Postfach<br />
                             6300 Zug
                           </div>
                         </div>
@@ -78,8 +78,8 @@ const Impressum = () => {
                         <Mail className="h-5 w-5 text-primary mt-1 shrink-0" />
                         <div>
                           <div className="font-semibold text-foreground mb-1">E-Mail</div>
-                          <a href="mailto:info@svp-stadt-zug.ch" className="text-primary hover:text-primary/80 font-medium transition-colors">
-                            info@svp-stadt-zug.ch
+                          <a href="mailto:sekretariat@svp-zug.ch" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                            sekretariat@svp-zug.ch
                           </a>
                         </div>
                       </div>
@@ -88,8 +88,8 @@ const Impressum = () => {
                         <Phone className="h-5 w-5 text-primary mt-1 shrink-0" />
                         <div>
                           <div className="font-semibold text-foreground mb-1">Telefon</div>
-                          <a href="tel:+41411234567" className="text-primary hover:text-primary/80 font-medium transition-colors">
-                            +41 41 123 45 67
+                          <a href="tel:+41793291333" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                            079 329 13 33 (Roman Küng)
                           </a>
                         </div>
                       </div>
@@ -112,11 +112,6 @@ const Impressum = () => {
                       <div className="p-4 bg-gradient-to-r from-muted/50 to-transparent rounded-xl">
                         <div className="font-semibold text-foreground mb-2">Herausgeber</div>
                         <div className="text-muted-foreground">SVP Stadt Zug</div>
-                      </div>
-                      
-                      <div className="p-4 bg-gradient-to-r from-muted/50 to-transparent rounded-xl">
-                        <div className="font-semibold text-foreground mb-2">Vertretungsberechtigter</div>
-                        <div className="text-muted-foreground">Präsident Dr. Markus Weber</div>
                       </div>
                       
                       <div className="p-4 bg-gradient-to-r from-muted/50 to-transparent rounded-xl">

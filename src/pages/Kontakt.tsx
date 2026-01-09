@@ -35,21 +35,21 @@ const Kontakt = () => {
     {
       icon: Phone,
       title: "Telefon",
-      content: "+41 41 728 21 00",
+      content: "079 329 13 33 (Roman Küng)",
       description: "Montag bis Freitag, 9:00 - 17:00 Uhr",
-      action: "tel:+41417282100"
+      action: "tel:+41793291333"
     },
     {
       icon: Mail,
       title: "E-Mail",
-      content: "info@svp-stadt-zug.ch",
+      content: "sekretariat@svp-zug.ch",
       description: "Antwort innerhalb von 24 Stunden",
-      action: "mailto:info@svp-stadt-zug.ch"
+      action: "mailto:sekretariat@svp-zug.ch"
     },
     {
       icon: MapPin,
       title: "Adresse",
-      content: "Postfach 123, 6300 Zug",
+      content: "SVP Stadt Zug, Postfach, 6300 Zug",
       description: "Parteisekretariat SVP Stadt Zug",
       action: null
     },
@@ -62,28 +62,6 @@ const Kontakt = () => {
     }
   ];
 
-  const keyFeatures = [
-    {
-      title: "Schnelle Antwort",
-      description: "Wir antworten innerhalb von 24 Stunden auf Ihre Anfragen",
-      icon: "⚡"
-    },
-    {
-      title: "Direkte Kontakte",
-      description: "Sprechen Sie direkt mit unseren Vorstandsmitgliedern und Parlamentariern",
-      icon: "👥"
-    },
-    {
-      title: "Bürgersprechstunden",
-      description: "Regelmässige persönliche Gesprächsmöglichkeiten vor Ort",
-      icon: "🗣️"
-    },
-    {
-      title: "Online & Offline",
-      description: "Kontakt über verschiedene Kanäle - wie es für Sie am besten passt",
-      icon: "💬"
-    }
-  ];
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
@@ -164,28 +142,9 @@ const Kontakt = () => {
               </div>
             </section>
 
-            {/* Key Features */}
+            {/* Ansprechpartner */}
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-6">Warum uns kontaktieren?</h2>
-              <div className="grid gap-4">
-                {keyFeatures.map((feature, index) => (
-                  <Card key={index} className="hover:shadow-md transition-shadow">
-                    <CardContent className="p-4">
-                      <div className="flex items-start space-x-3">
-                        <div className="text-2xl flex-shrink-0">
-                          {feature.icon}
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-foreground mb-1">{feature.title}</h3>
-                          <p className="text-sm text-muted-foreground">{feature.description}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-              
-              <div className="mt-6 p-4 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg">
+              <div className="p-4 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg">
                 <h3 className="font-semibold text-foreground mb-2">Unsere Ansprechpartner finden Sie hier:</h3>
                 <div className="flex flex-col sm:flex-row gap-2 text-sm">
                   <a href="/vorstand" className="text-primary hover:text-primary/80 transition-colors font-medium">
@@ -350,10 +309,10 @@ const Kontakt = () => {
             <div className="mt-8 text-center">
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="outline" asChild>
-                  <a href="/veranstaltungen">Aktuelle Termine</a>
+                  <a href="/was-ansteht">Aktuelle Termine</a>
                 </Button>
                 <Button variant="outline" asChild>
-                  <a href="/newsletter">Newsletter abonnieren</a>
+                  <a href="/kontakt">Kontakt aufnehmen</a>
                 </Button>
               </div>
             </div>

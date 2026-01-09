@@ -30,15 +30,6 @@ const Header = () => {
       ]
     },
     {
-      title: 'Aktuelles & Termine',
-      items: [
-        { label: 'Was ansteht', href: '/was-ansteht' },
-        { label: 'Veranstaltungen', href: '/veranstaltungen' },
-        { label: 'Medienmitteilungen', href: '/medienmitteilungen' },
-        { label: 'Newsletter', href: '/newsletter' }
-      ]
-    },
-    {
       title: 'Partei & Personen',
       items: [
         { label: 'Wer wir sind', href: '/wer-wir-sind' },
@@ -69,14 +60,14 @@ const Header = () => {
         <div className="flex items-center justify-between h-18 md:h-24 px-2">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-4 hover:opacity-80 transition-opacity">
-            <img 
-              src="/lovable-uploads/d75181da-4d07-475b-827c-99ae71cae110.png" 
-              alt="SVP Stadt Zug Logo" 
+            <img
+              src="./logo/svp-stadt-zug-logo.png"
+              alt="SVP Stadt Zug Logo"
               className="h-16 w-auto md:h-18 transition-all duration-300"
             />
             <div className="flex flex-col">
               <span className="font-bold text-xl md:text-2xl text-foreground tracking-tight">SVP Stadt Zug</span>
-              <span className="text-sm md:text-base text-muted-foreground font-semibold">Mir liefered</span>
+              <span className="text-sm md:text-base text-muted-foreground font-semibold">Mir lieferet</span>
             </div>
           </Link>
 

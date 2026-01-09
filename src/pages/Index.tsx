@@ -1,16 +1,18 @@
 import { useEffect } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
+import PeopleSection from '@/components/PeopleSection';
 import NewsSection from '@/components/NewsSection';
 import ValuesSection from '@/components/ValuesSection';
-import OverviewSection from '@/components/OverviewSection';
+import WasAnstehtSection from '@/components/WasAnstehtSection';
+import MitmachenSection from '@/components/MitmachenSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
   useEffect(() => {
     // Update page title and meta description for SEO
-    document.title = "SVP Stadt Zug – Mir liefered für eusi Stadt";
+    document.title = "SVP Stadt Zug – Mir lieferet für eusi Stadt";
     
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -29,7 +31,7 @@ const Index = () => {
       "logo": "https://svp-stadt-zug.ch/logo.png",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Postfach 123",
+        "streetAddress": "Postfach",
         "addressLocality": "Zug",
         "postalCode": "6300",
         "addressCountry": "CH"
@@ -38,7 +40,7 @@ const Index = () => {
         "@type": "ContactPoint",
         "telephone": "+41-41-123-45-67",
         "contactType": "customer service",
-        "email": "info@svp-stadt-zug.ch"
+        "email": "sekretariat@svp-zug.ch"
       }
     };
 
@@ -57,9 +59,11 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
+        <PeopleSection />
         <NewsSection />
         <ValuesSection />
-        <OverviewSection />
+        <WasAnstehtSection />
+        <MitmachenSection />
         <ContactSection />
       </main>
       

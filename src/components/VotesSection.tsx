@@ -162,11 +162,11 @@ const VotesSection = () => {
               Bleiben Sie informiert
             </h3>
             <p className="text-lg mb-6 opacity-90">
-              Abonnieren Sie unseren Newsletter für aktuelle Abstimmungsempfehlungen
+              Kontaktieren Sie uns für Fragen zu unseren Abstimmungsempfehlungen
             </p>
-            <button className="btn-hero bg-white text-primary hover:bg-gray-100">
-              Newsletter abonnieren
-            </button>
+            <a href="/kontakt" className="btn-hero bg-white text-primary hover:bg-gray-100 inline-block">
+              Kontakt aufnehmen
+            </a>
           </div>
         </div>
       </div>

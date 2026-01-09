@@ -26,32 +26,80 @@ const Abstimmungen = () => {
   const upcomingVotes = [
     {
       id: 1,
-      title: "Initiative für bezahlbares Wohnen",
-      date: "3. März 2024",
-      level: "Kantonal",
-      description: "Volksinitiative zur Förderung von bezahlbarem Wohnraum im Kanton Zug",
+      title: "Bundesbeschluss über kantonalen Liegenschaftssteuern auf Zweitliegenschaften",
+      date: "28. September 2025",
+      level: "Eidgenössisch",
+      description: "Bundesbeschluss vom 20. Dezember 2024 über die kantonalen Liegenschaftssteuern auf Zweitliegenschaften",
       recommendation: "Nein",
-      reasoning: "Die Initiative führt zu staatlicher Überregulierung des Wohnungsmarkts und hemmt private Investitionen in den Wohnungsbau.",
+      reasoning: "Die SVP lehnt zusätzliche Steuerbelastungen ab, da diese die Wirtschaft und den Immobilienmarkt belasten.",
       details: [
-        "Gefahr der Marktverzerrung durch staatliche Eingriffe",
-        "Negative Auswirkungen auf Bauinvestitionen",
-        "Alternative Lösungen über Raumplanung sind zielführender"
+        "Zusätzliche Steuerbelastung für Zweitliegenschaften",
+        "Negative Auswirkungen auf den Immobilienmarkt",
+        "Gefährdung der Wirtschaftsfreiheit"
       ],
       status: "upcoming",
       importance: "Hoch"
     },
     {
       id: 2,
-      title: "Verkehrsinitiative Innenstadt",
-      date: "3. März 2024",
-      level: "Kommunal",
-      description: "Initiative zur Verkehrsberuhigung der Zuger Innenstadt",
-      recommendation: "Ja",
-      reasoning: "Massvoll konzipierte Verkehrsberuhigung verbessert die Lebensqualität ohne den Wirtschaftsstandort zu schwächen.",
+      title: "E-ID-Gesetz (Elektronischer Identitätsnachweis)",
+      date: "28. September 2025",
+      level: "Eidgenössisch",
+      description: "Bundesgesetz über den elektronischen Identitätsnachweis und andere elektronische Nachweise",
+      recommendation: "Nein",
+      reasoning: "Die SVP lehnt staatliche E-ID-Lösungen ab und bevorzugt private, marktwirtschaftliche Lösungen.",
       details: [
-        "Ausgewogene Balance zwischen Verkehr und Aufenthaltsqualität",
-        "Berücksichtigung der Bedürfnisse von Gewerbe und Anwohnern",
-        "Beibehaltung ausreichender Parkplätze"
+        "Staatliche Überregulierung der digitalen Identität",
+        "Datenschutzbedenken bei staatlicher Kontrolle",
+        "Private Lösungen sind innovativer und sicherer"
+      ],
+      status: "upcoming",
+      importance: "Hoch"
+    },
+    {
+      id: 3,
+      title: "Service-citoyen-Initiative",
+      date: "30. November 2025",
+      level: "Eidgenössisch",
+      description: "Volksinitiative «Für eine engagierte Schweiz (Service-citoyen-Initiative)»",
+      recommendation: "Nein",
+      reasoning: "Die SVP lehnt obligatorischen Zivildienst ab, da dieser die persönliche Freiheit einschränkt.",
+      details: [
+        "Einschränkung der persönlichen Freiheit",
+        "Unverhältnismässige Belastung für junge Menschen",
+        "Bestehende Freiwilligenarbeit ist ausreichend"
+      ],
+      status: "upcoming",
+      importance: "Hoch"
+    },
+    {
+      id: 4,
+      title: "Initiative für eine soziale Klimapolitik",
+      date: "30. November 2025",
+      level: "Eidgenössisch",
+      description: "Volksinitiative «Für eine soziale Klimapolitik – steuerlich gerecht finanziert»",
+      recommendation: "Nein",
+      reasoning: "Die SVP lehnt klimapolitische Zwangsmassnahmen ab, die Wirtschaft und Bevölkerung belasten.",
+      details: [
+        "Unverhältnismässige Kosten für Haushalte und Unternehmen",
+        "Gefährdung der Energiesicherheit",
+        "Bessere Lösungen über Innovation und Technologie"
+      ],
+      status: "upcoming",
+      importance: "Hoch"
+    },
+    {
+      id: 5,
+      title: "Kantonales Wahlrecht für Menschen mit Beeinträchtigungen",
+      date: "30. November 2025",
+      level: "Kantonal",
+      description: "Änderung der Kantonsverfassung (KV) betreffend Kantonales Wahlrecht für Menschen mit Beeinträchtigungen",
+      recommendation: "Nein",
+      reasoning: "Die SVP lehnt die Ausweitung des Wahlrechts ab, da dies die Integrität des demokratischen Prozesses gefährden könnte.",
+      details: [
+        "Gefährdung der Integrität des Wahlprozesses",
+        "Unklare Kriterien für Beeinträchtigungen",
+        "Bestehende Schutzmechanismen sind ausreichend"
       ],
       status: "upcoming",
       importance: "Mittel"
@@ -60,54 +108,40 @@ const Abstimmungen = () => {
 
   const pastVotes = [
     {
-      id: 3,
-      title: "Steuergesetz-Revision 2023",
-      date: "25. September 2023",
-      level: "Kantonal",
-      description: "Anpassung der Steuersätze für Unternehmen",
-      recommendation: "Ja",
-      reasoning: "Erhaltung der Konkurrenzfähigkeit des Wirtschaftsstandorts Zug ist essentiell.",
-      result: "Angenommen",
-      resultPercentage: "64.2%",
-      svpMatch: true,
-      status: "past",
-      importance: "Hoch"
-    },
-    {
-      id: 4,
-      title: "Klimaschutz-Initiative",
-      date: "25. September 2023", 
-      level: "Kommunal",
-      description: "Verschärfung der kommunalen Klimaziele",
+      id: 6,
+      title: "Bundesbeschluss über die Erhöhung der Mehrwertsteuer",
+      date: "9. Februar 2025",
+      level: "Eidgenössisch",
+      description: "Bundesbeschluss über die Erhöhung der Mehrwertsteuer zur Finanzierung der AHV",
       recommendation: "Nein",
-      reasoning: "Unrealistische Ziele gefährden Arbeitsplätze und belasten Haushalte unverhältnismässig.",
+      reasoning: "Die SVP lehnt Steuererhöhungen ab, da diese die Wirtschaft und Bevölkerung belasten.",
       result: "Abgelehnt",
-      resultPercentage: "58.7%",
+      resultPercentage: "55.1%",
       svpMatch: true,
       status: "past",
       importance: "Hoch"
     },
     {
-      id: 5,
-      title: "Schulraum-Erweiterung Ost",
-      date: "18. Juni 2023",
-      level: "Kommunal", 
-      description: "Kredit für neues Schulhaus im Osten der Stadt",
-      recommendation: "Ja",
-      reasoning: "Bildungsinfrastruktur ist eine Investition in die Zukunft unserer Kinder.",
-      result: "Angenommen",
-      resultPercentage: "71.3%",
+      id: 7,
+      title: "Klimaschutz-Gesetz",
+      date: "9. Februar 2025", 
+      level: "Eidgenössisch",
+      description: "Bundesgesetz über die Ziele im Klimaschutz, die Innovation und die Stärkung der Energiesicherheit",
+      recommendation: "Nein",
+      reasoning: "Das Gesetz führt zu übermässigen Belastungen für Wirtschaft und Bevölkerung ohne messbare Klimawirkung.",
+      result: "Abgelehnt",
+      resultPercentage: "51.0%",
       svpMatch: true,
       status: "past",
-      importance: "Mittel"
+      importance: "Hoch"
     }
   ];
 
   const statistics = [
     {
       icon: Vote,
-      number: "24",
-      label: "Abstimmungen 2023",
+      number: "18",
+      label: "Abstimmungen 2025",
       description: "Kantonal und kommunal"
     },
     {
@@ -395,10 +429,10 @@ const Abstimmungen = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="/newsletter" 
+              href="/kontakt" 
               className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
             >
-              Newsletter abonnieren
+              Kontakt aufnehmen
             </a>
             <a 
               href="/kontakt" 

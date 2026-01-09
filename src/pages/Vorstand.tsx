@@ -24,7 +24,7 @@ const Vorstand = () => {
       position: "Präsident",
       roles: ["Kantonsrat"],
       address: "Eichwaldstrasse 22, 6300 Zug",
-      image: "/lovable-uploads/placeholder-person.jpg",
+      image: "./assets/vorstand/Risi_Adrian_SVP.jpg",
       description: "Erfahrener Kantonsrat und Präsident der SVP Stadt Zug mit starkem Engagement für bürgernahe Politik.",
       contact: {
         email: "adrian.risi@risiimmobilienag.ch"
@@ -36,7 +36,7 @@ const Vorstand = () => {
       position: "Vizepräsident",
       roles: ["Mitglied RPK Stadt Zug"],
       address: "Gimenenstrasse 1, 6300 Zug",
-      image: "/lovable-uploads/placeholder-person.jpg",
+      image: "./assets/vorstand/Raphael-Tschan_SVP.jpg",
       description: "Vizepräsident der SVP Stadt Zug und Mitglied der Rechnungsprüfungskommission.",
       contact: {
         email: "rt@raphael-tschan.ch"
@@ -48,7 +48,7 @@ const Vorstand = () => {
       position: "Vizepräsident & GGR Fraktionspräsident",
       roles: ["Gemeinderat"],
       address: "Bernoldweg 9, 6300 Zug",
-      image: "/lovable-uploads/placeholder-person.jpg",
+      image: "./assets/vorstand/Roman-Kueng_SVP.jpg",
       description: "Gemeinderat und Fraktionspräsident im Grossen Gemeinderat mit langjähriger politischer Erfahrung.",
       contact: {
         email: "roman.kueng@bluewin.ch"
@@ -60,7 +60,7 @@ const Vorstand = () => {
       position: "Vorstandsmitglied",
       roles: ["Kantonsrat", "Fraktionspräsident", "Gemeinderat"],
       address: "Im Rank 109, 6300 Zug",
-      image: "/lovable-uploads/placeholder-person.jpg",
+      image: "./assets/vorstand/Philip-Brunner_SVP.png",
       description: "Kantonsrat, Fraktionspräsident und Gemeinderat mit umfassender politischer Erfahrung auf allen Ebenen.",
       contact: {
         email: "phcb@philip-brunner.ch"
@@ -72,7 +72,7 @@ const Vorstand = () => {
       position: "Vorstandsmitglied",
       roles: ["Stadtpräsident"],
       address: "Stadthaus / Postfach, 6301 Zug",
-      image: "/lovable-uploads/placeholder-person.jpg",
+      image: "./assets/vorstand/Andre-Wicki_SVP.jpg",
       description: "Stadtpräsident von Zug und engagiertes Vorstandsmitglied der SVP Stadt Zug.",
       contact: {
         email: "andre.wicki@stadtzug.ch"
@@ -84,7 +84,7 @@ const Vorstand = () => {
       position: "Vorstandsmitglied",
       roles: [],
       address: "Bahnhofstrasse 27, 6300 Zug",
-      image: "/lovable-uploads/placeholder-person.jpg",
+      image: "./assets/vorstand/Marcus-Buehler_SVP.jpg",
       description: "Erfahrenes Vorstandsmitglied der SVP Stadt Zug mit breitem politischen Engagement.",
       contact: {
         email: "bumbleb@bluewin.ch"
@@ -158,11 +158,13 @@ const Vorstand = () => {
               <Card key={index} className="h-full hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-start space-x-4">
-                    <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
-                      <span className="text-lg font-bold text-gray-600">
-                        {member.name.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    </div>
+                                    <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
+                  <img
+                    src={member.image}
+                    alt={`Foto von ${member.name}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                     <div className="flex-grow">
                       <CardTitle className="text-xl mb-1">{member.name}</CardTitle>
                       <Badge variant="secondary" className="mb-2">{member.position}</Badge>

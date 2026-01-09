@@ -3,39 +3,53 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import ScrollToTop from "./components/ScrollToTop";
 import CookieNotice from "./components/CookieNotice";
-import Index from "./pages/Index";
-import Themen from "./pages/Themen";
-import Abstimmungen from "./pages/Abstimmungen";
-import Vorstoesse from "./pages/Vorstoesse";
-import WerWirSind from "./pages/WerWirSind";
-import WofuerWirStehen from "./pages/WofuerWirStehen";
-import WasAnsteht from "./pages/WasAnsteht";
-import Stadtrat from "./pages/Stadtrat";
-import Vorstand from "./pages/Vorstand";
-import Geschichte from "./pages/Geschichte";
-import Kontakt from "./pages/Kontakt";
-import Veranstaltungen from "./pages/Veranstaltungen";
-import Medienmitteilungen from "./pages/Medienmitteilungen";
-import Newsletter from "./pages/Newsletter";
-import Mitglied from "./pages/Mitglied";
-import Spenden from "./pages/Spenden";
-import TausenderClub from "./pages/TausenderClub";
-import TausenderClubVeranstaltungen from "./pages/TausenderClubVeranstaltungen";
-import Impressum from "./pages/Impressum";
-import Datenschutz from "./pages/Datenschutz";
-import CookiePolicy from "./pages/Cookie";
-import Wahlen from "./pages/Wahlen";
-import AdriansRisiProfil from "./pages/AdriansRisiProfil";
-import RaphaelTschanProfil from "./pages/RaphaelTschanProfil";
-import RomanKuengProfil from "./pages/RomanKuengProfil";
-import PhilipBrunnerProfil from "./pages/PhilipBrunnerProfil";
-import AndreWickiProfil from "./pages/AndreWickiProfil";
-import MarcusBuehlerProfil from "./pages/MarcusBuehlerProfil";
-import NotFound from "./pages/NotFound";
 
-const queryClient = new QueryClient();
+// Lazy load pages for better performance
+const Index = lazy(() => import("./pages/Index"));
+const Themen = lazy(() => import("./pages/Themen"));
+const Abstimmungen = lazy(() => import("./pages/Abstimmungen"));
+const Vorstoesse = lazy(() => import("./pages/Vorstoesse"));
+const WerWirSind = lazy(() => import("./pages/WerWirSind"));
+const WofuerWirStehen = lazy(() => import("./pages/WofuerWirStehen"));
+const WasAnsteht = lazy(() => import("./pages/WasAnsteht"));
+const Stadtrat = lazy(() => import("./pages/Stadtrat"));
+const Vorstand = lazy(() => import("./pages/Vorstand"));
+const Geschichte = lazy(() => import("./pages/Geschichte"));
+const Kontakt = lazy(() => import("./pages/Kontakt"));
+const Mitglied = lazy(() => import("./pages/Mitglied"));
+const Spenden = lazy(() => import("./pages/Spenden"));
+const TausenderClub = lazy(() => import("./pages/TausenderClub"));
+const TausenderClubVeranstaltungen = lazy(() => import("./pages/TausenderClubVeranstaltungen"));
+const Impressum = lazy(() => import("./pages/Impressum"));
+const Datenschutz = lazy(() => import("./pages/Datenschutz"));
+const CookiePolicy = lazy(() => import("./pages/Cookie"));
+const Wahlen = lazy(() => import("./pages/Wahlen"));
+const AdriansRisiProfil = lazy(() => import("./pages/AdriansRisiProfil"));
+const RaphaelTschanProfil = lazy(() => import("./pages/RaphaelTschanProfil"));
+const RomanKuengProfil = lazy(() => import("./pages/RomanKuengProfil"));
+const PhilipBrunnerProfil = lazy(() => import("./pages/PhilipBrunnerProfil"));
+const AndreWickiProfil = lazy(() => import("./pages/AndreWickiProfil"));
+const MarcusBuehlerProfil = lazy(() => import("./pages/MarcusBuehlerProfil"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+
+// Loading component
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary"></div>
+  </div>
+);
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, // 5 minutes
+      cacheTime: 10 * 60 * 1000, // 10 minutes
+    },
+  },
+});
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -43,37 +57,36 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/themen" element={<Themen />} />
-          <Route path="/abstimmungen" element={<Abstimmungen />} />
-          <Route path="/vorstoesse" element={<Vorstoesse />} />
-          <Route path="/wer-wir-sind" element={<WerWirSind />} />
-          <Route path="/wofuer-wir-stehen" element={<WofuerWirStehen />} />
-          <Route path="/was-ansteht" element={<WasAnsteht />} />
-          <Route path="/stadtrat" element={<Stadtrat />} />
-          <Route path="/vorstand" element={<Vorstand />} />
-          <Route path="/geschichte" element={<Geschichte />} />
-          <Route path="/kontakt" element={<Kontakt />} />
-          <Route path="/veranstaltungen" element={<Veranstaltungen />} />
-          <Route path="/medienmitteilungen" element={<Medienmitteilungen />} />
-          <Route path="/newsletter" element={<Newsletter />} />
-          <Route path="/mitglied-werden" element={<Mitglied />} />
-          <Route path="/spenden" element={<Spenden />} />
-          <Route path="/1000er-club" element={<TausenderClub />} />
-          <Route path="/1000er-club-veranstaltungen" element={<TausenderClubVeranstaltungen />} />
-          <Route path="/wahlen" element={<Wahlen />} />
-          <Route path="/impressum" element={<Impressum />} />
-          <Route path="/datenschutz" element={<Datenschutz />} />
-          <Route path="/cookie" element={<CookiePolicy />} />
-          <Route path="/profil/adrian-risi" element={<AdriansRisiProfil />} />
-          <Route path="/profil/raphael-tschan" element={<RaphaelTschanProfil />} />
-          <Route path="/profil/roman-kueng" element={<RomanKuengProfil />} />
-          <Route path="/profil/philip-brunner" element={<PhilipBrunnerProfil />} />
-          <Route path="/profil/andre-wicki" element={<AndreWickiProfil />} />
-          <Route path="/profil/marcus-buehler" element={<MarcusBuehlerProfil />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/themen" element={<Themen />} />
+            <Route path="/abstimmungen" element={<Abstimmungen />} />
+            <Route path="/vorstoesse" element={<Vorstoesse />} />
+            <Route path="/wer-wir-sind" element={<WerWirSind />} />
+            <Route path="/wofuer-wir-stehen" element={<WofuerWirStehen />} />
+            <Route path="/was-ansteht" element={<WasAnsteht />} />
+            <Route path="/stadtrat" element={<Stadtrat />} />
+            <Route path="/vorstand" element={<Vorstand />} />
+            <Route path="/geschichte" element={<Geschichte />} />
+            <Route path="/kontakt" element={<Kontakt />} />
+            <Route path="/mitglied-werden" element={<Mitglied />} />
+            <Route path="/spenden" element={<Spenden />} />
+            <Route path="/1000er-club" element={<TausenderClub />} />
+            <Route path="/1000er-club-veranstaltungen" element={<TausenderClubVeranstaltungen />} />
+            <Route path="/wahlen" element={<Wahlen />} />
+            <Route path="/impressum" element={<Impressum />} />
+            <Route path="/datenschutz" element={<Datenschutz />} />
+            <Route path="/cookie" element={<CookiePolicy />} />
+            <Route path="/profil/adrian-risi" element={<AdriansRisiProfil />} />
+            <Route path="/profil/raphael-tschan" element={<RaphaelTschanProfil />} />
+            <Route path="/profil/roman-kueng" element={<RomanKuengProfil />} />
+            <Route path="/profil/philip-brunner" element={<PhilipBrunnerProfil />} />
+            <Route path="/profil/andre-wicki" element={<AndreWickiProfil />} />
+            <Route path="/profil/marcus-buehler" element={<MarcusBuehlerProfil />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
         <ScrollToTop />
         <CookieNotice />
       </BrowserRouter>

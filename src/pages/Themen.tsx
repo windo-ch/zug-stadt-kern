@@ -154,7 +154,7 @@ const Themen = () => {
     },
     {
       icon: Users,
-      number: "500+",
+      number: "200+",
       label: "Aktive Mitglieder",
       description: "Engagiert für unsere Themen"
     }

@@ -9,6 +9,19 @@ export default {
 		"./src/**/*.{ts,tsx}",
 	],
 	prefix: "",
+	// Add CSS optimization
+	corePlugins: {
+		// Disable unused features
+		preflight: true,
+		container: true,
+	},
+	// Optimize for production
+	safelist: [
+		// Keep essential classes that might be dynamically generated
+		'bg-primary',
+		'text-primary',
+		'border-primary',
+	],
 	theme: {
 		container: {
 			center: true,

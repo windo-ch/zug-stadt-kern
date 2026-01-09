@@ -142,7 +142,7 @@ const CookiePolicy = () => {
                       
                       <h4 className="font-semibold text-foreground mb-2">Arten von Cookies:</h4>
                       <ul className="text-muted-foreground leading-relaxed space-y-2">
-                        <li>• <strong>Session-Cookies:</strong> Werden beim Schließen des Browsers gelöscht</li>
+                        <li>• <strong>Session-Cookies:</strong> Werden beim Schliessen des Browsers geloescht</li>
                         <li>• <strong>Persistente Cookies:</strong> Bleiben für einen bestimmten Zeitraum gespeichert</li>
                         <li>• <strong>First-Party-Cookies:</strong> Von unserer Website gesetzt</li>
                         <li>• <strong>Third-Party-Cookies:</strong> Von externen Diensten gesetzt</li>
@@ -183,7 +183,7 @@ const CookiePolicy = () => {
                         4. Notwendige Cookies
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
-                        Einige Cookies sind für das ordnungsgemäße Funktionieren unserer Website unerlässlich. 
+                        Einige Cookies sind für das ordnungsgemaesse Funktionieren unserer Website unerlaesslich. 
                         Diese werden automatisch gesetzt und können nicht deaktiviert werden, ohne die 
                         Website-Funktionalität zu beeinträchtigen. Dazu gehören Sicherheits-Cookies und 
                         Session-Management-Cookies.
@@ -198,7 +198,7 @@ const CookiePolicy = () => {
                       <p className="text-muted-foreground leading-relaxed">
                         Wir können diese Cookie-Richtlinie von Zeit zu Zeit aktualisieren, um Änderungen 
                         in unseren Praktiken oder aus anderen betrieblichen, rechtlichen oder regulatorischen 
-                        Gründen zu berücksichtigen. Wir empfehlen Ihnen, diese Seite regelmäßig zu besuchen.
+                        Gruenden zu beruecksichtigen. Wir empfehlen Ihnen, diese Seite regelmaessig zu besuchen.
                       </p>
                     </div>
                     

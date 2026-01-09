@@ -62,7 +62,7 @@ const ContactSection = () => {
                     <h4 className="font-semibold text-foreground mb-1">Geschäftsstelle</h4>
                     <p className="text-muted-foreground">
                       SVP Stadt Zug<br />
-                      Postfach 123<br />
+                      Postfach<br />
                       6300 Zug
                     </p>
                   </div>
@@ -75,8 +75,7 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">E-Mail</h4>
                     <p className="text-muted-foreground">
-                      info@svp-stadt-zug.ch<br />
-                      vorstand@svp-stadt-zug.ch
+                      sekretariat@svp-zug.ch
                     </p>
                   </div>
                 </div>
@@ -88,7 +87,7 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Telefon</h4>
                     <p className="text-muted-foreground">
-                      +41 41 123 45 67<br />
+                      079 329 13 33 (Roman Küng)<br />
                       (Mo-Fr, 9:00-17:00 Uhr)
                     </p>
                   </div>

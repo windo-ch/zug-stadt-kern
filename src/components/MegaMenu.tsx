@@ -66,53 +66,6 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
           </NavigationMenuContent>
         </NavigationMenuItem>
 
-        {/* Aktuelles & Termine */}
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className="text-foreground hover:text-primary font-bold text-base px-4 py-2 rounded-lg hover:bg-accent/20 transition-all duration-200">
-            Aktuelles & Termine
-          </NavigationMenuTrigger>
-          <NavigationMenuContent className="bg-background/98 backdrop-blur-md border border-border shadow-xl">
-            <div className="grid gap-4 p-8 w-[550px] lg:w-[650px] lg:grid-cols-2">
-              <div className="row-span-3">
-                <NavigationMenuLink asChild>
-                  <Link
-                    to="/was-ansteht"
-                    className="flex h-full w-full select-none flex-col justify-end rounded-xl bg-gradient-to-br from-svp-green to-svp-green-light p-8 no-underline outline-none focus:shadow-lg hover:shadow-lg text-left transition-all duration-200 hover:scale-[1.02]"
-                  >
-                    <Calendar className="h-8 w-8 text-white mb-3" />
-                    <div className="mb-3 mt-4 text-xl font-bold text-white">
-                      Was ansteht
-                    </div>
-                    <p className="text-sm leading-relaxed text-white/90">
-                      Aktuelle Neuigkeiten und kommende Termine
-                    </p>
-                  </Link>
-                </NavigationMenuLink>
-              </div>
-              <ListItem
-                title="Veranstaltungen"
-                href="/veranstaltungen"
-                icon={<Calendar className="h-5 w-5" />}
-              >
-                Öffentliche Anlässe und Parteiveranstaltungen
-              </ListItem>
-              <ListItem
-                title="Medienmitteilungen"
-                href="/medienmitteilungen"
-                icon={<FileText className="h-5 w-5" />}
-              >
-                Aktuelle Pressemitteilungen und Stellungnahmen
-              </ListItem>
-              <ListItem
-                title="Newsletter"
-                href="/newsletter"
-                icon={<MessageSquare className="h-5 w-5" />}
-              >
-                Abonnieren Sie unseren regelmässigen Newsletter
-              </ListItem>
-            </div>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
 
         {/* Partei & Personen */}
         <NavigationMenuItem>

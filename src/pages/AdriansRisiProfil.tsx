@@ -76,8 +76,12 @@ const AdriansRisiProfil = () => {
         {/* Hero Section */}
         <div className="mb-12">
           <div className="flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-8 mb-8">
-            <div className="w-32 h-32 bg-gradient-to-br from-primary/20 to-primary/40 rounded-2xl flex items-center justify-center shadow-lg">
-              <span className="text-3xl font-bold text-primary">AR</span>
+            <div className="w-40 h-40 rounded-2xl overflow-hidden shadow-lg">
+              <img 
+                src="../assets/vorstand/Risi_Adrian_SVP.jpg" 
+                alt="Adrian Risi - Präsident SVP Stadt Zug"
+                className="w-full h-full object-cover"
+              />
             </div>
             <div className="flex-grow">
               <Badge variant="secondary" className="mb-3 px-3 py-1">
