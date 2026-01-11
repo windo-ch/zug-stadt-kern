@@ -1,19 +1,61 @@
-import { useEffect } from 'react';
-import { Calendar, Users, Target, ArrowRight, Vote, CheckCircle, Building, Award } from 'lucide-react';
+import { useEffect, useState, useRef } from 'react';
+import PageLayout from '@/components/layout/PageLayout';
+import Section from '@/components/layout/Section';
+import SectionHeader from '@/components/layout/SectionHeader';
+import MitmachenSection from '@/components/MitmachenSection';
+import { Calendar, Users, Target, ArrowRight, Vote, CheckCircle, Building, Award, Zap, DollarSign, Shield, BarChart, Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 
 const Wahlen = () => {
-  useEffect(() => {
-    document.title = "Wahlen - SVP Stadt Zug";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Aktuelle Informationen zu den nächsten Wahlen im Kanton Zug. SVP Stadt Zug bereitet sich auf die kommenden Wahltermine vor.');
+  const [daysRemaining, setDaysRemaining] = useState(0);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [isVideoMuted, setIsVideoMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const electionDate = new Date('2026-10-04T00:00:00');
+
+  const toggleVideoPlay = () => {
+    if (videoRef.current) {
+      if (isVideoPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsVideoPlaying(!isVideoPlaying);
     }
+  };
+
+  const toggleVideoMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isVideoMuted;
+      setIsVideoMuted(!isVideoMuted);
+    }
+  };
+
+  useEffect(() => {
+    // Auto-play video when component mounts
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        // Autoplay failed, user interaction required
+      });
+      setIsVideoPlaying(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    // Calculate countdown
+    const calculateCountdown = () => {
+      const now = new Date();
+      const diff = electionDate.getTime() - now.getTime();
+      const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+      setDaysRemaining(Math.max(0, days));
+    };
+
+    calculateCountdown();
+    const interval = setInterval(calculateCountdown, 1000 * 60 * 60); // Update hourly
+    return () => clearInterval(interval);
   }, []);
 
   const upcomingElections = [
@@ -21,265 +63,411 @@ const Wahlen = () => {
       icon: Users,
       title: "Kantonsratswahlen",
       date: "4. Oktober 2026",
-      description: "Neuwahl des Kantonsrats des Kantons Zug",
+      description: "Neuwahl des Kantonsrats des Kantons Zug. Wir stellen starke Kandidaten auf, die unsere Werte vertreten.",
       level: "Kantonal",
-      status: "2026"
+      status: "2026",
+      priority: "high",
+      link: "/kontakt"
     },
     {
       icon: Vote,
       title: "Nationalratswahlen",
       date: "24. Oktober 2027",
-      description: "Wahl der Schweizer Nationalräte",
+      description: "Wahl der Schweizer Nationalräte. Wir setzen uns für bürgerliche Interessen auf nationaler Ebene ein.",
       level: "National",
-      status: "2027"
+      status: "2027",
+      priority: "medium",
+      link: null
     },
     {
       icon: Award,
       title: "Ständeratswahlen",
       date: "24. Oktober 2027",
-      description: "Wahl der Schweizer Ständeräte",
+      description: "Wahl der Schweizer Ständeräte. Repräsentation des Kantons Zug auf nationaler Ebene.",
       level: "National",
-      status: "2027"
+      status: "2027",
+      priority: "medium",
+      link: null
     },
     {
       icon: Target,
       title: "Gerichtswahlen",
       date: "2029",
-      description: "Gesamterneuerungswahlen der kantonalen Gerichte",
+      description: "Gesamterneuerungswahlen der kantonalen Gerichte. Sicherstellung einer unabhängigen Justiz.",
       level: "Kantonal",
-      status: "2029"
+      status: "2029",
+      priority: "low",
+      link: null
     }
-  ];
-
-  const preparationAreas = [
-    {
-      icon: Users,
-      title: "Kandidatensuche",
-      description: "Wir suchen engagierte Bürgerinnen und Bürger für Stadtrat und Gemeinderat",
-      status: "Aktiv"
-    },
-    {
-      icon: Target,
-      title: "Programmentwicklung",
-      description: "Erarbeitung unseres Wahlprogramms für eine starke Stadt Zug",
-      status: "In Arbeit"
-    },
-    {
-      icon: Vote,
-      title: "Kampagnenplanung",
-      description: "Strategische Planung der Wahlkampagne und Kommunikation",
-      status: "Planung"
-    }
-  ];
-
-  const timeline = [
-    { date: "Q1 2025", event: "Kandidatenaufstellung abschliessen" },
-    { date: "Q2 2025", event: "Wahlprogramm verabschieden" },
-    { date: "Q3 2025", event: "Intensive Wahlkampfphase starten" },
-    { date: "4. Oktober 2026", event: "Kantonsratswahlen" }
   ];
 
   return (
-    <div className="min-h-screen">
-      <Header />
-      
+    <PageLayout 
+      title="Wahlen 2026 - SVP Stadt Zug"
+      description="Kantonsratswahlen 2026 - SVP Stadt Zug bereitet sich vor. Informieren Sie sich über Kandidaten, Programm und wie Sie Teil unserer Bewegung werden können."
+    >
       <main>
-        {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-          <div className="container-max">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full border border-primary/20 mb-6">
-                <Calendar className="w-4 h-4 mr-2 text-primary" />
-                <span className="text-primary font-semibold text-sm">Wahlen im Kanton Zug</span>
-              </div>
+        {/* Hero Section - Redesigned */}
+        <section className="relative min-h-[20vh] flex items-center bg-gradient-to-b from-background to-muted/20 py-12">
+          <div className="container-max w-full">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+                <span className="bg-gradient-to-r from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] bg-clip-text text-transparent">
+                  Für eine starke Zugkunft
+                </span>
+              </h1>
               
-                                        <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                            <span className="bg-gradient-to-r from-svp-orange to-svp-green bg-clip-text text-transparent">
-                              Wir bereiten uns vor
-                            </span>{' '}
-                            – für eine starke Zukunft
-                          </h1>
-              
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-                Informieren Sie sich über die kommenden Wahlen im Kanton Zug. Von Regierungsrat bis Nationalrat - 
-                wir bereiten uns auf alle Wahltermine vor und setzen uns für bürgerliche Werte ein.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/kontakt">
-                  <Button className="btn-hero group">
-                    <Users className="mr-2 h-5 w-5" />
-                    Kandidieren
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-                <Link to="/mitglied-werden">
-                  <Button className="btn-outline group">
-                    <CheckCircle className="mr-2 h-5 w-5" />
-                    Mitglied werden
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
+              {/* Simple Horizontal Countdown */}
+              <div className="flex items-center justify-center gap-3 text-2xl md:text-3xl font-medium text-foreground">
+                <span className="text-muted-foreground">Noch</span>
+                <span className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] bg-clip-text text-transparent">
+                  {daysRemaining}
+                </span>
+                <span className="text-muted-foreground">Tage bis zum Wahltag</span>
               </div>
             </div>
           </div>
         </section>
 
+        {/* Wahlkampfvideo 2026 */}
+        <Section>
+          <div className="max-w-5xl mx-auto">
+            <div className="relative rounded-xl overflow-hidden shadow-[var(--shadow-strong)] bg-muted aspect-video">
+              <video
+                ref={videoRef}
+                className="w-full h-full object-cover"
+                loop
+                muted={isVideoMuted}
+                autoPlay
+                playsInline
+                preload="auto"
+                poster="./assets/places/zug/zug-overview-svp_1.jpg"
+              >
+                <source 
+                  src="https://www.svp-zug.ch/wp-content/uploads/sites/11/SVP_waehlen_-_weniger_zuwanderung_mehr_heimat_NEU_comp.mp4?_=1" 
+                  type="video/mp4" 
+                />
+              </video>
+              
+              {/* Video Controls */}
+              <div className="absolute bottom-4 right-4 z-10 flex space-x-2">
+                <Button
+                  onClick={toggleVideoPlay}
+                  size="sm"
+                  variant="outline"
+                  className="bg-white/90 backdrop-blur-sm border-white/80 hover:bg-white hover:border-white text-foreground shadow-[var(--shadow-medium)] hover:shadow-[var(--shadow-strong)] transition-[var(--transition-smooth)]"
+                >
+                  {isVideoPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+                </Button>
+                <Button
+                  onClick={toggleVideoMute}
+                  size="sm"
+                  variant="outline"
+                  className="bg-white/90 backdrop-blur-sm border-white/80 hover:bg-white hover:border-white text-foreground shadow-[var(--shadow-medium)] hover:shadow-[var(--shadow-strong)] transition-[var(--transition-smooth)]"
+                >
+                  {isVideoMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Section>
 
+        {/* Video Summary */}
+        <Section variant="muted">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-foreground mb-6 text-center">
+              Zug soll Heimat bleiben – Zuwanderung begrenzen, Lebensqualität schützen
+            </h2>
+            
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed text-center max-w-3xl mx-auto">
+              Der Kanton Zug ist unsere Heimat. Doch das starke Bevölkerungswachstum der letzten Jahre verändert unseren Kanton spürbar: mehr Anonymität, mehr Druck auf Wohnraum, Verkehr und Grünflächen. Wir sagen Klartext und setzen uns dafür ein, dass Zug lebenswerte bleibt.
+            </p>
 
-        {/* Preparation Areas */}
-        <section className="section-padding">
-          <div className="container-max">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">
-                Unsere Vorbereitungen laufen auf Hochtouren
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                In verschiedenen Bereichen arbeiten wir bereits intensiv an den Wahlen 2026
-              </p>
+            <div className="grid md:grid-cols-1 gap-6 mb-8">
+              <Card className="card-elevated">
+                <CardContent className="p-6">
+                  <ul className="space-y-4">
+                    <li className="flex items-start gap-4">
+                      <div className="w-2 h-2 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="font-semibold text-foreground mb-1">Heimat & Identität bewahren</p>
+                        <p className="text-muted-foreground leading-relaxed">Vereinsleben, Brauchtum und Zusammenhalt stärken statt schleichenden Verlust hinnehmen.</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div className="w-2 h-2 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="font-semibold text-foreground mb-1">Wohnen bezahlbar halten</p>
+                        <p className="text-muted-foreground leading-relaxed">Ungebremste Zuwanderung verschärft den Druck auf Mieten und Wohneigentum – besonders für junge Zuger Familien.</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div className="w-2 h-2 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="font-semibold text-foreground mb-1">Infrastruktur entlasten</p>
+                        <p className="text-muted-foreground leading-relaxed">Strassen, Busse und Züge stossen an Grenzen – Wachstum braucht klare Leitplanken.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {preparationAreas.map((area, index) => (
-                <Card key={index} className="card-hover">
+            <div className="text-center bg-[hsl(var(--svp-green))]/5 rounded-xl p-6 border border-[hsl(var(--svp-green))]/20">
+              <p className="text-lg font-semibold text-foreground mb-2 leading-relaxed">
+                Die SVP will die unkontrollierte Zuwanderung stoppen, damit der Kanton Zug kein zugebauter Vorort von Zürich wird, sondern unsere Heimat bleibt.
+              </p>
+              <p className="text-xl font-bold text-[hsl(var(--svp-green))]">
+                Wer das auch will: 2026 SVP wählen.
+              </p>
+            </div>
+          </div>
+        </Section>
+
+        {/* Enhanced Upcoming Elections */}
+        <Section>
+          <SectionHeader
+            title="Nächste Wahltermine"
+            description="Übersicht über alle kommenden Wahlen im Kanton Zug"
+            alignment="center"
+            className="mb-12"
+          />
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {upcomingElections.map((election, index) => {
+              const IconComponent = election.icon;
+              const isHighPriority = election.priority === 'high';
+              const statusColor = isHighPriority 
+                ? 'bg-gradient-to-r from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] text-white'
+                : 'bg-[hsl(var(--swiss-blue))]/10 text-[hsl(var(--swiss-blue-dark))] border border-[hsl(var(--swiss-blue))]/20';
+              
+              const content = (
+                <Card className={`card-elevated group hover:border-[hsl(var(--svp-green))]/40 transition-[var(--transition-smooth)] h-full ${isHighPriority ? 'border-l-4 border-l-[hsl(var(--svp-green))]' : ''} ${election.link ? 'cursor-pointer' : ''}`}>
                   <CardHeader>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="p-3 bg-primary/10 rounded-lg">
-                        <area.icon className="h-6 w-6 text-primary" />
+                    <div className="flex items-start justify-between mb-4">
+                      <div className={`p-3 rounded-xl ${isHighPriority ? 'bg-gradient-to-br from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))]' : 'bg-[hsl(var(--swiss-blue))]/10'} group-hover:scale-110 transition-transform duration-300 shadow-[var(--shadow-soft)]`}>
+                        <IconComponent className={`h-6 w-6 ${isHighPriority ? 'text-white' : 'text-[hsl(var(--swiss-blue))]'}`} />
                       </div>
-                      <span className="px-3 py-1 bg-secondary/10 text-secondary text-sm font-medium rounded-full">
-                        {area.status}
-                      </span>
-                    </div>
-                    <CardTitle className="text-foreground">{area.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{area.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Timeline */}
-        <section className="section-padding bg-muted/30">
-          <div className="container-max">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">
-                Roadmap zu den Kantonsratswahlen 2026
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Unser Zeitplan bis zu den Kantonsratswahlen im Oktober 2026
-              </p>
-            </div>
-
-            <div className="max-w-4xl mx-auto">
-              <div className="space-y-8">
-                {timeline.map((item, index) => (
-                  <div key={index} className="flex items-start gap-6">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                        <span className="text-primary-foreground font-bold text-sm">
-                          {index + 1}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="flex-1 pb-8 border-b border-border last:border-b-0">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                        <h3 className="text-lg font-semibold text-foreground">
-                          {item.event}
-                        </h3>
-                        <span className="text-sm text-muted-foreground font-medium">
-                          {item.date}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Upcoming Elections */}
-        <section className="section-padding">
-          <div className="container-max">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">
-                Nächste Wahltermine
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Übersicht über alle kommenden Wahlen im Kanton Zug
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {upcomingElections.map((election, index) => (
-                <Card key={index} className="card-hover border-l-4 border-l-primary">
-                  <CardHeader>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="p-3 bg-primary/10 rounded-lg">
-                        <election.icon className="h-6 w-6 text-primary" />
-                      </div>
-                      <span className={`px-3 py-1 text-sm font-medium rounded-full ${
-                        election.status === '2026'
-                          ? 'bg-orange-100 text-orange-800'
-                          : 'bg-blue-100 text-blue-800'
-                      }`}>
+                      <Badge className={statusColor}>
                         {election.status}
-                      </span>
+                      </Badge>
                     </div>
-                    <CardTitle className="text-foreground">{election.title}</CardTitle>
+                    <CardTitle className={`text-lg ${isHighPriority ? 'text-[hsl(var(--svp-green-dark))]' : 'text-foreground'} group-hover:text-[hsl(var(--svp-green))] transition-colors`}>
+                      {election.title}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="space-y-3">
+                    <div className="space-y-4">
                       <div className="flex items-center text-sm text-muted-foreground">
-                        <Calendar className="w-4 h-4 mr-2" />
+                        <Calendar className="w-4 h-4 mr-2 text-[hsl(var(--svp-green))]" />
                         {election.date}
                       </div>
-                      <p className="text-muted-foreground text-sm">{election.description}</p>
-                      <span className="inline-block px-2 py-1 bg-secondary/10 text-secondary text-xs rounded">
+                      <p className="text-muted-foreground text-sm leading-relaxed">{election.description}</p>
+                      <Badge variant="outline" className="w-fit border-[hsl(var(--swiss-blue))]/30 text-[hsl(var(--swiss-blue-dark))]">
                         {election.level}
-                      </span>
+                      </Badge>
+                      {election.link && (
+                        <div className="pt-2 flex items-center text-[hsl(var(--svp-green))] font-semibold text-sm group-hover:translate-x-2 transition-transform">
+                          <span>Mehr erfahren</span>
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </div>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+              );
 
-        {/* Call to Action */}
-        <section className="section-padding bg-gradient-to-r from-primary/10 to-secondary/10">
-          <div className="container-max">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold text-foreground mb-4">
-                Werden Sie Teil unseres Teams
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-                Interessieren Sie sich für eine Kandidatur oder möchten Sie uns im Wahlkampf unterstützen? 
-                Wir freuen uns über jede Unterstützung!
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/kontakt">
-                  <Button className="btn-hero">
-                    Kontakt aufnehmen
-                  </Button>
+              return election.link ? (
+                <Link key={index} to={election.link}>
+                  {content}
                 </Link>
-                <Link to="/mitglied-werden">
-                  <Button className="btn-outline">
-                    Mitglied werden
-                  </Button>
-                </Link>
-              </div>
-            </div>
+              ) : (
+                <div key={index}>{content}</div>
+              );
+            })}
           </div>
-        </section>
+        </Section>
+
+        {/* Our Goals for 2026 */}
+        <Section variant="muted">
+          <SectionHeader
+            title="Unsere Ziele für 2026"
+            description="Unsere strategischen Ziele über die Kantonsratswahlen hinaus"
+            alignment="center"
+            className="mb-16"
+          />
+
+          <div className="max-w-6xl mx-auto">
+              {/* Three Main Goals - Improved Design */}
+              <div className="grid md:grid-cols-3 gap-8 mb-16">
+                <Card className="group bg-card border-2 border-border hover:border-[hsl(var(--svp-green))] transition-[var(--transition-smooth)] h-full flex flex-col">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="p-3 bg-gradient-to-br from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] rounded-xl shadow-[var(--shadow-soft)] group-hover:scale-110 transition-transform duration-300">
+                        <Users className="h-6 w-6 text-white" />
+                      </div>
+                      <CardTitle className="text-2xl font-bold text-foreground">Persönlichkeiten</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="flex-grow pt-0">
+                    <p className="text-muted-foreground leading-relaxed text-base">
+                      Rekrutierung von zusätzlich qualifizierten Personen aus der Stadt Zug für den Stadtrat, den Kantonsrat, den Grossen Gemeinderat, und die Rechnungsprüfungskommission.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="group bg-card border-2 border-border hover:border-[hsl(var(--svp-green))] transition-[var(--transition-smooth)] h-full flex flex-col">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="p-3 bg-gradient-to-br from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] rounded-xl shadow-[var(--shadow-soft)] group-hover:scale-110 transition-transform duration-300">
+                        <DollarSign className="h-6 w-6 text-white" />
+                      </div>
+                      <CardTitle className="text-2xl font-bold text-foreground">Finanzen</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="flex-grow pt-0">
+                    <p className="text-muted-foreground leading-relaxed text-base">
+                      Sicherstellung von genügend finanziellen Mitteln, so dass wir während vier Jahren unseren heutigen und unseren zukünftigen Wählern einen permanente Präsenz bieten können.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="group bg-card border-2 border-border hover:border-[hsl(var(--svp-green))] transition-[var(--transition-smooth)] h-full flex flex-col">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="p-3 bg-gradient-to-br from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] rounded-xl shadow-[var(--shadow-soft)] group-hover:scale-110 transition-transform duration-300">
+                        <Shield className="h-6 w-6 text-white" />
+                      </div>
+                      <CardTitle className="text-2xl font-bold text-foreground">Verankerung</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="flex-grow pt-0">
+                    <p className="text-muted-foreground leading-relaxed text-base">
+                      Der SVP Stadt Zug als Partei und den aktiven und passiven Mitgliedern – persönlich und thematisch.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+
+            {/* Specific Targets */}
+            <Card className="card-elevated border-2 border-[hsl(var(--svp-green))]/30 bg-gradient-to-br from-background to-[hsl(var(--svp-green))]/5">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-3 bg-gradient-to-br from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] rounded-xl">
+                    <BarChart className="h-6 w-6 text-white" />
+                  </div>
+                  <CardTitle className="text-2xl text-foreground">Konkrete Ziele</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0"></div>
+                      <p className="text-foreground leading-relaxed">
+                        Das Verteidigen des Stadtpräsidiums plus ein zusätzliches Mitglied im Stadtrat
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0"></div>
+                      <p className="text-foreground leading-relaxed">
+                        Mindestens drei Sitze im Kantonsrat
+                      </p>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0"></div>
+                      <p className="text-foreground leading-relaxed">
+                        Mindestens 9 Sitze im Grossen Gemeinderat
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </Section>
+
+        {/* Enhanced Upcoming Elections */}
+        <Section>
+          <SectionHeader
+            title="Nächste Wahltermine"
+            description="Übersicht über alle kommenden Wahlen im Kanton Zug"
+            alignment="center"
+            className="mb-12"
+          />
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {upcomingElections.map((election, index) => {
+              const IconComponent = election.icon;
+              const isHighPriority = election.priority === 'high';
+              const statusColor = isHighPriority 
+                ? 'bg-gradient-to-r from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] text-white'
+                : 'bg-[hsl(var(--swiss-blue))]/10 text-[hsl(var(--swiss-blue-dark))] border border-[hsl(var(--swiss-blue))]/20';
+              
+              const content = (
+                <Card className={`card-elevated group hover:border-[hsl(var(--svp-green))]/40 transition-[var(--transition-smooth)] h-full ${isHighPriority ? 'border-l-4 border-l-[hsl(var(--svp-green))]' : ''} ${election.link ? 'cursor-pointer' : ''}`}>
+                  <CardHeader>
+                    <div className="flex items-start justify-between mb-4">
+                      <div className={`p-3 rounded-xl ${isHighPriority ? 'bg-gradient-to-br from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))]' : 'bg-[hsl(var(--swiss-blue))]/10'} group-hover:scale-110 transition-transform duration-300 shadow-[var(--shadow-soft)]`}>
+                        <IconComponent className={`h-6 w-6 ${isHighPriority ? 'text-white' : 'text-[hsl(var(--swiss-blue))]'}`} />
+                      </div>
+                      <Badge className={statusColor}>
+                        {election.status}
+                      </Badge>
+                    </div>
+                    <CardTitle className={`text-lg ${isHighPriority ? 'text-[hsl(var(--svp-green-dark))]' : 'text-foreground'} group-hover:text-[hsl(var(--svp-green))] transition-colors`}>
+                      {election.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div className="flex items-center text-sm text-muted-foreground">
+                        <Calendar className="w-4 h-4 mr-2 text-[hsl(var(--svp-green))]" />
+                        {election.date}
+                      </div>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{election.description}</p>
+                      <Badge variant="outline" className="w-fit border-[hsl(var(--swiss-blue))]/30 text-[hsl(var(--swiss-blue-dark))]">
+                        {election.level}
+                      </Badge>
+                      {election.link && (
+                        <div className="pt-2 flex items-center text-[hsl(var(--svp-green))] font-semibold text-sm group-hover:translate-x-2 transition-transform">
+                          <span>Mehr erfahren</span>
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </div>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+
+              return election.link ? (
+                <Link key={index} to={election.link}>
+                  {content}
+                </Link>
+              ) : (
+                <div key={index}>{content}</div>
+              );
+            })}
+          </div>
+        </Section>
+
+        {/* Mach mit! Section */}
+        <MitmachenSection />
+
+        {/* Animated Flag */}
+        <Section variant="muted">
+          <div className="flex justify-center py-8">
+            <img
+              src="/logo/svp-stadt-zug-flag-animated-small.gif"
+              alt="SVP Stadt Zug Flagge"
+              className="h-[150px] w-auto"
+            />
+          </div>
+        </Section>
       </main>
-      
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 

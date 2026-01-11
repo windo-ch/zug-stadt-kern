@@ -1,20 +1,11 @@
-import { useEffect } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import PageLayout from '@/components/layout/PageLayout';
+import EventCard from '@/components/content/EventCard';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Calendar, Clock, ExternalLink, AlertTriangle, Users, MapPin, FileText } from 'lucide-react';
 
 const WasAnsteht = () => {
-  useEffect(() => {
-    document.title = "Was ansteht - SVP Stadt Zug";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Aktuelle Termine, Veranstaltungen und wichtige politische Ereignisse der SVP Stadt Zug. Überblick über anstehende Aktivitäten.');
-    }
-  }, []);
 
   const upcomingEvents = [
     {
@@ -104,9 +95,10 @@ const WasAnsteht = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
+    <PageLayout 
+      title="Was ansteht - SVP Stadt Zug"
+      description="Aktuelle Termine, Veranstaltungen und wichtige politische Ereignisse der SVP Stadt Zug. Überblick über anstehende Aktivitäten."
+    >
       <main className="container mx-auto px-4 py-16">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -130,31 +122,19 @@ const WasAnsteht = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {upcomingEvents.map((event) => (
-              <Card key={event.id} className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4 mb-4">
-                    <div className="bg-primary text-primary-foreground p-3 rounded-lg text-center min-w-[60px]">
-                      <div className="text-lg font-bold">{new Date(event.date).getDate()}</div>
-                      <div className="text-xs">{new Date(event.date).toLocaleDateString('de-CH', { month: 'short' })}</div>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-foreground mb-2">{event.title}</h3>
-                      <div className="text-sm text-muted-foreground space-y-1">
-                        <div className="flex items-center">
-                          <Clock className="w-4 h-4 mr-2" />
-                          {event.time}
-                        </div>
-                        <div className="flex items-center">
-                          <MapPin className="w-4 h-4 mr-2" />
-                          {event.location}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-3">{event.description}</p>
-                  <Badge variant="outline">{event.type}</Badge>
-                </CardContent>
-              </Card>
+              <EventCard 
+                key={event.id} 
+                event={{
+                  id: event.id.toString(),
+                  title: event.title,
+                  date: event.date,
+                  time: event.time,
+                  location: event.location,
+                  type: event.type,
+                  description: event.description
+                }}
+                variant="default"
+              />
             ))}
           </div>
         </section>
@@ -262,9 +242,7 @@ const WasAnsteht = () => {
           </div>
         </div>
       </main>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 

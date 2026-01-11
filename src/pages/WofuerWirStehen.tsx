@@ -1,19 +1,9 @@
-import { useEffect } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import PageLayout from '@/components/layout/PageLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Shield, Heart, Users, Zap, Building, Leaf } from 'lucide-react';
 
 const WofuerWirStehen = () => {
-  useEffect(() => {
-    document.title = "Wofür wir stehen - SVP Stadt Zug";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Unsere Grundsätze und Werte: Sicherheit, Freiheit, Tradition und eine lebenswerte Stadt Zug für alle Bürger.');
-    }
-  }, []);
 
   const coreValues = [
     {
@@ -85,9 +75,10 @@ const WofuerWirStehen = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
+    <PageLayout 
+      title="Wofür wir stehen - SVP Stadt Zug"
+      description="Unsere Grundsätze und Werte: Sicherheit, Freiheit, Tradition und eine lebenswerte Stadt Zug für alle Bürger."
+    >
       <main className="container mx-auto px-4 py-16">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -153,9 +144,7 @@ const WofuerWirStehen = () => {
           </div>
         </div>
       </main>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 

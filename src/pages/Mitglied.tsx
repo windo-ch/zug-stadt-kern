@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { useState } from 'react';
+import PageLayout from '@/components/layout/PageLayout';
+import Section from '@/components/layout/Section';
+import SectionHeader from '@/components/layout/SectionHeader';
 import { Users, Heart, CheckCircle, Euro, Calendar, ArrowRight, Phone, Mail } from 'lucide-react';
 
 const Mitglied = () => {
@@ -16,15 +17,6 @@ const Mitglied = () => {
     birthDate: '',
     occupation: ''
   });
-
-  useEffect(() => {
-    document.title = "Mitglied werden – SVP Stadt Zug";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Werden Sie Mitglied der SVP Stadt Zug und engagieren Sie sich für eine bessere Politik in unserer Stadt.');
-    }
-  }, []);
 
   const membershipTypes = [
     {
@@ -109,9 +101,10 @@ const Mitglied = () => {
   };
 
   return (
-    <div className="min-h-screen">
-      <Header />
-      
+    <PageLayout 
+      title="Mitglied werden – SVP Stadt Zug"
+      description="Werden Sie Mitglied der SVP Stadt Zug und engagieren Sie sich für eine bessere Politik in unserer Stadt."
+    >
       <main>
         {/* Hero Section */}
         <section className="relative section-padding overflow-hidden">
@@ -145,41 +138,38 @@ const Mitglied = () => {
         </section>
 
         {/* Why Join */}
-        <section className="section-padding bg-gradient-to-b from-background via-muted/20 to-background">
-          <div className="container-max">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                <CheckCircle className="h-4 w-4" />
-                Ihre Vorteile
-              </div>
-              <h2 className="text-4xl font-bold text-foreground mb-6">
-                Warum SVP Stadt Zug?
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Als Mitglied der SVP Stadt Zug sind Sie mehr als nur Wähler - Sie sind Mitgestalter
-              </p>
+        <Section variant="muted">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <CheckCircle className="h-4 w-4" />
+              Ihre Vorteile
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              {reasons.map((reason, index) => (
-                <div key={index} className="group relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative card-overview text-center hover:shadow-xl hover:scale-105 transition-all duration-300">
-                    <div className="w-16 h-16 bg-gradient-to-br from-svp-green to-svp-green-light rounded-2xl flex items-center justify-center text-white mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                      {reason.icon}
-                    </div>
-                    <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
-                      {reason.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
-                      {reason.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <SectionHeader
+              title="Warum SVP Stadt Zug?"
+              description="Als Mitglied der SVP Stadt Zug sind Sie mehr als nur Wähler - Sie sind Mitgestalter"
+              alignment="center"
+            />
           </div>
-        </section>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {reasons.map((reason, index) => (
+              <div key={index} className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative card-overview text-center hover:shadow-xl hover:scale-105 transition-all duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-svp-green to-svp-green-light rounded-2xl flex items-center justify-center text-white mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    {reason.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
+                    {reason.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
+                    {reason.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
 
         {/* Membership Types */}
         <section className="section-padding relative overflow-hidden">
@@ -193,12 +183,11 @@ const Mitglied = () => {
                 <Users className="h-4 w-4" />
                 Mitgliedschaftsoptionen
               </div>
-              <h2 className="text-4xl font-bold text-foreground mb-6">
-                Wählen Sie Ihre Mitgliedschaft
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Verschiedene Optionen für verschiedene Bedürfnisse
-              </p>
+              <SectionHeader
+                title="Wählen Sie Ihre Mitgliedschaft"
+                description="Verschiedene Optionen für verschiedene Bedürfnisse"
+                alignment="center"
+              />
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -285,18 +274,19 @@ const Mitglied = () => {
 
         {/* Application Form */}
         {selectedMembership && (
-          <section className="section-padding bg-background">
-            <div className="container-max">
-              <div className="max-w-2xl mx-auto">
-                <div className="card-initiative">
-                  <h2 className="text-3xl font-bold text-foreground mb-6 text-center">
-                    Anmeldung
-                  </h2>
-                  <p className="text-muted-foreground text-center mb-8">
-                    Ihre Mitgliedschaft: <strong>
-                      {membershipTypes.find(t => t.id === selectedMembership)?.title}
-                    </strong>
-                  </p>
+          <Section>
+            <div className="max-w-2xl mx-auto">
+              <div className="card-initiative">
+                <SectionHeader
+                  title="Anmeldung"
+                  alignment="center"
+                  className="mb-6"
+                />
+                <p className="text-muted-foreground text-center mb-8">
+                  Ihre Mitgliedschaft: <strong>
+                    {membershipTypes.find(t => t.id === selectedMembership)?.title}
+                  </strong>
+                </p>
                   
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -439,48 +429,43 @@ const Mitglied = () => {
                   </form>
                 </div>
               </div>
-            </div>
-          </section>
+          </Section>
         )}
 
         {/* Contact Info */}
-        <section className="section-padding bg-muted/20">
-          <div className="container-max">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold text-foreground mb-8">
-                Fragen zur Mitgliedschaft?
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-                <div className="card-overview text-center">
-                  <Phone className="h-8 w-8 mx-auto mb-4 text-primary" />
-                  <h3 className="font-bold text-foreground mb-2">Telefonisch</h3>
-                  <a href="tel:+41411234567" className="text-primary hover:underline">
-                    +41 41 123 45 67
-                  </a>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Mo-Fr 9:00-17:00 Uhr
-                  </p>
-                </div>
-                
-                <div className="card-overview text-center">
-                  <Mail className="h-8 w-8 mx-auto mb-4 text-primary" />
-                  <h3 className="font-bold text-foreground mb-2">Per E-Mail</h3>
-                  <a href="mailto:mitgliedschaft@svp-stadt-zug.ch" className="text-primary hover:underline">
-                    mitgliedschaft@svp-stadt-zug.ch
-                  </a>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Antwort innerhalb 24h
-                  </p>
-                </div>
-              </div>
+        <Section variant="muted">
+          <SectionHeader
+            title="Fragen zur Mitgliedschaft?"
+            alignment="center"
+            className="mb-8"
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+            <div className="card-overview text-center">
+              <Phone className="h-8 w-8 mx-auto mb-4 text-primary" />
+              <h3 className="font-bold text-foreground mb-2">Telefonisch</h3>
+              <a href="tel:+41411234567" className="text-primary hover:underline">
+                +41 41 123 45 67
+              </a>
+              <p className="text-sm text-muted-foreground mt-1">
+                Mo-Fr 9:00-17:00 Uhr
+              </p>
+            </div>
+            
+            <div className="card-overview text-center">
+              <Mail className="h-8 w-8 mx-auto mb-4 text-primary" />
+              <h3 className="font-bold text-foreground mb-2">Per E-Mail</h3>
+              <a href="mailto:mitgliedschaft@svp-stadt-zug.ch" className="text-primary hover:underline">
+                mitgliedschaft@svp-stadt-zug.ch
+              </a>
+              <p className="text-sm text-muted-foreground mt-1">
+                Antwort innerhalb 24h
+              </p>
             </div>
           </div>
-        </section>
+        </Section>
       </main>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 

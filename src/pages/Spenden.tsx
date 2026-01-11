@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { useState } from 'react';
+import PageLayout from '@/components/layout/PageLayout';
+import Section from '@/components/layout/Section';
+import SectionHeader from '@/components/layout/SectionHeader';
 import { Heart, Banknote, Users, Target, Shield, CheckCircle, CreditCard, Smartphone, Building2 } from 'lucide-react';
 
 const Spenden = () => {
@@ -8,15 +9,6 @@ const Spenden = () => {
   const [customAmount, setCustomAmount] = useState<string>('');
   const [donationType, setDonationType] = useState<'single' | 'monthly'>('single');
   const [paymentMethod, setPaymentMethod] = useState<string>('');
-
-  useEffect(() => {
-    document.title = "Spenden – SVP Stadt Zug";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Unterstützen Sie die politische Arbeit der SVP Stadt Zug mit Ihrer Spende - für eine bessere Politik in unserer Stadt.');
-    }
-  }, []);
 
   const predefinedAmounts = ['25', '50', '100', '250', '500', '1000'];
   
@@ -84,9 +76,10 @@ const Spenden = () => {
   };
 
   return (
-    <div className="min-h-screen">
-      <Header />
-      
+    <PageLayout 
+      title="Spenden – SVP Stadt Zug"
+      description="Unterstützen Sie die politische Arbeit der SVP Stadt Zug mit Ihrer Spende - für eine bessere Politik in unserer Stadt."
+    >
       <main>
         {/* Hero Section */}
         <section className="relative section-padding overflow-hidden">
@@ -120,49 +113,46 @@ const Spenden = () => {
         </section>
 
         {/* Impact Areas */}
-        <section className="section-padding bg-gradient-to-b from-background via-muted/20 to-background">
-          <div className="container-max">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                <Target className="h-4 w-4" />
-                Transparente Verwendung
-              </div>
-              <h2 className="text-4xl font-bold text-foreground mb-6">
-                Wofür wir Ihre Spende einsetzen
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Transparenz ist uns wichtig. Hier sehen Sie, wie Ihre Spende konkret wirkt.
-              </p>
+        <Section variant="muted">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <Target className="h-4 w-4" />
+              Transparente Verwendung
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              {impactAreas.map((area, index) => (
-                <div key={index} className="group relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative card-overview hover:shadow-xl hover:scale-105 transition-all duration-300">
-                    <div className="w-16 h-16 bg-gradient-to-br from-svp-green to-svp-green-light rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
-                      {area.icon}
-                    </div>
-                    <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
-                      {area.title}
-                    </h3>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      {area.description}
-                    </p>
-                    <div className="space-y-3">
-                      {area.examples.map((example, exampleIndex) => (
-                        <div key={exampleIndex} className="flex items-center gap-3 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
-                          <div className="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full flex-shrink-0"></div>
-                          {example}
-                        </div>
-                      ))}
-                    </div>
+            <SectionHeader
+              title="Wofür wir Ihre Spende einsetzen"
+              description="Transparenz ist uns wichtig. Hier sehen Sie, wie Ihre Spende konkret wirkt."
+              alignment="center"
+            />
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {impactAreas.map((area, index) => (
+              <div key={index} className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative card-overview hover:shadow-xl hover:scale-105 transition-all duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-svp-green to-svp-green-light rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
+                    {area.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
+                    {area.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    {area.description}
+                  </p>
+                  <div className="space-y-3">
+                    {area.examples.map((example, exampleIndex) => (
+                      <div key={exampleIndex} className="flex items-center gap-3 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                        <div className="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full flex-shrink-0"></div>
+                        {example}
+                      </div>
+                    ))}
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-        </section>
+        </Section>
 
         {/* Donation Form */}
         <section className="section-padding relative overflow-hidden">
@@ -170,20 +160,20 @@ const Spenden = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-muted/40 via-background to-muted/20"></div>
           <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent"></div>
           
-          <div className="relative container-max">
+          <div className="container-max relative">
             <div className="max-w-4xl mx-auto">
               <div className="backdrop-blur-sm bg-white/80 dark:bg-card/80 rounded-2xl shadow-2xl border border-white/20 p-8 lg:p-12">
-                <div className="text-center mb-12">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full mb-6">
-                    <Heart className="h-8 w-8 text-white" />
-                  </div>
-                  <h2 className="text-4xl font-bold text-foreground mb-4">
-                    Jetzt spenden
-                  </h2>
-                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    Wählen Sie Ihren Spendenbetrag und unterstützen Sie unsere Arbeit für eine bessere Stadt Zug
-                  </p>
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full mb-6">
+                  <Heart className="h-8 w-8 text-white" />
                 </div>
+                <h2 className="text-4xl font-bold text-foreground mb-4">
+                  Jetzt spenden
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                  Wählen Sie Ihren Spendenbetrag und unterstützen Sie unsere Arbeit für eine bessere Stadt Zug
+                </p>
+              </div>
 
                 {/* Donation Type */}
                 <div className="mb-10">
@@ -367,52 +357,48 @@ const Spenden = () => {
         </section>
 
         {/* Alternative Donation Methods */}
-        <section className="section-padding bg-background">
-          <div className="container-max">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-6">
-                Alternative Spendenmöglichkeiten
-              </h2>
+        <Section>
+          <SectionHeader
+            title="Alternative Spendenmöglichkeiten"
+            alignment="center"
+            className="mb-12"
+          />
+          
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="card-overview">
+              <Building2 className="h-12 w-12 text-primary mb-4" />
+              <h3 className="text-xl font-bold text-foreground mb-4">
+                Banküberweisung
+              </h3>
+              <div className="space-y-2 text-sm">
+                <div><strong>Kontoinhaber:</strong> SVP Stadt Zug</div>
+                <div><strong>IBAN:</strong> CH12 0000 1111 2222 3333 4</div>
+                <div><strong>Bank:</strong> Zuger Kantonalbank</div>
+                <div><strong>BIC:</strong> ZKBKCHZZ80A</div>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Bitte geben Sie bei der Überweisung Ihren Namen und "Spende SVP" als Verwendungszweck an.
+              </p>
             </div>
             
-            <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="card-overview">
-                <Building2 className="h-12 w-12 text-primary mb-4" />
-                <h3 className="text-xl font-bold text-foreground mb-4">
-                  Banküberweisung
-                </h3>
-                <div className="space-y-2 text-sm">
-                  <div><strong>Kontoinhaber:</strong> SVP Stadt Zug</div>
-                  <div><strong>IBAN:</strong> CH12 0000 1111 2222 3333 4</div>
-                  <div><strong>Bank:</strong> Zuger Kantonalbank</div>
-                  <div><strong>BIC:</strong> ZKBKCHZZ80A</div>
-                </div>
-                <p className="text-xs text-muted-foreground mt-4">
-                  Bitte geben Sie bei der Überweisung Ihren Namen und "Spende SVP" als Verwendungszweck an.
-                </p>
-              </div>
-              
-              <div className="card-overview">
-                <Banknote className="h-12 w-12 text-primary mb-4" />
-                <h3 className="text-xl font-bold text-foreground mb-4">
-                  Einzahlungsschein
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  Gerne senden wir Ihnen einen Einzahlungsschein per Post zu. 
-                  Kontaktieren Sie uns einfach.
-                </p>
-                <div className="space-y-2 text-sm">
-                  <div><strong>E-Mail:</strong> spenden@svp-stadt-zug.ch</div>
-                  <div><strong>Telefon:</strong> +41 41 123 45 67</div>
-                </div>
+            <div className="card-overview">
+              <Banknote className="h-12 w-12 text-primary mb-4" />
+              <h3 className="text-xl font-bold text-foreground mb-4">
+                Einzahlungsschein
+              </h3>
+              <p className="text-muted-foreground mb-4">
+                Gerne senden wir Ihnen einen Einzahlungsschein per Post zu. 
+                Kontaktieren Sie uns einfach.
+              </p>
+              <div className="space-y-2 text-sm">
+                <div><strong>E-Mail:</strong> spenden@svp-stadt-zug.ch</div>
+                <div><strong>Telefon:</strong> +41 41 123 45 67</div>
               </div>
             </div>
           </div>
-        </section>
+        </Section>
       </main>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 

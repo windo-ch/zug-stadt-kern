@@ -17,7 +17,7 @@ const PeopleSection = () => {
       name: "Adrian Risi",
       role: "Präsident",
       position: "Kantonsrat",
-      image: "./assets/vorstand/Risi_Adrian_SVP.jpg",
+      image: "./assets/people/vorstand/Risi_Adrian_SVP.jpg",
       profileLink: "/profil/adrian-risi",
       category: "Vorstand"
     },
@@ -25,7 +25,7 @@ const PeopleSection = () => {
       name: "Raphael Tschan",
       role: "Vizepräsident",
       position: "Mitglied RPK",
-      image: "./assets/vorstand/Raphael-Tschan_SVP.jpg",
+      image: "./assets/people/vorstand/Raphael-Tschan_SVP.jpg",
       profileLink: "/profil/raphael-tschan",
       category: "Vorstand"
     },
@@ -33,7 +33,7 @@ const PeopleSection = () => {
       name: "Roman Küng",
       role: "Vizepräsident",
       position: "GGR Fraktionspräsident",
-      image: "./assets/vorstand/Roman-Kueng_SVP.jpg",
+      image: "./assets/people/vorstand/Roman-Kueng_SVP.jpg",
       profileLink: "/profil/roman-kueng",
       category: "Vorstand"
     },
@@ -42,7 +42,7 @@ const PeopleSection = () => {
       name: "André Wicki",
       role: "Stadtpräsident",
       position: "Stadtrat",
-      image: "./assets/vorstand/Andre-Wicki_SVP.jpg",
+      image: "./assets/people/vorstand/Andre-Wicki_SVP.jpg",
       profileLink: "/profil/andre-wicki",
       category: "Stadtrat"
     },
@@ -51,7 +51,7 @@ const PeopleSection = () => {
       name: "Philip C. Brunner",
       role: "Gemeinderat",
       position: "Präsident GPK",
-      image: "./assets/vorstand/Philip-Brunner_SVP.png",
+      image: "./assets/people/vorstand/Philip-Brunner_SVP.png",
       profileLink: "/profil/philip-brunner",
       category: "GGR-Fraktion"
     },
@@ -59,7 +59,7 @@ const PeopleSection = () => {
       name: "Marcus Bühler",
       role: "Gemeinderat",
       position: "GGR",
-      image: "./assets/vorstand/Marcus-Buehler_SVP.jpg",
+      image: "./assets/people/vorstand/Marcus-Buehler_SVP.jpg",
       profileLink: "/profil/marcus-buehler",
       category: "GGR-Fraktion"
     }
@@ -69,7 +69,7 @@ const PeopleSection = () => {
     <section id="people" className="section-padding bg-gradient-to-b from-background to-muted/20">
       <div className="container-max">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+          <h2 className="text-3xl font-bold mb-4 text-foreground">
             Wer mir sind
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

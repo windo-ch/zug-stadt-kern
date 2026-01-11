@@ -1,22 +1,12 @@
-import { useEffect } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import PageLayout from '@/components/layout/PageLayout';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 const Impressum = () => {
-  useEffect(() => {
-    document.title = "Impressum – SVP Stadt Zug";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Impressum und rechtliche Angaben der SVP Stadt Zug.');
-    }
-  }, []);
-
   return (
-    <div className="min-h-screen">
-      <Header />
-      
+    <PageLayout 
+      title="Impressum – SVP Stadt Zug"
+      description="Impressum und rechtliche Angaben der SVP Stadt Zug."
+    >
       <main>
         {/* Hero Section */}
         <section className="section-padding bg-gradient-to-br from-svp-green via-svp-green to-svp-green-light text-white relative overflow-hidden">
@@ -195,9 +185,7 @@ const Impressum = () => {
           </div>
         </section>
       </main>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 

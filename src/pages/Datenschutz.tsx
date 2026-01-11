@@ -1,18 +1,7 @@
-import { useEffect } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import PageLayout from '@/components/layout/PageLayout';
 import { Shield, Eye, Lock, Database, CheckCircle } from 'lucide-react';
 
 const Datenschutz = () => {
-  useEffect(() => {
-    document.title = "Datenschutz – SVP Stadt Zug";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Datenschutzerklärung der SVP Stadt Zug - Transparenz und Schutz Ihrer persönlichen Daten.');
-    }
-  }, []);
-
   const dataTypes = [
     {
       icon: <Eye className="h-8 w-8" />,
@@ -35,9 +24,10 @@ const Datenschutz = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Header />
-      
+    <PageLayout 
+      title="Datenschutz – SVP Stadt Zug"
+      description="Datenschutzerklärung der SVP Stadt Zug - Transparenz und Schutz Ihrer persönlichen Daten."
+    >
       <main>
         {/* Hero Section */}
         <section className="section-padding bg-gradient-to-br from-svp-green via-svp-green to-svp-green-light text-white relative overflow-hidden">
@@ -225,9 +215,7 @@ const Datenschutz = () => {
           </div>
         </section>
       </main>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 

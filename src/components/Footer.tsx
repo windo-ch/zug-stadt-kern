@@ -6,7 +6,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2 lg:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
               <img
-                src="./logo/svp-stadt-zug-logo.png"
+                src="/logo/svp-stadt-zug-logo.png"
                 alt="SVP Stadt Zug Logo"
                 className="h-10 w-auto"
               />
@@ -62,7 +62,7 @@ const Footer = () => {
         <div className="border-t border-white/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-white/60 text-center md:text-left">
-              <p className="mb-2">© 2025 SVP Stadt Zug. Alle Rechte vorbehalten.</p>
+              <p className="mb-2">© 2026 SVP Stadt Zug. Alle Rechte vorbehalten.</p>
               <p className="text-xs text-white/50">
                 SVP Stadt Zug, Postfach, 6300 Zug | sekretariat@svp-zug.ch
               </p>

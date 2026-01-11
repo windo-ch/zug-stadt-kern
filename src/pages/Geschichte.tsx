@@ -1,25 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import PageLayout from '@/components/layout/PageLayout';
+import Section from '@/components/layout/Section';
+import SectionHeader from '@/components/layout/SectionHeader';
+import CTASection from '@/components/ctas/CTASection';
 import { Calendar, Users, Building, Trophy, Star, ArrowRight, CheckCircle, Quote, Clock, Award, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
 
 const Geschichte = () => {
   const [activeDecade, setActiveDecade] = useState<string>('1990s');
-
-  useEffect(() => {
-    document.title = "30 Jahre Geschichte - SVP Stadt Zug";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', '30 Jahre SVP Stadt Zug - Von der Gründung 1992 bis heute. Entdecken Sie die authentische Geschichte unserer Partei.');
-    }
-  }, []);
 
   const foundingStory = {
     date: "19. Mai 1992",
@@ -246,15 +239,16 @@ const Geschichte = () => {
 
 
   return (
-    <div className="min-h-screen">
-      <Header />
-      
+    <PageLayout 
+      title="30 Jahre Geschichte - SVP Stadt Zug"
+      description="30 Jahre SVP Stadt Zug - Von der Gründung 1992 bis heute. Entdecken Sie die authentische Geschichte unserer Partei."
+    >
       <main>
         {/* Hero Section with Enhanced Graphics */}
         <section className="section-padding bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <img 
-              src="./assets/zug-images/zug-overview-svp_2.jpg" 
+              src="./assets/places/zug/zug-overview-svp_2.jpg" 
               alt="Zug Stadt Überblick - Historischer Hintergrund" 
               className="w-full h-full object-cover"
             />
@@ -302,19 +296,18 @@ const Geschichte = () => {
         </section>
 
         {/* Interactive Founding Story */}
-        <section className="section-padding">
-          <div className="container-max">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Die Gründungsgeschichte</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Wie aus Unzufriedenheit mit der «Klüngelpolitik» eine neue politische Kraft entstand
-              </p>
-            </div>
+        <Section>
+          <SectionHeader
+            title="Die Gründungsgeschichte"
+            description="Wie aus Unzufriedenheit mit der «Klüngelpolitik» eine neue politische Kraft entstand"
+            alignment="center"
+            className="mb-12"
+          />
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in">
                 <img 
-                  src="./assets/zug-images/zug-altstadt-svp_1.jpg" 
+                  src="./assets/places/zug/zug-altstadt-svp_1.jpg" 
                   alt="Zug Altstadt - Wo die SVP Stadt Zug gegründet wurde" 
                   className="w-full rounded-lg shadow-lg hover-scale"
                 />
@@ -346,18 +339,17 @@ const Geschichte = () => {
                 </CardContent>
               </Card>
             </div>
-          </div>
-        </section>
+          </Section>
 
         {/* Interactive Timeline by Decades */}
-        <section className="section-padding bg-muted/30">
-          <div className="container-max">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Interaktive Zeitreise</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-                Entdecken Sie drei Jahrzehnte Politik - klicken Sie auf eine Dekade um die Geschichte zu erkunden
-              </p>
-            </div>
+        <Section variant="muted">
+          <div className="text-center mb-12">
+            <SectionHeader
+              title="Interaktive Zeitreise"
+              description="Entdecken Sie drei Jahrzehnte Politik - klicken Sie auf eine Dekade um die Geschichte zu erkunden"
+              alignment="center"
+            />
+          </div>
 
             {/* Enhanced Decade Selector */}
             <div className="flex justify-center mb-12">
@@ -421,18 +413,16 @@ const Geschichte = () => {
                 </CardContent>
               </Card>
             </div>
-          </div>
-        </section>
+          </Section>
 
         {/* Key Figures with Expanded Profiles */}
-        <section className="section-padding">
-          <div className="container-max">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Prägende Persönlichkeiten</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Die Menschen, die unsere Partei durch drei Jahrzehnte prägten
-              </p>
-            </div>
+        <Section>
+          <SectionHeader
+            title="Prägende Persönlichkeiten"
+            description="Die Menschen, die unsere Partei durch drei Jahrzehnte prägten"
+            alignment="center"
+            className="mb-12"
+          />
 
             <div className="grid md:grid-cols-2 gap-8">
               {keyFigures.map((figure, index) => (
@@ -477,23 +467,21 @@ const Geschichte = () => {
                 </Card>
               ))}
             </div>
-          </div>
-        </section>
+          </Section>
 
         {/* Political Achievements with Visual Impact */}
-        <section className="section-padding bg-muted/30">
-          <div className="container-max">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Politische Meilensteine</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Durchbrüche, die Geschichte schrieben
-              </p>
-            </div>
+        <Section variant="muted">
+          <SectionHeader
+            title="Politische Meilensteine"
+            description="Durchbrüche, die Geschichte schrieben"
+            alignment="center"
+            className="mb-12"
+          />
 
             <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
               <div>
                 <img 
-                  src="./assets/zug-images/zug-overview-svp_3.jpg" 
+                  src="./assets/places/zug/zug-overview-svp_3.jpg" 
                   alt="Zug Stadt Überblick - Zeugnis politischer Erfolge" 
                   className="w-full rounded-lg shadow-lg hover-scale"
                 />
@@ -525,8 +513,7 @@ const Geschichte = () => {
                 ))}
               </div>
             </div>
-          </div>
-        </section>
+          </Section>
 
         {/* External Testimonials */}
         <section className="section-padding">
@@ -989,41 +976,26 @@ const Geschichte = () => {
         </section>
 
         {/* Future Vision with Call to Action */}
-        <section className="section-padding bg-gradient-to-r from-primary/10 to-secondary/10">
-          <div className="container-max">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold text-foreground mb-4">
-                Die nächsten 30 Jahre gestalten
-              </h2>
-              <p className="text-muted-foreground max-w-3xl mx-auto mb-8">
-                Mit über drei Jahrzehnten erfolgreicher Politik blicken wir voller Zuversicht in die Zukunft. 
-                In 10 Jahren, beim 40-jährigen Jubiläum, wollen wir zusätzliche Meilensteine als Erfolge ausweisen können. 
-                Heute braucht es die SVP noch mehr als vor 30 Jahren!
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/wofuer-wir-stehen">
-                  <Button className="btn-hero group">
-                    <Trophy className="mr-2 h-5 w-5" />
-                    Unsere Werte
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-                <Link to="/mitglied">
-                  <Button className="btn-outline group">
-                    <Users className="mr-2 h-5 w-5" />
-                    Geschichte mitschreiben
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        <CTASection
+          title="Die nächsten 30 Jahre gestalten"
+          description="Mit über drei Jahrzehnten erfolgreicher Politik blicken wir voller Zuversicht in die Zukunft. In 10 Jahren, beim 40-jährigen Jubiläum, wollen wir zusätzliche Meilensteine als Erfolge ausweisen können. Heute braucht es die SVP noch mehr als vor 30 Jahren!"
+          variant="gradient"
+          className="!bg-gradient-to-r !from-primary/10 !to-secondary/10"
+          primaryButton={{
+            text: "Unsere Werte",
+            href: "/wofuer-wir-stehen",
+            variant: "primary",
+            icon: Trophy
+          }}
+          secondaryButton={{
+            text: "Geschichte mitschreiben",
+            href: "/mitglied",
+            variant: "outline",
+            icon: Users
+          }}
+        />
       </main>
-      
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 

@@ -1,22 +1,12 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import PageLayout from '@/components/layout/PageLayout';
+import Section from '@/components/layout/Section';
+import SectionHeader from '@/components/layout/SectionHeader';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Phone, Mail, Calendar, Users, Target, Heart, MapPin, ExternalLink } from 'lucide-react';
-import ProtectedEmail from '@/components/ProtectedEmail';
+import { Calendar, Users, Target, Heart } from 'lucide-react';
 
 const Vorstand = () => {
-  useEffect(() => {
-    document.title = "Vorstand - SVP Stadt Zug";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Der Vorstand der SVP Stadt Zug - engagierte Bürger, die unsere Partei und ihre Werte vorantreiben.');
-    }
-  }, []);
 
   const boardMembers = [
     {
@@ -24,7 +14,7 @@ const Vorstand = () => {
       position: "Präsident",
       roles: ["Kantonsrat"],
       address: "Eichwaldstrasse 22, 6300 Zug",
-      image: "./assets/vorstand/Risi_Adrian_SVP.jpg",
+      image: "./assets/people/vorstand/Risi_Adrian_SVP.jpg",
       description: "Erfahrener Kantonsrat und Präsident der SVP Stadt Zug mit starkem Engagement für bürgernahe Politik.",
       contact: {
         email: "adrian.risi@risiimmobilienag.ch"
@@ -36,7 +26,7 @@ const Vorstand = () => {
       position: "Vizepräsident",
       roles: ["Mitglied RPK Stadt Zug"],
       address: "Gimenenstrasse 1, 6300 Zug",
-      image: "./assets/vorstand/Raphael-Tschan_SVP.jpg",
+      image: "./assets/people/vorstand/Raphael-Tschan_SVP.jpg",
       description: "Vizepräsident der SVP Stadt Zug und Mitglied der Rechnungsprüfungskommission.",
       contact: {
         email: "rt@raphael-tschan.ch"
@@ -48,7 +38,7 @@ const Vorstand = () => {
       position: "Vizepräsident & GGR Fraktionspräsident",
       roles: ["Gemeinderat"],
       address: "Bernoldweg 9, 6300 Zug",
-      image: "./assets/vorstand/Roman-Kueng_SVP.jpg",
+      image: "./assets/people/vorstand/Roman-Kueng_SVP.jpg",
       description: "Gemeinderat und Fraktionspräsident im Grossen Gemeinderat mit langjähriger politischer Erfahrung.",
       contact: {
         email: "roman.kueng@bluewin.ch"
@@ -60,7 +50,7 @@ const Vorstand = () => {
       position: "Vorstandsmitglied",
       roles: ["Kantonsrat", "Fraktionspräsident", "Gemeinderat"],
       address: "Im Rank 109, 6300 Zug",
-      image: "./assets/vorstand/Philip-Brunner_SVP.png",
+      image: "./assets/people/vorstand/Philip-Brunner_SVP.png",
       description: "Kantonsrat, Fraktionspräsident und Gemeinderat mit umfassender politischer Erfahrung auf allen Ebenen.",
       contact: {
         email: "phcb@philip-brunner.ch"
@@ -72,7 +62,7 @@ const Vorstand = () => {
       position: "Vorstandsmitglied",
       roles: ["Stadtpräsident"],
       address: "Stadthaus / Postfach, 6301 Zug",
-      image: "./assets/vorstand/Andre-Wicki_SVP.jpg",
+      image: "./assets/people/vorstand/Andre-Wicki_SVP.jpg",
       description: "Stadtpräsident von Zug und engagiertes Vorstandsmitglied der SVP Stadt Zug.",
       contact: {
         email: "andre.wicki@stadtzug.ch"
@@ -84,7 +74,7 @@ const Vorstand = () => {
       position: "Vorstandsmitglied",
       roles: [],
       address: "Bahnhofstrasse 27, 6300 Zug",
-      image: "./assets/vorstand/Marcus-Buehler_SVP.jpg",
+      image: "./assets/people/vorstand/Marcus-Buehler_SVP.jpg",
       description: "Erfahrenes Vorstandsmitglied der SVP Stadt Zug mit breitem politischen Engagement.",
       contact: {
         email: "bumbleb@bluewin.ch"
@@ -133,93 +123,80 @@ const Vorstand = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
-      <main className="container mx-auto px-4 py-16">
+    <PageLayout 
+      title="Vorstand - SVP Stadt Zug"
+      description="Der Vorstand der SVP Stadt Zug - engagierte Bürger, die unsere Partei und ihre Werte vorantreiben."
+    >
+      <main>
         {/* Hero Section */}
-        <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4">Führung</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Unser Vorstand
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Der Vorstand der SVP Stadt Zug besteht aus engagierten Bürgerinnen und Bürgern, 
-            die sich ehrenamtlich für unsere Werte und Ziele einsetzen. Lernen Sie die Menschen kennen, 
-            die unsere Partei führen und gestalten.
-          </p>
-        </div>
+        <Section>
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Unser Vorstand
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Der Vorstand der SVP Stadt Zug besteht aus engagierten Bürgerinnen und Bürgern, 
+              die sich ehrenamtlich für unsere Werte und Ziele einsetzen. Lernen Sie die Menschen kennen, 
+              die unsere Partei führen und gestalten.
+            </p>
+          </div>
+        </Section>
 
         {/* Board Members */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Vorstandsmitglieder</h2>
-          <div className="grid lg:grid-cols-2 gap-8">
+        <Section variant="muted">
+          <SectionHeader
+            title="Vorstandsmitglieder"
+            alignment="center"
+            className="mb-12"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {boardMembers.map((member, index) => (
-              <Card key={index} className="h-full hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-start space-x-4">
-                                    <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
-                  <img
-                    src={member.image}
-                    alt={`Foto von ${member.name}`}
-                    className="w-full h-full object-cover"
-                  />
+              <Link
+                key={index}
+                to={member.profileLink || "#"}
+                className="group flex flex-col items-center text-center p-3 hover:scale-105 transition-transform duration-300"
+              >
+                {/* Circular avatar with green border */}
+                <div className="relative mb-3">
+                  <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-[hsl(var(--svp-green))] shadow-lg group-hover:shadow-xl group-hover:border-[hsl(var(--svp-green-light))] transition-all duration-300">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    {/* Shiny effect on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+                    {/* Subtle overlay on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </div>
+                  {/* Badge for president */}
+                  {member.position === "Präsident" && (
+                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-[hsl(var(--svp-green))] text-white text-xs font-semibold rounded-full whitespace-nowrap shadow-md group-hover:bg-[hsl(var(--svp-green-light))] transition-colors duration-300">
+                      Präsident
+                    </div>
+                  )}
                 </div>
-                    <div className="flex-grow">
-                      <CardTitle className="text-xl mb-1">{member.name}</CardTitle>
-                      <Badge variant="secondary" className="mb-2">{member.position}</Badge>
-                      {member.roles.length > 0 && (
-                        <div className="flex flex-wrap gap-1 mb-2">
-                          {member.roles.map((role, roleIndex) => (
-                            <Badge key={roleIndex} variant="outline" className="text-xs">
-                              {role}
-                            </Badge>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">{member.description}</p>
-                  
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-foreground mb-2">Adresse</h4>
-                    <div className="flex items-start">
-                      <MapPin className="w-4 h-4 mr-2 mt-0.5 text-muted-foreground" />
-                      <p className="text-sm text-muted-foreground">{member.address}</p>
-                    </div>
-                  </div>
-
-                  <div className="border-t pt-4">
-                    <h4 className="font-semibold text-foreground mb-2">Kontakt</h4>
-                    <div className="space-y-2 text-sm">
-                      <ProtectedEmail 
-                        user={member.contact.email.split('@')[0]} 
-                        domain={member.contact.email.split('@')[1]} 
-                        className="text-sm"
-                      />
-                    </div>
-                    
-                    <div className="mt-4">
-                      <Link 
-                        to={member.profileLink}
-                        className="inline-flex items-center text-primary hover:text-primary/80 transition-colors text-sm font-medium"
-                      >
-                        Zum Profil
-                        <ExternalLink className="w-3 h-3 ml-1" />
-                      </Link>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                
+                {/* Name */}
+                <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
+                  {member.name}
+                </h3>
+                
+                {/* Position */}
+                <p className="text-sm font-semibold text-primary">
+                  {member.position}
+                </p>
+              </Link>
             ))}
           </div>
-        </section>
+        </Section>
 
         {/* Board Activities */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Aufgaben des Vorstands</h2>
+        <Section>
+          <SectionHeader
+            title="Aufgaben des Vorstands"
+            className="mb-8"
+          />
           <div className="grid md:grid-cols-3 gap-6">
             {boardActivities.map((activity, index) => (
               <Card key={index}>
@@ -235,11 +212,14 @@ const Vorstand = () => {
               </Card>
             ))}
           </div>
-        </section>
+        </Section>
 
         {/* Meeting Schedule */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Sitzungsplan</h2>
+        <Section variant="muted">
+          <SectionHeader
+            title="Sitzungsplan"
+            className="mb-8"
+          />
           <div className="space-y-4">
             {meetings.map((meeting, index) => (
               <Card key={index}>
@@ -259,10 +239,11 @@ const Vorstand = () => {
               </Card>
             ))}
           </div>
-        </section>
+        </Section>
 
         {/* Join Us Section */}
-        <div className="bg-primary/5 rounded-lg p-8 text-center">
+        <Section>
+          <div className="bg-primary/5 rounded-lg p-8 text-center">
           <h2 className="text-2xl font-bold text-foreground mb-4">
             Möchten Sie sich engagieren?
           </h2>
@@ -284,11 +265,10 @@ const Vorstand = () => {
               Kontakt aufnehmen
             </a>
           </div>
-        </div>
+          </div>
+        </Section>
       </main>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 

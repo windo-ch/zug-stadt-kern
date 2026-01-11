@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { useState } from 'react';
+import PageLayout from '@/components/layout/PageLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -21,15 +20,6 @@ const Kontakt = () => {
     category: '',
     message: ''
   });
-
-  useEffect(() => {
-    document.title = "Kontakt - SVP Stadt Zug";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Kontaktieren Sie die SVP Stadt Zug. Wir sind für Ihre Anliegen, Fragen und Anregungen da.');
-    }
-  }, []);
 
   const contactInfo = [
     {
@@ -91,9 +81,10 @@ const Kontakt = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
+    <PageLayout 
+      title="Kontakt - SVP Stadt Zug"
+      description="Kontaktieren Sie die SVP Stadt Zug. Wir sind für Ihre Anliegen, Fragen und Anregungen da."
+    >
       <main className="container mx-auto px-4 py-16">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -319,9 +310,7 @@ const Kontakt = () => {
           </div>
         </section>
       </main>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 

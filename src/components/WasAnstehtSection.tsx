@@ -49,17 +49,18 @@ const WasAnstehtSection = () => {
   };
 
   const getTypeColor = (type: string) => {
+    // Use SVP design system colors
     switch (type.toLowerCase()) {
       case 'vortrag':
-        return 'bg-blue-100 text-blue-800 border-blue-200';
+        return 'bg-[hsl(var(--swiss-blue))]/10 text-[hsl(var(--swiss-blue))] border-[hsl(var(--swiss-blue))]/20';
       case 'anlass':
-        return 'bg-green-100 text-green-800 border-green-200';
+        return 'bg-[hsl(var(--svp-green))]/10 text-[hsl(var(--svp-green-dark))] border-[hsl(var(--svp-green))]/30';
       case 'abstimmung':
-        return 'bg-red-100 text-red-800 border-red-200';
+        return 'bg-[hsl(var(--svp-orange))]/10 text-[hsl(var(--svp-orange-dark))] border-[hsl(var(--svp-orange))]/30';
       case 'versammlung':
-        return 'bg-purple-100 text-purple-800 border-purple-200';
+        return 'bg-[hsl(var(--swiss-blue))]/10 text-[hsl(var(--swiss-blue-dark))] border-[hsl(var(--swiss-blue))]/20';
       default:
-        return 'bg-gray-100 text-gray-800 border-gray-200';
+        return 'bg-muted text-muted-foreground border-border';
     }
   };
 
@@ -79,32 +80,32 @@ const WasAnstehtSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {featuredEvents.map((event) => (
-            <Card key={event.id} className="hover:shadow-lg transition-shadow group">
+            <Card key={event.id} className="card-elevated group hover:border-[hsl(var(--svp-green))]/30 transition-[var(--transition-smooth)]">
               <CardHeader className="pb-4">
                 <div className="flex items-start justify-between mb-3">
-                  <Badge className={getTypeColor(event.type)}>
+                  <Badge className={`${getTypeColor(event.type)} font-semibold border`}>
                     {event.type}
                   </Badge>
                   <div className="text-right">
                     <div className="text-sm font-semibold text-foreground">
                       {formatDate(event.date)}
                     </div>
-                    <div className="text-xs text-muted-foreground flex items-center">
+                    <div className="text-xs text-muted-foreground flex items-center justify-end">
                       <Clock className="w-3 h-3 mr-1" />
                       {event.time}
                     </div>
                   </div>
                 </div>
-                <CardTitle className="text-lg leading-tight group-hover:text-primary transition-colors">
+                <CardTitle className="text-lg leading-tight group-hover:text-[hsl(var(--svp-green))] transition-colors">
                   {event.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="mb-4">
+                <CardDescription className="mb-4 leading-relaxed">
                   {event.description}
                 </CardDescription>
                 <div className="flex items-center text-sm text-muted-foreground">
-                  <MapPin className="w-4 h-4 mr-2 flex-shrink-0" />
+                  <MapPin className="w-4 h-4 mr-2 flex-shrink-0 text-[hsl(var(--svp-green))]" />
                   <span className="truncate">{event.location}</span>
                 </div>
               </CardContent>

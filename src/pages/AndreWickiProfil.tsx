@@ -1,20 +1,10 @@
-import { useEffect } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import PageLayout from '@/components/layout/PageLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Phone, Mail, MapPin, User, ExternalLink, Users, Target, Share2, Twitter, Building, Award, GraduationCap } from 'lucide-react';
 
 const AndreWickiProfil = () => {
-  useEffect(() => {
-    document.title = "André Wicki - Profil - SVP Stadt Zug";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'André Wicki - Stadtpräsident von Zug und Vorstandsmitglied der SVP Stadt Zug. Betriebsökonom/MBA mit umfassender Führungserfahrung.');
-    }
-  }, []);
 
   const personalData = {
     name: "André Wicki",
@@ -47,9 +37,10 @@ const AndreWickiProfil = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
+    <PageLayout 
+      title="André Wicki - Profil - SVP Stadt Zug"
+      description="André Wicki - Stadtpräsident von Zug und Vorstandsmitglied der SVP Stadt Zug. Betriebsökonom/MBA mit umfassender Führungserfahrung."
+    >
       <main className="container mx-auto px-4 py-16">
         {/* Breadcrumb */}
         <nav className="mb-8 text-sm">
@@ -67,7 +58,7 @@ const AndreWickiProfil = () => {
           <div className="flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-8 mb-8">
             <div className="w-40 h-40 rounded-2xl overflow-hidden shadow-lg">
               <img 
-                src="../assets/vorstand/Andre-Wicki_SVP.jpg" 
+                src="/assets/people/vorstand/Andre-Wicki_SVP.jpg" 
                 alt="André Wicki - Mitglied SVP Stadt Zug"
                 className="w-full h-full object-cover"
               />
@@ -173,7 +164,7 @@ const AndreWickiProfil = () => {
               <CardHeader className="bg-gradient-to-r from-primary/5 to-transparent">
                 <CardTitle className="flex items-center text-xl">
                   <User className="w-6 h-6 mr-3 text-primary" />
-                  Mein Werdegang
+                  Werdegang
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-6">
@@ -381,9 +372,7 @@ const AndreWickiProfil = () => {
           </div>
         </div>
       </main>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 

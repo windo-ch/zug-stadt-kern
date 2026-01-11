@@ -1,18 +1,7 @@
-import { useEffect } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import PageLayout from '@/components/layout/PageLayout';
 import { Cookie, Shield, Eye, Settings, Info } from 'lucide-react';
 
 const CookiePolicy = () => {
-  useEffect(() => {
-    document.title = "Cookie-Richtlinie – SVP Stadt Zug";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Cookie-Richtlinie der SVP Stadt Zug - Transparente Information über die Verwendung von Cookies.');
-    }
-  }, []);
-
   const cookieTypes = [
     {
       icon: <Shield className="h-8 w-8" />,
@@ -38,9 +27,10 @@ const CookiePolicy = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Header />
-      
+    <PageLayout 
+      title="Cookie-Richtlinie – SVP Stadt Zug"
+      description="Cookie-Richtlinie der SVP Stadt Zug - Transparente Information über die Verwendung von Cookies."
+    >
       <main>
         {/* Hero Section */}
         <section className="section-padding bg-gradient-to-br from-svp-green via-svp-green to-svp-green-light text-white relative overflow-hidden">
@@ -229,9 +219,7 @@ const CookiePolicy = () => {
           </div>
         </section>
       </main>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 

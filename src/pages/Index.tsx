@@ -1,12 +1,11 @@
 import { useEffect } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
+import StatsSection from '@/components/StatsSection';
 import PeopleSection from '@/components/PeopleSection';
 import NewsSection from '@/components/NewsSection';
-import ValuesSection from '@/components/ValuesSection';
-import WasAnstehtSection from '@/components/WasAnstehtSection';
+import StrategySection from '@/components/StrategySection';
 import MitmachenSection from '@/components/MitmachenSection';
-import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -59,12 +58,24 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <PeopleSection />
+        <StatsSection />
         <NewsSection />
-        <ValuesSection />
-        <WasAnstehtSection />
+        <StrategySection />
+        <PeopleSection />
         <MitmachenSection />
-        <ContactSection />
+        
+        {/* Animated Flag */}
+        <section className="section-padding bg-muted/30">
+          <div className="container-max">
+            <div className="flex justify-center py-8">
+              <img
+                src="/logo/svp-stadt-zug-flag-animated-small.gif"
+                alt="SVP Stadt Zug Flagge"
+                className="h-[150px] w-auto"
+              />
+            </div>
+          </div>
+        </section>
       </main>
       
       <Footer />

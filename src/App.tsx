@@ -33,6 +33,8 @@ const RomanKuengProfil = lazy(() => import("./pages/RomanKuengProfil"));
 const PhilipBrunnerProfil = lazy(() => import("./pages/PhilipBrunnerProfil"));
 const AndreWickiProfil = lazy(() => import("./pages/AndreWickiProfil"));
 const MarcusBuehlerProfil = lazy(() => import("./pages/MarcusBuehlerProfil"));
+const NorbertSchlumpfProfil = lazy(() => import("./pages/NorbertSchlumpfProfil"));
+const AlexOdermattProfil = lazy(() => import("./pages/AlexOdermattProfil"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Loading component
@@ -46,7 +48,7 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       staleTime: 5 * 60 * 1000, // 5 minutes
-      cacheTime: 10 * 60 * 1000, // 10 minutes
+      gcTime: 10 * 60 * 1000, // 10 minutes (formerly cacheTime)
     },
   },
 });
@@ -84,6 +86,8 @@ const App = () => (
             <Route path="/profil/philip-brunner" element={<PhilipBrunnerProfil />} />
             <Route path="/profil/andre-wicki" element={<AndreWickiProfil />} />
             <Route path="/profil/marcus-buehler" element={<MarcusBuehlerProfil />} />
+            <Route path="/profil/norbert-schlumpf" element={<NorbertSchlumpfProfil />} />
+            <Route path="/profil/alex-odermatt" element={<AlexOdermattProfil />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

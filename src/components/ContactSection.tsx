@@ -36,7 +36,7 @@ const ContactSection = () => {
     <section id="contact" className="section-padding">
       <div className="container-max">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl font-bold text-foreground mb-4">
             Kontakt
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -55,12 +55,12 @@ const ContactSection = () => {
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 bg-[hsl(var(--svp-green))]/10 rounded-lg flex items-center justify-center flex-shrink-0 border border-[hsl(var(--svp-green))]/20 group-hover:border-[hsl(var(--svp-green))]/40 transition-colors">
+                    <MapPin className="h-6 w-6 text-[hsl(var(--svp-green))]" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Geschäftsstelle</h4>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground leading-relaxed">
                       SVP Stadt Zug<br />
                       Postfach<br />
                       6300 Zug
@@ -69,8 +69,8 @@ const ContactSection = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 bg-[hsl(var(--svp-green))]/10 rounded-lg flex items-center justify-center flex-shrink-0 border border-[hsl(var(--svp-green))]/20 group-hover:border-[hsl(var(--svp-green))]/40 transition-colors">
+                    <Mail className="h-6 w-6 text-[hsl(var(--svp-green))]" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">E-Mail</h4>
@@ -81,12 +81,12 @@ const ContactSection = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 bg-[hsl(var(--svp-green))]/10 rounded-lg flex items-center justify-center flex-shrink-0 border border-[hsl(var(--svp-green))]/20 group-hover:border-[hsl(var(--svp-green))]/40 transition-colors">
+                    <Phone className="h-6 w-6 text-[hsl(var(--svp-green))]" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Telefon</h4>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground leading-relaxed">
                       079 329 13 33 (Roman Küng)<br />
                       (Mo-Fr, 9:00-17:00 Uhr)
                     </p>

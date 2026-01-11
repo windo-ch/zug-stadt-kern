@@ -10,7 +10,7 @@ const NewsSection = () => {
       excerpt: "Eidgenössische und kantonale Abstimmungen stehen an. Wir informieren Sie über unsere Abstimmungsempfehlungen und die wichtigsten Vorlagen.",
       date: "28.09.2025",
       category: "Abstimmungen",
-      image: "./assets/zug-images/zug-overview-svp_1.jpg"
+      image: "./assets/places/zug/zug-overview-svp_1.jpg"
     },
     {
       id: 2,
@@ -18,7 +18,7 @@ const NewsSection = () => {
       excerpt: "Die Volksinitiative «Asylmissbrauch stoppen! (Grenzschutz-Initiative)» wird im September eingereicht. Unterschriftensammlung läuft bis 29. August.",
       date: "Ende August 2025",
       category: "Initiative",
-      image: "./assets/zug-images/zug-altstadt-svp_1.jpg"
+      image: "./assets/places/zug/zug-altstadt-svp_1.jpg"
     },
     {
       id: 3,
@@ -26,7 +26,7 @@ const NewsSection = () => {
       excerpt: "SVP-Motion für günstigere Parkkarten eingereicht. Ziel ist es, die Parkgebühren für Anwohner zu reduzieren und die Attraktivität der Innenstadt zu steigern.",
       date: "Aktuell",
       category: "Politik",
-      image: "./assets/zug-images/zug-overview-svp_2.jpg"
+      image: "./assets/places/zug/zug-overview-svp_2.jpg"
     }
   ];
 

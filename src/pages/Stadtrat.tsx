@@ -1,21 +1,10 @@
-import { useEffect } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { Link } from 'react-router-dom';
+import PageLayout from '@/components/layout/PageLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Phone, Mail, MapPin, Calendar, Award } from 'lucide-react';
-import ProtectedEmail from '@/components/ProtectedEmail';
+import { Calendar } from 'lucide-react';
 
 const Stadtrat = () => {
-  useEffect(() => {
-    document.title = "SVP-Fraktion - Grosser Gemeinderat Zug";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Lernen Sie die SVP-Fraktion im Grossen Gemeinderat Zug kennen. Unsere Parlamentarier setzen sich für Ihre Anliegen ein.');
-    }
-  }, []);
 
   // City Executive (Stadtrat/Executive Council)
   const stadtrat = [
@@ -26,12 +15,23 @@ const Stadtrat = () => {
       email: "andre.wicki@stadtzug.ch",
       description: "Als Stadtpräsident führt André Wicki die Exekutive der Stadt Zug und vertritt die bürgerlichen Werte in der Stadtregierung.",
       isPresident: true,
-      image: "./assets/vorstand/Andre-Wicki_SVP.jpg"
+      image: "./assets/people/vorstand/Andre-Wicki_SVP.jpg",
+      profileLink: "/profil/andre-wicki"
     }
   ];
 
   // City Parliament (Grosser Gemeinderat/Legislative)
-  const gemeinderat = [
+  const gemeinderat: Array<{
+    name: string;
+    position: string;
+    address: string;
+    phone: string;
+    email: string;
+    description: string;
+    isFraktionschef: boolean;
+    image: string;
+    profileLink?: string;
+  }> = [
     {
       name: "Roman Küng",
       position: "Gemeinderat",
@@ -40,7 +40,8 @@ const Stadtrat = () => {
       email: "roman.kueng@bluewin.ch",
       description: "Roman Küng ist als erfahrener Gemeinderat und Fraktionschef ein wichtiger Pfeiler der SVP-Politik in Zug.",
       isFraktionschef: true,
-      image: "./assets/vorstand/Roman-Kueng_SVP.jpg"
+      image: "./assets/people/vorstand/Roman-Kueng_SVP.jpg",
+      profileLink: "/profil/roman-kueng"
     },
     {
       name: "Philip C. Brunner",
@@ -50,7 +51,8 @@ const Stadtrat = () => {
       email: "phcb@philip-brunner.ch",
       description: "Philip C. Brunner präsidiert die Geschäftsprüfungskommission und bringt seine Expertise in die Gemeindepolitik ein.",
       isFraktionschef: false,
-      image: "./assets/vorstand/Philip-Brunner_SVP.png"
+      image: "./assets/people/vorstand/Philip-Brunner_SVP.png",
+      profileLink: "/profil/philip-brunner"
     },
     {
       name: "Marcus Bühler",
@@ -60,7 +62,8 @@ const Stadtrat = () => {
       email: "bumbleb@bluewin.ch",
       description: "Marcus Bühler setzt sich als Gemeinderat für pragmatische Lösungen und bürgernahe Politik ein.",
       isFraktionschef: false,
-      image: "./assets/vorstand/Marcus-Buehler_SVP.jpg"
+      image: "./assets/people/vorstand/Marcus-Buehler_SVP.jpg",
+      profileLink: "/profil/marcus-buehler"
     },
     {
       name: "René Gretener",
@@ -70,17 +73,39 @@ const Stadtrat = () => {
       email: "rghkswiss@gmail.com", 
       description: "René Gretener vertritt die SVP-Werte im Gemeinderat mit Engagement und Sachverstand.",
       isFraktionschef: false,
-      image: "./assets/svp-people/Rene-Gretener-SVP.jpg"
+      image: "./assets/people/gemeinderat/Rene-Gretener-SVP.jpg"
     },
     {
-      name: "Manfred Pirchler",
-      position: "Gemeinderat", 
+      name: "Manfred Pircher",
+      position: "Gemeinderat, Mitglied Bau- und Planungskommission", 
       address: "Lothenbach 7, 6318 Walchwil",
       phone: "041 758 17 30",
       email: "manfred.pircher@bluewin.ch",
-      description: "Manfred Pirchler bringt auch die Perspektive der Gemeinde Walchwil in die regionale Politik ein.",
+      description: "«Es ist nicht genug zu wollen, man muss es auch tun!» Bürger von Hütten, ZH. Lehre als Maschinenmechaniker, Offsetmaschinenmonteur. Seit 1993 selbständig. Gründungsmitglied der SVP Kanton Zug und Stadtpartei. Seit 2001 im Grossen Gemeinderat.",
       isFraktionschef: false,
-      image: "./assets/svp-people/Manfred-Pirchler-SVP.jpg"
+      image: "./assets/people/gemeinderat/Manfred-Pirchler-SVP.jpg"
+    },
+    {
+      name: "Norbert Schlumpf",
+      position: "Gemeinderat",
+      address: "Chamerstrasse 36, 6300 Zug",
+      phone: "079 208 79 40",
+      email: "n.schlumpf@hsk-telematik.ch",
+      description: "1959 in Zug (Zugerberg) geboren. Nach der Sekundarschule Lehre bei der Korporation Zug. Seit 1990 selbstständig im Bereich Fiberoptic tätig. Geschäftsführer mit langjähriger Erfahrung.",
+      isFraktionschef: false,
+      image: "./assets/people/gemeinderat/Schlumpf-Norbert-SVP.jpg",
+      profileLink: "/profil/norbert-schlumpf"
+    },
+    {
+      name: "Alex Odermatt",
+      position: "Gemeinderat, Mitglied Spezialkommission",
+      address: "St. Johannesstrasse 4, 6300 Zug",
+      phone: "041 710 18 14",
+      email: "alexodermatt@bluewin.ch",
+      description: "Mir ist es wichtig auf die Bevölkerung zu hören und ihre Anliegen wahrzunehmen. Darum setz ich mich für Vereine ein. Man muss achten, dass Vereine nicht mit Bürokratie belastet werden sondern sich auf den Einsatz für die Bevölkerung in kulturellen, sportlichen und gesellschaftlichen Belangen konzentrieren können.",
+      isFraktionschef: false,
+      image: "./assets/people/gemeinderat/Alex-Odermatt-SVP.jpg",
+      profileLink: "/profil/alex-odermatt"
     }
   ];
 
@@ -103,158 +128,205 @@ const Stadtrat = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
-      <main className="container mx-auto px-4 py-16">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4">Grosser Gemeinderat</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            SVP-Fraktion im Grossen Gemeinderat
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Unsere SVP-Parlamentarier im Grossen Gemeinderat Zug setzen sich täglich für bürgerliche Werte und 
-            die Anliegen der Zuger Bevölkerung ein. Lernen Sie unsere Fraktion kennen.
-          </p>
-        </div>
-
-        {/* Stadtrat - Executive */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Stadtrat (Exekutive)</h2>
-          <div className="space-y-6">
-            {stadtrat.map((person, index) => (
-              <Card key={index} className="border-l-4 border-l-primary hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
-                      <img
-                        src={person.image}
-                        alt={`Foto von ${person.name}`}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="flex-grow">
-                      <CardTitle className="text-xl mb-1">{person.name}</CardTitle>
-                      <Badge className="bg-primary text-primary-foreground mb-2">{person.position}</Badge>
-                      <CardDescription className="text-sm">
-                        {person.description}
-                      </CardDescription>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                    <div className="flex items-center">
-                      <Phone className="w-4 h-4 mr-2 text-muted-foreground" />
-                      <a href={`tel:${person.phone.replace(/\s/g, '')}`} className="text-primary hover:text-primary/80 transition-colors">
-                        {person.phone}
-                      </a>
-                    </div>
-                    <ProtectedEmail 
-                      user={person.email.split('@')[0]} 
-                      domain={person.email.split('@')[1]} 
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+    <PageLayout 
+      title="SVP-Fraktion - Grosser Gemeinderat Zug"
+      description="Lernen Sie die SVP-Fraktion im Grossen Gemeinderat Zug kennen. Unsere Parlamentarier setzen sich für Ihre Anliegen ein."
+    >
+      <main>
+        {/* Hero Section with Background Image */}
+        <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 w-full h-full z-0">
+            <img
+              src="./assets/people/gemeinderat/GGR-2026.png"
+              alt="SVP-Fraktion im Grossen Gemeinderat Zug 2026"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+          
+          {/* Gradient Overlay - transparent for 70%, then transitions to white in bottom 30% */}
+          <div 
+            className="absolute inset-0 z-5" 
+            style={{
+              background: 'linear-gradient(to bottom, transparent 0%, transparent 70%, white 100%)'
+            }}
+          ></div>
+          
+          {/* Content - Empty hero, just background image */}
+          <div className="relative z-10 section-padding w-full">
+            <div className="container-max">
+            </div>
           </div>
         </section>
 
-        {/* Gemeinderat - Legislative */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Grosser Gemeinderat (Legislative)</h2>
-          
-          {/* Fraktionschef */}
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold text-foreground mb-4">Fraktionsleitung</h3>
-            {gemeinderat.filter(p => p.isFraktionschef).map((member, index) => (
-              <Card key={index} className="border-l-4 border-l-secondary hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
-                      <img
-                        src={member.image}
-                        alt={`Foto von ${member.name}`}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="flex-grow">
-                      <CardTitle className="text-xl mb-1">{member.name}</CardTitle>
-                      <Badge className="bg-secondary text-secondary-foreground mb-2">Fraktionschef</Badge>
-                      <Badge variant="outline" className="mb-2 ml-2">{member.position}</Badge>
-                      <CardDescription className="text-sm">
-                        {member.description}
-                      </CardDescription>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                    <div className="flex items-start">
-                      <MapPin className="w-4 h-4 mr-2 text-muted-foreground mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground">{member.address}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Phone className="w-4 h-4 mr-2 text-muted-foreground" />
-                      <a href={`tel:${member.phone.replace(/\s/g, '')}`} className="text-primary hover:text-primary/80 transition-colors">
-                        {member.phone}
-                      </a>
-                    </div>
-                    <ProtectedEmail 
-                      user={member.email.split('@')[0]} 
-                      domain={member.email.split('@')[1]} 
-                      className="break-all"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Gemeinderat Mitglieder */}
-          <div>
-            <h3 className="text-xl font-semibold text-foreground mb-4">Gemeinderatsmitglieder</h3>
-            <div className="grid lg:grid-cols-2 gap-6">
-              {gemeinderat.filter(p => !p.isFraktionschef).map((member, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                                      <div className="flex items-start space-x-4">
-                    <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
-                      <img
-                        src={member.image}
-                        alt={`Foto von ${member.name}`}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                      <div className="flex-grow">
-                        <CardTitle className="text-lg mb-1">{member.name}</CardTitle>
-                        <Badge variant="secondary" className="mb-2">{member.position}</Badge>
+        {/* Stadtrat (Exekutive) and Fraktionsleitung (Legislative) - Side by Side */}
+        <section className="section-padding bg-background">
+          <div className="container-max">
+            <div className="text-center mb-12">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+                SVP-Fraktion im Grossen Gemeinderat
+              </h1>
+              <p className="text-xl text-foreground/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+                Unsere SVP-Parlamentarier im Grossen Gemeinderat Zug setzen sich täglich für bürgerliche Werte und 
+                die Anliegen der Zuger Bevölkerung ein. Lernen Sie unsere Fraktion kennen.
+              </p>
+            </div>
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-12">
+              {/* Stadtrat - Executive */}
+              <div>
+                <h2 className="text-3xl font-bold text-foreground mb-6 text-center">Stadtrat (Exekutive)</h2>
+                <div className="space-y-6">
+                  {stadtrat.map((person, index) => (
+                    <Link
+                      key={index}
+                      to={person.profileLink || "#"}
+                      className="group flex flex-col items-center text-center p-3 hover:scale-105 transition-transform duration-300"
+                    >
+                      {/* Circular avatar with green border */}
+                      <div className="relative mb-3">
+                        <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-[hsl(var(--svp-green))] shadow-lg group-hover:shadow-xl group-hover:border-[hsl(var(--svp-green-light))] transition-all duration-300">
+                          <img
+                            src={person.image}
+                            alt={person.name}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          />
+                          {/* Shiny effect on hover */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+                          {/* Subtle overlay on hover */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        </div>
+                        {/* Category badge */}
+                        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-[hsl(var(--svp-green))] text-white text-xs font-semibold rounded-full whitespace-nowrap shadow-md group-hover:bg-[hsl(var(--svp-green-light))] transition-colors duration-300">
+                          Stadtrat
+                        </div>
                       </div>
+                      
+                      {/* Name */}
+                      <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
+                        {person.name}
+                      </h3>
+                      
+                      {/* Position */}
+                      <p className="text-sm font-semibold text-primary">
+                        {person.position}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Fraktionsleitung - Legislative */}
+              <div>
+                <h2 className="text-3xl font-bold text-foreground mb-6 text-center">Fraktionsleitung</h2>
+                <div className="space-y-6">
+                  {gemeinderat.filter(p => p.isFraktionschef).map((member, index) => (
+                <Link
+                  key={index}
+                  to={member.profileLink || "#"}
+                  className="group flex flex-col items-center text-center p-3 hover:scale-105 transition-transform duration-300"
+                >
+                  {/* Circular avatar with green border */}
+                  <div className="relative mb-3">
+                    <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-[hsl(var(--svp-green))] shadow-lg group-hover:shadow-xl group-hover:border-[hsl(var(--svp-green-light))] transition-all duration-300">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      {/* Shiny effect on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+                      {/* Subtle overlay on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
+                    {/* Category badge */}
+                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-[hsl(var(--svp-green))] text-white text-xs font-semibold rounded-full whitespace-nowrap shadow-md group-hover:bg-[hsl(var(--svp-green-light))] transition-colors duration-300">
+                      Fraktionschef
+                    </div>
+                  </div>
+                  
+                  {/* Name */}
+                  <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
+                    {member.name}
+                  </h3>
+                  
+                  {/* Position */}
+                  <p className="text-sm font-semibold text-primary">
+                    {member.position}
+                  </p>
+                  </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Gemeinderat Mitglieder */}
+        <section className="section-padding bg-gradient-to-b from-background to-muted/20">
+          <div className="container-max">
+            <h2 className="text-3xl font-bold text-foreground mb-6 text-center">Gemeinderatsmitglieder</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {gemeinderat.filter(p => !p.isFraktionschef).map((member, index) => (
+                <Link
+                  key={index}
+                  to={member.profileLink || "#"}
+                  className="group flex flex-col items-center text-center p-3 hover:scale-105 transition-transform duration-300"
+                >
+                  {/* Circular avatar with green border */}
+                  <div className="relative mb-3">
+                    <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-[hsl(var(--svp-green))] shadow-lg group-hover:shadow-xl group-hover:border-[hsl(var(--svp-green-light))] transition-all duration-300">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      {/* Shiny effect on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+                      {/* Subtle overlay on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    </div>
+                    {/* Category badge */}
+                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-[hsl(var(--svp-green))] text-white text-xs font-semibold rounded-full whitespace-nowrap shadow-md group-hover:bg-[hsl(var(--svp-green-light))] transition-colors duration-300">
+                      Gemeinderat
+                    </div>
+                  </div>
+                  
+                  {/* Name */}
+                  <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
+                    {member.name}
+                  </h3>
+                  
+                  {/* Position */}
+                  <p className="text-sm font-semibold text-primary">
+                    {member.position}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Committee Memberships */}
+        <section className="section-padding">
+          <div className="container-max">
+            <h2 className="text-3xl font-bold text-foreground mb-8">Kommissionsmitgliedschaften</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {committeeMemberships.map((committee, index) => (
+                <Card key={index}>
+                  <CardHeader>
+                    <CardTitle className="text-lg">{committee.committee}</CardTitle>
+                    <CardDescription>{committee.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground mb-4 text-sm">{member.description}</p>
-                    
-                    <div className="space-y-2 text-sm">
-                      <div className="flex items-start">
-                        <MapPin className="w-4 h-4 mr-2 text-muted-foreground mt-0.5 flex-shrink-0" />
-                        <span className="text-muted-foreground">{member.address}</span>
-                      </div>
-                      {member.phone && (
-                        <div className="flex items-center">
-                          <Phone className="w-4 h-4 mr-2 text-muted-foreground flex-shrink-0" />
-                          <a href={`tel:${member.phone.replace(/\s/g, '')}`} className="text-primary hover:text-primary/80 transition-colors">
-                            {member.phone}
-                          </a>
-                        </div>
-                      )}
-                      <ProtectedEmail 
-                        user={member.email.split('@')[0]} 
-                        domain={member.email.split('@')[1]} 
-                        className="text-sm break-all"
-                      />
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-2">SVP-Mitglieder</h4>
+                      <ul className="space-y-1">
+                        {committee.members.map((member, memberIndex) => (
+                          <li key={memberIndex} className="text-sm text-muted-foreground">
+                            • {member}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </CardContent>
                 </Card>
@@ -263,66 +335,41 @@ const Stadtrat = () => {
           </div>
         </section>
 
-        {/* Committee Memberships */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Kommissionsmitgliedschaften</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {committeeMemberships.map((committee, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <CardTitle className="text-lg">{committee.committee}</CardTitle>
-                  <CardDescription>{committee.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">SVP-Mitglieder</h4>
-                    <ul className="space-y-1">
-                      {committee.members.map((member, memberIndex) => (
-                        <li key={memberIndex} className="text-sm text-muted-foreground">
-                          • {member}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
         {/* Parliamentary Work Info */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Parlamentarische Arbeit</h2>
-          <Card>
-            <CardContent className="p-8">
-              <div className="text-center">
-                <Calendar className="h-12 w-12 mx-auto mb-4 text-primary" />
-                <h3 className="text-xl font-semibold text-foreground mb-4">
-                  Aktuelle Entscheide und Sitzungen
-                </h3>
-                <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  Die aktuellen Beschlüsse, Traktanden und Sitzungsprotokolle des Grossen Gemeinderats 
-                  finden Sie auf der offiziellen Website der Stadt Zug.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a 
-                    href="https://www.stadtzug.ch/politik/grosser-gemeinderat" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-                  >
-                    Zu den aktuellen Sitzungen
-                  </a>
-                  <a 
-                    href="/vorstoesse" 
-                    className="inline-flex items-center justify-center rounded-md border border-input bg-background px-6 py-3 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
-                  >
-                    Unsere Vorstösse
-                  </a>
+        <section className="section-padding">
+          <div className="container-max">
+            <h2 className="text-3xl font-bold text-foreground mb-8">Parlamentarische Arbeit</h2>
+            <Card>
+              <CardContent className="p-8">
+                <div className="text-center">
+                  <Calendar className="h-12 w-12 mx-auto mb-4 text-primary" />
+                  <h3 className="text-xl font-semibold text-foreground mb-4">
+                    Aktuelle Entscheide und Sitzungen
+                  </h3>
+                  <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                    Die aktuellen Beschlüsse, Traktanden und Sitzungsprotokolle des Grossen Gemeinderats 
+                    finden Sie auf der offiziellen Website der Stadt Zug.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a 
+                      href="https://www.stadtzug.ch/politik/grosser-gemeinderat" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+                    >
+                      Zu den aktuellen Sitzungen
+                    </a>
+                    <a 
+                      href="/vorstoesse" 
+                      className="inline-flex items-center justify-center rounded-md border border-input bg-background px-6 py-3 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                    >
+                      Unsere Vorstösse
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </div>
         </section>
 
         {/* Contact Section */}
@@ -350,9 +397,7 @@ const Stadtrat = () => {
           </div>
         </div>
       </main>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 

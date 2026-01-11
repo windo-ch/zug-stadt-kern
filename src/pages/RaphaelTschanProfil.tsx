@@ -1,20 +1,10 @@
-import { useEffect } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import PageLayout from '@/components/layout/PageLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Phone, Mail, MapPin, User, ExternalLink, Users, GraduationCap, Shield, Flame } from 'lucide-react';
 
 const RaphaelTschanProfil = () => {
-  useEffect(() => {
-    document.title = "Raphael Tschan - Profil - SVP Stadt Zug";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Raphael Tschan - Vizepräsident der SVP Stadt Zug und Mitglied der Rechnungsprüfungskommission. Fachexperte Finanzaufsicht und Treuhänder.');
-    }
-  }, []);
 
   const personalData = {
     name: "Raphael Tschan",
@@ -45,9 +35,10 @@ const RaphaelTschanProfil = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
+    <PageLayout 
+      title="Raphael Tschan - Profil - SVP Stadt Zug"
+      description="Raphael Tschan - Vizepräsident der SVP Stadt Zug und Mitglied der Rechnungsprüfungskommission. Fachexperte Finanzaufsicht und Treuhänder."
+    >
       <main className="container mx-auto px-4 py-16">
         {/* Breadcrumb */}
         <nav className="mb-8 text-sm">
@@ -65,7 +56,7 @@ const RaphaelTschanProfil = () => {
           <div className="flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-8 mb-8">
             <div className="w-40 h-40 rounded-2xl overflow-hidden shadow-lg">
               <img 
-                src="../assets/vorstand/Raphael-Tschan_SVP.jpg" 
+                src="/assets/people/vorstand/Raphael-Tschan_SVP.jpg" 
                 alt="Raphael Tschan - Vizepräsident SVP Stadt Zug"
                 className="w-full h-full object-cover"
               />
@@ -298,9 +289,7 @@ const RaphaelTschanProfil = () => {
           </div>
         </div>
       </main>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 

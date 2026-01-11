@@ -5,7 +5,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { MessageSquare, Heart, HandHeart, Sparkles } from "lucide-react";
+import { MessageSquare, Heart, HandHeart } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface MitmachenDropdownProps {
@@ -52,18 +52,6 @@ const MitmachenDropdown = ({ onNavigate }: MitmachenDropdownProps) => {
             <div>
               <div className="font-semibold text-base">Spenden</div>
               <div className="text-xs text-muted-foreground leading-relaxed">Unterstützen Sie unsere Arbeit</div>
-            </div>
-          </Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link 
-            to="/1000er-club"
-            className="flex items-center gap-3 cursor-pointer p-4 rounded-lg hover:bg-accent/50 transition-all duration-200"
-          >
-            <Sparkles className="h-5 w-5 text-primary" />
-            <div>
-              <div className="font-semibold text-base">1000er Club</div>
-              <div className="text-xs text-muted-foreground leading-relaxed">Exklusiver Förderkreis beitreten</div>
             </div>
           </Link>
         </DropdownMenuItem>

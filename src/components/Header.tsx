@@ -61,7 +61,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-4 hover:opacity-80 transition-opacity">
             <img
-              src="./logo/svp-stadt-zug-logo.png"
+              src="/logo/svp-stadt-zug-logo.png"
               alt="SVP Stadt Zug Logo"
               className="h-16 w-auto md:h-18 transition-all duration-300"
             />
@@ -72,9 +72,17 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg-nav:flex items-center space-x-8">
             <MegaMenu onNavigate={navigateToPage} />
-            <div className="ml-6">
+            <div className="ml-6 flex items-center gap-3">
+              <Link to="/1000er-club">
+                <Button 
+                  variant="outline" 
+                  className="border-[hsl(var(--svp-green))] text-[hsl(var(--svp-green))] hover:bg-[hsl(var(--svp-green))] hover:text-white transition-colors font-semibold"
+                >
+                  1000er Club
+                </Button>
+              </Link>
               <MitmachenDropdown onNavigate={navigateToPage} />
             </div>
           </nav>
@@ -82,7 +90,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-3 text-foreground hover:text-primary transition-all duration-200 hover:bg-accent/20 rounded-lg"
+            className="lg-nav:hidden p-3 text-foreground hover:text-primary transition-all duration-200 hover:bg-accent/20 rounded-lg"
             aria-label="Menü öffnen"
           >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -91,8 +99,20 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-border bg-background shadow-lg">
+          <div className="lg-nav:hidden border-t border-border bg-background shadow-lg">
             <div className="py-6">
+              {/* Wahlen - First Item in Mobile */}
+              <div className="px-6 mb-4">
+                <Link to="/wahlen" onClick={() => setIsMenuOpen(false)}>
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-[hsl(var(--svp-green))] text-[hsl(var(--svp-green))] hover:bg-[hsl(var(--svp-green))] hover:text-white transition-colors font-semibold"
+                  >
+                    Wahlen
+                  </Button>
+                </Link>
+              </div>
+              
               <Accordion type="single" collapsible className="w-full px-6">
                 {mobileMenuSections.map((section, sectionIndex) => (
                   <AccordionItem key={section.title} value={`section-${sectionIndex}`} className="border-border/50">
@@ -135,12 +155,19 @@ const Header = () => {
                 >
                   Spenden
                 </button>
-                <button
-                  onClick={() => navigateToPage('/1000er-club')}
-                  className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-accent/50 rounded-lg transition-colors"
-                >
-                  1000er Club
-                </button>
+                
+                {/* 1000er Club Button - Last Position */}
+                <div className="pt-4 mt-4 border-t border-border">
+                  <Link to="/1000er-club" className="block">
+                    <Button 
+                      variant="outline" 
+                      className="w-full border-[hsl(var(--svp-green))] text-[hsl(var(--svp-green))] hover:bg-[hsl(var(--svp-green))] hover:text-white transition-colors font-semibold"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      1000er Club
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

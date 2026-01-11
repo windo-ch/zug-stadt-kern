@@ -1,20 +1,10 @@
-import { useEffect } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import PageLayout from '@/components/layout/PageLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Phone, Mail, MapPin, User, Calendar, GraduationCap, Users, Target, Share2, Twitter } from 'lucide-react';
 
 const AdriansRisiProfil = () => {
-  useEffect(() => {
-    document.title = "Adrian Risi - Profil - SVP Stadt Zug";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Adrian Risi - Kantonsrat und Präsident der SVP Stadt Zug. Erfahrener Unternehmer mit jahrzehntelanger Führungserfahrung.');
-    }
-  }, []);
 
   const personalData = {
     name: "Adrian Risi",
@@ -58,9 +48,10 @@ const AdriansRisiProfil = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
+    <PageLayout 
+      title="Adrian Risi - Profil - SVP Stadt Zug"
+      description="Adrian Risi - Kantonsrat und Präsident der SVP Stadt Zug. Erfahrener Unternehmer mit jahrzehntelanger Führungserfahrung."
+    >
       <main className="container mx-auto px-4 py-16">
         {/* Breadcrumb */}
         <nav className="mb-8 text-sm">
@@ -78,7 +69,7 @@ const AdriansRisiProfil = () => {
           <div className="flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-8 mb-8">
             <div className="w-40 h-40 rounded-2xl overflow-hidden shadow-lg">
               <img 
-                src="../assets/vorstand/Risi_Adrian_SVP.jpg" 
+                src="/assets/people/vorstand/Risi_Adrian_SVP.jpg" 
                 alt="Adrian Risi - Präsident SVP Stadt Zug"
                 className="w-full h-full object-cover"
               />
@@ -136,7 +127,7 @@ const AdriansRisiProfil = () => {
               <CardHeader className="bg-gradient-to-r from-primary/5 to-transparent">
                 <CardTitle className="flex items-center text-xl">
                   <User className="w-6 h-6 mr-3 text-primary" />
-                  Mein Werdegang
+                  Werdegang
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-6">
@@ -160,7 +151,7 @@ const AdriansRisiProfil = () => {
             {/* Commissions */}
             <Card className="shadow-md hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle>Mitgliedschaften Kommissionen</CardTitle>
+                <CardTitle className="text-xl">Mitgliedschaften Kommissionen</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
@@ -286,7 +277,7 @@ const AdriansRisiProfil = () => {
             {/* Commissions - Organized */}
             <Card className="shadow-md hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle className="text-lg">Politische Mandate</CardTitle>
+                <CardTitle className="text-xl">Politische Mandate</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
@@ -389,9 +380,7 @@ const AdriansRisiProfil = () => {
           </div>
         </div>
       </main>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 

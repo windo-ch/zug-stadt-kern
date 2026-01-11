@@ -1,20 +1,11 @@
-import { useEffect } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import PageLayout from '@/components/layout/PageLayout';
+import StatCard from '@/components/content/StatCard';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Shield, Home, Briefcase, GraduationCap, Heart, Car, Users, Target, TrendingUp } from 'lucide-react';
 
 const Themen = () => {
-  useEffect(() => {
-    document.title = "Unsere Themen – SVP Stadt Zug";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Die politischen Schwerpunkte der SVP Stadt Zug: Sicherheit, Wirtschaft, Familie, Bildung und Verkehr für eine lebenswerte Stadt.');
-    }
-  }, []);
 
   const themes = [
     {
@@ -192,9 +183,10 @@ const Themen = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
+    <PageLayout 
+      title="Unsere Themen – SVP Stadt Zug"
+      description="Die politischen Schwerpunkte der SVP Stadt Zug: Sicherheit, Wirtschaft, Familie, Bildung und Verkehr für eine lebenswerte Stadt."
+    >
       <main className="container mx-auto px-4 py-16">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -211,18 +203,22 @@ const Themen = () => {
         {/* Key Statistics */}
         <section className="mb-16">
           <div className="grid md:grid-cols-3 gap-6">
-            {keyStatistics.map((stat, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="text-3xl font-bold text-foreground mb-2">{stat.number}</div>
-                  <div className="font-semibold text-foreground mb-1">{stat.label}</div>
-                  <p className="text-sm text-muted-foreground">{stat.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+            {keyStatistics.map((stat, index) => {
+              // Parse number from string (e.g., "200+" -> 200, "30+" -> 30)
+              const numValue = parseInt(stat.number.replace(/[^0-9]/g, ''), 10);
+              const suffix = stat.number.includes('+') ? '+' : '';
+              return (
+                <StatCard
+                  key={index}
+                  value={numValue}
+                  suffix={suffix}
+                  label={stat.label}
+                  sublabel={stat.description}
+                  icon={stat.icon}
+                  variant="default"
+                />
+              );
+            })}
           </div>
         </section>
 
@@ -352,9 +348,7 @@ const Themen = () => {
           </div>
         </div>
       </main>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 

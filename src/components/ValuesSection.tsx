@@ -89,7 +89,7 @@ const ValuesSection = () => {
           </p>
         </div>
 
-        {/* Compact grid layout */}
+        {/* Compact grid layout - Design System Aligned */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8">
           {values.map((value, index) => {
             const IconComponent = value.icon;
@@ -98,16 +98,16 @@ const ValuesSection = () => {
             return (
               <div
                 key={index}
-                className="group relative bg-card border border-border rounded-xl p-5 md:p-6 hover:border-primary/30 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                className="group relative bg-card border border-border rounded-xl p-5 md:p-6 hover:border-[hsl(var(--svp-green))]/40 hover:shadow-[var(--shadow-medium)] transition-[var(--transition-smooth)] cursor-pointer"
                 onClick={() => toggleExpand(index)}
               >
-                {/* Icon with green circle */}
+                {/* Icon with green circle - Design System Pattern */}
                 <div className="flex items-start gap-4 mb-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] rounded-full flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] rounded-full flex items-center justify-center flex-shrink-0 shadow-[var(--shadow-soft)] group-hover:shadow-[var(--shadow-medium)] group-hover:scale-110 transition-[var(--transition-smooth)]">
                     <IconComponent className="h-6 w-6 text-white" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                    <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-[hsl(var(--svp-green))] transition-colors">
                       {value.title}
                     </h3>
                     <p className="text-sm text-muted-foreground line-clamp-2">
@@ -115,18 +115,18 @@ const ValuesSection = () => {
                     </p>
                   </div>
                   <ChevronDown 
-                    className={`h-5 w-5 text-muted-foreground flex-shrink-0 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+                    className={`h-5 w-5 text-muted-foreground flex-shrink-0 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-[hsl(var(--svp-green))]' : ''}`}
                   />
                 </div>
 
-                {/* Expanded content */}
+                {/* Expanded content - Design System Spacing */}
                 {isExpanded && (
-                  <div className="mt-4 pt-4 border-t border-border animate-in slide-in-from-top-2 duration-300">
-                    <ul className="space-y-2">
+                  <div className="mt-4 pt-4 border-t border-border/50 animate-in slide-in-from-top-2 duration-300">
+                    <ul className="space-y-2.5">
                       {value.points.map((point, pointIndex) => (
                         <li key={pointIndex} className="flex items-start text-sm">
-                          <span className="w-1.5 h-1.5 bg-[hsl(var(--svp-green))] rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                          <span className="text-muted-foreground">{point}</span>
+                          <span className="w-2 h-2 bg-[hsl(var(--svp-green))] rounded-full mt-1.5 mr-3 flex-shrink-0"></span>
+                          <span className="text-muted-foreground leading-relaxed">{point}</span>
                         </li>
                       ))}
                     </ul>
@@ -137,9 +137,9 @@ const ValuesSection = () => {
           })}
         </div>
 
-        {/* Compact CTA */}
-        <div className="text-center">
-          <div className="inline-block bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl px-6 py-4">
+        {/* Compact CTA - Design System Colors */}
+        <div className="text-center mt-8">
+          <div className="inline-block bg-gradient-to-r from-[hsl(var(--svp-green))]/5 to-[hsl(var(--svp-green-light))]/5 rounded-xl px-6 py-4 border border-[hsl(var(--svp-green))]/10">
             <p className="text-sm text-muted-foreground">
               Diese Werte leiten uns in unserer täglichen politischen Arbeit.
             </p>

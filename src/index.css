@@ -8,7 +8,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url('/assets/fonts/Inter-Light.ttf') format('truetype');
+  src: url('./assets/fonts/Inter-Light.ttf') format('truetype');
 }
 
 @font-face {
@@ -16,7 +16,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/assets/fonts/Inter-Regular.ttf') format('truetype');
+  src: url('./assets/fonts/Inter-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -24,7 +24,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('/assets/fonts/Inter-Medium.ttf') format('truetype');
+  src: url('./assets/fonts/Inter-Medium.ttf') format('truetype');
 }
 
 @font-face {
@@ -32,7 +32,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('/assets/fonts/Inter-SemiBold.ttf') format('truetype');
+  src: url('./assets/fonts/Inter-SemiBold.ttf') format('truetype');
 }
 
 @font-face {
@@ -40,7 +40,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('/assets/fonts/Inter-Bold.ttf') format('truetype');
+  src: url('./assets/fonts/Inter-Bold.ttf') format('truetype');
 }
 
 @font-face {
@@ -48,7 +48,7 @@
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url('/assets/fonts/Inter-ExtraBold.ttf') format('truetype');
+  src: url('./assets/fonts/Inter-ExtraBold.ttf') format('truetype');
 }
 
 /* SVP Stadt Zug Design System - Swiss Political Party Website */
@@ -100,7 +100,7 @@
     
     --border: 210 20% 90%;
     --input: 210 20% 90%;
-    --ring: 54 100% 50%;
+    --ring: 120 60% 45%;
     
     --radius: 0.75rem;
     
@@ -109,7 +109,6 @@
     --gradient-section: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
     --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--accent)));
     --gradient-footer: linear-gradient(135deg, hsl(var(--svp-green-dark)), hsl(var(--svp-green)));
-    --gradient-orange-green: linear-gradient(90deg, hsl(var(--svp-orange)), hsl(var(--svp-green)));
     
     /* Shadows */
     --shadow-soft: 0 2px 10px hsl(var(--foreground) / 0.1);
@@ -187,6 +186,19 @@
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold;
+  }
+  
+  /* German word-breaking for long compound words */
+  body {
+    hyphens: auto;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Ensure proper hyphenation for German text */
+  p, span, div, li, td, th {
+    hyphens: auto;
+    overflow-wrap: break-word;
   }
 }
 

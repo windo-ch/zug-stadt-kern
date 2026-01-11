@@ -1,6 +1,9 @@
-import { useEffect, useState } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { useState } from 'react';
+import PageLayout from '@/components/layout/PageLayout';
+import Section from '@/components/layout/Section';
+import SectionHeader from '@/components/layout/SectionHeader';
+import CTASection from '@/components/ctas/CTASection';
+import VoteCard from '@/components/content/VoteCard';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -13,15 +16,6 @@ const Abstimmungen = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterLevel, setFilterLevel] = useState('all');
   const [filterStatus, setFilterStatus] = useState('all');
-
-  useEffect(() => {
-    document.title = "Abstimmungen – SVP Stadt Zug";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Abstimmungsempfehlungen der SVP Stadt Zug - transparent, begründet und bürgernah. Informieren Sie sich über unsere Positionen.');
-    }
-  }, []);
 
   const upcomingVotes = [
     {
@@ -175,41 +169,12 @@ const Abstimmungen = () => {
     return matchesSearch && matchesLevel && matchesStatus;
   });
 
-  const getRecommendationBadge = (recommendation: string) => {
-    return recommendation === "Ja" ? 
-      <Badge className="bg-green-100 text-green-800 border-green-200">
-        <CheckCircle className="w-3 h-3 mr-1" />
-        Ja-Empfehlung
-      </Badge> :
-      <Badge className="bg-red-100 text-red-800 border-red-200">
-        <XCircle className="w-3 h-3 mr-1" />
-        Nein-Empfehlung
-      </Badge>;
-  };
-
-  const getResultBadge = (result: string, svpMatch: boolean) => {
-    const isAccepted = result === "Angenommen";
-    const baseColor = isAccepted ? "green" : "red";
-    
-    return (
-      <div className="flex items-center space-x-2">
-        <Badge className={`bg-${baseColor}-100 text-${baseColor}-800 border-${baseColor}-200`}>
-          {result}
-        </Badge>
-        {svpMatch && (
-          <Badge variant="outline" className="text-xs">
-            <CheckCircle className="w-3 h-3 mr-1 text-green-600" />
-            SVP-Linie
-          </Badge>
-        )}
-      </div>
-    );
-  };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
+    <PageLayout 
+      title="Abstimmungen – SVP Stadt Zug"
+      description="Abstimmungsempfehlungen der SVP Stadt Zug - transparent, begründet und bürgernah. Informieren Sie sich über unsere Positionen."
+    >
       <main className="container mx-auto px-4 py-16">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -225,7 +190,7 @@ const Abstimmungen = () => {
         </div>
 
         {/* Statistics */}
-        <section className="mb-16">
+        <Section className="mb-16">
           <div className="grid md:grid-cols-3 gap-6">
             {statistics.map((stat, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
@@ -240,7 +205,7 @@ const Abstimmungen = () => {
               </Card>
             ))}
           </div>
-        </section>
+        </Section>
 
         {/* Filters */}
         <section className="mb-8">
@@ -300,50 +265,19 @@ const Abstimmungen = () => {
                 </Card>
               ) : (
                 filteredUpcoming.map((vote) => (
-                  <Card key={vote.id} className="hover:shadow-lg transition-shadow">
-                    <CardHeader>
-                      <div className="flex items-start justify-between">
-                        <div className="flex-grow">
-                          <div className="flex items-center space-x-3 mb-2">
-                            <CardTitle className="text-xl">{vote.title}</CardTitle>
-                            <Badge variant="outline">{vote.level}</Badge>
-                            <Badge variant={vote.importance === "Hoch" ? "default" : "secondary"}>
-                              {vote.importance}
-                            </Badge>
-                          </div>
-                          <div className="flex items-center text-sm text-muted-foreground mb-3">
-                            <Calendar className="w-4 h-4 mr-2" />
-                            {vote.date}
-                          </div>
-                          <CardDescription className="text-base">
-                            {vote.description}
-                          </CardDescription>
-                        </div>
-                        <div className="ml-4">
-                          {getRecommendationBadge(vote.recommendation)}
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="grid lg:grid-cols-2 gap-6">
-                        <div>
-                          <h4 className="font-semibold text-foreground mb-3">Unsere Begründung</h4>
-                          <p className="text-muted-foreground mb-4">{vote.reasoning}</p>
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-foreground mb-3">Wichtige Punkte</h4>
-                          <ul className="space-y-2">
-                            {vote.details.map((detail, index) => (
-                              <li key={index} className="flex items-start">
-                                <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                <span className="text-muted-foreground text-sm">{detail}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  <VoteCard
+                    key={vote.id}
+                    id={vote.id}
+                    title={vote.title}
+                    date={vote.date}
+                    level={vote.level}
+                    description={vote.description}
+                    recommendation={vote.recommendation}
+                    reasoning={vote.reasoning}
+                    details={vote.details}
+                    status="upcoming"
+                    importance={vote.importance}
+                  />
                 ))
               )}
             </div>
@@ -359,59 +293,22 @@ const Abstimmungen = () => {
                 </Card>
               ) : (
                 filteredPast.map((vote) => (
-                  <Card key={vote.id} className="hover:shadow-lg transition-shadow">
-                    <CardHeader>
-                      <div className="flex items-start justify-between">
-                        <div className="flex-grow">
-                          <div className="flex items-center space-x-3 mb-2">
-                            <CardTitle className="text-xl">{vote.title}</CardTitle>
-                            <Badge variant="outline">{vote.level}</Badge>
-                            <Badge variant={vote.importance === "Hoch" ? "default" : "secondary"}>
-                              {vote.importance}
-                            </Badge>
-                          </div>
-                          <div className="flex items-center text-sm text-muted-foreground mb-3">
-                            <Calendar className="w-4 h-4 mr-2" />
-                            {vote.date}
-                          </div>
-                          <CardDescription className="text-base">
-                            {vote.description}
-                          </CardDescription>
-                        </div>
-                        <div className="ml-4 space-y-2">
-                          {getRecommendationBadge(vote.recommendation)}
-                          {getResultBadge(vote.result, vote.svpMatch)}
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="grid lg:grid-cols-3 gap-6">
-                        <div>
-                          <h4 className="font-semibold text-foreground mb-3">Unsere Begründung</h4>
-                          <p className="text-muted-foreground">{vote.reasoning}</p>
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-foreground mb-3">Ergebnis</h4>
-                          <div className="space-y-2">
-                            <p className="text-muted-foreground">
-                              <strong>{vote.result}</strong> mit {vote.resultPercentage}
-                            </p>
-                            {vote.svpMatch && (
-                              <p className="text-sm text-green-600">
-                                ✓ Stimmt mit SVP-Empfehlung überein
-                              </p>
-                            )}
-                          </div>
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-foreground mb-3">Analyse</h4>
-                          <Button variant="outline" size="sm" className="w-full">
-                            Detailanalyse anzeigen
-                          </Button>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  <VoteCard
+                    key={vote.id}
+                    id={vote.id}
+                    title={vote.title}
+                    date={vote.date}
+                    level={vote.level}
+                    description={vote.description}
+                    recommendation={vote.recommendation}
+                    reasoning={vote.reasoning}
+                    details={vote.details}
+                    status="past"
+                    importance={vote.importance}
+                    result={vote.result}
+                    resultPercentage={vote.resultPercentage}
+                    svpMatch={vote.svpMatch}
+                  />
                 ))
               )}
             </div>
@@ -419,33 +316,26 @@ const Abstimmungen = () => {
         </Tabs>
 
         {/* Newsletter Signup */}
-        <div className="bg-primary/5 rounded-lg p-8 text-center mt-16">
-          <h2 className="text-2xl font-bold text-foreground mb-4">
-            Bleiben Sie informiert
-          </h2>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Abonnieren Sie unseren Newsletter und erhalten Sie unsere Abstimmungsempfehlungen 
-            direkt in Ihr E-Mail-Postfach. Fundiert recherchiert und verständlich erklärt.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="/kontakt" 
-              className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-            >
-              Kontakt aufnehmen
-            </a>
-            <a 
-              href="/kontakt" 
-              className="inline-flex items-center justify-center rounded-md border border-input bg-background px-6 py-3 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
-            >
-              Fragen stellen
-            </a>
-          </div>
+        <div className="mt-16">
+          <CTASection
+            title="Bleiben Sie informiert"
+            description="Abonnieren Sie unseren Newsletter und erhalten Sie unsere Abstimmungsempfehlungen direkt in Ihr E-Mail-Postfach. Fundiert recherchiert und verständlich erklärt."
+            variant="default"
+            className="!bg-primary/5 rounded-lg"
+            primaryButton={{
+              text: "Kontakt aufnehmen",
+              href: "/kontakt",
+              variant: "primary"
+            }}
+            secondaryButton={{
+              text: "Fragen stellen",
+              href: "/kontakt",
+              variant: "outline"
+            }}
+          />
         </div>
       </main>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 

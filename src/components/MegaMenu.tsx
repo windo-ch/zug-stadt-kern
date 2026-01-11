@@ -7,7 +7,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
-import { Calendar, Users, FileText, Heart, MessageSquare, Info } from "lucide-react";
+import { Calendar, Users, FileText, Heart, MessageSquare, Info, Vote } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface MegaMenuProps {
@@ -18,6 +18,19 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
   return (
     <NavigationMenu>
       <NavigationMenuList>
+        {/* Wahlen - First Item */}
+        <NavigationMenuItem>
+          <NavigationMenuLink asChild>
+            <Link
+              to="/wahlen"
+              className="text-foreground hover:text-primary font-bold text-base px-4 py-2 rounded-lg hover:bg-accent/20 transition-all duration-200 inline-flex items-center gap-2"
+            >
+              <Vote className="h-4 w-4" />
+              Wahlen
+            </Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+
         {/* Politik & Standpunkte */}
         <NavigationMenuItem>
           <NavigationMenuTrigger className="text-foreground hover:text-primary font-bold text-base px-4 py-2 rounded-lg hover:bg-accent/20 transition-all duration-200">

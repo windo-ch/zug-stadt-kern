@@ -1,20 +1,10 @@
-import { useEffect } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import PageLayout from '@/components/layout/PageLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Phone, Mail, MapPin, User, ExternalLink, Users, Target, Share2, Twitter, Building, Award, Globe } from 'lucide-react';
 
 const PhilipBrunnerProfil = () => {
-  useEffect(() => {
-    document.title = "Philip C. Brunner - Profil - SVP Stadt Zug";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Philip C. Brunner - Kantonsrat, Gemeinderat und Fraktionspräsident der SVP. Konsulent, Berater und diplomierter Hotelier mit umfassender politischer Erfahrung.');
-    }
-  }, []);
 
   const personalData = {
     name: "Philip C. Brunner",
@@ -41,9 +31,10 @@ const PhilipBrunnerProfil = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
+    <PageLayout 
+      title="Philip C. Brunner - Profil - SVP Stadt Zug"
+      description="Philip C. Brunner - Kantonsrat, Gemeinderat und Fraktionspräsident der SVP. Konsulent, Berater und diplomierter Hotelier mit umfassender politischer Erfahrung."
+    >
       <main className="container mx-auto px-4 py-16">
         {/* Breadcrumb */}
         <nav className="mb-8 text-sm">
@@ -61,7 +52,7 @@ const PhilipBrunnerProfil = () => {
           <div className="flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-8 mb-8">
             <div className="w-40 h-40 rounded-2xl overflow-hidden shadow-lg">
               <img
-                src="../assets/vorstand/Philip-Brunner_SVP.png"
+                src="/assets/people/vorstand/Philip-Brunner_SVP.png"
                 alt="Philip Brunner - Mitglied SVP Stadt Zug"
                 className="w-full h-full object-cover"
               />
@@ -358,9 +349,7 @@ const PhilipBrunnerProfil = () => {
           </div>
         </div>
       </main>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 
