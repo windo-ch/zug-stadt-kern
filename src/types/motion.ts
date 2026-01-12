@@ -1,4 +1,4 @@
-export type MotionType = 'Motion' | 'Interpellation' | 'Postulat';
+export type MotionType = 'Motion' | 'Interpellation' | 'Postulat' | 'Kleine Anfrage' | 'Antrag';
 
 export type MotionStatus = 
   | 'zur Überw.' 

@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
 import PageLayout from '@/components/layout/PageLayout';
+import Section from '@/components/layout/Section';
+import SectionHeader from '@/components/layout/SectionHeader';
+import CTASection from '@/components/ctas/CTASection';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Calendar } from 'lucide-react';
+import { Calendar, Users, Building, Shield, DollarSign, FileText, CheckCircle, ExternalLink } from 'lucide-react';
 
 const Stadtrat = () => {
 
@@ -15,7 +18,7 @@ const Stadtrat = () => {
       email: "andre.wicki@stadtzug.ch",
       description: "Als Stadtpräsident führt André Wicki die Exekutive der Stadt Zug und vertritt die bürgerlichen Werte in der Stadtregierung.",
       isPresident: true,
-      image: "./assets/people/vorstand/Andre-Wicki_SVP.jpg",
+      image: "/assets/people/vorstand/Andre-Wicki_SVP.jpg",
       profileLink: "/profil/andre-wicki"
     }
   ];
@@ -40,7 +43,7 @@ const Stadtrat = () => {
       email: "roman.kueng@bluewin.ch",
       description: "Roman Küng ist als erfahrener Gemeinderat und Fraktionschef ein wichtiger Pfeiler der SVP-Politik in Zug.",
       isFraktionschef: true,
-      image: "./assets/people/vorstand/Roman-Kueng_SVP.jpg",
+      image: "/assets/people/profilbilder/roman-kueng.jpg",
       profileLink: "/profil/roman-kueng"
     },
     {
@@ -51,7 +54,7 @@ const Stadtrat = () => {
       email: "phcb@philip-brunner.ch",
       description: "Philip C. Brunner präsidiert die Geschäftsprüfungskommission und bringt seine Expertise in die Gemeindepolitik ein.",
       isFraktionschef: false,
-      image: "./assets/people/vorstand/Philip-Brunner_SVP.png",
+      image: "/assets/people/profilbilder/philip-c-brunner.jpg",
       profileLink: "/profil/philip-brunner"
     },
     {
@@ -62,7 +65,7 @@ const Stadtrat = () => {
       email: "bumbleb@bluewin.ch",
       description: "Marcus Bühler setzt sich als Gemeinderat für pragmatische Lösungen und bürgernahe Politik ein.",
       isFraktionschef: false,
-      image: "./assets/people/vorstand/Marcus-Buehler_SVP.jpg",
+      image: "/assets/people/vorstand/Marcus-Buehler_SVP.jpg",
       profileLink: "/profil/marcus-buehler"
     },
     {
@@ -73,17 +76,19 @@ const Stadtrat = () => {
       email: "rghkswiss@gmail.com", 
       description: "René Gretener vertritt die SVP-Werte im Gemeinderat mit Engagement und Sachverstand.",
       isFraktionschef: false,
-      image: "./assets/people/gemeinderat/Rene-Gretener-SVP.jpg"
+      image: "/assets/people/profilbilder/rene-gretener.jpg",
+      profileLink: "/profil/rene-gretener"
     },
     {
       name: "Manfred Pircher",
       position: "Gemeinderat, Mitglied Bau- und Planungskommission", 
-      address: "Lothenbach 7, 6318 Walchwil",
+      address: "Lotenbach 7, 6318 Walchwil",
       phone: "041 758 17 30",
       email: "manfred.pircher@bluewin.ch",
       description: "«Es ist nicht genug zu wollen, man muss es auch tun!» Bürger von Hütten, ZH. Lehre als Maschinenmechaniker, Offsetmaschinenmonteur. Seit 1993 selbständig. Gründungsmitglied der SVP Kanton Zug und Stadtpartei. Seit 2001 im Grossen Gemeinderat.",
       isFraktionschef: false,
-      image: "./assets/people/gemeinderat/Manfred-Pirchler-SVP.jpg"
+      image: "/assets/people/profilbilder/manfred-pircher.jpg",
+      profileLink: "/profil/manfred-pircher"
     },
     {
       name: "Norbert Schlumpf",
@@ -93,7 +98,7 @@ const Stadtrat = () => {
       email: "n.schlumpf@hsk-telematik.ch",
       description: "1959 in Zug (Zugerberg) geboren. Nach der Sekundarschule Lehre bei der Korporation Zug. Seit 1990 selbstständig im Bereich Fiberoptic tätig. Geschäftsführer mit langjähriger Erfahrung.",
       isFraktionschef: false,
-      image: "./assets/people/gemeinderat/Schlumpf-Norbert-SVP.jpg",
+      image: "/assets/people/profilbilder/norbert-schlumpf.jpg",
       profileLink: "/profil/norbert-schlumpf"
     },
     {
@@ -104,7 +109,7 @@ const Stadtrat = () => {
       email: "alexodermatt@bluewin.ch",
       description: "Mir ist es wichtig auf die Bevölkerung zu hören und ihre Anliegen wahrzunehmen. Darum setz ich mich für Vereine ein. Man muss achten, dass Vereine nicht mit Bürokratie belastet werden sondern sich auf den Einsatz für die Bevölkerung in kulturellen, sportlichen und gesellschaftlichen Belangen konzentrieren können.",
       isFraktionschef: false,
-      image: "./assets/people/gemeinderat/Alex-Odermatt-SVP.jpg",
+      image: "/assets/people/profilbilder/alex-odermatt.jpg",
       profileLink: "/profil/alex-odermatt"
     }
   ];
@@ -113,17 +118,20 @@ const Stadtrat = () => {
     {
       committee: "Finanzkommission",
       members: ["SVP-Vertreter aktiv"],
-      description: "Überwachung der städtischen Finanzen und Budgetplanung"
+      description: "Überwachung der städtischen Finanzen und Budgetplanung",
+      icon: DollarSign
     },
     {
       committee: "Kommission für Stadtentwicklung", 
       members: ["SVP-Vertreter aktiv"],
-      description: "Planung und Entwicklung der Stadt Zug"
+      description: "Planung und Entwicklung der Stadt Zug",
+      icon: Building
     },
     {
       committee: "Sicherheitskommission",
       members: ["SVP-Vertreter aktiv"],
-      description: "Sicherheitsmassnahmen und Kriminalitätsprävention"
+      description: "Sicherheitsmassnahmen und Kriminalitätsprävention",
+      icon: Shield
     }
   ];
 
@@ -138,7 +146,7 @@ const Stadtrat = () => {
           {/* Background Image */}
           <div className="absolute inset-0 w-full h-full z-0">
             <img
-              src="./assets/people/gemeinderat/GGR-2026.png"
+              src="/assets/people/gemeinderat/GGR-2026.png"
               alt="SVP-Fraktion im Grossen Gemeinderat Zug 2026"
               className="w-full h-full object-cover object-top"
             />
@@ -160,17 +168,16 @@ const Stadtrat = () => {
         </section>
 
         {/* Stadtrat (Exekutive) and Fraktionsleitung (Legislative) - Side by Side */}
-        <section className="section-padding bg-background">
-          <div className="container-max">
-            <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                SVP-Fraktion im Grossen Gemeinderat
-              </h1>
-              <p className="text-xl text-foreground/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-                Unsere SVP-Parlamentarier im Grossen Gemeinderat Zug setzen sich täglich für bürgerliche Werte und 
-                die Anliegen der Zuger Bevölkerung ein. Lernen Sie unsere Fraktion kennen.
-              </p>
-            </div>
+        <Section>
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+              SVP-Fraktion im Grossen Gemeinderat
+            </h1>
+            <p className="text-xl text-foreground/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+              Unsere SVP-Parlamentarier im Grossen Gemeinderat Zug setzen sich täglich für bürgerliche Werte und 
+              die Anliegen der Zuger Bevölkerung ein. Lernen Sie unsere Fraktion kennen.
+            </p>
+          </div>
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-12">
               {/* Stadtrat - Executive */}
               <div>
@@ -258,13 +265,15 @@ const Stadtrat = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+        </Section>
 
         {/* Gemeinderat Mitglieder */}
-        <section className="section-padding bg-gradient-to-b from-background to-muted/20">
-          <div className="container-max">
-            <h2 className="text-3xl font-bold text-foreground mb-6 text-center">Gemeinderatsmitglieder</h2>
+        <Section variant="muted">
+          <SectionHeader
+            title="Gemeinderatsmitglieder"
+            alignment="center"
+            className="mb-8"
+          />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {gemeinderat.filter(p => !p.isFraktionschef).map((member, index) => (
                 <Link
@@ -303,99 +312,116 @@ const Stadtrat = () => {
                 </Link>
               ))}
             </div>
-          </div>
-        </section>
+        </Section>
 
         {/* Committee Memberships */}
-        <section className="section-padding">
-          <div className="container-max">
-            <h2 className="text-3xl font-bold text-foreground mb-8">Kommissionsmitgliedschaften</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {committeeMemberships.map((committee, index) => (
-                <Card key={index}>
+        <Section>
+          <SectionHeader
+            title="Kommissionsmitgliedschaften"
+            description="Unsere Vertretung in wichtigen Kommissionen der Stadt Zug"
+            alignment="left"
+            className="mb-8"
+          />
+          <div className="grid md:grid-cols-3 gap-6">
+            {committeeMemberships.map((committee, index) => {
+              const IconComponent = committee.icon;
+              return (
+                <Card key={index} className="hover:shadow-lg transition-shadow border-l-4 border-l-[hsl(var(--svp-green))]">
                   <CardHeader>
-                    <CardTitle className="text-lg">{committee.committee}</CardTitle>
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="p-2 bg-gradient-to-br from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] rounded-lg">
+                        <IconComponent className="w-5 h-5 text-white" />
+                      </div>
+                      <CardTitle className="text-lg">{committee.committee}</CardTitle>
+                    </div>
                     <CardDescription>{committee.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div>
-                      <h4 className="font-semibold text-foreground mb-2">SVP-Mitglieder</h4>
+                      <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                        <Users className="w-4 h-4 text-[hsl(var(--svp-green))]" />
+                        SVP-Mitglieder
+                      </h4>
                       <ul className="space-y-1">
                         {committee.members.map((member, memberIndex) => (
-                          <li key={memberIndex} className="text-sm text-muted-foreground">
-                            • {member}
+                          <li key={memberIndex} className="text-sm text-muted-foreground flex items-center gap-2">
+                            <CheckCircle className="w-3 h-3 text-[hsl(var(--svp-green))]" />
+                            {member}
                           </li>
                         ))}
                       </ul>
                     </div>
                   </CardContent>
                 </Card>
-              ))}
-            </div>
+              );
+            })}
           </div>
-        </section>
+        </Section>
 
         {/* Parliamentary Work Info */}
-        <section className="section-padding">
-          <div className="container-max">
-            <h2 className="text-3xl font-bold text-foreground mb-8">Parlamentarische Arbeit</h2>
-            <Card>
+        <Section variant="muted">
+          <SectionHeader
+            title="Parlamentarische Arbeit"
+            description="Aktuelle Entscheide, Sitzungen und unsere Vorstösse"
+            alignment="center"
+            className="mb-8"
+          />
+          <div className="max-w-4xl mx-auto">
+            <Card className="bg-gradient-to-br from-card to-card/95 border-2 border-border/50 shadow-lg">
               <CardContent className="p-8">
                 <div className="text-center">
-                  <Calendar className="h-12 w-12 mx-auto mb-4 text-primary" />
-                  <h3 className="text-xl font-semibold text-foreground mb-4">
+                  <div className="inline-block p-4 bg-gradient-to-br from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] rounded-2xl shadow-lg mb-6">
+                    <Calendar className="h-10 w-10 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-foreground mb-4">
                     Aktuelle Entscheide und Sitzungen
                   </h3>
-                  <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                  <p className="text-muted-foreground mb-8 max-w-2xl mx-auto text-lg">
                     Die aktuellen Beschlüsse, Traktanden und Sitzungsprotokolle des Grossen Gemeinderats 
                     finden Sie auf der offiziellen Website der Stadt Zug.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a 
-                      href="https://www.stadtzug.ch/politik/grosser-gemeinderat" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-                    >
-                      Zu den aktuellen Sitzungen
-                    </a>
-                    <a 
-                      href="/vorstoesse" 
-                      className="inline-flex items-center justify-center rounded-md border border-input bg-background px-6 py-3 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
-                    >
-                      Unsere Vorstösse
-                    </a>
+                    <Button asChild className="btn-hero">
+                      <a 
+                        href="https://ratsinfo.stadtzug.ch/gremium/1/sessionen#year-2026" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Zu den aktuellen Sitzungen
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                    <Button asChild variant="outline" className="btn-outline">
+                      <a 
+                        href="https://ratsinfo.stadtzug.ch/gremium/1/geschaefte?itemsPerPage=50&search=SVP&ordering=-begin_date&page=1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FileText className="mr-2 h-4 w-4" />
+                        Unsere Vorstösse
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </CardContent>
             </Card>
           </div>
-        </section>
+        </Section>
 
         {/* Contact Section */}
-        <div className="bg-primary/5 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold text-foreground mb-4">
-            Haben Sie Anliegen?
-          </h2>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Unsere Parlamentarier sind für Sie da. Nehmen Sie Kontakt auf, wenn Sie Fragen oder Anregungen haben. 
-            Ihre Meinung ist wichtig für die Gestaltung unserer Stadt.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="/kontakt" 
-              className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-            >
-              Kontakt aufnehmen
-            </a>
-            <a 
-              href="/was-ansteht" 
-              className="inline-flex items-center justify-center rounded-md border border-input bg-background px-6 py-3 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
-            >
-              Aktuelle Termine
-            </a>
-          </div>
-        </div>
+        <CTASection
+          title="Haben Sie Anliegen?"
+          description="Unsere Parlamentarier sind für Sie da. Nehmen Sie Kontakt auf, wenn Sie Fragen oder Anregungen haben. Ihre Meinung ist wichtig für die Gestaltung unserer Stadt."
+          icon={Users}
+          variant="gradient"
+          primaryButton={{
+            text: "Kontakt aufnehmen",
+            href: "/kontakt",
+            variant: "primary",
+            icon: Users
+          }}
+        />
       </main>
     </PageLayout>
   );

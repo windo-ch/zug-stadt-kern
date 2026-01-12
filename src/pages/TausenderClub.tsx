@@ -14,158 +14,59 @@ const TausenderClub = () => {
     >
       
       {/* Hero Section - Combined with intro */}
-      <section className="gradient-hero py-20 md:py-28 px-4">
-        <div className="container-max mx-auto">
+      <section className="relative py-20 md:py-28 px-4 flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'url(/assets/events/1000er-club/guggithal-1000club.avif)'
+          }}
+        >
+          {/* Gradient Overlay - dimmed like homepage */}
+          <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/75 to-background/60"></div>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 container-max mx-auto w-full">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
               <Sparkles className="h-4 w-4 text-yellow-400" />
-              <span className="text-sm font-medium text-white">Exklusiver Förderkreis</span>
+              <span className="text-sm font-medium text-foreground">Exklusiver Förderkreis</span>
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
               1000er Club
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
               Ein bürgerlicher, überparteilicher Zusammenschluss von Persönlichkeiten, 
               welche die SVP Stadt Zug unterstützen.
             </p>
-            <p className="text-lg text-white/80 max-w-2xl mx-auto mb-8">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
               Diese Zuwendungen sind essentiell für die Finanzierung politischer und 
               gesellschaftlicher Aktivitäten der Stadt-Partei.
             </p>
             
-            <Button size="lg" className="btn-hero" asChild>
-              <a href="mailto:sekretariat.stadt@svp-zug.ch">
-                Jetzt beitreten
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="btn-hero" asChild>
+                <Link to="/1000er-club-veranstaltungen">
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Vergangene Veranstaltungen
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Membership Tiers - Clear pricing and benefits */}
-      <Section variant="default">
-        <SectionHeader 
-          title="Mitgliedschaft & Kosten"
-          description="Wählen Sie die Mitgliedschaft, die zu Ihnen passt"
-          alignment="center"
-        />
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
-            {/* Donatoren */}
-            <Card className="card-elevated hover:border-primary/40 transition-all duration-300 group">
-              <CardHeader className="text-center pb-4">
-                <Award className="h-12 w-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                <CardTitle className="text-2xl mb-2">Donatoren</CardTitle>
-                <div className="space-y-1">
-                  <p className="text-3xl font-bold text-primary">ab CHF 1'000</p>
-                  <p className="text-sm text-muted-foreground">pro Jahr</p>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-muted-foreground">Teilnahme an allen 1000er Club Veranstaltungen</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-muted-foreground">Exklusive Tischreden hochkarätiger Gäste</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-muted-foreground">Networking mit Gleichgesinnten</span>
-                  </li>
-                </ul>
-                <Button variant="outline" className="w-full" asChild>
-                  <a href="mailto:sekretariat.stadt@svp-zug.ch">Beitreten</a>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Senatoren - Featured */}
-            <Card className="card-elevated border-2 border-primary/40 hover:border-primary/60 transition-all duration-300 group relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold">
-                  Beliebteste Wahl
-                </span>
-              </div>
-              <CardHeader className="text-center pb-4 pt-6">
-                <Crown className="h-12 w-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                <CardTitle className="text-2xl mb-2">Senatoren</CardTitle>
-                <div className="space-y-1">
-                  <p className="text-3xl font-bold text-primary">ab CHF 5'000</p>
-                  <p className="text-sm text-muted-foreground">pro Jahr</p>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-muted-foreground">Alle Vorteile der Donatoren</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-muted-foreground">Exklusiver Zugang zu Premium-Veranstaltungen</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-muted-foreground">Prioritäre Platzierung bei Events</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-muted-foreground">Persönliche Betreuung</span>
-                  </li>
-                </ul>
-                <Button className="btn-hero w-full" asChild>
-                  <a href="mailto:sekretariat.stadt@svp-zug.ch">Jetzt beitreten</a>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Joker */}
-            <Card className="card-elevated hover:border-primary/40 transition-all duration-300 group">
-              <CardHeader className="text-center pb-4">
-                <Sparkles className="h-12 w-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                <CardTitle className="text-2xl mb-2">Joker-Option</CardTitle>
-                <div className="space-y-1">
-                  <p className="text-3xl font-bold text-primary">CHF 100</p>
-                  <p className="text-sm text-muted-foreground">einmalig pro Jahr</p>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-muted-foreground">Einmalige Teilnahme an einer Veranstaltung</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-muted-foreground">Kennenlernen vor der Mitgliedschaft</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-muted-foreground">Unverbindlich testen</span>
-                  </li>
-                </ul>
-                <Button variant="outline" className="w-full" asChild>
-                  <a href="mailto:sekretariat.stadt@svp-zug.ch">Testen</a>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-      </Section>
-
       {/* Next Event - Prominent */}
-      <Section variant="muted">
+      <Section variant="muted" id="next-event">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
               <div className="inline-flex items-center gap-2 text-primary mb-3">
                 <TrendingUp className="h-5 w-5" />
                 <span className="text-sm font-semibold uppercase tracking-wide">Nächstes Event</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">17. Februar 2026</h2>
             </div>
 
             <Card className="card-elevated border-2 border-primary/20 overflow-hidden">
@@ -189,7 +90,7 @@ const TausenderClub = () => {
                         </div>
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-2xl font-bold mb-3">Restaurant Guggital, Zug</h3>
+                        <h2 className="text-2xl md:text-3xl font-bold mb-3">Restaurant Guggital, Zug</h2>
                         <p className="text-lg text-muted-foreground mb-4">
                           Dienstag, 17. Februar 2026
                         </p>
@@ -251,6 +152,132 @@ const TausenderClub = () => {
             </CardContent>
           </Card>
       </Section>
+
+      {/* Membership Tiers - Clear pricing and benefits */}
+      <Section variant="default">
+        <SectionHeader 
+          title="Mitgliedschaft & Kosten"
+          description="Wählen Sie die Mitgliedschaft, die zu Ihnen passt"
+          alignment="center"
+        />
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
+            {/* Donatoren */}
+            <Card className="card-elevated hover:border-primary/40 transition-all duration-300 group">
+              <CardHeader className="text-center pb-4">
+                <Award className="h-12 w-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                <CardTitle className="text-2xl mb-2">Donatoren</CardTitle>
+                <div className="space-y-1">
+                  <p className="text-3xl font-bold text-primary">ab CHF 1'000</p>
+                  <p className="text-sm text-muted-foreground">pro Jahr</p>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Teilnahme an allen 1000er Club Veranstaltungen</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Exklusive Tischreden hochkarätiger Gäste</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Networking mit Gleichgesinnten</span>
+                  </li>
+                </ul>
+                <Button variant="outline" className="w-full" asChild>
+                  <a 
+                    href={`mailto:sekretariat.stadt@svp-zug.ch?subject=${encodeURIComponent('Beitritt 1000er Club - Donatoren')}&body=${encodeURIComponent('Guten Tag\n\nIch interessiere mich für eine Mitgliedschaft als Donator im 1000er Club der SVP Stadt Zug.\n\nBitte kontaktieren Sie mich für weitere Informationen.\n\nFreundliche Grüsse')}`}
+                  >
+                    Beitreten
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Senatoren - Featured */}
+            <Card className="card-elevated border-2 border-primary/40 hover:border-primary/60 transition-all duration-300 group relative">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold">
+                  Beliebteste Wahl
+                </span>
+              </div>
+              <CardHeader className="text-center pb-4 pt-6">
+                <Crown className="h-12 w-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                <CardTitle className="text-2xl mb-2">Senatoren</CardTitle>
+                <div className="space-y-1">
+                  <p className="text-3xl font-bold text-primary">ab CHF 5'000</p>
+                  <p className="text-sm text-muted-foreground">pro Jahr</p>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Alle Vorteile der Donatoren</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Exklusiver Zugang zu Premium-Veranstaltungen</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Prioritäre Platzierung bei Events</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Persönliche Betreuung</span>
+                  </li>
+                </ul>
+                <Button className="btn-hero w-full" asChild>
+                  <a 
+                    href={`mailto:sekretariat.stadt@svp-zug.ch?subject=${encodeURIComponent('Beitritt 1000er Club - Senatoren')}&body=${encodeURIComponent('Guten Tag\n\nIch interessiere mich für eine Mitgliedschaft als Senator im 1000er Club der SVP Stadt Zug.\n\nBitte kontaktieren Sie mich für weitere Informationen.\n\nFreundliche Grüsse')}`}
+                  >
+                    Jetzt beitreten
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Joker */}
+            <Card className="card-elevated hover:border-primary/40 transition-all duration-300 group">
+              <CardHeader className="text-center pb-4">
+                <Sparkles className="h-12 w-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                <CardTitle className="text-2xl mb-2">Joker-Option</CardTitle>
+                <div className="space-y-1">
+                  <p className="text-3xl font-bold text-primary">CHF 100</p>
+                  <p className="text-sm text-muted-foreground">einmalig pro Jahr</p>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Einmalige Teilnahme an einer Veranstaltung</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Kennenlernen vor der Mitgliedschaft</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Unverbindlich testen</span>
+                  </li>
+                </ul>
+                <Button variant="outline" className="w-full" asChild>
+                  <a 
+                    href={`mailto:sekretariat.stadt@svp-zug.ch?subject=${encodeURIComponent('1000er Club - Joker-Option')}&body=${encodeURIComponent('Guten Tag\n\nIch interessiere mich für die Joker-Option des 1000er Clubs der SVP Stadt Zug und würde gerne einmalig an einer Veranstaltung teilnehmen.\n\nBitte kontaktieren Sie mich für weitere Informationen.\n\nFreundliche Grüsse')}`}
+                  >
+                    Testen
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+      </Section>
+
 
       {/* Contact */}
       <Section variant="muted">

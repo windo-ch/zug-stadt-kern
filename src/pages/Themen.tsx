@@ -1,9 +1,12 @@
 import PageLayout from '@/components/layout/PageLayout';
+import Section from '@/components/layout/Section';
+import SectionHeader from '@/components/layout/SectionHeader';
+import CTASection from '@/components/ctas/CTASection';
 import StatCard from '@/components/content/StatCard';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Shield, Home, Briefcase, GraduationCap, Heart, Car, Users, Target, TrendingUp } from 'lucide-react';
+import { Shield, Home, Briefcase, GraduationCap, Heart, Car, Users, Target, TrendingUp, CheckCircle } from 'lucide-react';
 
 const Themen = () => {
 
@@ -151,62 +154,36 @@ const Themen = () => {
     }
   ];
 
-  const upcomingInitiatives = [
-    {
-      title: "NEIN zur E-ID",
-      description: "Volksinitiative gegen das elektronische Identitätssystem - Schutz der Privatsphäre und digitalen Souveränität",
-      timeline: "Abstimmung 2025",
-      status: "Kampagne",
-      link: "https://e-id-gesetz-nein.ch/"
-    },
-    {
-      title: "NEIN zum Steuer-Schwindel", 
-      description: "Ablehnung des indirekten Gegenvorschlags zur Individualbesteuerungsinitiative der FDP - Schutz der Familien vor mehr Bürokratie und Kosten",
-      timeline: "2025",
-      status: "Kampagne",
-      link: "https://steuer-schwindel-nein.ch/"
-    },
-    {
-      title: "Grenzschutz-Initiative",
-      description: "Volksinitiative «Asylmissbrauch stoppen!» für mehr Sicherheit in unserem Land - Unterschriftensammlung läuft",
-      timeline: "Sammlung läuft",
-      status: "Unterschriftensammlung",
-      link: "https://grenzschutzinitiative.ch/"
-    },
-    {
-      title: "Kompass-Initiative",
-      description: "Initiative für eine souveräne und neutrale Schweiz - Besinnung auf bewährte Werte und Selbstbestimmung",
-      timeline: "Eingereicht",
-      status: "Unterschriftensammlung erfolgreich",
-      link: "https://kompasseuropa.ch/kompass-initiative"
-    }
-  ];
 
   return (
     <PageLayout 
       title="Unsere Themen – SVP Stadt Zug"
       description="Die politischen Schwerpunkte der SVP Stadt Zug: Sicherheit, Wirtschaft, Familie, Bildung und Verkehr für eine lebenswerte Stadt."
     >
-      <main className="container mx-auto px-4 py-16">
+      <main>
         {/* Hero Section */}
-        <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4">Politische Schwerpunkte</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Unsere Themen
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Konkrete Lösungen für die Herausforderungen unserer Stadt. Die SVP Stadt Zug setzt sich 
-            mit klaren Prioritäten für Sicherheit, Wohlstand und eine lebenswerte Zukunft in Zug ein.
-          </p>
-        </div>
+        <Section className="bg-gradient-to-br from-[hsl(var(--svp-green))]/10 via-background to-background">
+          <div className="text-center max-w-4xl mx-auto">
+            <Badge variant="outline" className="mb-6 text-base px-4 py-2 border-[hsl(var(--svp-green))] text-[hsl(var(--svp-green))]">
+              Politische Schwerpunkte
+            </Badge>
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              Unsere Themen
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+              Konkrete Lösungen für die Herausforderungen unserer Stadt. Die SVP Stadt Zug setzt sich 
+              mit klaren Prioritäten für Sicherheit, Wohlstand und eine lebenswerte Zukunft in Zug ein.
+            </p>
+          </div>
+        </Section>
 
         {/* Key Statistics */}
-        <section className="mb-16">
-          <div className="grid md:grid-cols-3 gap-6">
+        <Section>
+          <div className="grid md:grid-cols-3 gap-8">
             {keyStatistics.map((stat, index) => {
-              // Parse number from string (e.g., "200+" -> 200, "30+" -> 30)
+              // Parse number from string (e.g., "200+" -> 200, "30+" -> 30, "85%" -> 85)
               const numValue = parseInt(stat.number.replace(/[^0-9]/g, ''), 10);
-              const suffix = stat.number.includes('+') ? '+' : '';
+              const suffix = stat.number.includes('+') ? '+' : stat.number.includes('%') ? '%' : '';
               return (
                 <StatCard
                   key={index}
@@ -220,133 +197,109 @@ const Themen = () => {
               );
             })}
           </div>
-        </section>
+        </Section>
 
         {/* Main Themes */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Unsere politischen Schwerpunkte</h2>
-          <div className="space-y-8">
-            {themes.map((theme, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <theme.icon className="w-8 h-8 text-primary" />
+        <Section className="bg-gradient-to-b from-background via-muted/20 to-background">
+          <SectionHeader
+            title="Unsere politischen Schwerpunkte"
+            description="Konkrete Massnahmen und bisherige Erfolge in unseren zentralen Themenbereichen"
+            alignment="center"
+            className="mb-16"
+          />
+
+          <div className="space-y-10">
+            {themes.map((theme, index) => {
+              const IconComponent = theme.icon;
+              return (
+                <Card 
+                  key={index} 
+                  className="group relative bg-gradient-to-br from-card to-card/95 border-2 border-border/50 hover:border-[hsl(var(--svp-green))] shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
+                >
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[hsl(var(--svp-green))]/10 to-transparent rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <CardHeader className="relative z-10 pb-6">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex items-center gap-5">
+                        <div className="p-4 bg-gradient-to-br from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] rounded-2xl shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                          <IconComponent className="h-8 w-8 text-white" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-2xl md:text-3xl font-bold text-foreground mb-2 leading-tight">
+                            {theme.title}
+                          </CardTitle>
+                          <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
+                            {theme.description}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex flex-col items-end gap-2">
+                        <Badge className="bg-gradient-to-r from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] text-white border-none">
+                          {theme.priority}
+                        </Badge>
+                        <Badge variant="outline" className="border-[hsl(var(--svp-green))]/30 text-[hsl(var(--svp-green-dark))]">
+                          {theme.status}
+                        </Badge>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  
+                  <CardContent className="relative z-10">
+                    <div className="grid lg:grid-cols-2 gap-10">
+                      <div>
+                        <h4 className="font-bold text-foreground mb-6 text-lg">Unsere Massnahmen</h4>
+                        <ul className="space-y-4">
+                          {theme.points.map((point, pointIndex) => (
+                            <li key={pointIndex} className="flex items-start gap-3 group/item">
+                              <div className="w-2.5 h-2.5 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-md"></div>
+                              <span className="text-muted-foreground leading-relaxed group-hover/item:text-foreground transition-colors">
+                                {point}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                       <div>
-                        <CardTitle className="text-2xl mb-2">{theme.title}</CardTitle>
-                        <CardDescription className="text-base">{theme.description}</CardDescription>
+                        <h4 className="font-bold text-foreground mb-6 text-lg">Bisherige Erfolge</h4>
+                        <ul className="space-y-4">
+                          {theme.achievements.map((achievement, achievementIndex) => (
+                            <li key={achievementIndex} className="flex items-start gap-3 group/item">
+                              <div className="w-2.5 h-2.5 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-md"></div>
+                              <span className="text-muted-foreground leading-relaxed group-hover/item:text-foreground transition-colors">
+                                {achievement}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
-                    <div className="flex flex-col items-end space-y-2">
-                      <Badge variant="secondary">{theme.priority}</Badge>
-                      <Badge variant="outline">{theme.status}</Badge>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid lg:grid-cols-2 gap-8">
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-4">Unsere Massnahmen</h4>
-                      <ul className="space-y-3">
-                        {theme.points.map((point, pointIndex) => (
-                          <li key={pointIndex} className="flex items-start">
-                            <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                            <span className="text-muted-foreground">{point}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-4">Bisherige Erfolge</h4>
-                      <ul className="space-y-3">
-                        {theme.achievements.map((achievement, achievementIndex) => (
-                          <li key={achievementIndex} className="flex items-start">
-                            <span className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                            <span className="text-muted-foreground">{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
-        </section>
+        </Section>
 
-
-        {/* Current Burning Topics - Before CTA */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
-            <Badge variant="destructive" className="mb-4">Aktuell</Badge>
-            <h2 className="text-3xl font-bold text-foreground mb-4">Aktuelle Brennpunkte</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Diese wichtigen Initiativen stehen aktuell im Fokus und benötigen Ihre Unterstützung
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {upcomingInitiatives.map((initiative, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20">
-                <CardHeader className="pb-4">
-                  <div className="flex items-start justify-between mb-3">
-                    <CardTitle className="text-xl font-bold leading-tight pr-2">{initiative.title}</CardTitle>
-                    <Badge variant={
-                      initiative.status === "Kampagne" ? "destructive" : 
-                      initiative.status === "Unterschriftensammlung" ? "warning" :
-                      initiative.status === "Unterschriftensammlung erfolgreich" ? "success" : "outline"
-                    } className="whitespace-nowrap text-xs">
-                      {initiative.status}
-                    </Badge>
-                  </div>
-                  <CardDescription className="text-base leading-relaxed">{initiative.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4 pt-0">
-                  <div className="text-sm text-muted-foreground bg-muted/30 rounded-lg p-3">
-                    <strong>Zeitrahmen:</strong> {initiative.timeline}
-                  </div>
-                  <Button asChild className="w-full h-11 font-semibold">
-                    <a href={initiative.link} target="_blank" rel="noopener noreferrer">
-                      Mehr erfahren & unterstützen
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
 
         {/* Call to Action */}
-        <div className="bg-primary/5 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold text-foreground mb-4">
-            Setzen Sie sich mit uns für diese Themen ein
-          </h2>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Unsere politische Arbeit lebt von dem Engagement unserer Mitglieder und Unterstützer. 
-            Werden Sie Teil unserer Bewegung und helfen Sie mit, Zug noch lebenswerter zu gestalten.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="/mitglied-werden" 
-              className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-            >
-              Mitglied werden
-            </a>
-            <a 
-              href="/vorstoesse" 
-              className="inline-flex items-center justify-center rounded-md border border-input bg-background px-8 py-3 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
-            >
-              Unsere Vorstösse
-            </a>
-            <a 
-              href="/kontakt" 
-              className="inline-flex items-center justify-center rounded-md border border-input bg-background px-8 py-3 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
-            >
-              Kontakt
-            </a>
-          </div>
-        </div>
+        <CTASection
+          title="Setzen Sie sich mit uns für diese Themen ein"
+          description="Unsere politische Arbeit lebt von dem Engagement unserer Mitglieder und Unterstützer. Werden Sie Teil unserer Bewegung und helfen Sie mit, Zug noch lebenswerter zu gestalten."
+          icon={Target}
+          variant="gradient"
+          primaryButton={{
+            text: "Mitglied werden",
+            href: "/mitglied-werden",
+            variant: "primary",
+            icon: Users
+          }}
+          secondaryButton={{
+            text: "Kontakt aufnehmen",
+            href: "/kontakt",
+            variant: "outline",
+            icon: CheckCircle
+          }}
+        />
       </main>
     </PageLayout>
   );

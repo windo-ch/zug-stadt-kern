@@ -31,21 +31,24 @@ const PageLayout = ({
   className = 'min-h-screen bg-background' 
 }: PageLayoutProps) => {
   useEffect(() => {
-    // Set document title
-    document.title = title;
+    // Update existing title tag instead of just setting document.title
+    let titleElement = document.querySelector('title');
+    if (!titleElement) {
+      titleElement = document.createElement('title');
+      document.getElementsByTagName('head')[0].appendChild(titleElement);
+    }
+    titleElement.textContent = title;
     
     // Set meta description if provided
     if (description) {
-      const metaDescription = document.querySelector('meta[name="description"]');
-      if (metaDescription) {
-        metaDescription.setAttribute('content', description);
-      } else {
+      let metaDescription = document.querySelector('meta[name="description"]');
+      if (!metaDescription) {
         // Create meta description tag if it doesn't exist
-        const meta = document.createElement('meta');
-        meta.name = 'description';
-        meta.content = description;
-        document.getElementsByTagName('head')[0].appendChild(meta);
+        metaDescription = document.createElement('meta');
+        metaDescription.setAttribute('name', 'description');
+        document.getElementsByTagName('head')[0].appendChild(metaDescription);
       }
+      metaDescription.setAttribute('content', description);
     }
   }, [title, description]);
 

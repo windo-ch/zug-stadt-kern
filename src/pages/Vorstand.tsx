@@ -14,7 +14,7 @@ const Vorstand = () => {
       position: "Präsident",
       roles: ["Kantonsrat"],
       address: "Eichwaldstrasse 22, 6300 Zug",
-      image: "./assets/people/vorstand/Risi_Adrian_SVP.jpg",
+      image: "./assets/people/profilbilder/adrian-risi.jpg",
       description: "Erfahrener Kantonsrat und Präsident der SVP Stadt Zug mit starkem Engagement für bürgernahe Politik.",
       contact: {
         email: "adrian.risi@risiimmobilienag.ch"
@@ -26,7 +26,7 @@ const Vorstand = () => {
       position: "Vizepräsident",
       roles: ["Mitglied RPK Stadt Zug"],
       address: "Gimenenstrasse 1, 6300 Zug",
-      image: "./assets/people/vorstand/Raphael-Tschan_SVP.jpg",
+      image: "./assets/people/profilbilder/raphael-tschan.jpg",
       description: "Vizepräsident der SVP Stadt Zug und Mitglied der Rechnungsprüfungskommission.",
       contact: {
         email: "rt@raphael-tschan.ch"
@@ -38,7 +38,7 @@ const Vorstand = () => {
       position: "Vizepräsident & GGR Fraktionspräsident",
       roles: ["Gemeinderat"],
       address: "Bernoldweg 9, 6300 Zug",
-      image: "./assets/people/vorstand/Roman-Kueng_SVP.jpg",
+      image: "./assets/people/profilbilder/roman-kueng.jpg",
       description: "Gemeinderat und Fraktionspräsident im Grossen Gemeinderat mit langjähriger politischer Erfahrung.",
       contact: {
         email: "roman.kueng@bluewin.ch"
@@ -50,7 +50,7 @@ const Vorstand = () => {
       position: "Vorstandsmitglied",
       roles: ["Kantonsrat", "Fraktionspräsident", "Gemeinderat"],
       address: "Im Rank 109, 6300 Zug",
-      image: "./assets/people/vorstand/Philip-Brunner_SVP.png",
+      image: "./assets/people/profilbilder/philip-c-brunner.jpg",
       description: "Kantonsrat, Fraktionspräsident und Gemeinderat mit umfassender politischer Erfahrung auf allen Ebenen.",
       contact: {
         email: "phcb@philip-brunner.ch"

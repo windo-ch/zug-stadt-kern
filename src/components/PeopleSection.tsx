@@ -10,34 +10,9 @@ import {
 } from '@/components/ui/carousel';
 
 const PeopleSection = () => {
-  // Combine all people into one array with category
+  // All people with profiles, in the specified order
   const allPeople = [
-    // Vorstand
-    {
-      name: "Adrian Risi",
-      role: "Präsident",
-      position: "Kantonsrat",
-      image: "./assets/people/vorstand/Risi_Adrian_SVP.jpg",
-      profileLink: "/profil/adrian-risi",
-      category: "Vorstand"
-    },
-    {
-      name: "Raphael Tschan",
-      role: "Vizepräsident",
-      position: "Mitglied RPK",
-      image: "./assets/people/vorstand/Raphael-Tschan_SVP.jpg",
-      profileLink: "/profil/raphael-tschan",
-      category: "Vorstand"
-    },
-    {
-      name: "Roman Küng",
-      role: "Vizepräsident",
-      position: "GGR Fraktionspräsident",
-      image: "./assets/people/vorstand/Roman-Kueng_SVP.jpg",
-      profileLink: "/profil/roman-kueng",
-      category: "Vorstand"
-    },
-    // Stadtrat
+    // 1. Andre Wicki (first)
     {
       name: "André Wicki",
       role: "Stadtpräsident",
@@ -46,21 +21,81 @@ const PeopleSection = () => {
       profileLink: "/profil/andre-wicki",
       category: "Stadtrat"
     },
-    // GGR-Fraktion
+    // 2. Adrian Risi
+    {
+      name: "Adrian Risi",
+      role: "Präsident",
+      position: "Kantonsrat",
+      image: "./assets/people/profilbilder/adrian-risi.jpg",
+      profileLink: "/profil/adrian-risi",
+      category: "Vorstand"
+    },
+    // 3. Roman Küng
+    {
+      name: "Roman Küng",
+      role: "Vizepräsident",
+      position: "GGR Fraktionspräsident",
+      image: "./assets/people/profilbilder/roman-kueng.jpg",
+      profileLink: "/profil/roman-kueng",
+      category: "Vorstand"
+    },
+    // 4. Raphael Tschan
+    {
+      name: "Raphael Tschan",
+      role: "Vizepräsident",
+      position: "Mitglied RPK",
+      image: "./assets/people/profilbilder/raphael-tschan.jpg",
+      profileLink: "/profil/raphael-tschan",
+      category: "Vorstand"
+    },
+    // 5. Rest of Vorstand
     {
       name: "Philip C. Brunner",
-      role: "Gemeinderat",
-      position: "Präsident GPK",
-      image: "./assets/people/vorstand/Philip-Brunner_SVP.png",
+      role: "Vorstandsmitglied",
+      position: "Gemeinderat, Präsident GPK",
+      image: "./assets/people/profilbilder/philip-c-brunner.jpg",
       profileLink: "/profil/philip-brunner",
-      category: "GGR-Fraktion"
+      category: "Vorstand"
     },
     {
       name: "Marcus Bühler",
-      role: "Gemeinderat",
-      position: "GGR",
+      role: "Vorstandsmitglied",
+      position: "Gemeinderat",
       image: "./assets/people/vorstand/Marcus-Buehler_SVP.jpg",
       profileLink: "/profil/marcus-buehler",
+      category: "Vorstand"
+    },
+    // 6. Others with profiles
+    {
+      name: "Norbert Schlumpf",
+      role: "Gemeinderat",
+      position: "GGR",
+      image: "./assets/people/profilbilder/norbert-schlumpf.jpg",
+      profileLink: "/profil/norbert-schlumpf",
+      category: "GGR-Fraktion"
+    },
+    {
+      name: "Alex Odermatt",
+      role: "Gemeinderat",
+      position: "Mitglied Spezialkommission",
+      image: "./assets/people/profilbilder/alex-odermatt.jpg",
+      profileLink: "/profil/alex-odermatt",
+      category: "GGR-Fraktion"
+    },
+    {
+      name: "René Gretener",
+      role: "Gemeinderat",
+      position: "GGR",
+      image: "./assets/people/profilbilder/rene-gretener.jpg",
+      profileLink: "/profil/rene-gretener",
+      category: "GGR-Fraktion"
+    },
+    {
+      name: "Manfred Pircher",
+      role: "Gemeinderat",
+      position: "Mitglied Bau- und Planungskommission",
+      image: "./assets/people/profilbilder/manfred-pircher.jpg",
+      profileLink: "/profil/manfred-pircher",
       category: "GGR-Fraktion"
     }
   ];
@@ -93,13 +128,17 @@ const PeopleSection = () => {
                     to={person.profileLink}
                     className="group flex flex-col items-center text-center p-4 hover:scale-105 transition-transform duration-300"
                   >
-                    {/* Circular avatar with green border and shiny effects */}
+                    {/* Circular avatar with green border and shiny effects - fixed size for consistency */}
                     <div className="relative mb-4">
                       <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-[hsl(var(--svp-green))] shadow-lg group-hover:shadow-xl group-hover:border-[hsl(var(--svp-green-light))] transition-all duration-300">
                         <img
                           src={person.image}
                           alt={person.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                          loading="lazy"
+                          width="160"
+                          height="160"
+                          style={{ objectPosition: 'center top' }}
                         />
                         {/* Shiny effect on hover */}
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />

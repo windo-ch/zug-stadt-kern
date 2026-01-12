@@ -35,6 +35,8 @@ const AndreWickiProfil = lazy(() => import("./pages/AndreWickiProfil"));
 const MarcusBuehlerProfil = lazy(() => import("./pages/MarcusBuehlerProfil"));
 const NorbertSchlumpfProfil = lazy(() => import("./pages/NorbertSchlumpfProfil"));
 const AlexOdermattProfil = lazy(() => import("./pages/AlexOdermattProfil"));
+const ReneGretenerProfil = lazy(() => import("./pages/ReneGretenerProfil"));
+const ManfredPircherProfil = lazy(() => import("./pages/ManfredPircherProfil"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Loading component
@@ -88,6 +90,8 @@ const App = () => (
             <Route path="/profil/marcus-buehler" element={<MarcusBuehlerProfil />} />
             <Route path="/profil/norbert-schlumpf" element={<NorbertSchlumpfProfil />} />
             <Route path="/profil/alex-odermatt" element={<AlexOdermattProfil />} />
+            <Route path="/profil/rene-gretener" element={<ReneGretenerProfil />} />
+            <Route path="/profil/manfred-pircher" element={<ManfredPircherProfil />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

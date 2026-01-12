@@ -1,7 +1,12 @@
 import PageLayout from '@/components/layout/PageLayout';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import Section from '@/components/layout/Section';
+import SectionHeader from '@/components/layout/SectionHeader';
+import CTASection from '@/components/ctas/CTASection';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Shield, Heart, Users, Zap, Building, Leaf } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import { Shield, Heart, Users, Zap, Building, Leaf, CheckCircle } from 'lucide-react';
 
 const WofuerWirStehen = () => {
 
@@ -79,70 +84,93 @@ const WofuerWirStehen = () => {
       title="Wofür wir stehen - SVP Stadt Zug"
       description="Unsere Grundsätze und Werte: Sicherheit, Freiheit, Tradition und eine lebenswerte Stadt Zug für alle Bürger."
     >
-      <main className="container mx-auto px-4 py-16">
+      <main>
         {/* Hero Section */}
-        <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4">Unsere Grundsätze</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Wofür wir stehen
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Die SVP Stadt Zug steht für bewährte Werte und eine Politik des gesunden Menschenverstands. 
-            Unsere Grundsätze bilden das Fundament für eine lebenswerte, sichere und prosperierende Stadt.
-          </p>
-        </div>
+        <Section className="bg-gradient-to-br from-[hsl(var(--svp-green))]/10 via-background to-background">
+          <div className="text-center max-w-4xl mx-auto">
+            <Badge variant="outline" className="mb-6 text-base px-4 py-2 border-[hsl(var(--svp-green))] text-[hsl(var(--svp-green))]">
+              Unsere Grundsätze
+            </Badge>
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              Wofür wir stehen
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+              Die SVP Stadt Zug steht für bewährte Werte und eine Politik des gesunden Menschenverstands. 
+              Unsere Grundsätze bilden das Fundament für eine lebenswerte, sichere und prosperierende Stadt.
+            </p>
+          </div>
+        </Section>
 
         {/* Core Values Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {coreValues.map((value, index) => (
-            <Card key={index} className="h-full hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <value.icon className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl">{value.title}</CardTitle>
-                <CardDescription className="text-base">
-                  {value.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  {value.points.map((point, pointIndex) => (
-                    <li key={pointIndex} className="flex items-start">
-                      <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span className="text-sm text-muted-foreground">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <Section className="bg-gradient-to-b from-background via-muted/20 to-background">
+          <SectionHeader
+            title="Unsere Werte & Überzeugungen"
+            description="Die Grundpfeiler unserer politischen Arbeit für eine starke Stadt Zug"
+            alignment="center"
+            className="mb-16"
+          />
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {coreValues.map((value, index) => {
+              const IconComponent = value.icon;
+              return (
+                <Card 
+                  key={index} 
+                  className="group relative bg-gradient-to-br from-card to-card/95 border-2 border-border/50 hover:border-[hsl(var(--svp-green))] shadow-lg hover:shadow-2xl transition-all duration-500 h-full flex flex-col overflow-hidden"
+                >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[hsl(var(--svp-green))]/10 to-transparent rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <CardHeader className="pb-6 relative z-10">
+                    <div className="flex flex-col items-start gap-5 mb-4">
+                      <div className="p-4 bg-gradient-to-br from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] rounded-2xl shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                        <IconComponent className="h-7 w-7 text-white" />
+                      </div>
+                      <CardTitle className="text-2xl font-bold text-foreground leading-tight">
+                        {value.title}
+                      </CardTitle>
+                    </div>
+                    <p className="text-muted-foreground text-base leading-relaxed mb-4">
+                      {value.description}
+                    </p>
+                  </CardHeader>
+                  
+                  <CardContent className="flex-grow pt-0 relative z-10">
+                    <ul className="space-y-3">
+                      {value.points.map((point, pointIndex) => (
+                        <li key={pointIndex} className="flex items-start gap-3 group/item">
+                          <div className="w-2.5 h-2.5 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-md"></div>
+                          <span className="text-sm text-muted-foreground leading-relaxed group-hover/item:text-foreground transition-colors">
+                            {point}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </Section>
 
         {/* Call to Action */}
-        <div className="bg-primary/5 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold text-foreground mb-4">
-            Gemeinsam für eine starke Stadt Zug
-          </h2>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Unsere Werte sind nicht nur Worte, sondern Leitlinien für konkretes politisches Handeln. 
-            Werden Sie Teil unserer Bewegung für eine lebenswerte Zukunft in Zug.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="/mitglied-werden" 
-              className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-            >
-              Mitglied werden
-            </a>
-            <a 
-              href="/kontakt" 
-              className="inline-flex items-center justify-center rounded-md border border-input bg-background px-6 py-3 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
-            >
-              Kontakt aufnehmen
-            </a>
-          </div>
-        </div>
+        <CTASection
+          title="Gemeinsam für eine starke Stadt Zug"
+          description="Unsere Werte sind nicht nur Worte, sondern Leitlinien für konkretes politisches Handeln. Werden Sie Teil unserer Bewegung für eine lebenswerte Zukunft in Zug."
+          icon={Heart}
+          variant="gradient"
+          primaryButton={{
+            text: "Mitglied werden",
+            href: "/mitglied-werden",
+            variant: "primary",
+            icon: Users
+          }}
+          secondaryButton={{
+            text: "Kontakt aufnehmen",
+            href: "/kontakt",
+            variant: "outline",
+            icon: CheckCircle
+          }}
+        />
       </main>
     </PageLayout>
   );

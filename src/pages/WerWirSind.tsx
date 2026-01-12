@@ -1,9 +1,10 @@
 import PageLayout from '@/components/layout/PageLayout';
+import Section from '@/components/layout/Section';
 import StatCard from '@/components/content/StatCard';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Users, Target, Heart, Award, MapPin, Calendar, Phone, Mail, ExternalLink } from 'lucide-react';
+import { Users, Target, Heart, Award, Phone, Mail, ExternalLink } from 'lucide-react';
 
 const WerWirSind = () => {
 
@@ -35,7 +36,8 @@ const WerWirSind = () => {
       position: "Kantonsrat",
       phone: "079 929 23 72",
       email: "gb@gregor-bruhin.ch",
-      description: "Gregor R. Bruhin vertritt die SVP-Werte auf kantonaler Ebene und setzt sich für die Anliegen der Region Zug ein."
+      description: "Gregor R. Bruhin vertritt die SVP-Werte auf kantonaler Ebene und setzt sich für die Anliegen der Region Zug ein.",
+      image: "/assets/people/profilbilder/gregor-bruhin.jpg"
     }
   ];
 
@@ -46,81 +48,92 @@ const WerWirSind = () => {
       position: "Kulturkommission",
       phone: "",
       email: "",
-      description: "Daniel Gramm Schneider engagiert sich in der Kulturkommission für ein vielfältiges kulturelles Angebot in Zug."
+      description: "Daniel Gramm Schneider engagiert sich in der Kulturkommission für ein vielfältiges kulturelles Angebot in Zug.",
+      image: "/assets/people/profilbilder/daniel-gramm.jpg"
     },
     {
       name: "Raphael Tschan",
       position: "Mitglied der RPK",
       phone: "",
       email: "rt@raphael-tschan.ch",
-      description: "Raphael Tschan bringt seine Expertise in die Rechnungsprüfungskommission ein."
+      description: "Raphael Tschan bringt seine Expertise in die Rechnungsprüfungskommission ein.",
+      image: "/assets/people/profilbilder/raphael-tschan.jpg"
     }
   ];
 
-  // General Members and Supporters
+  // General Members and Supporters - with image mapping
   const parteimitglieder = [
     {
       name: "Alex Odermatt",
       phone: "041 766 67 93",
       email: "alexodermatt@bluewin.ch",
-      description: "Alex Odermatt unterstützt die SVP-Politik mit seinem Engagement für die Partei."
+      description: "Alex Odermatt unterstützt die SVP-Politik mit seinem Engagement für die Partei.",
+      image: "/assets/people/profilbilder/alex-odermatt.jpg"
     },
     {
       name: "Norbert Schlumpf",
       phone: "",
       email: "n.schlumpf@hsk-telematik.ch",
-      description: "Norbert Schlumpf bringt seine Fachkompetenz in die Parteiarbeit ein."
+      description: "Norbert Schlumpf bringt seine Fachkompetenz in die Parteiarbeit ein.",
+      image: "/assets/people/profilbilder/norbert-schlumpf.jpg"
     },
     {
       name: "Thomas Dubach",
       phone: "041 558 63 43",
       email: "thomasdubach@mac.com",
-      description: "Thomas Dubach ist ein aktives Mitglied der SVP Stadt Zug."
+      description: "Thomas Dubach ist ein aktives Mitglied der SVP Stadt Zug.",
+      image: "/assets/people/profilbilder/thomas-dubach.jpg"
     },
     {
       name: "Alessandro Ehrbar",
       phone: "079 796 97 13",
       email: "ale_ehrbar@hotmail.com",
-      description: "Alessandro Ehrbar unterstützt die Partei mit seinem Engagement."
+      description: "Alessandro Ehrbar unterstützt die Partei mit seinem Engagement.",
+      image: "/assets/people/profilbilder/alessandro-ehrbar.jpg"
     },
     {
       name: "Alexandra Gretener",
       phone: "",
       email: "alexandra.gretener@gmail.com",
-      description: "Alexandra Gretener ist eine engagierte Unterstützerin der SVP."
+      description: "Alexandra Gretener ist eine engagierte Unterstützerin der SVP.",
+      image: "/assets/people/profilbilder/alexandra-gretener.jpg"
     },
     {
       name: "Morten Hannesbo",
       phone: "",
       email: "morten.hannesbo@mac.com",
-      description: "Morten Hannesbo bringt sich aktiv in die Parteiarbeit ein."
+      description: "Morten Hannesbo bringt sich aktiv in die Parteiarbeit ein.",
+      image: "/assets/people/profilbilder/moren-hannesbo.jpg"
     },
     {
       name: "Doris Hefti",
       phone: "041 768 72 61",
       email: "",
-      description: "Doris Hefti ist eine treue Unterstützerin der SVP Stadt Zug."
+      description: "Doris Hefti ist eine treue Unterstützerin der SVP Stadt Zug.",
+      image: null // No image available
     },
     {
       name: "Dominique Messmer",
       phone: "076 518 11 66",
       email: "domessmer@bluewin.ch",
-      description: "Dominique Messmer engagiert sich für die SVP-Werte."
+      description: "Dominique Messmer engagiert sich für die SVP-Werte.",
+      image: "/assets/people/profilbilder/dominique-messmer.jpg"
     },
     {
       name: "Jürg Messmer",
       phone: "076 587 11 33",
       email: "jumessmer@gmail.com",
-      description: "Jürg Messmer unterstützt die Partei mit seinem Einsatz."
+      description: "Jürg Messmer unterstützt die Partei mit seinem Einsatz.",
+      image: "/assets/people/profilbilder/juerg-messmer.jpg"
     },
     {
       name: "Bruno Zimmermann",
       phone: "041 552 00 22",
       email: "bruno.zimmermann@mail.ch",
-      description: "Bruno Zimmermann ist ein loyales Mitglied der SVP Stadt Zug."
+      description: "Bruno Zimmermann ist ein loyales Mitglied der SVP Stadt Zug.",
+      image: "/assets/people/profilbilder/bruno-zimmermann.jpg"
     }
   ];
-
 
   const organizationStats = [
     {
@@ -143,31 +156,33 @@ const WerWirSind = () => {
     }
   ];
 
-
   return (
     <PageLayout 
       title="Wer wir sind – SVP Stadt Zug"
       description="Die SVP Stadt Zug - eine Volkspartei mit langer Tradition und klaren Werten. Lernen Sie unser Team und unsere Vision für Zug kennen."
     >
-      <main className="container mx-auto px-4 py-16">
+      <main>
         {/* Hero Section */}
-        <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4">Unsere Partei</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Wer wir sind
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Die SVP Stadt Zug ist eine Volkspartei mit langer Tradition und klaren Werten. 
-            Wir setzen uns seit über 30 Jahren für eine bürgernahe Politik ein, die den Menschen 
-            in Zug dient und unsere Stadt lebenswert erhält.
-          </p>
-        </div>
+        <Section className="bg-gradient-to-br from-[hsl(var(--svp-green))]/10 via-background to-background">
+          <div className="text-center max-w-4xl mx-auto">
+            <Badge variant="outline" className="mb-6 text-base px-4 py-2 border-[hsl(var(--svp-green))] text-[hsl(var(--svp-green))]">
+              Unsere Partei
+            </Badge>
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              Wer wir sind
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+              Die SVP Stadt Zug ist eine Volkspartei mit langer Tradition und klaren Werten. 
+              Wir setzen uns seit über 30 Jahren für eine bürgernahe Politik ein, die den Menschen 
+              in Zug dient und unsere Stadt lebenswert erhält.
+            </p>
+          </div>
+        </Section>
 
         {/* Statistics */}
-        <section className="mb-16">
+        <Section>
           <div className="grid md:grid-cols-3 gap-6">
             {organizationStats.map((stat, index) => {
-              // Parse number from string (e.g., "200+" -> 200, "30+" -> 30, "1" -> 1)
               const numValue = parseInt(stat.number.replace(/[^0-9]/g, ''), 10);
               const suffix = stat.number.includes('+') ? '+' : '';
               return (
@@ -183,10 +198,10 @@ const WerWirSind = () => {
               );
             })}
           </div>
-        </section>
+        </Section>
 
         {/* Our Values */}
-        <section className="mb-16">
+        <Section>
           <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Unsere Werte</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {partyValues.map((value, index) => (
@@ -202,24 +217,39 @@ const WerWirSind = () => {
               </Card>
             ))}
           </div>
-        </section>
+        </Section>
 
         {/* Cantonal Level */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Kantonsebene</h2>
-          <div className="space-y-6">
+        <Section>
+          <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Kantonsebene</h2>
+          <div className="space-y-6 max-w-3xl mx-auto">
             {kantonsrat.map((person, index) => (
-              <Card key={index} className="border-l-4 border-l-secondary hover:shadow-lg transition-shadow">
+              <Card key={index} className="border-l-4 border-l-primary hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-start space-x-4">
-                    <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center">
-                      <span className="text-lg font-bold text-secondary">
-                        {person.name.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    </div>
+                    {person.image ? (
+                      <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-primary/20 shadow-md flex-shrink-0">
+                        <img
+                          src={person.image}
+                          alt={person.name}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                          }}
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span className="text-lg font-bold text-primary">
+                          {person.name.split(' ').map(n => n[0]).join('')}
+                        </span>
+                      </div>
+                    )}
                     <div className="flex-grow">
                       <CardTitle className="text-xl mb-1">{person.name}</CardTitle>
-                      <Badge className="bg-secondary text-secondary-foreground mb-2">{person.position}</Badge>
+                      <Badge className="bg-primary text-primary-foreground mb-2">{person.position}</Badge>
                       <CardDescription className="text-sm">
                         {person.description}
                       </CardDescription>
@@ -228,38 +258,57 @@ const WerWirSind = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                    <div className="flex items-center">
-                      <Phone className="w-4 h-4 mr-2 text-muted-foreground" />
-                      <a href={`tel:${person.phone.replace(/\s/g, '')}`} className="text-primary hover:text-primary/80 transition-colors">
-                        {person.phone}
-                      </a>
-                    </div>
-                    <div className="flex items-center">
-                      <Mail className="w-4 h-4 mr-2 text-muted-foreground" />
-                      <a href={`mailto:${person.email}`} className="text-primary hover:text-primary/80 transition-colors">
-                        {person.email}
-                      </a>
-                    </div>
+                    {person.phone && (
+                      <div className="flex items-center">
+                        <Phone className="w-4 h-4 mr-2 text-muted-foreground" />
+                        <a href={`tel:${person.phone.replace(/\s/g, '')}`} className="text-primary hover:text-primary/80 transition-colors">
+                          {person.phone}
+                        </a>
+                      </div>
+                    )}
+                    {person.email && (
+                      <div className="flex items-center">
+                        <Mail className="w-4 h-4 mr-2 text-muted-foreground" />
+                        <a href={`mailto:${person.email}`} className="text-primary hover:text-primary/80 transition-colors">
+                          {person.email}
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
-        </section>
+        </Section>
 
         {/* Commissions */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Kommissionen</h2>
-          <div className="grid lg:grid-cols-2 gap-6">
+        <Section>
+          <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Kommissionen</h2>
+          <div className="grid lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {kommissionen.map((person, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-start space-x-4">
-                    <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center">
-                      <span className="text-sm font-bold text-primary">
-                        {person.name.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    </div>
+                    {person.image ? (
+                      <div className="w-16 h-16 rounded-full overflow-hidden border-4 border-primary/20 shadow-md flex-shrink-0">
+                        <img
+                          src={person.image}
+                          alt={person.name}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                          }}
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span className="text-sm font-bold text-primary">
+                          {person.name.split(' ').map(n => n[0]).join('')}
+                        </span>
+                      </div>
+                    )}
                     <div className="flex-grow">
                       <CardTitle className="text-lg mb-1">{person.name}</CardTitle>
                       <Badge variant="secondary" className="mb-2">{person.position}</Badge>
@@ -291,83 +340,96 @@ const WerWirSind = () => {
               </Card>
             ))}
           </div>
-        </section>
+        </Section>
 
         {/* Party Members */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Weitere Parteimitglieder</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <Section>
+          <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Weitere Parteimitglieder</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {parteimitglieder.map((person, index) => (
-              <Card key={index} className="hover:shadow-md transition-shadow">
-                <CardContent className="p-4">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-xs font-bold text-primary">
-                        {person.name.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-sm leading-tight mb-2">{person.name}</h3>
-                      <p className="text-xs text-muted-foreground mb-3">{person.description}</p>
-                      
-                      <div className="space-y-1 text-xs">
-                        {person.phone && (
-                          <div className="flex items-center">
-                            <Phone className="w-3 h-3 mr-1 text-muted-foreground" />
-                            <a href={`tel:${person.phone.replace(/\s/g, '')}`} className="text-primary hover:text-primary/80 transition-colors">
-                              {person.phone}
-                            </a>
-                          </div>
-                        )}
-                        {person.email && (
-                          <div className="flex items-center">
-                            <Mail className="w-3 h-3 mr-1 text-muted-foreground" />
-                            <a href={`mailto:${person.email}`} className="text-primary hover:text-primary/80 transition-colors text-xs break-all">
-                              {person.email}
-                            </a>
-                          </div>
-                        )}
+              <Card key={index} className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4 mb-4">
+                    {person.image ? (
+                      <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-primary/20 shadow-md flex-shrink-0">
+                        <img
+                          src={person.image}
+                          alt={person.name}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                          }}
+                        />
                       </div>
+                    ) : (
+                      <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span className="text-lg font-bold text-primary">
+                          {person.name.split(' ').map(n => n[0]).join('')}
+                        </span>
+                      </div>
+                    )}
+                    <div className="flex-grow min-w-0">
+                      <h3 className="font-semibold text-lg leading-tight mb-2">{person.name}</h3>
                     </div>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-4">{person.description}</p>
+                  
+                  <div className="space-y-2 text-sm">
+                    {person.phone && (
+                      <div className="flex items-center">
+                        <Phone className="w-4 h-4 mr-2 text-muted-foreground flex-shrink-0" />
+                        <a href={`tel:${person.phone.replace(/\s/g, '')}`} className="text-primary hover:text-primary/80 transition-colors">
+                          {person.phone}
+                        </a>
+                      </div>
+                    )}
+                    {person.email && (
+                      <div className="flex items-center">
+                        <Mail className="w-4 h-4 mr-2 text-muted-foreground flex-shrink-0" />
+                        <a href={`mailto:${person.email}`} className="text-primary hover:text-primary/80 transition-colors text-sm break-all">
+                          {person.email}
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
-        </section>
-
+        </Section>
 
         {/* Call to Action */}
-        <div className="bg-primary/5 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold text-foreground mb-4">
-            Werden Sie Teil unserer Bewegung
-          </h2>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Die SVP Stadt Zug lebt von dem Engagement ihrer Mitglieder. Bringen Sie sich ein, 
-            gestalten Sie mit und helfen Sie uns dabei, Zug noch lebenswerter zu machen.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="/mitglied-werden" 
-              className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-            >
-              Mitglied werden
-            </a>
-            <a 
-              href="/kontakt" 
-              className="inline-flex items-center justify-center rounded-md border border-input bg-background px-8 py-3 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
-            >
-              Kontakt aufnehmen
-            </a>
-            <a 
-              href="https://www.svp-zug.ch/termine/" target="_blank" rel="noopener noreferrer" 
-              className="inline-flex items-center justify-center rounded-md border border-input bg-background px-8 py-3 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
-            >
-              <ExternalLink className="w-4 h-4 mr-2" />
-              Veranstaltungen
-            </a>
+        <Section>
+          <div className="bg-primary/5 rounded-lg p-8 text-center max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold text-foreground mb-4">
+              Werden Sie Teil unserer Bewegung
+            </h2>
+            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Die SVP Stadt Zug lebt von dem Engagement ihrer Mitglieder. Bringen Sie sich ein, 
+              gestalten Sie mit und helfen Sie uns dabei, Zug noch lebenswerter zu machen.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button className="btn-hero" asChild>
+                <a href="/mitglied-werden">
+                  Mitglied werden
+                </a>
+              </Button>
+              <Button variant="outline" className="btn-outline" asChild>
+                <a href="/kontakt">
+                  Kontakt aufnehmen
+                </a>
+              </Button>
+              <Button variant="outline" className="btn-outline" asChild>
+                <a href="https://www.svp-zug.ch/termine/" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Veranstaltungen
+                </a>
+              </Button>
+            </div>
           </div>
-        </div>
+        </Section>
       </main>
     </PageLayout>
   );
