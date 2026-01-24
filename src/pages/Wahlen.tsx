@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
+import MitmachenSection from '@/components/MitmachenSection';
 
 const Wahlen = () => {
   const [daysRemaining, setDaysRemaining] = useState(0);
@@ -483,6 +484,8 @@ const Wahlen = () => {
           </div>
         </Section>
 
+        {/* Mitmachen Section */}
+        <MitmachenSection />
 
         {/* Animated Flag */}
         <section className="section-padding bg-muted/30">

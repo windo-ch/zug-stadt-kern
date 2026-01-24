@@ -167,12 +167,6 @@ const Vorstand = () => {
                     {/* Subtle overlay on hover */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
-                  {/* Badge for president - only one, not green */}
-                  {member.position === "Präsident" && (
-                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-muted text-foreground text-xs font-semibold rounded-full whitespace-nowrap shadow-md border border-border">
-                      Präsident
-                    </div>
-                  )}
                 </div>
                 
                 {/* Name */}

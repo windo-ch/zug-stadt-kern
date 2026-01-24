@@ -7,7 +7,7 @@ const MitmachenSection = () => {
       title: "Mitglied werden",
       description: "Werden Sie Teil unserer Partei",
       link: "/mitglied-werden",
-      image: "/assets/events/general/Edit_SVP_Zug00139-min-scaled.jpg"
+      image: "/assets/events/general/mitglied-werden.jpg"
     },
     {
       title: "Bei Aktionen helfen",
