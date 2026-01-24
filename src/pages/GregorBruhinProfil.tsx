@@ -17,7 +17,6 @@ const GregorBruhinProfil = () => {
     born: "1993",
     address: "Rosenbergweg 5",
     location: "6300 Zug",
-    mobile: "079 929 23 72",
     email: "gb@gregor-bruhin.ch",
     maritalStatus: "ledig",
     profession: "Unternehmer",
