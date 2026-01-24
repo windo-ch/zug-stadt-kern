@@ -75,7 +75,7 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">E-Mail</h4>
                     <p className="text-muted-foreground">
-                      sekretariat@svp-zug.ch
+                      sekretariat.stadt@svp-zug.ch
                     </p>
                   </div>
                 </div>

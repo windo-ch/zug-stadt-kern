@@ -152,11 +152,23 @@ const WofuerWirStehen = () => {
           </div>
         </Section>
 
+        {/* Animated Logo Section */}
+        <section className="section-padding bg-muted/30">
+          <div className="container-max">
+            <div className="flex justify-center py-2">
+              <img
+                src="/logo/svp-stadt-zug-flag-animated-small.gif"
+                alt="SVP Stadt Zug Flagge"
+                className="h-[150px] w-auto"
+              />
+            </div>
+          </div>
+        </section>
+
         {/* Call to Action */}
         <CTASection
           title="Gemeinsam für eine starke Stadt Zug"
-          description="Unsere Werte sind nicht nur Worte, sondern Leitlinien für konkretes politisches Handeln. Werden Sie Teil unserer Bewegung für eine lebenswerte Zukunft in Zug."
-          icon={Heart}
+          description="Unsere Werte sind nicht nur Worte, sondern Leitlinien für konkretes politisches Handeln. Werden Sie Teil unserer Partei für eine lebenswerte Zukunft in Zug."
           variant="gradient"
           primaryButton={{
             text: "Mitglied werden",

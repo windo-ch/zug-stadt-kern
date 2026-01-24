@@ -26,7 +26,7 @@ const HeroSection = () => {
                 Mir lieferet
               </span>{' '}
               <span className="bg-gradient-to-r from-[hsl(var(--svp-green))] via-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] bg-clip-text text-transparent">
-                – für eusi Stadt Zug
+                – für eine starke Stadt Zug
               </span>
             </h1>
 

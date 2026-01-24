@@ -11,7 +11,7 @@ import Footer from '@/components/Footer';
 const Index = () => {
   useEffect(() => {
     // Update page title and meta description for SEO
-    document.title = "SVP Stadt Zug – Mir lieferet für eusi Stadt";
+    document.title = "SVP Stadt Zug – Mir lieferet für eine starke Stadt Zug";
     
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -39,7 +39,7 @@ const Index = () => {
         "@type": "ContactPoint",
         "telephone": "+41-41-123-45-67",
         "contactType": "customer service",
-        "email": "sekretariat@svp-zug.ch"
+        "email": "sekretariat.stadt@svp-zug.ch"
       }
     };
 

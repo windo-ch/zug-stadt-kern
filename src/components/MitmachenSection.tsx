@@ -5,18 +5,18 @@ const MitmachenSection = () => {
   const engagementOptions = [
     {
       title: "Mitglied werden",
-      description: "Werden Sie Teil unserer Bewegung",
+      description: "Werden Sie Teil unserer Partei",
       link: "/mitglied-werden",
       image: "/assets/events/general/Edit_SVP_Zug00139-min-scaled.jpg"
     },
     {
-      title: "Bi Aktione helfe",
+      title: "Bei Aktionen helfen",
       description: "Engagieren Sie sich aktiv",
       link: "/kontakt",
-      image: "/assets/events/general/svp-stand.jpg"
+      image: "/assets/mirlieferet-images/svp-bei-aktionen-helfen.jpg"
     },
     {
-      title: "Spende",
+      title: "Spenden",
       description: "Unterstützen Sie unsere Arbeit",
       link: "/spenden",
       image: "/assets/events/general/Edit_SVP_Zug00390-min-scaled.jpg"
@@ -28,10 +28,10 @@ const MitmachenSection = () => {
       <div className="container-max">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-6 text-foreground">
-            Mach mit!
+            Mitmachen
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Mir bruched dich. Engagieren Sie sich für eine starke Stadt Zug.
+            Engagieren Sie sich für eine starke Stadt Zug.
           </p>
         </div>
 

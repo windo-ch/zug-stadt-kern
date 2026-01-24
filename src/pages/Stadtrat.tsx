@@ -18,7 +18,7 @@ const Stadtrat = () => {
       email: "andre.wicki@stadtzug.ch",
       description: "Als Stadtpräsident führt André Wicki die Exekutive der Stadt Zug und vertritt die bürgerlichen Werte in der Stadtregierung.",
       isPresident: true,
-      image: "/assets/people/vorstand/Andre-Wicki_SVP.jpg",
+      image: "/assets/people/profilbilder/Andre-Wicki_SVP.jpg",
       profileLink: "/profil/andre-wicki"
     }
   ];
@@ -39,7 +39,7 @@ const Stadtrat = () => {
       name: "Roman Küng",
       position: "Gemeinderat",
       address: "Bernoldweg 9, 6300 Zug",
-      phone: "041 750 10 55",
+      phone: "079 329 13 33",
       email: "roman.kueng@bluewin.ch",
       description: "Roman Küng ist als erfahrener Gemeinderat und Fraktionschef ein wichtiger Pfeiler der SVP-Politik in Zug.",
       isFraktionschef: true,
@@ -48,7 +48,7 @@ const Stadtrat = () => {
     },
     {
       name: "Philip C. Brunner",
-      position: "Gemeinderat, Präsident GPK Stadt Zug",
+      position: "Präsident GPK Stadt Zug",
       address: "Im Rank 109, 6300 Zug", 
       phone: "079 398 4 396",
       email: "phcb@philip-brunner.ch",
@@ -58,19 +58,19 @@ const Stadtrat = () => {
       profileLink: "/profil/philip-brunner"
     },
     {
-      name: "Marcus Bühler",
-      position: "Gemeinderat",
+      name: "Marcus H. Bühler",
+      position: "Vorstand",
       address: "Bahnhofstrasse 27, 6300 Zug",
       phone: "",
       email: "bumbleb@bluewin.ch",
-      description: "Marcus Bühler setzt sich als Gemeinderat für pragmatische Lösungen und bürgernahe Politik ein.",
+      description: "Marcus H. Bühler setzt sich als Gemeinderat für pragmatische Lösungen und bürgernahe Politik ein.",
       isFraktionschef: false,
       image: "/assets/people/vorstand/Marcus-Buehler_SVP.jpg",
       profileLink: "/profil/marcus-buehler"
     },
     {
       name: "René Gretener",
-      position: "Gemeinderat",
+      position: "",
       address: "Lüssirainstrasse 1, 6300 Zug",
       phone: "",
       email: "rghkswiss@gmail.com", 
@@ -81,7 +81,7 @@ const Stadtrat = () => {
     },
     {
       name: "Manfred Pircher",
-      position: "Gemeinderat, Mitglied Bau- und Planungskommission", 
+      position: "Mitglied Bau- und Planungskommission", 
       address: "Lotenbach 7, 6318 Walchwil",
       phone: "041 758 17 30",
       email: "manfred.pircher@bluewin.ch",
@@ -92,7 +92,7 @@ const Stadtrat = () => {
     },
     {
       name: "Norbert Schlumpf",
-      position: "Gemeinderat",
+      position: "",
       address: "Chamerstrasse 36, 6300 Zug",
       phone: "079 208 79 40",
       email: "n.schlumpf@hsk-telematik.ch",
@@ -103,7 +103,7 @@ const Stadtrat = () => {
     },
     {
       name: "Alex Odermatt",
-      position: "Gemeinderat, Mitglied Spezialkommission",
+      position: "Mitglied Bau- und Planungskommission",
       address: "St. Johannesstrasse 4, 6300 Zug",
       phone: "041 710 18 14",
       email: "alexodermatt@bluewin.ch",
@@ -114,26 +114,6 @@ const Stadtrat = () => {
     }
   ];
 
-  const committeeMemberships = [
-    {
-      committee: "Finanzkommission",
-      members: ["SVP-Vertreter aktiv"],
-      description: "Überwachung der städtischen Finanzen und Budgetplanung",
-      icon: DollarSign
-    },
-    {
-      committee: "Kommission für Stadtentwicklung", 
-      members: ["SVP-Vertreter aktiv"],
-      description: "Planung und Entwicklung der Stadt Zug",
-      icon: Building
-    },
-    {
-      committee: "Sicherheitskommission",
-      members: ["SVP-Vertreter aktiv"],
-      description: "Sicherheitsmassnahmen und Kriminalitätsprävention",
-      icon: Shield
-    }
-  ];
 
   return (
     <PageLayout 
@@ -268,14 +248,21 @@ const Stadtrat = () => {
         </Section>
 
         {/* Gemeinderat Mitglieder */}
-        <Section variant="muted">
+        <Section variant="muted" id="gemeinderat">
           <SectionHeader
             title="Gemeinderatsmitglieder"
             alignment="center"
             className="mb-8"
           />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {gemeinderat.filter(p => !p.isFraktionschef).map((member, index) => (
+              {gemeinderat
+                .filter(p => !p.isFraktionschef)
+                .sort((a, b) => {
+                  const aLastName = a.name.split(' ').pop() || '';
+                  const bLastName = b.name.split(' ').pop() || '';
+                  return aLastName.localeCompare(bLastName);
+                })
+                .map((member, index) => (
                 <Link
                   key={index}
                   to={member.profileLink || "#"}
@@ -306,56 +293,14 @@ const Stadtrat = () => {
                   </h3>
                   
                   {/* Position */}
-                  <p className="text-sm font-semibold text-primary">
-                    {member.position}
-                  </p>
+                  {member.position && (
+                    <p className="text-sm font-semibold text-primary">
+                      {member.position}
+                    </p>
+                  )}
                 </Link>
               ))}
             </div>
-        </Section>
-
-        {/* Committee Memberships */}
-        <Section>
-          <SectionHeader
-            title="Kommissionsmitgliedschaften"
-            description="Unsere Vertretung in wichtigen Kommissionen der Stadt Zug"
-            alignment="left"
-            className="mb-8"
-          />
-          <div className="grid md:grid-cols-3 gap-6">
-            {committeeMemberships.map((committee, index) => {
-              const IconComponent = committee.icon;
-              return (
-                <Card key={index} className="hover:shadow-lg transition-shadow border-l-4 border-l-[hsl(var(--svp-green))]">
-                  <CardHeader>
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="p-2 bg-gradient-to-br from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] rounded-lg">
-                        <IconComponent className="w-5 h-5 text-white" />
-                      </div>
-                      <CardTitle className="text-lg">{committee.committee}</CardTitle>
-                    </div>
-                    <CardDescription>{committee.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                        <Users className="w-4 h-4 text-[hsl(var(--svp-green))]" />
-                        SVP-Mitglieder
-                      </h4>
-                      <ul className="space-y-1">
-                        {committee.members.map((member, memberIndex) => (
-                          <li key={memberIndex} className="text-sm text-muted-foreground flex items-center gap-2">
-                            <CheckCircle className="w-3 h-3 text-[hsl(var(--svp-green))]" />
-                            {member}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
         </Section>
 
         {/* Parliamentary Work Info */}

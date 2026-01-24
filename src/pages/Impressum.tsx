@@ -68,8 +68,8 @@ const Impressum = () => {
                         <Mail className="h-5 w-5 text-primary mt-1 shrink-0" />
                         <div>
                           <div className="font-semibold text-foreground mb-1">E-Mail</div>
-                          <a href="mailto:sekretariat@svp-zug.ch" className="text-primary hover:text-primary/80 font-medium transition-colors">
-                            sekretariat@svp-zug.ch
+                          <a href="mailto:sekretariat.stadt@svp-zug.ch" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                            sekretariat.stadt@svp-zug.ch
                           </a>
                         </div>
                       </div>

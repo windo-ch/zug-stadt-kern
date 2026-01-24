@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from 'react';
 import PageLayout from '@/components/layout/PageLayout';
 import Section from '@/components/layout/Section';
 import SectionHeader from '@/components/layout/SectionHeader';
-import MitmachenSection from '@/components/MitmachenSection';
 import { Calendar, Users, Target, ArrowRight, Vote, CheckCircle, Building, Award, Zap, Banknote, Shield, BarChart, Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -60,20 +59,71 @@ const Wahlen = () => {
 
   const upcomingElections = [
     {
-      icon: Users,
-      title: "Kantonsratswahlen",
+      icon: Award,
+      title: "Regierungsratswahlen",
       date: "4. Oktober 2026",
-      description: "Neuwahl des Kantonsrats des Kantons Zug. Wir stellen starke Kandidaten auf, die unsere Werte vertreten.",
+      description: "Wiederwahl von Heinz Tännler als Regierungsrat",
       level: "Kantonal",
       status: "2026",
       priority: "high",
-      link: "/kontakt"
+      link: "/profil/heinz-taennler",
+      candidate: "Heinz Tännler",
+      candidateImage: "/assets/people/profilbilder/Heinz-Taennler.jpg"
+    },
+    {
+      icon: Users,
+      title: "Kantonsratswahlen",
+      date: "4. Oktober 2026",
+      description: "Unsere Kandidaten bringen langjährige politische Erfahrung und Politkompetenz mit",
+      level: "Kantonal",
+      status: "2026",
+      priority: "high",
+      link: "/wer-wir-sind#kantonsrat",
+      candidates: "Gregor R. Bruhin, Philip C. Brunner, Adrian Risi",
+      candidateImages: [
+        "/assets/people/profilbilder/gregor-bruhin.jpg",
+        "/assets/people/profilbilder/philip-c-brunner.jpg",
+        "/assets/people/profilbilder/adrian-risi.jpg"
+      ]
+    },
+    {
+      icon: Building,
+      title: "Stadtratswahlen",
+      date: "4. Oktober 2026",
+      description: "André Wicki kandidiert nicht nur als Stadtrat seit 2011 und erneut als Stadtpräsident",
+      level: "Stadt",
+      status: "2026",
+      priority: "high",
+      link: "/profil/andre-wicki",
+      candidate: "André Wicki",
+      candidateImage: "/assets/people/profilbilder/Andre-Wicki_SVP.jpg"
+    },
+    {
+      icon: Users,
+      title: "Neuwahlen des Grossen Gemeinderats",
+      date: "4. Oktober 2026",
+      description: "Listenerarbeitung im Gange",
+      level: "Stadt",
+      status: "2026",
+      priority: "high",
+      link: "/stadtrat#gemeinderat",
+      noCandidates: true
+    },
+    {
+      icon: Shield,
+      title: "RPK Rechnungsprüfungskommission",
+      date: "2026",
+      description: "Rechnungsprüfungskommission der Stadt Zug",
+      level: "Stadt",
+      status: "2026",
+      priority: "medium",
+      link: null
     },
     {
       icon: Vote,
       title: "Nationalratswahlen",
       date: "24. Oktober 2027",
-      description: "Wahl der Schweizer Nationalräte. Wir setzen uns für bürgerliche Interessen auf nationaler Ebene ein.",
+      description: "Wahl der Schweizer Nationalräte",
       level: "National",
       status: "2027",
       priority: "medium",
@@ -81,9 +131,9 @@ const Wahlen = () => {
     },
     {
       icon: Award,
-      title: "Ständeratswahlen",
-      date: "24. Oktober 2027",
-      description: "Wahl der Schweizer Ständeräte. Repräsentation des Kantons Zug auf nationaler Ebene.",
+      title: "Ständerat",
+      date: "2027",
+      description: "Wahl der Schweizer Ständeräte",
       level: "National",
       status: "2027",
       priority: "medium",
@@ -91,9 +141,9 @@ const Wahlen = () => {
     },
     {
       icon: Target,
-      title: "Gerichtswahlen",
+      title: "Richterwahlen",
       date: "2029",
-      description: "Gesamterneuerungswahlen der kantonalen Gerichte. Sicherstellung einer unabhängigen Justiz.",
+      description: "Gesamterneuerungswahlen der kantonalen Richter. Sicherstellung einer unabhängigen Justiz.",
       level: "Kantonal",
       status: "2029",
       priority: "low",
@@ -300,30 +350,36 @@ const Wahlen = () => {
                 </div>
               </CardHeader>
               <CardContent className="relative z-10">
-                <div className="grid md:grid-cols-3 gap-8">
-                  <div className="space-y-5">
-                    <div className="flex items-start gap-4 group/item">
-                      <div className="w-3 h-3 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-lg"></div>
-                      <p className="text-foreground leading-relaxed text-lg font-medium">
-                        Das Verteidigen des Stadtpräsidiums plus ein zusätzliches Mitglied im Stadtrat
-                      </p>
-                    </div>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="flex items-start gap-4 group/item">
+                    <div className="w-3 h-3 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-lg"></div>
+                    <p className="text-foreground leading-relaxed text-lg font-medium">
+                      Ein Sitz in der RPK
+                    </p>
                   </div>
-                  <div className="space-y-5">
-                    <div className="flex items-start gap-4 group/item">
-                      <div className="w-3 h-3 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-lg"></div>
-                      <p className="text-foreground leading-relaxed text-lg font-medium">
-                        Mindestens drei Sitze im Kantonsrat
-                      </p>
-                    </div>
+                  <div className="flex items-start gap-4 group/item">
+                    <div className="w-3 h-3 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-lg"></div>
+                    <p className="text-foreground leading-relaxed text-lg font-medium">
+                      Wiederwahl von Heinz Tännler als Regierungsrat
+                    </p>
                   </div>
-                  <div className="space-y-5">
-                    <div className="flex items-start gap-4 group/item">
-                      <div className="w-3 h-3 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-lg"></div>
-                      <p className="text-foreground leading-relaxed text-lg font-medium">
-                        Mindestens 9 Sitze im Grossen Gemeinderat
-                      </p>
-                    </div>
+                  <div className="flex items-start gap-4 group/item">
+                    <div className="w-3 h-3 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-lg"></div>
+                    <p className="text-foreground leading-relaxed text-lg font-medium">
+                      Das Verteidigen des Stadtpräsidiums plus ein zusätzliches Mitglied im Stadtrat
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-4 group/item">
+                    <div className="w-3 h-3 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-lg"></div>
+                    <p className="text-foreground leading-relaxed text-lg font-medium">
+                      Mindestens vier Sitze im Kantonsrat
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-4 group/item">
+                    <div className="w-3 h-3 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-lg"></div>
+                    <p className="text-foreground leading-relaxed text-lg font-medium">
+                      Mindestens 9 Sitze im Grossen Gemeinderat
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -340,7 +396,7 @@ const Wahlen = () => {
             className="mb-12"
           />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {upcomingElections.map((election, index) => {
               const IconComponent = election.icon;
               const isHighPriority = election.priority === 'high';
@@ -373,10 +429,42 @@ const Wahlen = () => {
                       <Badge variant="outline" className="w-fit border-[hsl(var(--swiss-blue))]/30 text-[hsl(var(--swiss-blue-dark))]">
                         {election.level}
                       </Badge>
+                      {election.candidate && election.candidateImage && (
+                        <div className="pt-3 flex items-center gap-3">
+                          <img 
+                            src={election.candidateImage} 
+                            alt={election.candidate}
+                            className="w-12 h-12 rounded-full object-cover border-2 border-[hsl(var(--svp-green))]/30"
+                          />
+                          <p className="text-sm font-semibold text-foreground">Kandidat: {election.candidate}</p>
+                        </div>
+                      )}
+                      {election.candidates && election.candidateImages && (
+                        <div className="pt-3">
+                          <p className="text-sm font-semibold text-foreground mb-2">Kandidaten:</p>
+                          <div className="flex items-center gap-2 mb-2">
+                            {election.candidateImages.map((img, idx) => {
+                              const names = election.candidates?.split(', ') || [];
+                              return (
+                                <img 
+                                  key={idx}
+                                  src={img} 
+                                  alt={names[idx] || ''}
+                                  className="w-10 h-10 rounded-full object-cover border-2 border-[hsl(var(--svp-green))]/30"
+                                  title={names[idx] || ''}
+                                />
+                              );
+                            })}
+                          </div>
+                          <p className="text-sm text-muted-foreground">{election.candidates}</p>
+                        </div>
+                      )}
                       {election.link && (
                         <div className="pt-2 flex items-center text-[hsl(var(--svp-green))] font-semibold text-sm group-hover:translate-x-2 transition-transform">
-                          <span>Mehr erfahren</span>
-                          <ArrowRight className="ml-2 h-4 w-4" />
+                          <span className="flex items-center">
+                            Mehr erfahren
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </span>
                         </div>
                       )}
                     </div>
@@ -395,8 +483,6 @@ const Wahlen = () => {
           </div>
         </Section>
 
-        {/* Mach mit! Section */}
-        <MitmachenSection />
 
         {/* Animated Flag */}
         <section className="section-padding bg-muted/30">

@@ -25,9 +25,9 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2 text-sm">
               <li><a href="/was-ansteht" className="hover:text-white transition-colors">Was ansteht</a></li>
-              <li><a href="/#values" className="hover:text-white transition-colors">Wofür wir stehen</a></li>
+              <li><a href="/wofuer-wir-stehen" className="hover:text-white transition-colors">Wofür wir stehen</a></li>
               <li><a href="/themen" className="hover:text-white transition-colors">Unsere Themen</a></li>
-              <li><a href="/#contact" className="hover:text-white transition-colors">Kontakt</a></li>
+              <li><a href="/kontakt" className="hover:text-white transition-colors">Kontakt</a></li>
             </ul>
           </div>
           
@@ -64,7 +64,10 @@ const Footer = () => {
             <div className="text-sm text-white/60 text-center md:text-left">
               <p className="mb-2">© 2026 SVP Stadt Zug. Alle Rechte vorbehalten.</p>
               <p className="text-xs text-white/50">
-                SVP Stadt Zug, Postfach, 6300 Zug | sekretariat@svp-zug.ch
+                SVP Stadt Zug, Postfach, 6300 Zug | sekretariat.stadt@svp-zug.ch
+              </p>
+              <p className="text-xs text-white/30 mt-2">
+                website made by henry.marketing
               </p>
             </div>
             <div className="flex items-center space-x-4">
@@ -80,7 +83,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="https://www.facebook.com/svpzug/" 
+                href="https://www.facebook.com/SvpStadtZug" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-white/60 hover:text-white transition-colors"

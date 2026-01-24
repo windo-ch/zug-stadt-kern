@@ -32,7 +32,26 @@ const WasAnsteht = () => {
     fetch('/svp-articles-12-1-2026.json')
       .then((res) => res.json())
       .then((data) => {
-        setArticles(data.articles || []);
+        const articles = data.articles || [];
+        // Sort articles by date in reverse order (newest first)
+        const sortedArticles = articles.sort((a: Article, b: Article) => {
+          const parseGermanDate = (dateStr: string): Date => {
+            const months: { [key: string]: number } = {
+              'januar': 0, 'februar': 1, 'märz': 2, 'april': 3,
+              'mai': 4, 'juni': 5, 'juli': 6, 'august': 7, 'september': 8,
+              'oktober': 9, 'november': 10, 'dezember': 11
+            };
+            const parts = dateStr.toLowerCase().replace(/\./g, '').split(' ');
+            const day = parseInt(parts[0]);
+            const month = months[parts[1]] || 0;
+            const year = parseInt(parts[2]);
+            return new Date(year, month, day);
+          };
+          const dateA = parseGermanDate(a.publication_date);
+          const dateB = parseGermanDate(b.publication_date);
+          return dateB.getTime() - dateA.getTime(); // Reverse order (newest first)
+        });
+        setArticles(sortedArticles);
         setLoading(false);
       })
       .catch((err) => {

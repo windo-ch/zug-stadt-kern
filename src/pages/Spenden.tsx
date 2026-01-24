@@ -1,16 +1,10 @@
-import { useState } from 'react';
 import PageLayout from '@/components/layout/PageLayout';
 import Section from '@/components/layout/Section';
 import SectionHeader from '@/components/layout/SectionHeader';
-import { Heart, Banknote, Users, Target, Shield, CheckCircle, CreditCard, Smartphone, Building2 } from 'lucide-react';
+import { Heart, Banknote, Users, Target, Building2, Smartphone } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const Spenden = () => {
-  const [selectedAmount, setSelectedAmount] = useState<string>('');
-  const [customAmount, setCustomAmount] = useState<string>('');
-  const [donationType, setDonationType] = useState<'single' | 'monthly'>('single');
-  const [paymentMethod, setPaymentMethod] = useState<string>('');
-
-  const predefinedAmounts = ['25', '50', '100', '250', '500', '1000'];
   
   const impactAreas = [
     {
@@ -23,7 +17,7 @@ const Spenden = () => {
       icon: <Target className="h-8 w-8" />,
       title: "Politische Arbeit", 
       description: "Unterstützung unserer parlamentarischen und politischen Tätigkeiten",
-      examples: ["Parlamentsarbeit", "Bürgersprechstunden", "Politische Bildung"]
+      examples: ["Parlamentsarbeit", "Politische Bildung", "SVP Academy"]
     },
     {
       icon: <Heart className="h-8 w-8" />,
@@ -32,48 +26,6 @@ const Spenden = () => {
       examples: ["Quartiertreffen", "Informationsanlässe", "Bürgerdialoge"]
     }
   ];
-
-  const paymentMethods = [
-    {
-      id: 'twint',
-      name: 'TWINT',
-      icon: <Smartphone className="h-6 w-6" />,
-      description: 'Schnell und sicher mit TWINT'
-    },
-    {
-      id: 'card',
-      name: 'Kreditkarte',
-      icon: <CreditCard className="h-6 w-6" />,
-      description: 'Visa, Mastercard, Postcard'
-    },
-    {
-      id: 'bank',
-      name: 'Banküberweisung',
-      icon: <Building2 className="h-6 w-6" />,
-      description: 'Klassische Banküberweisung'
-    }
-  ];
-
-  const benefits = [
-    "Steuerlich absetzbar in der Schweiz",
-    "Transparente Verwendung Ihrer Spende",
-    "Regelmässige Updates über unsere Arbeit",
-    "Keine Weitergabe Ihrer Daten"
-  ];
-
-  const handleAmountSelect = (amount: string) => {
-    setSelectedAmount(amount);
-    setCustomAmount('');
-  };
-
-  const handleCustomAmountChange = (value: string) => {
-    setCustomAmount(value);
-    setSelectedAmount('');
-  };
-
-  const getCurrentAmount = () => {
-    return customAmount || selectedAmount;
-  };
 
   return (
     <PageLayout 
@@ -154,210 +106,60 @@ const Spenden = () => {
           </div>
         </Section>
 
-        {/* Donation Form */}
-        <section className="section-padding relative overflow-hidden">
-          {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-muted/40 via-background to-muted/20"></div>
-          <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent"></div>
+        {/* TWINT Payment Method */}
+        <Section>
+          <SectionHeader
+            title="Spenden mit TWINT"
+            description="Schnell, sicher und einfach - Spenden Sie direkt mit TWINT"
+            alignment="center"
+            className="mb-12"
+          />
           
-          <div className="container-max relative">
-            <div className="max-w-4xl mx-auto">
-              <div className="backdrop-blur-sm bg-white/80 dark:bg-card/80 rounded-2xl shadow-2xl border border-white/20 p-8 lg:p-12">
-              <div className="text-center mb-12">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full mb-6">
-                  <Heart className="h-8 w-8 text-white" />
-                </div>
-                <h2 className="text-4xl font-bold text-foreground mb-4">
-                  Jetzt spenden
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Wählen Sie Ihren Spendenbetrag und unterstützen Sie unsere Arbeit für eine bessere Stadt Zug
-                </p>
-              </div>
-
-                {/* Donation Type */}
-                <div className="mb-10">
-                  <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
-                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                      <span className="text-primary font-bold text-sm">1</span>
-                    </div>
-                    Spendenart wählen
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <button
-                      onClick={() => setDonationType('single')}
-                      className={`group p-6 rounded-xl border-2 text-left transition-all duration-500 hover:shadow-lg hover:scale-[1.02] ${
-                        donationType === 'single'
-                          ? 'border-primary bg-gradient-to-br from-primary/10 to-primary/5 text-primary shadow-lg scale-[1.02]'
-                          : 'border-border hover:border-primary/50 hover:bg-muted/50'
-                      }`}
-                    >
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className={`w-4 h-4 rounded-full border-2 transition-colors ${
-                          donationType === 'single' ? 'border-primary bg-primary' : 'border-muted-foreground'
-                        }`}>
-                          {donationType === 'single' && <div className="w-full h-full rounded-full bg-white scale-50"></div>}
-                        </div>
-                        <div className="font-semibold">Einmalige Spende</div>
-                      </div>
-                      <div className="text-sm text-muted-foreground ml-7">
-                        Unterstützen Sie uns mit einer einmaligen Spende
-                      </div>
-                    </button>
-                    
-                    <button
-                      onClick={() => setDonationType('monthly')}
-                      className={`group p-6 rounded-xl border-2 text-left transition-all duration-500 hover:shadow-lg hover:scale-[1.02] ${
-                        donationType === 'monthly'
-                          ? 'border-primary bg-gradient-to-br from-primary/10 to-primary/5 text-primary shadow-lg scale-[1.02]'
-                          : 'border-border hover:border-primary/50 hover:bg-muted/50'
-                      }`}
-                    >
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className={`w-4 h-4 rounded-full border-2 transition-colors ${
-                          donationType === 'monthly' ? 'border-primary bg-primary' : 'border-muted-foreground'
-                        }`}>
-                          {donationType === 'monthly' && <div className="w-full h-full rounded-full bg-white scale-50"></div>}
-                        </div>
-                        <div className="font-semibold">Monatliche Spende</div>
-                      </div>
-                      <div className="text-sm text-muted-foreground ml-7">
-                        Unterstützen Sie uns regelmässig jeden Monat
-                      </div>
-                    </button>
+          <div className="max-w-2xl mx-auto">
+            <Card className="hover:shadow-xl transition-shadow border-2 border-primary/20">
+              <CardContent className="p-8 lg:p-12">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mb-6">
+                    <Smartphone className="h-10 w-10 text-white" />
                   </div>
-                </div>
-
-                {/* Amount Selection */}
-                <div className="mb-10">
-                  <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
-                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                      <span className="text-primary font-bold text-sm">2</span>
-                    </div>
-                    Spendenbetrag {donationType === 'monthly' && '(monatlich)'}
+                  <h3 className="text-2xl font-bold text-foreground mb-4">
+                    TWINT QR-Code
                   </h3>
+                  <p className="text-muted-foreground mb-8 max-w-md">
+                    Scannen Sie den QR-Code mit Ihrer TWINT-App oder klicken Sie auf den Link, um direkt zu spenden.
+                  </p>
                   
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-                    {predefinedAmounts.map((amount) => (
-                      <button
-                        key={amount}
-                        onClick={() => handleAmountSelect(amount)}
-                        className={`group p-4 rounded-xl border-2 font-semibold transition-all duration-300 hover:shadow-md hover:scale-105 ${
-                          selectedAmount === amount
-                            ? 'border-primary bg-gradient-to-br from-primary to-primary/80 text-white shadow-lg scale-105'
-                            : 'border-border hover:border-primary hover:bg-primary/5'
-                        }`}
-                      >
-                        <div className="text-lg">CHF {amount}</div>
-                        {selectedAmount === amount && (
-                          <div className="text-xs opacity-90 mt-1">Ausgewählt</div>
-                        )}
-                      </button>
-                    ))}
+                  {/* QR Code Placeholder */}
+                  <div className="w-64 h-64 bg-muted rounded-xl flex items-center justify-center mb-6 border-2 border-dashed border-border">
+                    <div className="text-center p-4">
+                      <Smartphone className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
+                      <p className="text-sm text-muted-foreground">
+                        TWINT QR-Code<br />
+                        wird hier angezeigt
+                      </p>
+                    </div>
                   </div>
                   
-                  <div className="flex items-center gap-4 p-4 bg-muted/50 rounded-xl">
-                    <label className="text-sm font-semibold text-foreground whitespace-nowrap">
-                      Anderer Betrag:
-                    </label>
-                    <div className="flex items-center gap-2 flex-1">
-                      <span className="text-muted-foreground font-semibold">CHF</span>
-                      <input
-                        type="number"
-                        min="1"
-                        value={customAmount}
-                        onChange={(e) => handleCustomAmountChange(e.target.value)}
-                        placeholder="0"
-                        className="flex-1 px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 font-semibold"
-                      />
-                    </div>
-                  </div>
+                  {/* TWINT Link (if available) */}
+                  <a
+                    href="#"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+                  >
+                    <Smartphone className="h-5 w-5" />
+                    Mit TWINT spenden
+                  </a>
+                  
+                  <p className="text-xs text-muted-foreground mt-6">
+                    TWINT ist die schnellste und sicherste Art zu spenden. Ihre Spende ist steuerlich absetzbar.
+                  </p>
                 </div>
-
-                {/* Payment Methods */}
-                <div className="mb-8">
-                  <h3 className="text-lg font-semibold text-foreground mb-4">Zahlungsmethode</h3>
-                  <div className="space-y-3">
-                    {paymentMethods.map((method) => (
-                      <button
-                        key={method.id}
-                        onClick={() => setPaymentMethod(method.id)}
-                        className={`w-full p-4 rounded-lg border-2 text-left transition-all duration-300 flex items-center gap-4 ${
-                          paymentMethod === method.id
-                            ? 'border-primary bg-primary/5 text-primary'
-                            : 'border-border hover:border-primary/50'
-                        }`}
-                      >
-                        <div className="flex-shrink-0">
-                          {method.icon}
-                        </div>
-                        <div>
-                          <div className="font-semibold">{method.name}</div>
-                          <div className="text-sm text-muted-foreground">
-                            {method.description}
-                          </div>
-                        </div>
-                        {paymentMethod === method.id && (
-                          <CheckCircle className="h-5 w-5 ml-auto text-primary" />
-                        )}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Benefits */}
-                <div className="bg-green-50 p-6 rounded-lg mb-8">
-                  <h4 className="font-semibold text-green-800 mb-4 flex items-center gap-2">
-                    <Shield className="h-5 w-5" />
-                    Ihre Vorteile
-                  </h4>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {benefits.map((benefit, index) => (
-                      <div key={index} className="flex items-center gap-2 text-sm text-green-700">
-                        <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" />
-                        {benefit}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Total & Submit */}
-                {getCurrentAmount() && (
-                  <div className="border-t pt-6">
-                    <div className="flex justify-between items-center mb-6">
-                      <span className="text-lg font-semibold text-foreground">
-                        {donationType === 'monthly' ? 'Monatlicher Betrag:' : 'Spendenbetrag:'}
-                      </span>
-                      <span className="text-2xl font-bold text-primary">
-                        CHF {getCurrentAmount()}
-                      </span>
-                    </div>
-                    
-                    <button
-                      className="w-full btn-hero text-lg py-4"
-                      disabled={!getCurrentAmount() || !paymentMethod}
-                    >
-                      <Heart className="h-5 w-5 mr-2" />
-                      {donationType === 'monthly' ? 'Monatliche Spende einrichten' : 'Jetzt spenden'}
-                    </button>
-                    
-                    <p className="text-xs text-muted-foreground text-center mt-4">
-                      Sie werden zu unserem sicheren Zahlungsanbieter weitergeleitet. 
-                      Mit dem Klick stimmen Sie unserer{' '}
-                      <a href="/datenschutz" className="text-primary hover:underline">
-                        Datenschutzerklärung
-                      </a>{' '}
-                      zu.
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
-        </section>
+        </Section>
 
         {/* Alternative Donation Methods */}
-        <Section>
+        <Section variant="muted">
           <SectionHeader
             title="Alternative Spendenmöglichkeiten"
             alignment="center"
@@ -372,7 +174,7 @@ const Spenden = () => {
               </h3>
               <div className="space-y-2 text-sm">
                 <div><strong>Kontoinhaber:</strong> SVP Stadt Zug</div>
-                <div><strong>IBAN:</strong> CH12 0000 1111 2222 3333 4</div>
+                <div><strong>IBAN:</strong> [IBAN wird vom Sekretariat bereitgestellt]</div>
                 <div><strong>Bank:</strong> Zuger Kantonalbank</div>
                 <div><strong>BIC:</strong> ZKBKCHZZ80A</div>
               </div>
@@ -391,8 +193,8 @@ const Spenden = () => {
                 Kontaktieren Sie uns einfach.
               </p>
               <div className="space-y-2 text-sm">
-                <div><strong>E-Mail:</strong> spenden@svp-stadt-zug.ch</div>
-                <div><strong>Telefon:</strong> +41 41 123 45 67</div>
+                <div><strong>E-Mail:</strong> sekretariat.stadt@svp-zug.ch</div>
+                <div><strong>Kontakt für Spenden:</strong> Roman Küng: 079 329 13 33</div>
               </div>
             </div>
           </div>

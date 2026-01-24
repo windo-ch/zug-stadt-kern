@@ -68,7 +68,7 @@ const StatsSection = () => {
             link={null}
           />
           <StatCard
-            value={8}
+            value={7}
             suffix=""
             label="Sitze"
             sublabel="im GGR"

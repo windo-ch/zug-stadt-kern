@@ -122,8 +122,8 @@ const Mitglied = () => {
             <div className="text-center p-6 bg-muted/20 rounded-lg">
               <Phone className="h-8 w-8 mx-auto mb-4 text-primary" />
               <h3 className="font-bold text-foreground mb-2">Telefonisch</h3>
-              <a href="tel:+41417501055" className="text-primary hover:underline text-lg">
-                041 750 10 55
+              <a href="tel:+41793291333" className="text-primary hover:underline text-lg">
+                079 329 13 33
               </a>
               <p className="text-sm text-muted-foreground mt-2">
                 Roman Küng
@@ -133,8 +133,8 @@ const Mitglied = () => {
             <div className="text-center p-6 bg-muted/20 rounded-lg">
               <Mail className="h-8 w-8 mx-auto mb-4 text-primary" />
               <h3 className="font-bold text-foreground mb-2">Per E-Mail</h3>
-              <a href="mailto:sekretariat@svp-zug.ch" className="text-primary hover:underline break-all">
-                sekretariat@svp-zug.ch
+              <a href="mailto:sekretariat.stadt@svp-zug.ch" className="text-primary hover:underline break-all">
+                sekretariat.stadt@svp-zug.ch
               </a>
               <p className="text-sm text-muted-foreground mt-2">
                 Sekretariat

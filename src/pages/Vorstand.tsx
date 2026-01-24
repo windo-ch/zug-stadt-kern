@@ -23,7 +23,7 @@ const Vorstand = () => {
     },
     {
       name: "Raphael Tschan",
-      position: "Vizepräsident",
+      position: "1. Vizepräsident",
       roles: ["Mitglied RPK Stadt Zug"],
       address: "Gimenenstrasse 1, 6300 Zug",
       image: "./assets/people/profilbilder/raphael-tschan.jpg",
@@ -35,7 +35,7 @@ const Vorstand = () => {
     },
     {
       name: "Roman Küng",
-      position: "Vizepräsident & GGR Fraktionspräsident",
+      position: "2. Vizepräsident & GGR Fraktionspräsident",
       roles: ["Gemeinderat"],
       address: "Bernoldweg 9, 6300 Zug",
       image: "./assets/people/profilbilder/roman-kueng.jpg",
@@ -62,7 +62,7 @@ const Vorstand = () => {
       position: "Vorstandsmitglied",
       roles: ["Stadtpräsident"],
       address: "Stadthaus / Postfach, 6301 Zug",
-      image: "./assets/people/vorstand/Andre-Wicki_SVP.jpg",
+      image: "./assets/people/profilbilder/Andre-Wicki_SVP.jpg",
       description: "Stadtpräsident von Zug und engagiertes Vorstandsmitglied der SVP Stadt Zug.",
       contact: {
         email: "andre.wicki@stadtzug.ch"
@@ -91,12 +91,12 @@ const Vorstand = () => {
     },
     {
       title: "Mitgliederbetreuung",
-      description: "Organisation von Veranstaltungen und Betreuung der Parteimitglieder",
+      description: "Werben von Neumitgliedern und Betreuung der Parteimitglieder",
       icon: Users
     },
     {
       title: "Öffentlichkeitsarbeit",
-      description: "Kommunikation mit Medien und Bürgern über wichtige politische Themen",
+      description: "Kommunikation über wichtige politische Themen und Organisation öffentlicher von Veranstaltungen.",
       icon: Heart
     }
   ];
@@ -109,17 +109,17 @@ const Vorstand = () => {
       location: "Parteisekretariat oder Online"
     },
     {
-      date: "Quartalsmässig",
-      title: "Strategiesitzung",
-      description: "Langfristige Planung und strategische Ausrichtung",
+      date: "Nach Bedarf",
+      title: "Generalversammlungen",
+      description: "Jährliche Versammlungen der Partei",
       location: "Verschiedene Standorte"
     },
     {
       date: "Nach Bedarf",
-      title: "Krisensitzung",
-      description: "Dringende politische Themen und Krisenmanagement",
-      location: "Flexibel"
-    }
+      title: "Mitgliederversammlungen",
+      description: "Versammlungen für alle Parteimitglieder",
+      location: "Verschiedene Standorte"
+    },
   ];
 
   return (
@@ -135,9 +135,7 @@ const Vorstand = () => {
               Unser Vorstand
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Der Vorstand der SVP Stadt Zug besteht aus engagierten Bürgerinnen und Bürgern, 
-              die sich ehrenamtlich für unsere Werte und Ziele einsetzen. Lernen Sie die Menschen kennen, 
-              die unsere Partei führen und gestalten.
+              Der Vorstand der SVP Stadt Zug besteht aus engagierten Parteimitgliedern, die sich ehrenamtlich für unsere Werte und Ziele einsetzen. Lernen Sie die Menschen kennen, die unsere Partei führen und gestalten.
             </p>
           </div>
         </Section>
@@ -169,9 +167,9 @@ const Vorstand = () => {
                     {/* Subtle overlay on hover */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
-                  {/* Badge for president */}
+                  {/* Badge for president - only one, not green */}
                   {member.position === "Präsident" && (
-                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-[hsl(var(--svp-green))] text-white text-xs font-semibold rounded-full whitespace-nowrap shadow-md group-hover:bg-[hsl(var(--svp-green-light))] transition-colors duration-300">
+                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-muted text-foreground text-xs font-semibold rounded-full whitespace-nowrap shadow-md border border-border">
                       Präsident
                     </div>
                   )}

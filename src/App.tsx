@@ -37,6 +37,9 @@ const NorbertSchlumpfProfil = lazy(() => import("./pages/NorbertSchlumpfProfil")
 const AlexOdermattProfil = lazy(() => import("./pages/AlexOdermattProfil"));
 const ReneGretenerProfil = lazy(() => import("./pages/ReneGretenerProfil"));
 const ManfredPircherProfil = lazy(() => import("./pages/ManfredPircherProfil"));
+const HeinzTaennlerProfil = lazy(() => import("./pages/HeinzTaennlerProfil"));
+const GregorBruhinProfil = lazy(() => import("./pages/GregorBruhinProfil"));
+const AktuelleTermine = lazy(() => import("./pages/AktuelleTermine"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Loading component
@@ -74,6 +77,7 @@ const App = () => (
             <Route path="/vorstand" element={<Vorstand />} />
             <Route path="/geschichte" element={<Geschichte />} />
             <Route path="/kontakt" element={<Kontakt />} />
+            <Route path="/aktuelle-termine" element={<AktuelleTermine />} />
             <Route path="/mitglied-werden" element={<Mitglied />} />
             <Route path="/spenden" element={<Spenden />} />
             <Route path="/1000er-club" element={<TausenderClub />} />
@@ -92,6 +96,8 @@ const App = () => (
             <Route path="/profil/alex-odermatt" element={<AlexOdermattProfil />} />
             <Route path="/profil/rene-gretener" element={<ReneGretenerProfil />} />
             <Route path="/profil/manfred-pircher" element={<ManfredPircherProfil />} />
+            <Route path="/profil/heinz-taennler" element={<HeinzTaennlerProfil />} />
+            <Route path="/profil/gregor-bruhin" element={<GregorBruhinProfil />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

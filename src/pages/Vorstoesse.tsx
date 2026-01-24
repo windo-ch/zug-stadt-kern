@@ -96,6 +96,19 @@ const Vorstoesse = () => {
             alignment="center"
             className="mb-8"
           />
+          <div className="max-w-5xl mx-auto mb-8 text-center">
+            <Button variant="outline" asChild>
+              <a 
+                href="https://ratsinfo.stadtzug.ch/gremium/1/geschaefte?itemsPerPage=50&search=SVP&ordering=-begin_date&page=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline"
+              >
+                Alle Geschäfte auf ratsinfo.stadtzug.ch
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          </div>
           <div className="max-w-5xl mx-auto">
             <Card className="bg-gradient-to-br from-card to-card/95 border-2 border-border/50 shadow-lg">
               <CardContent className="p-8">

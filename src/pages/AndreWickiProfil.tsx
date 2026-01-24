@@ -57,7 +57,7 @@ const AndreWickiProfil = () => {
         <div className="mb-12">
           <ProfileHero
             personalData={personalData}
-            image="/assets/people/vorstand/Andre-Wicki_SVP.jpg"
+            image="/assets/people/profilbilder/Andre-Wicki_SVP.jpg"
             description="Stadtpräsident von Zug • Unternehmer • Familienvater"
             roles={["Stadtpräsident", "MBA", "SVP Vorstand"]}
           />
@@ -93,17 +93,6 @@ const AndreWickiProfil = () => {
                 </div>
               </CardContent>
             </Card>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-3 justify-center">
-            <Button variant="default" size="sm" className="shadow-md hover:shadow-lg transition-all">
-              <Share2 className="w-4 h-4 mr-2" />
-              Statement teilen
-            </Button>
-            <Button variant="outline" size="sm" className="shadow-md hover:shadow-lg transition-all">
-              <Twitter className="w-4 h-4 mr-2" />
-              Auf X teilen
-            </Button>
           </div>
         </div>
 

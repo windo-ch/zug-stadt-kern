@@ -1,9 +1,20 @@
 {
   "stadt_zug_results": [
     {
-      "business_title": "Motion der SVP-Fraktion vom 03. Dezember 2025 betreffend Minigolf der Stadt Zug eine Betriebskatastrophe - Neu denken, neu machen!",
-      "business_title_citation": "https://ratsinfo.stadtzug.ch/geschaefte?itemsPerPage=50&search=SVP&ordering=-begin_date&page=1",
-      "start_date": "2025-12-02",
+      "business_title": "Postulat der SVP-Fraktion vom 24. Februar 2025 betreffend Städtische Gebühren, die «bestgehüteten Geheimnisse» der Stadt Zug und seiner Verwaltung – wer hat noch den Überblick?",
+      "business_title_citation": "https://ratsinfo.stadtzug.ch/gremium/1/geschaefte?itemsPerPage=50&ordering=-begin_date&page=1",
+      "start_date": "2026-01-22",
+      "start_date_citation": "https://ratsinfo.stadtzug.ch/gremium/1/geschaefte?itemsPerPage=50&ordering=-begin_date&page=1",
+      "status": "",
+      "status_citation": "https://ratsinfo.stadtzug.ch/gremium/1/geschaefte?itemsPerPage=50&ordering=-begin_date&page=1",
+      "pdf_document_links": [],
+      "year": 2026,
+      "year_citation": "https://ratsinfo.stadtzug.ch/gremium/1/geschaefte?itemsPerPage=50&ordering=-begin_date&page=1"
+    },
+    {
+      "business_title": "Postulat (Motion) der SVP-Fraktion vom 03. Dezember 2025 betreffend Minigolf der Stadt Zug eine Betriebskatastrophe - Neu denken, neu machen!",
+      "business_title_citation": "https://ratsinfo.stadtzug.ch/gremium/1/geschaefte?itemsPerPage=50&ordering=-begin_date&page=1",
+      "start_date": "2025-12-03",
       "start_date_citation": "https://ratsinfo.stadtzug.ch/geschaefte?itemsPerPage=50&search=SVP&ordering=-begin_date&page=1",
       "status": "",
       "status_citation": "https://ratsinfo.stadtzug.ch/gremium/1/geschaefte/1020",
@@ -19,7 +30,7 @@
     {
       "business_title": "Postulat der SVP-Fraktion vom 29. August 2024 betreffend «Damwild im Zurlaubenhof? – JA!».",
       "business_title_citation": "https://ratsinfo.stadtzug.ch/geschaefte?itemsPerPage=50&search=SVP&ordering=-begin_date&page=1",
-      "start_date": "2025-12-02",
+      "start_date": "2025-12-03",
       "start_date_citation": "https://ratsinfo.stadtzug.ch/geschaefte?itemsPerPage=50&search=SVP&ordering=-begin_date&page=1",
       "status": "",
       "status_citation": "https://ratsinfo.stadtzug.ch/gremium/1/geschaefte/1023",
@@ -708,22 +719,6 @@
       "status": "",
       "status_citation": "https://ratsinfo.stadtzug.ch/gremium/1/geschaefte/490",
       "pdf_document_links": [],
-      "year": 2024,
-      "year_citation": "https://ratsinfo.stadtzug.ch/geschaefte?itemsPerPage=50&search=SVP&ordering=-begin_date&page=1"
-    },
-    {
-      "business_title": "Postulat der SVP-Fraktion vom 29. August 2024 betreffend «Damwild im Zurlaubenhof? – JA!».",
-      "business_title_citation": "https://ratsinfo.stadtzug.ch/geschaefte?itemsPerPage=50&search=SVP&ordering=-begin_date&page=1",
-      "start_date": "2024-08-28",
-      "start_date_citation": "https://ratsinfo.stadtzug.ch/geschaefte?itemsPerPage=50&search=SVP&ordering=-begin_date&page=1",
-      "status": "",
-      "status_citation": "https://ratsinfo.stadtzug.ch/gremium/1/geschaefte/474",
-      "pdf_document_links": [
-        {
-          "value": "https://ratsinfo.stadtzug.ch/media/documents/published/a78e556d-0288-45c8-8970-3af933e8d16a.pdf",
-          "value_citation": "https://ratsinfo.stadtzug.ch/gremium/1/geschaefte/474"
-        }
-      ],
       "year": 2024,
       "year_citation": "https://ratsinfo.stadtzug.ch/geschaefte?itemsPerPage=50&search=SVP&ordering=-begin_date&page=1"
     },

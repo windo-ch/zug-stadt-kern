@@ -220,20 +220,17 @@ const Geschichte = () => {
     {
       author: "Benny Elsener",
       party: "Die Mitte – Stadt Zug",
-      quote: "Ich bin euch SVPlern dankbar für das grosse Engagement, die Marke Schweiz zu wertschätzen und zu verteidigen. Unser Land darf nicht weiterverkauft werden!",
-      context: "Kantons- und Gemeinderat"
+      quote: "Ich bin euch SVPlern dankbar für das grosse Engagement, die Marke Schweiz zu wertschätzen und zu verteidigen. Unser Land darf nicht weiterverkauft werden!"
     },
     {
       author: "Stefan Hodel",
       party: "Alternative – die Grünen Stadt Zug",
-      quote: "Die Vielfalt in der GGR-Fraktion der SVP ist gross, vom jungen, sehr engagierten Gregor mit grossen Ambitionen bis zu Philip C., der seine Unabhängigkeit bewahrt hat.",
-      context: "Fraktionschef"
+      quote: "Die Vielfalt in der GGR-Fraktion der SVP ist gross, vom jungen, sehr engagierten Gregor mit grossen Ambitionen bis zu Philip C., der seine Unabhängigkeit bewahrt hat."
     },
     {
       author: "Ueli Straub",
       party: "FDP – Stadt Zug",
-      quote: "Bei der SVP Zug steht es anders: die Zuger Vertreter sind in der Regel liberal positioniert und haben wesentlichen Geschäften die notwendige Aufmerksamkeit gewidmet.",
-      context: "Alt Präsident und Stadtrat"
+      quote: "Bei der SVP Zug steht es anders: die Zuger Vertreter sind in der Regel liberal positioniert und haben wesentlichen Geschäften die notwendige Aufmerksamkeit gewidmet."
     }
   ];
 
@@ -263,7 +260,7 @@ const Geschichte = () => {
               
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 <span className="bg-gradient-to-r from-svp-green-light to-svp-green bg-clip-text text-transparent animate-scale-in">
-                  30 Jahre
+                  &gt;30 Jahre
                 </span>{' '}
                 <span className="bg-gradient-to-r from-svp-green to-svp-green-light bg-clip-text text-transparent">«MIR LIEFERET»</span>
               </h1>
@@ -275,20 +272,20 @@ const Geschichte = () => {
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
                 <div className="text-center hover-scale">
-                  <div className="text-3xl font-bold text-primary mb-2">8</div>
-                  <div className="text-sm font-medium text-muted-foreground">GGR-Sitze</div>
+                  <div className="text-3xl font-bold text-primary mb-2">1</div>
+                  <div className="text-sm font-medium text-muted-foreground">Regierungsrat</div>
+                </div>
+                <div className="text-center hover-scale">
+                  <div className="text-3xl font-bold text-primary mb-2">3</div>
+                  <div className="text-sm font-medium text-muted-foreground">Kantonsrat</div>
                 </div>
                 <div className="text-center hover-scale">
                   <div className="text-3xl font-bold text-primary mb-2">1</div>
                   <div className="text-sm font-medium text-muted-foreground">Stadtrat</div>
                 </div>
                 <div className="text-center hover-scale">
-                  <div className="text-3xl font-bold text-primary mb-2">4</div>
-                  <div className="text-sm font-medium text-muted-foreground">Kantonsrat</div>
-                </div>
-                <div className="text-center hover-scale">
-                  <div className="text-3xl font-bold text-primary mb-2">200+</div>
-                  <div className="text-sm font-medium text-muted-foreground">Mitglieder</div>
+                  <div className="text-3xl font-bold text-primary mb-2">7</div>
+                  <div className="text-sm font-medium text-muted-foreground">GGR-Sitze</div>
                 </div>
               </div>
             </div>
@@ -535,7 +532,6 @@ const Geschichte = () => {
                     </blockquote>
                     <div>
                       <div className="font-semibold text-foreground">{testimonial.author}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.context}</div>
                       <Badge variant="outline" className="mt-2">{testimonial.party}</Badge>
                     </div>
                   </CardContent>
@@ -790,57 +786,6 @@ const Geschichte = () => {
           </div>
         </section>
 
-        {/* 2022 Candidates Showcase */}
-        <section className="section-padding bg-muted/30">
-          <div className="container-max">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Die Kandidaten von 2022</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Diese Kandidaten stellten sich am 2. Oktober 2022 zur Wahl
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {[
-                { name: "Melanie Balasopulos", status: "NEU", role: "GGR-Kandidatin" },
-                { name: "Oliver Birchmeier", status: "NEU", role: "Kantonsrat" },
-                { name: "Gregor R. Bruhin", status: "BISHERIG", role: "Kantonsrat" },
-                { name: "Philip C. Brunner", status: "BISHERIG", role: "Kantonsrat" },
-                { name: "Marcus Bühler", status: "NEU", role: "GGR-Kandidat" },
-                { name: "Thomas Dubach", status: "BISHERIG", role: "GGR & Kantonsrat" },
-                { name: "Daniel Gramm", status: "NEU", role: "GGR-Kandidat" },
-                { name: "Alexandra Gretener", status: "NEU", role: "Kantonsrätin" },
-                { name: "René Gretener", status: "NEU", role: "GGR-Kandidat" },
-                { name: "Roman Küng", status: "BISHERIG", role: "GGR & Kantonsrat" },
-                { name: "Dominique Messmer", status: "NEU", role: "Kantonsrat" },
-                { name: "Norbert Schlumpf", status: "NEU", role: "GGR-Kandidat" },
-                { name: "Alex Odermatt", status: "BISHERIG", role: "GGR-Mitglied" },
-                { name: "Meinrad Odermatt", status: "NEU", role: "Kantonsrat" },
-                { name: "Manfred Pircher", status: "BISHERIG", role: "GGR-Mitglied" },
-                { name: "Raphael Tschan", status: "NEU", role: "Kantonsrat" },
-                { name: "Niko Trlin", status: "NEU", role: "GGR-Kandidat" },
-                { name: "Bruno Zimmermann", status: "BISHERIG", role: "GGR-Mitglied" }
-              ].map((candidate, index) => (
-                <Card key={index} className="card-hover">
-                  <CardContent className="p-4 text-center">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Users className="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 className="font-semibold text-foreground mb-1">{candidate.name}</h3>
-                    <p className="text-xs text-muted-foreground mb-2">{candidate.role}</p>
-                    <Badge 
-                      variant={candidate.status === "NEU" ? "default" : "secondary"} 
-                      className="text-xs"
-                    >
-                      {candidate.status}
-                    </Badge>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* City Wishes - "Simsalabim" */}
         <section className="section-padding">
           <div className="container-max">
@@ -855,47 +800,38 @@ const Geschichte = () => {
               {[
                 {
                   author: "Thomas Dubach",
-                  role: "GGR & Kantonsrat",
                   wish: "Ich wünsche mir ein atmosphärisch ansprechendes Lokal an der Seepromenade, bei welchem ein durchdachtes Konzept dahintersteckt. The new place to be!"
                 },
                 {
                   author: "Dr. Beat Bühlmann",
-                  role: "VR & CEO",
                   wish: "Ganz allgemein wieder mehr Rücksicht und Respekt in allen Belangen – Abfall, Lärm, Verkehr, Schweizer Kultur. Kurzum: Zuerst «geben», dann «nehmen»!"
                 },
                 {
                   author: "Kathi Büttel",
-                  role: "Präsidentin Junge SVP Zug",
                   wish: "Es wäre toll, wenn das Feuerwerk am Seenachtsfest Zug bleibt."
                 },
                 {
                   author: "Regula Ernst",
-                  role: "Geschäftsführerin",
                   wish: "Die hässlichen schwarzen Abfallkübel, welche die Seepromenade verschandeln, sollten durch eine hübschere Variante ersetzt werden. Die Stadt Zug kann das besser!"
                 },
                 {
                   author: "Regula Kaiser",
-                  role: "Stadtentwicklung Zug",
                   wish: "Ich wünsche mir eine entspannte Atmosphäre in der Einkaufsmeile: Bäume, Bänkli, Blumen, Pavillons, Wasserspiele, Lichtkunst, Musik!"
                 },
                 {
                   author: "Reto Kaufmann",
-                  role: "Pfarrer",
                   wish: "Traditionsbewusst und weltoffen, solidarisch und tolerant, sozial und gerecht – ein Stück Himmel auf Erden."
                 },
                 {
                   author: "Luca Schenk",
-                  role: "Unternehmer",
                   wish: "Die Breite der Autos hat zugenommen, die der Parkplätze nicht. Ich wünsche mir: Breitere Parkplätze oder Cabriopflicht!"
                 },
                 {
                   author: "Lukas Fürrer",
-                  role: "Generalsekretär",
                   wish: "Ich wünsche mir mehr Sekschüler."
                 },
                 {
                   author: "Claudia Wirz",
-                  role: "Journalistin",
                   wish: "Ich bin wunschlos glücklich hier. In Zug habe ich Unternehmergeist, Offenheit und Bürgernähe gefunden. Ich hoffe, dass Zug so bleibt!"
                 }
               ].map((item, index) => (
@@ -907,7 +843,6 @@ const Geschichte = () => {
                     </blockquote>
                     <div className="border-t border-border pt-3">
                       <div className="font-semibold text-foreground text-sm">{item.author}</div>
-                      <div className="text-xs text-muted-foreground">{item.role}</div>
                     </div>
                   </CardContent>
                 </Card>
@@ -916,61 +851,15 @@ const Geschichte = () => {
           </div>
         </section>
 
-        {/* Political Structure Overview */}
+        {/* Animated Logo Section */}
         <section className="section-padding bg-muted/30">
           <div className="container-max">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Politische Struktur heute</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Übersicht der politischen Gremien mit SVP-Beteiligung
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card className="card-hover">
-                <CardHeader>
-                  <div className="text-center">
-                    <Building className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <CardTitle>Grosser Gemeinderat</CardTitle>
-                    <p className="text-sm text-muted-foreground">Legislative der Stadt Zug</p>
-                  </div>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">8</div>
-                  <div className="text-sm text-muted-foreground mb-4">SVP-Sitze</div>
-                  <Badge variant="secondary">Zweitgrösste Fraktion</Badge>
-                </CardContent>
-              </Card>
-
-              <Card className="card-hover">
-                <CardHeader>
-                  <div className="text-center">
-                    <Star className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <CardTitle>Stadtrat</CardTitle>
-                    <p className="text-sm text-muted-foreground">Exekutive der Stadt Zug</p>
-                  </div>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">1</div>
-                  <div className="text-sm text-muted-foreground mb-4">SVP-Sitz</div>
-                  <Badge variant="secondary">André Wicki</Badge>
-                </CardContent>
-              </Card>
-
-              <Card className="card-hover">
-                <CardHeader>
-                  <div className="text-center">
-                    <Award className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <CardTitle>Kantonsrat</CardTitle>
-                    <p className="text-sm text-muted-foreground">Kantonale Legislative</p>
-                  </div>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">4</div>
-                  <div className="text-sm text-muted-foreground mb-4">SVP-Sitze</div>
-                  <Badge variant="secondary">Starke Vertretung</Badge>
-                </CardContent>
-              </Card>
+            <div className="flex justify-center py-2">
+              <img
+                src="/logo/svp-stadt-zug-flag-animated-small.gif"
+                alt="SVP Stadt Zug Flag"
+                className="h-[150px] w-auto"
+              />
             </div>
           </div>
         </section>
@@ -978,7 +867,7 @@ const Geschichte = () => {
         {/* Future Vision with Call to Action */}
         <CTASection
           title="Die nächsten 30 Jahre gestalten"
-          description="Mit über drei Jahrzehnten erfolgreicher Politik blicken wir voller Zuversicht in die Zukunft. In 10 Jahren, beim 40-jährigen Jubiläum, wollen wir zusätzliche Meilensteine als Erfolge ausweisen können. Heute braucht es die SVP noch mehr als vor 30 Jahren!"
+          description="Mit über drei Jahrzehnten erfolgreicher Politik blicken wir voller Zuversicht in die Zukunft. 2032 beim 40 jährigen Jubiläum wollen wir zusätzliche Meilensteine als Erfolge ausweisen können. Heute braucht es die SVP noch mehr als je!"
           variant="gradient"
           className="!bg-gradient-to-r !from-primary/10 !to-secondary/10"
           primaryButton={{
@@ -989,7 +878,7 @@ const Geschichte = () => {
           }}
           secondaryButton={{
             text: "Geschichte mitschreiben",
-            href: "/mitglied",
+            href: "/mitglied-werden",
             variant: "outline",
             icon: Users
           }}

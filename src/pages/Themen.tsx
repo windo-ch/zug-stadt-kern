@@ -281,11 +281,23 @@ const Themen = () => {
         </Section>
 
 
+        {/* Animated Logo Section */}
+        <section className="section-padding bg-muted/30">
+          <div className="container-max">
+            <div className="flex justify-center py-2">
+              <img
+                src="/logo/svp-stadt-zug-flag-animated-small.gif"
+                alt="SVP Stadt Zug Flag"
+                className="h-[150px] w-auto"
+              />
+            </div>
+          </div>
+        </section>
+
         {/* Call to Action */}
         <CTASection
           title="Setzen Sie sich mit uns für diese Themen ein"
           description="Unsere politische Arbeit lebt von dem Engagement unserer Mitglieder und Unterstützer. Werden Sie Teil unserer Bewegung und helfen Sie mit, Zug noch lebenswerter zu gestalten."
-          icon={Target}
           variant="gradient"
           primaryButton={{
             text: "Mitglied werden",

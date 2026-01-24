@@ -161,7 +161,7 @@ const TausenderClub = () => {
           alignment="center"
         />
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8">
             {/* Donatoren */}
             <Card className="card-elevated hover:border-primary/40 transition-all duration-300 group">
               <CardHeader className="text-center pb-4">
@@ -192,50 +192,6 @@ const TausenderClub = () => {
                     href={`mailto:sekretariat.stadt@svp-zug.ch?subject=${encodeURIComponent('Beitritt 1000er Club - Donatoren')}&body=${encodeURIComponent('Guten Tag\n\nIch interessiere mich für eine Mitgliedschaft als Donator im 1000er Club der SVP Stadt Zug.\n\nBitte kontaktieren Sie mich für weitere Informationen.\n\nFreundliche Grüsse')}`}
                   >
                     Beitreten
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Senatoren - Featured */}
-            <Card className="card-elevated border-2 border-primary/40 hover:border-primary/60 transition-all duration-300 group relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold">
-                  Beliebteste Wahl
-                </span>
-              </div>
-              <CardHeader className="text-center pb-4 pt-6">
-                <Crown className="h-12 w-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                <CardTitle className="text-2xl mb-2">Senatoren</CardTitle>
-                <div className="space-y-1">
-                  <p className="text-3xl font-bold text-primary">ab CHF 5'000</p>
-                  <p className="text-sm text-muted-foreground">pro Jahr</p>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-muted-foreground">Alle Vorteile der Donatoren</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-muted-foreground">Exklusiver Zugang zu Premium-Veranstaltungen</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-muted-foreground">Prioritäre Platzierung bei Events</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-muted-foreground">Persönliche Betreuung</span>
-                  </li>
-                </ul>
-                <Button className="btn-hero w-full" asChild>
-                  <a 
-                    href={`mailto:sekretariat.stadt@svp-zug.ch?subject=${encodeURIComponent('Beitritt 1000er Club - Senatoren')}&body=${encodeURIComponent('Guten Tag\n\nIch interessiere mich für eine Mitgliedschaft als Senator im 1000er Club der SVP Stadt Zug.\n\nBitte kontaktieren Sie mich für weitere Informationen.\n\nFreundliche Grüsse')}`}
-                  >
-                    Jetzt beitreten
                   </a>
                 </Button>
               </CardContent>

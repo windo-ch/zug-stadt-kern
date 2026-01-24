@@ -15,6 +15,8 @@ interface CTASectionProps {
   primaryButton: ButtonConfig;
   secondaryButton?: ButtonConfig;
   icon?: LucideIcon;
+  image?: string;
+  imageAlt?: string;
   variant?: 'default' | 'gradient';
   showDecorative?: boolean;
   className?: string;
@@ -56,6 +58,8 @@ const CTASection = ({
   primaryButton,
   secondaryButton,
   icon: Icon,
+  image,
+  imageAlt = '',
   variant = 'default',
   showDecorative = true,
   className = ''
@@ -93,7 +97,15 @@ const CTASection = ({
       
       <div className="container-max relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {Icon && (
+          {image ? (
+            <div className="inline-block mb-6">
+              <img 
+                src={image} 
+                alt={imageAlt || title}
+                className="h-24 w-auto mx-auto"
+              />
+            </div>
+          ) : Icon && (
             <div className="inline-block mb-6">
               <div className="p-4 bg-gradient-to-br from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] rounded-2xl shadow-[var(--shadow-strong)]">
                 <Icon className="w-10 h-10 text-white mx-auto" />
