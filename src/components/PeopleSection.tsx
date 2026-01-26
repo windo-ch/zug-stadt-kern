@@ -16,7 +16,7 @@ const PeopleSection = () => {
     {
       name: "Heinz Tännler",
       role: "Regierungsrat",
-      position: "Finanzdirektion",
+      position: "Finanzdirektor",
       image: "./assets/people/profilbilder/Heinz-Taennler.jpg",
       profileLink: "/profil/heinz-taennler",
       category: "Regierungsrat",

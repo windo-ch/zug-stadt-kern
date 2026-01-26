@@ -13,7 +13,7 @@ const HeinzTaennlerProfil = () => {
 
   const personalData = {
     name: "Heinz Tännler",
-    position: "Regierungsrat, Finanzdirektor",
+    position: "Regierungsrat",
     born: "10. Mai 1960",
     location: "Zug",
     phone: "+41 41 594 36 60",

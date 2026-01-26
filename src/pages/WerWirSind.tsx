@@ -19,6 +19,7 @@ const WerWirSind = () => {
       description: "",
       image: "/assets/people/profilbilder/Heinz-Taennler.jpg",
       badge: "Regierungsrat",
+      roles: ["Finanzdirektor"],
       profileLink: "/profil/heinz-taennler"
     }
   ];

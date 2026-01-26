@@ -55,7 +55,9 @@ const ProfileHobbiesSection = memo(({ hobbies, className = '' }: ProfileHobbiesS
     "Politik": "🏛️",
     "Joggen": "🏃",
     "Pferdesport": "🐴",
-    "Schwimmen": "🏊"
+    "Schwimmen": "🏊",
+    "Velofahren": "🚴",
+    "Tennisspielen": "🎾"
   };
 
   return (
