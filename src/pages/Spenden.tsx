@@ -106,11 +106,11 @@ const Spenden = () => {
           </div>
         </Section>
 
-        {/* TWINT Payment Method */}
+        {/* Online Payment - TWINT & Payrexx */}
         <Section>
           <SectionHeader
-            title="Spenden mit TWINT"
-            description="Schnell, sicher und einfach - Spenden Sie direkt mit TWINT"
+            title="Spenden mit TWINT oder Kreditkarte"
+            description="Schnell, sicher und einfach - Spenden Sie direkt online"
             alignment="center"
             className="mb-12"
           />
@@ -123,10 +123,10 @@ const Spenden = () => {
                     <Smartphone className="h-10 w-10 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-4">
-                    TWINT QR-Code
+                    Zahlplattform Payrexx
                   </h3>
                   <p className="text-muted-foreground mb-8 max-w-md">
-                    Scannen Sie den QR-Code mit Ihrer TWINT-App oder klicken Sie auf den Link, um direkt zu spenden.
+                    Spenden Sie mit Kreditkarten oder TWINT über unsere sichere Zahlplattform. Scannen Sie den QR-Code mit Ihrer TWINT-App oder klicken Sie auf den Link.
                   </p>
                   
                   {/* TWINT QR Code */}
@@ -138,46 +138,20 @@ const Spenden = () => {
                     />
                   </div>
                   
-                  <p className="text-xs text-muted-foreground mb-6">
-                    TWINT ist die schnellste und sicherste Art zu spenden. Ihre Spende ist steuerlich absetzbar.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </Section>
-
-        {/* Payrexx Payment Platform */}
-        <Section variant="muted">
-          <SectionHeader
-            title="Online-Zahlplattform"
-            description="Spenden Sie bequem online mit Kreditkarte oder TWINT"
-            alignment="center"
-            className="mb-12"
-          />
-          
-          <div className="max-w-2xl mx-auto">
-            <Card className="hover:shadow-xl transition-shadow border-2 border-primary/20">
-              <CardContent className="p-8 lg:p-12">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <Banknote className="h-10 w-10 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">
-                    Zahlplattform Payrexx
-                  </h3>
-                  <p className="text-muted-foreground mb-6">
-                    Spenden Sie mit Kreditkarten oder TWINT über unsere sichere Zahlplattform.
-                  </p>
+                  {/* Payrexx Link */}
                   <a
                     href="https://svp-stadt-zug.payrexx.com/de/vpos"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors mb-4"
                   >
                     <Banknote className="h-5 w-5" />
                     Jetzt online spenden
                   </a>
+                  
+                  <p className="text-xs text-muted-foreground">
+                    Ihre Spende ist steuerlich absetzbar.
+                  </p>
                 </div>
               </CardContent>
             </Card>
