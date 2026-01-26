@@ -129,29 +129,55 @@ const Spenden = () => {
                     Scannen Sie den QR-Code mit Ihrer TWINT-App oder klicken Sie auf den Link, um direkt zu spenden.
                   </p>
                   
-                  {/* QR Code Placeholder */}
-                  <div className="w-64 h-64 bg-muted rounded-xl flex items-center justify-center mb-6 border-2 border-dashed border-border">
-                    <div className="text-center p-4">
-                      <Smartphone className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-                      <p className="text-sm text-muted-foreground">
-                        TWINT QR-Code<br />
-                        wird hier angezeigt
-                      </p>
-                    </div>
+                  {/* TWINT QR Code */}
+                  <div className="w-64 h-64 mb-6 flex items-center justify-center">
+                    <img
+                      src="/images/svp-twint-qr_code_2026.png"
+                      alt="TWINT QR-Code für Spenden"
+                      className="w-full h-full object-contain rounded-lg"
+                    />
                   </div>
                   
-                  {/* TWINT Link (if available) */}
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                  >
-                    <Smartphone className="h-5 w-5" />
-                    Mit TWINT spenden
-                  </a>
-                  
-                  <p className="text-xs text-muted-foreground mt-6">
+                  <p className="text-xs text-muted-foreground mb-6">
                     TWINT ist die schnellste und sicherste Art zu spenden. Ihre Spende ist steuerlich absetzbar.
                   </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </Section>
+
+        {/* Payrexx Payment Platform */}
+        <Section variant="muted">
+          <SectionHeader
+            title="Online-Zahlplattform"
+            description="Spenden Sie bequem online mit Kreditkarte oder TWINT"
+            alignment="center"
+            className="mb-12"
+          />
+          
+          <div className="max-w-2xl mx-auto">
+            <Card className="hover:shadow-xl transition-shadow border-2 border-primary/20">
+              <CardContent className="p-8 lg:p-12">
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Banknote className="h-10 w-10 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-4">
+                    Zahlplattform Payrexx
+                  </h3>
+                  <p className="text-muted-foreground mb-6">
+                    Spenden Sie mit Kreditkarten oder TWINT über unsere sichere Zahlplattform.
+                  </p>
+                  <a
+                    href="https://svp-stadt-zug.payrexx.com/de/vpos"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+                  >
+                    <Banknote className="h-5 w-5" />
+                    Jetzt online spenden
+                  </a>
                 </div>
               </CardContent>
             </Card>
@@ -173,10 +199,9 @@ const Spenden = () => {
                 Banküberweisung
               </h3>
               <div className="space-y-2 text-sm">
-                <div><strong>Kontoinhaber:</strong> SVP Stadt Zug</div>
-                <div><strong>IBAN:</strong> [IBAN wird vom Sekretariat bereitgestellt]</div>
                 <div><strong>Bank:</strong> Zuger Kantonalbank</div>
-                <div><strong>BIC:</strong> ZKBKCHZZ80A</div>
+                <div><strong>IBAN:</strong> CH06 0078 7785 7188 9782 1</div>
+                <div><strong>Zugunsten von:</strong> SVP Stadt Zug, 6300 Zug</div>
               </div>
               <p className="text-xs text-muted-foreground mt-4">
                 Bitte geben Sie bei der Überweisung Ihren Namen und "Spende SVP" als Verwendungszweck an.
