@@ -390,12 +390,9 @@ const Geschichte = () => {
                             </div>
                           </div>
                           <div className="flex-1">
-                            <div className="flex items-start justify-between">
-                              <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                                {event.title}
-                              </h3>
-                              <Badge variant="outline">{event.year}</Badge>
-                            </div>
+                            <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
+                              {event.year} – {event.title}
+                            </h3>
                             <p className="text-muted-foreground mb-3">{event.description}</p>
                             <p className="text-sm text-muted-foreground italic mb-2">{event.details}</p>
                             <div className="flex items-center gap-2">

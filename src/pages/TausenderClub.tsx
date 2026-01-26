@@ -42,8 +42,7 @@ const TausenderClub = () => {
               welche die SVP Stadt Zug unterstützen.
             </p>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Diese Zuwendungen sind essentiell für die Finanzierung politischer und 
-              gesellschaftlicher Aktivitäten der Stadt-Partei.
+              Die Zuwendungen sind essentiell für die Finanzierung der Stadtpartei und zweckgebunden für die Wahlen.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

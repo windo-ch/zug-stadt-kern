@@ -1,34 +1,13 @@
 import PageLayout from '@/components/layout/PageLayout';
 import Section from '@/components/layout/Section';
-import StatCard from '@/components/content/StatCard';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Users, Target, Heart, Award, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const WerWirSind = () => {
 
-  const partyValues = [
-    {
-      icon: Heart,
-      title: "Bürgernähe",
-      description: "Wir sind eine Partei für alle Bürgerinnen und Bürger von Zug",
-      details: "Offen für Ihre Anliegen und direkte Kommunikation"
-    },
-    {
-      icon: Target,
-      title: "Lösungsorientiert", 
-      description: "Konkrete Lösungen statt leere Versprechungen",
-      details: "Pragmatische Politik mit messbaren Ergebnissen für die Menschen in Zug"
-    },
-    {
-      icon: Users,
-      title: "Gemeinschaftlich",
-      description: "Gemeinsam stark für Zug und seine Zukunft",
-      details: "Breite Abstützung in allen Bevölkerungsschichten und Generationen"
-    }
-  ];
 
   // Regierungsrat
   const regierungsrat = [
@@ -93,8 +72,13 @@ const WerWirSind = () => {
     }
   ];
 
-  // GGR Fraktionspräsident
-  const fraktionsprasident = [
+  // GGR Fraktionspräsident - moved to Gemeinderat section
+  const fraktionsprasident = [];
+
+  // Mitglied - removed (Raphael Tschan moved to appropriate section if needed)
+
+  // Gemeinderat - Roman Küng first as Fraktionspräsident, then alphabetical by last name
+  const gemeinderat = [
     {
       name: "Roman Küng",
       position: "GGR Fraktionspräsident",
@@ -105,13 +89,17 @@ const WerWirSind = () => {
       badge: "Fraktionspräsident",
       roles: ["Vizepräsident", "Vorstand"],
       profileLink: "/profil/roman-kueng"
-    }
-  ];
-
-  // Mitglied - removed (Raphael Tschan moved to appropriate section if needed)
-
-  // Gemeinderat
-  const gemeinderat = [
+    },
+    {
+      name: "Philip C. Brunner",
+      position: "Gemeinderat",
+      phone: "",
+      email: "",
+      description: "",
+      image: "/assets/people/profilbilder/philip-c-brunner.jpg",
+      badge: "Gemeinderat",
+      profileLink: "/profil/philip-brunner"
+    },
     {
       name: "Marcus H. Bühler",
       position: "Gemeinderat",
@@ -121,11 +109,7 @@ const WerWirSind = () => {
       image: "/assets/people/vorstand/Marcus-Buehler_SVP.jpg",
       badge: "Gemeinderat",
       profileLink: "/profil/marcus-buehler"
-    }
-  ];
-
-  // Rest alphabetically: Gretener, Odermatt, Pircher, Schlumpf
-  const weitere = [
+    },
     {
       name: "René Gretener",
       position: "Gemeinderat",
@@ -167,6 +151,9 @@ const WerWirSind = () => {
       profileLink: "/profil/norbert-schlumpf"
     }
   ];
+
+  // Empty array - all Gemeinderäte moved to gemeinderat array above
+  const weitere = [];
 
   // Commissions
   const kommissionen = [
@@ -264,26 +251,6 @@ const WerWirSind = () => {
   ];
 
 
-  const organizationStats = [
-    {
-      icon: Users,
-      number: "200+",
-      label: "Aktive Mitglieder", 
-      description: "Engagierte Bürgerinnen und Bürger"
-    },
-    {
-      icon: Award,
-      number: "30+",
-      label: "Jahre Erfahrung",
-      description: "Bewährte Politik für Zug"
-    },
-    {
-      icon: Target,
-      number: "1",
-      label: "Stadtpräsident",
-      description: "André Wicki führt die Stadtregierung"
-    }
-  ];
 
   return (
     <PageLayout 
@@ -306,46 +273,6 @@ const WerWirSind = () => {
             <p className="text-lg text-muted-foreground leading-relaxed">
               Offen für Ihre Anliegen und direkte Kommunikation.
             </p>
-          </div>
-        </Section>
-
-        {/* Statistics */}
-        <Section>
-          <div className="grid md:grid-cols-3 gap-6">
-            {organizationStats.map((stat, index) => {
-              const numValue = parseInt(stat.number.replace(/[^0-9]/g, ''), 10);
-              const suffix = stat.number.includes('+') ? '+' : '';
-              return (
-                <StatCard
-                  key={index}
-                  value={numValue}
-                  suffix={suffix}
-                  label={stat.label}
-                  sublabel={stat.description}
-                  icon={stat.icon}
-                  variant="default"
-                />
-              );
-            })}
-          </div>
-        </Section>
-
-        {/* Our Values */}
-        <Section>
-          <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Unsere Werte</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {partyValues.map((value, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-6">
-                    <value.icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-4">{value.title}</h3>
-                  <p className="text-muted-foreground mb-4">{value.description}</p>
-                  <p className="text-sm text-muted-foreground">{value.details}</p>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </Section>
 
@@ -443,24 +370,12 @@ const WerWirSind = () => {
                 </Section>
               )}
 
-              {/* GGR Fraktionspräsident */}
-              {fraktionsprasident.length > 0 && (
-                <Section>
-                  <h2 className="text-3xl font-bold text-foreground mb-8 text-center">GGR Fraktionspräsident</h2>
-                  <div className="space-y-6 max-w-3xl mx-auto">
-                    {fraktionsprasident.map(renderPersonCard)}
-                  </div>
-                </Section>
-              )}
-
               {/* Gemeinderat */}
-              {(gemeinderat.length > 0 || weitere.length > 0) && (
+              {gemeinderat.length > 0 && (
                 <Section id="gemeinderat">
                   <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Gemeinderat</h2>
                   <div className="space-y-6 max-w-3xl mx-auto">
-                    {[...gemeinderat, ...weitere]
-                      .sort((a, b) => a.name.localeCompare(b.name))
-                      .map(renderPersonCard)}
+                    {gemeinderat.map(renderPersonCard)}
                   </div>
                 </Section>
               )}

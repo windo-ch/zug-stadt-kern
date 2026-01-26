@@ -197,7 +197,7 @@ const HeinzTaennlerProfil = () => {
               <CardContent>
                 <div className="space-y-3">
                   <div className="p-3 bg-white/50 rounded-lg">
-                    <h4 className="font-semibold text-foreground mb-1">Finanzdirektion</h4>
+                    <h4 className="font-semibold text-foreground mb-1">Finanzdirektor</h4>
                     <p className="text-sm text-muted-foreground">Vorsteher der Finanzdirektion seit 2016</p>
                   </div>
                   <div className="p-3 bg-white/50 rounded-lg">

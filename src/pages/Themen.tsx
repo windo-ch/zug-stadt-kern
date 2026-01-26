@@ -245,33 +245,18 @@ const Themen = () => {
                   </CardHeader>
                   
                   <CardContent className="relative z-10">
-                    <div className="grid lg:grid-cols-2 gap-10">
-                      <div>
-                        <h4 className="font-bold text-foreground mb-6 text-lg">Unsere Massnahmen</h4>
-                        <ul className="space-y-4">
-                          {theme.points.map((point, pointIndex) => (
-                            <li key={pointIndex} className="flex items-start gap-3 group/item">
-                              <div className="w-2.5 h-2.5 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-md"></div>
-                              <span className="text-muted-foreground leading-relaxed group-hover/item:text-foreground transition-colors">
-                                {point}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-foreground mb-6 text-lg">Bisherige Erfolge</h4>
-                        <ul className="space-y-4">
-                          {theme.achievements.map((achievement, achievementIndex) => (
-                            <li key={achievementIndex} className="flex items-start gap-3 group/item">
-                              <div className="w-2.5 h-2.5 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-md"></div>
-                              <span className="text-muted-foreground leading-relaxed group-hover/item:text-foreground transition-colors">
-                                {achievement}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                    <div>
+                      <h4 className="font-bold text-foreground mb-6 text-lg">Unsere Massnahmen</h4>
+                      <ul className="space-y-4">
+                        {theme.points.map((point, pointIndex) => (
+                          <li key={pointIndex} className="flex items-start gap-3 group/item">
+                            <div className="w-2.5 h-2.5 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-md"></div>
+                            <span className="text-muted-foreground leading-relaxed group-hover/item:text-foreground transition-colors">
+                              {point}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </CardContent>
                 </Card>

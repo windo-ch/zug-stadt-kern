@@ -35,7 +35,7 @@ const Vorstand = () => {
     },
     {
       name: "Roman Küng",
-      position: "2. Vizepräsident & GGR Fraktionspräsident",
+      position: "2. Vizepräsident",
       roles: ["Gemeinderat"],
       address: "Bernoldweg 9, 6300 Zug",
       image: "./assets/people/profilbilder/roman-kueng.jpg",
@@ -96,17 +96,17 @@ const Vorstand = () => {
     },
     {
       title: "Öffentlichkeitsarbeit",
-      description: "Kommunikation über wichtige politische Themen und Organisation öffentlicher von Veranstaltungen.",
+      description: "Kommunikation über wichtige politische Themen und Organisation öffentlicher Veranstaltungen.",
       icon: Heart
     }
   ];
 
   const meetings = [
     {
-      date: "Jeden ersten Dienstag im Monat",
+      date: "Nach Bedarf",
       title: "Vorstandssitzung",
       description: "Regelmässige Sitzungen zur Koordination der Parteiarbeit",
-      location: "Parteisekretariat oder Online"
+      location: "verschiedene Standorte"
     },
     {
       date: "Nach Bedarf",

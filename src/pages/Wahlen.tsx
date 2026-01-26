@@ -91,7 +91,7 @@ const Wahlen = () => {
       icon: Building,
       title: "Stadtratswahlen",
       date: "4. Oktober 2026",
-      description: "André Wicki kandidiert nicht nur als Stadtrat seit 2011 und erneut als Stadtpräsident",
+      description: "André Wicki kandidiert erneut als Stadtrat (seit 2011) und als Stadtpräsident",
       level: "Stadt",
       status: "2026",
       priority: "high",
@@ -373,7 +373,7 @@ const Wahlen = () => {
                   <div className="flex items-start gap-4 group/item">
                     <div className="w-3 h-3 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-lg"></div>
                     <p className="text-foreground leading-relaxed text-lg font-medium">
-                      Mindestens vier Sitze im Kantonsrat
+                      Mindestens 4 Sitze im Kantonsrat
                     </p>
                   </div>
                   <div className="flex items-start gap-4 group/item">
