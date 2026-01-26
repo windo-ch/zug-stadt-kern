@@ -44,6 +44,7 @@ const WerWirSind = () => {
       description: "",
       image: "/assets/people/profilbilder/philip-c-brunner.jpg",
       badge: "Kantonsrat",
+      roles: ["Vorstand"],
       profileLink: "/profil/philip-brunner"
     },
     {
@@ -54,6 +55,7 @@ const WerWirSind = () => {
       description: "",
       image: "/assets/people/profilbilder/adrian-risi.jpg",
       badge: "Kantonsrat",
+      roles: ["Vorstand"],
       profileLink: "/profil/adrian-risi"
     }
   ];
@@ -99,6 +101,7 @@ const WerWirSind = () => {
       description: "",
       image: "/assets/people/profilbilder/philip-c-brunner.jpg",
       badge: "Gemeinderat",
+      roles: ["Vorstand"],
       profileLink: "/profil/philip-brunner"
     },
     {
@@ -109,6 +112,7 @@ const WerWirSind = () => {
       description: "",
       image: "/assets/people/vorstand/Marcus-Buehler_SVP.jpg",
       badge: "Gemeinderat",
+      roles: ["Vorstand"],
       profileLink: "/profil/marcus-buehler"
     },
     {
@@ -247,6 +251,7 @@ const WerWirSind = () => {
       email: "",
       description: "",
       image: "/assets/people/profilbilder/raphael-tschan.jpg",
+      roles: ["Vorstand"],
       profileLink: "/profil/raphael-tschan"
     }
   ];
@@ -433,6 +438,13 @@ const WerWirSind = () => {
                             <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
                               {person.role}
                             </Badge>
+                          )}
+                          {person.roles && person.roles.length > 0 && (
+                            <>
+                              {person.roles.map((role: string, idx: number) => (
+                                <Badge key={idx} variant="outline" className="text-xs">{role}</Badge>
+                              ))}
+                            </>
                           )}
                         </div>
                       </div>

@@ -37,7 +37,7 @@ const PeopleSection = () => {
     {
       name: "Gregor R. Bruhin",
       role: "Kantonsrat",
-      position: "Gemeinderat",
+      position: "Co-Wahlkampfleiter",
       image: "./assets/people/profilbilder/gregor-bruhin.jpg",
       profileLink: "/profil/gregor-bruhin",
       category: "Kantonsrat",
