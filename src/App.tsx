@@ -3,9 +3,10 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import ScrollToTop from "./components/ScrollToTop";
 import CookieNotice from "./components/CookieNotice";
+import { initializeAnalytics } from "@/utils/analytics";
 
 // Lazy load pages for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -39,6 +40,10 @@ const ReneGretenerProfil = lazy(() => import("./pages/ReneGretenerProfil"));
 const ManfredPircherProfil = lazy(() => import("./pages/ManfredPircherProfil"));
 const HeinzTaennlerProfil = lazy(() => import("./pages/HeinzTaennlerProfil"));
 const GregorBruhinProfil = lazy(() => import("./pages/GregorBruhinProfil"));
+const BrunoZimmermannProfil = lazy(() => import("./pages/BrunoZimmermannProfil"));
+const AlexandraGretenerProfil = lazy(() => import("./pages/AlexandraGretenerProfil"));
+const DanielGrammProfil = lazy(() => import("./pages/DanielGrammProfil"));
+const MortenHannesboProfil = lazy(() => import("./pages/MortenHannesboProfil"));
 const AktuelleTermine = lazy(() => import("./pages/AktuelleTermine"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -58,54 +63,65 @@ const queryClient = new QueryClient({
   },
 });
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Suspense fallback={<PageLoader />}>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/themen" element={<Themen />} />
-            <Route path="/abstimmungen" element={<Abstimmungen />} />
-            <Route path="/vorstoesse" element={<Vorstoesse />} />
-            <Route path="/wer-wir-sind" element={<WerWirSind />} />
-            <Route path="/wofuer-wir-stehen" element={<WofuerWirStehen />} />
-            <Route path="/was-ansteht" element={<WasAnsteht />} />
-            <Route path="/stadtrat" element={<Stadtrat />} />
-            <Route path="/vorstand" element={<Vorstand />} />
-            <Route path="/geschichte" element={<Geschichte />} />
-            <Route path="/kontakt" element={<Kontakt />} />
-            <Route path="/aktuelle-termine" element={<AktuelleTermine />} />
-            <Route path="/mitglied-werden" element={<Mitglied />} />
-            <Route path="/spenden" element={<Spenden />} />
-            <Route path="/1000er-club" element={<TausenderClub />} />
-            <Route path="/1000er-club-veranstaltungen" element={<TausenderClubVeranstaltungen />} />
-            <Route path="/wahlen" element={<Wahlen />} />
-            <Route path="/impressum" element={<Impressum />} />
-            <Route path="/datenschutz" element={<Datenschutz />} />
-            <Route path="/cookie" element={<CookiePolicy />} />
-            <Route path="/profil/adrian-risi" element={<AdriansRisiProfil />} />
-            <Route path="/profil/raphael-tschan" element={<RaphaelTschanProfil />} />
-            <Route path="/profil/roman-kueng" element={<RomanKuengProfil />} />
-            <Route path="/profil/philip-brunner" element={<PhilipBrunnerProfil />} />
-            <Route path="/profil/andre-wicki" element={<AndreWickiProfil />} />
-            <Route path="/profil/marcus-buehler" element={<MarcusBuehlerProfil />} />
-            <Route path="/profil/norbert-schlumpf" element={<NorbertSchlumpfProfil />} />
-            <Route path="/profil/alex-odermatt" element={<AlexOdermattProfil />} />
-            <Route path="/profil/rene-gretener" element={<ReneGretenerProfil />} />
-            <Route path="/profil/manfred-pircher" element={<ManfredPircherProfil />} />
-            <Route path="/profil/heinz-taennler" element={<HeinzTaennlerProfil />} />
-            <Route path="/profil/gregor-bruhin" element={<GregorBruhinProfil />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-        <ScrollToTop />
-        <CookieNotice />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  // Initialize analytics on app load based on existing cookie preferences
+  useEffect(() => {
+    initializeAnalytics();
+  }, []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/themen" element={<Themen />} />
+              <Route path="/abstimmungen" element={<Abstimmungen />} />
+              <Route path="/vorstoesse" element={<Vorstoesse />} />
+              <Route path="/wer-wir-sind" element={<WerWirSind />} />
+              <Route path="/wofuer-wir-stehen" element={<WofuerWirStehen />} />
+              <Route path="/was-ansteht" element={<WasAnsteht />} />
+              <Route path="/stadtrat" element={<Stadtrat />} />
+              <Route path="/vorstand" element={<Vorstand />} />
+              <Route path="/geschichte" element={<Geschichte />} />
+              <Route path="/kontakt" element={<Kontakt />} />
+              <Route path="/aktuelle-termine" element={<AktuelleTermine />} />
+              <Route path="/mitglied-werden" element={<Mitglied />} />
+              <Route path="/spenden" element={<Spenden />} />
+              <Route path="/1000er-club" element={<TausenderClub />} />
+              <Route path="/1000er-club-veranstaltungen" element={<TausenderClubVeranstaltungen />} />
+              <Route path="/wahlen" element={<Wahlen />} />
+              <Route path="/impressum" element={<Impressum />} />
+              <Route path="/datenschutz" element={<Datenschutz />} />
+              <Route path="/cookie" element={<CookiePolicy />} />
+              <Route path="/profil/adrian-risi" element={<AdriansRisiProfil />} />
+              <Route path="/profil/raphael-tschan" element={<RaphaelTschanProfil />} />
+              <Route path="/profil/roman-kueng" element={<RomanKuengProfil />} />
+              <Route path="/profil/philip-brunner" element={<PhilipBrunnerProfil />} />
+              <Route path="/profil/andre-wicki" element={<AndreWickiProfil />} />
+              <Route path="/profil/marcus-buehler" element={<MarcusBuehlerProfil />} />
+              <Route path="/profil/norbert-schlumpf" element={<NorbertSchlumpfProfil />} />
+              <Route path="/profil/alex-odermatt" element={<AlexOdermattProfil />} />
+              <Route path="/profil/rene-gretener" element={<ReneGretenerProfil />} />
+              <Route path="/profil/manfred-pircher" element={<ManfredPircherProfil />} />
+              <Route path="/profil/heinz-taennler" element={<HeinzTaennlerProfil />} />
+              <Route path="/profil/gregor-bruhin" element={<GregorBruhinProfil />} />
+              <Route path="/profil/bruno-zimmermann" element={<BrunoZimmermannProfil />} />
+              <Route path="/profil/alexandra-gretener" element={<AlexandraGretenerProfil />} />
+              <Route path="/profil/daniel-gramm" element={<DanielGrammProfil />} />
+              <Route path="/profil/morten-hannesbo" element={<MortenHannesboProfil />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+          <ScrollToTop />
+          <CookieNotice />
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

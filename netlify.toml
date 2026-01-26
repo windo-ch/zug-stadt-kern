@@ -28,6 +28,74 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# Old website redirects (301 permanent redirects)
+[[redirects]]
+  from = "/aktive/"
+  to = "/wer-wir-sind"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/aktive"
+  to = "/wer-wir-sind"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/1000er-club/"
+  to = "/1000er-club"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/news/"
+  to = "/was-ansteht"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/news"
+  to = "/was-ansteht"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/author/eveporef/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/author/eveporef"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/category/grosser-gemeinderat/"
+  to = "/wer-wir-sind#gemeinderat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/category/grosser-gemeinderat"
+  to = "/wer-wir-sind#gemeinderat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/category/kantonsrat/"
+  to = "/wer-wir-sind#kantonsrat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/category/kantonsrat"
+  to = "/wer-wir-sind#kantonsrat"
+  status = 301
+  force = true
+
+# Handle client-side routing for SPA (must be last)
 [[redirects]]
   from = "/*"
   to = "/index.html"

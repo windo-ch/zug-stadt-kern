@@ -11,7 +11,7 @@ import Footer from '@/components/Footer';
 const Index = () => {
   useEffect(() => {
     // Update page title and meta description for SEO
-    document.title = "SVP Stadt Zug – Mir lieferet für eine starke Stadt Zug";
+    document.title = "SVP Stadt Zug – Mir lieferet";
     
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');

@@ -153,7 +153,7 @@ const NewsSection = () => {
             <div className="text-center">
               <Link to="/was-ansteht">
                 <Button className="btn-outline group">
-                  Alli News
+                  Alle News
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>

@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Switch } from '@/components/ui/switch';
 import { Link } from 'react-router-dom';
+import { updateAnalytics } from '@/utils/analytics';
 
 interface CookieSettings {
   essential: boolean;
@@ -35,6 +36,8 @@ const CookieNotice = () => {
   const saveCookiePreferences = (preferences: CookieSettings) => {
     localStorage.setItem('cookie-preferences', JSON.stringify(preferences));
     localStorage.setItem('cookie-consent-date', new Date().toISOString());
+    // Update analytics script based on new preferences
+    updateAnalytics(preferences);
     setIsVisible(false);
   };
 

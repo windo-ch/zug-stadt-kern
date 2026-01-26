@@ -4,7 +4,7 @@ import StatCard from '@/components/content/StatCard';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Users, Target, Heart, Award, Phone, Mail, ExternalLink } from 'lucide-react';
+import { Users, Target, Heart, Award, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const WerWirSind = () => {
@@ -171,44 +171,95 @@ const WerWirSind = () => {
   // Commissions
   const kommissionen = [
     {
-      name: "Marcus H. Bühler",
-      position: "Nachhaltigkeit",
-      phone: "079 340 81 68",
-      email: "bumbleb@bluewin.ch",
+      name: "Philip C. Brunner",
+      position: "Geschäftsprüfungskommission (GPK)",
+      role: "Präsident",
+      phone: "",
+      email: "",
       description: "",
-      image: "/assets/people/vorstand/Marcus-Buehler_SVP.jpg"
+      image: "/assets/people/profilbilder/philip-c-brunner.jpg",
+      profileLink: "/profil/philip-brunner"
+    },
+    {
+      name: "Alex Odermatt",
+      position: "Bau- und Planungskommission (BPK)",
+      phone: "",
+      email: "",
+      description: "",
+      image: "/assets/people/profilbilder/alex-odermatt.jpg",
+      profileLink: "/profil/alex-odermatt"
+    },
+    {
+      name: "Manfred Pircher",
+      position: "Bau- und Planungskommission (BPK)",
+      phone: "",
+      email: "",
+      description: "",
+      image: "/assets/people/profilbilder/manfred-pircher.jpg",
+      profileLink: "/profil/manfred-pircher"
+    },
+    {
+      name: "Bruno Zimmermann",
+      position: "Steuergruppe Podium 41",
+      phone: "",
+      email: "",
+      description: "",
+      image: "/assets/people/profilbilder/bruno-zimmermann.jpg",
+      profileLink: "/profil/bruno-zimmermann"
+    },
+    {
+      name: "Roman Küng",
+      position: "Steuergruppe Haus Göbli",
+      phone: "",
+      email: "",
+      description: "",
+      image: "/assets/people/profilbilder/roman-kueng.jpg",
+      profileLink: "/profil/roman-kueng"
+    },
+    {
+      name: "Marcus H. Bühler",
+      position: "Nachhaltigkeitskommission",
+      phone: "",
+      email: "",
+      description: "",
+      image: "/assets/people/vorstand/Marcus-Buehler_SVP.jpg",
+      profileLink: "/profil/marcus-buehler"
     },
     {
       name: "Alexandra Gretener",
       position: "Schulkommission",
       phone: "",
-      email: "alexandra.gretener@gmail.com",
+      email: "",
       description: "",
-      image: "/assets/people/profilbilder/alexandra-gretener.jpg"
+      image: "/assets/people/profilbilder/alexandra-gretener.jpg",
+      profileLink: "/profil/alexandra-gretener"
     },
     {
       name: "Morten Hannesbo",
       position: "Schulkommission",
       phone: "",
-      email: "morten.hannesbo@mac.com",
+      email: "",
       description: "",
-      image: "/assets/people/profilbilder/moren-hannesbo.jpg"
+      image: "/assets/people/profilbilder/moren-hannesbo.jpg",
+      profileLink: "/profil/morten-hannesbo"
     },
     {
       name: "Daniel Gramm",
       position: "Kulturkommission",
       phone: "",
-      email: "daniel.gramm@bluewin.ch",
+      email: "",
       description: "",
-      image: "/assets/people/profilbilder/daniel-gramm.jpg"
+      image: "/assets/people/profilbilder/daniel-gramm.jpg",
+      profileLink: "/profil/daniel-gramm"
     },
     {
       name: "Raphael Tschan",
       position: "Rechnungsprüfungskommission (RPK)",
       phone: "",
-      email: "rt@raphael-tschan.ch",
+      email: "",
       description: "",
-      image: "/assets/people/profilbilder/raphael-tschan.jpg"
+      image: "/assets/people/profilbilder/raphael-tschan.jpg",
+      profileLink: "/profil/raphael-tschan"
     }
   ];
 
@@ -404,7 +455,7 @@ const WerWirSind = () => {
 
               {/* Gemeinderat */}
               {(gemeinderat.length > 0 || weitere.length > 0) && (
-                <Section>
+                <Section id="gemeinderat">
                   <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Gemeinderat</h2>
                   <div className="space-y-6 max-w-3xl mx-auto">
                     {[...gemeinderat, ...weitere]
@@ -433,60 +484,63 @@ const WerWirSind = () => {
             </a>
           </div>
           <div className="grid lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {kommissionen.map((person, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-start space-x-4">
-                    {person.image ? (
-                      <div className="w-16 h-16 rounded-full overflow-hidden border-4 border-primary/20 shadow-md flex-shrink-0">
-                        <img
-                          src={person.image}
-                          alt={person.name}
-                          className="w-full h-full object-cover"
-                          loading="lazy"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.style.display = 'none';
-                          }}
-                        />
-                      </div>
-                    ) : (
-                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <span className="text-sm font-bold text-primary">
-                          {person.name.split(' ').map(n => n[0]).join('')}
-                        </span>
-                      </div>
-                    )}
-                    <div className="flex-grow">
-                      <CardTitle className="text-lg mb-1">{person.name}</CardTitle>
-                      <Badge variant="secondary" className="mb-2">{person.position}</Badge>
-                    </div>
-                  </div>
-                </CardHeader>
-                {(person.phone || person.email) && (
-                  <CardContent>
-                    <div className="space-y-2 text-sm">
-                      {person.phone && (
-                        <div className="flex items-center">
-                          <Phone className="w-4 h-4 mr-2 text-muted-foreground flex-shrink-0" />
-                          <a href={`tel:${person.phone.replace(/\s/g, '')}`} className="text-primary hover:text-primary/80 transition-colors">
-                            {person.phone}
-                          </a>
+            {kommissionen.map((person, index) => {
+              const cardContent = (
+                <Card className={`hover:shadow-lg transition-shadow ${person.profileLink ? 'cursor-pointer' : ''}`}>
+                  <CardHeader>
+                    <div className="flex items-start space-x-4">
+                      {person.image ? (
+                        <div className="w-16 h-16 rounded-full overflow-hidden border-4 border-primary/20 shadow-md flex-shrink-0">
+                          <img
+                            src={person.image}
+                            alt={person.name}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              target.style.display = 'none';
+                            }}
+                          />
+                        </div>
+                      ) : (
+                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                          <span className="text-sm font-bold text-primary">
+                            {person.name.split(' ').map(n => n[0]).join('')}
+                          </span>
                         </div>
                       )}
-                      {person.email && (
-                        <div className="flex items-center">
-                          <Mail className="w-4 h-4 mr-2 text-muted-foreground flex-shrink-0" />
-                          <a href={`mailto:${person.email}`} className="text-primary hover:text-primary/80 transition-colors text-sm break-all">
-                            {person.email}
-                          </a>
+                      <div className="flex-grow">
+                        <CardTitle className="text-lg mb-1">{person.name}</CardTitle>
+                        <div className="flex flex-wrap gap-2 mb-2">
+                          <Badge variant="secondary">{person.position}</Badge>
+                          {person.role && (
+                            <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
+                              {person.role}
+                            </Badge>
+                          )}
                         </div>
-                      )}
+                      </div>
                     </div>
-                  </CardContent>
-                )}
-              </Card>
-            ))}
+                  </CardHeader>
+                  {person.profileLink && (
+                    <CardContent>
+                      <Link to={person.profileLink} className="text-primary hover:text-primary/80 transition-colors text-sm font-medium flex items-center">
+                        Profil ansehen
+                        <ExternalLink className="w-4 h-4 ml-2" />
+                      </Link>
+                    </CardContent>
+                  )}
+                </Card>
+              );
+
+              return person.profileLink ? (
+                <Link key={index} to={person.profileLink} className="block">
+                  {cardContent}
+                </Link>
+              ) : (
+                <div key={index}>{cardContent}</div>
+              );
+            })}
           </div>
         </Section>
 

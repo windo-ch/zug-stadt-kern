@@ -1,3 +1,16 @@
+# Old website redirects (301 permanent redirects)
+/aktive/ /wer-wir-sind 301
+/aktive /wer-wir-sind 301
+/1000er-club/ /1000er-club 301
+/news/ /was-ansteht 301
+/news /was-ansteht 301
+/author/eveporef/ / 301
+/author/eveporef / 301
+/category/grosser-gemeinderat/ /wer-wir-sind#gemeinderat 301
+/category/grosser-gemeinderat /wer-wir-sind#gemeinderat 301
+/category/kantonsrat/ /wer-wir-sind#kantonsrat 301
+/category/kantonsrat /wer-wir-sind#kantonsrat 301
+
 # Handle client-side routing for SPA
 /*    /index.html   200
 
