@@ -1,7 +1,7 @@
 import PageLayout from '@/components/layout/PageLayout';
 import Section from '@/components/layout/Section';
 import SectionHeader from '@/components/layout/SectionHeader';
-import { Heart, Banknote, Users, Target, Building2, Smartphone } from 'lucide-react';
+import { Heart, Banknote, Users, Target, Building2, Smartphone, Download } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const Spenden = () => {
@@ -126,7 +126,7 @@ const Spenden = () => {
                     Zahlplattform Payrexx
                   </h3>
                   <p className="text-muted-foreground mb-8 max-w-md">
-                    Spenden Sie mit Kreditkarten oder TWINT über unsere sichere Zahlplattform. Scannen Sie den QR-Code mit Ihrer TWINT-App oder klicken Sie auf den Link.
+                    Spenden Sie mit Kreditkarten oder TWINT über unsere sichere Zahlplattform. Scannen Sie mit Ihrer TWINT-App den QR-Code oder klicken Sie für Zahlung mit Kreditkarte auf den grünen Button.
                   </p>
                   
                   {/* TWINT QR Code */}
@@ -147,6 +147,16 @@ const Spenden = () => {
                   >
                     <Banknote className="h-5 w-5" />
                     Jetzt online spenden
+                  </a>
+                  
+                  {/* PDF Download Button */}
+                  <a
+                    href="/SVP_QR-EZ_Vereinskonto.pdf"
+                    download="SVP_QR-EZ_Vereinskonto.pdf"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-white rounded-lg font-semibold hover:bg-secondary/90 transition-colors mb-4"
+                  >
+                    <Download className="h-5 w-5" />
+                    Einzahlungsschein herunterladen
                   </a>
                   
                   <p className="text-xs text-muted-foreground">
