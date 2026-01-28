@@ -33,7 +33,7 @@ const Header = () => {
       title: 'Partei & Personen',
       items: [
         { label: 'Wer wir sind', href: '/wer-wir-sind' },
-        { label: 'Stadtrat', href: '/stadtrat' },
+        { label: 'GGR – Stadtrat', href: '/stadtrat' },
         { label: 'Vorstand', href: '/vorstand' },
         { label: 'Geschichte', href: '/geschichte' }
       ]

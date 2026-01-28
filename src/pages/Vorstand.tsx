@@ -103,19 +103,43 @@ const Vorstand = () => {
 
   const meetings = [
     {
-      date: "Nach Bedarf",
+      date: "10. Februar 2026",
       title: "Vorstandssitzung",
       description: "Regelmässige Sitzungen zur Koordination der Parteiarbeit",
       location: "verschiedene Standorte"
     },
     {
-      date: "Nach Bedarf",
+      date: "25. März 2026",
+      title: "Vorstandssitzung",
+      description: "Regelmässige Sitzungen zur Koordination der Parteiarbeit",
+      location: "verschiedene Standorte"
+    },
+    {
+      date: "22. Juni 2026",
+      title: "Vorstandssitzung",
+      description: "Regelmässige Sitzungen zur Koordination der Parteiarbeit",
+      location: "verschiedene Standorte"
+    },
+    {
+      date: "17. September 2026",
+      title: "Vorstandssitzung",
+      description: "Regelmässige Sitzungen zur Koordination der Parteiarbeit",
+      location: "verschiedene Standorte"
+    },
+    {
+      date: "2. Dezember 2026",
+      title: "Vorstandssitzung",
+      description: "Regelmässige Sitzungen zur Koordination der Parteiarbeit",
+      location: "verschiedene Standorte"
+    },
+    {
+      date: "25. März 2026",
       title: "Generalversammlungen",
       description: "Jährliche Versammlungen der Partei",
       location: "Verschiedene Standorte"
     },
     {
-      date: "Nach Bedarf",
+      date: "25. März 2026",
       title: "Mitgliederversammlungen",
       description: "Versammlungen für alle Parteimitglieder",
       location: "Verschiedene Standorte"
@@ -213,23 +237,47 @@ const Vorstand = () => {
             className="mb-8"
           />
           <div className="space-y-4">
-            {meetings.map((meeting, index) => (
-              <Card key={index}>
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between">
-                    <div className="flex-grow">
-                      <div className="flex items-center space-x-3 mb-2">
-                        <Calendar className="w-5 h-5 text-primary" />
-                        <h3 className="font-semibold text-foreground">{meeting.title}</h3>
-                        <Badge variant="outline">{meeting.date}</Badge>
-                      </div>
-                      <p className="text-muted-foreground text-sm mb-2">{meeting.description}</p>
-                      <span className="text-xs text-muted-foreground">Ort: {meeting.location}</span>
+            {/* Grouped Vorstandssitzungen */}
+            <Card>
+              <CardContent className="p-6">
+                <div className="flex items-start">
+                  <Calendar className="w-5 h-5 text-primary mt-0.5 mr-3 flex-shrink-0" />
+                  <div className="flex-grow">
+                    <h3 className="font-semibold text-foreground mb-2">Vorstandssitzungen</h3>
+                    <p className="text-muted-foreground text-sm mb-3">Regelmässige Sitzungen zur Koordination der Parteiarbeit</p>
+                    <div className="flex flex-wrap gap-2 mb-2">
+                      <Badge variant="outline">10. Februar 2026</Badge>
+                      <Badge variant="outline">25. März 2026</Badge>
+                      <Badge variant="outline">22. Juni 2026</Badge>
+                      <Badge variant="outline">17. September 2026</Badge>
+                      <Badge variant="outline">2. Dezember 2026</Badge>
                     </div>
+                    <span className="text-xs text-muted-foreground">Ort: verschiedene Standorte</span>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              </CardContent>
+            </Card>
+            
+            {/* Other meetings */}
+            {meetings
+              .filter(meeting => meeting.title !== "Vorstandssitzung")
+              .map((meeting, index) => (
+                <Card key={index}>
+                  <CardContent className="p-6">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-grow">
+                        <div className="flex items-center space-x-3 mb-2">
+                          <Calendar className="w-5 h-5 text-primary" />
+                          <h3 className="font-semibold text-foreground">{meeting.title}</h3>
+                          <Badge variant="outline">{meeting.date}</Badge>
+                        </div>
+                        <p className="text-muted-foreground text-sm mb-2">{meeting.description}</p>
+                        <span className="text-xs text-muted-foreground">Ort: {meeting.location}</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
           </div>
         </Section>
 

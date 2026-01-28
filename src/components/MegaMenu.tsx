@@ -104,7 +104,7 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
                 </NavigationMenuLink>
               </div>
               <ListItem
-                title="Stadtrat"
+                title="GGR – Stadtrat"
                 href="/stadtrat"
                 icon={<Users className="h-5 w-5" />}
               >
