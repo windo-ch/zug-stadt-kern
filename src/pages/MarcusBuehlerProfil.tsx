@@ -62,7 +62,7 @@ const MarcusBuehlerProfil = () => {
         <div className="mb-12">
           <ProfileHero
             personalData={personalData}
-            image="/assets/people/vorstand/Marcus-Buehler_SVP.jpg"
+            image="/assets/people/profilbilder/svp-marcus-buehler-profil.jpg"
             description="Unternehmer • Verwaltungsrat • Schweiz-Enthusiast"
             roles={["Gemeinderat", "CFA", "MBA"]}
           />

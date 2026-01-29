@@ -74,7 +74,7 @@ const Vorstand = () => {
       position: "Vorstandsmitglied",
       roles: [],
       address: "Bahnhofstrasse 27, 6300 Zug",
-      image: "./assets/people/vorstand/Marcus-Buehler_SVP.jpg",
+      image: "./assets/people/profilbilder/svp-marcus-buehler-profil.jpg",
       description: "Erfahrenes Vorstandsmitglied der SVP Stadt Zug mit breitem politischen Engagement.",
       contact: {
         email: "bumbleb@bluewin.ch"
@@ -134,7 +134,7 @@ const Vorstand = () => {
     },
     {
       date: "25. März 2026",
-      title: "Generalversammlungen",
+      title: "Generalversammlung",
       description: "Jährliche Versammlungen der Partei",
       location: "Verschiedene Standorte"
     },

@@ -68,7 +68,7 @@ const PeopleSection = () => {
       name: "Marcus Bühler",
       role: "Gemeinderat",
       position: "Vorstand",
-      image: "./assets/people/vorstand/Marcus-Buehler_SVP.jpg",
+      image: "./assets/people/profilbilder/svp-marcus-buehler-profil.jpg",
       profileLink: "/profil/marcus-buehler",
       category: "Gemeinderat"
     },

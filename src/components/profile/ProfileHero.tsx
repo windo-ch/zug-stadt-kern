@@ -7,6 +7,8 @@ interface ProfileHeroProps {
   image: string;
   description?: string;
   roles?: string[];
+  imageScale?: number;
+  objectPosition?: string;
 }
 
 /**
@@ -15,7 +17,7 @@ interface ProfileHeroProps {
  * Displays profile image, name, position, description, and role badges.
  * Includes optimized image loading with lazy loading and error handling.
  */
-const ProfileHero = memo(({ personalData, image, description, roles }: ProfileHeroProps) => {
+const ProfileHero = memo(({ personalData, image, description, roles, imageScale, objectPosition }: ProfileHeroProps) => {
   // Combine position and roles, avoiding duplication
   const allRoles = roles && roles.length > 0 
     ? [personalData.position, ...roles.filter(role => role !== personalData.position)]
@@ -31,6 +33,11 @@ const ProfileHero = memo(({ personalData, image, description, roles }: ProfileHe
           width="320"
           height="320"
           loading="lazy"
+          style={{
+            transform: imageScale ? `scale(${imageScale})` : undefined,
+            transformOrigin: 'center top',
+            objectPosition: objectPosition || 'center center'
+          }}
           onError={(e) => {
             const target = e.target as HTMLImageElement;
             // Fallback to a placeholder or hide the image

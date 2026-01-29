@@ -65,7 +65,7 @@ const Stadtrat = () => {
       email: "bumbleb@bluewin.ch",
       description: "Marcus H. Bühler setzt sich als Gemeinderat für pragmatische Lösungen und bürgernahe Politik ein.",
       isFraktionschef: false,
-      image: "/assets/people/vorstand/Marcus-Buehler_SVP.jpg",
+      image: "/assets/people/profilbilder/svp-marcus-buehler-profil.jpg",
       profileLink: "/profil/marcus-buehler"
     },
     {

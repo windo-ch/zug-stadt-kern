@@ -110,7 +110,7 @@ const WerWirSind = () => {
       phone: "",
       email: "",
       description: "",
-      image: "/assets/people/vorstand/Marcus-Buehler_SVP.jpg",
+      image: "/assets/people/profilbilder/svp-marcus-buehler-profil.jpg",
       badge: "Gemeinderat",
       roles: ["Vorstand"],
       profileLink: "/profil/marcus-buehler"
@@ -214,7 +214,7 @@ const WerWirSind = () => {
       phone: "",
       email: "",
       description: "",
-      image: "/assets/people/vorstand/Marcus-Buehler_SVP.jpg",
+      image: "/assets/people/profilbilder/svp-marcus-buehler-profil.jpg",
       profileLink: "/profil/marcus-buehler"
     },
     {
