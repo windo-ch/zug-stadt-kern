@@ -100,7 +100,7 @@ const TausenderClub = () => {
                           </div>
                           <div>
                             <p className="font-semibold text-foreground mb-1">Thema</p>
-                            <p className="text-lg font-medium text-primary">Wysmann hat Biss – wie gewinnt man Wahlen?</p>
+                            <p className="text-lg font-medium text-primary">Wyssmann hat Biss – wie gewinnt man Wahlen?</p>
                           </div>
                         </div>
                       </div>

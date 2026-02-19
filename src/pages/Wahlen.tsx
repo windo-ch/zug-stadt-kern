@@ -169,11 +169,13 @@ const Wahlen = () => {
               </h1>
               
               {/* Simple Horizontal Countdown */}
-              <div className="flex items-center justify-center gap-3 text-2xl md:text-3xl font-medium text-foreground">
-                <span className="text-muted-foreground">Noch</span>
-                <span className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] bg-clip-text text-transparent">
-                  {daysRemaining}
-                </span>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 text-2xl md:text-3xl font-medium text-foreground">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <span className="text-muted-foreground">Noch</span>
+                  <span className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] bg-clip-text text-transparent">
+                    {daysRemaining}
+                  </span>
+                </div>
                 <span className="text-muted-foreground">Tage bis zum Wahltag</span>
               </div>
             </div>
@@ -299,7 +301,7 @@ const Wahlen = () => {
                 </CardHeader>
                 <CardContent className="flex-grow pt-0 relative z-10">
                   <p className="text-muted-foreground leading-relaxed text-lg">
-                    Rekrutierung von zusätzlich qualifizierten Personen aus der Stadt Zug für den Stadtrat, den Kantonsrat, den Grossen Gemeinderat, und die Rechnungsprüfungskommission.
+                    Wir treten an mit bekannten, qualifizierten Persönlichkeiten aus der Stadt Zug – für den Regierungsrat, den Stadtrat und das Stadtpräsidium, den Kantonsrat, den Grossen Gemeinderat, und die Rechnungsprüfungskommission.
                   </p>
                 </CardContent>
               </Card>
