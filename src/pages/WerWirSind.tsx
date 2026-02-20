@@ -286,61 +286,55 @@ const WerWirSind = () => {
         {(() => {
           const renderPersonCard = (person: any, index: number) => {
             const cardContent = (
-              <Card className={`border-l-4 border-l-primary hover:shadow-lg transition-shadow ${person.profileLink ? 'cursor-pointer' : ''}`}>
-                <CardHeader>
-                  <div className="flex items-start space-x-4">
-                    {person.image ? (
-                      <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-primary/20 shadow-md flex-shrink-0">
-                        <img
-                          src={person.image}
-                          alt={person.name}
-                          className="w-full h-full object-cover"
-                          loading="lazy"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.style.display = 'none';
-                          }}
-                        />
-                      </div>
-                    ) : (
-                      <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <span className="text-lg font-bold text-primary">
-                          {person.name.split(' ').map((n: string) => n[0]).join('')}
-                        </span>
-                      </div>
-                    )}
-                    <div className="flex-grow">
-                      <CardTitle className="text-xl mb-1">{person.name}</CardTitle>
-                      {person.badge && (
-                        <Badge className="bg-[hsl(var(--svp-green))] text-white mb-2">{person.badge}</Badge>
-                      )}
-                      {person.roles && person.roles.length > 0 && (
-                        <div className="flex flex-wrap gap-2 mt-2">
-                          {person.roles.map((role: string, idx: number) => (
-                            <Badge key={idx} variant="outline" className="text-xs">{role}</Badge>
-                          ))}
-                        </div>
-                      )}
+              <Card className={`h-full hover:shadow-lg transition-all duration-300 ${person.profileLink ? 'cursor-pointer hover:-translate-y-0.5' : ''}`}>
+                <CardContent className="p-6 flex flex-col items-center text-center h-full">
+                  {person.image ? (
+                    <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[hsl(var(--svp-green))]/20 shadow-md mb-4">
+                      <img
+                        src={person.image}
+                        alt={person.name}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                        }}
+                      />
                     </div>
-                  </div>
-                </CardHeader>
-                {person.profileLink && (
-                  <CardContent>
-                    <Link to={person.profileLink} className="text-primary hover:text-primary/80 transition-colors text-sm font-medium flex items-center">
+                  ) : (
+                    <div className="w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                      <span className="text-2xl font-bold text-primary">
+                        {person.name.split(' ').map((n: string) => n[0]).join('')}
+                      </span>
+                    </div>
+                  )}
+                  <h3 className="text-lg font-bold text-foreground mb-1">{person.name}</h3>
+                  {person.badge && (
+                    <Badge className="bg-[hsl(var(--svp-green))] text-white mb-2">{person.badge}</Badge>
+                  )}
+                  {person.roles && person.roles.length > 0 && (
+                    <div className="flex flex-wrap justify-center gap-1.5 mt-2">
+                      {person.roles.map((role: string, idx: number) => (
+                        <Badge key={idx} variant="outline" className="text-xs">{role}</Badge>
+                      ))}
+                    </div>
+                  )}
+                  {person.profileLink && (
+                    <Link to={person.profileLink} className="text-primary hover:text-primary/80 transition-colors text-sm font-medium flex items-center mt-auto pt-3">
                       Profil ansehen
-                      <ExternalLink className="w-4 h-4 ml-2" />
+                      <ExternalLink className="w-3.5 h-3.5 ml-1.5" />
                     </Link>
-                  </CardContent>
-                )}
+                  )}
+                </CardContent>
               </Card>
             );
 
             return person.profileLink ? (
-              <Link key={index} to={person.profileLink} className="block">
+              <Link key={index} to={person.profileLink} className="block h-full">
                 {cardContent}
               </Link>
             ) : (
-              <div key={index}>{cardContent}</div>
+              <div key={index} className="h-full">{cardContent}</div>
             );
           };
 
@@ -350,7 +344,7 @@ const WerWirSind = () => {
               {regierungsrat.length > 0 && (
                 <Section>
                   <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Regierungsrat</h2>
-                  <div className="space-y-6 max-w-3xl mx-auto">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto [&>*:only-child]:sm:col-span-2 [&>*:only-child]:sm:w-[calc(50%-0.75rem)] [&>*:only-child]:sm:mx-auto">
                     {regierungsrat.map(renderPersonCard)}
                   </div>
                 </Section>
@@ -360,7 +354,7 @@ const WerWirSind = () => {
               {kantonsrat.length > 0 && (
                 <Section id="kantonsrat">
                   <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Kantonsrat</h2>
-                  <div className="space-y-6 max-w-3xl mx-auto">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto [&>*:only-child]:sm:col-span-2 [&>*:only-child]:sm:w-[calc(50%-0.75rem)] [&>*:only-child]:sm:mx-auto">
                     {kantonsrat.map(renderPersonCard)}
                   </div>
                 </Section>
@@ -370,7 +364,7 @@ const WerWirSind = () => {
               {stadtrat.length > 0 && (
                 <Section>
                   <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Stadtrat</h2>
-                  <div className="space-y-6 max-w-3xl mx-auto">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto [&>*:only-child]:sm:col-span-2 [&>*:only-child]:sm:w-[calc(50%-0.75rem)] [&>*:only-child]:sm:mx-auto">
                     {stadtrat.map(renderPersonCard)}
                   </div>
                 </Section>
@@ -380,7 +374,7 @@ const WerWirSind = () => {
               {gemeinderat.length > 0 && (
                 <Section id="gemeinderat">
                   <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Gemeinderat</h2>
-                  <div className="space-y-6 max-w-3xl mx-auto">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto [&>*:only-child]:sm:col-span-2 [&>*:only-child]:sm:w-[calc(50%-0.75rem)] [&>*:only-child]:sm:mx-auto">
                     {gemeinderat.map(renderPersonCard)}
                   </div>
                 </Section>

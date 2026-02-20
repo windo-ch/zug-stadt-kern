@@ -231,7 +231,6 @@ const Wahlen = () => {
             <h2 className="text-3xl font-bold text-foreground mb-6 text-center">
               Zug soll Heimat bleiben – Zuwanderung begrenzen, Lebensqualität schützen
             </h2>
-            
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed text-center max-w-3xl mx-auto">
               Der Kanton Zug ist unsere Heimat. Doch das starke Bevölkerungswachstum der letzten Jahre verändert unseren Kanton spürbar: mehr Anonymität, mehr Druck auf Wohnraum, Verkehr und Grünflächen. Wir sagen Klartext und setzen uns dafür ein, dass Zug lebenswerte bleibt.
             </p>
@@ -369,7 +368,7 @@ const Wahlen = () => {
                   <div className="flex items-start gap-4 group/item">
                     <div className="w-3 h-3 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-lg"></div>
                     <p className="text-foreground leading-relaxed text-lg font-medium">
-                      Das Verteidigen des Stadtpräsidiums plus ein zusätzliches Mitglied im Stadtrat
+                      Das Verteidigen des Stadtpräsidiums
                     </p>
                   </div>
                   <div className="flex items-start gap-4 group/item">

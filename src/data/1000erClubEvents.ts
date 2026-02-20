@@ -8,6 +8,29 @@ export interface ClubEvent {
 
 export const clubEvents: ClubEvent[] = [
   {
+    title: "Wie gewinnt man Wahlen?",
+    date: "17. Februar 2026",
+    speaker: "Nationalrat Rémy Wyssmann, Präsident SVP Kanton Solothurn",
+    content: `Einen passenderen Titel für die Tischrede des 1000er-Clubs SVP Stadt Zug am 17. Februar 2026 im Hinblick auf die Super-Wahltag in Zug am 4. Oktober 2026 gäbe es wohl kaum.
+
+**Agir pas subire – oder einfach gesagt: Nicht fragen, sondern machen!**
+
+Rémy Wyssmann, Nationalrat und Präsident der SVP Kanton Solothurn, zeigt anhand der Wahlerfolge des Jahres 2025 auf, welche Faktoren entscheidend sind, um Wahlen und Abstimmungen erfolgreich zu gewinnen. Die SVP-Solothurn konnte eine aussergewöhnliche Erfolgsserie verbuchen: Sie gewann alle entscheidenden kantonalen Abstimmungen, wurde mit 25 Sitzen (+4) erstmals stärkste Partei im Kantonsrat, zog in den Regierungsrat ein und erzielte auch bei den Gemeinderatswahlen deutliche Gewinne – selbst in Städten wie Grenchen, Olten und Solothurn. Diese Resultate waren kein Zufall, sondern das Ergebnis einer klaren strategischen Ausrichtung.
+
+Die SVP-Solothurn startete aus der Defensive. Man könnte auch von einer Oppositionsposition ausgehen. Deshalb steht im Zentrum der Strategie IMMER die Überzeugung, dass sich die Bevölkerung weniger für Personen als für Inhalte interessiert. Nicht Köpfe entscheiden Wahlen, sondern Themen. Griffig und prägend ist deshalb eine Kampagne, die inhaltlich klar, verständlich und konsequent geführt wird. Die Wählerschaft muss genau wissen, wofür eine die SVP steht und was ihre Wahlstimme konkret bewirkt. Dabei spielt die Wiederholung eine zentrale Rolle: Jede stimmberechtigte Person sollte eine Kampagne mehrfach und über verschiedene Kanäle wahrnehmen. Hohe Sichtbarkeit schafft nicht nur Effizienz, sondern auch Verankerung und Vertrauen. Professionelle Kampagnenarbeit bedeutet deshalb, gleichzeitig auf unterschiedlichen Ebenen präsent zu sein – online, in Printmedien, im öffentlichen Raum und im direkten Kontakt mit den Bürgerinnen und Bürger – Auf der Strasse: SVP bi dä Lüt.
+
+Ein zentrales Element jeder erfolgreichen Kampagne ist der Flyer. Er bildet gewissermassen das Herzstück der Kommunikation. Ein wirkungsvoller Flyer schafft direkte Betroffenheit, stellt eine hohe Relevanz für den Stimmbürger her und erklärt komplexe Sachverhalte in einfacher, klarer Sprache. Bild und Text müssen sich ergänzen und die Botschaft eindeutig transportieren. Ebenso wichtig ist eine klare Handlungsaufforderung: Die Leserinnen und Leser müssen am Ende wissen, was sie konkret tun sollen. Konkret: Wann ein NEIN oder ein JA einlegen.
+
+Neben der inhaltlichen Klarheit ist auch die langfristige Ausrichtung entscheidend. Wahlen gewinnt man nicht mit kurzfristigen Aktionen, sondern mit dauerhaften, kontinuierlichen Kampagnen. Es gilt, beim Thema zu bleiben und sich nicht auf Stil- oder Nebenkriegsschauplätze einzulassen, die vom politischen Gegner eröffnet werden. Sachlichkeit wird dabei als strategischer Vorteil verstanden. Wer konsequent sachlich und freundlich argumentiert, verständlich kommuniziert und über genügend Ressourcen für eine breite Kampagne verfügt, erhöht seine Erfolgschancen.
+
+Die zentrale Erkenntnis des Abends lautet somit: Mit klaren Themen, professioneller Planung, ausreichendem Budget und konsequenter Kommunikation auf vielen Kanälen lassen sich Wahlen gewinnen. Entscheidend ist, die wirklich brennenden Anliegen (Pain Points) der Bevölkerung ernst zu nehmen, verständlich zu vermitteln und beharrlich am eigenen Kurs festzuhalten.
+
+Ein sehr eindrücklicher Abend – mit herzlichem Dank an Nationalrat Rémy Wyssmann, der alle Anwesenden mit seiner Passion, seinem Drive und seiner Beharrlichkeit überzeugt hat.
+
+**AGIR PAS SUBIR**`,
+    author: "Marcus H. Bühler"
+  },
+  {
     title: "Kampf dem Nanny-Staat Schweiz",
     date: "19. November 2025",
     speaker: "Urs Furrer, Direktor des Schweizerischen Gewerbeverbands",

@@ -100,7 +100,7 @@ const PeopleSection = () => {
             Wer wir sind
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Deine Nachbaren. Deine Stimme.
+            Deine Nachbarn. Deine Stimme.
           </p>
         </div>
 

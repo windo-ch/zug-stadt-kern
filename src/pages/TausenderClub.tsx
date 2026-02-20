@@ -1,7 +1,7 @@
 import PageLayout from "@/components/layout/PageLayout";
 import Section from "@/components/layout/Section";
 import SectionHeader from "@/components/layout/SectionHeader";
-import { Sparkles, Users, Calendar, ArrowRight, Crown, Award, Mail, Phone, Check, Star, TrendingUp } from "lucide-react";
+import { Sparkles, Calendar, ArrowRight, Award, Mail, Phone, Check, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -58,72 +58,91 @@ const TausenderClub = () => {
         </div>
       </section>
 
-      {/* Next Event - Prominent */}
+      {/* Save the Date */}
       <Section variant="muted" id="next-event">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
               <div className="inline-flex items-center gap-2 text-primary mb-3">
-                <TrendingUp className="h-5 w-5" />
-                <span className="text-sm font-semibold uppercase tracking-wide">Nächstes Event</span>
+                <Calendar className="h-5 w-5" />
+                <span className="text-sm font-semibold uppercase tracking-wide">Save the Date</span>
               </div>
             </div>
 
-            <Card className="card-elevated border-2 border-primary/20 overflow-hidden">
-              <CardContent className="p-0">
-                <div className="flex flex-col md:flex-row">
-                  {/* Event Image - Left Side */}
-                  <div className="relative w-full md:w-1/3 md:min-w-[300px] h-64 md:h-auto overflow-hidden">
-                    <img
-                      src="./assets/events/1000er-club/Remy%20Wyssmann-1000club.avif"
-                      alt="1000er Club Event - Rémy Wyssmann, Februar 2026"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  
-                  {/* Content - Right Side */}
-                  <div className="flex-1 p-8 md:p-10">
-                    <div className="flex items-start gap-4 mb-6">
-                      <div className="flex-shrink-0">
-                        <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
-                          <Calendar className="h-8 w-8 text-primary" />
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <h2 className="text-2xl md:text-3xl font-bold mb-3">Restaurant Guggital, Zug</h2>
-                        <p className="text-lg text-muted-foreground mb-4">
-                          Dienstag, 17. Februar 2026
-                        </p>
-                        <div className="space-y-3">
-                          <div>
-                            <p className="font-semibold text-foreground mb-1">Gast & Tischredner</p>
-                            <p className="text-primary">Herr Nationalrat Rémy Wyssmann, Solothurn</p>
-                          </div>
-                          <div>
-                            <p className="font-semibold text-foreground mb-1">Thema</p>
-                            <p className="text-lg font-medium text-primary">Wyssmann hat Biss – wie gewinnt man Wahlen?</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+            <Card className="card-elevated border-2 border-primary/20">
+              <CardContent className="p-8 md:p-10 text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <Calendar className="h-8 w-8 text-primary" />
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">Mittwoch, 24. Juni 2026</h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
+                  Der nächste 1000er Club Abend findet am Mittwoch, 24. Juni 2026 statt. 
+                  Bitte bereits jetzt den Abend in der Agenda vormerken. Mehr Informationen folgen in Kürze.
+                </p>
+                <Button className="btn-hero" asChild>
+                  <a href="mailto:sekretariat.stadt@svp-zug.ch">
+                    <Mail className="mr-2 h-4 w-4" />
+                    Kontakt
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+      </Section>
 
-                    <div className="border-t pt-6 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
-                      <p className="text-muted-foreground flex-1">
-                        Interessiert? Melden Sie sich bereits jetzt an:
-                      </p>
-                      <Button className="btn-hero" asChild>
-                        <a href="mailto:Sekretariat.stadt@svp-zug.ch">
-                          <Mail className="mr-2 h-4 w-4" />
-                          Anmelden
-                        </a>
-                      </Button>
-                    </div>
+      {/* Wyssmann Event Recap */}
+      <Section variant="default">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center gap-2 text-primary mb-3">
+                <Star className="h-5 w-5" />
+                <span className="text-sm font-semibold uppercase tracking-wide">Rückblick</span>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">Wie gewinnt man Wahlen?</h2>
+              <p className="text-muted-foreground">17. Februar 2026 – Nationalrat Rémy Wyssmann</p>
+            </div>
 
-                    <div className="border-t pt-4 mt-6">
-                      <p className="text-xs text-muted-foreground">
-                        Für den 1000er Club der SVP Stadt Zug – Marcus H. Bühler
-                      </p>
-                    </div>
-                  </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              <div className="rounded-xl overflow-hidden aspect-[4/3]">
+                <img
+                  src="/assets/events/1000er-club/svp-buehler-wyssmann.jpg"
+                  alt="Marcus Bühler und Rémy Wyssmann"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="rounded-xl overflow-hidden aspect-[4/3]">
+                <img
+                  src="/assets/events/1000er-club/svp-vorgrag-wyssmann 2.jpeg"
+                  alt="1000er Club Dinner"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="rounded-xl overflow-hidden aspect-[4/3]">
+                <img
+                  src="/assets/events/1000er-club/svp-vorgrag-wyssmann.jpeg"
+                  alt="Publikum am 1000er Club Abend"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <Card className="card-elevated">
+              <CardContent className="p-8">
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Einen passenderen Titel für die Tischrede des 1000er-Clubs SVP Stadt Zug im Hinblick auf den Super-Wahltag in Zug am 4. Oktober 2026 gäbe es wohl kaum. <strong>Agir pas subire</strong> – oder einfach gesagt: Nicht fragen, sondern machen!
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Rémy Wyssmann zeigte anhand der Wahlerfolge der SVP Solothurn im Jahr 2025 auf, welche Faktoren entscheidend sind. Die zentrale Erkenntnis: Mit klaren Themen, professioneller Planung, ausreichendem Budget und konsequenter Kommunikation auf vielen Kanälen lassen sich Wahlen gewinnen.
+                </p>
+                <div className="text-right">
+                  <Button variant="outline" size="sm" asChild>
+                    <Link to="/1000er-club-veranstaltungen">
+                      Vollständiger Bericht
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
                 </div>
               </CardContent>
             </Card>
