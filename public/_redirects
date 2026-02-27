@@ -11,21 +11,5 @@
 /category/kantonsrat/ /wer-wir-sind#kantonsrat 301
 /category/kantonsrat /wer-wir-sind#kantonsrat 301
 
-# Handle client-side routing for SPA
+# SPA fallback – must be last so assets (e.g. /assets/*.js) are served normally
 /*    /index.html   200
-
-# Cache static assets
-/assets/*  /assets/:splat  200
-*.js       /:splat         200
-*.css      /:splat         200
-*.png      /:splat         200
-*.jpg      /:splat         200
-*.svg      /:splat         200
-*.ico      /:splat         200
-
-# Security headers
-/  /index.html  200
-  X-Frame-Options: DENY
-  X-XSS-Protection: 1; mode=block
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
