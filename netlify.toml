@@ -42,12 +42,6 @@
   force = true
 
 [[redirects]]
-  from = "/1000er-club/"
-  to = "/1000er-club"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/news/"
   to = "/was-ansteht"
   status = 301
