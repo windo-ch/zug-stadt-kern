@@ -6,7 +6,7 @@ import { visualizer } from "rollup-plugin-visualizer";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: './', // Use relative paths for static hosting
+  base: '/', // Root base so chunks load correctly on deep links (e.g. /1000er-club, /profil/...)
   server: {
     host: "::",
     port: 8080,
