@@ -197,8 +197,8 @@ const Wahlen = () => {
                 poster="./assets/places/zug/zug-overview-svp_1.jpg"
               >
                 <source 
-                  src="https://www.svp-zug.ch/wp-content/uploads/sites/11/SVP_waehlen_-_weniger_zuwanderung_mehr_heimat_NEU_comp.mp4?_=1" 
-                  type="video/mp4" 
+                  src="/Mehr%20Heimat,%20weniger%20Zuwanderung%20mit%20untertitel.webm" 
+                  type="video/webm" 
                 />
               </video>
               
