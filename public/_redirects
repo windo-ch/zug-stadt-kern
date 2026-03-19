@@ -14,5 +14,39 @@
 /thomas-dubach/ / 301
 /thomas-dubach / 301
 
+# legacy profile slugs (old structure)
+/adrian-risi/ /profil/adrian-risi 301
+/adrian-risi /profil/adrian-risi 301
+/raphael-tschan/ /profil/raphael-tschan 301
+/raphael-tschan /profil/raphael-tschan 301
+/roman-kueng/ /profil/roman-kueng 301
+/roman-kueng /profil/roman-kueng 301
+/philip-brunner/ /profil/philip-brunner 301
+/philip-brunner /profil/philip-brunner 301
+/andre-wicki/ /profil/andre-wicki 301
+/andre-wicki /profil/andre-wicki 301
+/marcus-buehler/ /profil/marcus-buehler 301
+/marcus-buehler /profil/marcus-buehler 301
+/norbert-schlumpf/ /profil/norbert-schlumpf 301
+/norbert-schlumpf /profil/norbert-schlumpf 301
+/alex-odermatt/ /profil/alex-odermatt 301
+/alex-odermatt /profil/alex-odermatt 301
+/rene-gretener/ /profil/rene-gretener 301
+/rene-gretener /profil/rene-gretener 301
+/manfred-pircher/ /profil/manfred-pircher 301
+/manfred-pircher /profil/manfred-pircher 301
+/heinz-taennler/ /profil/heinz-taennler 301
+/heinz-taennler /profil/heinz-taennler 301
+/gregor-bruhin/ /profil/gregor-bruhin 301
+/gregor-bruhin /profil/gregor-bruhin 301
+/bruno-zimmermann/ /profil/bruno-zimmermann 301
+/bruno-zimmermann /profil/bruno-zimmermann 301
+/alexandra-gretener/ /profil/alexandra-gretener 301
+/alexandra-gretener /profil/alexandra-gretener 301
+/daniel-gramm/ /profil/daniel-gramm 301
+/daniel-gramm /profil/daniel-gramm 301
+/morten-hannesbo/ /profil/morten-hannesbo 301
+/morten-hannesbo /profil/morten-hannesbo 301
+
 # SPA fallback – must be last so assets (e.g. /assets/*.js) are served normally
 /*    /index.html   200

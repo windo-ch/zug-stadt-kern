@@ -101,6 +101,203 @@
   status = 301
   force = true
 
+#####################################################################
+# Legacy profile URLs (old structure)
+# Old pattern: /<slug>/ and /<slug>
+# New pattern: /profil/<slug>
+#####################################################################
+[[redirects]]
+  from = "/adrian-risi/"
+  to = "/profil/adrian-risi"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/adrian-risi"
+  to = "/profil/adrian-risi"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/raphael-tschan/"
+  to = "/profil/raphael-tschan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/raphael-tschan"
+  to = "/profil/raphael-tschan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/roman-kueng/"
+  to = "/profil/roman-kueng"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/roman-kueng"
+  to = "/profil/roman-kueng"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/philip-brunner/"
+  to = "/profil/philip-brunner"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/philip-brunner"
+  to = "/profil/philip-brunner"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/andre-wicki/"
+  to = "/profil/andre-wicki"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/andre-wicki"
+  to = "/profil/andre-wicki"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/marcus-buehler/"
+  to = "/profil/marcus-buehler"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/marcus-buehler"
+  to = "/profil/marcus-buehler"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/norbert-schlumpf/"
+  to = "/profil/norbert-schlumpf"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/norbert-schlumpf"
+  to = "/profil/norbert-schlumpf"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/alex-odermatt/"
+  to = "/profil/alex-odermatt"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/alex-odermatt"
+  to = "/profil/alex-odermatt"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/rene-gretener/"
+  to = "/profil/rene-gretener"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/rene-gretener"
+  to = "/profil/rene-gretener"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/manfred-pircher/"
+  to = "/profil/manfred-pircher"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/manfred-pircher"
+  to = "/profil/manfred-pircher"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/heinz-taennler/"
+  to = "/profil/heinz-taennler"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/heinz-taennler"
+  to = "/profil/heinz-taennler"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gregor-bruhin/"
+  to = "/profil/gregor-bruhin"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gregor-bruhin"
+  to = "/profil/gregor-bruhin"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bruno-zimmermann/"
+  to = "/profil/bruno-zimmermann"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bruno-zimmermann"
+  to = "/profil/bruno-zimmermann"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/alexandra-gretener/"
+  to = "/profil/alexandra-gretener"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/alexandra-gretener"
+  to = "/profil/alexandra-gretener"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/daniel-gramm/"
+  to = "/profil/daniel-gramm"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/daniel-gramm"
+  to = "/profil/daniel-gramm"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/morten-hannesbo/"
+  to = "/profil/morten-hannesbo"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/morten-hannesbo"
+  to = "/profil/morten-hannesbo"
+  status = 301
+  force = true
+
 # Handle client-side routing for SPA (must be last)
 [[redirects]]
   from = "/*"
