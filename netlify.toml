@@ -89,6 +89,18 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/thomas-dubach/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/thomas-dubach"
+  to = "/"
+  status = 301
+  force = true
+
 # Handle client-side routing for SPA (must be last)
 [[redirects]]
   from = "/*"

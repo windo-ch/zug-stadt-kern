@@ -12,6 +12,29 @@ const NotFound = () => {
     );
   }, [location.pathname]);
 
+  useEffect(() => {
+    // Prevent Google from indexing the "404-like" SPA state for unknown routes.
+    const existing = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
+    const previousContent = existing?.getAttribute('content') ?? null;
+
+    let meta = existing;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute('name', 'robots');
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', 'noindex,follow');
+
+    return () => {
+      // Restore previous value so other pages aren’t accidentally marked noindex.
+      if (previousContent !== null) {
+        meta?.setAttribute('content', previousContent);
+      } else {
+        meta?.remove();
+      }
+    };
+  }, []);
+
   return (
     <PageLayout 
       title="404 – Seite nicht gefunden – SVP Stadt Zug"

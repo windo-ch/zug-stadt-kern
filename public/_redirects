@@ -10,5 +10,9 @@
 /category/kantonsrat/ /wer-wir-sind#kantonsrat 301
 /category/kantonsrat /wer-wir-sind#kantonsrat 301
 
+#/ profile sitelink cleanup (stale indexed URL)
+/thomas-dubach/ / 301
+/thomas-dubach / 301
+
 # SPA fallback – must be last so assets (e.g. /assets/*.js) are served normally
 /*    /index.html   200
