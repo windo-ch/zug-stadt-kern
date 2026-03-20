@@ -48,5 +48,11 @@
 /morten-hannesbo/ /profil/morten-hannesbo 301
 /morten-hannesbo /profil/morten-hannesbo 301
 
+#####################################################################
+# Legacy/deprecated URLs (stale in Google index)
+#####################################################################
+/zug-braucht-einen-starken-oeffentlichen-verkehr/ /wahlen 301
+/zug-braucht-einen-starken-oeffentlichen-verkehr /wahlen 301
+
 # SPA fallback – must be last so assets (e.g. /assets/*.js) are served normally
 /*    /index.html   200

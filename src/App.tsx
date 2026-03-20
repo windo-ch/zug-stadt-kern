@@ -46,6 +46,7 @@ const DanielGrammProfil = lazy(() => import("./pages/DanielGrammProfil"));
 const MortenHannesboProfil = lazy(() => import("./pages/MortenHannesboProfil"));
 const AktuelleTermine = lazy(() => import("./pages/AktuelleTermine"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const ArtikelMadameFrigo = lazy(() => import("./pages/ArtikelMadameFrigo"));
 
 // Loading component
 const PageLoader = () => (
@@ -113,6 +114,7 @@ const App = () => {
               <Route path="/profil/alexandra-gretener" element={<AlexandraGretenerProfil />} />
               <Route path="/profil/daniel-gramm" element={<DanielGrammProfil />} />
               <Route path="/profil/morten-hannesbo" element={<MortenHannesboProfil />} />
+              <Route path="/artikel/madame-frigo" element={<ArtikelMadameFrigo />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

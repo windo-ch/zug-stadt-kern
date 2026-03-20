@@ -298,6 +298,21 @@
   status = 301
   force = true
 
+#####################################################################
+# Legacy/deprecated URLs (stale in Google index)
+#####################################################################
+[[redirects]]
+  from = "/zug-braucht-einen-starken-oeffentlichen-verkehr/"
+  to = "/wahlen"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/zug-braucht-einen-starken-oeffentlichen-verkehr"
+  to = "/wahlen"
+  status = 301
+  force = true
+
 # Handle client-side routing for SPA (must be last)
 [[redirects]]
   from = "/*"
