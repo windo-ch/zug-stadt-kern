@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Calendar, ArrowRight, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Card, CardContent } from '@/components/ui/card';
 
 interface Article {
   title: string;
@@ -20,6 +19,8 @@ interface Article {
     value_citation: string;
   }>;
 }
+
+const isExternalHref = (href: string) => /^https?:\/\//.test(href);
 
 const NewsSection = () => {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -64,6 +65,86 @@ const NewsSection = () => {
     return text.substring(0, maxLength).trim() + '...';
   };
 
+  const cardLinkClass =
+    'block card-news group rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2';
+
+  const renderArticleCard = (article: Article, index: number) => {
+    const href = article.title_citation;
+    const external = isExternalHref(href);
+    const ariaLabel = `${article.title} – weiterlesen`;
+
+    const inner = (
+      <>
+        {article.image_links && article.image_links.length > 0 && (
+          <div className="relative w-full aspect-video overflow-hidden bg-muted rounded-t-xl mb-4">
+            <img
+              src={article.image_links[0].value}
+              alt=""
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+              }}
+            />
+          </div>
+        )}
+
+        <div className="flex items-center mb-4">
+          <div className="flex items-center space-x-3">
+            <Calendar className="h-4 w-4 text-primary shrink-0" aria-hidden />
+            <span className="text-sm text-muted-foreground">{article.publication_date}</span>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">
+          {article.title}
+        </h3>
+
+        <p className="text-muted-foreground mb-4 line-clamp-3 hidden md:block">
+          {truncateText(article.fulltext, 120)}
+        </p>
+
+        <span className="flex items-center text-primary font-semibold group-hover:text-[hsl(var(--svp-green-light))] transition-colors">
+          <span className="mr-2">Mehr lesen</span>
+          <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+        </span>
+      </>
+    );
+
+    return (
+      <article key={index} className="relative">
+        {article.pdf_link && (
+          <a
+            href={article.pdf_link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute top-4 right-4 z-20 p-2 rounded-md bg-background/90 text-primary hover:text-primary/80 shadow-sm border border-border/60"
+            title="PDF herunterladen"
+            aria-label={`PDF zu «${article.title}» herunterladen`}
+          >
+            <FileText className="h-4 w-4" />
+          </a>
+        )}
+        {external ? (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cardLinkClass}
+            aria-label={ariaLabel}
+          >
+            {inner}
+          </a>
+        ) : (
+          <Link to={href} className={cardLinkClass} aria-label={ariaLabel}>
+            {inner}
+          </Link>
+        )}
+      </article>
+    );
+  };
+
   return (
     <section id="news" className="section-padding bg-gradient-section">
       <div className="container-max">
@@ -90,63 +171,7 @@ const NewsSection = () => {
           <>
             {/* Articles Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-              {articles.map((article, index) => (
-                <article key={index} className="card-news group">
-                  {/* Image */}
-                  {article.image_links && article.image_links.length > 0 && (
-                    <div className="relative w-full aspect-video overflow-hidden bg-muted rounded-t-xl mb-4">
-                      <img
-                        src={article.image_links[0].value}
-                        alt={article.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        loading="lazy"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = 'none';
-                        }}
-                      />
-                    </div>
-                  )}
-                  
-                  {/* Content */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                      <Calendar className="h-4 w-4 text-primary" />
-                      <span className="text-sm text-muted-foreground">{article.publication_date}</span>
-                    </div>
-                    {article.pdf_link && (
-                      <a
-                        href={article.pdf_link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary hover:text-primary/80"
-                        title="PDF herunterladen"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <FileText className="h-4 w-4" />
-                      </a>
-                    )}
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">
-                    {article.title}
-                  </h3>
-                  
-                  <p className="text-muted-foreground mb-4 line-clamp-3 hidden md:block">
-                    {truncateText(article.fulltext, 120)}
-                  </p>
-                  
-                  <a
-                    href={article.title_citation}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-primary font-semibold group-hover:text-[hsl(var(--svp-green-light))] transition-colors"
-                  >
-                    <span className="mr-2">Mehr lesen</span>
-                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
-                </article>
-              ))}
+              {articles.map((article, index) => renderArticleCard(article, index))}
             </div>
 
             {/* CTA */}

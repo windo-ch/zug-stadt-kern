@@ -2,7 +2,6 @@ import { memo } from 'react';
 import PageLayout from '@/components/layout/PageLayout';
 import ProfileBreadcrumb from '@/components/profile/ProfileBreadcrumb';
 import ProfileHero from '@/components/profile/ProfileHero';
-import ProfileQuoteCard from '@/components/profile/ProfileQuoteCard';
 import ProfileContactCard from '@/components/profile/ProfileContactCard';
 import ProfilePersonalDataCard from '@/components/profile/ProfilePersonalDataCard';
 import ProfileListSection from '@/components/profile/ProfileListSection';
@@ -16,7 +15,6 @@ const ReneGretenerProfil = memo(() => {
     born: "1961",
     address: "Lüssirainstrasse 1",
     location: "6300 Zug",
-    phone: "041 711 45 01",
     mobile: "079 962 49 28",
     email: "rghkswiss@gmail.com",
     maritalStatus: "Verheiratet",
@@ -34,11 +32,15 @@ const ReneGretenerProfil = memo(() => {
     "Club 200 Sportverein Hochwacht Zug"
   ];
 
-  const hobbies = [
-    "Ski",
-    "Golf",
-    "Oldtimerfahrzeuge"
+  const commissions = ["Mitglied der Feuerwehrkommission"];
+
+  const politischePrioritaeten = [
+    "Die Interessen der Steuerzahler schützen",
+    "Sorgfältigen Umgang mit Steuergeldern sicherstellen",
+    "Kleinunternehmen/Gewerbebetriebe nicht mit Bürokratie überlasten",
   ];
+
+  const hobbies = ["Ski", "Oldtimerfahrzeuge"];
 
   const biography = "Geboren, aufgewachsen und Primar-/Bezirksschule absolviert in Mellingen/AG. Kaufmännische Versicherungslehre, anschliessend Wechsel ins Bankwesen mit diversen Weiterbildungen zum Anlagespezialisten. Verschiedene Kaderstellen bei SBG/SBV/UBS sowie BNP Paribas. Über zehn Jahre in Hong Kong im Bereich Swiss Private Banking tätig. Seit der Rückkehr 2004 in der Stadt Zug zu Hause und ab 2011 auch hier arbeitstätig durch Eintritt in eine ortsansässige Firma im Bereich der internationalen Vermögensverwaltung. Seit 2021 Bürger der Stadt Zug.";
 
@@ -86,6 +88,18 @@ const ReneGretenerProfil = memo(() => {
             <ProfileListSection 
               title="Vereine"
               items={clubs}
+              variant="default"
+            />
+
+            <ProfileListSection
+              title="Mitgliedschaften Kommissionen"
+              items={commissions}
+              variant="default"
+            />
+
+            <ProfileListSection
+              title="Meine politischen Prioritäten"
+              items={politischePrioritaeten}
               variant="default"
             />
 

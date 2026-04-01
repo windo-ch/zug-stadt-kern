@@ -218,6 +218,15 @@ const WerWirSind = () => {
       profileLink: "/profil/marcus-buehler"
     },
     {
+      name: "René Gretener",
+      position: "Feuerwehrkommission",
+      phone: "",
+      email: "",
+      description: "",
+      image: "/assets/people/profilbilder/rene-gretener.jpg",
+      profileLink: "/profil/rene-gretener"
+    },
+    {
       name: "Alexandra Gretener",
       position: "Schulkommission",
       phone: "",

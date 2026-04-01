@@ -47,6 +47,9 @@ const MortenHannesboProfil = lazy(() => import("./pages/MortenHannesboProfil"));
 const AktuelleTermine = lazy(() => import("./pages/AktuelleTermine"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const ArtikelMadameFrigo = lazy(() => import("./pages/ArtikelMadameFrigo"));
+const ArtikelVillaUntererFrauenstein = lazy(() =>
+  import("./pages/ArtikelVillaUntererFrauenstein")
+);
 
 // Loading component
 const PageLoader = () => (
@@ -115,6 +118,10 @@ const App = () => {
               <Route path="/profil/daniel-gramm" element={<DanielGrammProfil />} />
               <Route path="/profil/morten-hannesbo" element={<MortenHannesboProfil />} />
               <Route path="/artikel/madame-frigo" element={<ArtikelMadameFrigo />} />
+              <Route
+                path="/artikel/villa-unterer-frauenstein"
+                element={<ArtikelVillaUntererFrauenstein />}
+              />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

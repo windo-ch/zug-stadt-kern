@@ -34,6 +34,7 @@ const Stadtrat = () => {
     isFraktionschef: boolean;
     image: string;
     profileLink?: string;
+    staendigeKommissionen?: string;
   }> = [
     {
       name: "Roman Küng",
@@ -77,7 +78,8 @@ const Stadtrat = () => {
       description: "René Gretener vertritt die SVP-Werte im Gemeinderat mit Engagement und Sachverstand.",
       isFraktionschef: false,
       image: "/assets/people/profilbilder/rene-gretener.jpg",
-      profileLink: "/profil/rene-gretener"
+      profileLink: "/profil/rene-gretener",
+      staendigeKommissionen: "Mitglied der Feuerwehrkommission",
     },
     {
       name: "Manfred Pircher",
@@ -296,6 +298,11 @@ const Stadtrat = () => {
                   {member.position && (
                     <p className="text-sm font-semibold text-primary">
                       {member.position}
+                    </p>
+                  )}
+                  {member.staendigeKommissionen && (
+                    <p className="text-xs text-muted-foreground mt-1 max-w-[18rem] mx-auto leading-snug">
+                      {member.staendigeKommissionen}
                     </p>
                   )}
                 </Link>
