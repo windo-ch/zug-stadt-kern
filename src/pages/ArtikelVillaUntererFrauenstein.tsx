@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
 
-const BADENER_LESERBRIEF_URL =
-  "https://www.badenertagblatt.ch/meinung/leserbriefe-zz/artikel-ld.4146348";
+const LESERBRIEF_REFERENZ_URL =
+  "https://www.zugerzeitung.ch/meinung/leserbriefe-zz/artikel-ld.4146348";
 
 const ArtikelVillaUntererFrauenstein = () => {
   const title = "Zur Debatte um die Villa Unterer Frauenstein";
@@ -50,14 +50,14 @@ const ArtikelVillaUntererFrauenstein = () => {
               </p>
               <p className="text-sm text-muted-foreground mt-4 max-w-2xl mx-auto">
                 Bezug: Leserbrief «Villa Unterer Frauenstein» (Marilena Amato-Mengis, SP),{" "}
-                <em>Badener Tagblatt</em>, 31. März 2026 —{" "}
+                <em>Zuger Zeitung</em>, 31. März 2026 —{" "}
                 <a
-                  href={BADENER_LESERBRIEF_URL}
+                  href={LESERBRIEF_REFERENZ_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary hover:text-primary/80 inline-flex items-center gap-1 font-medium"
                 >
-                  Zum Leserbrief im Badener Tagblatt
+                  Zum Leserbrief in der Zuger Zeitung
                   <ExternalLink className="w-3.5 h-3.5 shrink-0" />
                 </a>
               </p>
