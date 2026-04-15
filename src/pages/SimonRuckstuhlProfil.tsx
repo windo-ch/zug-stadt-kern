@@ -1,15 +1,15 @@
 import SteckbriefProfilePage from "@/components/profile/SteckbriefProfilePage";
 import { steckbriefCandidates } from "@/data/steckbriefCandidates";
 
-const AdriansRisiProfil = () => (
+const SimonRuckstuhlProfil = () => (
   <SteckbriefProfilePage
-    candidate={steckbriefCandidates["adrian-risi"]}
+    candidate={steckbriefCandidates["simon-ruckstuhl"]}
     breadcrumb={[
       { label: "Home", href: "/" },
-      { label: "Stadtrat", href: "/stadtrat" },
+      { label: "Wer wir sind", href: "/wer-wir-sind" },
     ]}
   />
 );
 
-export default AdriansRisiProfil;
+export default SimonRuckstuhlProfil;
 
