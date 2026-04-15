@@ -113,7 +113,19 @@ const Stadtrat = () => {
       isFraktionschef: false,
       image: "/assets/people/profilbilder/alex-odermatt.jpg",
       profileLink: "/profil/alex-odermatt"
-    }
+    },
+    {
+      name: "Daniel Gramm",
+      position: "",
+      address: "Gartenstadt 11, 6300 Zug",
+      phone: "077 510 43 04",
+      email: "daniel.gramm@bluewin.ch",
+      description: "Daniel Gramm setzt sich dafür ein, dass Zug lebenswert bleibt – mit Fokus auf Freiheit, Unabhängigkeit und Sicherheit.",
+      isFraktionschef: false,
+      image: "/assets/people/profilbilder/daniel-gramm.jpg",
+      profileLink: "/profil/daniel-gramm"
+    },
+    // Candidates not yet elected are listed on /ggr-kandidaten
   ];
 
 

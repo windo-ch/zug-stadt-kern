@@ -103,11 +103,11 @@ const Wahlen = () => {
       icon: Users,
       title: "Neuwahlen des Grossen Gemeinderats",
       date: "4. Oktober 2026",
-      description: "Listenerarbeitung im Gange",
+      description: "Unsere Kandidaten für den Grossen Gemeinderat",
       level: "Stadt",
       status: "2026",
       priority: "high",
-      link: "/stadtrat#gemeinderat",
+      link: "/ggr-kandidaten",
       noCandidates: true
     },
     {

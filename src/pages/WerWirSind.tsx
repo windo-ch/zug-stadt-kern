@@ -57,7 +57,8 @@ const WerWirSind = () => {
       badge: "Kantonsrat",
       roles: ["Vorstand"],
       profileLink: "/profil/adrian-risi"
-    }
+    },
+    // Candidates not yet elected are listed on /ggr-kandidaten
   ];
 
   // Stadtrat
@@ -154,6 +155,16 @@ const WerWirSind = () => {
       image: "/assets/people/profilbilder/norbert-schlumpf.jpg",
       badge: "Gemeinderat",
       profileLink: "/profil/norbert-schlumpf"
+    },
+    {
+      name: "Daniel Gramm",
+      position: "Gemeinderat",
+      phone: "",
+      email: "",
+      description: "",
+      image: "/assets/people/profilbilder/daniel-gramm.jpg",
+      badge: "Gemeinderat",
+      profileLink: "/profil/daniel-gramm"
     }
   ];
 
