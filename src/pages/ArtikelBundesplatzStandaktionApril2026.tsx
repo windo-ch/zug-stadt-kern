@@ -213,56 +213,72 @@ const ArtikelBundesplatzStandaktionApril2026 = () => {
           }}
         >
           <DialogContent
-            className="fixed left-0 top-0 z-50 flex h-[100dvh] w-full max-h-[100dvh] max-w-none translate-x-0 translate-y-0 flex-col gap-0 rounded-none border-0 bg-zinc-950 p-0 shadow-none duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 sm:max-w-none"
+            className="fixed left-0 top-0 z-50 flex h-[100dvh] w-full max-h-[100dvh] max-w-none translate-x-0 translate-y-0 flex-col gap-0 rounded-none border-0 bg-transparent p-0 shadow-none duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 sm:max-w-none [&>button]:pointer-events-auto [&>button]:z-[100]"
             onOpenAutoFocus={(e) => e.preventDefault()}
           >
-            <div className="flex h-[100dvh] min-h-0 flex-col text-white">
-              <DialogTitle className="sr-only">Foto-Galerie Standaktion Bundesplatz</DialogTitle>
-              <DialogDescription className="sr-only">
-                {lightboxIndex !== null
-                  ? `Bild ${lightboxIndex + 1} von ${PHOTOS.length}. Pfeiltasten zum Wechseln.`
-                  : ""}
-              </DialogDescription>
+            <div className="relative h-[100dvh] w-full min-h-0 bg-zinc-950 text-white">
+              {/* Full-screen tap target behind UI (Dialog overlay is underneath; content was blocking it on mobile). */}
+              <button
+                type="button"
+                className="absolute inset-0 z-0 cursor-default bg-zinc-950 touch-manipulation"
+                aria-label="Galerie schliessen"
+                onClick={() => setLightboxIndex(null)}
+              />
 
-              {currentPhoto && (
-                <>
-                  <div className="flex shrink-0 items-center justify-between gap-2 border-b border-white/10 py-2 pl-3 pr-14 text-white/90 md:pl-4 md:pr-16">
-                    <span className="min-w-0 truncate text-sm md:text-base">{currentPhoto.alt}</span>
-                    <span className="shrink-0 tabular-nums text-sm text-white/70">
-                      {(lightboxIndex ?? 0) + 1} / {PHOTOS.length}
-                    </span>
-                  </div>
+              <div className="relative z-10 flex h-full min-h-0 flex-col pointer-events-none">
+                <DialogTitle className="sr-only">Foto-Galerie Standaktion Bundesplatz</DialogTitle>
+                <DialogDescription className="sr-only">
+                  {lightboxIndex !== null
+                    ? `Bild ${lightboxIndex + 1} von ${PHOTOS.length}. Pfeiltasten zum Wechseln. Tippen ausserhalb des Bildes schliesst die Galerie.`
+                    : ""}
+                </DialogDescription>
 
-                  <div className="relative flex min-h-0 flex-1 items-center justify-center px-2 pb-20 pt-2 md:px-10 md:pb-12">
-                    <img
-                      src={currentPhoto.src}
-                      alt={currentPhoto.alt}
-                      className="max-h-[calc(100dvh-10rem)] w-auto max-w-full object-contain"
-                    />
+                {currentPhoto && (
+                  <>
+                    <div className="pointer-events-auto flex shrink-0 items-center justify-between gap-2 border-b border-white/10 bg-zinc-950 py-2 pl-3 pr-14 text-white/90 md:pl-4 md:pr-16">
+                      <span className="min-w-0 truncate text-sm md:text-base">{currentPhoto.alt}</span>
+                      <span className="shrink-0 tabular-nums text-sm text-white/70">
+                        {(lightboxIndex ?? 0) + 1} / {PHOTOS.length}
+                      </span>
+                    </div>
 
-                    <Button
-                      type="button"
-                      variant="ghost"
-                      size="icon"
-                      className="absolute left-1 top-1/2 z-10 h-11 w-11 -translate-y-1/2 rounded-full border border-white/20 bg-black/40 text-white hover:bg-black/60 md:left-4 md:h-12 md:w-12"
-                      onClick={goPrev}
-                      aria-label="Vorheriges Bild"
-                    >
-                      <ChevronLeft className="h-6 w-6 md:h-7 md:w-7" />
-                    </Button>
-                    <Button
-                      type="button"
-                      variant="ghost"
-                      size="icon"
-                      className="absolute right-1 top-1/2 z-10 h-11 w-11 -translate-y-1/2 rounded-full border border-white/20 bg-black/40 text-white hover:bg-black/60 md:right-4 md:h-12 md:w-12"
-                      onClick={goNext}
-                      aria-label="Nächstes Bild"
-                    >
-                      <ChevronRight className="h-6 w-6 md:h-7 md:w-7" />
-                    </Button>
-                  </div>
-                </>
-              )}
+                    <div className="relative flex min-h-0 flex-1 items-center justify-center px-2 pb-20 pt-2 md:px-10 md:pb-12">
+                      <img
+                        src={currentPhoto.src}
+                        alt={currentPhoto.alt}
+                        className="pointer-events-auto relative z-10 max-h-[calc(100dvh-10rem)] w-auto max-w-full object-contain touch-manipulation"
+                      />
+
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="icon"
+                        className="pointer-events-auto absolute left-1 top-1/2 z-20 h-11 w-11 -translate-y-1/2 rounded-full border border-white/20 bg-black/50 text-white hover:bg-black/70 md:left-4 md:h-12 md:w-12"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          goPrev();
+                        }}
+                        aria-label="Vorheriges Bild"
+                      >
+                        <ChevronLeft className="h-6 w-6 md:h-7 md:w-7" />
+                      </Button>
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="icon"
+                        className="pointer-events-auto absolute right-1 top-1/2 z-20 h-11 w-11 -translate-y-1/2 rounded-full border border-white/20 bg-black/50 text-white hover:bg-black/70 md:right-4 md:h-12 md:w-12"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          goNext();
+                        }}
+                        aria-label="Nächstes Bild"
+                      >
+                        <ChevronRight className="h-6 w-6 md:h-7 md:w-7" />
+                      </Button>
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
           </DialogContent>
         </Dialog>
