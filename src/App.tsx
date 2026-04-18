@@ -54,6 +54,9 @@ const ArtikelMadameFrigo = lazy(() => import("./pages/ArtikelMadameFrigo"));
 const ArtikelVillaUntererFrauenstein = lazy(() =>
   import("./pages/ArtikelVillaUntererFrauenstein")
 );
+const ArtikelBundesplatzStandaktionApril2026 = lazy(() =>
+  import("./pages/ArtikelBundesplatzStandaktionApril2026")
+);
 
 // Loading component
 const PageLoader = () => (
@@ -129,6 +132,10 @@ const App = () => {
               <Route
                 path="/artikel/villa-unterer-frauenstein"
                 element={<ArtikelVillaUntererFrauenstein />}
+              />
+              <Route
+                path="/artikel/bundesplatz-standaktion-april-2026"
+                element={<ArtikelBundesplatzStandaktionApril2026 />}
               />
               <Route path="*" element={<NotFound />} />
             </Routes>
