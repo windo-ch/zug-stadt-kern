@@ -58,6 +58,12 @@ const ArtikelVillaUntererFrauenstein = lazy(() =>
 const ArtikelBundesplatzStandaktionApril2026 = lazy(() =>
   import("./pages/ArtikelBundesplatzStandaktionApril2026")
 );
+const ThemaRaum = lazy(() => import("./pages/ThemaRaum"));
+const ThemaHeimat = lazy(() => import("./pages/ThemaHeimat"));
+const ThemaSicherheit = lazy(() => import("./pages/ThemaSicherheit"));
+const ThemaSelbstbestimmung = lazy(() => import("./pages/ThemaSelbstbestimmung"));
+const ThemaNeutralitaet = lazy(() => import("./pages/ThemaNeutralitaet"));
+const ThemaSprache = lazy(() => import("./pages/ThemaSprache"));
 
 // Loading component
 const PageLoader = () => (
@@ -139,6 +145,12 @@ const App = () => {
                 path="/artikel/bundesplatz-standaktion-april-2026"
                 element={<ArtikelBundesplatzStandaktionApril2026 />}
               />
+              <Route path="/thema/raum" element={<ThemaRaum />} />
+              <Route path="/thema/heimat" element={<ThemaHeimat />} />
+              <Route path="/thema/sicherheit" element={<ThemaSicherheit />} />
+              <Route path="/thema/selbstbestimmung" element={<ThemaSelbstbestimmung />} />
+              <Route path="/thema/neutralitaet" element={<ThemaNeutralitaet />} />
+              <Route path="/thema/sprache" element={<ThemaSprache />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
