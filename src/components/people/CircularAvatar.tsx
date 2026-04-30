@@ -72,20 +72,6 @@ const CircularAvatar = ({
       <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
         {name}
       </h3>
-      
-      {/* Role */}
-      {role && (
-        <p className="text-sm font-semibold text-primary mb-1">
-          {role}
-        </p>
-      )}
-      
-      {/* Position */}
-      {position && (
-        <p className="text-xs text-muted-foreground">
-          {position}
-        </p>
-      )}
     </div>
   );
 

@@ -19,7 +19,7 @@ const HeinzTaennlerProfil = () => {
     phone: "+41 41 594 36 60",
     email: "heinz.taennler@zg.ch",
     maritalStatus: "verheiratet",
-    profession: "lic.iur., Rechtsanwalt und Notar",
+    profession: "lic.iur., Notar",
     children: "drei erwachsene Kinder"
   };
 
@@ -104,7 +104,7 @@ const HeinzTaennlerProfil = () => {
             personalData={personalData}
             image="/assets/people/profilbilder/Heinz-Taennler.jpg"
             description="Regierungsrat • Finanzdirektor • Landammann 2015/2016"
-            roles={["Regierungsrat", "Finanzdirektor", "Rechtsanwalt"]}
+            roles={["Regierungsrat", "Finanzdirektor"]}
           />
 
           <ProfileQuoteCard 

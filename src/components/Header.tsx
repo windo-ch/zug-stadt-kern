@@ -34,6 +34,8 @@ const Header = () => {
       items: [
         { label: 'Wer wir sind', href: '/wer-wir-sind' },
         { label: 'GGR – Stadtrat', href: '/stadtrat' },
+        { label: 'GGR-Kandidaten', href: '/ggr-kandidaten' },
+        { label: 'Kantonsrat', href: '/kantonsrat' },
         { label: 'Vorstand', href: '/vorstand' },
         { label: 'Geschichte', href: '/geschichte' }
       ]

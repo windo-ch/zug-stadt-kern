@@ -111,6 +111,20 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
                 Unsere Vertreter im Zuger Stadtrat
               </ListItem>
               <ListItem
+                title="GGR-Kandidaten"
+                href="/ggr-kandidaten"
+                icon={<Users className="h-5 w-5" />}
+              >
+                Steckbriefe und Profile unserer Kandidaten
+              </ListItem>
+              <ListItem
+                title="Kantonsrat"
+                href="/kantonsrat"
+                icon={<Users className="h-5 w-5" />}
+              >
+                Unsere Kantonsräte der SVP Stadt Zug
+              </ListItem>
+              <ListItem
                 title="Vorstand"
                 href="/vorstand"
                 icon={<Users className="h-5 w-5" />}

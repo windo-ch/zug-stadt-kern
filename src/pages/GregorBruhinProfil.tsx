@@ -19,7 +19,6 @@ const GregorBruhinProfil = () => {
     location: "6300 Zug",
     email: "gb@gregor-bruhin.ch",
     maritalStatus: "ledig",
-    profession: "Unternehmer",
     children: "keine"
   };
 
@@ -71,8 +70,8 @@ const GregorBruhinProfil = () => {
           <ProfileHero
             personalData={personalData}
             image="/assets/people/profilbilder/gregor-bruhin.jpg"
-            description="Kantonsrat • Unternehmer • Major der Schweizer Armee"
-            roles={["Kantonsrat", "Unternehmer", "Major"]}
+            description="Kantonsrat"
+            roles={["Kantonsrat"]}
           />
 
           <ProfileQuoteCard 
@@ -198,15 +197,6 @@ const GregorBruhinProfil = () => {
                     <span className="text-sm text-muted-foreground">Facebook</span>
                   </a>
                   <a 
-                    href="https://twitter.com/GregorRBruhin" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center p-3 bg-muted/20 rounded-lg hover:bg-primary/10 transition-colors"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-3 text-primary" />
-                    <span className="text-sm text-muted-foreground">Twitter/X</span>
-                  </a>
-                  <a 
                     href="https://www.instagram.com/greg_on_tour/" 
                     target="_blank"
                     rel="noopener noreferrer"
@@ -214,15 +204,6 @@ const GregorBruhinProfil = () => {
                   >
                     <ExternalLink className="w-4 h-4 mr-3 text-primary" />
                     <span className="text-sm text-muted-foreground">Instagram</span>
-                  </a>
-                  <a 
-                    href="https://www.youtube.com/channel/UCm4o7-1wvhmB124w60LuVhQ?view_as=subscriber" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center p-3 bg-muted/20 rounded-lg hover:bg-primary/10 transition-colors"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-3 text-primary" />
-                    <span className="text-sm text-muted-foreground">YouTube</span>
                   </a>
                 </div>
               </CardContent>

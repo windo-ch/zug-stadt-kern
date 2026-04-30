@@ -815,3 +815,46 @@ export interface Motion {
 
 **Build Status**: ✅ All builds successful, no linter errors
 **Remaining Work**: Optional ContactInfoItem migration in Kontakt.tsx and profile pages (low priority)
+
+---
+
+### ✅ 1000er Club, Wahlen, and WerWirSind Updates (January 2026)
+
+**Completed Work**:
+
+1. ✅ **Wyssmann Past Event Data** - Added full recap text for the "Wie gewinnt man Wahlen?" event (17. Februar 2026) as the newest entry in `src/data/1000erClubEvents.ts`
+2. ✅ **TausenderClub Page Overhaul** - Replaced "Next Event" section with:
+   - Save-the-date card for Mittwoch, 24. Juni 2026
+   - Wyssmann event recap with 3-image gallery grid and summary text linking to full report
+3. ✅ **Wahlen Video Title** - Moved "Zug soll Heimat bleiben – Zuwanderung begrenzen, Lebensqualität schützen" from Video Summary section to above the video player
+4. ✅ **Stadtpräsidium Text Fix** - Removed "plus ein zusätzliches Mitglied im Stadtrat" from the goals list
+5. ✅ **WerWirSind Card Width** - Widened person cards from `max-w-3xl` to `max-w-5xl` across all 4 sections (Regierungsrat, Kantonsrat, Stadtrat, Gemeinderat)
+
+**Files Modified**:
+- `src/data/1000erClubEvents.ts` - Added Wyssmann event entry
+- `src/pages/TausenderClub.tsx` - Replaced next-event section, cleaned up unused imports
+- `src/pages/Wahlen.tsx` - Moved video title, fixed Stadtpräsidium text
+- `src/pages/WerWirSind.tsx` - Widened card containers
+
+**Build Status**: ✅ TypeScript compile clean, no linter errors
+
+---
+
+### Bundesplatz-Standaktion Artikel (18. April 2026)
+
+**Done**: Interner Artikel unter `/artikel/bundesplatz-standaktion-april-2026`, Bilder in `public/assets/events/bundesplatz-standaktion-2026-04-{1,2,3}.png`, erster Eintrag in `public/svp-articles-12-1-2026.json`, Route in `App.tsx`. `npm run type-check` und `npm run build` erfolgreich.
+
+---
+
+## Project Status Board (Executor)
+
+- [x] **Wahlen 2026 Kandidaten–Profil-CSV** — Datei `data/profile-status-wahlen2026.csv` erstellt (21 Personen; Spalten u. a. Listen, Okt-2026-Flags laut Nutzerlisten, `/profil`-Route, Steckbrief-Typ/XLSX, GGR-Landing). CSV mit `python3` csv-Modul auf 17 Spalten pro Zeile geprüft.
+
+## Executor's Feedback or Assistance Requests
+
+- **Planner / Nutzer**: Bitte kurz bestätigen, ob die CSV so passt oder ob Spalten/Dateiname geändert werden sollen (z. B. nach `public/` kopieren für Download von der Site).
+- Quelle der Zuordnung: Repo-Stand (`App.tsx`, `steckbriefCandidates.ts`, `public/Steckbrief_Kandidaten/`, `GGRKandidaten.tsx`, `Wahlen.tsx`) plus die vom Nutzer gelieferten drei Listen.
+
+## Lessons
+
+- CSV mit vielen optional leeren Feldern am Zeilenende: `anmerkung` in Anführungszeichen setzen, wenn der Text Leerzeichen enthält, sonst verschieben sich die Spalten beim Parsen.

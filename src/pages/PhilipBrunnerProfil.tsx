@@ -12,7 +12,7 @@ const PhilipBrunnerProfil = () => {
 
   const personalData = {
     name: "Philip C. Brunner",
-    position: "Kantonsrat, Gemeinderat, Fraktionspräsident",
+    position: "Kantonsrat",
     born: "1955",
     address: "Im Rank 109",
     location: "6300 Zug", 
@@ -22,12 +22,12 @@ const PhilipBrunnerProfil = () => {
   };
 
   const positions = [
-    "Fraktionspräsident SVP",
+    "Präsident SVP Kanton Zug",
+    "Fraktionspräsident KR",
     "Mitglied der engeren Staatswirtschaftskommission", 
     "Kantonsrat, Stadt Zug",
     "Präsident der Geschäftsprüfungskommission (GPK) Stadt Zug",
     "Gemeinderat, GGR der Stadt Zug",
-    "Vorstand SVP Stadt Zug",
     "Parteileitung SVP Kanton Zug",
     "Ehrenmitglied SVP Stadt Zug (seit 2024)",
     "Parteivorstand SVP Schweiz",
@@ -52,8 +52,8 @@ const PhilipBrunnerProfil = () => {
           <ProfileHero
             personalData={personalData}
             image="/assets/people/profilbilder/philip-c-brunner.jpg"
-            description="Erfahrener Politiker • Hotelier • Wirtschaftsexperte"
-            roles={["Kantonsrat", "Fraktionspräsident", "Gemeinderat", "Ehrenmitglied"]}
+            description="Kantonsrat"
+            roles={["Präsident SVP Kanton Zug", "Fraktionspräsident KR", "Präsident GPK Stadt Zug"]}
           />
 
           <ProfileQuoteCard 

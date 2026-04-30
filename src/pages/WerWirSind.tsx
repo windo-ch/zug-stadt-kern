@@ -156,16 +156,6 @@ const WerWirSind = () => {
       badge: "Gemeinderat",
       profileLink: "/profil/norbert-schlumpf"
     },
-    {
-      name: "Daniel Gramm",
-      position: "Gemeinderat",
-      phone: "",
-      email: "",
-      description: "",
-      image: "/assets/people/profilbilder/daniel-gramm.jpg",
-      badge: "Gemeinderat",
-      profileLink: "/profil/daniel-gramm"
-    }
   ];
 
   // Empty array - all Gemeinderäte moved to gemeinderat array above
@@ -448,18 +438,6 @@ const WerWirSind = () => {
                         <CardTitle className="text-lg mb-1">{person.name}</CardTitle>
                         <div className="flex flex-wrap gap-2 mb-2">
                           <Badge variant="secondary">{person.position}</Badge>
-                          {person.role && (
-                            <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
-                              {person.role}
-                            </Badge>
-                          )}
-                          {person.roles && person.roles.length > 0 && (
-                            <>
-                              {person.roles.map((role: string, idx: number) => (
-                                <Badge key={idx} variant="outline" className="text-xs">{role}</Badge>
-                              ))}
-                            </>
-                          )}
                         </div>
                       </div>
                     </div>

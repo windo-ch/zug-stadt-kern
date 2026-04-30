@@ -37,7 +37,7 @@ const PeopleSection = () => {
     {
       name: "Gregor R. Bruhin",
       role: "Kantonsrat",
-      position: "Co-Wahlkampfleiter",
+      position: "Kantonsrat",
       image: "./assets/people/profilbilder/gregor-bruhin.jpg",
       profileLink: "/profil/gregor-bruhin",
       category: "Kantonsrat",
@@ -157,11 +157,6 @@ const PeopleSection = () => {
                     <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
                       {person.name}
                     </h3>
-                    
-                    {/* Position */}
-                    <p className="text-xs text-muted-foreground">
-                      {person.position}
-                    </p>
                   </div>
                 );
 

@@ -12,7 +12,7 @@ import { Card, CardContent } from '@/components/ui/card';
 const ManfredPircherProfil = memo(() => {
   const personalData = {
     name: "Manfred Pircher",
-    position: "Gemeinderat, Mitglied Bau- und Planungskommission",
+    position: "Gemeinderat",
     born: "1950",
     address: "Lotenbach 7",
     location: "6318 Walchwil",
@@ -72,7 +72,8 @@ const ManfredPircherProfil = memo(() => {
           <ProfileHero
             personalData={personalData}
             image="/assets/people/profilbilder/manfred-pircher.jpg"
-            description="Gemeinderat • Mitglied Bau- und Planungskommission • Gründungsmitglied SVP"
+            description="Gemeinderat"
+            roles={["Mitglied Bau- und Planungskommission"]}
           />
         </div>
 

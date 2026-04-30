@@ -18,42 +18,40 @@ interface ProfileHeroProps {
  * Includes optimized image loading with lazy loading and error handling.
  */
 const ProfileHero = memo(({ personalData, image, description, roles, imageScale, objectPosition }: ProfileHeroProps) => {
-  // Combine position and roles, avoiding duplication
-  const allRoles = roles && roles.length > 0 
-    ? [personalData.position, ...roles.filter(role => role !== personalData.position)]
-    : [personalData.position];
+  // Always show the highest-ranking primary office as the headline badge.
+  // Only show additional tags if explicitly provided (and not duplicating the primary).
+  const allRoles = [personalData.position, ...(roles ?? []).filter((role) => role !== personalData.position)];
 
   return (
     <div className="flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-8 mb-8">
-      <div className="w-full md:w-60 lg:w-80 aspect-square md:aspect-auto md:h-60 lg:h-80 rounded-2xl overflow-hidden shadow-lg">
-        <img 
-          src={image} 
-          alt={`${personalData.name} - ${personalData.position}`}
-          className="w-full h-full object-cover"
-          width="320"
-          height="320"
-          loading="lazy"
-          style={{
-            transform: imageScale ? `scale(${imageScale})` : undefined,
-            transformOrigin: 'center top',
-            objectPosition: objectPosition || 'center center'
-          }}
-          onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            // Fallback to a placeholder or hide the image
-            target.style.display = 'none';
-          }}
-        />
+      <div className="w-full md:w-auto flex justify-center lg:justify-start">
+        <div className="relative">
+          <div className="relative w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-full overflow-hidden border-4 border-[hsl(var(--svp-green))] shadow-lg">
+            <img
+              src={image}
+              alt={`${personalData.name} - ${personalData.position}`}
+              className="w-full h-full object-cover"
+              width="240"
+              height="240"
+              loading="lazy"
+              style={{
+                transform: imageScale ? `scale(${imageScale})` : undefined,
+                transformOrigin: 'center center',
+                objectPosition: objectPosition || 'center top',
+              }}
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+              }}
+            />
+          </div>
+        </div>
       </div>
       <div className="flex-grow">
         <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text">
           {personalData.name}
         </h1>
-        {description && (
-          <p className="text-xl text-muted-foreground mb-4">
-            {description}
-          </p>
-        )}
+        {/* Intentionally no subtitle/description line below the name. */}
         {allRoles.length > 0 && (
           <div className="flex flex-wrap gap-2">
             {allRoles.map((role, index) => (

@@ -9,6 +9,7 @@ import { steckbriefCandidates } from "@/data/steckbriefCandidates";
 const GGRKandidaten = () => {
   const kandidaten = [
     steckbriefCandidates["alessia-bischof"],
+    steckbriefCandidates["daniel-gramm"],
     steckbriefCandidates["kilian-krall"],
     steckbriefCandidates["simon-ruckstuhl"],
   ];

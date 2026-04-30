@@ -83,7 +83,7 @@ const Stadtrat = () => {
     },
     {
       name: "Manfred Pircher",
-      position: "Mitglied Bau- und Planungskommission", 
+      position: "Gemeinderat",
       address: "Lotenbach 7, 6318 Walchwil",
       phone: "041 758 17 30",
       email: "manfred.pircher@bluewin.ch",
@@ -105,7 +105,7 @@ const Stadtrat = () => {
     },
     {
       name: "Alex Odermatt",
-      position: "Mitglied Bau- und Planungskommission",
+      position: "Gemeinderat",
       address: "St. Johannesstrasse 4, 6300 Zug",
       phone: "041 710 18 14",
       email: "alexodermatt@bluewin.ch",
@@ -113,17 +113,6 @@ const Stadtrat = () => {
       isFraktionschef: false,
       image: "/assets/people/profilbilder/alex-odermatt.jpg",
       profileLink: "/profil/alex-odermatt"
-    },
-    {
-      name: "Daniel Gramm",
-      position: "",
-      address: "Gartenstadt 11, 6300 Zug",
-      phone: "077 510 43 04",
-      email: "daniel.gramm@bluewin.ch",
-      description: "Daniel Gramm setzt sich dafür ein, dass Zug lebenswert bleibt – mit Fokus auf Freiheit, Unabhängigkeit und Sicherheit.",
-      isFraktionschef: false,
-      image: "/assets/people/profilbilder/daniel-gramm.jpg",
-      profileLink: "/profil/daniel-gramm"
     },
     // Candidates not yet elected are listed on /ggr-kandidaten
   ];
@@ -207,10 +196,6 @@ const Stadtrat = () => {
                         {person.name}
                       </h3>
                       
-                      {/* Position */}
-                      <p className="text-sm font-semibold text-primary">
-                        {person.position}
-                      </p>
                     </Link>
                   ))}
                 </div>
@@ -250,10 +235,6 @@ const Stadtrat = () => {
                     {member.name}
                   </h3>
                   
-                  {/* Position */}
-                  <p className="text-sm font-semibold text-primary">
-                    {member.position}
-                  </p>
                   </Link>
                   ))}
                 </div>
@@ -295,28 +276,12 @@ const Stadtrat = () => {
                       {/* Subtle overlay on hover */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
-                    {/* Category badge */}
-                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-[hsl(var(--svp-green))] text-white text-xs font-semibold rounded-full whitespace-nowrap shadow-md group-hover:bg-[hsl(var(--svp-green-light))] transition-colors duration-300">
-                      Gemeinderat
-                    </div>
                   </div>
                   
                   {/* Name */}
                   <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
                     {member.name}
                   </h3>
-                  
-                  {/* Position */}
-                  {member.position && (
-                    <p className="text-sm font-semibold text-primary">
-                      {member.position}
-                    </p>
-                  )}
-                  {member.staendigeKommissionen && (
-                    <p className="text-xs text-muted-foreground mt-1 max-w-[18rem] mx-auto leading-snug">
-                      {member.staendigeKommissionen}
-                    </p>
-                  )}
                 </Link>
               ))}
             </div>

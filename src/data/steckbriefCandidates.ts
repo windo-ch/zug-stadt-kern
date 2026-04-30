@@ -65,7 +65,13 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
       "Präsident Kommission für Tiefbau und Gewässer (2023)",
       "Mitglied der Kommission für Raumplanung und Verkehr (2019)",
     ],
-    positions: ["Mitglied Zuger Wirtschaftskammer", "Mitglied Schneiderzunft", "VR EVZ Sport AG"],
+    positions: [
+      "Präsident SVP Stadt Zug",
+      "Vorstand SVP Stadt Zug",
+      "Mitglied Zuger Wirtschaftskammer",
+      "Mitglied Schneiderzunft",
+      "VR EVZ Sport AG",
+    ],
     education: ["Matura Typ B", "Fachhochschule für Wirtschaft, Luzern (Dipl. Betr. Oec. FH)"],
     clubs: ["Passivmitglied vieler Sportvereine im Kanton Zug"],
     hobbies: ["Sport (Fitness, Ski)", "Berge", "Lesen"],
@@ -76,7 +82,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
   "alessia-bischof": {
     slug: "alessia-bischof",
     name: "Alessia Bischof",
-    kandidatur: "Gemeinderat, Kantonsrat",
+    kandidatur: "Kandidatin GGR, Kandidatin Kantonsrat",
     birthDateISO: "2001-01-11",
     address: "Pilatusstrasse 3",
     location: "6300 Zug",
@@ -118,7 +124,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     statement:
       "Mir ist es wichtig auf die Bevölkerung zu hören und ihr Anliegen wahrzunehmen. Darum setze ich mich für Vereine ein. Man muss achten, dass Vereine nicht mit Bürokratie belastet werden, sondern sich auf den Einsatz für die Bevölkerung in kulturellen, sportlichen und gesellschaftlichen Belangen konzentrieren können.",
     priorities: ["Vereine", "Gewerbe", "Leben in der Stadt"],
-    biography: "Wie gehabt (2022).",
+    biography: undefined,
     mandate: ["Gemeinderat seit 23.02.2021"],
     commissions: ["Bau- und Planungskommission", "Büro GGR"],
     clubs: [
@@ -157,6 +163,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
       "Swiss Executive MBA, Hochschule Luzern (2000–2001)",
       "Studium Betriebsökonom, Hochschule Luzern (1984–1987)",
     ],
+    positions: ["Vorstand SVP Stadt Zug"],
     hobbies: ["Biken", "Boxen", "Lesen", "Kochen", "Zeit mit Familie und Freunden"],
     socials: {},
     image: "/assets/people/profilbilder/Andre-Wicki_SVP.jpg",
@@ -165,7 +172,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
   "daniel-gramm": {
     slug: "daniel-gramm",
     name: "Daniel Gramm",
-    kandidatur: "1. Kantonsrat, 2. RPK, 3. Gemeinderat",
+    kandidatur: "Kandidat Kantonsrat, Kandidat RPK, Kandidat GGR",
     birthDateISO: "1964-08-30",
     address: "Gartenstadt 11",
     location: "6300 Zug",
@@ -309,7 +316,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
   "roman-kueng": {
     slug: "roman-kueng",
     name: "Roman Küng",
-    kandidatur: "GGR / Kantonsrat",
+    kandidatur: "Gemeinderat, Kantonsrat",
     birthDateISO: "1972-04-18",
     address: "Bernoldweg 9",
     location: "6300 Zug",

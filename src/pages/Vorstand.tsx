@@ -191,17 +191,16 @@ const Vorstand = () => {
                     {/* Subtle overlay on hover */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
+                  {/* Badge on photo (like other instances) */}
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-[hsl(var(--svp-green))] text-white text-xs font-semibold rounded-full whitespace-nowrap shadow-md group-hover:bg-[hsl(var(--svp-green-light))] transition-colors duration-300">
+                    {member.position}
+                  </div>
                 </div>
                 
                 {/* Name */}
                 <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
                   {member.name}
                 </h3>
-                
-                {/* Position */}
-                <p className="text-sm font-semibold text-primary">
-                  {member.position}
-                </p>
               </Link>
             ))}
           </div>

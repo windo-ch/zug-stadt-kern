@@ -29,6 +29,7 @@ const Datenschutz = lazy(() => import("./pages/Datenschutz"));
 const CookiePolicy = lazy(() => import("./pages/Cookie"));
 const Wahlen = lazy(() => import("./pages/Wahlen"));
 const GGRKandidaten = lazy(() => import("./pages/GGRKandidaten"));
+const Kantonsrat = lazy(() => import("./pages/Kantonsrat"));
 const AdriansRisiProfil = lazy(() => import("./pages/AdriansRisiProfil"));
 const RaphaelTschanProfil = lazy(() => import("./pages/RaphaelTschanProfil"));
 const RomanKuengProfil = lazy(() => import("./pages/RomanKuengProfil"));
@@ -106,6 +107,7 @@ const App = () => {
               <Route path="/1000er-club-veranstaltungen" element={<TausenderClubVeranstaltungen />} />
               <Route path="/wahlen" element={<Wahlen />} />
               <Route path="/ggr-kandidaten" element={<GGRKandidaten />} />
+              <Route path="/kantonsrat" element={<Kantonsrat />} />
               <Route path="/impressum" element={<Impressum />} />
               <Route path="/datenschutz" element={<Datenschutz />} />
               <Route path="/cookie" element={<CookiePolicy />} />
