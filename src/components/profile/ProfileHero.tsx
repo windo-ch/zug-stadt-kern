@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import type { ReactNode } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { PersonalData } from '@/types/profile';
 
@@ -9,6 +10,8 @@ interface ProfileHeroProps {
   roles?: string[];
   imageScale?: number;
   objectPosition?: string;
+  showRoleBadges?: boolean;
+  belowName?: ReactNode;
 }
 
 /**
@@ -17,10 +20,21 @@ interface ProfileHeroProps {
  * Displays profile image, name, position, description, and role badges.
  * Includes optimized image loading with lazy loading and error handling.
  */
-const ProfileHero = memo(({ personalData, image, description, roles, imageScale, objectPosition }: ProfileHeroProps) => {
+const ProfileHero = memo(({
+  personalData,
+  image,
+  description,
+  roles,
+  imageScale,
+  objectPosition,
+  showRoleBadges = true,
+  belowName,
+}: ProfileHeroProps) => {
   // Always show the highest-ranking primary office as the headline badge.
   // Only show additional tags if explicitly provided (and not duplicating the primary).
-  const allRoles = [personalData.position, ...(roles ?? []).filter((role) => role !== personalData.position)];
+  const allRoles = showRoleBadges
+    ? [personalData.position, ...(roles ?? []).filter((role) => role !== personalData.position)]
+    : [];
 
   return (
     <div className="flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-8 mb-8">
@@ -61,6 +75,7 @@ const ProfileHero = memo(({ personalData, image, description, roles, imageScale,
             ))}
           </div>
         )}
+        {belowName}
       </div>
     </div>
   );

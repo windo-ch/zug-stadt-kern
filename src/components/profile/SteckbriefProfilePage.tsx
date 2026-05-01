@@ -117,6 +117,38 @@ export default function SteckbriefProfilePage({
   const roles = parseRolesFromKandidatur(candidate.kandidatur);
   const currentOffices = candidate.currentOffices ?? [];
   const candidacies2026 = candidate.candidacies2026 ?? [];
+  const heroRoles = candidacies2026.length > 0 ? [] : roles;
+  const statusPanel = candidacies2026.length > 0 ? (
+    <div className="mt-6 grid max-w-3xl gap-4 rounded-xl border border-[hsl(var(--svp-green))]/20 bg-background p-5 shadow-sm md:grid-cols-2">
+      <div>
+        <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+          Aktuelles Amt
+        </p>
+        {currentOffices.length > 0 ? (
+          <div className="flex flex-wrap gap-2">
+            {currentOffices.map((office) => (
+              <Badge key={office} variant="secondary">
+                {office}
+              </Badge>
+            ))}
+          </div>
+        ) : (
+          <p className="text-sm text-muted-foreground">Noch kein Amt</p>
+        )}
+      </div>
+
+      <div>
+        <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+          Kandidiert 2026
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {candidacies2026.map((candidacy) => (
+            <OfficeStatusBadge key={candidacy.office} candidacy={candidacy} />
+          ))}
+        </div>
+      </div>
+    </div>
+  ) : undefined;
 
   return (
     <PageLayout
@@ -131,41 +163,10 @@ export default function SteckbriefProfilePage({
             personalData={effectivePersonalData}
             image={candidate.image}
             description={personalData.position}
-            roles={roles}
+            roles={heroRoles}
+            showRoleBadges={candidacies2026.length === 0}
+            belowName={statusPanel}
           />
-          {candidacies2026.length > 0 && (
-            <Card className="mt-6 border-[hsl(var(--svp-green))]/20 shadow-md">
-              <CardContent className="grid gap-4 p-6 md:grid-cols-2">
-                <div>
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    Aktuelles Amt
-                  </p>
-                  {currentOffices.length > 0 ? (
-                    <div className="flex flex-wrap gap-2">
-                      {currentOffices.map((office) => (
-                        <Badge key={office} variant="secondary">
-                          {office}
-                        </Badge>
-                      ))}
-                    </div>
-                  ) : (
-                    <p className="text-sm text-muted-foreground">Noch kein Amt</p>
-                  )}
-                </div>
-
-                <div>
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    Kandidiert 2026
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {candidacies2026.map((candidacy) => (
-                      <OfficeStatusBadge key={candidacy.office} candidacy={candidacy} />
-                    ))}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          )}
           {candidate.statement && (
             <ProfileQuoteCard quote={candidate.statement} />
           )}
