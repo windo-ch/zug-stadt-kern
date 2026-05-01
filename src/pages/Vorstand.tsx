@@ -22,40 +22,28 @@ const Vorstand = () => {
       profileLink: "/profil/adrian-risi"
     },
     {
-      name: "Raphael Tschan",
-      position: "1. Vizepräsident",
-      roles: ["Mitglied RPK Stadt Zug"],
-      address: "Gimenenstrasse 1, 6300 Zug",
-      image: "./assets/people/profilbilder/raphael-tschan.jpg",
-      description: "Vizepräsident der SVP Stadt Zug und Mitglied der Rechnungsprüfungskommission.",
+      name: "Alessia Bischof",
+      position: "Vizepräsidentin",
+      roles: [],
+      address: "Pilatusstrasse 3, 6300 Zug",
+      image: "/assets/people/jpg-2026/Alessia-Bischof.jpg",
+      description: "Vizepräsidentin der SVP Stadt Zug und Kandidatin für den Grossen Gemeinderat und den Kantonsrat.",
       contact: {
-        email: "rt@raphael-tschan.ch"
+        email: "alessia.bischof@goforit-ag.com"
       },
-      profileLink: "/profil/raphael-tschan"
+      profileLink: "/profil/alessia-bischof"
     },
     {
       name: "Roman Küng",
-      position: "2. Vizepräsident",
+      position: "Vizepräsident",
       roles: ["Gemeinderat"],
       address: "Bernoldweg 9, 6300 Zug",
-      image: "./assets/people/profilbilder/roman-kueng.jpg",
+      image: "/assets/people/jpg-2026/Roman-Kueng_kravatte.jpg",
       description: "Gemeinderat und Fraktionspräsident im Grossen Gemeinderat mit langjähriger politischer Erfahrung.",
       contact: {
         email: "roman.kueng@bluewin.ch"
       },
       profileLink: "/profil/roman-kueng"
-    },
-    {
-      name: "Philip C. Brunner",
-      position: "Vorstandsmitglied",
-      roles: ["Kantonsrat", "Fraktionspräsident", "Gemeinderat"],
-      address: "Im Rank 109, 6300 Zug",
-      image: "./assets/people/profilbilder/philip-c-brunner.jpg",
-      description: "Kantonsrat, Fraktionspräsident und Gemeinderat mit umfassender politischer Erfahrung auf allen Ebenen.",
-      contact: {
-        email: "phcb@philip-brunner.ch"
-      },
-      profileLink: "/profil/philip-brunner"
     },
     {
       name: "André Wicki",
@@ -72,14 +60,38 @@ const Vorstand = () => {
     {
       name: "Marcus H. Bühler",
       position: "Vorstandsmitglied",
-      roles: [],
+      roles: ["Gemeinderat"],
       address: "Bahnhofstrasse 27, 6300 Zug",
-      image: "./assets/people/profilbilder/svp-marcus-buehler-profil.jpg",
+      image: "/assets/people/jpg-2026/Marcus-Buehler_kravatte.jpg",
       description: "Erfahrenes Vorstandsmitglied der SVP Stadt Zug mit breitem politischen Engagement.",
       contact: {
         email: "bumbleb@bluewin.ch"
       },
       profileLink: "/profil/marcus-buehler"
+    },
+    {
+      name: "Henry Barrows",
+      position: "Vorstandsmitglied",
+      roles: [],
+      address: "",
+      image: "/assets/people/jpg-2026/Henry-Barrows_kravatte.jpg",
+      description: "Vorstandsmitglied der SVP Stadt Zug und Kandidat für den Grossen Gemeinderat.",
+      contact: {
+        email: ""
+      },
+      profileLink: "/profil/henry-barrows"
+    },
+    {
+      name: "Simon Ruckstuhl",
+      position: "Vorstandsmitglied",
+      roles: [],
+      address: "Industriestrasse 8, 6300 Zug",
+      image: "/assets/people/jpg-2026/Simon-Ruckstuhl_kravatte_dunkel.jpg",
+      description: "Vorstandsmitglied der SVP Stadt Zug und Kandidat für den Grossen Gemeinderat und den Kantonsrat.",
+      contact: {
+        email: "simon@airhosted.ch"
+      },
+      profileLink: "/profil/simon-ruckstuhl"
     }
   ];
 
@@ -184,7 +196,7 @@ const Vorstand = () => {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
                     />
                     {/* Shiny effect on hover */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
@@ -201,6 +213,11 @@ const Vorstand = () => {
                 <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
                   {member.name}
                 </h3>
+                {member.roles.length > 0 && (
+                  <p className="text-sm text-muted-foreground">
+                    {member.roles.join(", ")}
+                  </p>
+                )}
               </Link>
             ))}
           </div>

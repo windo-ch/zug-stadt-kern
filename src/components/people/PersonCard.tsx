@@ -49,7 +49,7 @@ const PersonCard = ({
               <img
                 src={person.image}
                 alt={`Foto von ${person.name}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
             <div className="flex-grow">
@@ -117,7 +117,7 @@ const PersonCard = ({
               <img
                 src={person.image}
                 alt={`Foto von ${person.name}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
             <div className="flex-grow">

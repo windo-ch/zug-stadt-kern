@@ -23,7 +23,7 @@ export default function Kantonsrat() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <CircularAvatar
                 name="Gregor R. Bruhin"
-                image="/assets/people/profilbilder/gregor-bruhin.jpg"
+                image="/assets/people/jpg-2026/Gregor-Bruhin_kravatte_g.jpg"
                 profileLink="/profil/gregor-bruhin"
                 category="Kantonsrat"
                 role="Kantonsrat"

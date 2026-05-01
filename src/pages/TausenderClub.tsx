@@ -266,9 +266,9 @@ const TausenderClub = () => {
                 <div className="text-center mb-6">
                   <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-[hsl(var(--svp-green))] shadow-lg mx-auto mb-4">
                     <img
-                      src="./assets/people/profilbilder/svp-marcus-buehler-profil.jpg"
+                      src="/assets/people/jpg-2026/Marcus-Buehler_kravatte.jpg"
                       alt="Marcus H. Bühler - Präsident des 1000er-Clubs"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-top"
                     />
                   </div>
                   <h3 className="text-xl font-bold mb-2">Marcus H. Bühler</h3>

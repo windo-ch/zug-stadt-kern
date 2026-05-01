@@ -102,7 +102,7 @@ const HeinzTaennlerProfil = () => {
         <div className="mb-12">
           <ProfileHero
             personalData={personalData}
-            image="/assets/people/profilbilder/Heinz-Taennler.jpg"
+            image="/assets/people/jpg-2026/Heinz-Taennler.jpg"
             description="Regierungsrat • Finanzdirektor • Landammann 2015/2016"
             roles={["Regierungsrat", "Finanzdirektor"]}
           />

@@ -17,7 +17,7 @@ const WerWirSind = () => {
       phone: "",
       email: "",
       description: "",
-      image: "/assets/people/profilbilder/Heinz-Taennler.jpg",
+      image: "/assets/people/jpg-2026/Heinz-Taennler.jpg",
       badge: "Regierungsrat",
       roles: ["Finanzdirektor"],
       profileLink: "/profil/heinz-taennler"
@@ -32,7 +32,7 @@ const WerWirSind = () => {
       phone: "",
       email: "",
       description: "",
-      image: "/assets/people/profilbilder/gregor-bruhin.jpg",
+      image: "/assets/people/jpg-2026/Gregor-Bruhin_kravatte_g.jpg",
       badge: "Kantonsrat",
       profileLink: "/profil/gregor-bruhin"
     },
@@ -89,7 +89,7 @@ const WerWirSind = () => {
       phone: "",
       email: "",
       description: "",
-      image: "/assets/people/profilbilder/roman-kueng.jpg",
+      image: "/assets/people/jpg-2026/Roman-Kueng_kravatte.jpg",
       badge: "Fraktionspräsident",
       roles: ["Vizepräsident", "Vorstand"],
       profileLink: "/profil/roman-kueng"
@@ -111,7 +111,7 @@ const WerWirSind = () => {
       phone: "",
       email: "",
       description: "",
-      image: "/assets/people/profilbilder/svp-marcus-buehler-profil.jpg",
+      image: "/assets/people/jpg-2026/Marcus-Buehler_kravatte.jpg",
       badge: "Gemeinderat",
       roles: ["Vorstand"],
       profileLink: "/profil/marcus-buehler"
@@ -132,7 +132,7 @@ const WerWirSind = () => {
       phone: "",
       email: "",
       description: "",
-      image: "/assets/people/profilbilder/alex-odermatt.jpg",
+      image: "/assets/people/jpg-2026/Alex-Odermatt.jpg",
       badge: "Gemeinderat",
       profileLink: "/profil/alex-odermatt"
     },
@@ -179,7 +179,7 @@ const WerWirSind = () => {
       phone: "",
       email: "",
       description: "",
-      image: "/assets/people/profilbilder/alex-odermatt.jpg",
+      image: "/assets/people/jpg-2026/Alex-Odermatt.jpg",
       profileLink: "/profil/alex-odermatt"
     },
     {
@@ -206,7 +206,7 @@ const WerWirSind = () => {
       phone: "",
       email: "",
       description: "",
-      image: "/assets/people/profilbilder/roman-kueng.jpg",
+      image: "/assets/people/jpg-2026/Roman-Kueng_kravatte.jpg",
       profileLink: "/profil/roman-kueng"
     },
     {
@@ -215,7 +215,7 @@ const WerWirSind = () => {
       phone: "",
       email: "",
       description: "",
-      image: "/assets/people/profilbilder/svp-marcus-buehler-profil.jpg",
+      image: "/assets/people/jpg-2026/Marcus-Buehler_kravatte.jpg",
       profileLink: "/profil/marcus-buehler"
     },
     {
@@ -260,7 +260,7 @@ const WerWirSind = () => {
       phone: "",
       email: "",
       description: "",
-      image: "/assets/people/profilbilder/raphael-tschan.jpg",
+      image: "/assets/people/jpg-2026/Raphael-Tschan_kravatte.jpg",
       roles: ["Vorstand"],
       profileLink: "/profil/raphael-tschan"
     }
@@ -303,7 +303,7 @@ const WerWirSind = () => {
                       <img
                         src={person.image}
                         alt={person.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-top"
                         loading="lazy"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
@@ -419,7 +419,7 @@ const WerWirSind = () => {
                           <img
                             src={person.image}
                             alt={person.name}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover object-top"
                             loading="lazy"
                             onError={(e) => {
                               const target = e.target as HTMLImageElement;

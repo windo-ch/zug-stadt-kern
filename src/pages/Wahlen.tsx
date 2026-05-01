@@ -69,7 +69,7 @@ const Wahlen = () => {
       priority: "high",
       link: "/profil/heinz-taennler",
       candidate: "Heinz Tännler",
-      candidateImage: "/assets/people/profilbilder/Heinz-Taennler.jpg"
+      candidateImage: "/assets/people/jpg-2026/Heinz-Taennler.jpg"
     },
     {
       icon: Users,
@@ -79,10 +79,10 @@ const Wahlen = () => {
       level: "Kantonal",
       status: "2026",
       priority: "high",
-      link: "/wer-wir-sind#kantonsrat",
-      candidates: "Gregor R. Bruhin, Philip C. Brunner, Adrian Risi",
+      link: "/wahlen/kandidaten",
+      candidates: "Gregor R. Bruhin, Philip C. Brunner, Adrian Risi und weitere",
       candidateImages: [
-        "/assets/people/profilbilder/gregor-bruhin.jpg",
+        "/assets/people/jpg-2026/Gregor-Bruhin_kravatte_g.jpg",
         "/assets/people/profilbilder/philip-c-brunner.jpg",
         "/assets/people/profilbilder/adrian-risi.jpg"
       ]
@@ -95,7 +95,7 @@ const Wahlen = () => {
       level: "Stadt",
       status: "2026",
       priority: "high",
-      link: "/profil/andre-wicki",
+      link: "/wahlen/kandidaten",
       candidate: "André Wicki",
       candidateImage: "/assets/people/profilbilder/Andre-Wicki_SVP.jpg"
     },
@@ -107,7 +107,7 @@ const Wahlen = () => {
       level: "Stadt",
       status: "2026",
       priority: "high",
-      link: "/ggr-kandidaten",
+      link: "/wahlen/kandidaten",
       noCandidates: true
     },
     {
@@ -436,7 +436,7 @@ const Wahlen = () => {
                           <img 
                             src={election.candidateImage} 
                             alt={election.candidate}
-                            className="w-12 h-12 rounded-full object-cover border-2 border-[hsl(var(--svp-green))]/30"
+                            className="w-12 h-12 rounded-full object-cover object-top border-2 border-[hsl(var(--svp-green))]/30"
                           />
                           <p className="text-sm font-semibold text-foreground">Kandidat: {election.candidate}</p>
                         </div>
@@ -452,7 +452,7 @@ const Wahlen = () => {
                                   key={idx}
                                   src={img} 
                                   alt={names[idx] || ''}
-                                  className="w-10 h-10 rounded-full object-cover border-2 border-[hsl(var(--svp-green))]/30"
+                                  className="w-10 h-10 rounded-full object-cover object-top border-2 border-[hsl(var(--svp-green))]/30"
                                   title={names[idx] || ''}
                                 />
                               );

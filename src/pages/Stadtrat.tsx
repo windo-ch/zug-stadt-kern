@@ -44,8 +44,19 @@ const Stadtrat = () => {
       email: "roman.kueng@bluewin.ch",
       description: "Roman Küng ist als erfahrener Gemeinderat und Fraktionschef ein wichtiger Pfeiler der SVP-Politik in Zug.",
       isFraktionschef: true,
-      image: "/assets/people/profilbilder/roman-kueng.jpg",
+      image: "/assets/people/jpg-2026/Roman-Kueng_kravatte.jpg",
       profileLink: "/profil/roman-kueng"
+    },
+    {
+      name: "Gregor R. Bruhin",
+      position: "Gemeinderat",
+      address: "Rosenbergweg 5, 6300 Zug",
+      phone: "",
+      email: "gb@gregor-bruhin.ch",
+      description: "Gregor R. Bruhin bringt seine Erfahrung aus Stadt- und Kantonspolitik in die SVP-Fraktion ein.",
+      isFraktionschef: false,
+      image: "/assets/people/jpg-2026/Gregor-Bruhin_kravatte_g.jpg",
+      profileLink: "/profil/gregor-bruhin"
     },
     {
       name: "Philip C. Brunner",
@@ -66,7 +77,7 @@ const Stadtrat = () => {
       email: "bumbleb@bluewin.ch",
       description: "Marcus H. Bühler setzt sich als Gemeinderat für pragmatische Lösungen und bürgernahe Politik ein.",
       isFraktionschef: false,
-      image: "/assets/people/profilbilder/svp-marcus-buehler-profil.jpg",
+      image: "/assets/people/jpg-2026/Marcus-Buehler_kravatte.jpg",
       profileLink: "/profil/marcus-buehler"
     },
     {
@@ -80,17 +91,6 @@ const Stadtrat = () => {
       image: "/assets/people/profilbilder/rene-gretener.jpg",
       profileLink: "/profil/rene-gretener",
       staendigeKommissionen: "Mitglied der Feuerwehrkommission",
-    },
-    {
-      name: "Manfred Pircher",
-      position: "Gemeinderat",
-      address: "Lotenbach 7, 6318 Walchwil",
-      phone: "041 758 17 30",
-      email: "manfred.pircher@bluewin.ch",
-      description: "«Es ist nicht genug zu wollen, man muss es auch tun!» Bürger von Hütten, ZH. Lehre als Maschinenmechaniker, Offsetmaschinenmonteur. Seit 1993 selbständig. Gründungsmitglied der SVP Kanton Zug und Stadtpartei. Seit 2001 im Grossen Gemeinderat.",
-      isFraktionschef: false,
-      image: "/assets/people/profilbilder/manfred-pircher.jpg",
-      profileLink: "/profil/manfred-pircher"
     },
     {
       name: "Norbert Schlumpf",
@@ -111,7 +111,7 @@ const Stadtrat = () => {
       email: "alexodermatt@bluewin.ch",
       description: "Mir ist es wichtig auf die Bevölkerung zu hören und ihre Anliegen wahrzunehmen. Darum setz ich mich für Vereine ein. Man muss achten, dass Vereine nicht mit Bürokratie belastet werden sondern sich auf den Einsatz für die Bevölkerung in kulturellen, sportlichen und gesellschaftlichen Belangen konzentrieren können.",
       isFraktionschef: false,
-      image: "/assets/people/profilbilder/alex-odermatt.jpg",
+      image: "/assets/people/jpg-2026/Alex-Odermatt.jpg",
       profileLink: "/profil/alex-odermatt"
     },
     // Candidates not yet elected are listed on /ggr-kandidaten
@@ -178,7 +178,7 @@ const Stadtrat = () => {
                           <img
                             src={person.image}
                             alt={person.name}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
                           />
                           {/* Shiny effect on hover */}
                           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
@@ -217,7 +217,7 @@ const Stadtrat = () => {
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
                       />
                       {/* Shiny effect on hover */}
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
@@ -269,7 +269,7 @@ const Stadtrat = () => {
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
                       />
                       {/* Shiny effect on hover */}
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />

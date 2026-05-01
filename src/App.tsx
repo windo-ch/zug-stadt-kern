@@ -49,6 +49,14 @@ const MortenHannesboProfil = lazy(() => import("./pages/MortenHannesboProfil"));
 const AlessiaBischofProfil = lazy(() => import("./pages/AlessiaBischofProfil"));
 const KilianKrallProfil = lazy(() => import("./pages/KilianKrallProfil"));
 const SimonRuckstuhlProfil = lazy(() => import("./pages/SimonRuckstuhlProfil"));
+const HenryBarrowsProfil = lazy(() => import("./pages/HenryBarrowsProfil"));
+const BennyElsenerProfil = lazy(() => import("./pages/BennyElsenerProfil"));
+const UrsulaKeiserProfil = lazy(() => import("./pages/UrsulaKeiserProfil"));
+const KarlKeiserProfil = lazy(() => import("./pages/KarlKeiserProfil"));
+const MarcusLaemmlerProfil = lazy(() => import("./pages/MarcusLaemmlerProfil"));
+const AndreaRisiProfil = lazy(() => import("./pages/AndreaRisiProfil"));
+const ClaudioSchmidProfil = lazy(() => import("./pages/ClaudioSchmidProfil"));
+const PhilipStierliProfil = lazy(() => import("./pages/PhilipStierliProfil"));
 const AktuelleTermine = lazy(() => import("./pages/AktuelleTermine"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const ArtikelMadameFrigo = lazy(() => import("./pages/ArtikelMadameFrigo"));
@@ -112,6 +120,7 @@ const App = () => {
               <Route path="/1000er-club" element={<TausenderClub />} />
               <Route path="/1000er-club-veranstaltungen" element={<TausenderClubVeranstaltungen />} />
               <Route path="/wahlen" element={<Wahlen />} />
+              <Route path="/wahlen/kandidaten" element={<GGRKandidaten />} />
               <Route path="/ggr-kandidaten" element={<GGRKandidaten />} />
               <Route path="/kantonsrat" element={<Kantonsrat />} />
               <Route path="/impressum" element={<Impressum />} />
@@ -136,6 +145,14 @@ const App = () => {
               <Route path="/profil/alessia-bischof" element={<AlessiaBischofProfil />} />
               <Route path="/profil/kilian-krall" element={<KilianKrallProfil />} />
               <Route path="/profil/simon-ruckstuhl" element={<SimonRuckstuhlProfil />} />
+              <Route path="/profil/henry-barrows" element={<HenryBarrowsProfil />} />
+              <Route path="/profil/benny-elsener" element={<BennyElsenerProfil />} />
+              <Route path="/profil/ursula-keiser" element={<UrsulaKeiserProfil />} />
+              <Route path="/profil/karl-keiser" element={<KarlKeiserProfil />} />
+              <Route path="/profil/marcus-laemmler" element={<MarcusLaemmlerProfil />} />
+              <Route path="/profil/andrea-risi" element={<AndreaRisiProfil />} />
+              <Route path="/profil/claudio-schmid" element={<ClaudioSchmidProfil />} />
+              <Route path="/profil/philip-stierli" element={<PhilipStierliProfil />} />
               <Route path="/artikel/madame-frigo" element={<ArtikelMadameFrigo />} />
               <Route
                 path="/artikel/villa-unterer-frauenstein"

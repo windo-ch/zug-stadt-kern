@@ -6,8 +6,13 @@ import ProfileContactCard from "@/components/profile/ProfileContactCard";
 import ProfilePersonalDataCard from "@/components/profile/ProfilePersonalDataCard";
 import ProfileListSection from "@/components/profile/ProfileListSection";
 import ProfileHobbiesSection from "@/components/profile/ProfileHobbiesSection";
+import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { SteckbriefCandidate } from "@/data/steckbriefCandidates";
+import type {
+  ElectionCandidacy,
+  ElectionStatus,
+  SteckbriefCandidate,
+} from "@/data/steckbriefCandidates";
 
 function getBirthYear(iso?: string): string | undefined {
   if (!iso) return undefined;
@@ -42,13 +47,18 @@ function uniqueStrings(items: string[]): string[] {
 }
 
 function parseRolesFromKandidatur(kandidatur: string): string[] {
-  const raw = (kandidatur ?? "").trim();
-  if (!raw) return [];
+  const k = kandidatur.toLowerCase();
+  const roles: string[] = [];
 
-  // We only use kandidatur for deriving the *primary* office (via toDisplayPosition).
-  // Extra badges should not re-list other offices (e.g. "Gemeinderat" + "Kantonsrat")
-  // because it looks like duplication and conflicts with “highest office first”.
-  return [];
+  if (k.includes("stadtpräsident")) roles.push("Stadtpräsident");
+  if (k.includes("stadtrat")) roles.push("Stadtrat");
+  if (k.includes("kantonsrat") || k.includes("kr")) roles.push("Kantonsrat");
+  if (k.includes("grosser gemeinderat") || k.includes("ggr") || k.includes("gemeinderat")) {
+    roles.push("GGR");
+  }
+  if (k.includes("rpk") || k.includes("rechnungsprüfungskommission")) roles.push("RPK");
+
+  return uniqueStrings(roles);
 }
 
 function toDisplayPosition(kandidatur: string): string {
@@ -56,10 +66,24 @@ function toDisplayPosition(kandidatur: string): string {
   if (k.includes("stadtpräsident")) return "Stadtpräsident";
   if (k.includes("stadtrat")) return "Stadtrat";
   if (k.includes("kantonsrat")) return "Kantonsrat";
+  if (k.includes("kr")) return "Kantonsrat";
   // On the site we label GGR members as Gemeinderat
   if (k.includes("grosser gemeinderat") || k.includes("ggr") || k.includes("gemeinderat"))
-    return "Gemeinderat";
+    return "GGR";
   return "Profil";
+}
+
+const statusClassName = (status: ElectionStatus) =>
+  status === "Bisher"
+    ? "bg-[hsl(var(--svp-green))] text-white border-transparent"
+    : "bg-background text-[hsl(var(--svp-green))] border-[hsl(var(--svp-green))]/40";
+
+function OfficeStatusBadge({ candidacy }: { candidacy: ElectionCandidacy }) {
+  return (
+    <Badge className={statusClassName(candidacy.status)}>
+      {candidacy.office} ({candidacy.status})
+    </Badge>
+  );
 }
 
 export default function SteckbriefProfilePage({
@@ -91,6 +115,8 @@ export default function SteckbriefProfilePage({
   };
 
   const roles = parseRolesFromKandidatur(candidate.kandidatur);
+  const currentOffices = candidate.currentOffices ?? [];
+  const candidacies2026 = candidate.candidacies2026 ?? [];
 
   return (
     <PageLayout
@@ -107,6 +133,39 @@ export default function SteckbriefProfilePage({
             description={personalData.position}
             roles={roles}
           />
+          {candidacies2026.length > 0 && (
+            <Card className="mt-6 border-[hsl(var(--svp-green))]/20 shadow-md">
+              <CardContent className="grid gap-4 p-6 md:grid-cols-2">
+                <div>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    Aktuelles Amt
+                  </p>
+                  {currentOffices.length > 0 ? (
+                    <div className="flex flex-wrap gap-2">
+                      {currentOffices.map((office) => (
+                        <Badge key={office} variant="secondary">
+                          {office}
+                        </Badge>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-muted-foreground">Noch kein Amt</p>
+                  )}
+                </div>
+
+                <div>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    Kandidiert 2026
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {candidacies2026.map((candidacy) => (
+                      <OfficeStatusBadge key={candidacy.office} candidacy={candidacy} />
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          )}
           {candidate.statement && (
             <ProfileQuoteCard quote={candidate.statement} />
           )}

@@ -34,7 +34,6 @@ const Header = () => {
       items: [
         { label: 'Wer wir sind', href: '/wer-wir-sind' },
         { label: 'GGR – Stadtrat', href: '/stadtrat' },
-        { label: 'GGR-Kandidaten', href: '/ggr-kandidaten' },
         { label: 'Kantonsrat', href: '/kantonsrat' },
         { label: 'Vorstand', href: '/vorstand' },
         { label: 'Geschichte', href: '/geschichte' }
@@ -103,16 +102,21 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg-nav:hidden border-t border-border bg-background shadow-lg">
             <div className="py-6">
-              {/* Wahlen - First Item in Mobile */}
-              <div className="px-6 mb-4">
-                <Link to="/wahlen" onClick={() => setIsMenuOpen(false)}>
-                  <Button 
-                    variant="outline" 
-                    className="w-full border-[hsl(var(--svp-green))] text-[hsl(var(--svp-green))] hover:bg-[hsl(var(--svp-green))] hover:text-white transition-colors font-semibold"
-                  >
-                    Wahlen
-                  </Button>
-                </Link>
+              {/* Wahlen - First Items in Mobile */}
+              <div className="px-6 mb-4 space-y-3">
+                <div className="font-semibold text-foreground text-base">Wahlen</div>
+                <button
+                  onClick={() => navigateToPage('/wahlen')}
+                  className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-accent/50 rounded-lg transition-colors"
+                >
+                  Wahlen Übersicht
+                </button>
+                <button
+                  onClick={() => navigateToPage('/wahlen/kandidaten')}
+                  className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-accent/50 rounded-lg transition-colors"
+                >
+                  Kandidaten 2026
+                </button>
               </div>
               
               <Accordion type="single" collapsible className="w-full px-6">

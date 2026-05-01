@@ -17,12 +17,12 @@ const PeopleSection = () => {
       name: "Heinz Tännler",
       role: "Regierungsrat",
       position: "Finanzdirektor",
-      image: "./assets/people/profilbilder/Heinz-Taennler.jpg",
+      image: "/assets/people/jpg-2026/Heinz-Taennler.jpg",
       profileLink: "/profil/heinz-taennler",
       category: "Regierungsrat",
-      imageScale: 1.3,
-      objectPosition: "center 20%",
-      translateY: "8%"
+      imageScale: 0.96,
+      objectPosition: "center top",
+      translateY: "0%"
     },
     // 2. André Wicki
     {
@@ -38,12 +38,12 @@ const PeopleSection = () => {
       name: "Gregor R. Bruhin",
       role: "Kantonsrat",
       position: "Kantonsrat",
-      image: "./assets/people/profilbilder/gregor-bruhin.jpg",
+      image: "/assets/people/jpg-2026/Gregor-Bruhin_kravatte_g.jpg",
       profileLink: "/profil/gregor-bruhin",
       category: "Kantonsrat",
-      imageScale: 1.2,
-      objectPosition: "center 20%",
-      translateY: "6%"
+      imageScale: 0.96,
+      objectPosition: "center top",
+      translateY: "0%"
     },
     // 4. Philip C. Brunner
     {
@@ -68,7 +68,7 @@ const PeopleSection = () => {
       name: "Marcus Bühler",
       role: "Gemeinderat",
       position: "Vorstand",
-      image: "./assets/people/profilbilder/svp-marcus-buehler-profil.jpg",
+      image: "/assets/people/jpg-2026/Marcus-Buehler_kravatte.jpg",
       profileLink: "/profil/marcus-buehler",
       category: "Gemeinderat"
     },
@@ -77,7 +77,7 @@ const PeopleSection = () => {
       name: "Roman Küng",
       role: "Fraktionspräsident",
       position: "Vizepräsident, Vorstand",
-      image: "./assets/people/profilbilder/roman-kueng.jpg",
+      image: "/assets/people/jpg-2026/Roman-Kueng_kravatte.jpg",
       profileLink: "/profil/roman-kueng",
       category: "Fraktionspräsident"
     },
@@ -86,7 +86,7 @@ const PeopleSection = () => {
       name: "Raphael Tschan",
       role: "Vizepräsident",
       position: "Mitglied RPK",
-      image: "./assets/people/profilbilder/raphael-tschan.jpg",
+      image: "/assets/people/jpg-2026/Raphael-Tschan_kravatte.jpg",
       profileLink: "/profil/raphael-tschan",
       category: "Vizepräsident"
     }
@@ -133,7 +133,7 @@ const PeopleSection = () => {
                           <img
                             src={person.image}
                             alt={person.name}
-                            className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                            className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
                             loading="lazy"
                             width="160"
                             height="160"

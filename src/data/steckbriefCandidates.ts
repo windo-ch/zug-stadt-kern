@@ -3,17 +3,35 @@ export type SteckbriefCandidateSlug =
   | "alessia-bischof"
   | "alex-odermatt"
   | "andre-wicki"
+  | "andrea-risi"
+  | "benny-elsener"
+  | "claudio-schmid"
   | "daniel-gramm"
+  | "henry-barrows"
+  | "karl-keiser"
   | "kilian-krall"
+  | "marcus-laemmler"
   | "marcus-buehler"
   | "rene-gretener"
   | "roman-kueng"
-  | "simon-ruckstuhl";
+  | "simon-ruckstuhl"
+  | "ursula-keiser"
+  | "philip-stierli";
+
+export type ElectionOffice = "Stadtpräsidium" | "Stadtrat" | "GGR" | "Kantonsrat";
+export type ElectionStatus = "Bisher" | "Neu";
+
+export interface ElectionCandidacy {
+  office: ElectionOffice;
+  status: ElectionStatus;
+}
 
 export interface SteckbriefCandidate {
   slug: SteckbriefCandidateSlug;
   name: string;
   kandidatur: string;
+  currentOffices?: string[];
+  candidacies2026?: ElectionCandidacy[];
   birthDateISO?: string;
   address?: string;
   location?: string;
@@ -46,7 +64,12 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
   "adrian-risi": {
     slug: "adrian-risi",
     name: "Adrian Risi",
-    kandidatur: "Kantonsrat",
+    kandidatur: "GGR, Kantonsrat",
+    currentOffices: ["Kantonsrat"],
+    candidacies2026: [
+      { office: "Kantonsrat", status: "Bisher" },
+      { office: "GGR", status: "Neu" },
+    ],
     birthDateISO: "1962-11-10",
     address: "Eichwaldstrasse 22",
     location: "6300 Zug",
@@ -82,7 +105,11 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
   "alessia-bischof": {
     slug: "alessia-bischof",
     name: "Alessia Bischof",
-    kandidatur: "Kandidatin GGR, Kandidatin Kantonsrat",
+    kandidatur: "GGR, Kantonsrat",
+    candidacies2026: [
+      { office: "GGR", status: "Neu" },
+      { office: "Kantonsrat", status: "Neu" },
+    ],
     birthDateISO: "2001-01-11",
     address: "Pilatusstrasse 3",
     location: "6300 Zug",
@@ -106,13 +133,18 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     ],
     hobbies: ["Tauchen", "Wandern", "Reisen"],
     socials: { instagram: "https://www.instagram.com/alessia_k_bischof/" },
-    image: "/logo/svp-stadt-zug-logo.png",
+    image: "/assets/people/jpg-2026/Alessia-Bischof.jpg",
   },
 
   "alex-odermatt": {
     slug: "alex-odermatt",
     name: "Alex Odermatt",
     kandidatur: "GGR / KR",
+    currentOffices: ["GGR"],
+    candidacies2026: [
+      { office: "GGR", status: "Bisher" },
+      { office: "Kantonsrat", status: "Neu" },
+    ],
     birthDateISO: "1969-03-25",
     address: "St. Johannesstrasse 4",
     location: "6300 Zug",
@@ -134,13 +166,18 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     ],
     hobbies: ["Fasnacht", "Sport", "Wandern"],
     socials: {},
-    image: "/assets/people/profilbilder/alex-odermatt.jpg",
+    image: "/assets/people/jpg-2026/Alex-Odermatt.jpg",
   },
 
   "andre-wicki": {
     slug: "andre-wicki",
     name: "André Wicki",
     kandidatur: "Stadtpräsident Zug",
+    currentOffices: ["Stadtpräsident", "Stadtrat"],
+    candidacies2026: [
+      { office: "Stadtpräsidium", status: "Bisher" },
+      { office: "Stadtrat", status: "Bisher" },
+    ],
     birthDateISO: "1962-08-04",
     address: "Stolzengraben 61",
     location: "6317 Oberwil",
@@ -172,7 +209,11 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
   "daniel-gramm": {
     slug: "daniel-gramm",
     name: "Daniel Gramm",
-    kandidatur: "Kandidat Kantonsrat, Kandidat RPK, Kandidat GGR",
+    kandidatur: "GGR, Kantonsrat",
+    candidacies2026: [
+      { office: "GGR", status: "Neu" },
+      { office: "Kantonsrat", status: "Neu" },
+    ],
     birthDateISO: "1964-08-30",
     address: "Gartenstadt 11",
     location: "6300 Zug",
@@ -204,7 +245,11 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
   "kilian-krall": {
     slug: "kilian-krall",
     name: "Kilian Krall",
-    kandidatur: "Grosser Gemeinderat",
+    kandidatur: "GGR, Kantonsrat",
+    candidacies2026: [
+      { office: "GGR", status: "Neu" },
+      { office: "Kantonsrat", status: "Neu" },
+    ],
     birthDateISO: "2002-06-02",
     address: "Zugerbergstrasse 53",
     location: "6302 Zug",
@@ -231,13 +276,15 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     ],
     hobbies: ["Schiessen", "Feuerwehrdienst"],
     socials: {},
-    image: "/logo/svp-stadt-zug-logo.png",
+    image: "/assets/people/jpg-2026/Kilian-Krall_kravatte.jpg",
   },
 
   "marcus-buehler": {
     slug: "marcus-buehler",
     name: "Marcus H. Bühler",
     kandidatur: "Gemeinderat",
+    currentOffices: ["GGR"],
+    candidacies2026: [{ office: "GGR", status: "Bisher" }],
     birthDateISO: "1962-07-15",
     address: "Bahnhofstrasse 27",
     location: "6300 Zug",
@@ -281,13 +328,15 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     ],
     hobbies: ["Jagd (Bündner- und Zugerjäger)", "Fliegenfischen"],
     socials: { instagram: "https://www.instagram.com/sirbumbleb?igsh=czdhcjZrNGJ1dWFv&utm_source=qr" },
-    image: "/assets/people/profilbilder/svp-marcus-buehler-profil.jpg",
+    image: "/assets/people/jpg-2026/Marcus-Buehler_kravatte.jpg",
   },
 
   "rene-gretener": {
     slug: "rene-gretener",
     name: "René Gretener",
     kandidatur: "Grosser Gemeinderat",
+    currentOffices: ["GGR"],
+    candidacies2026: [{ office: "GGR", status: "Bisher" }],
     birthDateISO: "1961-09-15",
     address: "Lüssirainstrasse 1",
     location: "6300 Zug",
@@ -317,6 +366,11 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     slug: "roman-kueng",
     name: "Roman Küng",
     kandidatur: "Gemeinderat, Kantonsrat",
+    currentOffices: ["GGR"],
+    candidacies2026: [
+      { office: "GGR", status: "Bisher" },
+      { office: "Kantonsrat", status: "Neu" },
+    ],
     birthDateISO: "1972-04-18",
     address: "Bernoldweg 9",
     location: "6300 Zug",
@@ -351,13 +405,17 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
       facebook: "https://www.facebook.com/roman.kung.94",
       website: "https://www.svp-zug.ch/personen/roman-kueng/",
     },
-    image: "/assets/people/profilbilder/roman-kueng.jpg",
+    image: "/assets/people/jpg-2026/Roman-Kueng_kravatte.jpg",
   },
 
   "simon-ruckstuhl": {
     slug: "simon-ruckstuhl",
     name: "Simon Ruckstuhl",
     kandidatur: "GGR, Kantonsrat",
+    candidacies2026: [
+      { office: "GGR", status: "Neu" },
+      { office: "Kantonsrat", status: "Neu" },
+    ],
     birthDateISO: "1989-11-29",
     address: "Industriestrasse 8",
     location: "6300 Zug",
@@ -376,6 +434,92 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     clubs: ["ELR Verein"],
     hobbies: ["Wandern", "Ski fahren", "Ausflüge", "Spazieren mit Familie"],
     socials: { website: "www.simonruckstuhl.ch" },
+    image: "/assets/people/jpg-2026/Simon-Ruckstuhl_kravatte_dunkel.jpg",
+  },
+
+  "andrea-risi": {
+    slug: "andrea-risi",
+    name: "Andrea Risi",
+    kandidatur: "GGR",
+    candidacies2026: [{ office: "GGR", status: "Neu" }],
+    statement: "Kandidatin für den Grossen Gemeinderat der Stadt Zug.",
+    priorities: ["Bürgerliche Politik für eine lebenswerte Stadt Zug"],
+    image: "/assets/people/jpg-2026/Andrea-Risi.jpg",
+  },
+
+  "benny-elsener": {
+    slug: "benny-elsener",
+    name: "Benny Elsener",
+    kandidatur: "GGR, Kantonsrat",
+    candidacies2026: [
+      { office: "GGR", status: "Neu" },
+      { office: "Kantonsrat", status: "Neu" },
+    ],
+    statement: "Kandidat für den Grossen Gemeinderat und den Kantonsrat.",
+    priorities: ["Bürgerliche Politik für Stadt und Kanton Zug"],
+    image: "/assets/people/jpg-2026/Benny-Elsener_karvatte.jpg",
+  },
+
+  "claudio-schmid": {
+    slug: "claudio-schmid",
+    name: "Claudio Schmid",
+    kandidatur: "GGR",
+    candidacies2026: [{ office: "GGR", status: "Neu" }],
+    statement: "Kandidat für den Grossen Gemeinderat der Stadt Zug.",
+    priorities: ["Bürgerliche Politik für eine lebenswerte Stadt Zug"],
+    image: "/logo/svp-stadt-zug-logo.png",
+  },
+
+  "henry-barrows": {
+    slug: "henry-barrows",
+    name: "Henry Barrows",
+    kandidatur: "GGR",
+    candidacies2026: [{ office: "GGR", status: "Neu" }],
+    statement: "Kandidat für den Grossen Gemeinderat der Stadt Zug.",
+    priorities: ["Bürgerliche Politik für eine starke Stadt Zug"],
+    image: "/assets/people/jpg-2026/Henry-Barrows_kravatte.jpg",
+  },
+
+  "karl-keiser": {
+    slug: "karl-keiser",
+    name: "Karl Keiser",
+    kandidatur: "GGR",
+    candidacies2026: [{ office: "GGR", status: "Neu" }],
+    statement: "Kandidat für den Grossen Gemeinderat der Stadt Zug.",
+    priorities: ["Bürgerliche Politik für eine lebenswerte Stadt Zug"],
+    image: "/assets/people/jpg-2026/Karl-Keiser.jpg",
+  },
+
+  "marcus-laemmler": {
+    slug: "marcus-laemmler",
+    name: "Marcus Lämmler",
+    kandidatur: "GGR",
+    candidacies2026: [{ office: "GGR", status: "Neu" }],
+    statement: "Kandidat für den Grossen Gemeinderat der Stadt Zug.",
+    priorities: ["Bürgerliche Politik für eine lebenswerte Stadt Zug"],
+    image: "/logo/svp-stadt-zug-logo.png",
+  },
+
+  "philip-stierli": {
+    slug: "philip-stierli",
+    name: "Philip Stierli",
+    kandidatur: "GGR",
+    candidacies2026: [{ office: "GGR", status: "Neu" }],
+    statement: "Kandidat für den Grossen Gemeinderat der Stadt Zug.",
+    priorities: ["Bürgerliche Politik für eine lebenswerte Stadt Zug"],
+    image: "/logo/svp-stadt-zug-logo.png",
+  },
+
+  "ursula-keiser": {
+    slug: "ursula-keiser",
+    name: "Ursula Keiser",
+    kandidatur: "GGR, Kantonsrat",
+    candidacies2026: [
+      { office: "GGR", status: "Neu" },
+      { office: "Kantonsrat", status: "Neu" },
+    ],
+    statement: "Kandidatin für den Grossen Gemeinderat und den Kantonsrat.",
+    priorities: ["Bürgerliche Politik für Stadt und Kanton Zug"],
     image: "/logo/svp-stadt-zug-logo.png",
   },
 };

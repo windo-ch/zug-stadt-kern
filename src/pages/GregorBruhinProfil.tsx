@@ -69,7 +69,7 @@ const GregorBruhinProfil = () => {
         <div className="mb-12">
           <ProfileHero
             personalData={personalData}
-            image="/assets/people/profilbilder/gregor-bruhin.jpg"
+            image="/assets/people/jpg-2026/Gregor-Bruhin_kravatte_g.jpg"
             description="Kantonsrat"
             roles={["Kantonsrat"]}
           />

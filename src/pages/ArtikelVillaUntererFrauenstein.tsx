@@ -89,9 +89,9 @@ const ArtikelVillaUntererFrauenstein = () => {
                 <CardContent className="p-6 flex items-center gap-4">
                   <div className="w-16 h-16 rounded-full overflow-hidden border-4 border-[hsl(var(--svp-green))]/20 shadow-md flex-shrink-0">
                     <img
-                      src="/assets/people/profilbilder/svp-marcus-buehler-profil.jpg"
+                      src="/assets/people/jpg-2026/Marcus-Buehler_kravatte.jpg"
                       alt={author}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-top"
                       loading="lazy"
                     />
                   </div>

@@ -56,7 +56,7 @@ const RaphaelTschanProfil = () => {
         <div className="mb-12">
           <ProfileHero
             personalData={personalData}
-            image="/assets/people/profilbilder/raphael-tschan.jpg"
+            image="/assets/people/jpg-2026/Raphael-Tschan_kravatte.jpg"
             description="Finanzexperte • Feuerwehrmann • Engagiert für die Stadt Zug"
             roles={["RPK Mitglied", "Feuerwehr", "Treuhänder"]}
           />

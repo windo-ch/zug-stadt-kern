@@ -7,7 +7,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
-import { Calendar, Users, FileText, Heart, MessageSquare, Info, Vote } from "lucide-react";
+import { Calendar, Users, FileText, Heart, Info, Vote } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface MegaMenuProps {
@@ -20,15 +20,27 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
       <NavigationMenuList>
         {/* Wahlen - First Item */}
         <NavigationMenuItem>
-          <NavigationMenuLink asChild>
-            <Link
-              to="/wahlen"
-              className="text-foreground hover:text-primary font-bold text-base px-4 py-2 rounded-lg hover:bg-accent/20 transition-all duration-200 inline-flex items-center gap-2"
-            >
-              <Vote className="h-4 w-4" />
-              Wahlen
-            </Link>
-          </NavigationMenuLink>
+          <NavigationMenuTrigger className="text-foreground hover:text-primary font-bold text-base px-4 py-2 rounded-lg hover:bg-accent/20 transition-all duration-200">
+            Wahlen
+          </NavigationMenuTrigger>
+          <NavigationMenuContent className="bg-background/98 backdrop-blur-md border border-border shadow-xl">
+            <div className="grid gap-4 p-8 w-[360px]">
+              <ListItem
+                title="Wahlen Übersicht"
+                href="/wahlen"
+                icon={<Vote className="h-5 w-5" />}
+              >
+                Wahltermine, Ziele und Informationen zu den Wahlen 2026
+              </ListItem>
+              <ListItem
+                title="Kandidaten 2026"
+                href="/wahlen/kandidaten"
+                icon={<Users className="h-5 w-5" />}
+              >
+                Alle bisherigen und neuen Kandidatinnen und Kandidaten
+              </ListItem>
+            </div>
+          </NavigationMenuContent>
         </NavigationMenuItem>
 
         {/* Politik & Standpunkte */}
@@ -98,7 +110,7 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
                       Wer wir sind
                     </div>
                     <p className="text-sm leading-relaxed text-white/90">
-                      Unsere Kandidaten und Parteimitglieder
+                      Unsere Partei, Amtsträger und Vorstandsmitglieder
                     </p>
                   </Link>
                 </NavigationMenuLink>
@@ -108,14 +120,7 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
                 href="/stadtrat"
                 icon={<Users className="h-5 w-5" />}
               >
-                Unsere Vertreter im Zuger Stadtrat
-              </ListItem>
-              <ListItem
-                title="GGR-Kandidaten"
-                href="/ggr-kandidaten"
-                icon={<Users className="h-5 w-5" />}
-              >
-                Steckbriefe und Profile unserer Kandidaten
+                Unsere Vertreter im Grossen Gemeinderat und Stadtrat
               </ListItem>
               <ListItem
                 title="Kantonsrat"
