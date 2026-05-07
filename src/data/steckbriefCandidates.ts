@@ -65,7 +65,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     slug: "adrian-risi",
     name: "Adrian Risi",
     kandidatur: "GGR, Kantonsrat",
-    currentOffices: ["Kantonsrat"],
+    currentOffices: ["Kantonsrat", "Präsident SVP Stadt Zug"],
     candidacies2026: [
       { office: "Kantonsrat", status: "Bisher" },
       { office: "GGR", status: "Neu" },
@@ -106,6 +106,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     slug: "alessia-bischof",
     name: "Alessia Bischof",
     kandidatur: "GGR, Kantonsrat",
+    currentOffices: ["Vizepräsidentin SVP Stadt Zug"],
     candidacies2026: [
       { office: "GGR", status: "Neu" },
       { office: "Kantonsrat", status: "Neu" },
@@ -140,7 +141,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     slug: "alex-odermatt",
     name: "Alex Odermatt",
     kandidatur: "GGR / KR",
-    currentOffices: ["GGR"],
+    currentOffices: ["GGR", "Bau- und Planungskommission"],
     candidacies2026: [
       { office: "GGR", status: "Bisher" },
       { office: "Kantonsrat", status: "Neu" },
@@ -173,7 +174,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     slug: "andre-wicki",
     name: "André Wicki",
     kandidatur: "Stadtpräsident Zug",
-    currentOffices: ["Stadtpräsident", "Stadtrat"],
+    currentOffices: ["Stadtpräsident", "Stadtrat", "Vorstand SVP Stadt Zug"],
     candidacies2026: [
       { office: "Stadtpräsidium", status: "Bisher" },
       { office: "Stadtrat", status: "Bisher" },
@@ -210,6 +211,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     slug: "daniel-gramm",
     name: "Daniel Gramm",
     kandidatur: "GGR, Kantonsrat",
+    currentOffices: ["Kulturkommission"],
     candidacies2026: [
       { office: "GGR", status: "Neu" },
       { office: "Kantonsrat", status: "Neu" },
@@ -283,7 +285,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     slug: "marcus-buehler",
     name: "Marcus H. Bühler",
     kandidatur: "Gemeinderat",
-    currentOffices: ["GGR"],
+    currentOffices: ["GGR", "Vorstand SVP Stadt Zug", "Nachhaltigkeitskommission"],
     candidacies2026: [{ office: "GGR", status: "Bisher" }],
     birthDateISO: "1962-07-15",
     address: "Bahnhofstrasse 27",
@@ -291,7 +293,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     phone: "079 340 81 68",
     mobile: "079 340 81 68",
     email: "mbuehler@weissenstein-partner.ch",
-    maritalStatus: "geschieden",
+    maritalStatus: "liiert",
     children: "keine",
     profession:
       "Exekutiver Verwaltungsratspräsident Weissenstein & Partner AG, MBA, CFA (Finanz-/Vermögensverwaltung)",
@@ -335,7 +337,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     slug: "rene-gretener",
     name: "René Gretener",
     kandidatur: "Grosser Gemeinderat",
-    currentOffices: ["GGR"],
+    currentOffices: ["GGR", "Feuerwehrkommission"],
     candidacies2026: [{ office: "GGR", status: "Bisher" }],
     birthDateISO: "1961-09-15",
     address: "Lüssirainstrasse 1",
@@ -366,7 +368,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     slug: "roman-kueng",
     name: "Roman Küng",
     kandidatur: "Gemeinderat, Kantonsrat",
-    currentOffices: ["GGR"],
+    currentOffices: ["GGR", "Vizepräsident SVP Stadt Zug"],
     candidacies2026: [
       { office: "GGR", status: "Bisher" },
       { office: "Kantonsrat", status: "Neu" },
@@ -412,6 +414,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     slug: "simon-ruckstuhl",
     name: "Simon Ruckstuhl",
     kandidatur: "GGR, Kantonsrat",
+    currentOffices: ["Vorstand SVP Stadt Zug"],
     candidacies2026: [
       { office: "GGR", status: "Neu" },
       { office: "Kantonsrat", status: "Neu" },
@@ -474,6 +477,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     slug: "henry-barrows",
     name: "Henry Barrows",
     kandidatur: "GGR",
+    currentOffices: ["Vorstand SVP Stadt Zug"],
     candidacies2026: [{ office: "GGR", status: "Neu" }],
     statement: "Kandidat für den Grossen Gemeinderat der Stadt Zug.",
     priorities: ["Bürgerliche Politik für eine starke Stadt Zug"],

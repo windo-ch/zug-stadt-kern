@@ -48,17 +48,6 @@ const Stadtrat = () => {
       profileLink: "/profil/roman-kueng"
     },
     {
-      name: "Gregor R. Bruhin",
-      position: "Gemeinderat",
-      address: "Rosenbergweg 5, 6300 Zug",
-      phone: "",
-      email: "gb@gregor-bruhin.ch",
-      description: "Gregor R. Bruhin bringt seine Erfahrung aus Stadt- und Kantonspolitik in die SVP-Fraktion ein.",
-      isFraktionschef: false,
-      image: "/assets/people/jpg-2026/Gregor-Bruhin_kravatte_g.jpg",
-      profileLink: "/profil/gregor-bruhin"
-    },
-    {
       name: "Philip C. Brunner",
       position: "Präsident GPK Stadt Zug",
       address: "Im Rank 109, 6300 Zug", 
@@ -113,6 +102,18 @@ const Stadtrat = () => {
       isFraktionschef: false,
       image: "/assets/people/jpg-2026/Alex-Odermatt.jpg",
       profileLink: "/profil/alex-odermatt"
+    },
+    {
+      name: "Manfred Pircher",
+      position: "Gemeinderat",
+      address: "Lotenbach 7, 6318 Walchwil",
+      phone: "041 758 17 30",
+      email: "manfred.pircher@bluewin.ch",
+      description: "Manfred Pircher ist seit 2001 im Grossen Gemeinderat und Mitglied der Bau- und Planungskommission.",
+      isFraktionschef: false,
+      image: "/assets/people/profilbilder/manfred-pircher.jpg",
+      profileLink: "/profil/manfred-pircher",
+      staendigeKommissionen: "Mitglied Bau- und Planungskommission",
     },
     // Candidates not yet elected are listed on /ggr-kandidaten
   ];

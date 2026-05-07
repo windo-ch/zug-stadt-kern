@@ -58,7 +58,7 @@ const RaphaelTschanProfil = () => {
             personalData={personalData}
             image="/assets/people/jpg-2026/Raphael-Tschan_kravatte.jpg"
             description="Finanzexperte • Feuerwehrmann • Engagiert für die Stadt Zug"
-            roles={["RPK Mitglied", "Feuerwehr", "Treuhänder"]}
+            roles={["RPK Mitglied"]}
           />
         </div>
 

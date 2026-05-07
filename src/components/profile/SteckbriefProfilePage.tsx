@@ -118,13 +118,14 @@ export default function SteckbriefProfilePage({
   const currentOffices = candidate.currentOffices ?? [];
   const candidacies2026 = candidate.candidacies2026 ?? [];
   const heroRoles = candidacies2026.length > 0 ? [] : roles;
+  const statusPanelColumns = currentOffices.length > 0 ? "md:grid-cols-2" : "";
   const statusPanel = candidacies2026.length > 0 ? (
-    <div className="mt-6 grid max-w-3xl gap-4 rounded-xl border border-[hsl(var(--svp-green))]/20 bg-background p-5 shadow-sm md:grid-cols-2">
-      <div>
-        <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-          Aktuelles Amt
-        </p>
-        {currentOffices.length > 0 ? (
+    <div className={`mt-6 grid max-w-3xl gap-4 rounded-xl border border-[hsl(var(--svp-green))]/20 bg-background p-5 shadow-sm ${statusPanelColumns}`}>
+      {currentOffices.length > 0 && (
+        <div>
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Aktuelles Amt
+          </p>
           <div className="flex flex-wrap gap-2">
             {currentOffices.map((office) => (
               <Badge key={office} variant="secondary">
@@ -132,10 +133,8 @@ export default function SteckbriefProfilePage({
               </Badge>
             ))}
           </div>
-        ) : (
-          <p className="text-sm text-muted-foreground">Noch kein Amt</p>
-        )}
-      </div>
+        </div>
+      )}
 
       <div>
         <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">

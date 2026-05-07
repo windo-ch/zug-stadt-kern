@@ -68,9 +68,9 @@ const candidateGroups: CandidateGroup[] = [
       candidateFromSteckbrief("alessia-bischof"),
       legacyCandidate(
         "Gregor R. Bruhin",
-        ["GGR", "Kantonsrat"],
+        ["Kantonsrat"],
         [
-          { office: "GGR", status: "Bisher" },
+          { office: "GGR", status: "Neu" },
           { office: "Kantonsrat", status: "Bisher" },
         ],
         "/profil/gregor-bruhin",
@@ -78,7 +78,7 @@ const candidateGroups: CandidateGroup[] = [
       ),
       legacyCandidate(
         "Philip C. Brunner",
-        ["GGR", "Kantonsrat"],
+        ["GGR", "Kantonsrat", "Präsident GPK"],
         [
           { office: "GGR", status: "Bisher" },
           { office: "Kantonsrat", status: "Bisher" },
@@ -117,9 +117,9 @@ const candidateGroups: CandidateGroup[] = [
       candidateFromSteckbrief("alessia-bischof"),
       legacyCandidate(
         "Gregor R. Bruhin",
-        ["GGR", "Kantonsrat"],
+        ["Kantonsrat"],
         [
-          { office: "GGR", status: "Bisher" },
+          { office: "GGR", status: "Neu" },
           { office: "Kantonsrat", status: "Bisher" },
         ],
         "/profil/gregor-bruhin",
@@ -127,7 +127,7 @@ const candidateGroups: CandidateGroup[] = [
       ),
       legacyCandidate(
         "Philip C. Brunner",
-        ["GGR", "Kantonsrat"],
+        ["GGR", "Kantonsrat", "Präsident GPK"],
         [
           { office: "GGR", status: "Bisher" },
           { office: "Kantonsrat", status: "Bisher" },
@@ -223,11 +223,11 @@ const GGRKandidaten = () => {
                           </CardHeader>
                           <CardContent className="text-center">
                             <div className="mb-4 space-y-3 rounded-lg border bg-muted/30 p-4 text-left">
-                              <div>
-                                <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                                  Aktuelles Amt
-                                </p>
-                                {candidate.currentOffices.length > 0 ? (
+                              {candidate.currentOffices.length > 0 && (
+                                <div>
+                                  <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                                    Aktuelles Amt
+                                  </p>
                                   <div className="flex flex-wrap gap-2">
                                     {candidate.currentOffices.map((office) => (
                                       <Badge key={office} variant="secondary">
@@ -235,10 +235,8 @@ const GGRKandidaten = () => {
                                       </Badge>
                                     ))}
                                   </div>
-                                ) : (
-                                  <p className="text-sm text-muted-foreground">Noch kein Amt</p>
-                                )}
-                              </div>
+                                </div>
+                              )}
 
                               <div>
                                 <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
