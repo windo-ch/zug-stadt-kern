@@ -10,7 +10,7 @@ export type SteckbriefCandidateSlug =
   | "henry-barrows"
   | "karl-keiser"
   | "kilian-krall"
-  | "marcus-laemmler"
+  | "markus-laemmler"
   | "marcus-buehler"
   | "rene-gretener"
   | "roman-kueng"
@@ -445,8 +445,19 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     name: "Andrea Risi",
     kandidatur: "GGR",
     candidacies2026: [{ office: "GGR", status: "Neu" }],
-    statement: "Kandidatin für den Grossen Gemeinderat der Stadt Zug.",
-    priorities: ["Bürgerliche Politik für eine lebenswerte Stadt Zug"],
+    birthDateISO: "1964-01-01",
+    address: "Schulweg 5",
+    location: "6317 Oberwil",
+    mobile: "079 373 52 81",
+    maritalStatus: "In Partnerschaft",
+    children: "Zwei",
+    profession: "MPA",
+    statement: "Mir ist eine Politik wichtig, in der das Miteinander und nicht das Gegeneinander im Vordergrund steht.",
+    biography:
+      "Ich bin in Oberwil aufgewachsen. Nach der Schulzeit absolvierte ich die Ausbildung Pflegefachfrau in Gynäkologie und Geburtshilfe. Danach arbeitete ich im Zuger Kantonsspital und anschliessend als MPA mehrere Jahre in einer Gynäkologischen Praxis in Zug. Nach einem 4 Monatigen Sprachaufenthalt habe ich entschlossen, mich beruflich zu verändern und besuchte die Bäuerinnenschule.",
+    education: ["Bäuerinnenschule"],
+    hobbies: ["Velofahren", "Wandern", "Garten"],
+    priorities: ["Weniger Staat - mehr Freiheit"],
     image: "/assets/people/jpg-2026/Andrea-Risi.jpg",
   },
 
@@ -458,8 +469,44 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
       { office: "GGR", status: "Neu" },
       { office: "Kantonsrat", status: "Neu" },
     ],
-    statement: "Kandidat für den Grossen Gemeinderat und den Kantonsrat.",
-    priorities: ["Bürgerliche Politik für Stadt und Kanton Zug"],
+    birthDateISO: "1959-01-01",
+    address: "Bahnhofstrasse 10",
+    location: "6300 Zug",
+    phone: "041 711 73 73",
+    mobile: "079 331 99 55",
+    maritalStatus: "verheiratet mit Adriana",
+    children: "4 erwachsene Kinder",
+    profession: "Unternehmer, Geschäftsleitung",
+    statement: "Zug braucht Macher",
+    biography:
+      "Ich bin Urzuger, in der Stadt Zug geboren, tief verwurzelt, verheiratet und Vater von 4 erwachsenen Kindern. Vom Maurer habe ich mich hochgearbeitet zum KMU Unternehmer und führe seit 11 Jahren mit meinem Sohn einen Familienbetrieb in der Baubranche. An der Hochschule in Luzern dozierte ich Baukostenplanung. In der FFZ war ich Vizekommandant und Instruktor. Von 2016 bis 2024 war ich prägender Lokalpolitiker im Kantons- und Gemeinderat, in der Justiz-, Sozial-, Bildungs- und Geschäftsprüfungskommission.",
+    mandate: [
+      "Gemeinderat Stadt Zug 2016-2024",
+      "Fraktionschef 2017 und 2018",
+      "Geschäftsprüfungskommission 2016-2024",
+      "Kantonsrat 2018-2024",
+      "Justizprüfungskommission 2018-2024",
+      "Kommission Bildung und Soziales 2018-2024",
+    ],
+    positions: ["Nebenamtlicher Schätzer Gebäudeversicherung Zug"],
+    education: ["Eidg. dipl. Bauleiter", "dipl Projektleiter VSGU", "höheres Wirtschaftsdiplom IFKS"],
+    clubs: [
+      "Gewerbeverein Stadt Zug",
+      "Obmann Ehrenmitgliederclub FFZ",
+      "Ehrenmitglied 1. Löschzug FFZ",
+      "Interessengemeinschaft FFZ",
+      "Vizepräsident Nachbarhilfe KISS Genossenschaft Zug",
+      "Vorstand AVES Zug",
+      "IG Zuger Chriesi",
+      "Verein Ehemalige Kollegium St. Michael",
+    ],
+    hobbies: ["Wandern", "Velotouren", "Skifahren", "aktiv Eishockey", "Hundesport", "Familie und Freunde"],
+    priorities: [
+      "Das einheimische Gewerbe schützen und fördern",
+      "Zuerst die Zugerinnen und Zuger",
+      "Sicherheit und Lebensqualität für alle",
+      "Weniger Staat, mehr Eigenverantwortung",
+    ],
     image: "/assets/people/jpg-2026/Benny-Elsener_karvatte.jpg",
   },
 
@@ -468,8 +515,31 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     name: "Claudio Schmid",
     kandidatur: "GGR",
     candidacies2026: [{ office: "GGR", status: "Neu" }],
-    statement: "Kandidat für den Grossen Gemeinderat der Stadt Zug.",
-    priorities: ["Bürgerliche Politik für eine lebenswerte Stadt Zug"],
+    birthDateISO: "1971-01-01",
+    address: "Bohlstrasse",
+    location: "6300 Zug",
+    phone: "044 862 49 89",
+    maritalStatus: "verheiratet",
+    children: "4",
+    profession: "Eidg. Dipl. Buchhalter, MAS economic crime investigation",
+    statement: "Mehr Freiheit, weniger Staat",
+    biography:
+      "Treuhand- und Immobilienunternehmer seit 1998, schweizweit tätig. Eidg. Dipl. Buchhalter, MAS economic crime investigation, verheiratet mit 4 erwachsenen Kindern. Politisch aktiv seit 1990.",
+    mandate: [
+      "2003-2023 Kantonsrat Zürich",
+      "2010-2018 Vormundschafts- und Sozialbehörde Stadt Bülach",
+      "2002-2006 Grosser Gemeinderat Stadt Bülach",
+    ],
+    positions: [
+      "seit 2026 Wahl-Stab SVP Kanton Zug",
+      "2003-2023 Vorstand SVP Kanton Zürich und Programmchef",
+      "1999-2003 Präsident JSVP Kanton Zürich",
+      "1996-1999 Präsident SVP Hochfelden",
+      "seit 1991 Mitglied SVP",
+    ],
+    clubs: ["Schiessverein SVP"],
+    hobbies: ["Sport", "Lesen", "Schreiben", "Familie"],
+    priorities: ["Mehr Freiheit, weniger Staat"],
     image: "/logo/svp-stadt-zug-logo.png",
   },
 
@@ -479,8 +549,23 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     kandidatur: "GGR",
     currentOffices: ["Vorstand SVP Stadt Zug"],
     candidacies2026: [{ office: "GGR", status: "Neu" }],
-    statement: "Kandidat für den Grossen Gemeinderat der Stadt Zug.",
-    priorities: ["Bürgerliche Politik für eine starke Stadt Zug"],
+    birthDateISO: "1988-01-01",
+    address: "Theilerstrasse 13",
+    location: "6300 Zug",
+    mobile: "079 175 20 20",
+    maritalStatus: "verheiratet",
+    profession: "Digitalstratege • Unternehmer",
+    statement: "In der Schweiz bestimmt das Volk über den Staat. Nicht umgekehrt.",
+    biography:
+      "Henry Barrows, Jahrgang 1988, Stadt Zug. Seit rund 20 Jahren in der digitalen Kommunikation tätig — Webentwicklung, Branding und Strategie. Engagiert sich für eine moderne, bürgernahe Politik in Zug: weniger Bürokratie, mehr digitale Effizienz und eine Verwaltung, die den Bürgern dient — nicht sich selbst.",
+    education: [
+      "MSc. - Blockchain & Digital Currency",
+      "BSc. - International Relations",
+      "BBA - Bachelor Business Administration",
+    ],
+    clubs: ["See-Club Zug", "Swiss Rowing Indoors", "Crypto Valley Association", "Bitcoin Association"],
+    hobbies: ["Tennis", "Rudern", "Lesen", "Schreiben", "DJ"],
+    socials: { website: "https://www.henrybarrows.ch" },
     image: "/assets/people/jpg-2026/Henry-Barrows_kravatte.jpg",
   },
 
@@ -494,13 +579,29 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     image: "/assets/people/jpg-2026/Karl-Keiser.jpg",
   },
 
-  "marcus-laemmler": {
-    slug: "marcus-laemmler",
-    name: "Marcus Lämmler",
+  "markus-laemmler": {
+    slug: "markus-laemmler",
+    name: "Markus Lämmler",
     kandidatur: "GGR",
     candidacies2026: [{ office: "GGR", status: "Neu" }],
-    statement: "Kandidat für den Grossen Gemeinderat der Stadt Zug.",
-    priorities: ["Bürgerliche Politik für eine lebenswerte Stadt Zug"],
+    birthDateISO: "1968-01-01",
+    address: "Waldhof 2",
+    location: "6300 Zug",
+    mobile: "079 445 10 84",
+    maritalStatus: "ledig",
+    children: "keine",
+    profession: "Lead Account Management",
+    statement: "Für eine nachhaltige Entwicklung und einen verantwortungsvollen Umgang mit Ressourcen in der Stadt Zug",
+    positions: [
+      "Präsident Tennisclub Zug",
+      "Vorstandsmitglied Alumni ZHAW Managed Health Care & Marketing",
+    ],
+    education: ["MAS ZFH in Managed Health Care"],
+    clubs: ["Tennisclub Zug"],
+    hobbies: ["Tennis", "Skifahren", "Kochen"],
+    priorities: [
+      "Für eine nachhaltige Entwicklung und einen verantwortungsvollen Umgang mit Ressourcen in der Stadt Zug",
+    ],
     image: "/logo/svp-stadt-zug-logo.png",
   },
 
@@ -517,12 +618,8 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
   "ursula-keiser": {
     slug: "ursula-keiser",
     name: "Ursula Keiser",
-    kandidatur: "GGR, Kantonsrat",
-    candidacies2026: [
-      { office: "GGR", status: "Neu" },
-      { office: "Kantonsrat", status: "Neu" },
-    ],
-    statement: "Kandidatin für den Grossen Gemeinderat und den Kantonsrat.",
+    kandidatur: "Profil",
+    statement: "Engagiert für bürgerliche Politik in Stadt und Kanton Zug.",
     priorities: ["Bürgerliche Politik für Stadt und Kanton Zug"],
     image: "/logo/svp-stadt-zug-logo.png",
   },

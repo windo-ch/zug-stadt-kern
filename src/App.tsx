@@ -149,6 +149,7 @@ const App = () => {
               <Route path="/profil/benny-elsener" element={<BennyElsenerProfil />} />
               <Route path="/profil/ursula-keiser" element={<UrsulaKeiserProfil />} />
               <Route path="/profil/karl-keiser" element={<KarlKeiserProfil />} />
+              <Route path="/profil/markus-laemmler" element={<MarcusLaemmlerProfil />} />
               <Route path="/profil/marcus-laemmler" element={<MarcusLaemmlerProfil />} />
               <Route path="/profil/andrea-risi" element={<AndreaRisiProfil />} />
               <Route path="/profil/claudio-schmid" element={<ClaudioSchmidProfil />} />

@@ -188,6 +188,14 @@ export default function SteckbriefProfilePage({
               <ProfileListSection title="Ausbildung" items={uniqueStrings(candidate.education)} variant="default" />
             )}
 
+            {candidate.mandate && candidate.mandate.length > 0 && (
+              <ProfileListSection
+                title="Politische Mandate"
+                items={uniqueStrings(candidate.mandate)}
+                variant="default"
+              />
+            )}
+
             {candidate.clubs && candidate.clubs.length > 0 && (
               <ProfileListSection title="Vereine" items={uniqueStrings(candidate.clubs)} variant="default" />
             )}
