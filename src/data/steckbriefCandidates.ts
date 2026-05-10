@@ -285,7 +285,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     slug: "marcus-buehler",
     name: "Marcus H. Bühler",
     kandidatur: "Gemeinderat",
-    currentOffices: ["GGR", "Vorstand SVP Stadt Zug", "Nachhaltigkeitskommission"],
+    currentOffices: ["GGR", "Vorstand SVP Stadt Zug", "Nachhaltigkeitskommission", "Mittelschulkommission"],
     candidacies2026: [{ office: "GGR", status: "Bisher" }],
     birthDateISO: "1962-07-15",
     address: "Bahnhofstrasse 27",
