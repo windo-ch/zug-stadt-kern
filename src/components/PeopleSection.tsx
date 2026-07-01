@@ -76,7 +76,7 @@ const PeopleSection = () => {
     {
       name: "Roman Küng",
       role: "Fraktionspräsident",
-      position: "Vizepräsident, Vorstand",
+      position: "2. Vizepräsident, Vorstand",
       image: "/assets/people/jpg-2026/Roman-Kueng_kravatte.jpg",
       profileLink: "/profil/roman-kueng",
       category: "Fraktionspräsident"

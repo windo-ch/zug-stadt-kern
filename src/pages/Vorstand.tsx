@@ -23,7 +23,7 @@ const Vorstand = () => {
     },
     {
       name: "Alessia Bischof",
-      position: "Vizepräsidentin",
+      position: "1. Vizepräsidentin",
       roles: [],
       address: "Pilatusstrasse 3, 6300 Zug",
       image: "/assets/people/jpg-2026/Alessia-Bischof.jpg",
@@ -35,7 +35,7 @@ const Vorstand = () => {
     },
     {
       name: "Roman Küng",
-      position: "Vizepräsident",
+      position: "2. Vizepräsident",
       roles: ["Gemeinderat"],
       address: "Bernoldweg 9, 6300 Zug",
       image: "/assets/people/jpg-2026/Roman-Kueng_kravatte.jpg",

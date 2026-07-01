@@ -106,7 +106,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     slug: "alessia-bischof",
     name: "Alessia Bischof",
     kandidatur: "GGR, Kantonsrat",
-    currentOffices: ["Vizepräsidentin SVP Stadt Zug"],
+    currentOffices: ["1. Vizepräsidentin SVP Stadt Zug"],
     candidacies2026: [
       { office: "GGR", status: "Neu" },
       { office: "Kantonsrat", status: "Neu" },
@@ -122,7 +122,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     priorities: ["Für eine hohe Lebensqualität in Zug: Sicherheit im Alltag und Politik nahe bei den Menschen."],
     biography:
       "Unternehmergeist liegt mir im Blut. Ich bin in einer Familie aufgewachsen, in der seit Generationen angepackt statt abgewartet wird. Heute führe ich gemeinsam mit meiner Mutter unser familieneigenes Immobilienunternehmen. International geprägt und zugleich fest in Zug verwurzelt – hier bin ich zuhause. Für meine Heimat will ich Verantwortung übernehmen, in der Überzeugung, dass Leistung Türen öffnet und harte Arbeit den Unterschied macht. Den Kopf frei bekomme ich am besten bei einer Wanderung auf den Zugerberg – dort oben wird mir klar, wofür sich der Einsatz lohnt.",
-    positions: ["Vizepräsidentin SVP Stadt Zug"],
+    positions: ["1. Vizepräsidentin SVP Stadt Zug"],
     education: [
       "Bachelor Sozialwissenschaften (Kommunikation und Medien)",
       "Master International Management (MIM)",
@@ -368,7 +368,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     slug: "roman-kueng",
     name: "Roman Küng",
     kandidatur: "Gemeinderat, Kantonsrat",
-    currentOffices: ["GGR", "Vizepräsident SVP Stadt Zug"],
+    currentOffices: ["GGR", "2. Vizepräsident SVP Stadt Zug"],
     candidacies2026: [
       { office: "GGR", status: "Bisher" },
       { office: "Kantonsrat", status: "Neu" },
@@ -388,7 +388,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
       "Ich bin 1972 in Zug geboren und in Allenwinden aufgewachsen. Nach der Sekundarschule machte ich eine Lehre als Auto-Elektriker, mit anschliessender Weiterbildung zum eidg. diplomierten Automobil Diagnostiker. 1998 übernahmen mein Bruder und ich den elterlichen Garagenbetrieb; die heutige Garage Küng AG in Neuägeri. Mein ganzes Leben verbrachte ich im Kanton Zug (Gemeinden Zug und Baar) und würde mich deshalb als «Zuger Urgestein» bezeichnen. Ich habe keine Kinder und bin unverheiratet.",
     mandate: ["Mitglied GGR (seit 01.01.2019)"],
     positions: [
-      "Vizepräsident SVP Stadt Zug",
+      "2. Vizepräsident SVP Stadt Zug",
       "Fraktionschef SVP GGR Stadt Zug",
       "Mitglied Vorstand Gewerbeverein Stadt Zug",
       "Präsident Stiftung Kinderdemenz Schweiz",

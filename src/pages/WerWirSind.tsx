@@ -91,7 +91,7 @@ const WerWirSind = () => {
       description: "",
       image: "/assets/people/jpg-2026/Roman-Kueng_kravatte.jpg",
       badge: "Fraktionspräsident",
-      roles: ["Vizepräsident", "Vorstand"],
+      roles: ["2. Vizepräsident", "Vorstand"],
       profileLink: "/profil/roman-kueng"
     },
     {
