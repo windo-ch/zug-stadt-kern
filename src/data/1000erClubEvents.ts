@@ -8,6 +8,33 @@ export interface ClubEvent {
 
 export const clubEvents: ClubEvent[] = [
   {
+    title: "SVP Zürich – Frau. Wahlkampf zwischen Klischee und Erfolg",
+    date: "24. Juni 2026",
+    speaker: "Romaine Rogenmoser, Zürcher Kantonsratspräsidentin",
+    content: `Die Tischrede der Zürcher Kantonsratspräsidentin Romaine Rogenmoser stand unter dem Titel «SVP Zürich – Frau. Wahlkampf zwischen Klischee und Erfolg» und lieferte den Gästen des 1000er Clubs zahlreiche praxisnahe Beispiele für den bevorstehenden Wahlkampf.
+
+Im Zentrum der Ausführungen stand die klare Ansage, dass ein erfolgreicher Wahlkampf auf einer konsequenten Parteilinie beruhen muss. Wer versucht, sich zugunsten oder zulasten anderer Parteien zu verbiegen, verliert an Glaubwürdigkeit. Gerade die SVP-Wählerschaft erwartet Klarheit und will genau wissen, wofür ihre Kandidatinnen und Kandidaten stehen. Dankbarkeit anderer Parteien für politische Zugeständnisse ist nicht zu erwarten. Entscheidend ist und bleibt, die eigenen Werte und Stärken selbstbewusst zu vertreten.
+
+Ebenso wichtig ist eine authentische und verständliche Kommunikation. Wer im Namen der Partei spricht, soll und muss seine Botschaften klar, prägnant und überzeugend vermitteln können. Beliebiges Gerede oder unklare Aussagen werden von den Wählerinnen und Wählern rasch durchschaut. Gefragt sind Politikerinnen und Politiker, die Haltung zeigen und verständlich sagen, was sie wollen und wofür sie einstehen.
+
+**Die Rolle der Frauen in der Politik**
+
+Romaine Rogenmoser ist überzeugt, dass Frauen für eine starke SVP unverzichtbar sind. Quoten lehnt sie aber klar ab. Stattdessen gilt es, die vielen hervorragend qualifizierten Frauen innerhalb der Partei gezielt zu motivieren und zu fördern, damit sie Verantwortung in politischen Ämtern oder Kommissionen übernehmen. Dies ist und bleibt eine wichtige Aufgabe jeder Orts- und Kantonalpartei.
+
+**Der Wahlkampf ist kein Selbstläufer**
+
+Wahlkampf bedeutet harte Arbeit, Ausdauer und aktive Begegnungen mit Menschen. Die Präsenz an Veranstaltungen, Gespräche auf der Strasse und der direkte Austausch mit der Bevölkerung sind unverzichtbar, auch dann, wenn diese Einsätze zeitaufwendig oder nicht immer angenehm sind. Politik wird dort gewonnen, wo ein persönlicher Kontakt besteht und die Botschaften die Wählerinnen und Wähler erreichen.
+
+**Die Aussichten**
+
+Mit Blick auf die bevorstehenden Wahlen im Kanton und in der Stadt Zug gibt sich Romaine Rogenmoser zuversichtlich. Die aktuellen nationalen Entwicklungen spielen der SVP in zentralen Themenfeldern in die Karten. Gleichzeitig verfügen sowohl der Kanton als auch die Stadt Zug über hervorragende Voraussetzungen für eine erfolgreiche bürgerliche SVP-Politik. Diese Ausgangslage gilt es entschlossen zu nutzen.
+
+**Fazit**
+
+Authentizität, Fleiss, Glaubwürdigkeit und eine konsequente Vertretung der eigenen politischen Überzeugungen und Werte sind die entscheidenden Erfolgsfaktoren. Die Wählerinnen und Wähler wollen keine angepassten Politiker, sondern Persönlichkeiten, die klar Position beziehen und verlässlich zu ihren Aussagen stehen.`,
+    author: "Marcus H. Bühler"
+  },
+  {
     title: "Wie gewinnt man Wahlen?",
     date: "17. Februar 2026",
     speaker: "Nationalrat Rémy Wyssmann, Präsident SVP Kanton Solothurn",

@@ -73,10 +73,11 @@ const TausenderClub = () => {
                 <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6">
                   <Calendar className="h-8 w-8 text-primary" />
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">Mittwoch, 24. Juni 2026</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">Montag, 7. September 2026</h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-                  Der nächste 1000er Club Abend findet am Mittwoch, 24. Juni 2026 statt. 
-                  Bitte bereits jetzt den Abend in der Agenda vormerken. Mehr Informationen folgen in Kürze.
+                  Der nächste 1000er Club Abend findet am Montag, 7. September 2026 statt.
+                  Die Tischrede hält Lukas Golder, GfS Bern.
+                  Bitte bereits jetzt den Abend in der Agenda vormerken.
                 </p>
                 <Button className="btn-hero" asChild>
                   <a href="mailto:sekretariat.stadt@svp-zug.ch">
@@ -89,7 +90,7 @@ const TausenderClub = () => {
           </div>
       </Section>
 
-      {/* Wyssmann Event Recap */}
+      {/* Rogenmoser Event Recap */}
       <Section variant="default">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
@@ -97,32 +98,32 @@ const TausenderClub = () => {
                 <Star className="h-5 w-5" />
                 <span className="text-sm font-semibold uppercase tracking-wide">Rückblick</span>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">Wie gewinnt man Wahlen?</h2>
-              <p className="text-muted-foreground">17. Februar 2026 – Nationalrat Rémy Wyssmann</p>
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">SVP Zürich – Frau. Wahlkampf zwischen Klischee und Erfolg</h2>
+              <p className="text-muted-foreground">24. Juni 2026 – Romaine Rogenmoser, Zürcher Kantonsratspräsidentin</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
               <div className="rounded-xl overflow-hidden aspect-[4/3]">
                 <img
-                  src="/assets/events/1000er-club/svp-buehler-wyssmann.jpg"
-                  alt="Marcus Bühler und Rémy Wyssmann"
+                  src="/assets/events/1000er-club/svp-roggenmoser-1000club-1.jpeg"
+                  alt="Romaine Rogenmoser bei der Tischrede am 1000er Club Abend"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
               <div className="rounded-xl overflow-hidden aspect-[4/3]">
                 <img
-                  src="/assets/events/1000er-club/svp-vorgrag-wyssmann 2.jpeg"
-                  alt="1000er Club Dinner"
+                  src="/assets/events/1000er-club/svp-roggenmoser-1000club-2.jpeg"
+                  alt="Gäste am 1000er Club Dinner"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
               <div className="rounded-xl overflow-hidden aspect-[4/3]">
                 <img
-                  src="/assets/events/1000er-club/svp-vorgrag-wyssmann.jpeg"
-                  alt="Publikum am 1000er Club Abend"
-                  className="w-full h-full object-cover"
+                  src="/assets/events/1000er-club/svp-roggenmoser-1000club-3.jpg"
+                  alt="Romaine Rogenmoser, Zürcher Kantonsratspräsidentin"
+                  className="w-full h-full object-cover object-top"
                   loading="lazy"
                 />
               </div>
@@ -131,10 +132,10 @@ const TausenderClub = () => {
             <Card className="card-elevated">
               <CardContent className="p-8">
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Einen passenderen Titel für die Tischrede des 1000er-Clubs SVP Stadt Zug im Hinblick auf den Super-Wahltag in Zug am 4. Oktober 2026 gäbe es wohl kaum. <strong>Agir pas subire</strong> – oder einfach gesagt: Nicht fragen, sondern machen!
+                  Die Tischrede der Zürcher Kantonsratspräsidentin Romaine Rogenmoser lieferte den Gästen des 1000er Clubs zahlreiche praxisnahe Beispiele für den bevorstehenden Wahlkampf – unter dem Titel <strong>SVP Zürich – Frau. Wahlkampf zwischen Klischee und Erfolg</strong>.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Rémy Wyssmann zeigte anhand der Wahlerfolge der SVP Solothurn im Jahr 2025 auf, welche Faktoren entscheidend sind. Die zentrale Erkenntnis: Mit klaren Themen, professioneller Planung, ausreichendem Budget und konsequenter Kommunikation auf vielen Kanälen lassen sich Wahlen gewinnen.
+                  Im Zentrum stand die klare Ansage: Ein erfolgreicher Wahlkampf beruht auf konsequenter Parteilinie, authentischer Kommunikation und dem selbstbewussten Vertreten eigener Werte. Frauen sind für eine starke SVP unverzichtbar – ohne Quoten, aber mit gezielter Förderung qualifizierter Kandidatinnen.
                 </p>
                 <div className="text-right">
                   <Button variant="outline" size="sm" asChild>
