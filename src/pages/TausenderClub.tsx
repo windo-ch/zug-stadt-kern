@@ -107,7 +107,7 @@ const TausenderClub = () => {
                 <img
                   src="/assets/events/1000er-club/svp-roggenmoser-1000club-1.jpeg"
                   alt="Romaine Rogenmoser bei der Tischrede am 1000er Club Abend"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                   loading="lazy"
                 />
               </div>
