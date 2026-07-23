@@ -4,7 +4,6 @@ export type SteckbriefCandidateSlug =
   | "alex-odermatt"
   | "andre-wicki"
   | "andrea-risi"
-  | "benny-elsener"
   | "claudio-schmid"
   | "daniel-gramm"
   | "henry-barrows"
@@ -459,55 +458,6 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     hobbies: ["Velofahren", "Wandern", "Garten"],
     priorities: ["Weniger Staat - mehr Freiheit"],
     image: "/assets/people/jpg-2026/Andrea-Risi.jpg",
-  },
-
-  "benny-elsener": {
-    slug: "benny-elsener",
-    name: "Benny Elsener",
-    kandidatur: "GGR, Kantonsrat",
-    candidacies2026: [
-      { office: "GGR", status: "Neu" },
-      { office: "Kantonsrat", status: "Neu" },
-    ],
-    birthDateISO: "1959-01-01",
-    address: "Bahnhofstrasse 10",
-    location: "6300 Zug",
-    phone: "041 711 73 73",
-    mobile: "079 331 99 55",
-    maritalStatus: "verheiratet mit Adriana",
-    children: "4 erwachsene Kinder",
-    profession: "Unternehmer, Geschäftsleitung",
-    statement: "Zug braucht Macher",
-    biography:
-      "Ich bin Urzuger, in der Stadt Zug geboren, tief verwurzelt, verheiratet und Vater von 4 erwachsenen Kindern. Vom Maurer habe ich mich hochgearbeitet zum KMU Unternehmer und führe seit 11 Jahren mit meinem Sohn einen Familienbetrieb in der Baubranche. An der Hochschule in Luzern dozierte ich Baukostenplanung. In der FFZ war ich Vizekommandant und Instruktor. Von 2016 bis 2024 war ich prägender Lokalpolitiker im Kantons- und Gemeinderat, in der Justiz-, Sozial-, Bildungs- und Geschäftsprüfungskommission.",
-    mandate: [
-      "Gemeinderat Stadt Zug 2016-2024",
-      "Fraktionschef 2017 und 2018",
-      "Geschäftsprüfungskommission 2016-2024",
-      "Kantonsrat 2018-2024",
-      "Justizprüfungskommission 2018-2024",
-      "Kommission Bildung und Soziales 2018-2024",
-    ],
-    positions: ["Nebenamtlicher Schätzer Gebäudeversicherung Zug"],
-    education: ["Eidg. dipl. Bauleiter", "dipl Projektleiter VSGU", "höheres Wirtschaftsdiplom IFKS"],
-    clubs: [
-      "Gewerbeverein Stadt Zug",
-      "Obmann Ehrenmitgliederclub FFZ",
-      "Ehrenmitglied 1. Löschzug FFZ",
-      "Interessengemeinschaft FFZ",
-      "Vizepräsident Nachbarhilfe KISS Genossenschaft Zug",
-      "Vorstand AVES Zug",
-      "IG Zuger Chriesi",
-      "Verein Ehemalige Kollegium St. Michael",
-    ],
-    hobbies: ["Wandern", "Velotouren", "Skifahren", "aktiv Eishockey", "Hundesport", "Familie und Freunde"],
-    priorities: [
-      "Das einheimische Gewerbe schützen und fördern",
-      "Zuerst die Zugerinnen und Zuger",
-      "Sicherheit und Lebensqualität für alle",
-      "Weniger Staat, mehr Eigenverantwortung",
-    ],
-    image: "/assets/people/jpg-2026/Benny-Elsener_karvatte.jpg",
   },
 
   "claudio-schmid": {

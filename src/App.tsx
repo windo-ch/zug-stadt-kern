@@ -50,7 +50,6 @@ const AlessiaBischofProfil = lazy(() => import("./pages/AlessiaBischofProfil"));
 const KilianKrallProfil = lazy(() => import("./pages/KilianKrallProfil"));
 const SimonRuckstuhlProfil = lazy(() => import("./pages/SimonRuckstuhlProfil"));
 const HenryBarrowsProfil = lazy(() => import("./pages/HenryBarrowsProfil"));
-const BennyElsenerProfil = lazy(() => import("./pages/BennyElsenerProfil"));
 const UrsulaKeiserProfil = lazy(() => import("./pages/UrsulaKeiserProfil"));
 const KarlKeiserProfil = lazy(() => import("./pages/KarlKeiserProfil"));
 const MarcusLaemmlerProfil = lazy(() => import("./pages/MarcusLaemmlerProfil"));
@@ -146,7 +145,6 @@ const App = () => {
               <Route path="/profil/kilian-krall" element={<KilianKrallProfil />} />
               <Route path="/profil/simon-ruckstuhl" element={<SimonRuckstuhlProfil />} />
               <Route path="/profil/henry-barrows" element={<HenryBarrowsProfil />} />
-              <Route path="/profil/benny-elsener" element={<BennyElsenerProfil />} />
               <Route path="/profil/ursula-keiser" element={<UrsulaKeiserProfil />} />
               <Route path="/profil/karl-keiser" element={<KarlKeiserProfil />} />
               <Route path="/profil/markus-laemmler" element={<MarcusLaemmlerProfil />} />
