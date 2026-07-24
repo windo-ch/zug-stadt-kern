@@ -80,15 +80,6 @@ const PeopleSection = () => {
       image: "/assets/people/jpg-2026/Roman-Kueng_kravatte.jpg",
       profileLink: "/profil/roman-kueng",
       category: "Fraktionspräsident"
-    },
-    // 8. Raphael Tschan
-    {
-      name: "Raphael Tschan",
-      role: "Vizepräsident",
-      position: "Mitglied RPK",
-      image: "/assets/people/jpg-2026/Raphael-Tschan_kravatte.jpg",
-      profileLink: "/profil/raphael-tschan",
-      category: "Vizepräsident"
     }
   ];
 
