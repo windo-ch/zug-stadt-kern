@@ -79,7 +79,7 @@ const WerWirSind = () => {
   // GGR Fraktionspräsident - moved to Gemeinderat section
   const fraktionsprasident = [];
 
-  // Mitglied - removed (Raphael Tschan moved to appropriate section if needed)
+  // Mitglied section entries below
 
   // Gemeinderat - Roman Küng first as Fraktionspräsident, then alphabetical by last name
   const gemeinderat = [
@@ -247,22 +247,12 @@ const WerWirSind = () => {
     },
     {
       name: "Daniel Gramm",
-      position: "Kulturkommission",
+      position: "Kulturkommission, Rechnungsprüfungskommission (RPK)",
       phone: "",
       email: "",
       description: "",
       image: "/assets/people/profilbilder/daniel-gramm.jpg",
       profileLink: "/profil/daniel-gramm"
-    },
-    {
-      name: "Raphael Tschan",
-      position: "Rechnungsprüfungskommission (RPK)",
-      phone: "",
-      email: "",
-      description: "",
-      image: "/assets/people/jpg-2026/Raphael-Tschan_kravatte.jpg",
-      roles: ["Vorstand"],
-      profileLink: "/profil/raphael-tschan"
     }
   ];
 

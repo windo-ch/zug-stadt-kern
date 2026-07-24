@@ -13,7 +13,7 @@ const RaphaelTschanProfil = () => {
 
   const personalData = {
     name: "Raphael Tschan",
-    position: "Mitglied der Rechnungsprüfungskommission",
+    position: "Fachexperte Finanzaufsicht / Treuhänder",
     born: "1991",
     address: "Gimenenstrasse 1",
     location: "6300 Zug",
@@ -24,7 +24,6 @@ const RaphaelTschanProfil = () => {
   };
 
   const positions = [
-    "Mitglied der Rechnungsprüfungskommission der Stadt Zug",
     "Stiftungsrat der Rudolf und Verena Oetiker-Stiftung",
     "Fachunteroffizier der Feuerwehr Zug"
   ];
@@ -41,7 +40,7 @@ const RaphaelTschanProfil = () => {
   return (
     <PageLayout 
       title="Raphael Tschan - Profil - SVP Stadt Zug"
-      description="Raphael Tschan - Mitglied der Rechnungsprüfungskommission. Fachexperte Finanzaufsicht und Treuhänder."
+      description="Raphael Tschan - Fachexperte Finanzaufsicht und Treuhänder. Engagiert für die Stadt Zug."
     >
       <main className="container mx-auto px-4 py-16">
         <ProfileBreadcrumb 
@@ -57,7 +56,7 @@ const RaphaelTschanProfil = () => {
             personalData={personalData}
             image="/assets/people/jpg-2026/Raphael-Tschan_kravatte.jpg"
             description="Finanzexperte • Feuerwehrmann • Engagiert für die Stadt Zug"
-            roles={["RPK Mitglied"]}
+            roles={[]}
           />
         </div>
 

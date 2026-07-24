@@ -209,12 +209,9 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
   "daniel-gramm": {
     slug: "daniel-gramm",
     name: "Daniel Gramm",
-    kandidatur: "GGR, Kantonsrat",
-    currentOffices: ["Kulturkommission"],
-    candidacies2026: [
-      { office: "GGR", status: "Neu" },
-      { office: "Kantonsrat", status: "Neu" },
-    ],
+    kandidatur: "Kulturkommission, Rechnungsprüfungskommission (RPK)",
+    currentOffices: ["Kulturkommission", "Rechnungsprüfungskommission (RPK)"],
+    candidacies2026: [],
     birthDateISO: "1964-08-30",
     address: "Gartenstadt 11",
     location: "6300 Zug",
@@ -232,6 +229,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
       "Schulkommission der Stadt Zug (2018–2020)",
       "Bildungsrat des Kantons Zug (2020–2026)",
       "Kulturkommission der Stadt Zug (2024–2026)",
+      "Rechnungsprüfungskommission der Stadt Zug (RPK)",
     ],
     education: [
       "Matura Typus E (Wirtschaftswissenschaften)",
