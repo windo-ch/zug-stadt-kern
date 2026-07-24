@@ -247,7 +247,8 @@ const WerWirSind = () => {
     },
     {
       name: "Daniel Gramm",
-      position: "Kulturkommission, Rechnungsprüfungskommission (RPK)",
+      position: "Kulturkommission",
+      roles: ["Kulturkommission", "Rechnungsprüfungskommission (RPK)"],
       phone: "",
       email: "",
       description: "",
@@ -427,7 +428,13 @@ const WerWirSind = () => {
                       <div className="flex-grow">
                         <CardTitle className="text-lg mb-1">{person.name}</CardTitle>
                         <div className="flex flex-wrap gap-2 mb-2">
-                          <Badge variant="secondary">{person.position}</Badge>
+                          {(person.roles?.length ? person.roles : [person.position]).map(
+                            (label: string) => (
+                              <Badge key={label} variant="secondary">
+                                {label}
+                              </Badge>
+                            ),
+                          )}
                         </div>
                       </div>
                     </div>

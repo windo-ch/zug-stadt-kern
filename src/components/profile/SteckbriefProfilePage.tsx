@@ -93,9 +93,14 @@ export default function SteckbriefProfilePage({
   candidate: SteckbriefCandidate;
   breadcrumb: Array<{ label: string; href: string }>;
 }) {
+  const currentOffices = candidate.currentOffices ?? [];
+  const candidacies2026 = candidate.candidacies2026 ?? [];
+  const parsedRoles = parseRolesFromKandidatur(candidate.kandidatur);
+  const displayPosition =
+    currentOffices.length > 0 ? currentOffices[0] : toDisplayPosition(candidate.kandidatur);
   const personalData = {
     name: candidate.name,
-    position: toDisplayPosition(candidate.kandidatur),
+    position: displayPosition,
     born: getBirthYear(candidate.birthDateISO),
     address: normalizeOptional(candidate.address),
     location: normalizeOptional(candidate.location),
@@ -114,10 +119,12 @@ export default function SteckbriefProfilePage({
     mobile: normalizedPhone && normalizedMobile && normalizedPhone === normalizedMobile ? undefined : personalData.mobile,
   };
 
-  const roles = parseRolesFromKandidatur(candidate.kandidatur);
-  const currentOffices = candidate.currentOffices ?? [];
-  const candidacies2026 = candidate.candidacies2026 ?? [];
-  const heroRoles = candidacies2026.length > 0 ? [] : roles;
+  const heroRoles =
+    candidacies2026.length > 0
+      ? []
+      : currentOffices.length > 0
+        ? currentOffices.slice(1)
+        : parsedRoles;
   const statusPanelColumns = currentOffices.length > 0 ? "md:grid-cols-2" : "";
   const statusPanel = candidacies2026.length > 0 ? (
     <div className={`mt-6 grid max-w-3xl gap-4 rounded-xl border border-[hsl(var(--svp-green))]/20 bg-background p-5 shadow-sm ${statusPanelColumns}`}>
