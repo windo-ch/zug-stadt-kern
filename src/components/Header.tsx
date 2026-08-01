@@ -68,8 +68,8 @@ const Header = () => {
               className="h-16 w-auto md:h-18 transition-all duration-300"
             />
             <div className="flex flex-col">
-              <span className="font-bold text-xl md:text-2xl text-foreground tracking-tight">SVP Stadt Zug</span>
-              <span className="text-sm md:text-base text-muted-foreground font-semibold">Mir lieferet</span>
+              <span className="font-bold text-lg md:text-xl text-foreground tracking-tight">SVP Stadt Zug</span>
+              <span className="text-sm md:text-base font-semibold text-[rgb(0,159,79)]">Mir lieferet</span>
             </div>
           </Link>
 

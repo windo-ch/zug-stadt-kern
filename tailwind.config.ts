@@ -32,7 +32,7 @@ export default {
 		},
 		extend: {
 			screens: {
-				'lg-nav': '1074px', // Custom breakpoint for navbar (50px after lg: 1024px)
+				'lg-nav': '1200px', // Custom breakpoint for navbar
 			},
 			fontFamily: {
 				sans: ['Inter', 'system-ui', 'sans-serif'],
