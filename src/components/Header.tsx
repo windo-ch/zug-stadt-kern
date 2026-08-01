@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import MegaMenu from './MegaMenu';
 import MitmachenDropdown from './MitmachenDropdown';
+import SocialLinks from './SocialLinks';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -76,6 +77,11 @@ const Header = () => {
           <nav className="hidden lg-nav:flex items-center space-x-8">
             <MegaMenu onNavigate={navigateToPage} />
             <div className="ml-6 flex items-center gap-3">
+              <SocialLinks
+                className="flex items-center gap-0.5 mr-1"
+                linkClassName="text-muted-foreground hover:text-primary transition-colors p-2 rounded-lg hover:bg-accent/40"
+                iconClassName="w-5 h-5"
+              />
               <Link to="/1000er-club">
                 <Button 
                   variant="outline" 
@@ -173,6 +179,15 @@ const Header = () => {
                       1000er Club
                     </Button>
                   </Link>
+                </div>
+
+                <div className="pt-4 mt-2">
+                  <p className="text-sm font-semibold text-foreground mb-2">Folgen Sie uns</p>
+                  <SocialLinks
+                    className="flex items-center gap-1"
+                    linkClassName="text-muted-foreground hover:text-primary transition-colors p-2.5 rounded-lg hover:bg-accent/40"
+                    iconClassName="w-6 h-6"
+                  />
                 </div>
               </div>
             </div>

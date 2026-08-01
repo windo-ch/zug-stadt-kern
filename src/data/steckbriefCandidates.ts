@@ -213,8 +213,6 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     currentOffices: ["Kulturkommission", "Rechnungsprüfungskommission (RPK)"],
     candidacies2026: [],
     birthDateISO: "1964-08-30",
-    address: "Gartenstadt 11",
-    location: "6300 Zug",
     phone: "077 510 43 04",
     mobile: "077 510 43 04",
     email: "daniel.gramm@bluewin.ch",
