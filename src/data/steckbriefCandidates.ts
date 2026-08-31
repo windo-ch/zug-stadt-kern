@@ -520,8 +520,25 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
     name: "Karl Keiser",
     kandidatur: "GGR",
     candidacies2026: [{ office: "GGR", status: "Neu" }],
-    statement: "Kandidat für den Grossen Gemeinderat der Stadt Zug.",
-    priorities: ["Bürgerliche Politik für eine lebenswerte Stadt Zug"],
+    birthDateISO: "1990-01-01",
+    address: "Fridbachweg 23",
+    location: "6300 Zug",
+    mobile: "079 789 10 25",
+    maritalStatus: "ledig",
+    profession: "Softwareentwickler",
+    statement:
+      "Die Behörden sollen dem Steuerzahler dienen, nicht umgekehrt. Für eine schlanke Stadt, die einen vernünftigen Umfang von Aufgaben effizient erfüllt, anstatt die Zeit und das Geld von Bürger und der Wirtschaft mit unnötig viel Bürokratie zu verschwenden. Erhalt unserer Gesellschaft, Lebensweise und Natur anstelle von Entfremdung und endlosem Wachstum",
+    biography:
+      "Ich bin in der Stadt Zug geboren und war mein ganzes Leben lange hier sesshaft. Somit konnte ich die Entwicklung und Veränderungen unserer Stadt und Gesellschaft miterleben. Studiert habe ich in Luzern und arbeite hauptsächlich in Luzern und Zürich, fühle mich hier in Zug aber viel wohler, weil unsere Stadt das Gleichgewicht von Mensch und Natur viel besser trifft.",
+    education: [
+      "Matura mit Schwerpunkt Physik und Anwendungen der Mathematik",
+      "Bachelor of Science Hochschule Luzern/FHZ in Informatik",
+    ],
+    hobbies: ["Computer und was man damit alles machen kann"],
+    priorities: [
+      "Schlanker Staat, Kanton und Stadt",
+      "Reduktion von bürokratischem Aufwand für Mensch und Firma",
+    ],
     image: "/assets/people/jpg-2026/Karl-Keiser.jpg",
   },
 
