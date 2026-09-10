@@ -8,6 +8,39 @@ export interface ClubEvent {
 
 export const clubEvents: ClubEvent[] = [
   {
+    title: "1000er Club – Das Volk hat entschieden. Die Umfragen wussten es schon?",
+    date: "7. September 2026",
+    speaker: "Lukas Golder, Codirektor von gfs.Bern",
+    content: `Ein Blick hinter die Kulissen des gfs Bern
+
+Am 7. September hielt Lukas Golder, Codirektor von gfs.Bern, vor dem 1000er Club der SVP Stadt Zug einen Vortrag zu den Gesamterneuerungswahlen im Kanton Zug vom 4. Oktober 2026. Einleitend beschrieb er Wahlen als eine Art Thermometer: Sie zeigen, was die Menschen gerade bewegt, wie der Formstand der Parteien aussieht und wie die Sitze am Ende besetzt werden. Dabei erinnerte er daran, dass rund 85 Prozent der Wählerinnen und Wähler die Liste jener Partei einwerfen, die sie ohnehin vertreten. Abweichler sind eher die Ausnahme.
+
+Lukas Golders zentraler Befund lautete entsprechend, dass die Themen über den Wahlausgang entscheiden: Wer auf die richtigen Themen setzt, gewinnt. National macht das Wetter die Politik, in Zug hingegen entscheidet das lokale Politklima.
+
+Als aktuelles nationales Beispiel nannte er den stark polarisierenden Schlagabtausch zwischen der Präsidentin der Grünen, Lisa Mazzone, und Bundesrat Albert Rösti zum Klimasommer 2026. Ob dies der Alternative die Grünen (ALG) in Zug tatsächlich zu Wähleranteilen verhilft, bleibt fraglich. Denn Klima und Hitze geniessen zwar saisonale Aufmerksamkeit, doch mehr Aufmerksamkeit bedeutet nicht automatisch mehr Wählerstimmen.
+
+Lukas Golder verglich die SVP mit Samuel Giger im Schwingsport: Alles kreist um sie, national liegt sie bei rund 30 Prozent Wähleranteil. Das Hauptthema bleibt die Zuwanderung, verbunden mit der dadurch verschärften Wohnungsknappheit. Der Claim lautet entsprechend: Weniger Zuwanderung bedeutet mehr Wohnungen. Während in Bundesbern vielerorts Krisenstimmung herrscht, erlebt Zug Aufbruch und Erfolg.
+
+Beim Blick in die "Kristallkugel" und gemäss seinen Daten zeichnete Lukas Golder für die einzelnen Parteien ein unterschiedliches Bild:
+
+Die SP ist national leicht im Aufwind, in Zug tritt sie mit einer Kandidatin für den Regierungsrat an, wobei ihr einziges Thema die Wohnpolitik ist. Die GLP befindet sich national im Abstieg und kämpft mit der eigenen Identität, auch wie es in Zug weitergeht, ist ebenfalls unklar. Die FDP steckt national in einer Identitätskrise, rennt den Themen der SVP hinterher und schärft ihr Profil in deren Richtung, in Zug hingegen ist die FDP nach wie vor sehr bürgerlich, steht rechts der nationalen Partei und versteht sich als echte bürgerliche Alternative.
+
+Die Mitte zeigt national wenig klares Profil, denn Verlässlichkeit ohne Zuspitzung taugt kaum als Wahlkampfthema, in Zug jedoch hält sie mit drei Regierungsräten trotz jahrelanger Verluste im Kantonsrat aus Tradition eine starke Machtposition, wobei Gerhard Pfister als Parteipräsident und Martin Pfister als Bundesrat immer noch starke Akzente setzen.
+
+**Fazit**
+
+Zug bleibt ein Sonderfall. Der Majorz begünstigt die amtierenden Regierungsräte, von denen keiner der sieben zurücktritt. Das erschwert es neuen Kandidierenden, sodass die Mitte aktuell mehr Regierungssitze hält, als ihr gemessen am Wähleranteil eigentlich zustünden.
+
+Als übergreifendes Motiv beschrieb Lukas Golder, dass der Erfolg des Zuger Modells von links zunehmend als Problem dargestellt wird, etwa mit dem Vorwurf, Wohnen sei zu teuer geworden. Gleichzeitig wünschen sich 77 Prozent der Einwohnerinnen und Einwohner, dass hier mehr unternommen wird. Das erfolgreiche Zuger Steuermodell bleibt daher zentral für die Standortattraktivität.
+
+Für den 4. Oktober prognostizierte Lukas Golder auf kantonaler Ebene, dass die SVP zulegt, die FDP um ihre Sitze kämpft und die Mitte einen Sitz verliert, wobei die GLP am stärksten leiden dürfte. SP und ALG bleiben voraussichtlich konstant. Der Zuger Regierungsrat wird in seiner heutigen Zusammensetzung bestehen bleiben.
+
+Was uns als SVP bleibt, ist, mit Verve und klaren Ansagen zu mobilisieren und unser Netzwerk zu motivieren. Wählen und Abstimmen ist ein demokratisches Privileg. Dieses sollte beziehungsweise muss von allen genutzt werden.
+
+Somit auch meine Bitte an die Mitglieder des 1000er Clubs: Geben Sie Vollgas!`,
+    author: "Marcus H. Bühler"
+  },
+  {
     title: "SVP Zürich – Frau. Wahlkampf zwischen Klischee und Erfolg",
     date: "24. Juni 2026",
     speaker: "Romaine Rogenmoser, Zürcher Kantonsratspräsidentin",

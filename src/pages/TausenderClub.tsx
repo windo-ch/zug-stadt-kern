@@ -73,11 +73,9 @@ const TausenderClub = () => {
                 <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6">
                   <Calendar className="h-8 w-8 text-primary" />
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">Montag, 7. September 2026</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">Februar 2027</h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-                  Der nächste 1000er Club Abend findet am Montag, 7. September 2026 statt.
-                  Die Tischrede hält Lukas Golder, GfS Bern.
-                  Bitte bereits jetzt den Abend in der Agenda vormerken.
+                  Der nächste 1000er Club Abend findet im Februar 2027 statt.
                 </p>
                 <Button className="btn-hero" asChild>
                   <a href="mailto:sekretariat.stadt@svp-zug.ch">
@@ -90,7 +88,7 @@ const TausenderClub = () => {
           </div>
       </Section>
 
-      {/* Rogenmoser Event Recap */}
+      {/* Golder Event Recap */}
       <Section variant="default">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
@@ -98,32 +96,48 @@ const TausenderClub = () => {
                 <Star className="h-5 w-5" />
                 <span className="text-sm font-semibold uppercase tracking-wide">Rückblick</span>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">SVP Zürich – Frau. Wahlkampf zwischen Klischee und Erfolg</h2>
-              <p className="text-muted-foreground">24. Juni 2026 – Romaine Rogenmoser, Zürcher Kantonsratspräsidentin</p>
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">Das Volk hat entschieden. Die Umfragen wussten es schon?</h2>
+              <p className="text-muted-foreground">7. September 2026 – Lukas Golder, Codirektor von gfs.Bern</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-              <div className="rounded-xl overflow-hidden aspect-[4/3]">
+            <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mb-8">
+              <div className="rounded-xl overflow-hidden aspect-[4/3] md:col-span-3">
                 <img
-                  src="/assets/events/1000er-club/svp-roggenmoser-1000club-1.jpeg"
-                  alt="Romaine Rogenmoser bei der Tischrede am 1000er Club Abend"
+                  src="/assets/events/lukas-golder/image001.jpg"
+                  alt="Lukas Golder, Codirektor von gfs.Bern"
                   className="w-full h-full object-cover object-top"
                   loading="lazy"
                 />
               </div>
-              <div className="rounded-xl overflow-hidden aspect-[4/3]">
+              <div className="rounded-xl overflow-hidden aspect-[4/3] md:col-span-3">
                 <img
-                  src="/assets/events/1000er-club/svp-roggenmoser-1000club-2.jpeg"
-                  alt="Gäste am 1000er Club Dinner"
+                  src="/assets/events/lukas-golder/image002.jpg"
+                  alt="Gäste am 1000er Club Abend mit Lukas Golder"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
-              <div className="rounded-xl overflow-hidden aspect-[4/3]">
+              <div className="rounded-xl overflow-hidden aspect-[4/3] md:col-span-2">
                 <img
-                  src="/assets/events/1000er-club/svp-roggenmoser-1000club-3.jpg"
-                  alt="Romaine Rogenmoser, Zürcher Kantonsratspräsidentin"
-                  className="w-full h-full object-cover object-top"
+                  src="/assets/events/lukas-golder/image003.jpg"
+                  alt="Tischgesellschaft am 1000er Club Abend"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="rounded-xl overflow-hidden aspect-[4/3] md:col-span-2">
+                <img
+                  src="/assets/events/lukas-golder/image004.jpg"
+                  alt="1000er Club Abend mit Blick auf den Zugersee"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="rounded-xl overflow-hidden aspect-[4/3] md:col-span-2">
+                <img
+                  src="/assets/events/lukas-golder/image005.jpg"
+                  alt="Mitglieder des 1000er Clubs beim Dinner"
+                  className="w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
@@ -132,10 +146,10 @@ const TausenderClub = () => {
             <Card className="card-elevated">
               <CardContent className="p-8">
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Die Tischrede der Zürcher Kantonsratspräsidentin Romaine Rogenmoser lieferte den Gästen des 1000er Clubs zahlreiche praxisnahe Beispiele für den bevorstehenden Wahlkampf – unter dem Titel <strong>SVP Zürich – Frau. Wahlkampf zwischen Klischee und Erfolg</strong>.
+                  Am 7. September hielt Lukas Golder, Codirektor von gfs.Bern, vor dem 1000er Club der SVP Stadt Zug einen Vortrag zu den Gesamterneuerungswahlen im Kanton Zug vom 4. Oktober 2026. Einleitend beschrieb er Wahlen als eine Art Thermometer: Sie zeigen, was die Menschen gerade bewegt, wie der Formstand der Parteien aussieht und wie die Sitze am Ende besetzt werden. Dabei erinnerte er daran, dass rund 85 Prozent der Wählerinnen und Wähler die Liste jener Partei einwerfen, die sie ohnehin vertreten. Abweichler sind eher die Ausnahme.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Im Zentrum stand die klare Ansage: Ein erfolgreicher Wahlkampf beruht auf konsequenter Parteilinie, authentischer Kommunikation und dem selbstbewussten Vertreten eigener Werte. Frauen sind für eine starke SVP unverzichtbar – ohne Quoten, aber mit gezielter Förderung qualifizierter Kandidatinnen.
+                  Lukas Golders zentraler Befund lautete entsprechend, dass die Themen über den Wahlausgang entscheiden: Wer auf die richtigen Themen setzt, gewinnt. National macht das Wetter die Politik, in Zug hingegen entscheidet das lokale Politklima.
                 </p>
                 <div className="text-right">
                   <Button variant="outline" size="sm" asChild>
