@@ -1,9 +1,16 @@
+export interface ClubEventImage {
+  src: string;
+  alt: string;
+  position?: "top";
+}
+
 export interface ClubEvent {
   title: string;
   date: string;
   speaker: string;
   content: string;
   author: string;
+  images?: ClubEventImage[];
 }
 
 export const clubEvents: ClubEvent[] = [
@@ -38,7 +45,30 @@ Für den 4. Oktober prognostizierte Lukas Golder auf kantonaler Ebene, dass die 
 Was uns als SVP bleibt, ist, mit Verve und klaren Ansagen zu mobilisieren und unser Netzwerk zu motivieren. Wählen und Abstimmen ist ein demokratisches Privileg. Dieses sollte beziehungsweise muss von allen genutzt werden.
 
 Somit auch meine Bitte an die Mitglieder des 1000er Clubs: Geben Sie Vollgas!`,
-    author: "Marcus H. Bühler"
+    author: "Marcus H. Bühler",
+    images: [
+      {
+        src: "/assets/events/lukas-golder/image001.jpg",
+        alt: "Lukas Golder, Codirektor von gfs.Bern",
+        position: "top"
+      },
+      {
+        src: "/assets/events/lukas-golder/image002.jpg",
+        alt: "Gäste am 1000er Club Abend mit Lukas Golder"
+      },
+      {
+        src: "/assets/events/lukas-golder/image003.jpg",
+        alt: "Tischgesellschaft am 1000er Club Abend"
+      },
+      {
+        src: "/assets/events/lukas-golder/image004.jpg",
+        alt: "1000er Club Abend mit Blick auf den Zugersee"
+      },
+      {
+        src: "/assets/events/lukas-golder/image005.jpg",
+        alt: "Mitglieder des 1000er Clubs beim Dinner"
+      }
+    ]
   },
   {
     title: "SVP Zürich – Frau. Wahlkampf zwischen Klischee und Erfolg",
@@ -65,7 +95,23 @@ Mit Blick auf die bevorstehenden Wahlen im Kanton und in der Stadt Zug gibt sich
 **Fazit**
 
 Authentizität, Fleiss, Glaubwürdigkeit und eine konsequente Vertretung der eigenen politischen Überzeugungen und Werte sind die entscheidenden Erfolgsfaktoren. Die Wählerinnen und Wähler wollen keine angepassten Politiker, sondern Persönlichkeiten, die klar Position beziehen und verlässlich zu ihren Aussagen stehen.`,
-    author: "Marcus H. Bühler"
+    author: "Marcus H. Bühler",
+    images: [
+      {
+        src: "/assets/events/1000er-club/svp-roggenmoser-1000club-1.jpeg",
+        alt: "Romaine Rogenmoser bei der Tischrede am 1000er Club Abend",
+        position: "top"
+      },
+      {
+        src: "/assets/events/1000er-club/svp-roggenmoser-1000club-2.jpeg",
+        alt: "Gäste am 1000er Club Dinner"
+      },
+      {
+        src: "/assets/events/1000er-club/svp-roggenmoser-1000club-3.jpg",
+        alt: "Romaine Rogenmoser, Zürcher Kantonsratspräsidentin",
+        position: "top"
+      }
+    ]
   },
   {
     title: "Wie gewinnt man Wahlen?",
@@ -88,7 +134,26 @@ Die zentrale Erkenntnis des Abends lautet somit: Mit klaren Themen, professionel
 Ein sehr eindrücklicher Abend – mit herzlichem Dank an Nationalrat Rémy Wyssmann, der alle Anwesenden mit seiner Passion, seinem Drive und seiner Beharrlichkeit überzeugt hat.
 
 **AGIR PAS SUBIR**`,
-    author: "Marcus H. Bühler"
+    author: "Marcus H. Bühler",
+    images: [
+      {
+        src: "/assets/events/1000er-club/Remy%20Wyssmann-1000club.avif",
+        alt: "Nationalrat Rémy Wyssmann am 1000er Club Abend",
+        position: "top"
+      },
+      {
+        src: "/assets/events/1000er-club/svp-buehler-wyssmann.jpg",
+        alt: "Rémy Wyssmann und Marcus H. Bühler am 1000er Club Abend"
+      },
+      {
+        src: "/assets/events/1000er-club/svp-vorgrag-wyssmann.jpeg",
+        alt: "Gäste am 1000er Club Abend mit Rémy Wyssmann"
+      },
+      {
+        src: "/assets/events/1000er-club/svp-vorgrag-wyssmann%202.jpeg",
+        alt: "Tischgesellschaft am 1000er Club Abend, 17. Februar 2026"
+      }
+    ]
   },
   {
     title: "Kampf dem Nanny-Staat Schweiz",

@@ -5,6 +5,10 @@ import { Sparkles, Calendar, ArrowRight, Award, Mail, Phone, Check, Star } from 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { clubEvents } from "@/data/1000erClubEvents";
+import ClubEventGallery from "@/components/content/ClubEventGallery";
+
+const latestEvent = clubEvents[0];
 
 const TausenderClub = () => {
   return (
@@ -100,48 +104,9 @@ const TausenderClub = () => {
               <p className="text-muted-foreground">7. September 2026 – Lukas Golder, Codirektor von gfs.Bern</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mb-8">
-              <div className="rounded-xl overflow-hidden aspect-[4/3] md:col-span-3">
-                <img
-                  src="/assets/events/lukas-golder/image001.jpg"
-                  alt="Lukas Golder, Codirektor von gfs.Bern"
-                  className="w-full h-full object-cover object-top"
-                  loading="lazy"
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden aspect-[4/3] md:col-span-3">
-                <img
-                  src="/assets/events/lukas-golder/image002.jpg"
-                  alt="Gäste am 1000er Club Abend mit Lukas Golder"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden aspect-[4/3] md:col-span-2">
-                <img
-                  src="/assets/events/lukas-golder/image003.jpg"
-                  alt="Tischgesellschaft am 1000er Club Abend"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden aspect-[4/3] md:col-span-2">
-                <img
-                  src="/assets/events/lukas-golder/image004.jpg"
-                  alt="1000er Club Abend mit Blick auf den Zugersee"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden aspect-[4/3] md:col-span-2">
-                <img
-                  src="/assets/events/lukas-golder/image005.jpg"
-                  alt="Mitglieder des 1000er Clubs beim Dinner"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-            </div>
+            {latestEvent.images && latestEvent.images.length > 0 && (
+              <ClubEventGallery images={latestEvent.images} className="mb-8" />
+            )}
 
             <Card className="card-elevated">
               <CardContent className="p-8">

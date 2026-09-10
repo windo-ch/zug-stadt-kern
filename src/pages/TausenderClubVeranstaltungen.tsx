@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { clubEvents } from "@/data/1000erClubEvents";
+import ClubEventGallery from "@/components/content/ClubEventGallery";
 
 const TausenderClubVeranstaltungen = () => {
 
@@ -59,6 +60,9 @@ const TausenderClubVeranstaltungen = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
+                  {event.images && event.images.length > 0 && (
+                    <ClubEventGallery images={event.images} className="mb-8" />
+                  )}
                   <div className="prose prose-lg max-w-none">
                     {event.content.split('\n\n').map((paragraph, pIndex) => {
                       if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
