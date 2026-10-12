@@ -10,11 +10,9 @@ import { Link } from 'react-router-dom';
 import MitmachenSection from '@/components/MitmachenSection';
 
 const Wahlen = () => {
-  const [daysRemaining, setDaysRemaining] = useState(0);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [isVideoMuted, setIsVideoMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const electionDate = new Date('2026-10-04T00:00:00');
 
   const toggleVideoPlay = () => {
     if (videoRef.current) {
@@ -44,26 +42,12 @@ const Wahlen = () => {
     }
   }, []);
 
-  useEffect(() => {
-    // Calculate countdown
-    const calculateCountdown = () => {
-      const now = new Date();
-      const diff = electionDate.getTime() - now.getTime();
-      const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
-      setDaysRemaining(Math.max(0, days));
-    };
-
-    calculateCountdown();
-    const interval = setInterval(calculateCountdown, 1000 * 60 * 60); // Update hourly
-    return () => clearInterval(interval);
-  }, []);
-
   const upcomingElections = [
     {
       icon: Award,
       title: "Regierungsratswahlen",
       date: "4. Oktober 2026",
-      description: "Wiederwahl von Heinz Tännler als Regierungsrat",
+      description: "Heinz Tännler mit 20'358 Stimmen (3. Platz) und Stephan Schleiss mit 19'616 Stimmen wiedergewählt",
       level: "Kantonal",
       status: "2026",
       priority: "high",
@@ -75,7 +59,7 @@ const Wahlen = () => {
       icon: Users,
       title: "Kantonsratswahlen",
       date: "4. Oktober 2026",
-      description: "Unsere Kandidaten bringen langjährige politische Erfahrung und Politkompetenz mit",
+      description: "Die SVP stellt neu 20 Sitze und ist mit 24 Prozent stärkste Fraktion im Kantonsrat",
       level: "Kantonal",
       status: "2026",
       priority: "high",
@@ -168,15 +152,30 @@ const Wahlen = () => {
                 </span>
               </h1>
               
-              {/* Simple Horizontal Countdown */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 text-2xl md:text-3xl font-medium text-foreground">
-                <div className="flex items-center gap-2 sm:gap-3">
-                  <span className="text-muted-foreground">Noch</span>
-                  <span className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] bg-clip-text text-transparent">
-                    {daysRemaining}
-                  </span>
+              <p className="mx-auto max-w-3xl text-lg md:text-xl text-muted-foreground leading-relaxed">
+                Die Wahlen vom 4. Oktober 2026 sind entschieden. Danke für Ihr Vertrauen.
+              </p>
+              <div className="mt-8 mx-auto max-w-3xl grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="rounded-xl border border-[hsl(var(--svp-green))]/20 bg-background/80 p-4">
+                  <p className="text-2xl font-bold text-[hsl(var(--svp-green))]">24 %</p>
+                  <p className="text-sm text-muted-foreground mt-1">Wähleranteil Kantonsrat</p>
                 </div>
-                <span className="text-muted-foreground">Tage bis zum Wahltag</span>
+                <div className="rounded-xl border border-[hsl(var(--svp-green))]/20 bg-background/80 p-4">
+                  <p className="text-2xl font-bold text-[hsl(var(--svp-green))]">20 / 80</p>
+                  <p className="text-sm text-muted-foreground mt-1">Sitze, stärkste Fraktion</p>
+                </div>
+                <div className="rounded-xl border border-[hsl(var(--svp-green))]/20 bg-background/80 p-4">
+                  <p className="text-2xl font-bold text-[hsl(var(--svp-green))]">2</p>
+                  <p className="text-sm text-muted-foreground mt-1">Regierungsräte bestätigt</p>
+                </div>
+              </div>
+              <p className="mx-auto mt-6 max-w-3xl text-base text-muted-foreground leading-relaxed">
+                Heinz Tännler (20'358 Stimmen, 3. Platz) und Stephan Schleiss (19'616 Stimmen) bleiben im Regierungsrat. Die Mitte kommt auf 18 Kantonsratssitze, die FDP auf 17.
+              </p>
+              <div className="mt-6">
+                <Button asChild>
+                  <Link to="/artikel/svp-staerkste-kraft-kantonsrat-2026">Zur Medienmitteilung</Link>
+                </Button>
               </div>
             </div>
           </div>
@@ -270,7 +269,7 @@ const Wahlen = () => {
                 Die SVP will die unkontrollierte Zuwanderung stoppen, damit der Kanton Zug kein zugebauter Vorort von Zürich wird, sondern unsere Heimat bleibt.
               </p>
               <p className="text-xl font-bold text-[hsl(var(--svp-green))]">
-                Wer das auch will: 2026 SVP wählen.
+                Danke für Ihr Vertrauen am 4. Oktober 2026.
               </p>
             </div>
           </div>

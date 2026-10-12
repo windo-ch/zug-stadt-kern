@@ -65,6 +65,9 @@ const ArtikelVillaUntererFrauenstein = lazy(() =>
 const ArtikelBundesplatzStandaktionApril2026 = lazy(() =>
   import("./pages/ArtikelBundesplatzStandaktionApril2026")
 );
+const ArtikelWahlsiegOktober2026 = lazy(() =>
+  import("./pages/ArtikelWahlsiegOktober2026")
+);
 const ThemaRaum = lazy(() => import("./pages/ThemaRaum"));
 const ThemaHeimat = lazy(() => import("./pages/ThemaHeimat"));
 const ThemaSicherheit = lazy(() => import("./pages/ThemaSicherheit"));
@@ -160,6 +163,10 @@ const App = () => {
               <Route
                 path="/artikel/bundesplatz-standaktion-april-2026"
                 element={<ArtikelBundesplatzStandaktionApril2026 />}
+              />
+              <Route
+                path="/artikel/svp-staerkste-kraft-kantonsrat-2026"
+                element={<ArtikelWahlsiegOktober2026 />}
               />
               <Route path="/thema/raum" element={<ThemaRaum />} />
               <Route path="/thema/heimat" element={<ThemaHeimat />} />
