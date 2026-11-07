@@ -849,11 +849,38 @@ export interface Motion {
 ## Project Status Board (Executor)
 
 - [x] **Wahlen 2026 Kandidaten–Profil-CSV** — Datei `data/profile-status-wahlen2026.csv` erstellt (21 Personen; Spalten u. a. Listen, Okt-2026-Flags laut Nutzerlisten, `/profil`-Route, Steckbrief-Typ/XLSX, GGR-Landing). CSV mit `python3` csv-Modul auf 17 Spalten pro Zeile geprüft.
+- [x] **Office And Candidacy Clarity** — Explizite `currentOffices`-/`candidacies2026`-Metadaten ergänzt, Kandidatenkarten auf `Aktuelles Amt` / `Kandidiert 2026` umgestellt, Steckbrief-Profile mit Statuspanel erweitert. Mixed cases geprüft: Adrian Risi (`Kantonsrat Bisher`, `GGR Neu`), Roman Küng und Alex Odermatt (`GGR Bisher`, `Kantonsrat Neu`). `npm run type-check`, `npm run build` und Lints erfolgreich.
+- [x] **Stadtrat Page And Profile Fixes** — Auf der Stadtrat/GGR-Seite Gregor Bruhin aus der Gemeinderat-Liste entfernt und Manfred Pircher ergänzt. Raphael Tschans Hero-Tags auf politische Tags reduziert (`RPK Mitglied`). Marcus H. Bühlers Zivilstand im Steckbrief von `geschieden` auf `liiert` geändert. Lints und `npm run type-check` erfolgreich.
+- [x] **Kandidaten-Amt Nachtrag** — `Noch kein Amt` aus Kandidatenkarten/Steckbrief-Statuspanel entfernt. Vorstand-Rollen für Adrian Risi, Alessia Bischof, Roman Küng, André Wicki, Marcus H. Bühler, Henry Barrows und Simon Ruckstuhl ergänzt. Bestehende Kommissionsämter für Daniel Gramm, Alex Odermatt, Marcus H. Bühler, René Gretener und Philip C. Brunner auf der Kandidatenseite ergänzt. Lints und `npm run type-check` erfolgreich.
+- [x] **Candidate Profile Content Refresh** — Steckbrief-Daten für Markus Lämmler, Claudio Schmid, Benny Elsener, Andrea Risi und Henry Barrows aus den SVP-Zug-Profilseiten ergänzt. Raphael Tschans `Vizepräsident SVP Stadt Zug`-Wording entfernt. Ursula Keiser aus GGR- und KR-Nomination entfernt und Profil-Nominationspills geleert. Lints und `npm run type-check` erfolgreich.
+- [x] **Gramm RPK / Raphael seat swap** — Dani Gramm aus GGR/KR-Kandidatur entfernt; `currentOffices` auf Kulturkommission + RPK; Raphael-Karte von Wer wir sind und Homepage-Carousel entfernt; RPK von Raphael-Profil gestrichen. Branch `cursor/gramm-rpk-raphael-seat`. `npm run type-check` erfolgreich.
+- [x] **Gramm address + social links** — Daniel Gramm `address`/`location` entfernt. Shared `socialLinks` + `SocialLinks` component; Instagram/TikTok/YouTube/Facebook in Header (desktop + mobile) und Footer; YouTube auf Channel-URL korrigiert. `npm run type-check` erfolgreich.
+- [x] **Karl Keiser Steckbrief** — Stub-Profil in `steckbriefCandidates.ts` mit Statement, Bio, Ausbildung, Hobbies, Personalien und Prioritäten aus dem Feedback ersetzt. Keine E-Mail-Adresse im Feedback; Feld bleibt leer.
+- [x] **Aktuell August 2026** — Vier neueste Beiträge von svp-zug.ch (31./28./28./27. August) in `public/svp-articles-12-1-2026.json` vorne ergänzt, damit Homepage-NewsSection und `/was-ansteht` nicht mehr bei Mitte Juni stehen bleiben. Juli/früheres August-Archiv noch nicht vollständig nachgezogen.
+- [x] **Aktuell September 2026** — 37 Artikel (3.–28. September) und 2 Medienmitteilungen (18./21. September) von svp-zug.ch vorne in `public/svp-articles-12-1-2026.json` ergänzt. Homepage-Aktuell zeigt damit den 28. September. Juli und frühes August vor dem 27.08. sind weiterhin nicht vollständig im Archiv.
+- [x] **1000er Club Golder-Bericht** — Save-the-Date auf Februar 2027, Rückblick mit allen 5 Fotos (`image001` Golder + `image002`–`image005` Dinner, Layout 2+3) und Kurzzusammenfassung auf `/1000er-club`, vollständiger Bericht als neuester Eintrag in `1000erClubEvents.ts`. `npm run type-check` clean.
+- [x] **1000er Club Recap-Galerien** — Fotos gehören zu den Event-Daten (`images` auf `ClubEvent`). `/1000er-club-veranstaltungen` zeigt Galerien für Golder (5), Rogenmoser (3) und Wyssmann (4). Ältere Anlässe haben im Repo keine Eventfotos.
+- [x] **Post-election news + light Wahlen** — Drei Oktober-Artikel (11./5./1. Oktober) in `public/svp-articles-12-1-2026.json` vorne ergänzt. Countdown auf `/wahlen` durch Dankes-/Resultatzeile (20/80 Kantonsrat) ersetzt. Kein Sitz-für-Sitz-Rewrite.
+- [x] **Wahlsieg Medienmitteilung** — Interner Artikel `/artikel/svp-staerkste-kraft-kantonsrat-2026` (12. Oktober) mit Kantonsrat 24 % / 20 von 80 und Regierungsrat Tännler/Schleiss. Führt Aktuell an. `/wahlen`-Hero mit denselben Zahlen und Link zur MM. Keine Stadt-Zug-GGR-Zahlen erfunden.
+- [x] **Hünenberg aus Aktuell** — Gemeinde-Artikel «SVP Hünenberg legt deutlich zu» aus `public/svp-articles-12-1-2026.json` entfernt (Site ist Stadt Zug).
 
 ## Executor's Feedback or Assistance Requests
 
+- **1000er Club Recap-Galerien**: Bitte `/1000er-club-veranstaltungen` prüfen (Golder, Rogenmoser, Wyssmann mit Fotos über dem Berichtstext). Für Dettling/Maurer/Furrer usw. liegen keine Eventfotos im Repo.
+
 - **Planner / Nutzer**: Bitte kurz bestätigen, ob die CSV so passt oder ob Spalten/Dateiname geändert werden sollen (z. B. nach `public/` kopieren für Download von der Site).
 - Quelle der Zuordnung: Repo-Stand (`App.tsx`, `steckbriefCandidates.ts`, `public/Steckbrief_Kandidaten/`, `GGRKandidaten.tsx`, `Wahlen.tsx`) plus die vom Nutzer gelieferten drei Listen.
+- **Office And Candidacy Clarity**: Umsetzung abgeschlossen und verifiziert. Bitte die Routen `/wahlen/kandidaten`, `/profil/alessia-bischof`, `/profil/adrian-risi`, `/profil/roman-kueng`, `/profil/alex-odermatt` und `/profil/henry-barrows` visuell prüfen.
+- **Stadtrat Page And Profile Fixes**: Umsetzung abgeschlossen. Bitte `/stadtrat`, `/profil/raphael-tschan` und `/profil/marcus-buehler` visuell prüfen.
+- **Kandidaten-Amt Nachtrag**: Umsetzung abgeschlossen. Bitte `/wahlen/kandidaten` und beispielhaft `/profil/daniel-gramm`, `/profil/alessia-bischof`, `/profil/henry-barrows` visuell prüfen.
+- **Candidate Profile Content Refresh**: Umsetzung abgeschlossen. Bitte `/profil/marcus-laemmler`, `/profil/claudio-schmid`, `/profil/benny-elsener`, `/profil/andrea-risi`, `/profil/henry-barrows`, `/profil/raphael-tschan` und `/wahlen/kandidaten` visuell prüfen.
+- **Gramm RPK / Raphael seat swap**: Umsetzung fertig und in `main` gemerged (PR #3). Bitte nach Netlify-Deploy manuell prüfen: `/wahlen/kandidaten`, `/wer-wir-sind`, `/profil/raphael-tschan`, `/profil/daniel-gramm`, Homepage-Carousel.
+- **Gramm address + social links**: Umsetzung abgeschlossen. Bitte `/profil/daniel-gramm` (keine Adresse), Header-Icons und Footer-Icons visuell prüfen.
+- **Karl Keiser + Aktuell**: Umsetzung abgeschlossen. Bitte `/profil/karl-keiser`, Homepage-Aktuell und `/was-ansteht` visuell prüfen. Keine E-Mail für Karl im Feedback. Juli/August-Artikel vor dem 27.08. sind auf `/was-ansteht` noch nicht alle nachgetragen — sagen, falls das volle Archiv nachgezogen werden soll.
+- **Aktuell September 2026**: 39 neue Beiträge (3.–28. September) stehen in der JSON. Bitte Homepage-Aktuell (neueste drei) und `/was-ansteht` prüfen. Lücken vor dem 27. August bleiben, bis das Archiv nachgezogen wird.
+- **Post-election news + light Wahlen**: Bitte Homepage-Aktuell (Rahmenverträge, Hünenberg, Auto-Regulierungen), `/was-ansteht` und `/wahlen` (kein Countdown mehr) prüfen. Stadt-Zug-Sitzliste noch nicht nachgetragen.
+- **Wahlsieg Medienmitteilung**: Bitte `/artikel/svp-staerkste-kraft-kantonsrat-2026`, Homepage-Aktuell und `/wahlen` prüfen. Stadt-Zug/GGR/Stadtrat-Resultate fehlen weiterhin.
+- **Hünenberg aus Aktuell**: Gemeinde-Artikel entfernt. Homepage-Aktuell sollte Wahlsieg, Rahmenverträge, Auto-Regulierungen zeigen.
 
 ## Lessons
 

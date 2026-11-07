@@ -1,0 +1,22 @@
+name,status_ggr,status_kr,status_stadtrat_präsidium,liste_stadtrat_stadtpraesidium,liste_ggr,liste_kr,okt2026_stadtrat_stadtpraesidium,okt2026_ggr,okt2026_kr,web_profil_route,profil_art,steckbrief_in_typescript,steckbrief_xlsx_public,fg_ggr_kandidaten_seite,kandidatur_feld_steckbrief,anmerkung
+André Wicki,,,Bisher,Y,N,N,Y,N,N,/profil/andre-wicki,steckbrief,Y,André_WICKI_Steckbrief.xlsx,N,Stadtpräsident Zug,
+Henry Barrows,Neu,,,N,Y,N,N,Y,N,,fehlt,N,,N,,"Keine Route in App.tsx"
+Alessia Bischof,Neu,Neu,,N,Y,Y,N,Y,Y,/profil/alessia-bischof,steckbrief,Y,Alessia_BISCHOF_Steckbrief.xlsx,Y,"Gemeinderat, Kantonsrat",
+Gregor R. Bruhin,Bisher,Bisher,,N,Y,Y,N,Y,Y,/profil/gregor-bruhin,legacy,N,,N,,
+Philip C. Brunner,Bisher,Bisher,,N,Y,Y,N,Y,Y,/profil/philip-brunner,legacy,N,,N,,
+Marcus H. Bühler,Bisher,,,N,Y,N,N,Y,N,/profil/marcus-buehler,steckbrief,Y,Marcus_BÜHLER_Steckbrief.xlsx,N,Gemeinderat,
+Benny Elsener,Neu,Neu,,N,Y,Y,N,Y,Y,,fehlt,N,,N,,"Keine Route in App.tsx"
+Daniel Gramm,Neu,Neu,,N,Y,Y,N,Y,Y,/profil/daniel-gramm,steckbrief,Y,Daniel_GRAMM_Steckbrief.xlsx,N,"1. Kantonsrat, 2. RPK, 3. Gemeinderat",
+René Gretener,Bisher,,,N,Y,N,N,Y,N,/profil/rene-gretener,steckbrief,Y,Rene_GRETENER_Steckbrief.xlsx,N,Grosser Gemeinderat,
+Ursula Keiser,,Neu,,N,N,Y,N,N,Y,,fehlt,N,,N,,"Keine Route in App.tsx"
+Karl Keiser,Neu,,,N,Y,N,N,Y,N,,fehlt,N,,N,,"Keine Route in App.tsx"
+Kilian Krall,Neu,Neu,,N,Y,Y,N,Y,Y,/profil/kilian-krall,steckbrief,Y,Kilian_KRALL_Steckbrief.xlsx,Y,Grosser Gemeinderat,
+Roman Küng,Bisher,Neu,,N,Y,Y,N,Y,Y,/profil/roman-kueng,steckbrief,Y,Roman_KÜNG_Steckbrief.xlsx,N,GGR / Kantonsrat,"Status Neu/Bisher differiert zwischen GGR- und KR-Liste (Nutzereingabe)"
+Marcus Lämmler,Neu,,,N,Y,N,N,Y,N,,fehlt,N,,N,,"Keine Route in App.tsx"
+Alex Odermatt,Bisher,Neu,,N,Y,Y,N,Y,Y,/profil/alex-odermatt,steckbrief,Y,Alex_ODERMATT_Steckbrief.xlsx,N,GGR / KR,"Status Neu/Bisher differiert zwischen GGR- und KR-Liste (Nutzereingabe)"
+Andrea Risi,Neu,,,N,Y,N,N,Y,N,,fehlt,N,,N,,"Im Repo nicht gefunden; evtl. Tippfehler oder andere Person"
+Adrian Risi,Neu,Bisher,,N,Y,Y,N,Y,Y,/profil/adrian-risi,steckbrief,Y,Adrian_RISI_Steckbrief.xlsx,N,Kantonsrat,"Status Neu/Bisher differiert zwischen GGR- und KR-Liste (Nutzereingabe)"
+Simon Ruckstuhl,Neu,Neu,,N,Y,Y,N,Y,Y,/profil/simon-ruckstuhl,steckbrief,Y,Simon_RUCKSTUHL_Steckbrief.xlsx,Y,"GGR, Kantonsrat",
+Norbert Schlumpf,Bisher,,,N,Y,N,N,Y,N,/profil/norbert-schlumpf,legacy,N,,N,,
+Claudio Schmid,Neu,,,N,Y,N,N,Y,N,,fehlt,N,,N,,"Keine Route in App.tsx"
+Philip Stierli,Neu,,,N,Y,N,N,Y,N,,fehlt,N,,N,,"Keine Route in App.tsx"
