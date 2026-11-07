@@ -115,13 +115,13 @@ const Header = () => {
                   onClick={() => navigateToPage('/wahlen')}
                   className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-accent/50 rounded-lg transition-colors"
                 >
-                  Wahlen Übersicht
+                  Wahlergebnis 2026
                 </button>
                 <button
                   onClick={() => navigateToPage('/wahlen/kandidaten')}
                   className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-accent/50 rounded-lg transition-colors"
                 >
-                  Kandidaten 2026
+                  Mandate 2027–2030
                 </button>
               </div>
               

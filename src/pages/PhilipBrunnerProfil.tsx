@@ -12,7 +12,7 @@ const PhilipBrunnerProfil = () => {
 
   const personalData = {
     name: "Philip C. Brunner",
-    position: "Kantonsrat",
+    position: "Kantonsrat, Gemeinderat",
     born: "1955",
     address: "Im Rank 109",
     location: "6300 Zug", 
@@ -52,7 +52,7 @@ const PhilipBrunnerProfil = () => {
           <ProfileHero
             personalData={personalData}
             image="/assets/people/profilbilder/philip-c-brunner.jpg"
-            description="Kantonsrat"
+            description="Kantonsrat, Gemeinderat"
             roles={["Präsident SVP Kanton Zug", "Fraktionspräsident KR", "Präsident GPK Stadt Zug"]}
           />
 

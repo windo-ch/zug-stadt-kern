@@ -68,6 +68,9 @@ const ArtikelBundesplatzStandaktionApril2026 = lazy(() =>
 const ArtikelWahlsiegOktober2026 = lazy(() =>
   import("./pages/ArtikelWahlsiegOktober2026")
 );
+const ArtikelErfolgreichsteWahlenStadtZug2026 = lazy(() =>
+  import("./pages/ArtikelErfolgreichsteWahlenStadtZug2026")
+);
 const ThemaRaum = lazy(() => import("./pages/ThemaRaum"));
 const ThemaHeimat = lazy(() => import("./pages/ThemaHeimat"));
 const ThemaSicherheit = lazy(() => import("./pages/ThemaSicherheit"));
@@ -167,6 +170,10 @@ const App = () => {
               <Route
                 path="/artikel/svp-staerkste-kraft-kantonsrat-2026"
                 element={<ArtikelWahlsiegOktober2026 />}
+              />
+              <Route
+                path="/artikel/erfolgreichste-wahlen-svp-stadt-zug-2026"
+                element={<ArtikelErfolgreichsteWahlenStadtZug2026 />}
               />
               <Route path="/thema/raum" element={<ThemaRaum />} />
               <Route path="/thema/heimat" element={<ThemaHeimat />} />

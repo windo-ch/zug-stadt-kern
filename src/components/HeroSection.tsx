@@ -42,7 +42,7 @@ const HeroSection = () => {
                   className="btn-hero group text-2xl px-12 py-8"
                 >
                   <Calendar className="mr-3 h-7 w-7" />
-                  Wahlen 2026
+                  Wahlergebnis 2026
                   <ArrowRight className="ml-3 h-7 w-7 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>

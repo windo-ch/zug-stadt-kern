@@ -30,14 +30,14 @@ const MegaMenu = ({ onNavigate }: MegaMenuProps) => {
                 href="/wahlen"
                 icon={<Vote className="h-5 w-5" />}
               >
-                Wahltermine, Ziele und Informationen zu den Wahlen 2026
+                Wahlergebnis vom 4. Oktober 2026 und kommende Termine
               </ListItem>
               <ListItem
-                title="Kandidaten 2026"
+                title="Mandate 2027–2030"
                 href="/wahlen/kandidaten"
                 icon={<Users className="h-5 w-5" />}
               >
-                Alle bisherigen und neuen Kandidatinnen und Kandidaten
+                Gewählte in Stadtrat, GGR, Kantonsrat und RPK
               </ListItem>
             </div>
           </NavigationMenuContent>

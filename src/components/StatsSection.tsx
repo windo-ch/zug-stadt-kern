@@ -68,18 +68,18 @@ const StatsSection = () => {
             link={null}
           />
           <StatCard
-            value={7}
+            value={9}
             suffix=""
             label="Sitze"
             sublabel="im GGR"
-            link={null}
+            link="/stadtrat"
           />
           <StatCard
-            value={25}
-            suffix="%"
-            label="Wähleranteil"
-            sublabel="2022"
-            link={null}
+            value={4}
+            suffix=""
+            label="Kantonsräte"
+            sublabel="Stadt Zug"
+            link="/kantonsrat"
           />
         </div>
       </div>

@@ -2,12 +2,17 @@ import { useEffect, useState, useRef } from 'react';
 import PageLayout from '@/components/layout/PageLayout';
 import Section from '@/components/layout/Section';
 import SectionHeader from '@/components/layout/SectionHeader';
-import { Calendar, Users, Target, ArrowRight, Vote, CheckCircle, Building, Award, Zap, Banknote, Shield, BarChart, Play, Pause, Volume2, VolumeX } from 'lucide-react';
+import { Calendar, Users, Target, ArrowRight, Vote, CheckCircle, Building, Award, Banknote, Shield, BarChart, Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import MitmachenSection from '@/components/MitmachenSection';
+import {
+  STADT_WAHLSIEG_PATH,
+  KANTON_WAHLSIEG_PATH,
+  kantonsratStadtZugElected2026,
+} from '@/data/electionResults2026';
 
 const Wahlen = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
@@ -45,64 +50,65 @@ const Wahlen = () => {
   const upcomingElections = [
     {
       icon: Award,
-      title: "Regierungsratswahlen",
+      title: "Regierungsrat",
       date: "4. Oktober 2026",
-      description: "Heinz Tännler mit 20'358 Stimmen (3. Platz) und Stephan Schleiss mit 19'616 Stimmen wiedergewählt",
+      description: "Heinz Tännler (SVP Stadt Zug) mit 20'358 Stimmen (3. Platz) als Regierungsrat bestätigt.",
       level: "Kantonal",
-      status: "2026",
+      status: "gewählt",
       priority: "high",
       link: "/profil/heinz-taennler",
       candidate: "Heinz Tännler",
-      candidateImage: "/assets/people/jpg-2026/Heinz-Taennler.jpg"
+      candidateImage: "/assets/people/jpg-2026/Heinz-Taennler.jpg",
+      resultLabel: "Gewählt",
     },
     {
       icon: Users,
-      title: "Kantonsratswahlen",
+      title: "Kantonsrat (Stadt Zug)",
       date: "4. Oktober 2026",
-      description: "Die SVP stellt neu 20 Sitze und ist mit 24 Prozent stärkste Fraktion im Kantonsrat",
+      description: "4 Sitze (+1): Adrian Risi, Gregor R. Bruhin, Philip C. Brunner und Roman Küng.",
       level: "Kantonal",
-      status: "2026",
+      status: "gewählt",
       priority: "high",
-      link: "/wahlen/kandidaten",
-      candidates: "Gregor R. Bruhin, Philip C. Brunner, Adrian Risi und weitere",
-      candidateImages: [
-        "/assets/people/jpg-2026/Gregor-Bruhin_kravatte_g.jpg",
-        "/assets/people/profilbilder/philip-c-brunner.jpg",
-        "/assets/people/profilbilder/adrian-risi.jpg"
-      ]
+      link: "/kantonsrat",
+      candidates: kantonsratStadtZugElected2026.map((p) => p.name).join(", "),
+      candidateImages: kantonsratStadtZugElected2026.map((p) => p.image),
+      resultLabel: "Gewählt",
     },
     {
       icon: Building,
-      title: "Stadtratswahlen",
+      title: "Stadtrat",
       date: "4. Oktober 2026",
-      description: "André Wicki kandidiert erneut als Stadtrat (seit 2011) und als Stadtpräsident",
+      description: "André Wicki ist als Stadtpräsident in seiner 5. Amtszeit als Stadtrat bestätigt (4'426 Stimmen).",
       level: "Stadt",
-      status: "2026",
+      status: "gewählt",
       priority: "high",
-      link: "/wahlen/kandidaten",
+      link: "/profil/andre-wicki",
       candidate: "André Wicki",
-      candidateImage: "/assets/people/profilbilder/Andre-Wicki_SVP.jpg"
+      candidateImage: "/assets/people/profilbilder/Andre-Wicki_SVP.jpg",
+      resultLabel: "Gewählt",
     },
     {
       icon: Users,
-      title: "Neuwahlen des Grossen Gemeinderats",
+      title: "Grosser Gemeinderat",
       date: "4. Oktober 2026",
-      description: "Unsere Kandidaten für den Grossen Gemeinderat",
+      description: "Historischer Zuwachs auf 9 Sitze (+2). Die Fraktion ist so stark wie noch nie.",
       level: "Stadt",
-      status: "2026",
+      status: "gewählt",
       priority: "high",
-      link: "/wahlen/kandidaten",
-      noCandidates: true
+      link: "/stadtrat",
     },
     {
       icon: Shield,
-      title: "RPK Rechnungsprüfungskommission",
-      date: "2026",
-      description: "Rechnungsprüfungskommission der Stadt Zug",
+      title: "Rechnungsprüfungskommission",
+      date: "4. Oktober 2026",
+      description: "Daniel Gramm in stiller Wahl als RPK-Mitglied bestätigt.",
       level: "Stadt",
-      status: "2026",
-      priority: "medium",
-      link: null
+      status: "gewählt",
+      priority: "high",
+      link: "/profil/daniel-gramm",
+      candidate: "Daniel Gramm",
+      candidateImage: "/assets/people/profilbilder/daniel-gramm.jpg",
+      resultLabel: "Gewählt",
     },
     {
       icon: Vote,
@@ -138,8 +144,8 @@ const Wahlen = () => {
 
   return (
     <PageLayout 
-      title="Wahlen 2026 - SVP Stadt Zug"
-      description="Kantonsratswahlen 2026 - SVP Stadt Zug bereitet sich vor. Informieren Sie sich über Kandidaten, Programm und wie Sie Teil unserer Bewegung werden können."
+      title="Wahlergebnis 2026 - SVP Stadt Zug"
+      description="Die erfolgreichsten Wahlen in der Geschichte der SVP Stadt Zug: 9 GGR-Sitze, 4 Kantonsräte, André Wicki im Stadtrat bestätigt."
     >
       <main>
         {/* Hero Section - Redesigned */}
@@ -153,28 +159,38 @@ const Wahlen = () => {
               </h1>
               
               <p className="mx-auto max-w-3xl text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Die Wahlen vom 4. Oktober 2026 sind entschieden. Danke für Ihr Vertrauen.
+                Die erfolgreichsten Wahlen in der Geschichte der SVP Stadt Zug. Danke für Ihr Vertrauen am 4. Oktober 2026.
               </p>
-              <div className="mt-8 mx-auto max-w-3xl grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="mt-8 mx-auto max-w-4xl grid grid-cols-2 sm:grid-cols-4 gap-4">
                 <div className="rounded-xl border border-[hsl(var(--svp-green))]/20 bg-background/80 p-4">
-                  <p className="text-2xl font-bold text-[hsl(var(--svp-green))]">24 %</p>
-                  <p className="text-sm text-muted-foreground mt-1">Wähleranteil Kantonsrat</p>
+                  <p className="text-2xl font-bold text-[hsl(var(--svp-green))]">9</p>
+                  <p className="text-sm text-muted-foreground mt-1">Sitze im GGR (+2)</p>
                 </div>
                 <div className="rounded-xl border border-[hsl(var(--svp-green))]/20 bg-background/80 p-4">
-                  <p className="text-2xl font-bold text-[hsl(var(--svp-green))]">20 / 80</p>
-                  <p className="text-sm text-muted-foreground mt-1">Sitze, stärkste Fraktion</p>
+                  <p className="text-2xl font-bold text-[hsl(var(--svp-green))]">4</p>
+                  <p className="text-sm text-muted-foreground mt-1">Kantonsräte (+1)</p>
                 </div>
                 <div className="rounded-xl border border-[hsl(var(--svp-green))]/20 bg-background/80 p-4">
-                  <p className="text-2xl font-bold text-[hsl(var(--svp-green))]">2</p>
-                  <p className="text-sm text-muted-foreground mt-1">Regierungsräte bestätigt</p>
+                  <p className="text-2xl font-bold text-[hsl(var(--svp-green))]">5.</p>
+                  <p className="text-sm text-muted-foreground mt-1">Amtszeit André Wicki</p>
+                </div>
+                <div className="rounded-xl border border-[hsl(var(--svp-green))]/20 bg-background/80 p-4">
+                  <p className="text-2xl font-bold text-[hsl(var(--svp-green))]">1</p>
+                  <p className="text-sm text-muted-foreground mt-1">Regierungsrat Tännler</p>
                 </div>
               </div>
               <p className="mx-auto mt-6 max-w-3xl text-base text-muted-foreground leading-relaxed">
-                Heinz Tännler (20'358 Stimmen, 3. Platz) und Stephan Schleiss (19'616 Stimmen) bleiben im Regierungsrat. Die Mitte kommt auf 18 Kantonsratssitze, die FDP auf 17.
+                Kantonweit ist die SVP mit 24 Prozent und 20 von 80 Sitzen stärkste Kraft im Kantonsrat.
               </p>
-              <div className="mt-6">
+              <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
                 <Button asChild>
-                  <Link to="/artikel/svp-staerkste-kraft-kantonsrat-2026">Zur Medienmitteilung</Link>
+                  <Link to={STADT_WAHLSIEG_PATH}>Zur Medienmitteilung</Link>
+                </Button>
+                <Button asChild variant="outline">
+                  <Link to="/wahlen/kandidaten">Mandate 2027–2030</Link>
+                </Button>
+                <Button asChild variant="outline">
+                  <Link to={KANTON_WAHLSIEG_PATH}>Kantonaler Wahlsieg</Link>
                 </Button>
               </div>
             </div>
@@ -272,6 +288,14 @@ const Wahlen = () => {
                 Danke für Ihr Vertrauen am 4. Oktober 2026.
               </p>
             </div>
+            <div className="mt-10">
+              <img
+                src="/assets/wahlen-2026/kantonsrat-waehlerstaerke-stadt-zug-2026.png"
+                alt="Balkendiagramm: Wählerstärke der Parteien in der Stadt Zug bei den Kantonsratswahlen 2022 und 2026. SVP 21,2 Prozent."
+                className="w-full max-w-3xl mx-auto rounded-xl border border-border"
+                loading="lazy"
+              />
+            </div>
           </div>
         </Section>
 
@@ -279,8 +303,8 @@ const Wahlen = () => {
         <Section className="bg-gradient-to-b from-background via-muted/20 to-background">
           <div className="max-w-7xl mx-auto">
             <SectionHeader
-              title="Unsere Ziele für 2026"
-              description="Unsere strategischen Ziele über die Kantonsratswahlen hinaus"
+              title="Ziele erreicht"
+              description="Was wir uns für den 4. Oktober 2026 vorgenommen haben – und gehalten haben."
               alignment="center"
               className="mb-20"
             />
@@ -299,7 +323,7 @@ const Wahlen = () => {
                 </CardHeader>
                 <CardContent className="flex-grow pt-0 relative z-10">
                   <p className="text-muted-foreground leading-relaxed text-lg">
-                    Wir treten an mit bekannten, qualifizierten Persönlichkeiten aus der Stadt Zug – für den Regierungsrat, den Stadtrat und das Stadtpräsidium, den Kantonsrat, den Grossen Gemeinderat, und die Rechnungsprüfungskommission.
+                    Bekannte, qualifizierte Persönlichkeiten aus der Stadt Zug stehen in Regierungsrat, Stadtrat, Kantonsrat, Grossem Gemeinderat und Rechnungsprüfungskommission.
                   </p>
                 </CardContent>
               </Card>
@@ -345,9 +369,9 @@ const Wahlen = () => {
               <CardHeader className="relative z-10 pb-8">
                 <div className="flex items-center gap-5 mb-6">
                   <div className="p-4 bg-gradient-to-br from-[hsl(var(--svp-green))] to-[hsl(var(--svp-green-light))] rounded-2xl shadow-xl">
-                    <BarChart className="h-8 w-8 text-white" />
+                    <CheckCircle className="h-8 w-8 text-white" />
                   </div>
-                  <CardTitle className="text-3xl font-bold text-foreground">Konkrete Ziele</CardTitle>
+                  <CardTitle className="text-3xl font-bold text-foreground">Alles erreicht</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="relative z-10">
@@ -355,31 +379,31 @@ const Wahlen = () => {
                   <div className="flex items-start gap-4 group/item">
                     <div className="w-3 h-3 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-lg"></div>
                     <p className="text-foreground leading-relaxed text-lg font-medium">
-                      Ein Sitz in der RPK
+                      RPK: Daniel Gramm bestätigt
                     </p>
                   </div>
                   <div className="flex items-start gap-4 group/item">
                     <div className="w-3 h-3 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-lg"></div>
                     <p className="text-foreground leading-relaxed text-lg font-medium">
-                      Wiederwahl von Heinz Tännler als Regierungsrat
+                      Heinz Tännler bleibt Regierungsrat
                     </p>
                   </div>
                   <div className="flex items-start gap-4 group/item">
                     <div className="w-3 h-3 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-lg"></div>
                     <p className="text-foreground leading-relaxed text-lg font-medium">
-                      Das Verteidigen des Stadtpräsidiums
+                      Stadtpräsidium verteidigt: André Wicki, 5. Amtszeit
                     </p>
                   </div>
                   <div className="flex items-start gap-4 group/item">
                     <div className="w-3 h-3 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-lg"></div>
                     <p className="text-foreground leading-relaxed text-lg font-medium">
-                      Mindestens 4 Sitze im Kantonsrat
+                      4 Sitze im Kantonsrat (Stadt Zug)
                     </p>
                   </div>
                   <div className="flex items-start gap-4 group/item">
                     <div className="w-3 h-3 rounded-full bg-[hsl(var(--svp-green))] mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300 shadow-lg"></div>
                     <p className="text-foreground leading-relaxed text-lg font-medium">
-                      Mindestens 9 Sitze im Grossen Gemeinderat
+                      9 Sitze im Grossen Gemeinderat
                     </p>
                   </div>
                 </div>
@@ -391,8 +415,8 @@ const Wahlen = () => {
         {/* Enhanced Upcoming Elections */}
         <Section>
           <SectionHeader
-            title="Nächste Wahltermine"
-            description="Übersicht über alle kommenden Wahlen im Kanton Zug"
+            title="Resultate und nächste Termine"
+            description="Die Wahlen vom 4. Oktober 2026 sind entschieden. Nationalrat und Ständerat folgen 2027."
             alignment="center"
             className="mb-12"
           />
@@ -437,12 +461,12 @@ const Wahlen = () => {
                             alt={election.candidate}
                             className="w-12 h-12 rounded-full object-cover object-top border-2 border-[hsl(var(--svp-green))]/30"
                           />
-                          <p className="text-sm font-semibold text-foreground">Kandidat: {election.candidate}</p>
+                          <p className="text-sm font-semibold text-foreground">{election.resultLabel ?? "Kandidat"}: {election.candidate}</p>
                         </div>
                       )}
                       {election.candidates && election.candidateImages && (
                         <div className="pt-3">
-                          <p className="text-sm font-semibold text-foreground mb-2">Kandidaten:</p>
+                          <p className="text-sm font-semibold text-foreground mb-2">{election.resultLabel ?? "Kandidaten"}:</p>
                           <div className="flex items-center gap-2 mb-2">
                             {election.candidateImages.map((img, idx) => {
                               const names = election.candidates?.split(', ') || [];

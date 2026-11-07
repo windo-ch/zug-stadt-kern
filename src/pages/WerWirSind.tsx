@@ -34,6 +34,7 @@ const WerWirSind = () => {
       description: "",
       image: "/assets/people/jpg-2026/Gregor-Bruhin_kravatte_g.jpg",
       badge: "Kantonsrat",
+      roles: ["Gemeinderat"],
       profileLink: "/profil/gregor-bruhin"
     },
     {
@@ -44,7 +45,7 @@ const WerWirSind = () => {
       description: "",
       image: "/assets/people/profilbilder/philip-c-brunner.jpg",
       badge: "Kantonsrat",
-      roles: ["Vorstand"],
+      roles: ["Gemeinderat", "Präsident GPK"],
       profileLink: "/profil/philip-brunner"
     },
     {
@@ -55,10 +56,20 @@ const WerWirSind = () => {
       description: "",
       image: "/assets/people/profilbilder/adrian-risi.jpg",
       badge: "Kantonsrat",
-      roles: ["Vorstand"],
+      roles: ["Vorstand", "Gemeinderat"],
       profileLink: "/profil/adrian-risi"
     },
-    // Candidates not yet elected are listed on /ggr-kandidaten
+    {
+      name: "Roman Küng",
+      position: "Kantonsrat, Fraktionspräsident GGR",
+      phone: "",
+      email: "",
+      description: "",
+      image: "/assets/people/jpg-2026/Roman-Kueng_kravatte.jpg",
+      badge: "Kantonsrat",
+      roles: ["Gemeinderat", "2. Vizepräsident"],
+      profileLink: "/profil/roman-kueng"
+    },
   ];
 
   // Stadtrat
@@ -134,17 +145,8 @@ const WerWirSind = () => {
       description: "",
       image: "/assets/people/jpg-2026/Alex-Odermatt.jpg",
       badge: "Gemeinderat",
+      roles: ["BPK"],
       profileLink: "/profil/alex-odermatt"
-    },
-    {
-      name: "Manfred Pircher",
-      position: "Gemeinderat",
-      phone: "",
-      email: "",
-      description: "",
-      image: "/assets/people/profilbilder/manfred-pircher.jpg",
-      badge: "Gemeinderat",
-      profileLink: "/profil/manfred-pircher"
     },
     {
       name: "Norbert Schlumpf",
@@ -155,6 +157,39 @@ const WerWirSind = () => {
       image: "/assets/people/profilbilder/norbert-schlumpf.jpg",
       badge: "Gemeinderat",
       profileLink: "/profil/norbert-schlumpf"
+    },
+    {
+      name: "Adrian Risi",
+      position: "Gemeinderat",
+      phone: "",
+      email: "",
+      description: "",
+      image: "/assets/people/profilbilder/adrian-risi.jpg",
+      badge: "Gemeinderat",
+      roles: ["Kantonsrat", "Präsident"],
+      profileLink: "/profil/adrian-risi"
+    },
+    {
+      name: "Gregor R. Bruhin",
+      position: "Gemeinderat",
+      phone: "",
+      email: "",
+      description: "",
+      image: "/assets/people/jpg-2026/Gregor-Bruhin_kravatte_g.jpg",
+      badge: "Gemeinderat",
+      roles: ["Kantonsrat"],
+      profileLink: "/profil/gregor-bruhin"
+    },
+    {
+      name: "Alessia Bischof",
+      position: "Gemeinderätin",
+      phone: "",
+      email: "",
+      description: "",
+      image: "/assets/people/jpg-2026/Alessia-Bischof.jpg",
+      badge: "Gemeinderätin",
+      roles: ["1. Vizepräsidentin"],
+      profileLink: "/profil/alessia-bischof"
     },
   ];
 
@@ -181,15 +216,6 @@ const WerWirSind = () => {
       description: "",
       image: "/assets/people/jpg-2026/Alex-Odermatt.jpg",
       profileLink: "/profil/alex-odermatt"
-    },
-    {
-      name: "Manfred Pircher",
-      position: "Bau- und Planungskommission (BPK)",
-      phone: "",
-      email: "",
-      description: "",
-      image: "/assets/people/profilbilder/manfred-pircher.jpg",
-      profileLink: "/profil/manfred-pircher"
     },
     {
       name: "Bruno Zimmermann",

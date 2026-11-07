@@ -12,7 +12,7 @@ import { Card, CardContent } from '@/components/ui/card';
 const ManfredPircherProfil = memo(() => {
   const personalData = {
     name: "Manfred Pircher",
-    position: "Gemeinderat",
+    position: "Gründungsmitglied",
     born: "1950",
     address: "Lotenbach 7",
     location: "6318 Walchwil",
@@ -27,11 +27,11 @@ const ManfredPircherProfil = memo(() => {
 
   const positions = [
     "Gründungsmitglied der SVP Kanton Zug und Stadtpartei",
-    "Seit 2001 im Grossen Gemeinderat"
+    "2001–2026: Grosser Gemeinderat der Stadt Zug"
   ];
 
   const commissions = [
-    "Mitglied Bau- und Planungskommission"
+    "Bau- und Planungskommission (bis 2026)"
   ];
 
   const clubs = [
@@ -57,13 +57,13 @@ const ManfredPircherProfil = memo(() => {
   return (
     <PageLayout 
       title="Manfred Pircher - Profil - SVP Stadt Zug"
-      description="Manfred Pircher - Gemeinderat und Mitglied der Bau- und Planungskommission der SVP Stadt Zug. Gründungsmitglied der SVP Kanton Zug und Stadtpartei."
+      description="Manfred Pircher - Gründungsmitglied der SVP Kanton Zug und der Stadtpartei. Langjähriges Mitglied des Grossen Gemeinderats bis 2026."
     >
       <main className="container mx-auto px-4 py-16">
         <ProfileBreadcrumb 
           items={[
             { label: "Home", href: "/" },
-            { label: "Stadtrat", href: "/stadtrat" }
+            { label: "Wer wir sind", href: "/wer-wir-sind" }
           ]}
           currentPage="Manfred Pircher"
         />
@@ -72,8 +72,8 @@ const ManfredPircherProfil = memo(() => {
           <ProfileHero
             personalData={personalData}
             image="/assets/people/profilbilder/manfred-pircher.jpg"
-            description="Gemeinderat"
-            roles={["Mitglied Bau- und Planungskommission"]}
+            description="Gründungsmitglied"
+            roles={["SVP Stadt Zug"]}
           />
         </div>
 

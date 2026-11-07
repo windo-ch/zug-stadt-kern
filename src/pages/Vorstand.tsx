@@ -12,7 +12,7 @@ const Vorstand = () => {
     {
       name: "Adrian Risi",
       position: "Präsident",
-      roles: ["Kantonsrat"],
+      roles: ["Kantonsrat", "Gemeinderat"],
       address: "Eichwaldstrasse 22, 6300 Zug",
       image: "./assets/people/profilbilder/adrian-risi.jpg",
       description: "Erfahrener Kantonsrat und Präsident der SVP Stadt Zug mit starkem Engagement für bürgernahe Politik.",
@@ -24,10 +24,10 @@ const Vorstand = () => {
     {
       name: "Alessia Bischof",
       position: "1. Vizepräsidentin",
-      roles: [],
+      roles: ["Gemeinderätin"],
       address: "Pilatusstrasse 3, 6300 Zug",
       image: "/assets/people/jpg-2026/Alessia-Bischof.jpg",
-      description: "Vizepräsidentin der SVP Stadt Zug und Kandidatin für den Grossen Gemeinderat und den Kantonsrat.",
+      description: "Vizepräsidentin der SVP Stadt Zug und Gemeinderätin.",
       contact: {
         email: "alessia.bischof@goforit-ag.com"
       },
@@ -36,7 +36,7 @@ const Vorstand = () => {
     {
       name: "Roman Küng",
       position: "2. Vizepräsident",
-      roles: ["Gemeinderat"],
+      roles: ["Gemeinderat", "Kantonsrat"],
       address: "Bernoldweg 9, 6300 Zug",
       image: "/assets/people/jpg-2026/Roman-Kueng_kravatte.jpg",
       description: "Gemeinderat und Fraktionspräsident im Grossen Gemeinderat mit langjähriger politischer Erfahrung.",
@@ -75,7 +75,7 @@ const Vorstand = () => {
       roles: [],
       address: "",
       image: "/assets/people/jpg-2026/Henry-Barrows_kravatte.jpg",
-      description: "Vorstandsmitglied der SVP Stadt Zug und Kandidat für den Grossen Gemeinderat.",
+      description: "Vorstandsmitglied der SVP Stadt Zug.",
       contact: {
         email: ""
       },
@@ -87,7 +87,7 @@ const Vorstand = () => {
       roles: [],
       address: "Industriestrasse 8, 6300 Zug",
       image: "/assets/people/jpg-2026/Simon-Ruckstuhl_kravatte_dunkel.jpg",
-      description: "Vorstandsmitglied der SVP Stadt Zug und Kandidat für den Grossen Gemeinderat und den Kantonsrat.",
+      description: "Vorstandsmitglied der SVP Stadt Zug.",
       contact: {
         email: "simon@airhosted.ch"
       },

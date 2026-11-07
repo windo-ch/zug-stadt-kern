@@ -37,7 +37,7 @@ const PeopleSection = () => {
     {
       name: "Gregor R. Bruhin",
       role: "Kantonsrat",
-      position: "Kantonsrat",
+      position: "Gemeinderat",
       image: "/assets/people/jpg-2026/Gregor-Bruhin_kravatte_g.jpg",
       profileLink: "/profil/gregor-bruhin",
       category: "Kantonsrat",
@@ -58,7 +58,7 @@ const PeopleSection = () => {
     {
       name: "Adrian Risi",
       role: "Kantonsrat",
-      position: "Präsident, Vorstand",
+      position: "Präsident, Gemeinderat",
       image: "./assets/people/profilbilder/adrian-risi.jpg",
       profileLink: "/profil/adrian-risi",
       category: "Kantonsrat"
@@ -75,11 +75,19 @@ const PeopleSection = () => {
     // 7. Roman Küng
     {
       name: "Roman Küng",
-      role: "Fraktionspräsident",
-      position: "2. Vizepräsident, Vorstand",
+      role: "Kantonsrat",
+      position: "Fraktionspräsident GGR",
       image: "/assets/people/jpg-2026/Roman-Kueng_kravatte.jpg",
       profileLink: "/profil/roman-kueng",
-      category: "Fraktionspräsident"
+      category: "Kantonsrat"
+    },
+    {
+      name: "Alessia Bischof",
+      role: "Gemeinderätin",
+      position: "1. Vizepräsidentin",
+      image: "/assets/people/jpg-2026/Alessia-Bischof.jpg",
+      profileLink: "/profil/alessia-bischof",
+      category: "Gemeinderätin"
     }
   ];
 

@@ -13,7 +13,7 @@ const GregorBruhinProfil = () => {
 
   const personalData = {
     name: "Gregor R. Bruhin",
-    position: "Kantonsrat",
+    position: "Kantonsrat, Gemeinderat",
     born: "1993",
     address: "Rosenbergweg 5",
     location: "6300 Zug",
@@ -70,8 +70,8 @@ const GregorBruhinProfil = () => {
           <ProfileHero
             personalData={personalData}
             image="/assets/people/jpg-2026/Gregor-Bruhin_kravatte_g.jpg"
-            description="Kantonsrat"
-            roles={["Kantonsrat"]}
+            description="Kantonsrat, Gemeinderat"
+            roles={["Kantonsrat", "Gemeinderat"]}
           />
 
           <ProfileQuoteCard 

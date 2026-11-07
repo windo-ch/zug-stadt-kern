@@ -19,10 +19,10 @@ const StrategySection = () => {
 
         <div className="max-w-4xl mx-auto space-y-6 text-muted-foreground leading-relaxed mb-12">
           <p>
-            Aus diesem Grund hat der Vorstand der SVP Stadt Zug eine geschärfte Strategie bis 2026 entwickelt. 
-            Sie gilt als übergeordnetes Leitmotiv der Parteitätigkeit und hat zum Ziel das Wahlergebnis der 
-            SVP Stadt Zug nochmals zu verbessern. Diese Strategie ist nur dann erfolgreich, wenn wir auf eine 
-            stärkere Verankerung der Parteibasis zurückgreifen und zählen können.
+            Aus diesem Grund hat der Vorstand der SVP Stadt Zug eine geschärfte Strategie entwickelt. 
+            Sie gilt als übergeordnetes Leitmotiv der Parteitätigkeit. Die Wahlen 2026 haben gezeigt, 
+            dass diese Arbeit trägt – vorausgesetzt, wir können weiter auf eine stärkere Verankerung 
+            der Parteibasis zählen.
           </p>
           
           <p>
@@ -51,7 +51,7 @@ const StrategySection = () => {
           <Link to="/wahlen">
             <Button className="btn-hero group text-lg px-8 py-6">
               <Calendar className="mr-2 h-5 w-5" />
-              Wahlen 2026
+              Wahlergebnis 2026
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>

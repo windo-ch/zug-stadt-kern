@@ -2,49 +2,37 @@ import PageLayout from "@/components/layout/PageLayout";
 import Section from "@/components/layout/Section";
 import SectionHeader from "@/components/layout/SectionHeader";
 import CircularAvatar from "@/components/people/CircularAvatar";
+import { kantonsratStadtZugElected2026 } from "@/data/electionResults2026";
 
 export default function Kantonsrat() {
   return (
     <PageLayout
       title="Kantonsrat - SVP Stadt Zug"
-      description="Unsere Kantonsräte der SVP Stadt Zug."
+      description="Unsere vier Kantonsräte der SVP Stadt Zug nach den Wahlen vom 4. Oktober 2026."
     >
       <main>
         <Section variant="gradient">
           <SectionHeader
             title="Kantonsrat"
-            description="Unsere Kantonsräte der SVP Stadt Zug."
+            description="Vier Sitze (+1) aus dem Wahlkreis Stadt Zug für die Amtsperiode 2027–2030."
             align="center"
           />
         </Section>
 
         <Section>
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <CircularAvatar
-                name="Gregor R. Bruhin"
-                image="/assets/people/jpg-2026/Gregor-Bruhin_kravatte_g.jpg"
-                profileLink="/profil/gregor-bruhin"
-                category="Kantonsrat"
-                role="Kantonsrat"
-                size="lg"
-              />
-              <CircularAvatar
-                name="Philip C. Brunner"
-                image="/assets/people/profilbilder/philip-c-brunner.jpg"
-                profileLink="/profil/philip-brunner"
-                category="Kantonsrat"
-                role="Kantonsrat"
-                size="lg"
-              />
-              <CircularAvatar
-                name="Adrian Risi"
-                image="/assets/people/profilbilder/adrian-risi.jpg"
-                profileLink="/profil/adrian-risi"
-                category="Kantonsrat"
-                role="Kantonsrat"
-                size="lg"
-              />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              {kantonsratStadtZugElected2026.map((person) => (
+                <CircularAvatar
+                  key={person.slug}
+                  name={person.name}
+                  image={person.image}
+                  profileLink={`/profil/${person.slug}`}
+                  category="Kantonsrat"
+                  role="Kantonsrat"
+                  size="lg"
+                />
+              ))}
             </div>
           </div>
         </Section>
@@ -52,4 +40,3 @@ export default function Kantonsrat() {
     </PageLayout>
   );
 }
-

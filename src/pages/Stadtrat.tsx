@@ -101,21 +101,42 @@ const Stadtrat = () => {
       description: "Mir ist es wichtig auf die Bevölkerung zu hören und ihre Anliegen wahrzunehmen. Darum setz ich mich für Vereine ein. Man muss achten, dass Vereine nicht mit Bürokratie belastet werden sondern sich auf den Einsatz für die Bevölkerung in kulturellen, sportlichen und gesellschaftlichen Belangen konzentrieren können.",
       isFraktionschef: false,
       image: "/assets/people/jpg-2026/Alex-Odermatt.jpg",
-      profileLink: "/profil/alex-odermatt"
+      profileLink: "/profil/alex-odermatt",
+      staendigeKommissionen: "Mitglied der Bau- und Planungskommission",
     },
     {
-      name: "Manfred Pircher",
-      position: "Gemeinderat",
-      address: "Lotenbach 7, 6318 Walchwil",
-      phone: "041 758 17 30",
-      email: "manfred.pircher@bluewin.ch",
-      description: "Manfred Pircher ist seit 2001 im Grossen Gemeinderat und Mitglied der Bau- und Planungskommission.",
+      name: "Adrian Risi",
+      position: "Gemeinderat / Kantonsrat",
+      address: "Eichwaldstrasse 22, 6300 Zug",
+      phone: "079 606 62 56",
+      email: "adrian.risi@risiimmobilienag.ch",
+      description: "Präsident der SVP Stadt Zug, Kantonsrat und neu auch im Grossen Gemeinderat.",
       isFraktionschef: false,
-      image: "/assets/people/profilbilder/manfred-pircher.jpg",
-      profileLink: "/profil/manfred-pircher",
-      staendigeKommissionen: "Mitglied Bau- und Planungskommission",
+      image: "/assets/people/profilbilder/adrian-risi.jpg",
+      profileLink: "/profil/adrian-risi"
     },
-    // Candidates not yet elected are listed on /ggr-kandidaten
+    {
+      name: "Gregor R. Bruhin",
+      position: "Gemeinderat / Kantonsrat",
+      address: "Rosenbergweg 5, 6300 Zug",
+      phone: "",
+      email: "gb@gregor-bruhin.ch",
+      description: "Kantonsrat und Unternehmer. Neu wieder im Grossen Gemeinderat.",
+      isFraktionschef: false,
+      image: "/assets/people/jpg-2026/Gregor-Bruhin_kravatte_g.jpg",
+      profileLink: "/profil/gregor-bruhin"
+    },
+    {
+      name: "Alessia Bischof",
+      position: "Gemeinderätin",
+      address: "Pilatusstrasse 3, 6300 Zug",
+      phone: "",
+      email: "alessia.bischof@goforit-ag.com",
+      description: "1. Vizepräsidentin der SVP Stadt Zug und neu im Grossen Gemeinderat.",
+      isFraktionschef: false,
+      image: "/assets/people/jpg-2026/Alessia-Bischof.jpg",
+      profileLink: "/profil/alessia-bischof"
+    },
   ];
 
 
