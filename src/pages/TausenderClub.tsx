@@ -77,9 +77,9 @@ const TausenderClub = () => {
                 <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6">
                   <Calendar className="h-8 w-8 text-primary" />
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">Februar 2027</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">Donnerstag, 11. März 2027</h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-                  Der nächste 1000er Club Abend findet im Februar 2027 statt.
+                  Der nächste 1000er Club Abend findet am Donnerstag, 11. März 2027 statt.
                 </p>
                 <Button className="btn-hero" asChild>
                   <a href="mailto:sekretariat.stadt@svp-zug.ch">
