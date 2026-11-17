@@ -46,7 +46,7 @@ export interface SteckbriefCandidate {
   commissions?: string[];
   positions?: string[];
   education?: string[];
-  clubs?: string[];
+  clubs?: Array<string | { label: string; href: string }>;
   hobbies?: string[];
   priorities?: string[];
   socials?: {
@@ -124,6 +124,7 @@ export const steckbriefCandidates: Record<SteckbriefCandidateSlug, SteckbriefCan
       "Nachbarschaft Vorstadt-Neustadt Zug",
       "Gewerbeverein der Stadt Zug",
       "Zuger Wanderwege",
+      { label: "Zug94", href: "https://www.zug94.ch/" },
     ],
     hobbies: ["Tauchen", "Wandern", "Reisen"],
     socials: { instagram: "https://www.instagram.com/alessia_k_bischof/" },

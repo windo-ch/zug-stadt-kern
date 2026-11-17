@@ -32,6 +32,22 @@ function normalizePhoneLike(value?: string): string | undefined {
   return v.replace(/[^\d+]/g, "");
 }
 
+function listItemKey(item: string | { label: string; href: string }): string {
+  return (typeof item === "string" ? item : item.label).trim().toLowerCase();
+}
+
+function uniqueListItems(items: Array<string | { label: string; href: string }>): Array<string | { label: string; href: string }> {
+  const seen = new Set<string>();
+  const out: Array<string | { label: string; href: string }> = [];
+  for (const item of items) {
+    const key = listItemKey(item);
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    out.push(typeof item === "string" ? item.trim() : { ...item, label: item.label.trim() });
+  }
+  return out;
+}
+
 function uniqueStrings(items: string[]): string[] {
   const seen = new Set<string>();
   const out: string[] = [];
@@ -204,7 +220,7 @@ export default function SteckbriefProfilePage({
             )}
 
             {candidate.clubs && candidate.clubs.length > 0 && (
-              <ProfileListSection title="Vereine" items={uniqueStrings(candidate.clubs)} variant="default" />
+              <ProfileListSection title="Vereine" items={uniqueListItems(candidate.clubs)} variant="default" />
             )}
 
             {candidate.positions && candidate.positions.length > 0 && (

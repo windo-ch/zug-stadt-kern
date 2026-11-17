@@ -863,6 +863,9 @@ export interface Motion {
 - [x] **Post-election news + light Wahlen** — Drei Oktober-Artikel (11./5./1. Oktober) in `public/svp-articles-12-1-2026.json` vorne ergänzt. Countdown auf `/wahlen` durch Dankes-/Resultatzeile (20/80 Kantonsrat) ersetzt. Kein Sitz-für-Sitz-Rewrite.
 - [x] **Wahlsieg Medienmitteilung** — Interner Artikel `/artikel/svp-staerkste-kraft-kantonsrat-2026` (12. Oktober) mit Kantonsrat 24 % / 20 von 80 und Regierungsrat Tännler/Schleiss. Führt Aktuell an. `/wahlen`-Hero mit denselben Zahlen und Link zur MM. Keine Stadt-Zug-GGR-Zahlen erfunden.
 - [x] **Hünenberg aus Aktuell** — Gemeinde-Artikel «SVP Hünenberg legt deutlich zu» aus `public/svp-articles-12-1-2026.json` entfernt (Site ist Stadt Zug).
+- [x] **Aktuell Villa Frauenstein Nov 2026** — Drei Stadt-Zug-Artikel von svp-zug.ch vorne ergänzt (Milchbüechli 4.11., Nein-Parole Luxusvilla 28.10., Schöne Bilder 21.10.). Andere Gemeinden (Hünenberg, Rotkreuz, Unterägeri) nicht übernommen.
+- [x] **Artikelbilder lokal** — Featured images der Villa-Artikel von svp-zug.ch nach `public/assets/articles/` übernommen (`villa-unterer-frauenstein.jpg`, `svp-nein-luxusvilla.jpg` aus Bild.avif). JSON `image_links` auf lokale Pfade umgestellt (inkl. ältere Stadt-Zug-Villa-Texte vom 22./23. September).
+- [x] **Post-Wahlen Stadt Zug** — Stadt-MM `/artikel/erfolgreichste-wahlen-svp-stadt-zug-2026`. `/wahlen` als Resultathub (9 GGR / 4 KR / Wicki 5. Amtszeit). Mandate-Seite statt Kandidatenliste. GGR 9 (Alessia, Adrian, Gregor neu; Pircher raus), KR 4 (Roman neu). Homepage 9 Sitze + 4 Kantonsräte. Profile ohne «Kandidiert 2026». GPK: Brunner Präsident, BPK: Odermatt; zweite Sitze unbenannt.
 
 ## Executor's Feedback or Assistance Requests
 
@@ -881,7 +884,12 @@ export interface Motion {
 - **Post-election news + light Wahlen**: Bitte Homepage-Aktuell (Rahmenverträge, Hünenberg, Auto-Regulierungen), `/was-ansteht` und `/wahlen` (kein Countdown mehr) prüfen. Stadt-Zug-Sitzliste noch nicht nachgetragen.
 - **Wahlsieg Medienmitteilung**: Bitte `/artikel/svp-staerkste-kraft-kantonsrat-2026`, Homepage-Aktuell und `/wahlen` prüfen. Stadt-Zug/GGR/Stadtrat-Resultate fehlen weiterhin.
 - **Hünenberg aus Aktuell**: Gemeinde-Artikel entfernt. Homepage-Aktuell sollte Wahlsieg, Rahmenverträge, Auto-Regulierungen zeigen.
+- **Aktuell Villa Frauenstein Nov 2026**: Bitte Homepage und `/was-ansteht` prüfen (drei Villa-/Stadt-Artikel oben). Dev-Server: http://localhost:8080/
+- **Artikelbilder lokal**: Bitte Homepage-Aktuell und `/was-ansteht` prüfen — Karten sollen See-/Park-Foto bzw. Fassadenfoto der Villa zeigen, nicht leere graue Flächen. Nicht committed.
+- **Post-Wahlen Stadt Zug**: Bitte Homepage, `/wahlen`, `/wahlen/kandidaten`, `/stadtrat`, `/kantonsrat`, `/wer-wir-sind`, `/artikel/erfolgreichste-wahlen-svp-stadt-zug-2026`, `/profil/alessia-bischof`, `/profil/roman-kueng`, `/profil/manfred-pircher`, `/profil/karl-keiser` prüfen. Nicht committed. Zweite GPK-/BPK-Namen fehlen weiterhin.
 
 ## Lessons
 
 - CSV mit vielen optional leeren Feldern am Zeilenende: `anmerkung` in Anführungszeichen setzen, wenn der Text Leerzeichen enthält, sonst verschieben sich die Spalten beim Parsen.
+- svp-zug.ch `Bild.avif` kommt als `application/octet-stream`. Für Karten lokal nach JPEG konvertieren (`sips -s format jpeg`), sonst kann `onError` in NewsSection das Bild ausblenden.
+- Featured images für Aktuell lokal unter `public/assets/articles/` ablegen, nicht hotlinken.
